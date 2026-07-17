@@ -1,11 +1,15 @@
 /**
  * Select
  *
- * Native select dropdown with label/help text.
- * Matches Figma "Select" set: Size (sm|md|lg) x State (Default|Open|Disabled|Filled).
+ * Native select dropdown. Matches Figma "Select" parent component:
+ *   Size (sm|md|lg) x State (Default|Open|Disabled|Filled), Title/Description toggles.
  *
- * Uses a native <select> for accessibility and zero-dependency behaviour.
- * "Open" is a browser-native state, so it is not a code prop.
+ * Exact Figma spec:
+ *   - Heights: sm 32 · md 40 · lg 48
+ *   - Padding: left 14px, right 12px (tighter for chevron); vertical per size
+ *   - Label: label/md · Placeholder/value: body/sm (fg/subtle / fg/default)
+ *   - Chevron: 16px, fg/muted · radius-md · border/subtle 1px
+ *   - "Open" is browser-native, so not a code prop.
  */
 
 import React from 'react';
@@ -25,7 +29,6 @@ export interface SelectProps
   description?: string;
   error?: string;
   size?: SelectSize;
-  /** Placeholder shown as a disabled first option. */
   placeholder?: string;
   options: SelectOption[];
 }
@@ -64,7 +67,6 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             ))}
           </select>
 
-          {/* Chevron */}
           <span className={styles.select__chevron} aria-hidden="true">
             <svg width={16} height={16} viewBox="0 0 24 24" fill="none"
               stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">

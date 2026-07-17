@@ -1,9 +1,13 @@
-/* Select.module.css — same field tokens as Input */
+/* Select.module.css — read from Figma parent:
+ * heights 32/40/48, padding left 14 / right 12, radius-md, border/subtle
+ * label/md · body/sm · chevron 16px fg/muted
+ */
 
 .field { display: flex; flex-direction: column; gap: var(--space-6); font-family: var(--font-sans); }
-.field__label { font-size: 13px; font-weight: 500; color: var(--color-fg-default); }
-.field__description { font-size: 12px; color: var(--color-fg-muted); }
-.field__error { font-size: 12px; color: var(--color-danger-fg); }
+
+.field__label { font-size: 14px; line-height: 20px; font-weight: 500; color: var(--color-fg-default); }
+.field__description { font-size: 13px; line-height: 18px; color: var(--color-fg-muted); }
+.field__error { font-size: 13px; line-height: 18px; color: var(--color-danger-fg); }
 
 .select {
   position: relative;
@@ -36,24 +40,27 @@
   cursor: not-allowed;
 }
 
+/* Control — left padding 14px, right padding leaves room for the 16px chevron + 12px */
 .select__control {
   flex: 1;
   min-width: 0;
   height: 100%;
-  padding: 0 var(--space-32) 0 var(--space-12);
+  padding: 0 var(--space-40) 0 var(--space-14);
   border: none;
   outline: none;
   background: transparent;
   font-family: inherit;
   font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
   color: var(--color-fg-default);
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
 }
-.select--sm .select__control { font-size: 13px; padding-left: var(--space-10); }
-.select--lg .select__control { font-size: 16px; padding-left: var(--space-14); }
 .select__control:disabled { cursor: not-allowed; }
+/* Placeholder option shows as subtle */
+.select__control:invalid { color: var(--color-fg-subtle); }
 
 .select__chevron {
   position: absolute;
@@ -63,3 +70,4 @@
   color: var(--color-fg-muted);
   pointer-events: none;
 }
+.select__chevron svg { width: 16px; height: 16px; }
