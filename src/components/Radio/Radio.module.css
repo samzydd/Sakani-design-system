@@ -1,0 +1,56 @@
+/* Radio.module.css — 18px circle, accent/default when checked */
+
+.wrapper {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  font-family: var(--font-sans);
+  cursor: pointer;
+  user-select: none;
+}
+.wrapper--disabled { cursor: not-allowed; opacity: var(--opacity-60); }
+
+.input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+.circle {
+  position: relative;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-full);
+  transition: border-color 120ms ease-out;
+}
+
+/* Hover (Figma: Hover) */
+.wrapper:hover .circle { border-color: var(--color-border-strong); }
+
+/* Inner dot */
+.dot {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-default);
+  transform: scale(0);
+  transition: transform 120ms ease-out;
+}
+
+/* Checked (Figma: Checked) */
+.input:checked + .circle {
+  border-color: var(--color-accent-default);
+}
+.input:checked + .circle .dot { transform: scale(1); }
+
+/* Focus */
+.input:focus-visible + .circle {
+  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
+}
+
+.text { display: flex; flex-direction: column; gap: var(--space-2); }
+.text__label { font-size: 14px; font-weight: 500; color: var(--color-fg-default); line-height: 1.4; }
+.text__description { font-size: 12px; color: var(--color-fg-muted); line-height: 1.4; }

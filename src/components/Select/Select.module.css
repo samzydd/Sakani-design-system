@@ -1,0 +1,65 @@
+/* Select.module.css — same field tokens as Input */
+
+.field { display: flex; flex-direction: column; gap: var(--space-6); font-family: var(--font-sans); }
+.field__label { font-size: 13px; font-weight: 500; color: var(--color-fg-default); }
+.field__description { font-size: 12px; color: var(--color-fg-muted); }
+.field__error { font-size: 12px; color: var(--color-danger-fg); }
+
+.select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  transition: border-color 120ms ease-out, box-shadow 120ms ease-out;
+}
+
+.select--sm { height: 32px; }
+.select--md { height: 40px; }
+.select--lg { height: 48px; }
+
+.select:focus-within {
+  border-color: var(--color-border-focus);
+  border-width: var(--border-width-150);
+  box-shadow: 0 0 0 3px var(--color-accent-subtle);
+}
+
+.select--error {
+  border-color: var(--color-danger-solid);
+  border-width: var(--border-width-150);
+}
+
+.select--disabled {
+  background: var(--color-bg-subtle);
+  opacity: var(--opacity-60);
+  cursor: not-allowed;
+}
+
+.select__control {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 var(--space-32) 0 var(--space-12);
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--color-fg-default);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.select--sm .select__control { font-size: 13px; padding-left: var(--space-10); }
+.select--lg .select__control { font-size: 16px; padding-left: var(--space-14); }
+.select__control:disabled { cursor: not-allowed; }
+
+.select__chevron {
+  position: absolute;
+  right: var(--space-12);
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-fg-muted);
+  pointer-events: none;
+}

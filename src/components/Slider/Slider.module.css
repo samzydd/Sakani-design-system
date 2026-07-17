@@ -1,0 +1,55 @@
+/* Slider.module.css — track uses accent/default fill up to the thumb via --pct */
+
+.field { display: flex; flex-direction: column; gap: var(--space-8); font-family: var(--font-sans); }
+.header { display: flex; justify-content: space-between; align-items: center; }
+.label { font-size: 13px; font-weight: 500; color: var(--color-fg-default); }
+.value { font-size: 13px; color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: var(--radius-full);
+  /* Filled portion (accent) + remaining track (bg/muted) split at --pct */
+  background: linear-gradient(
+    to right,
+    var(--color-accent-default) 0%,
+    var(--color-accent-default) var(--pct, 50%),
+    var(--color-bg-muted) var(--pct, 50%),
+    var(--color-bg-muted) 100%
+  );
+  outline: none;
+  cursor: pointer;
+}
+.slider:disabled { opacity: var(--opacity-60); cursor: not-allowed; }
+
+/* Thumb — WebKit */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-surface);
+  border: var(--border-width-150) solid var(--color-accent-default);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  transition: transform 100ms ease-out;
+}
+.slider::-webkit-slider-thumb:active { transform: scale(1.1); }
+
+/* Thumb — Firefox */
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-surface);
+  border: var(--border-width-150) solid var(--color-accent-default);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+}
+
+.slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px var(--color-accent-subtle);
+}
