@@ -1,0 +1,43 @@
+/* Avatar.module.css — sizes 24/32/40/48, bg/subtle fill, fg/muted content */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-subtle);
+  color: var(--color-fg-muted);
+  font-family: var(--font-sans);
+  user-select: none;
+}
+
+/* Sizes */
+.avatar--sm { width: 24px; height: 24px; }
+.avatar--md { width: 32px; height: 32px; }
+.avatar--lg { width: 40px; height: 40px; }
+.avatar--xl { width: 48px; height: 48px; }
+
+/* Image fills the circle */
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Initials — font-size scales with avatar size (label/2xs → heading/sm) */
+.avatar__initials { font-weight: 500; line-height: 1; }
+.avatar--sm .avatar__initials { font-size: 11px; }
+.avatar--md .avatar__initials { font-size: 13px; }
+.avatar--lg .avatar__initials { font-size: 16px; }
+.avatar--xl .avatar__initials { font-size: 18px; }
+
+/* Icon — ~55% of avatar size */
+.avatar__icon { display: inline-flex; align-items: center; justify-content: center; }
+.avatar__icon svg { width: 55%; height: 55%; }
+.avatar--sm .avatar__icon svg { width: 14px; height: 14px; }
+.avatar--md .avatar__icon svg { width: 18px; height: 18px; }
+.avatar--lg .avatar__icon svg { width: 22px; height: 22px; }
+.avatar--xl .avatar__icon svg { width: 26px; height: 26px; }
