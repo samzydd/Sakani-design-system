@@ -5,27 +5,43 @@ const meta = {
   title: 'Core/Badge',
   component: Badge,
   tags: ['autodocs'],
-  args: { children: 'Badge', variant: 'default', size: 'md' },
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['neutral', 'accent', 'success', 'warning', 'danger', 'info'],
+    },
+    emphasis: { control: 'inline-radio', options: ['subtle', 'solid'] },
+  },
+  args: { children: 'Badge', variant: 'neutral', emphasis: 'subtle' },
 } satisfies Meta<typeof Badge>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = { args: { variant: 'default', children: 'Default' } };
-export const Success: Story = { args: { variant: 'success', children: 'Active' } };
-export const Warning: Story = { args: { variant: 'warning', children: 'Pending' } };
-export const Danger:  Story = { args: { variant: 'danger',  children: 'Failed' } };
+export const Neutral: Story = { args: { variant: 'neutral', children: 'Neutral' } };
+export const Accent:  Story = { args: { variant: 'accent',  children: 'Accent' } };
+export const Success: Story = { args: { variant: 'success', children: 'Success' } };
+export const Warning: Story = { args: { variant: 'warning', children: 'Warning' } };
+export const Danger:  Story = { args: { variant: 'danger',  children: 'Danger' } };
 export const Info:    Story = { args: { variant: 'info',    children: 'Info' } };
-export const Small:   Story = { args: { size: 'sm', children: 'Small' } };
 
+/** Full 6x2 matrix - matches the Figma component set layout exactly. */
 export const AllVariants: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-      <Badge variant="default">Default</Badge>
-      <Badge variant="success">Success</Badge>
-      <Badge variant="warning">Warning</Badge>
-      <Badge variant="danger">Danger</Badge>
-      <Badge variant="info">Info</Badge>
-    </div>
-  ),
+  render: () => {
+    const variants = ['neutral', 'accent', 'success', 'warning', 'danger', 'info'] as const;
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          {variants.map((v) => (
+            <Badge key={v} variant={v} emphasis="subtle">{v}</Badge>
+          ))}
+        </div>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          {variants.map((v) => (
+            <Badge key={v} variant={v} emphasis="solid">{v}</Badge>
+          ))}
+        </div>
+      </div>
+    );
+  },
 };
