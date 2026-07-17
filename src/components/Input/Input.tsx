@@ -1,15 +1,19 @@
 /**
  * Input
  *
- * Text input with optional label, help text, and leading/trailing icons.
- * Matches Figma "Input" set: Size (sm|md|lg) x State (Default|Focus|Error|Disabled|Filled).
+ * Text input with optional label (Title), help text (Description), and
+ * leading/trailing icons. Built to match the Figma "Input" parent component set:
+ *   Size (sm|md|lg) x State (Default|Focus|Error|Disabled|Filled)
  *
- * States in code:
- *   - Default / Filled / Focus -> native input + CSS :focus
- *   - Error    -> `error` prop (red border + message)
- *   - Disabled -> native `disabled`
- *
- * Title/Description Figma toggles map to `label` / `description` props.
+ * Exact Figma spec (read from the parent component):
+ *   - Field: vertical stack, 6px gap (space-6)
+ *   - Label:  label/md  -> 14px / 500 / fg/default
+ *   - Field frame: bg/surface, border/subtle 1px, radius-md (8px)
+ *       padding: sm 6/14 · md 10/14 · lg 12/14  (horizontal always 14px)
+ *   - Placeholder / value: body/sm -> 14px / 500, fg/subtle / fg/default
+ *   - Description: body/xs -> 13px / fg/muted
+ *   - Icons: 16px, fg/muted stroke
+ *   - Focus: border/focus 1.5px · Error: danger/solid 1.5px · Disabled: bg/subtle
  */
 
 import React from 'react';
@@ -39,10 +43,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div className={[styles.field, className ?? ''].filter(Boolean).join(' ')}>
+        {/* Label — Figma Title, label/md */}
         {label && (
           <label htmlFor={inputId} className={styles.field__label}>{label}</label>
         )}
 
+        {/* Field frame — bg/surface, border/subtle, radius-md */}
         <div
           className={[
             styles.input,
@@ -64,6 +70,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {trailingIcon && <span className={styles.input__icon} aria-hidden="true">{trailingIcon}</span>}
         </div>
 
+        {/* Description (Figma) or error message */}
         {(description || error) && (
           <span id={`${inputId}-desc`} className={hasError ? styles.field__error : styles.field__description}>
             {error || description}

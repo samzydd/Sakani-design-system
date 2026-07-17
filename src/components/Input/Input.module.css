@@ -1,7 +1,10 @@
-/* Input.module.css — tokens read from Figma:
- * Default/Filled: bg/surface + border/subtle 1px
- * Focus: border/focus 1.5px | Error: danger/solid 1.5px | Disabled: bg/subtle
- * radius 8 (radius-md), heights sm/md/lg
+/* Input.module.css — values read directly from the Figma Input parent component.
+ *
+ * Text styles resolved from Figma:
+ *   label/md -> 14px / 20px lh / 500
+ *   body/sm  -> 14px / 20px lh / 500   (placeholder + value)
+ *   body/xs  -> 13px / 18px lh / 500   (description)
+ * Frame padding: sm 6/14 · md 10/14 · lg 12/14 (horizontal always 14px = space-14)
  */
 
 .field {
@@ -11,16 +14,27 @@
   font-family: var(--font-sans);
 }
 
+/* Label — label/md */
 .field__label {
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 20px;
   font-weight: 500;
   color: var(--color-fg-default);
 }
 
-.field__description { font-size: 12px; color: var(--color-fg-muted); }
-.field__error       { font-size: 12px; color: var(--color-danger-fg); }
+/* Description — body/xs */
+.field__description {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-fg-muted);
+}
+.field__error {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-danger-fg);
+}
 
-/* ─── Input shell ── */
+/* ─── Field frame ── */
 .input {
   display: flex;
   align-items: center;
@@ -31,35 +45,33 @@
   transition: border-color 120ms ease-out, box-shadow 120ms ease-out;
 }
 
-/* Sizes (height + horizontal padding + font) */
-.input--sm { height: 32px; padding: 0 var(--space-10); font-size: 13px; }
-.input--md { height: 40px; padding: 0 var(--space-12); font-size: 14px; }
-.input--lg { height: 48px; padding: 0 var(--space-14); font-size: 16px; }
+/* Sizes — vertical padding varies, horizontal fixed at 14px (space-14) */
+.input--sm { padding: var(--space-6)  var(--space-14); }
+.input--md { padding: var(--space-10) var(--space-14); }
+.input--lg { padding: var(--space-12) var(--space-14); }
 
-/* Focus (Figma: Focus — border/focus 1.5px) */
+/* Focus — border/focus 1.5px */
 .input:focus-within {
   border-color: var(--color-border-focus);
   border-width: var(--border-width-150);
   box-shadow: 0 0 0 3px var(--color-accent-subtle);
 }
 
-/* Error (Figma: Error — danger/solid 1.5px) */
+/* Error — danger/solid 1.5px */
 .input--error {
   border-color: var(--color-danger-solid);
   border-width: var(--border-width-150);
 }
-.input--error:focus-within {
-  box-shadow: 0 0 0 3px var(--color-danger-bg);
-}
+.input--error:focus-within { box-shadow: 0 0 0 3px var(--color-danger-bg); }
 
-/* Disabled (Figma: Disabled — bg/subtle) */
+/* Disabled — bg/subtle */
 .input--disabled {
   background: var(--color-bg-subtle);
   cursor: not-allowed;
   opacity: var(--opacity-60);
 }
 
-/* ─── Native control ── */
+/* ─── Native control — body/sm ── */
 .input__control {
   flex: 1;
   min-width: 0;
@@ -67,15 +79,22 @@
   outline: none;
   background: transparent;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
   color: var(--color-fg-default);
 }
-.input__control::placeholder { color: var(--color-fg-subtle); }
+.input__control::placeholder {
+  color: var(--color-fg-subtle);
+  font-weight: 500;
+}
 .input__control:disabled { cursor: not-allowed; }
 
+/* Icons — 16px, fg/muted */
 .input__icon {
   display: inline-flex;
   align-items: center;
   color: var(--color-fg-muted);
   flex-shrink: 0;
 }
+.input__icon svg { width: 16px; height: 16px; }
