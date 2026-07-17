@@ -1,0 +1,27 @@
+/* Spinner.module.css */
+
+.spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+/* ─── Sizes ── */
+.spinner--sm { width: 14px; height: 14px; }
+.spinner--md { width: 20px; height: 20px; }
+.spinner--lg { width: 28px; height: 28px; }
+
+/* SVG fills the wrapper */
+.spinner__svg {
+  width: 100%;
+  height: 100%;
+  animation: spinner-rotate 0.75s linear infinite;
+}
+
+/* ─── Animations ── */
+@keyframes spinner-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

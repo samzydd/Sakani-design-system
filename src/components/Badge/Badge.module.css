@@ -1,0 +1,55 @@
+/* Badge.module.css — all values from tokens.css */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: var(--radius-full);
+  border: var(--border-width-100) solid transparent;
+}
+
+/* ─── Sizes ── */
+.badge--sm { padding: var(--space-2) var(--space-6);  font-size: 11px; }
+.badge--md { padding: var(--space-2) var(--space-8);  font-size: 12px; }
+
+/* ─── Variants ── */
+.badge--default {
+  background: var(--color-bg-subtle);
+  color: var(--color-fg-muted);
+  border-color: var(--color-border-default);
+}
+.badge--success {
+  background: var(--color-success-bg);
+  color: var(--color-success-fg);
+  border-color: var(--color-success-border);
+}
+.badge--warning {
+  background: var(--color-warning-bg);
+  color: var(--color-warning-fg);
+  border-color: var(--color-warning-border);
+}
+.badge--danger {
+  background: var(--color-danger-bg);
+  color: var(--color-danger-fg);
+  border-color: var(--color-danger-border);
+}
+.badge--info {
+  background: var(--color-info-bg);
+  color: var(--color-info-fg);
+  border-color: var(--color-info-border);
+}
+
+/* ─── Sub-elements ── */
+.badge__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.badge__label {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}

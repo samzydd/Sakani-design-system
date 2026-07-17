@@ -204,3 +204,13 @@
   --color-info-border: var(--color-info-800);
   --color-info-solid: var(--color-info-500);
 }
+
+/* ─── Typography: Geist font family ─────────────────────────────────────────── */
+:root {
+  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'Fira Code', monospace;
+}
+
+* {
+  font-family: var(--font-sans);
+}

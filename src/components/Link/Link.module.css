@@ -1,0 +1,39 @@
+/* Link.module.css */
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: var(--font-sans);
+  font-size: inherit;
+  font-weight: 500;
+  /* Brand color for links — uses the chromatic brand token (orange) */
+  color: var(--color-brand-default);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 120ms ease-out, color 120ms ease-out;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration-color: currentColor;
+}
+
+.link:visited {
+  color: var(--color-brand-hover);
+}
+
+.link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
+  border-radius: var(--radius-sm);
+}
+
+/* External icon wrapper */
+.link__external {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.7;
+}

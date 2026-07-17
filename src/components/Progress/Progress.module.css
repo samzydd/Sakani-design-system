@@ -1,0 +1,38 @@
+/* Progress.module.css */
+
+/* Indeterminate scan animation */
+@keyframes progress-scan {
+  0%   { left: -40%; width: 40%; }
+  50%  { left: 20%;  width: 60%; }
+  100% { left: 100%; width: 40%; }
+}
+
+/* ─── Track ── */
+.progress {
+  position: relative;
+  width: 100%;
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+/* ─── Sizes (track height) ── */
+.progress--sm { height: 4px; }
+.progress--md { height: 6px; }
+.progress--lg { height: 8px; }
+
+/* ─── Fill ── */
+.progress__fill {
+  height: 100%;
+  background: var(--color-accent-default);
+  border-radius: var(--radius-full);
+  transition: width 300ms ease-out;
+}
+
+/* Indeterminate — absolute positioned scanning bar */
+.progress__fill--indeterminate {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  animation: progress-scan 1.4s ease-in-out infinite;
+}
