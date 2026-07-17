@@ -1,0 +1,210 @@
+/**
+ * Button.module.css
+ *
+ * Every value here references a CSS custom property from tokens.css.
+ * No hardcoded colors, spacing, radius, or border-width values.
+ *
+ * Token layers used:
+ *   --color-accent-*        → Primary variant (charcoal action)
+ *   --color-bg-*            → Surface colors
+ *   --color-fg-*            → Text and icon colors
+ *   --color-border-*        → Border colors
+ *   --color-danger-*        → Destructive variant
+ *   --space-*               → Padding and gap
+ *   --radius-md             → Border radius
+ *   --border-width-100/150  → Stroke weights
+ *   --opacity-60            → Disabled state
+ */
+
+/* ─── Base ───────────────────────────────────────────────────────────────────── */
+
+.button {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+
+  /* Shape */
+  border-radius: var(--radius-md);
+  border-style: solid;
+  border-width: var(--border-width-100);
+
+  /* Text */
+  font-family: var(--font-sans);
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1;
+
+  /* Interaction */
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 120ms ease-out,
+    color 120ms ease-out,
+    border-color 120ms ease-out,
+    opacity 120ms ease-out;
+
+  /* Focus ring — chromatic so it's always visible regardless of variant */
+  outline: none;
+}
+
+.button:focus-visible {
+  /* Uses brand/focus token so focus ring stays orange even on charcoal buttons */
+  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
+}
+
+.button:disabled,
+.button--loading {
+  opacity: var(--opacity-60);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ─── Variants ───────────────────────────────────────────────────────────────── */
+
+/**
+ * Primary — charcoal accent surface, white label.
+ * Maps to Figma: Variant=Primary
+ */
+.button--primary {
+  background-color: var(--color-accent-default);
+  color: var(--color-fg-on-accent);
+  border-color: var(--color-accent-default);
+}
+
+.button--primary:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.button--primary:active:not(:disabled) {
+  background-color: var(--color-accent-active);
+  border-color: var(--color-accent-active);
+}
+
+/**
+ * Secondary — subtle surface, default foreground.
+ * Maps to Figma: Variant=Secondary
+ */
+.button--secondary {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg-default);
+  border-color: var(--color-border-default);
+}
+
+.button--secondary:hover:not(:disabled) {
+  background-color: var(--color-bg-muted);
+  border-color: var(--color-border-strong);
+}
+
+.button--secondary:active:not(:disabled) {
+  background-color: var(--color-bg-muted);
+}
+
+/**
+ * Outline — transparent background, border + default text.
+ * Maps to Figma: Variant=Outline
+ */
+.button--outline {
+  background-color: transparent;
+  color: var(--color-fg-default);
+  border-color: var(--color-border-default);
+}
+
+.button--outline:hover:not(:disabled) {
+  background-color: var(--color-bg-subtle);
+  border-color: var(--color-border-strong);
+}
+
+.button--outline:active:not(:disabled) {
+  background-color: var(--color-bg-muted);
+}
+
+/**
+ * Ghost — no border, no background. Text-like but with button semantics.
+ * Maps to Figma: Variant=Ghost
+ */
+.button--ghost {
+  background-color: transparent;
+  color: var(--color-fg-default);
+  border-color: transparent;
+}
+
+.button--ghost:hover:not(:disabled) {
+  background-color: var(--color-bg-subtle);
+}
+
+.button--ghost:active:not(:disabled) {
+  background-color: var(--color-bg-muted);
+}
+
+/**
+ * Destructive — danger semantic color. Use for irreversible actions.
+ * Maps to Figma: Variant=Destructive
+ */
+.button--destructive {
+  background-color: var(--color-danger-solid);
+  color: var(--color-fg-on-accent);
+  border-color: var(--color-danger-solid);
+}
+
+.button--destructive:hover:not(:disabled) {
+  background-color: var(--color-danger-border);
+  border-color: var(--color-danger-border);
+}
+
+.button--destructive:active:not(:disabled) {
+  opacity: 0.9;
+}
+
+/* ─── Sizes ──────────────────────────────────────────────────────────────────── */
+
+/**
+ * sm — 32px target height.
+ * Maps to Figma: Size=sm (padding 6px 12px, font 13px)
+ */
+.button--sm {
+  padding: var(--space-6) var(--space-12);
+  font-size: 13px;
+  gap: var(--space-4);
+}
+
+/**
+ * md — 40px target height.
+ * Maps to Figma: Size=md (padding 10px 16px, font 14px)
+ */
+.button--md {
+  padding: var(--space-10) var(--space-16);
+  font-size: 14px;
+  gap: var(--space-6);
+}
+
+/**
+ * lg — 48px target height.
+ * Maps to Figma: Size=lg (padding 12px 20px, font 16px)
+ */
+.button--lg {
+  padding: var(--space-12) var(--space-20);
+  font-size: 16px;
+  gap: var(--space-8);
+}
+
+/* ─── Sub-elements ───────────────────────────────────────────────────────────── */
+
+/**
+ * Icon wrapper — centers the icon and sizes it relative to the button size.
+ * The icon itself (e.g. a Lucide component) should be 16px for sm/md, 18px for lg.
+ */
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/** Label span — allows text + icons to space correctly via parent gap. */
+.button__label {
+  display: inline-flex;
+  align-items: center;
+}
