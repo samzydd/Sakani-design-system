@@ -1,0 +1,125 @@
+/* Combobox.module.css — read from Figma:
+ * field: bg/surface, border/default 1px, radius-md, padding 10/12/10/14, heights 32/40/48
+ * panel: bg/surface, border/default, radius-sm, padding 4, gap 2, shadow/lg
+ * option: radius-sm(4-ish uses radius-sm), padding 8, gap 8, hover/selected bg/subtle, body/sm
+ */
+
+.field { display: flex; flex-direction: column; gap: var(--space-6); font-family: var(--font-sans); position: relative; }
+.field__label { font-size: 14px; line-height: 20px; font-weight: 500; color: var(--color-fg-default); }
+.field__description { font-size: 13px; line-height: 18px; color: var(--color-fg-muted); }
+.field__error { font-size: 13px; line-height: 18px; color: var(--color-danger-fg); }
+
+/* ─── Control ── */
+.control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-12) 0 var(--space-14);
+  cursor: text;
+  transition: border-color 120ms ease-out, box-shadow 120ms ease-out;
+}
+.control--sm { min-height: 32px; }
+.control--md { min-height: 40px; }
+.control--lg { min-height: 48px; }
+
+.control--open,
+.control:focus-within {
+  border-color: var(--color-border-focus);
+  border-width: var(--border-width-150);
+  box-shadow: 0 0 0 3px var(--color-accent-subtle);
+}
+.control--error {
+  border-color: var(--color-danger-solid);
+  border-width: var(--border-width-150);
+}
+.control--disabled {
+  background: var(--color-bg-subtle);
+  cursor: not-allowed;
+  opacity: var(--opacity-60);
+}
+
+.control__input {
+  flex: 1;
+  min-width: 60px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  padding: var(--space-10) 0;
+}
+.control__input::placeholder { color: var(--color-fg-subtle); font-weight: 500; }
+
+.control__chevron { display: inline-flex; color: var(--color-fg-muted); transition: transform 160ms ease-out; flex-shrink: 0; }
+.control__chevron--open { transform: rotate(180deg); }
+
+/* ─── Multi chips ── */
+.chips { display: flex; flex-wrap: wrap; gap: var(--space-4); padding: var(--space-6) 0; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 2px var(--space-6);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-default);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+}
+.chip__remove {
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+}
+
+/* ─── Panel ── */
+.panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  max-height: 260px;
+  overflow-y: auto;
+}
+.panel__empty {
+  padding: var(--space-12);
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-fg-muted);
+}
+
+/* ─── Option ── */
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-8);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-fg-default);
+}
+.option--active { background: var(--color-bg-subtle); }
+.option--selected { background: var(--color-bg-subtle); }
+.option--disabled { opacity: var(--opacity-60); cursor: not-allowed; }
+.option__icon { display: inline-flex; color: var(--color-fg-muted); flex-shrink: 0; }
+.option__label { flex: 1; }
+.option__check { display: inline-flex; color: var(--color-accent-default); flex-shrink: 0; }

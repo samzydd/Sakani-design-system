@@ -1,0 +1,28 @@
+/* SidebarFooter — padding 10/6, gap 10, title label/sm-strong, subtitle caption.
+ * Avatar is the system Avatar component (no local fallback circle).
+ */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  margin-top: auto;
+  padding: var(--space-10) var(--space-6);
+  font-family: var(--font-sans);
+}
+.footer--collapsed { justify-content: center; }
+
+.footer__text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.footer__title { font-size: 13px; font-weight: 600; line-height: 18px; color: var(--color-fg-default); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.footer__subtitle { font-size: 12px; line-height: 16px; color: var(--color-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.footer__menu {
+  display: inline-flex; border: none; background: transparent; color: var(--color-fg-muted);
+  cursor: pointer; padding: var(--space-4); border-radius: var(--radius-sm); flex-shrink: 0;
+}
+.footer__menu:hover { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.footer__action {
+  display: inline-flex; align-items: center; gap: var(--space-8);
+  width: 100%; padding: var(--space-6) var(--space-10);
+  border: none; background: transparent; border-radius: var(--radius-sm);
+  color: var(--color-fg-muted); cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 500;
+}
+.footer__action:hover { background: var(--color-bg-subtle); color: var(--color-fg-default); }

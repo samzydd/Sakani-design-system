@@ -1,0 +1,56 @@
+/* Accordion.module.css — item padding 14/16, gap 8, border/subtle divider, title label/md */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+  border-top: var(--border-width-100) solid var(--color-border-subtle);
+}
+
+.item { border-bottom: var(--border-width-100) solid var(--color-border-subtle); }
+
+.item__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding: var(--space-14) var(--space-16);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+.item__header:hover { background: var(--color-bg-subtle); }
+
+.item__title {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
+
+.item__chevron {
+  flex-shrink: 0;
+  display: inline-flex;
+  color: var(--color-fg-muted);
+  transition: transform 160ms ease-out;
+}
+.item__chevron--open { transform: rotate(180deg); }
+
+/* Panel animation via grid-template-rows 0fr -> 1fr */
+.item__panelWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 180ms ease-out;
+}
+.item__panelWrap--open { grid-template-rows: 1fr; }
+
+.item__panel { overflow: hidden; }
+.item__panelInner {
+  padding: 0 var(--space-16) var(--space-14);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-fg-muted);
+}

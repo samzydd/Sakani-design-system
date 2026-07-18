@@ -1,0 +1,42 @@
+/* Tabs.module.css — label/md, active fg/default + brand underline, track bottom border */
+
+.tabs {
+  display: flex;
+  align-items: stretch;
+  font-family: var(--font-sans);
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+
+.tab {
+  position: relative;
+  padding: var(--space-10) var(--space-16);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  transition: color 120ms ease-out;
+}
+.tab:hover:not(.tab--disabled) { color: var(--color-fg-default); }
+
+.tab--active { color: var(--color-fg-default); }
+
+/* Underline indicator — brand/default, 2px, sits on the track's bottom border */
+.tab__indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-brand-default);
+  border-radius: var(--radius-full) var(--radius-full) 0 0;
+}
+
+.tab--disabled {
+  color: var(--color-fg-subtle);
+  cursor: not-allowed;
+  opacity: var(--opacity-60);
+}

@@ -1,0 +1,41 @@
+/* SidebarPromo — brand/subtle bg + border, radius-md, padding 14, gap 8.
+ * CTA is a FULL-WIDTH accent/default button (matches Figma).
+ */
+.promo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-14);
+  background: var(--color-brand-subtle);
+  border: var(--border-width-100) solid var(--color-brand-subtle);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+}
+.promo__head { display: flex; align-items: center; gap: var(--space-6); }
+.promo__icon { display: inline-flex; color: var(--color-brand-fg); flex-shrink: 0; }
+.promo__title { flex: 1; font-size: 13px; font-weight: 600; color: var(--color-brand-fg); }
+.promo__dismiss {
+  display: inline-flex; border: none; background: transparent; color: var(--color-fg-subtle);
+  cursor: pointer; padding: 0; flex-shrink: 0;
+}
+.promo__dismiss:hover { color: var(--color-fg-default); }
+.promo__desc { margin: 0; font-size: 12px; line-height: 16px; color: var(--color-fg-muted); }
+
+/* Full-width CTA — accent/default fill, fg/on-accent text, radius-sm */
+.promo__cta {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6) var(--space-12);
+  background: var(--color-accent-default);
+  color: var(--color-fg-on-accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 120ms ease-out;
+}
+.promo__cta:hover { background: var(--color-accent-hover); }

@@ -1,0 +1,23 @@
+/* SidebarSubItem — radius-sm, padding 0/10 with height, label/sm, indented */
+.subItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 32px;
+  padding: 0 var(--space-10) 0 var(--space-40);
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-fg-muted);
+  text-align: left;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.subItem:hover:not(.subItem--disabled) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.subItem--active { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.subItem--disabled { color: var(--color-fg-subtle); cursor: not-allowed; pointer-events: none; }

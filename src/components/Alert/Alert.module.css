@@ -1,0 +1,31 @@
+/* Alert.module.css — radius-md, padding 14/16, gap 12; per-color tokens read from Figma */
+
+.alert {
+  display: flex;
+  gap: var(--space-12);
+  padding: var(--space-14) var(--space-16);
+  border-radius: var(--radius-md);
+  border: var(--border-width-100) solid transparent;
+  font-family: var(--font-sans);
+}
+
+.alert__icon { flex-shrink: 0; display: inline-flex; margin-top: 1px; }
+.alert__content { display: flex; flex-direction: column; gap: var(--space-2); }
+.alert__title { font-size: 14px; font-weight: 600; line-height: 20px; color: var(--color-fg-default); }
+.alert__description { font-size: 13px; line-height: 18px; color: var(--color-fg-muted); }
+
+/* ─── Colors (bg + border + icon tint) ── */
+.alert--info    { background: var(--color-info-bg);    border-color: var(--color-info-border); }
+.alert--info    .alert__icon { color: var(--color-info-fg); }
+
+.alert--success { background: var(--color-success-bg); border-color: var(--color-success-border); }
+.alert--success .alert__icon { color: var(--color-success-fg); }
+
+.alert--warning { background: var(--color-warning-bg); border-color: var(--color-warning-border); }
+.alert--warning .alert__icon { color: var(--color-warning-fg); }
+
+.alert--danger  { background: var(--color-danger-bg);  border-color: var(--color-danger-border); }
+.alert--danger  .alert__icon { color: var(--color-danger-fg); }
+
+.alert--neutral { background: var(--color-bg-subtle);  border-color: var(--color-border-default); }
+.alert--neutral .alert__icon { color: var(--color-fg-muted); }

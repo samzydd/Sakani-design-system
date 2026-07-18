@@ -1,0 +1,30 @@
+/* SidebarHeader — padding 6/4, gap 10, title label/md-strong, subtitle caption */
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding: var(--space-6) var(--space-4);
+  font-family: var(--font-sans);
+}
+.header--collapsed { justify-content: center; }
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-default);
+  color: var(--color-fg-on-accent);
+  flex-shrink: 0;
+}
+.header__text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.header__title { font-size: 14px; font-weight: 600; line-height: 20px; color: var(--color-fg-default); }
+.header__subtitle { font-size: 12px; line-height: 16px; color: var(--color-fg-muted); }
+.header__toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: none; background: transparent; color: var(--color-fg-muted);
+  cursor: pointer; padding: var(--space-4); border-radius: var(--radius-sm); flex-shrink: 0;
+}
+.header__toggle:hover { background: var(--color-bg-subtle); color: var(--color-fg-default); }

@@ -1,0 +1,10 @@
+/* SidebarGroupLabel — padding 8/10/4, overline, fg/subtle uppercase */
+.groupLabel {
+  padding: var(--space-8) var(--space-10) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-fg-subtle);
+}

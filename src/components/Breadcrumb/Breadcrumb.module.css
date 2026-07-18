@@ -1,0 +1,33 @@
+/* Breadcrumb.module.css — gap 6, crumbs fg/muted, current fg/default, chevron separators */
+
+.breadcrumb { font-family: var(--font-sans); }
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item { display: inline-flex; align-items: center; gap: var(--space-6); }
+
+.crumb {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-fg-muted);
+  text-decoration: none;
+  transition: color 120ms ease-out;
+}
+a.crumb:hover { color: var(--color-fg-default); text-decoration: underline; text-underline-offset: 2px; }
+
+.current {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
+
+.separator { display: inline-flex; color: var(--color-fg-subtle); }

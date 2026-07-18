@@ -1,0 +1,76 @@
+/* SidebarItem — read from Figma (expanded + collapsed).
+ * Left accent bar (brand/default 3x20 pill) appears on active in BOTH layouts.
+ * All colors are semantic tokens -> dark mode via .dark works automatically.
+ */
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  width: 100%;
+  padding: var(--space-6) var(--space-10);
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-fg-muted);
+  text-align: left;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background-color 120ms ease-out, color 120ms ease-out;
+}
+.item:hover:not(.item--disabled) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.item:hover:not(.item--disabled) .item__icon { color: var(--color-fg-default); }
+.item:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus); }
+
+/* ─── Left accent bar (brand/default, 3x20 pill) ───
+ * Absolutely positioned at left:-1px so the 3px bar's CENTER sits on the
+ * button's left edge (spans -1..+2px), overlapping it — matches Figma. */
+.item__bar {
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background: var(--color-brand-default);
+  opacity: 0;
+  transition: opacity 120ms ease-out;
+}
+
+/* ─── Active states ─── */
+.item--active { background: var(--color-accent-subtle); color: var(--color-fg-default); }
+.item--active:hover { background: var(--color-accent-subtle); }
+.item--active .item__bar { opacity: 1; }
+.item--active .item__icon { color: var(--color-fg-default); }
+.item--active .item__chevron { color: var(--color-accent-default); }
+.item--active .item__badge { background: var(--color-accent-default); color: var(--color-fg-on-accent); }
+
+.item--disabled { color: var(--color-fg-subtle); cursor: not-allowed; pointer-events: none; }
+.item--disabled .item__icon { color: var(--color-fg-subtle); }
+
+.item--collapsed { justify-content: center; padding: var(--space-8); }
+
+.item__icon { display: inline-flex; align-items: center; flex-shrink: 0; color: var(--color-fg-muted); transition: color 120ms ease-out; }
+.item__label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.item__badge {
+  flex-shrink: 0;
+  min-width: 20px;
+  padding: 0 var(--space-6);
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-muted);
+  color: var(--color-fg-muted);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 500;
+}
+.item__chevron { display: inline-flex; color: var(--color-fg-muted); flex-shrink: 0; }
