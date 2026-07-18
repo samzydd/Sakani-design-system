@@ -71,3 +71,7 @@
 .text { display: flex; flex-direction: column; gap: var(--space-2); }
 .text__label { font-size: 14px; font-weight: 500; color: var(--color-fg-default); line-height: 1.4; }
 .text__description { font-size: 12px; color: var(--color-fg-muted); line-height: 1.4; }
+
+/* Hover — border strengthens (mirrors Figma Checkbox State=Hover) */
+.wrapper:hover .box,
+.checkbox:hover .box { border-color: var(--color-border-strong); }

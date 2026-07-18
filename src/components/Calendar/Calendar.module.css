@@ -45,3 +45,19 @@
 .day--in-range { background: var(--color-accent-subtle); border-radius: 0; }
 .day--outside { color: var(--color-fg-subtle); }
 .day--disabled { color: var(--color-fg-subtle); opacity: var(--opacity-60); cursor: not-allowed; }
+
+/* Dropdowns header (Figma: Calendar Header Type=Dropdowns) */
+.dropdowns { display: flex; gap: var(--space-6); flex: 1; justify-content: center; }
+.dropdown {
+  appearance: auto;
+  padding: var(--space-4) var(--space-6);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-fg-default);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.dropdown:hover { background: var(--color-bg-subtle); }

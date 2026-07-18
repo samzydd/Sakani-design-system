@@ -123,3 +123,16 @@
 .option__icon { display: inline-flex; color: var(--color-fg-muted); flex-shrink: 0; }
 .option__label { flex: 1; }
 .option__check { display: inline-flex; color: var(--color-accent-default); flex-shrink: 0; }
+
+/* Panel loading state (Figma: Combobox Panel State=Loading) */
+.panel__loading {
+  display: flex; align-items: center; justify-content: center; gap: var(--space-8);
+  padding: var(--space-12); font-size: 13px; color: var(--color-fg-muted);
+}
+.panel__spinner {
+  width: 14px; height: 14px; border-radius: var(--radius-full);
+  border: 2px solid var(--color-border-default);
+  border-top-color: var(--color-fg-muted);
+  animation: sakani-cb-spin 0.7s linear infinite;
+}
+@keyframes sakani-cb-spin { to { transform: rotate(360deg); } }

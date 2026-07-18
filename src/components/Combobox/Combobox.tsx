@@ -28,6 +28,8 @@ export interface ComboboxOption {
   label: string;
   icon?: React.ReactNode;
   disabled?: boolean;
+  /** Shows the panel's loading state (Figma: Panel State=Loading). */
+  loading?: boolean;
 }
 
 export interface ComboboxProps {
@@ -47,7 +49,7 @@ export interface ComboboxProps {
 
 export const Combobox: React.FC<ComboboxProps> = ({
   options, mode = 'single', size = 'md', label, description, error,
-  placeholder = 'Select…', disabled, value, onChange, className,
+  placeholder = 'Select…', disabled, loading, value, onChange, className,
 }) => {
   const reactId = React.useId();
   const [open, setOpen] = React.useState(false);
@@ -163,8 +165,13 @@ export const Combobox: React.FC<ComboboxProps> = ({
 
       {/* Panel */}
       {open && !disabled && (
-        <div className={styles.panel} id={`${reactId}-panel`} role="listbox">
-          {filtered.length === 0 ? (
+        <div className={styles.panel} id={`${reactId}-panel`} role="listbox" aria-busy={loading || undefined}>
+          {loading ? (
+            <div className={styles.panel__loading}>
+              <span className={styles.panel__spinner} aria-hidden="true" />
+              Loading…
+            </div>
+          ) : filtered.length === 0 ? (
             <div className={styles.panel__empty}>No results found</div>
           ) : (
             filtered.map((opt, i) => {

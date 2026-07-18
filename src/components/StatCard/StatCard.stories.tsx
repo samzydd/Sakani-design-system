@@ -38,3 +38,11 @@ export const DarkMode: Story = {
   decorators: [(S) => <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)', width: 300 }}><S /></div>],
   args: { variant: 'icon', icon: DollarSign },
 };
+
+export const WithSparkline: Story = {
+  args: { variant: 'icon', icon: DollarSign, sparkline: [12, 18, 14, 22, 19, 28, 24, 32] },
+};
+export const WithDescription: Story = {
+  args: { variant: 'icon', icon: Users, title: 'Active users', value: '2,340', delta: '-3.2%', trend: 'down',
+    sparkline: [30, 26, 28, 22, 24, 18, 20, 16], description: 'vs. last 30 days' },
+};

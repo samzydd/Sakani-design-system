@@ -33,3 +33,10 @@
 
 .button--destructive { background: var(--color-danger-solid); color: var(--color-fg-on-accent); border-color: var(--color-danger-solid); }
 .button--destructive:hover:not(:disabled) { background: var(--color-danger-fg); border-color: var(--color-danger-fg); }
+
+/* Pressed (mirrors Button's :active states / Figma State=Pressed) */
+.button--primary:active:not(:disabled) { background: var(--color-accent-active); border-color: var(--color-accent-active); }
+.button--secondary:active:not(:disabled) { background: var(--color-bg-muted); }
+.button--outline:active:not(:disabled) { background: var(--color-bg-muted); }
+.button--ghost:active:not(:disabled) { background: var(--color-bg-muted); }
+.button--destructive:active:not(:disabled) { opacity: 0.9; }

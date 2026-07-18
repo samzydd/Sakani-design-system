@@ -41,3 +41,5 @@ export const DarkMode: Story = {
     </div>
   )],
 };
+
+export const Loading: Story = { args: { loading: true } };

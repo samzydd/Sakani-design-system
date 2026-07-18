@@ -50,3 +50,12 @@
 .card__delta--up   { color: var(--color-success-fg); }
 .card__delta--down { color: var(--color-danger-fg); }
 .card__delta--flat { color: var(--color-fg-muted); }
+
+/* Sparkline — trend-colored, matching the delta */
+.card__sparkline { width: 100%; height: 36px; display: block; }
+.card__sparkline polyline { stroke: var(--color-fg-muted); }
+.card--trend-up .card__sparkline polyline { stroke: var(--color-success-fg); }
+.card--trend-down .card__sparkline polyline { stroke: var(--color-danger-fg); }
+
+/* Description — supporting line (Figma: description) */
+.card__description { margin: 0; font-size: 12px; line-height: 16px; color: var(--color-fg-muted); }
