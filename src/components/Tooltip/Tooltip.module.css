@@ -1,5 +1,7 @@
-/* Tooltip.module.css — bubble bg/inverse, radius-md, padding 8/12, gap 2
+/* Tooltip.module.css — bubble + caret matching Figma.
+ * bubble: bg/inverse, radius-md, padding 8/12, gap 2, shadow-md
  * title label/sm-strong · subtitle body/2xs · both fg/on-inverse
+ * caret: 12x6 (top/bottom) or 6x12 (center sides), bg/inverse, 8px gap to trigger
  */
 
 .wrapper {
@@ -20,7 +22,6 @@
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
 
-  /* Hidden until hover/focus */
   opacity: 0;
   visibility: hidden;
   transform: translateY(2px);
@@ -28,7 +29,6 @@
   pointer-events: none;
 }
 
-/* Reveal on hover or keyboard focus of the trigger */
 .wrapper:hover .bubble,
 .wrapper:focus-within .bubble {
   opacity: 1;
@@ -51,31 +51,89 @@
   opacity: 0.85;
 }
 
-/* ─── Pointer positions ───
- * 8px gap between trigger and bubble in each direction.
+/* ─── Caret base ───
+ * Built as a CSS border triangle. Direction + colour set per pointer group below.
+ * 12x6 => 6px half-width, 6px height for top/bottom.
+ * 6x12 => 6px half-height, 6px width for center sides.
  */
+.caret { position: absolute; width: 0; height: 0; }
 
-/* Top row — bubble above the trigger */
-.bubble--top-left    { bottom: calc(100% + 8px); left: 0; }
-.bubble--top-center  { bottom: calc(100% + 8px); left: 50%; transform: translate(-50%, 2px); }
-.bubble--top-right   { bottom: calc(100% + 8px); right: 0; }
-
+/* ── Top row: bubble ABOVE trigger, caret on bubble's BOTTOM edge pointing DOWN ── */
+.bubble--top-left,
+.bubble--top-center,
+.bubble--top-right { bottom: calc(100% + 8px); }
+.bubble--top-left  { left: 0; }
+.bubble--top-right { right: 0; }
+.bubble--top-center{ left: 50%; transform: translate(-50%, 2px); }
 .wrapper:hover .bubble--top-center,
 .wrapper:focus-within .bubble--top-center { transform: translate(-50%, 0); }
 
-/* Bottom row — bubble below the trigger */
-.bubble--bottom-left   { top: calc(100% + 8px); left: 0; }
-.bubble--bottom-center { top: calc(100% + 8px); left: 50%; transform: translate(-50%, 2px); }
-.bubble--bottom-right  { top: calc(100% + 8px); right: 0; }
+.caret--top-left,
+.caret--top-center,
+.caret--top-right {
+  top: 100%;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--color-bg-inverse);
+}
+.caret--top-left   { left: 12px; }
+.caret--top-right  { right: 12px; }
+.caret--top-center { left: 50%; transform: translateX(-50%); }
 
+/* ── Bottom row: bubble BELOW trigger, caret on bubble's TOP edge pointing UP ── */
+.bubble--bottom-left,
+.bubble--bottom-center,
+.bubble--bottom-right { top: calc(100% + 8px); }
+.bubble--bottom-left  { left: 0; }
+.bubble--bottom-right { right: 0; }
+.bubble--bottom-center{ left: 50%; transform: translate(-50%, 2px); }
 .wrapper:hover .bubble--bottom-center,
 .wrapper:focus-within .bubble--bottom-center { transform: translate(-50%, 0); }
 
-/* Center row — bubble to the side */
-.bubble--center-left  { right: calc(100% + 8px); top: 50%; transform: translate(2px, -50%); }
-.bubble--center-right { left: calc(100% + 8px);  top: 50%; transform: translate(-2px, -50%); }
+.caret--bottom-left,
+.caret--bottom-center,
+.caret--bottom-right {
+  bottom: 100%;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid var(--color-bg-inverse);
+}
+.caret--bottom-left   { left: 12px; }
+.caret--bottom-right  { right: 12px; }
+.caret--bottom-center { left: 50%; transform: translateX(-50%); }
 
+/* ── Center left: bubble to the LEFT, caret on bubble's RIGHT edge pointing RIGHT ── */
+.bubble--center-left {
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translate(2px, -50%);
+}
 .wrapper:hover .bubble--center-left,
 .wrapper:focus-within .bubble--center-left { transform: translate(0, -50%); }
+
+.caret--center-left {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid var(--color-bg-inverse);
+}
+
+/* ── Center right: bubble to the RIGHT, caret on bubble's LEFT edge pointing LEFT ── */
+.bubble--center-right {
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translate(-2px, -50%);
+}
 .wrapper:hover .bubble--center-right,
 .wrapper:focus-within .bubble--center-right { transform: translate(0, -50%); }
+
+.caret--center-right {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid var(--color-bg-inverse);
+}

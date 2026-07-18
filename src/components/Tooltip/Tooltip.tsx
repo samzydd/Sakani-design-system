@@ -1,14 +1,16 @@
 /**
  * Tooltip
  *
- * Hover/focus tooltip with optional title + subtitle and 8 pointer positions.
- * Matches Figma "Tooltip" set:
+ * Hover/focus tooltip with a title, optional subtitle, a caret (tail), and
+ * 8 pointer positions. Matches Figma "Tooltip" set exactly:
  *   Pointer (Top Left|Top Center|Top Right|Bottom Left|Bottom Center|Bottom Right|Center Left|Center Right)
  *   Title/Subtitle toggles.
  *
- * Exact Figma spec:
+ * Figma spec:
  *   bubble: bg/inverse, radius-md (8), padding 8/12, gap 2
- *   title: label/sm-strong, fg/on-inverse · subtitle: body/2xs, fg/on-inverse
+ *   title: label/sm-strong (13px/600, fg/on-inverse) · subtitle: body/2xs (12px, fg/on-inverse)
+ *   caret: 12x6 for top/bottom, 6x12 for center sides, filled bg/inverse,
+ *          offset toward the Left/Center/Right end matching the pointer name.
  *
  * Pure CSS hover/focus — wraps its trigger children.
  */
@@ -39,13 +41,11 @@ export const Tooltip: React.FC<TooltipProps> = ({
   <span className={[styles.wrapper, className ?? ''].filter(Boolean).join(' ')}>
     {children}
 
-    {/* Bubble — shown on hover/focus of the wrapper via CSS */}
-    <span
-      role="tooltip"
-      className={[styles.bubble, styles[`bubble--${pointer}`]].join(' ')}
-    >
+    <span role="tooltip" className={[styles.bubble, styles[`bubble--${pointer}`]].join(' ')}>
       <span className={styles.bubble__title}>{title}</span>
       {subtitle && <span className={styles.bubble__subtitle}>{subtitle}</span>}
+      {/* Caret (tail) — a CSS triangle tinted to match the bubble */}
+      <span className={[styles.caret, styles[`caret--${pointer}`]].join(' ')} aria-hidden="true" />
     </span>
   </span>
 );
