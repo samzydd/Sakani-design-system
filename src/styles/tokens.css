@@ -1,4 +1,7 @@
 :root {
+  /* Typography — Geist via @fontsource-variable/geist */
+  --font-sans: "Geist Variable", "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, monospace;
   /* ---- core color primitives ---- */
   --color-neutral-50: #FAFAF9;
   --color-neutral-100: #F5F4F2;
@@ -84,6 +87,12 @@
   --color-border-default: var(--color-neutral-300);
   --color-border-strong: var(--color-neutral-400);
   --color-border-focus: var(--color-primary-500);
+  /* chart tokens (light) */
+  --color-chart-1: #ff4700;
+  --color-chart-2: #2e90fa;
+  --color-chart-3: #039855;
+  --color-chart-4: #d92d20;
+  --color-chart-5: #78716a;
   --color-accent-default: var(--color-neutral-900);
   --color-accent-hover: var(--color-neutral-800);
   --color-accent-active: var(--color-neutral-700);
@@ -178,6 +187,12 @@
   --color-border-default: var(--color-neutral-700);
   --color-border-strong: var(--color-neutral-600);
   --color-border-focus: var(--color-primary-400);
+  /* chart tokens (dark) */
+  --color-chart-1: #1570ef;
+  --color-chart-2: #53b1fd;
+  --color-chart-3: #32d583;
+  --color-chart-4: #f97066;
+  --color-chart-5: #a8a29b;
   --color-accent-default: var(--color-neutral-50);
   --color-accent-hover: var(--color-neutral-200);
   --color-accent-active: var(--color-neutral-300);
@@ -203,14 +218,4 @@
   --color-info-bg: var(--color-info-950);
   --color-info-border: var(--color-info-800);
   --color-info-solid: var(--color-info-500);
-}
-
-/* ─── Typography: Geist font family ─────────────────────────────────────────── */
-:root {
-  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Geist Mono', 'Fira Code', monospace;
-}
-
-* {
-  font-family: var(--font-sans);
 }

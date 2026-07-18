@@ -1,0 +1,10 @@
+/* BarChart.module.css — force Geist on Recharts SVG text (axis ticks, legend, labels). */
+.chart {
+  width: 100%;
+  font-family: var(--font-sans);
+}
+/* Recharts renders labels as SVG <text>; SVG text does not inherit font-family reliably,
+ * so target it explicitly. */
+.chart text {
+  font-family: var(--font-sans) !important;
+}

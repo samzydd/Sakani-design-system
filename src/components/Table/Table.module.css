@@ -1,0 +1,118 @@
+/* Table.module.css — Geist (via --font-sans), Figma-accurate alignment.
+ * Header bg/canvas 44px overline; body rows 44px body/sm; border/subtle dividers.
+ * Checkbox: 18px radius-sm, bg/surface, shadow/sm drop shadow, accent fill when on.
+ */
+
+.wrap {
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+}
+.table th,
+.table td {
+  font-family: var(--font-sans);
+  vertical-align: middle;   /* consistent vertical centering across all cells */
+  box-sizing: border-box;
+}
+
+/* ─── Header ── */
+.headerRow { background: var(--color-bg-canvas); }
+.headerCell {
+  height: 44px;
+  padding: var(--space-12) var(--space-16);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-fg-muted);
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* ─── Body ── */
+.bodyRow { transition: background-color 100ms ease-out; }
+.bodyRow:hover { background: var(--color-bg-subtle); }
+.bodyRow--selected { background: var(--color-accent-subtle); }
+.bodyCell {
+  height: 44px;
+  padding: var(--space-12) var(--space-16);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-fg-default);
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+  vertical-align: middle;
+}
+.bodyRow:last-child .bodyCell { border-bottom: none; }
+
+/* ─── Checkbox cell — fixed width, content vertically + horizontally centered ── */
+.checkCell {
+  width: 48px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+.bodyRow:last-child .checkCell { border-bottom: none; }
+
+/* ─── Custom checkbox (Figma: shadow/sm, not a hard stroke) ── */
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.checkbox__input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+.checkbox__box {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+  box-shadow:
+    0 1px 3px rgba(16, 15, 12, 0.10),
+    0 1px 2px rgba(16, 15, 12, 0.06);
+  color: var(--color-fg-on-accent);
+  transition: background-color 120ms ease-out, border-color 120ms ease-out;
+}
+
+.checkbox__input:checked + .checkbox__box,
+.checkbox__input:indeterminate + .checkbox__box {
+  background: var(--color-accent-default);
+  border-color: var(--color-accent-default);
+}
+
+.checkbox__check {
+  position: absolute; inset: 0; margin: auto;
+  opacity: 0; transition: opacity 100ms ease-out;
+}
+.checkbox__input:checked + .checkbox__box .checkbox__check { opacity: 1; }
+.checkbox__input:indeterminate + .checkbox__box .checkbox__check { opacity: 0; }
+
+.checkbox__dash {
+  position: absolute; inset: 0; margin: auto;
+  width: 10px; height: 2px; border-radius: 1px;
+  background: currentColor; opacity: 0;
+}
+.checkbox__input:indeterminate + .checkbox__box .checkbox__dash { opacity: 1; }
+
+.checkbox__input:focus-visible + .checkbox__box {
+  outline: none;
+  box-shadow:
+    0 1px 3px rgba(16, 15, 12, 0.10),
+    0 1px 2px rgba(16, 15, 12, 0.06),
+    0 0 0 3px var(--color-accent-subtle);
+}
