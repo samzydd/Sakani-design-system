@@ -1,0 +1,48 @@
+/* Stepper — 28px circles, accent completed / ringed current / muted upcoming. */
+.stepper { display: flex; font-family: var(--font-sans); }
+.stepper--horizontal { flex-direction: row; align-items: flex-start; }
+.stepper--vertical { flex-direction: column; }
+
+.step { display: flex; gap: var(--space-8); }
+.step--horizontal { flex-direction: column; align-items: center; text-align: center; flex-shrink: 0; }
+.step--vertical { flex-direction: row; align-items: flex-start; }
+
+/* Circle */
+.circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 500;
+}
+.circle__num { line-height: 1; }
+
+.circle--completed { background: var(--color-accent-default); color: var(--color-fg-on-accent); }
+.circle--current {
+  background: var(--color-bg-surface);
+  border: 2px solid var(--color-accent-default);
+  color: var(--color-fg-default);
+}
+.circle--upcoming {
+  background: var(--color-bg-subtle);
+  border: var(--border-width-150) solid var(--color-border-default);
+  color: var(--color-fg-muted);
+}
+
+/* Labels */
+.step__text { display: flex; flex-direction: column; gap: 2px; }
+.step__label { font-size: 13px; font-weight: 500; color: var(--color-fg-default); }
+.step__label--current { font-weight: 600; }
+.step__label--upcoming { color: var(--color-fg-muted); }
+.step__desc { font-size: 12px; color: var(--color-fg-muted); }
+
+/* Connectors */
+.connector { background: var(--color-bg-muted); flex: 1; }
+.connector--horizontal { height: 2px; margin-top: 13px; min-width: 24px; }
+.connector--vertical { width: 2px; margin-left: 13px; min-height: 24px; }
+.connector--filled { background: var(--color-accent-default); }

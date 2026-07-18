@@ -1,0 +1,47 @@
+/* Calendar — 288px container radius-xl; 36px day cells with Figma state colors. */
+.calendar {
+  width: 288px;
+  padding: var(--space-12);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-sans);
+  box-sizing: border-box;
+}
+
+/* Header */
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-8); }
+.header__label { font-size: 14px; font-weight: 600; color: var(--color-fg-default); }
+.navBtn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: var(--radius-sm);
+  border: var(--border-width-100) solid var(--color-border-default);
+  background: var(--color-bg-surface); color: var(--color-fg-muted); cursor: pointer;
+}
+.navBtn:hover { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+
+/* Weekdays */
+.weekdays { display: grid; grid-template-columns: repeat(7, 1fr); margin-bottom: var(--space-2); }
+.weekday {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 24px; font-size: 11px; font-weight: 500; color: var(--color-fg-subtle);
+}
+
+/* Day grid */
+.grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.day {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; margin: 0 auto;
+  border: none; background: transparent; border-radius: var(--radius-md);
+  cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 500;
+  color: var(--color-fg-default);
+  transition: background-color 100ms ease-out;
+}
+.day--default:hover { background: var(--color-bg-subtle); }
+.day--hover { background: var(--color-bg-subtle); }
+.day--selected { background: var(--color-accent-default); color: var(--color-fg-on-accent); font-weight: 600; }
+.day--today { border: var(--border-width-150) solid var(--color-brand-default); color: var(--color-brand-fg); font-weight: 600; }
+.day--in-range { background: var(--color-accent-subtle); border-radius: 0; }
+.day--outside { color: var(--color-fg-subtle); }
+.day--disabled { color: var(--color-fg-subtle); opacity: var(--opacity-60); cursor: not-allowed; }

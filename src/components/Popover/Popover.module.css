@@ -1,0 +1,30 @@
+/* Popover — bg/surface, border/subtle, radius-md, padding 16, gap 10, shadow/lg. */
+.root { position: relative; display: inline-flex; }
+.trigger { display: inline-flex; cursor: pointer; }
+
+.panel {
+  position: absolute;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  min-width: 240px;
+  max-width: 320px;
+  padding: var(--space-16);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-sans);
+}
+
+/* Placements */
+.panel--bottom       { top: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
+.panel--bottom-start { top: calc(100% + 8px); left: 0; }
+.panel--bottom-end   { top: calc(100% + 8px); right: 0; }
+.panel--top          { bottom: calc(100% + 8px); left: 0; }
+
+.panel__title { font-size: 14px; font-weight: 600; color: var(--color-fg-default); }
+.panel__description { font-size: 13px; line-height: 18px; color: var(--color-fg-muted); }
+.panel__body { font-size: 14px; color: var(--color-fg-default); }
+.panel__actions { display: flex; gap: var(--space-8); justify-content: flex-end; }

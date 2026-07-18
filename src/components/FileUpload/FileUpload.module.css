@@ -1,0 +1,51 @@
+/* FileUpload — dashed dropzone radius-md; upload icon; label/md + body/xs hint. */
+.wrap { display: flex; flex-direction: column; gap: var(--space-12); font-family: var(--font-sans); }
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  padding: var(--space-24) var(--space-16);
+  min-height: 160px;
+  background: var(--color-bg-surface);
+  /* Dashed border via the token color */
+  border: var(--border-width-150) dashed var(--color-border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 120ms ease-out, border-color 120ms ease-out;
+}
+.dropzone:hover { background: var(--color-bg-subtle); border-color: var(--color-border-strong); }
+.dropzone--dragging { background: var(--color-accent-subtle); border-color: var(--color-accent-default); }
+
+.dropzone__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: var(--radius-full);
+  background: var(--color-bg-subtle); color: var(--color-fg-muted); margin-bottom: var(--space-2);
+}
+.dropzone__label { font-size: 14px; font-weight: 500; color: var(--color-fg-default); }
+.dropzone__link { color: var(--color-brand-default); }
+.dropzone__hint { font-size: 12px; color: var(--color-fg-muted); }
+
+.input { display: none; }
+
+/* Selected file rows */
+.files { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-8); }
+.file {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-10) var(--space-12);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+}
+.file__icon { display: inline-flex; color: var(--color-fg-muted); flex-shrink: 0; }
+.file__name { flex: 1; font-size: 13px; color: var(--color-fg-default); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file__remove {
+  display: inline-flex; border: none; background: transparent; color: var(--color-fg-muted);
+  cursor: pointer; padding: 2px; border-radius: var(--radius-sm); flex-shrink: 0;
+}
+.file__remove:hover { color: var(--color-danger-fg); background: var(--color-bg-subtle); }
