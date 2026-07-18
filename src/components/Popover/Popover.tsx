@@ -30,6 +30,7 @@ export const Popover: React.FC<PopoverProps> = ({
 }) => {
   const [open, setOpen] = React.useState(false);
   const rootRef = React.useRef<HTMLDivElement>(null);
+  const lastFocus = React.useRef<HTMLElement | null>(null);
 
   React.useEffect(() => {
     if (!open) return;
@@ -37,12 +38,17 @@ export const Popover: React.FC<PopoverProps> = ({
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('mousedown', onDoc);
     document.addEventListener('keydown', onKey);
-    return () => { document.removeEventListener('mousedown', onDoc); document.removeEventListener('keydown', onKey); };
+    // Restore focus to the trigger when the popover closes (keyboard UX).
+  React.useEffect(() => {
+    if (!open && lastFocus.current) { lastFocus.current.focus(); lastFocus.current = null; }
+  }, [open]);
+
+  return () => { document.removeEventListener('mousedown', onDoc); document.removeEventListener('keydown', onKey); };
   }, [open]);
 
   return (
     <div className={[styles.root, className ?? ''].filter(Boolean).join(' ')} ref={rootRef}>
-      <span className={styles.trigger} onClick={() => setOpen((o) => !o)}>{trigger}</span>
+      <span className={styles.trigger} onClick={() => { if (!open) lastFocus.current = document.activeElement as HTMLElement; setOpen((o) => !o); }}>{trigger}</span>
 
       {open && (
         <div className={[styles.panel, styles[`panel--${placement}`]].join(' ')} role="dialog">

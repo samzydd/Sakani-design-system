@@ -148,6 +148,8 @@ export const Combobox: React.FC<ComboboxProps> = ({
           aria-invalid={hasError || undefined}
           role="combobox"
           aria-controls={`${reactId}-panel`}
+          aria-autocomplete="list"
+          aria-activedescendant={open && filtered[activeIndex] ? `${reactId}-opt-${activeIndex}` : undefined}
           onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
           onKeyDown={onKeyDown}
           onFocus={() => !disabled && setOpen(true)}
@@ -170,6 +172,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
               return (
                 <div
                   key={opt.value}
+                  id={`${reactId}-opt-${i}`}
                   role="option"
                   aria-selected={isSelected}
                   className={[

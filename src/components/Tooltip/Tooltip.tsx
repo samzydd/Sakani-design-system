@@ -37,8 +37,21 @@ export interface TooltipProps {
 
 export const Tooltip: React.FC<TooltipProps> = ({
   title, subtitle, pointer = 'top-center', children, className,
-}) => (
-  <span className={[styles.wrapper, className ?? ''].filter(Boolean).join(' ')}>
+}) => {
+  // WCAG 1.4.13 — hover/focus content must be dismissible without moving the pointer.
+  const [dismissed, setDismissed] = React.useState(false);
+  React.useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setDismissed(true); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
+  return (
+  <span
+    className={[styles.wrapper, className ?? ''].filter(Boolean).join(' ')}
+    data-dismissed={dismissed || undefined}
+    onMouseLeave={() => setDismissed(false)}
+    onBlur={() => setDismissed(false)}
+  >
     {children}
 
     <span role="tooltip" className={[styles.bubble, styles[`bubble--${pointer}`]].join(' ')}>
@@ -48,6 +61,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
       <span className={[styles.caret, styles[`caret--${pointer}`]].join(' ')} aria-hidden="true" />
     </span>
   </span>
-);
+  );
+};
 
 export default Tooltip;

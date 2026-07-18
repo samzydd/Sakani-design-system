@@ -4,6 +4,9 @@
  * caret: 12x6 (top/bottom) or 6x12 (center sides), bg/inverse, 8px gap to trigger
  */
 
+/* Escape-dismissed: force-hide until pointer leaves (WCAG 1.4.13) */
+.wrapper[data-dismissed] .bubble { opacity: 0 !important; visibility: hidden !important; }
+
 .wrapper {
   position: relative;
   display: inline-flex;

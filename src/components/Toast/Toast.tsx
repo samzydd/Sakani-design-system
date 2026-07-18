@@ -34,7 +34,8 @@ export const Toast: React.FC<ToastProps> = ({
   status = 'info', title, description, onDismiss, className,
 }) => (
   <div
-    role="status"
+    role={status === 'error' ? 'alert' : 'status'}
+    aria-live={status === 'error' ? 'assertive' : 'polite'}
     className={[styles.toast, styles[`toast--${status}`], className ?? ''].filter(Boolean).join(' ')}
   >
     <span className={styles.toast__icon} aria-hidden="true">

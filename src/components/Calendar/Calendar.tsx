@@ -94,6 +94,7 @@ export const Calendar: React.FC<CalendarProps> = ({
               disabled={state === 'disabled'}
               aria-current={state === 'today' ? 'date' : undefined}
               aria-selected={state === 'selected'}
+              aria-label={d.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
               onClick={() => onChange?.(d)}
             >
               {d.getDate()}

@@ -80,7 +80,7 @@
   --color-bg-inverse: var(--color-neutral-900);
   --color-fg-default: var(--color-neutral-900);
   --color-fg-muted: var(--color-neutral-600);
-  --color-fg-subtle: var(--color-neutral-400);
+  --color-fg-subtle: var(--color-neutral-500); /* was neutral-400 (2.53:1) — AA fix */
   --color-fg-on-accent: var(--color-base-white);
   --color-fg-on-inverse: var(--color-neutral-50);
   --color-border-subtle: var(--color-neutral-200);
@@ -218,4 +218,25 @@
   --color-info-bg: var(--color-info-950);
   --color-info-border: var(--color-info-800);
   --color-info-solid: var(--color-info-500);
+}
+
+/* ── Global accessibility baseline ─────────────────────────────────────────── */
+
+/* Consistent, token-driven focus ring on every interactive element.
+ * :where() keeps specificity at 0 so component-specific rings still win. */
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--color-bg-surface),
+    0 0 0 4px var(--color-border-focus);
+}
+
+/* Respect the user's motion preference (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
