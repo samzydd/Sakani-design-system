@@ -32,3 +32,12 @@ export const Error: Story = { args: { error: 'This field is required.' } };
 export const Disabled: Story = { args: { disabled: true } };
 export const Small: Story = { args: { size: 'sm' } };
 export const Large: Story = { args: { size: 'lg' } };
+
+/** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
+export const DarkMode: Story = {
+  decorators: [(S) => (
+    <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
+      <S />
+    </div>
+  )],
+};

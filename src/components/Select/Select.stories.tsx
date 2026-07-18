@@ -20,16 +20,16 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const WithLabel: Story = { args: { label: 'Label', description: 'Help text goes here.' } };
-export const Filled: Story = { args: { label: 'Label', defaultValue: 'ng' } };
-export const Error: Story = { args: { label: 'Label', error: 'Help text goes here.' } };
-export const Disabled: Story = { args: { label: 'Label', disabled: true } };
-export const AllSizes: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, width: 300 }}>
-      <Select size="sm" label="Small"  placeholder="Select option" options={options} />
-      <Select size="md" label="Medium" placeholder="Select option" options={options} />
-      <Select size="lg" label="Large"  placeholder="Select option" options={options} />
+export const WithLabel: Story = { args: { label: 'Country', description: 'Where are you based?' } };
+export const Filled: Story = { args: { label: 'Country', defaultValue: 'ng' } };
+export const Error: Story = { args: { label: 'Country', error: 'Please select a country.' } };
+export const Disabled: Story = { args: { label: 'Country', disabled: true } };
+
+/** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
+export const DarkMode: Story = {
+  decorators: [(S) => (
+    <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
+      <S />
     </div>
-  ),
+  )],
 };

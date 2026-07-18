@@ -10,15 +10,27 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Horizontal: Story = {};
-export const WithLabel:  Story = { args: { label: 'or' } };
+export const Horizontal: Story = {
+  render: () => (
+    <div style={{ width: 320 }}><Divider /></div>
+  ),
+};
+
 export const Vertical: Story = {
-  args: { orientation: 'vertical' },
-  render: (args) => (
+  render: () => (
     <div style={{ display: 'flex', height: 48, alignItems: 'center', gap: 16 }}>
       <span>Left</span>
-      <Divider {...args} />
+      <Divider orientation="vertical" />
       <span>Right</span>
     </div>
   ),
+};
+
+/** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
+export const DarkMode: Story = {
+  decorators: [(S) => (
+    <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
+      <S />
+    </div>
+  )],
 };

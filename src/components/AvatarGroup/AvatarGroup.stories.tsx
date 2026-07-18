@@ -24,3 +24,12 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 export const WithOverflow: Story = { args: { max: 3 } };
 export const Large: Story = { args: { size: 'lg', max: 4 } };
+
+/** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
+export const DarkMode: Story = {
+  decorators: [(S) => (
+    <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
+      <S />
+    </div>
+  )],
+};

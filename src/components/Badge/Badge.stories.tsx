@@ -45,3 +45,12 @@ export const AllVariants: Story = {
     );
   },
 };
+
+/** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
+export const DarkMode: Story = {
+  decorators: [(S) => (
+    <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
+      <S />
+    </div>
+  )],
+};

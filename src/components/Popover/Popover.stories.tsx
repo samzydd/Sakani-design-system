@@ -33,3 +33,12 @@ type Story = StoryObj<typeof meta>;
 export const OneButton: Story = { args: { actions: <Btn primary>Got it</Btn> } };
 export const TwoButtons: Story = { args: { actions: <><Btn>Cancel</Btn><Btn primary>Confirm</Btn></> } };
 export const ThreeButtons: Story = { args: { actions: <><Btn>Back</Btn><Btn>Skip</Btn><Btn primary>Next</Btn></> } };
+
+/** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
+export const DarkMode: Story = {
+  decorators: [(S) => (
+    <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
+      <S />
+    </div>
+  )],
+};
