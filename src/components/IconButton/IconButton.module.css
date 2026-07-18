@@ -1,0 +1,35 @@
+/* IconButton — square, radius-sm; sizes 32/40/48; variant colors mirror Button. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: var(--border-width-100) solid transparent;
+  cursor: pointer;
+  transition: background-color 120ms ease-out, color 120ms ease-out, border-color 120ms ease-out;
+  flex-shrink: 0;
+  padding: 0;
+}
+.button:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus); }
+.button:disabled { opacity: var(--opacity-60); cursor: not-allowed; }
+
+/* Sizes (square) */
+.button--sm { width: 32px; height: 32px; }
+.button--md { width: 40px; height: 40px; }
+.button--lg { width: 48px; height: 48px; }
+
+/* Variants */
+.button--primary { background: var(--color-accent-default); color: var(--color-fg-on-accent); border-color: var(--color-accent-default); }
+.button--primary:hover:not(:disabled) { background: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+
+.button--secondary { background: var(--color-bg-subtle); color: var(--color-fg-default); border-color: var(--color-border-default); }
+.button--secondary:hover:not(:disabled) { background: var(--color-bg-muted); }
+
+.button--outline { background: transparent; color: var(--color-fg-default); border-color: var(--color-border-default); }
+.button--outline:hover:not(:disabled) { background: var(--color-bg-subtle); }
+
+.button--ghost { background: transparent; color: var(--color-fg-muted); border-color: transparent; }
+.button--ghost:hover:not(:disabled) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+
+.button--destructive { background: var(--color-danger-solid); color: var(--color-fg-on-accent); border-color: var(--color-danger-solid); }
+.button--destructive:hover:not(:disabled) { background: var(--color-danger-fg); border-color: var(--color-danger-fg); }

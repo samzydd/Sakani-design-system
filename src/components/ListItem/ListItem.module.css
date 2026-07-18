@@ -1,0 +1,24 @@
+/* ListItem — bg/surface, radius-sm, padding 10/12, gap 12; title label/md, desc body/xs. */
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+  padding: var(--space-10) var(--space-12);
+  border: none;
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  text-align: left;
+  transition: background-color 120ms ease-out;
+}
+.item:hover:not(.item--disabled) { background: var(--color-bg-subtle); }
+.item--selected { background: var(--color-accent-subtle); }
+.item--disabled { opacity: var(--opacity-60); cursor: not-allowed; }
+
+.item__leading { display: inline-flex; align-items: center; flex-shrink: 0; color: var(--color-fg-muted); }
+.item__text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.item__title { font-size: 14px; font-weight: 500; line-height: 20px; color: var(--color-fg-default); }
+.item__description { font-size: 13px; line-height: 18px; color: var(--color-fg-muted); }
+.item__trailing { display: inline-flex; align-items: center; flex-shrink: 0; }

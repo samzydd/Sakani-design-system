@@ -1,0 +1,48 @@
+/* Pagination — 32px buttons, radius-sm, bg/surface + border/subtle; active accent. */
+.pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: var(--font-sans);
+}
+
+.page, .arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 var(--space-6);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  transition: background-color 120ms ease-out, color 120ms ease-out, border-color 120ms ease-out;
+}
+.page:hover:not(.page--active), .arrow:hover:not(:disabled) {
+  background: var(--color-bg-subtle);
+  border-color: var(--color-border-default);
+}
+
+/* Active page — accent fill */
+.page--active {
+  background: var(--color-accent-default);
+  border-color: var(--color-accent-default);
+  color: var(--color-fg-on-accent);
+}
+
+.arrow:disabled { opacity: var(--opacity-60); cursor: not-allowed; }
+
+.ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  color: var(--color-fg-subtle);
+  font-size: 14px;
+}

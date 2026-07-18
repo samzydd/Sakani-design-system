@@ -1,0 +1,33 @@
+/* SegmentedControl — track bg/subtle radius-md pad 4 gap 2; active seg bg/surface radius-sm. */
+.track {
+  display: inline-flex;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+}
+
+.segment {
+  flex: 1;
+  padding: var(--space-6) var(--space-12);
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+  transition: background-color 120ms ease-out, color 120ms ease-out, box-shadow 120ms ease-out;
+}
+.segment:hover:not(.segment--active) { color: var(--color-fg-default); }
+
+/* Active — raised surface segment */
+.segment--active {
+  background: var(--color-bg-surface);
+  color: var(--color-fg-default);
+  box-shadow: 0 1px 2px rgba(16, 15, 12, 0.08);
+}

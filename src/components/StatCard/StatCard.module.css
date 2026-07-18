@@ -1,0 +1,52 @@
+/* StatCard — bg/surface, border/subtle, radius-xl, padding 12, gap 8.
+ * title label/sm fg/muted · value display/lg fg/default · delta trend-colored.
+ */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-12);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  font-family: var(--font-sans);
+  min-width: 200px;
+}
+
+/* Featured style — subtle tinted background */
+.card--featured { background: var(--color-accent-subtle); }
+
+.card__head { display: flex; align-items: center; gap: var(--space-8); }
+.card__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  background: var(--color-bg-subtle);
+  color: var(--color-fg-default);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+.card__title { flex: 1; font-size: 13px; font-weight: 500; color: var(--color-fg-muted); }
+.card__menu {
+  display: inline-flex; border: none; background: transparent; color: var(--color-fg-muted);
+  cursor: pointer; padding: var(--space-2); border-radius: var(--radius-sm); flex-shrink: 0;
+}
+.card__menu:hover { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+
+.card__value {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-fg-default);
+  letter-spacing: -0.02em;
+}
+
+.card__delta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: 13px;
+  font-weight: 500;
+}
+.card__delta--up   { color: var(--color-success-fg); }
+.card__delta--down { color: var(--color-danger-fg); }
+.card__delta--flat { color: var(--color-fg-muted); }
