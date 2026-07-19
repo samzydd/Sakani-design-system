@@ -2,7 +2,7 @@
 
 An open-source, token-driven React component library for SaaS products — **45+ accessible components**, light/dark theming, and a fully documented design system built in Figma.
 
-**[Live Storybook →](https://6a5a658b3681fcc010430db5-jmmrgsbvko.chromatic.com/)** · **[Figma file →](https://www.figma.com/design/Fd3uY263mEQKnaTEfrzQxh/)**
+**[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/design/Fd3uY263mEQKnaTEfrzQxh/)**
 
 ![License](https://img.shields.io/badge/license-MIT-blue) ![React](https://img.shields.io/badge/React-18-61dafb) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6) ![Storybook](https://img.shields.io/badge/Storybook-10-ff4785)
 
