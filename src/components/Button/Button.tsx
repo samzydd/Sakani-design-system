@@ -91,8 +91,19 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         aria-busy={loading}
         {...rest}
       >
+        {/* Loading spinner — replaces the icon slots, inherits the label color
+            (currentColor), sizes 14/16/18 per button size. Matches the Figma
+            State=Loading variants. */}
+        {loading && (
+          <span className={[styles.button__icon, styles.button__spinner].join(' ')} aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round">
+              <path d="M12 3a9 9 0 1 1-6.36 2.64" />
+            </svg>
+          </span>
+        )}
+
         {/* Left icon slot — renders any ReactNode (typically a 16px Lucide icon) */}
-        {leftIcon && (
+        {leftIcon && !loading && (
           <span className={styles.button__icon} aria-hidden="true">
             {leftIcon}
           </span>
@@ -102,7 +113,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         <span className={styles.button__label}>{children}</span>
 
         {/* Right icon slot */}
-        {rightIcon && (
+        {rightIcon && !loading && (
           <span className={styles.button__icon} aria-hidden="true">
             {rightIcon}
           </span>

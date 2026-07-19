@@ -31,7 +31,7 @@
   border-width: var(--border-width-100);
 
   /* Text */
-  font-family: var(--font-sans);
+  font-family: inherit;
   font-weight: 500;
   white-space: nowrap;
   text-decoration: none;
@@ -55,8 +55,7 @@
   box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
 }
 
-.button:disabled,
-.button--loading {
+.button:disabled {
   opacity: var(--opacity-60);
   cursor: not-allowed;
   pointer-events: none;
@@ -151,8 +150,8 @@
 }
 
 .button--destructive:hover:not(:disabled) {
-  background-color: var(--color-danger-border);
-  border-color: var(--color-danger-border);
+  background-color: var(--color-danger-fg);
+  border-color: var(--color-danger-fg);
 }
 
 .button--destructive:active:not(:disabled) {
@@ -208,3 +207,23 @@
   display: inline-flex;
   align-items: center;
 }
+
+/* ── Loading state ──
+ * Interaction is blocked (the disabled attribute is set), but the button keeps
+ * its full colors — matching the Figma State=Loading variants. The spinner
+ * inherits the label color via currentColor.
+ */
+.button--loading:disabled {
+  opacity: 1;
+  cursor: progress;
+}
+.button__spinner svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  transform-origin: center;
+  animation: sakani-btn-spin 0.7s linear infinite;
+}
+.button--sm .button__spinner svg { width: 14px; height: 14px; }
+.button--lg .button__spinner svg { width: 18px; height: 18px; }
+@keyframes sakani-btn-spin { to { transform: rotate(360deg); } }
