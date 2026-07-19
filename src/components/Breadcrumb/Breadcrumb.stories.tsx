@@ -34,6 +34,7 @@ export const DeepTrail: Story = {
 
 /** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
 export const DarkMode: Story = {
+  args: { items: [{ label: 'Home', href: '#' }, { label: 'Projects', href: '#' }, { label: 'Current' }] },
   decorators: [(S) => (
     <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
       <S />
