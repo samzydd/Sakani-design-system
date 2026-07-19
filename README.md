@@ -1,68 +1,107 @@
 # Sakani Design System
 
-An open-source, token-driven React component library for SaaS products — with light/dark theming and a fully documented design system built in Figma.
+An open-source, token-driven React component library for SaaS products — **45+ accessible components**, light/dark theming, and a fully documented design system built in Figma.
 
-**Sakani** is built on a three-layer token architecture:
+**[Live Storybook →](https://6a5a658b3681fcc010430db5-jmmrgsbvko.chromatic.com/)** · **[Figma file →](https://www.figma.com/design/Fd3uY263mEQKnaTEfrzQxh/)**
 
-1. **Primitives** (`--color-primary-500`, `--space-16`, `--radius-md`) hold raw values and are never used directly by components.
-2. **Semantic tokens** (`--color-bg-surface`, `--color-fg-muted`, `--color-accent-default`) alias primitives and carry light/dark modes. Components consume **only** this layer.
-3. **Components** bind to semantic tokens — so theming, dark mode, and even a full rebrand are a single-layer change, never a component rewrite.
+![License](https://img.shields.io/badge/license-MIT-blue) ![React](https://img.shields.io/badge/React-18-61dafb) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6) ![Storybook](https://img.shields.io/badge/Storybook-10-ff4785)
 
-## Status
+---
 
-🚧 **In active development.** Components are being converted from the Figma source of truth one at a time. Follow along — each component lands with its Storybook stories.
+## Why Sakani
 
-## Getting started
+Most component libraries start in code and retrofit the design. Sakani was built the other way: every component was designed first in Figma with a strict three-layer token architecture, then implemented 1:1 in React — same variants, same states, same tokens. The Figma file and the code library are mirrors of each other.
+
+- **Token-driven** — components bind only to semantic tokens (`bg/surface`, `fg/muted`, `accent/default`…), so the entire library re-themes from one place
+- **Light & dark mode** — add the `.dark` class to any container; every component re-themes automatically, no per-component dark styles
+- **Accessible by default** — WCAG AA contrast audited, global focus-ring system, `prefers-reduced-motion` support, full ARIA semantics (combobox active-descendant, calendar date labels, live-region toasts, focus-return popovers)
+- **Typed & composable** — strict TypeScript, generic `Table<T>`, slot-based composition, controlled + uncontrolled patterns
+- **Geist typography** and **Lucide icons** throughout, matching the Figma source exactly
+
+## Quick start
 
 ```bash
-# install dependencies
+git clone https://github.com/samzydd/Sakani-design-system.git
+cd Sakani-design-system
 npm install
-
-# run Storybook (the component workshop)
 npm run storybook
 ```
 
-## Tokens
+Storybook opens at `http://localhost:6006` with every component, all variants, and dark-mode stories.
 
-All design tokens live in [`src/styles/tokens.css`](src/styles/tokens.css) as CSS custom properties:
+## Usage
 
-- **Color** — primitives + semantic layer, light and dark (`.dark` class flips only the semantic layer)
-- **Spacing** — 4-point grid with half-steps (`--space-0` … `--space-96`)
-- **Radius** — `--radius-none` … `--radius-full`
-- **Typography** — Inter-based scale (display / heading / body / label / caption)
-- **Elevation** — `--shadow-xs` … `--shadow-2xl` + directional
-- **Opacity** — `--opacity-0 / 45 / 60 / 70 / 100` for disabled states and layering
-- **Border width** — `--border-width-050` … `--border-width-600`
+Components live in `src/components`, tokens in `src/styles/tokens.css`. Import the tokens once, then use any component:
 
-A Style-Dictionary-compatible export lives in [`src/styles/tokens.json`](src/styles/tokens.json).
+```tsx
+import '@/styles/tokens.css';
+import { Button } from '@/components/Button';
+import { StatCard } from '@/components/StatCard';
+import { DollarSign } from 'lucide-react';
+
+export const Dashboard = () => (
+  <>
+    <StatCard
+      variant="icon"
+      icon={DollarSign}
+      title="Revenue"
+      value="$48,120"
+      delta="+12.5%"
+      trend="up"
+      sparkline={[12, 18, 14, 22, 19, 28]}
+    />
+    <Button variant="primary" size="md">Get started</Button>
+  </>
+);
+```
 
 ### Dark mode
 
-Add `class="dark"` to `<html>` — every component re-themes with zero component-level changes:
-
-```html
-<html class="dark">
+```tsx
+<div className="dark">
+  {/* everything inside re-themes automatically */}
+</div>
 ```
 
-### Usage example
+## Token architecture
 
-```css
-.button-primary {
-  background: var(--color-accent-default);
-  color: var(--color-fg-on-accent);
-  border-radius: var(--radius-md);
-  padding: var(--space-8) var(--space-16);
-}
-```
+Three layers, defined in Figma and exported to `tokens.css`:
 
-## Design source
+1. **Primitives** — raw scales (`neutral/50–950`, `primary/…`, spacing, radii)
+2. **Semantic** — purpose-named aliases that flip between light and dark (`bg/surface`, `fg/default`, `border/subtle`, `accent/default`, `chart/1–5`)
+3. **Components** — bind *only* to semantic tokens, never to primitives
 
-The system is designed and maintained in Figma — every component in this library mirrors a fully token-bound Figma component with matching variants, states, and properties.
+Change a semantic token and every component follows — in both the design file and the code.
+
+## Components (45+)
+
+**Core** — Button · Icon Button · Badge · Label · Divider · Link · Kbd · Spinner · Skeleton · Progress · Tooltip · Avatar · Avatar Group
+
+**Forms** — Input · Textarea · Select · Checkbox · Radio · Switch · Slider · Combobox (single/multi, async loading) · File Upload
+
+**Composite** — Card · Alert · Toast · Accordion · Tabs · Breadcrumb · Table (generic, selectable) · Stat Card (sparklines) · Stepper · Calendar (single + range, dropdown navigation) · Pagination · Popover · Segmented Control · List Item
+
+**Sidebar kit** — Sidebar · Header · Search · Item · Sub Item · Group Label · Divider · Promo · Footer — nine standalone parts that compose into full navigation
+
+**Charts** — Bar · Line · Donut — Recharts wrappers styled entirely with the `chart/1–5` tokens
+
+## Accessibility
+
+The library ships with an audited AA baseline: contrast-checked token pairs in both modes, a global token-driven focus ring on every interactive element, reduced-motion support, Escape-dismissible tooltips, screen-reader-tracked combobox options, full-date calendar labels, assertive error toasts, and focus-returning popovers. See the Storybook docs tab on each component for its ARIA contract.
+
+## Roadmap
+
+- [ ] npm package (`@sakani/react`)
+- [ ] Figma Community publication
+- [ ] Theming CLI (custom brand token generation)
+- [ ] Vue port
 
 ## Author
 
-**Samuel Okpere** — product designer & design systems specialist.
+**Sam Okpere** — senior UI/UX & design systems designer
+
+[Portfolio](https://samdesignworks.framer.website) · [Dribbble](https://dribbble.com/samthedes) · [LinkedIn](https://www.linkedin.com/in/samuel-okpere) · [GitHub](https://github.com/samzydd)
 
 ## License
 
-MIT
+MIT — free for personal and commercial use. If Sakani saves you time, a star ⭐ helps others find it.
