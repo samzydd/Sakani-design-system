@@ -11,6 +11,7 @@
 
 /* ─── Control ── */
 .control {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: var(--space-6);
@@ -19,17 +20,17 @@
   border-radius: var(--radius-md);
   padding: 0 var(--space-12) 0 var(--space-14);
   cursor: text;
-  transition: border-color 120ms ease-out, box-shadow 120ms ease-out;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 .control--sm { min-height: 32px; }
 .control--md { min-height: 40px; }
 .control--lg { min-height: 48px; }
 
 .control--open,
-.control:focus-within {
-  border-color: var(--color-border-focus);
+.control:focus-visible {
+  border-color: var(--color-border-default);
   border-width: var(--border-width-150);
-  box-shadow: 0 0 0 3px var(--color-accent-subtle);
+  box-shadow: var(--shadow-sm);
 }
 .control--error {
   border-color: var(--color-danger-solid);
@@ -41,6 +42,17 @@
   opacity: var(--opacity-60);
 }
 
+.control__value {
+  flex: 1 1 auto;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+.control__value--placeholder { color: var(--color-fg-subtle); font-weight: 400; }
 .control__input {
   flex: 1;
   min-width: 60px;
@@ -53,9 +65,9 @@
   color: var(--color-fg-default);
   padding: var(--space-10) 0;
 }
-.control__input::placeholder { color: var(--color-fg-subtle); font-weight: 500; }
+.control__input::placeholder { color: var(--color-fg-subtle); font-weight: 400; }
 
-.control__chevron { display: inline-flex; color: var(--color-fg-muted); transition: transform 160ms ease-out; flex-shrink: 0; }
+.control__chevron { display: inline-flex; color: var(--color-fg-muted); transition: transform var(--transition-base); flex-shrink: 0; }
 .control__chevron--open { transform: rotate(180deg); }
 
 /* ─── Multi chips ── */

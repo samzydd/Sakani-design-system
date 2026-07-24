@@ -1,0 +1,39 @@
+/* MessageBubble.module.css */
+.row { display: flex; gap: var(--space-8); align-items: flex-start; max-width: 100%; }
+.row--sent { justify-content: flex-end; }
+.row__avatar { display: inline-flex; flex-shrink: 0; }
+.col { display: flex; flex-direction: column; gap: var(--space-4); max-width: 460px; }
+.row--sent .col { align-items: flex-end; }
+.meta { display: flex; align-items: center; gap: var(--space-6); }
+.meta__name { font-family: var(--font-sans); font-weight: 500; font-size: 11px; color: var(--color-fg-default); }
+.meta__time { font-family: var(--font-sans); font-size: 11px; color: var(--color-fg-subtle); }
+
+.bubble {
+  display: flex; flex-direction: column; gap: var(--space-8);
+  padding: var(--space-10) var(--space-12);
+  border-radius: var(--radius-lg);
+  max-width: 420px;
+}
+.bubble--received { background: var(--color-bg-subtle); color: var(--color-fg-default); border-bottom-left-radius: var(--radius-xs); }
+.bubble--sent { background: var(--color-accent-default); color: var(--color-fg-on-accent); border-bottom-right-radius: var(--radius-xs); }
+.bubble__text { font-family: var(--font-sans); font-size: 13px; line-height: 18px; }
+.bubble__image { border-radius: var(--radius-md); overflow: hidden; background: var(--color-bg-muted); }
+.bubble__image :global(img) { display: block; width: 100%; }
+
+.file { display: flex; align-items: center; gap: var(--space-10); padding: var(--space-8) var(--space-10); border-radius: var(--radius-md); background: var(--color-bg-surface); }
+.file__icon { color: var(--color-fg-muted); }
+.file__meta { display: flex; flex-direction: column; }
+.file__name { font-family: var(--font-sans); font-weight: 500; font-size: 11px; color: var(--color-fg-default); }
+.file__size { font-family: var(--font-sans); font-size: 11px; color: var(--color-fg-subtle); }
+.file__dl { color: var(--color-fg-muted); margin-left: auto; }
+
+.foot { display: flex; align-items: center; gap: var(--space-6); min-height: 0; }
+.foot__time { font-family: var(--font-sans); font-size: 11px; color: var(--color-fg-subtle); }
+.foot__receipt { color: var(--color-accent-default); }
+
+.system { display: flex; justify-content: center; }
+.system__pill {
+  padding: var(--space-4) var(--space-10); border-radius: var(--radius-full);
+  background: var(--color-bg-subtle); color: var(--color-fg-muted);
+  font-family: var(--font-sans); font-size: 11px;
+}

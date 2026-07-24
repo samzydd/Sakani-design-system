@@ -11,7 +11,7 @@
   cursor: pointer;
   font-family: var(--font-sans);
   text-align: left;
-  transition: background-color 120ms ease-out;
+  transition: background-color var(--transition-base);
 }
 .item:hover:not(.item--disabled) { background: var(--color-bg-subtle); }
 .item--selected { background: var(--color-accent-subtle); }

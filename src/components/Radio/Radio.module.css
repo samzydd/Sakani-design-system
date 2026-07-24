@@ -21,7 +21,7 @@
   background: var(--color-bg-surface);
   border: var(--border-width-100) solid var(--color-border-subtle);
   border-radius: var(--radius-full);
-  transition: border-color 120ms ease-out;
+  transition: border-color var(--transition-base);
 }
 
 /* Hover (Figma: Hover) */

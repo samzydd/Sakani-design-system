@@ -13,14 +13,16 @@
   cursor: text;
   box-sizing: border-box;
 }
-.search:focus-within { border-color: var(--color-border-focus); }
+.search:focus-within { border-color: var(--color-border-default); box-shadow: var(--shadow-sm); }
 
 .search__icon { color: var(--color-fg-muted); flex-shrink: 0; }
 .search__input {
   flex: 1; min-width: 0; border: none; outline: none; background: transparent;
   font-family: inherit; font-size: 14px; font-weight: 500; color: var(--color-fg-default);
 }
-.search__input::placeholder { color: var(--color-fg-subtle); }
+.search__input::placeholder { color: var(--color-fg-subtle);
+  font-weight: 400;
+}
 .search__placeholder { flex: 1; text-align: left; font-size: 14px; color: var(--color-fg-subtle); }
 .search__kbd {
   flex-shrink: 0;

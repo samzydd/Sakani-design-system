@@ -21,7 +21,7 @@
   font-size: 14px;
   font-weight: 500;
   color: var(--color-fg-default);
-  transition: background-color 120ms ease-out, color 120ms ease-out, border-color 120ms ease-out;
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
 }
 .page:hover:not(.page--active), .arrow:hover:not(:disabled) {
   background: var(--color-bg-subtle);

@@ -19,7 +19,7 @@
   height: 20px;
   background: var(--color-bg-muted);
   border-radius: var(--radius-full);
-  transition: background-color 140ms ease-out;
+  transition: background-color var(--transition-base);
 }
 
 /* On (Figma: On — accent/default) */

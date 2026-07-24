@@ -12,7 +12,7 @@
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-color: transparent;
-  transition: text-decoration-color 120ms ease-out, color 120ms ease-out;
+  transition: text-decoration-color var(--transition-base), color var(--transition-base);
   cursor: pointer;
 }
 

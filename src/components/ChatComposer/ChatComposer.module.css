@@ -1,0 +1,54 @@
+/* ChatComposer.module.css */
+.composer {
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
+  display: flex; flex-direction: column; gap: var(--space-8);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+}
+/* Typing/focus: NO accent border — neutral border + soft shadow only. */
+.composer--typing {
+  border: 1px solid var(--color-border-default) !important;
+  box-shadow: var(--shadow-sm);
+}
+/* Belt-and-braces: strip any focus ring the base input might emit. */
+.composer:focus-within {
+  border-color: var(--color-border-default);
+  box-shadow: var(--shadow-sm);
+}
+.input:focus, .input:focus-visible { outline: none; box-shadow: none; }
+.composer--disabled { opacity: 0.6; }
+
+.upload {
+  display: flex; align-items: center; gap: var(--space-10);
+  padding: var(--space-8) var(--space-10);
+  border-radius: var(--radius-md); background: var(--color-bg-subtle);
+}
+.upload__icon { color: var(--color-fg-muted); }
+.upload__body { display: flex; flex-direction: column; gap: var(--space-4); flex: 1 1 auto; }
+.upload__name { font-family: var(--font-sans); font-weight: 500; font-size: 11px; color: var(--color-fg-default); }
+.upload__track { height: 4px; border-radius: var(--radius-full); background: var(--color-bg-muted); overflow: hidden; }
+.upload__fill { height: 100%; background: var(--color-accent-default); border-radius: var(--radius-full); }
+
+.row { display: flex; align-items: center; gap: var(--space-6); }
+.icon {
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border: none; background: none;
+  color: var(--color-fg-muted); border-radius: var(--radius-md); cursor: pointer; flex-shrink: 0;
+}
+.icon:where(:hover):not(:disabled) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.icon:disabled { cursor: not-allowed; opacity: 0.5; }
+.input {
+  flex: 1 1 auto; border: none; background: none; outline: none;
+  font-family: var(--font-sans); font-size: 13px; color: var(--color-fg-default); padding: 0 var(--space-4);
+}
+.input::placeholder { color: var(--color-fg-subtle);
+  font-weight: 400;
+}
+.send {
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
+ background: var(--color-accent-default); color: var(--color-fg-on-accent); }
+.send:where(:hover):not(:disabled) { background: var(--color-accent-hover); color: var(--color-fg-on-accent); }
+.send:disabled { background: var(--color-bg-muted); color: var(--color-fg-subtle); opacity: 1; }

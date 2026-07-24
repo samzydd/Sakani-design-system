@@ -53,7 +53,6 @@ export const Combobox: React.FC<ComboboxProps> = ({
 }) => {
   const reactId = React.useId();
   const [open, setOpen] = React.useState(false);
-  const [query, setQuery] = React.useState('');
   const [activeIndex, setActiveIndex] = React.useState(0);
   const rootRef = React.useRef<HTMLDivElement>(null);
 
@@ -73,9 +72,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
     return () => document.removeEventListener('mousedown', onDoc);
   }, []);
 
-  const filtered = options.filter((o) =>
-    o.label.toLowerCase().includes(query.toLowerCase())
-  );
+  const filtered = options; // click-to-select: no text filtering
 
   const commit = (next: string | string[]) => {
     if (value === undefined) setInternal(next);
@@ -91,7 +88,6 @@ export const Combobox: React.FC<ComboboxProps> = ({
     } else {
       commit(opt.value);
       setOpen(false);
-      setQuery('');
     }
   };
 
@@ -112,16 +108,26 @@ export const Combobox: React.FC<ComboboxProps> = ({
 
   return (
     <div className={[styles.field, className ?? ''].filter(Boolean).join(' ')} ref={rootRef}>
-      {label && <label htmlFor={reactId} className={styles.field__label}>{label}</label>}
+      {label && <label htmlFor={`${reactId}-trigger`} className={styles.field__label}>{label}</label>}
 
       {/* Control */}
       <div
+        id={`${reactId}-trigger`}
+        role="combobox"
+        tabIndex={disabled ? -1 : 0}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-controls={`${reactId}-panel`}
+        aria-invalid={hasError || undefined}
+        aria-disabled={disabled || undefined}
+        aria-activedescendant={open && filtered[activeIndex] ? `${reactId}-opt-${activeIndex}` : undefined}
         className={[
           styles.control,
           styles[`control--${size}`],
           styles[`control--${state}`],
         ].join(' ')}
         onClick={() => !disabled && setOpen((o) => !o)}
+        onKeyDown={onKeyDown}
       >
         {/* Multi chips */}
         {mode === 'multi' && selectedArr.length > 0 && (
@@ -140,22 +146,16 @@ export const Combobox: React.FC<ComboboxProps> = ({
           </div>
         )}
 
-        <input
-          id={reactId}
-          className={styles.control__input}
-          placeholder={mode === 'single' && singleDisplay ? singleDisplay : placeholder}
-          value={query}
-          disabled={disabled}
-          aria-expanded={open}
-          aria-invalid={hasError || undefined}
-          role="combobox"
-          aria-controls={`${reactId}-panel`}
-          aria-autocomplete="list"
-          aria-activedescendant={open && filtered[activeIndex] ? `${reactId}-opt-${activeIndex}` : undefined}
-          onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
-          onKeyDown={onKeyDown}
-          onFocus={() => !disabled && setOpen(true)}
-        />
+        {!(mode === 'multi' && selectedArr.length > 0) && (
+          <span
+            className={[
+              styles.control__value,
+              (mode === 'single' && singleDisplay) ? '' : styles['control__value--placeholder'],
+            ].filter(Boolean).join(' ')}
+          >
+            {mode === 'single' && singleDisplay ? singleDisplay : placeholder}
+          </span>
+        )}
 
         <span className={[styles.control__chevron, open ? styles['control__chevron--open'] : ''].join(' ')} aria-hidden="true">
           <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -172,7 +172,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
               Loading…
             </div>
           ) : filtered.length === 0 ? (
-            <div className={styles.panel__empty}>No results found</div>
+            <div className={styles.panel__empty}>No options available</div>
           ) : (
             filtered.map((opt, i) => {
               const isSelected = selectedArr.includes(opt.value);

@@ -41,10 +41,10 @@
   cursor: pointer;
   user-select: none;
   transition:
-    background-color 120ms ease-out,
-    color 120ms ease-out,
-    border-color 120ms ease-out,
-    opacity 120ms ease-out;
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    opacity var(--transition-base);
 
   /* Focus ring — chromatic so it's always visible regardless of variant */
   outline: none;

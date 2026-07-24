@@ -1,0 +1,28 @@
+/* TopBar.module.css — sits beside the sidebar; flex spacer distributes width */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+  background: var(--color-bg-surface);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.bar--md { height: 64px; padding: 0 var(--space-24); }
+.bar--sm { height: 56px; padding: 0 var(--space-20); }
+.bar__left { display: flex; align-items: center; min-width: 0; }
+.bar__spacer { flex: 1 1 auto; }
+.bar__icon {
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border: none; background: none;
+  color: var(--color-fg-muted); border-radius: var(--radius-md); cursor: pointer; flex-shrink: 0;
+}
+.bar__icon:where(:hover) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.bar__bell { position: relative; display: inline-flex; }
+.bar__dot {
+  position: absolute; top: -1px; right: -1px;
+  width: 8px; height: 8px; border-radius: var(--radius-full);
+  background: var(--color-danger-solid); border: 2px solid var(--color-bg-surface);
+}
+.bar__divider { width: 1px; height: 24px; background: var(--color-border-default); }
+.bar__account { display: inline-flex; align-items: center; }

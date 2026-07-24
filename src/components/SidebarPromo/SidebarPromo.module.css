@@ -36,6 +36,6 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 120ms ease-out;
+  transition: background-color var(--transition-base);
 }
 .promo__cta:hover { background: var(--color-accent-hover); }

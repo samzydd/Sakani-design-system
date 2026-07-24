@@ -1,0 +1,9 @@
+/* CardMetaItem.module.css */
+.meta { display: inline-flex; align-items: center; gap: var(--space-4); }
+.meta__icon { display: inline-flex; color: var(--color-fg-subtle); }
+.meta__label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-fg-muted);
+}

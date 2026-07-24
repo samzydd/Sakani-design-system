@@ -28,7 +28,7 @@
   border: var(--border-width-100) solid var(--color-border-subtle);
   border-radius: var(--radius-sm);
   color: var(--color-fg-on-accent);
-  transition: background-color 120ms ease-out, border-color 120ms ease-out;
+  transition: background-color var(--transition-base), border-color var(--transition-base);
 }
 
 /* Checked + indeterminate fill (Figma: accent/default) */
@@ -44,7 +44,7 @@
   inset: 0;
   margin: auto;
   opacity: 0;
-  transition: opacity 100ms ease-out;
+  transition: opacity var(--transition-base);
 }
 .input:checked + .box .check { opacity: 1; }
 .input:indeterminate + .box .check { opacity: 0; }

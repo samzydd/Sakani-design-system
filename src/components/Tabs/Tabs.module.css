@@ -18,7 +18,7 @@
   line-height: 20px;
   font-weight: 500;
   color: var(--color-fg-muted);
-  transition: color 120ms ease-out;
+  transition: color var(--transition-base);
 }
 .tab:hover:not(.tab--disabled) { color: var(--color-fg-default); }
 

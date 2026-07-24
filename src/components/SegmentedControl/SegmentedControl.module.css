@@ -21,7 +21,7 @@
   line-height: 20px;
   color: var(--color-fg-muted);
   white-space: nowrap;
-  transition: background-color 120ms ease-out, color 120ms ease-out, box-shadow 120ms ease-out;
+  transition: background-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
 }
 .segment:hover:not(.segment--active) { color: var(--color-fg-default); }
 

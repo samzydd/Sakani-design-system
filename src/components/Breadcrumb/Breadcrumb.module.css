@@ -19,7 +19,7 @@
   line-height: 20px;
   color: var(--color-fg-muted);
   text-decoration: none;
-  transition: color 120ms ease-out;
+  transition: color var(--transition-base);
 }
 a.crumb:hover { color: var(--color-fg-default); text-decoration: underline; text-underline-offset: 2px; }
 

@@ -32,6 +32,6 @@
   color: var(--color-fg-muted);
   cursor: pointer;
   border-radius: var(--radius-sm);
-  transition: color 120ms ease-out, background-color 120ms ease-out;
+  transition: color var(--transition-base), background-color var(--transition-base);
 }
 .toast__dismiss:hover { color: var(--color-fg-default); background: var(--color-bg-subtle); }

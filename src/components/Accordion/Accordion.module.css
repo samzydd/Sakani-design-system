@@ -35,7 +35,7 @@
   flex-shrink: 0;
   display: inline-flex;
   color: var(--color-fg-muted);
-  transition: transform 160ms ease-out;
+  transition: transform var(--transition-base);
 }
 .item__chevron--open { transform: rotate(180deg); }
 
@@ -43,7 +43,7 @@
 .item__panelWrap {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 180ms ease-out;
+  transition: grid-template-rows var(--motion-slow) var(--ease-out);
 }
 .item__panelWrap--open { grid-template-rows: 1fr; }
 

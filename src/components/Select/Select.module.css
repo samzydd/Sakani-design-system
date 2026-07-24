@@ -16,7 +16,7 @@
   background: var(--color-bg-surface);
   border: var(--border-width-100) solid var(--color-border-subtle);
   border-radius: var(--radius-md);
-  transition: border-color 120ms ease-out, box-shadow 120ms ease-out;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .select--sm { height: 32px; }
@@ -24,9 +24,9 @@
 .select--lg { height: 48px; }
 
 .select:focus-within {
-  border-color: var(--color-border-focus);
+  border-color: var(--color-border-default);
   border-width: var(--border-width-150);
-  box-shadow: 0 0 0 3px var(--color-accent-subtle);
+  box-shadow: var(--shadow-sm);
 }
 
 .select--error {

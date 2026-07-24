@@ -6,7 +6,7 @@
   border-radius: var(--radius-sm);
   border: var(--border-width-100) solid transparent;
   cursor: pointer;
-  transition: background-color 120ms ease-out, color 120ms ease-out, border-color 120ms ease-out;
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
   flex-shrink: 0;
   padding: 0;
 }

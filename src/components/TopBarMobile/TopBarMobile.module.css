@@ -1,0 +1,22 @@
+/* TopBarMobile.module.css — 56px */
+.bar {
+  display: flex; align-items: center; gap: var(--space-8);
+  width: 100%; height: 56px; padding: 0 var(--space-12);
+  background: var(--color-bg-surface);
+  border: none;
+  border-bottom: 1px solid var(--color-border-subtle);
+  box-sizing: border-box;
+}
+.bar__icon {
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border: none; background: none;
+  color: var(--color-fg-muted); border-radius: var(--radius-md); cursor: pointer; flex-shrink: 0;
+}
+.bar__icon:where(:hover) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.bar__title {
+  flex: 1 1 auto; font-family: var(--font-sans); font-weight: 600; font-size: 14px;
+  color: var(--color-fg-default); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.bar__title--center { text-align: center; }
+.bar__search { flex: 1 1 auto; }

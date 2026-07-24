@@ -42,7 +42,7 @@
   background: var(--color-bg-surface);
   border: var(--border-width-100) solid var(--color-border-subtle);
   border-radius: var(--radius-md);
-  transition: border-color 120ms ease-out, box-shadow 120ms ease-out;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 /* Sizes — vertical padding varies, horizontal fixed at 14px (space-14) */
@@ -50,11 +50,10 @@
 .input--md { padding: var(--space-10) var(--space-14); }
 .input--lg { padding: var(--space-12) var(--space-14); }
 
-/* Focus — border/focus 1.5px */
+/* Focus — neutral border + soft shadow (no accent ring) */
 .input:focus-within {
-  border-color: var(--color-border-focus);
-  border-width: var(--border-width-150);
-  box-shadow: 0 0 0 3px var(--color-accent-subtle);
+  border-color: var(--color-border-default);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Error — danger/solid 1.5px */
@@ -62,7 +61,7 @@
   border-color: var(--color-danger-solid);
   border-width: var(--border-width-150);
 }
-.input--error:focus-within { box-shadow: 0 0 0 3px var(--color-danger-bg); }
+.input--error:focus-within { border-color: var(--color-danger-solid); box-shadow: var(--shadow-sm); }
 
 /* Disabled — bg/subtle */
 .input--disabled {
@@ -86,7 +85,7 @@
 }
 .input__control::placeholder {
   color: var(--color-fg-subtle);
-  font-weight: 500;
+  font-weight: 400;
 }
 .input__control:disabled { cursor: not-allowed; }
 

@@ -9,7 +9,7 @@
   border: var(--border-width-100) solid var(--color-border-default);
   border-radius: var(--radius-xl);
   font-family: var(--font-sans);
-  transition: box-shadow 140ms ease-out, border-color 140ms ease-out;
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
 /* Hover (Figma: Hover) */

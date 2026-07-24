@@ -23,15 +23,15 @@
   border: var(--border-width-100) solid var(--color-border-default);
   border-radius: var(--radius-md);
   resize: vertical;
-  transition: border-color 120ms ease-out, box-shadow 120ms ease-out;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
-.textarea::placeholder { color: var(--color-fg-subtle); font-weight: 500; }
+.textarea::placeholder { color: var(--color-fg-subtle); font-weight: 400; }
 
 .textarea:focus {
   outline: none;
   border-color: var(--color-border-focus);
   border-width: var(--border-width-150);
-  box-shadow: 0 0 0 3px var(--color-accent-subtle);
+  box-shadow: var(--shadow-sm);
 }
 
 .textarea--error {

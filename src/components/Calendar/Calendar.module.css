@@ -36,7 +36,7 @@
   border: none; background: transparent; border-radius: var(--radius-md);
   cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 500;
   color: var(--color-fg-default);
-  transition: background-color 100ms ease-out;
+  transition: background-color var(--transition-base);
 }
 .day--default:hover { background: var(--color-bg-subtle); }
 .day--hover { background: var(--color-bg-subtle); }
