@@ -41,7 +41,12 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
   className,
 }) => (
   <div
+    role="button"
+    tabIndex={0}
     onClick={onClick}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick?.(); }
+    }}
     aria-current={state === 'active' || undefined}
     className={[styles.item, styles[`item--${state}`], className ?? ''].filter(Boolean).join(' ')}
   >

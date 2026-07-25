@@ -24,8 +24,14 @@ export const SidebarSubItem: React.FC<SidebarSubItemProps> = ({ label, active, d
     disabled ? styles['subItem--disabled'] : '',
   ].filter(Boolean).join(' ');
   const common = { className: cls, 'aria-current': active ? ('page' as const) : undefined };
-  if (href && !disabled) return <a href={href} {...common}>{label}</a>;
-  return <button type="button" disabled={disabled} onClick={onClick} {...common}>{label}</button>;
+  const content = (
+    <>
+      <span className={styles.subItem__dot} aria-hidden="true" />
+      <span className={styles.subItem__label}>{label}</span>
+    </>
+  );
+  if (href && !disabled) return <a href={href} {...common}>{content}</a>;
+  return <button type="button" disabled={disabled} onClick={onClick} {...common}>{content}</button>;
 };
 
 export default SidebarSubItem;

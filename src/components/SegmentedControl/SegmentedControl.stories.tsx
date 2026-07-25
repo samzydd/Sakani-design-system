@@ -21,3 +21,17 @@ export const Four: Story = { args: { options: ['All','Active','Draft','Archived'
 export const DarkMode: Story = {
   decorators: [(S) => <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}><S /></div>],
 };
+
+/** Stretches to fill its container; segments share the width equally. */
+export const FullWidth: Story = {
+  args: {
+    fullWidth: true,
+    defaultValue: 'all',
+    options: [
+      { value: 'all', label: 'All' },
+      { value: 'unread', label: 'Unread' },
+      { value: 'groups', label: 'Groups' },
+    ],
+  },
+  decorators: [(S) => (<div style={{ width: 240 }}><S /></div>)],
+};

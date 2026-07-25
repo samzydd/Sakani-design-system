@@ -27,7 +27,8 @@
 
 import React from 'react';
 import {
-  Search, Inbox, AtSign, FileText, Archive, MailOpen, Hash, User,
+  Search, House, ChartPie, Calendar, Mail, Bell,
+  Users, Boxes, Merge, Group,
   Settings, MessageCircleMore, Phone, Video, PanelRight,
 } from 'lucide-react';
 import { Input } from '../../components/Input';
@@ -36,6 +37,7 @@ import { Avatar } from '../../components/Avatar';
 import { SidebarHeader } from '../../components/SidebarHeader';
 import { SidebarItem } from '../../components/SidebarItem';
 import { SidebarGroupLabel } from '../../components/SidebarGroupLabel';
+import { SidebarSubItem } from '../../components/SidebarSubItem';
 import { SegmentedControl } from '../../components/SegmentedControl';
 import { TopBar } from '../../components/TopBar';
 import { ConversationItem } from '../../components/ConversationItem';
@@ -49,24 +51,28 @@ export type ChatInterfaceBlockState = 'default' | 'collapsed' | 'empty';
 /* ------------------------------------------------------------------ *
  * Sample data — replace with your own
  * ------------------------------------------------------------------ */
-const NAV_GROUPS = [
-  { label: 'Messages', items: [
-    { icon: Inbox,    label: 'Inbox',    active: true, badge: '12' },
-    { icon: MailOpen, label: 'Unread',   badge: '3' },
-    { icon: AtSign,   label: 'Mentions' },
-    { icon: FileText, label: 'Drafts' },
-    { icon: Archive,  label: 'Archived' },
+const NAV_GROUPS: Array<{
+  label: string;
+  items: Array<{ icon?: typeof House; label: string; active?: boolean; badge?: string }>;
+}> = [
+  { label: 'Menu', items: [
+    { icon: House,    label: 'Dashboard' },
+    { icon: ChartPie, label: 'Reports' },
+    { icon: Calendar, label: 'Schedules' },
+    { icon: Mail,     label: 'Messages', active: true, badge: '12' },
+    { icon: Bell,     label: 'Notification', badge: '2' },
   ]},
-  { label: 'Channels', items: [
-    { icon: Hash, label: 'general' },
-    { icon: Hash, label: 'design' },
-    { icon: Hash, label: 'engineering' },
-    { icon: Hash, label: 'product' },
+  { label: 'Customer management', items: [
+    { icon: Users, label: 'Customers' },
+    { icon: Boxes, label: 'Suppliers' },
+    { icon: Merge, label: 'Channels' },
+    { icon: Group, label: 'Groups' },
   ]},
-  { label: 'Direct', items: [
-    { icon: User, label: 'Amara Chen' },
-    { icon: User, label: 'Daniel Osei' },
-    { icon: User, label: 'Priya Raman' },
+  // Pipelines entries carry no icon in the design.
+  { label: 'Pipelines', items: [
+    { label: 'North America' },
+    { label: 'EMEA Enterprise' },
+    { label: 'APAC Expansion' },
   ]},
 ];
 
@@ -79,7 +85,7 @@ const CONVERSATIONS: Array<{
   { name: 'Design guild',   initials: 'DG', time: '11:52',     preview: 'Can you review the latest flow?',   state: 'unread', unread: 3 },
   { name: 'Daniel Osei',    initials: 'DO', time: '11:20',     preview: 'On it',                              state: 'typing' },
   { name: 'Priya Raman',    initials: 'PR', time: 'Yesterday', preview: 'Thanks for the handoff',             state: 'default' },
-  { name: 'Marketing team', initials: 'MT', time: 'Yesterday', preview: 'Campaign assets are ready',          state: 'default' },
+  { name: 'Engineering leadership sync', initials: 'EL', time: 'Yesterday', preview: 'Reminder: the quarterly planning doc needs review before Friday', state: 'default' },
   { name: 'Marcus Reid',    initials: 'MR', time: 'Mon',       preview: 'Let me check the numbers',           state: 'default' },
   { name: 'Zara Ali',       initials: 'ZA', time: 'Mon',       preview: 'Perfect, see you then',              state: 'default' },
   { name: 'Release bot',    initials: 'RB', time: 'Sun',       preview: 'v1.1.0 deployed to production',      state: 'muted' },
@@ -108,6 +114,7 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({
           type="brand-toggle"
           title="Sakani"
           subtitle="Workspace"
+          logo={<span className={styles.logoMark}>S</span>}
           collapsed={collapsed}
         />
 
@@ -116,24 +123,33 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({
             <Input size="sm" leadingIcon={<Search size={16} />} placeholder="Search" />
           )}
 
-          {NAV_GROUPS.map((group, gi) => (
-            <React.Fragment key={group.label}>
-              {gi > 0 && <Divider />}
-              <div className={styles.nav__group}>
-                {!collapsed && <SidebarGroupLabel>{group.label}</SidebarGroupLabel>}
-                {group.items.map((item) => (
-                  <SidebarItem
-                    key={item.label}
-                    icon={item.icon}
-                    label={item.label}
-                    active={item.active}
-                    badge={collapsed ? undefined : item.badge}
-                    collapsed={collapsed}
-                  />
-                ))}
-              </div>
-            </React.Fragment>
-          ))}
+          {/* Collapsed rail shows only icon-bearing groups — icon-less entries
+              (Pipelines) would render as empty rows, and the design omits them. */}
+          {NAV_GROUPS
+            .filter((group) => !collapsed || group.items.some((i) => i.icon))
+            .map((group, gi) => (
+              <React.Fragment key={group.label}>
+                {gi > 0 && <Divider />}
+                <div className={styles.nav__group}>
+                  {!collapsed && <SidebarGroupLabel>{group.label}</SidebarGroupLabel>}
+                  {group.items.map((item) =>
+                    item.icon ? (
+                      <SidebarItem
+                        key={item.label}
+                        icon={item.icon}
+                        label={item.label}
+                        active={item.active}
+                        badge={collapsed ? undefined : item.badge}
+                        collapsed={collapsed}
+                      />
+                    ) : (
+                      // Pipelines entries use Sidebar Sub Item (dot + label) in the design.
+                      <SidebarSubItem key={item.label} label={item.label} active={item.active} />
+                    )
+                  )}
+                </div>
+              </React.Fragment>
+            ))}
         </div>
 
         <Divider />
@@ -146,6 +162,7 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({
       {/* ============ Main ============ */}
       <div className={styles.main}>
         <TopBar
+          className={styles.appBar}
           type="minimal"
           density="sm"
           showToggle={false}
@@ -160,6 +177,7 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({
             <div className={styles.headerRow}>
               <div className={styles.headerRow__filter}>
                 <SegmentedControl
+                  fullWidth
                   defaultValue="all"
                   options={[
                     { value: 'all', label: 'All' },

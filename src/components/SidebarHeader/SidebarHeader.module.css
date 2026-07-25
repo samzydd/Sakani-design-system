@@ -14,7 +14,7 @@
   justify-content: center;
   width: 28px;
   height: 28px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);   /* Figma: 8px */
   background: var(--color-accent-default);
   color: var(--color-fg-on-accent);
   flex-shrink: 0;

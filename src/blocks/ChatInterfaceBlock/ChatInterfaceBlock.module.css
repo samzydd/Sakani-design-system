@@ -55,6 +55,10 @@
   min-height: 0;
   padding: var(--space-12) var(--space-20);
   background: var(--color-bg-canvas);
+  /* Figma: border/subtle hairline, radius ~20 (file reads 0.68px / 19.06 —
+     both scaling artifacts of a resized frame; 1px / 20px is the intent). */
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 20px;
 }
 
 /* ---- header row: list filter (240) + conversation header ---- */
@@ -82,8 +86,10 @@
   gap: var(--space-4);
   width: 240px;
   flex-shrink: 0;
+  min-width: 0;
   padding: 0 var(--space-8);
   overflow-y: auto;
+  overflow-x: hidden;   /* the list is a fixed rail — never scroll sideways */
 }
 .list__search { padding: var(--space-8) 0; }
 
@@ -151,4 +157,19 @@
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
+}
+
+/* ---- app-level top bar: transparent in this block (Figma fill = none) ---- */
+.appBar {
+  background: transparent;
+  border-bottom: none;
+}
+
+/* ---- brand mark inside SidebarHeader's 28×28 accent chip ---- */
+.logoMark {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--color-fg-on-accent);
 }

@@ -19,11 +19,14 @@ export interface SegmentedControlProps {
   value?: string;
   defaultValue?: string;
   onChange?: (value: string) => void;
+  /** Stretch the track to fill its container; segments then share the width equally. */
+  fullWidth?: boolean;
   className?: string;
 }
 
 export const SegmentedControl: React.FC<SegmentedControlProps> = ({
-  options, value, defaultValue, onChange, className,
+  options, value, defaultValue, onChange, fullWidth,
+  className,
 }) => {
   const isControlled = value !== undefined;
   const [internal, setInternal] = React.useState(defaultValue ?? options[0]?.value);
@@ -35,7 +38,11 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
   };
 
   return (
-    <div role="tablist" className={[styles.track, className ?? ''].filter(Boolean).join(' ')}>
+    <div
+      role="tablist"
+      className={[styles.track, fullWidth ? styles['track--fullWidth'] : '', className ?? '']
+        .filter(Boolean).join(' ')}
+    >
       {options.map((opt) => {
         const isActive = opt.value === active;
         return (

@@ -61,6 +61,7 @@ transition: color var(--transition-base);
 
 .item__badge {
   flex-shrink: 0;
+  margin-left: auto;      /* pin to the far right regardless of label length */
   min-width: 20px;
   padding: 0 var(--space-6);
   height: 20px;
