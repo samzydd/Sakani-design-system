@@ -1,5 +1,4 @@
 import "@fontsource-variable/geist";
-import "@fontsource-variable/geist";
 import "../src/styles/tokens.css";
 import type { Preview } from '@storybook/react-vite'
 

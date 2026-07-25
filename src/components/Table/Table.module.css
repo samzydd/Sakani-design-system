@@ -56,9 +56,10 @@ transition: background-color var(--transition-base);
 
 /* ─── Checkbox cell — fixed width, content vertically + horizontally centered ── */
 .checkCell {
-  width: 48px;
-  padding: 0;
-  text-align: center;
+  /* No fixed width: the cell shrinks to its content (the 18px checkbox),
+     so padding alone produces exactly 12px on each side — no box-sizing
+     ambiguity, no extra gap. */
+  padding: 0 12px;
   vertical-align: middle;
   border-bottom: var(--border-width-100) solid var(--color-border-subtle);
 }

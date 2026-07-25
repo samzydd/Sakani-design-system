@@ -178,6 +178,11 @@
   --transition-base: var(--motion-base) var(--ease-out);
 }
 
+/* Base font — everything using `font-family: inherit` resolves through here. */
+html, body {
+  font-family: var(--font-sans);
+}
+
 .dark {
   /* ---- semantic (dark) — only the semantic layer flips ---- */
   --color-bg-canvas: var(--color-neutral-950);

@@ -85,6 +85,26 @@ Change a semantic token and every component follows — in both the design file 
 
 **Charts** — Bar · Line · Donut — Recharts wrappers styled entirely with the `chart/1–5` tokens
 
+## Blocks
+
+Blocks are full sections assembled from Sakani components — **composition examples** you copy into your project and edit directly, rather than configurable components. Each ships with the states it needs (loading, empty, error, and so on).
+
+They live in `src/blocks`:
+
+| Block | States |
+|---|---|
+| **Data Table + Toolbar** | default · filtered · bulk selection · loading · empty · error |
+| **Kanban Board** | default · loading · empty column · dragging |
+
+```tsx
+import { DataTableBlock } from '@/blocks/DataTableBlock';
+
+// Copy the file, swap the sample data for your own, edit the columns.
+<DataTableBlock />
+```
+
+Browse every block and state in the [live Storybook](https://main--6a5a658b3681fcc010430db5.chromatic.com) under **Blocks**.
+
 ## Accessibility
 
 The library ships with an audited AA baseline: contrast-checked token pairs in both modes, a global token-driven focus ring on every interactive element, reduced-motion support, Escape-dismissible tooltips, screen-reader-tracked combobox options, full-date calendar labels, assertive error toasts, and focus-returning popovers. See the Storybook docs tab on each component for its ARIA contract.
