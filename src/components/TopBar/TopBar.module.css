@@ -26,3 +26,28 @@
 }
 .bar__divider { width: 1px; height: 24px; background: var(--color-border-default); }
 .bar__account { display: inline-flex; align-items: center; }
+
+/* ---- type="chat" ----
+ * A conversation header rather than app chrome: transparent, no bottom rule,
+ * content-driven height, avatar + name/presence on the left, actions right.
+ */
+.bar--chat {
+  height: auto;
+  min-height: 36px;
+  padding-left: var(--space-24);
+  padding-right: 0;
+  background: transparent;
+  border-bottom: none;
+}
+.bar__chatAvatar { display: inline-flex; flex-shrink: 0; }
+.bar__chatMeta { display: flex; flex-direction: column; min-width: 0; }
+.bar__chatTitle {
+  font-family: var(--font-sans); font-weight: 600; font-size: 14px; line-height: 20px;
+  color: var(--color-fg-default);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.bar__chatSubtitle {
+  font-family: var(--font-sans); font-size: 12px; line-height: 16px;
+  color: var(--color-fg-muted);
+}
+.bar__chatActions { display: flex; align-items: center; gap: var(--space-8); flex-shrink: 0; }

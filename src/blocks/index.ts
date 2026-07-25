@@ -10,3 +10,5 @@ export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
 export type { KanbanBoardBlockProps, KanbanBoardBlockState } from './KanbanBoardBlock';
+export { ChatInterfaceBlock } from './ChatInterfaceBlock';
+export type { ChatInterfaceBlockProps, ChatInterfaceBlockState } from './ChatInterfaceBlock';
