@@ -15,11 +15,15 @@
 .footer__title { font-size: 13px; font-weight: 600; line-height: 18px; color: var(--color-fg-default); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .footer__subtitle { font-size: 12px; line-height: 16px; color: var(--color-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .footer__menu {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   display: inline-flex; border: none; background: transparent; color: var(--color-fg-muted);
   cursor: pointer; padding: var(--space-4); border-radius: var(--radius-sm); flex-shrink: 0;
 }
 .footer__menu:hover { background: var(--color-bg-subtle); color: var(--color-fg-default); }
 .footer__action {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   display: inline-flex; align-items: center; gap: var(--space-8);
   width: 100%; padding: var(--space-6) var(--space-10);
   border: none; background: transparent; border-radius: var(--radius-sm);

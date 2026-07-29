@@ -96,3 +96,11 @@
   margin-left: var(--space-24);
   pointer-events: none;
 }
+
+/* Column highlight while a card is dragged over it. */
+.columnDropTarget {
+  border-radius: var(--radius-lg);
+  outline: 1.5px dashed var(--color-accent-default);
+  outline-offset: 2px;
+  transition: outline-color var(--transition-base);
+}

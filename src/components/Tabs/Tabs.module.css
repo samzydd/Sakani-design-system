@@ -1,6 +1,7 @@
 /* Tabs.module.css — label/md, active fg/default + brand underline, track bottom border */
 
 .tabs {
+  position: relative;
   display: flex;
   align-items: stretch;
   font-family: var(--font-sans);
@@ -24,19 +25,24 @@
 
 .tab--active { color: var(--color-fg-default); }
 
-/* Underline indicator — brand/default, 2px, sits on the track's bottom border */
-.tab__indicator {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: var(--color-brand-default);
-  border-radius: var(--radius-full) var(--radius-full) 0 0;
-}
+
 
 .tab--disabled {
   color: var(--color-fg-subtle);
   cursor: not-allowed;
   opacity: var(--opacity-60);
+}
+
+/* Shared underline — one element that slides between tabs. */
+.indicator {
+  position: absolute;
+  bottom: calc(-1 * var(--border-width-100));
+  left: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--color-brand-default, var(--color-accent-default));
+  will-change: transform, width;
+}
+.indicator--animated {
+  transition: transform var(--transition-base), width var(--transition-base);
 }

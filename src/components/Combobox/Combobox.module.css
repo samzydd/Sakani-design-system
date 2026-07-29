@@ -120,6 +120,7 @@
 
 /* ─── Option ── */
 .option {
+  transition: background-color var(--transition-base), color var(--transition-base);
   display: flex;
   align-items: center;
   gap: var(--space-8);
@@ -129,6 +130,8 @@
   font-size: 14px;
   color: var(--color-fg-default);
 }
+/* Pointer hover — this was missing entirely; only keyboard-active was styled. */
+.option:hover:not(.option--disabled) { background: var(--color-bg-subtle); }
 .option--active { background: var(--color-bg-subtle); }
 .option--selected { background: var(--color-bg-subtle); }
 .option--disabled { opacity: var(--opacity-60); cursor: not-allowed; }

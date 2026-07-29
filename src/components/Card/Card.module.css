@@ -13,7 +13,9 @@
 }
 
 /* Hover (Figma: Hover) */
-.card--interactive { cursor: pointer; }
+.card--interactive {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+ cursor: pointer; }
 .card--interactive:hover {
   border-color: var(--color-border-strong);
   box-shadow: var(--shadow-md);

@@ -30,6 +30,8 @@
 
 .item--checked .item__icon { color: var(--color-fg-muted); }
 .item--disabled { opacity: 0.6; cursor: not-allowed; pointer-events: none; }
-.item--destructive { color: var(--color-danger-fg); }
+.item--destructive {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+ color: var(--color-danger-fg); }
 .item--destructive .item__icon { color: var(--color-danger-fg); }
 .item--destructive:where(:hover) { background: var(--color-danger-bg); }

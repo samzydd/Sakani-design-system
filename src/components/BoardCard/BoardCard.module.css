@@ -47,3 +47,22 @@
 .card__footer { display: flex; align-items: center; justify-content: space-between; }
 .card__meta { display: flex; align-items: center; gap: var(--space-10); }
 .card__assignees { display: inline-flex; }
+
+/* ---- Real pointer interaction ----
+ * `state="hover"` above is the static variant for design demos; these give
+ * the card actual mouse behaviour. Dragging and selected states win over hover.
+ */
+.card:where(:hover) {
+  border-color: var(--color-border-default);
+  box-shadow: var(--shadow-sm);
+}
+.card--selected:where(:hover) {
+  border-color: var(--color-accent-default);
+  box-shadow: var(--shadow-sm);
+}
+.card--dragging:where(:hover) { box-shadow: var(--shadow-lg); }
+.card:where(:active) { box-shadow: var(--shadow-xs); }
+.card:where(:focus-visible) {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-border-focus);
+}

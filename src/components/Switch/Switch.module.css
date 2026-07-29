@@ -34,7 +34,7 @@
   background: var(--color-bg-surface);
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-xs);
-  transition: transform 140ms ease-out;
+  transition: transform var(--transition-fast);
 }
 .input:checked + .track .thumb { transform: translateX(16px); }
 

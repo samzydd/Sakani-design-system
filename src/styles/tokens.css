@@ -171,11 +171,20 @@
   --shadow-xl: 0 20px 24px -4px rgba(16,15,12,0.10), 0 8px 8px -4px rgba(16,15,12,0.03);
 
   /* ---- motion ---- */
-  --motion-fast: 140ms;
-  --motion-base: 200ms;
-  --motion-slow: 300ms;
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --transition-base: var(--motion-base) var(--ease-out);
+  --motion-fast: 150ms;
+  --motion-base: 220ms;
+  --motion-slow: 320ms;
+
+  /* Symmetric ease-in-out (easeInOutCubic): accelerates and decelerates evenly,
+     so state changes read as movement rather than a snap. This is the default. */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  /* Gentle ease-out (easeOutCubic) for things entering or leaving the screen.
+     Deliberately softer than an expo curve, which starts too abruptly. */
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --transition-base: var(--motion-base) var(--ease-in-out);
+  --transition-fast: var(--motion-fast) var(--ease-in-out);
+  --transition-slow: var(--motion-slow) var(--ease-in-out);
 }
 
 /* Base font — everything using `font-family: inherit` resolves through here. */

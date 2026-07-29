@@ -10,6 +10,8 @@
 .item { border-bottom: var(--border-width-100) solid var(--color-border-subtle); }
 
 .item__header {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   width: 100%;
   display: flex;
   align-items: center;

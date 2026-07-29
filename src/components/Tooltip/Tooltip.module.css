@@ -8,6 +8,8 @@
 .wrapper[data-dismissed] .bubble { opacity: 0 !important; visibility: hidden !important; }
 
 .wrapper {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   position: relative;
   display: inline-flex;
 }
@@ -28,7 +30,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(2px);
-  transition: opacity 120ms ease-out, transform 120ms ease-out, visibility 120ms;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--motion-fast);
   pointer-events: none;
 }
 

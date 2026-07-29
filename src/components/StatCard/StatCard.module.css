@@ -27,6 +27,8 @@
 }
 .card__title { flex: 1; font-size: 13px; font-weight: 500; color: var(--color-fg-muted); }
 .card__menu {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   display: inline-flex; border: none; background: transparent; color: var(--color-fg-muted);
   cursor: pointer; padding: var(--space-2); border-radius: var(--radius-sm); flex-shrink: 0;
 }

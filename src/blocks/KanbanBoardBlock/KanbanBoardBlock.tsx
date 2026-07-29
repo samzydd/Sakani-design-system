@@ -43,7 +43,7 @@ interface Task {
   compact?: boolean;
 }
 
-const COLUMNS: Array<{ title: string; dot: string; tasks: Task[] }> = [
+const INITIAL_COLUMNS: Array<{ title: string; dot: string; tasks: Task[] }> = [
   {
     title: 'To-do', dot: 'var(--color-chart-1)',
     tasks: [
@@ -137,9 +137,22 @@ const Column: React.FC<ColumnProps> = ({ title, dot, count, variant = 'default',
 /* ------------------------------------------------------------------ *
  * Card renderer
  * ------------------------------------------------------------------ */
-const renderTask = (task: Task, key: React.Key, state?: 'default' | 'dragging') => (
-  <BoardCard
+const renderTask = (
+  task: Task,
+  key: React.Key,
+  state?: 'default' | 'dragging',
+  dragProps?: {
+    draggable: boolean;
+    onDragStart: (e: React.DragEvent) => void;
+    onDragEnd: () => void;
+  },
+) => (
+  <div
     key={key}
+    {...(dragProps ?? {})}
+    style={dragProps ? { cursor: 'grab' } : undefined}
+  >
+  <BoardCard
     type={task.compact ? 'compact' : 'default'}
     state={state === 'dragging' ? 'dragging' : 'default'}
     leading={<Checkbox />}
@@ -159,6 +172,7 @@ const renderTask = (task: Task, key: React.Key, state?: 'default' | 'dragging') 
     }
     assignees={<AvatarGroup size="sm" max={3} avatars={task.assignees} />}
   />
+  </div>
 );
 
 /* ------------------------------------------------------------------ *
@@ -172,7 +186,30 @@ export interface KanbanBoardBlockProps {
 export const KanbanBoardBlock: React.FC<KanbanBoardBlockProps> = ({
   state = 'default',
   className,
-}) => (
+}) => {
+  // ---- drag and drop -----------------------------------------------------
+  // Native HTML5 drag and drop, kept deliberately simple: enough to feel the
+  // interaction and test the dragging visuals. Swap for a dedicated library
+  // (dnd-kit, react-dnd) if you need keyboard support or touch.
+  const [columns, setColumns] = React.useState(INITIAL_COLUMNS);
+  const [dragging, setDragging] = React.useState<{ col: number; index: number } | null>(null);
+  const [dragOverCol, setDragOverCol] = React.useState<number | null>(null);
+
+  const onDrop = (targetCol: number) => {
+    if (!dragging) return;
+    setColumns((prev) => {
+      const next = prev.map((c) => ({ ...c, tasks: [...c.tasks] }));
+      const [moved] = next[dragging.col].tasks.splice(dragging.index, 1);
+      if (moved) next[targetCol].tasks.push(moved);
+      return next;
+    });
+    setDragging(null);
+    setDragOverCol(null);
+  };
+
+  const source = state === 'default' ? columns : INITIAL_COLUMNS;
+
+  return (
   <div className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
     {/* ---- Toolbar ---- */}
     <div className={styles.toolbar}>
@@ -192,14 +229,20 @@ export const KanbanBoardBlock: React.FC<KanbanBoardBlockProps> = ({
 
     {/* ---- Columns ---- */}
     <div className={styles.columns}>
-      {COLUMNS.map((col, colIndex) => {
+      {source.map((col, colIndex) => {
         const isEmptyCol = state === 'empty-column' && colIndex === 2;
         const variant =
           state === 'loading' ? 'loading' : isEmptyCol ? 'empty' : 'default';
 
         return (
-          <Column
+          <div
             key={col.title}
+            onDragOver={(e) => { e.preventDefault(); setDragOverCol(colIndex); }}
+            onDragLeave={() => setDragOverCol((c) => (c === colIndex ? null : c))}
+            onDrop={() => onDrop(colIndex)}
+            className={dragOverCol === colIndex ? styles.columnDropTarget : undefined}
+          >
+          <Column
             title={col.title}
             dot={col.dot}
             count={state === 'loading' ? '—' : isEmptyCol ? 0 : col.tasks.length}
@@ -218,13 +261,30 @@ export const KanbanBoardBlock: React.FC<KanbanBoardBlockProps> = ({
                   </React.Fragment>
                 );
               }
-              return renderTask(task, `${col.title}-${i}`);
+              const isBeingDragged = dragging?.col === colIndex && dragging?.index === i;
+              return renderTask(
+                task,
+                `${col.title}-${i}`,
+                isBeingDragged ? 'dragging' : 'default',
+                state === 'default'
+                  ? {
+                      draggable: true,
+                      onDragStart: (e: React.DragEvent) => {
+                        e.dataTransfer.effectAllowed = 'move';
+                        setDragging({ col: colIndex, index: i });
+                      },
+                      onDragEnd: () => { setDragging(null); setDragOverCol(null); },
+                    }
+                  : undefined,
+              );
             })}
           </Column>
+          </div>
         );
       })}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default KanbanBoardBlock;

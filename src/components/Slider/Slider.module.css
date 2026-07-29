@@ -35,7 +35,7 @@
   border: var(--border-width-150) solid var(--color-accent-default);
   box-shadow: var(--shadow-xs);
   cursor: pointer;
-  transition: transform 100ms ease-out;
+  transition: transform var(--transition-fast);
 }
 .slider::-webkit-slider-thumb:active { transform: scale(1.1); }
 

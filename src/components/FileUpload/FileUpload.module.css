@@ -45,6 +45,8 @@
 .file__icon { display: inline-flex; color: var(--color-fg-muted); flex-shrink: 0; }
 .file__name { flex: 1; font-size: 13px; color: var(--color-fg-default); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .file__remove {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   display: inline-flex; border: none; background: transparent; color: var(--color-fg-muted);
   cursor: pointer; padding: 2px; border-radius: var(--radius-sm); flex-shrink: 0;
 }

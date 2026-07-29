@@ -15,6 +15,8 @@
 .promo__icon { display: inline-flex; color: var(--color-brand-fg); flex-shrink: 0; }
 .promo__title { flex: 1; font-size: 13px; font-weight: 600; color: var(--color-fg-default); } /* was brand/fg: 3.83:1 on brand/subtle — AA fix */
 .promo__dismiss {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   display: inline-flex; border: none; background: transparent; color: var(--color-fg-subtle);
   cursor: pointer; padding: 0; flex-shrink: 0;
 }

@@ -14,6 +14,8 @@
 .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-8); }
 .header__label { font-size: 14px; font-weight: 600; color: var(--color-fg-default); }
 .navBtn {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   display: inline-flex; align-items: center; justify-content: center;
   width: 28px; height: 28px; border-radius: var(--radius-sm);
   border: var(--border-width-100) solid var(--color-border-default);
@@ -49,6 +51,8 @@
 /* Dropdowns header (Figma: Calendar Header Type=Dropdowns) */
 .dropdowns { display: flex; gap: var(--space-6); flex: 1; justify-content: center; }
 .dropdown {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   appearance: auto;
   padding: var(--space-4) var(--space-6);
   font-family: var(--font-sans);

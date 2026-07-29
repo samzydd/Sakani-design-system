@@ -63,7 +63,7 @@
 
 /* ---- header row: list filter (240) + conversation header ---- */
 .headerRow { display: flex; align-items: center; flex-shrink: 0; }
-.headerRow__filter { width: 240px; flex-shrink: 0; }
+.headerRow__filter { width: 300px; flex-shrink: 0; }
 .headerRow__chat { flex: 1 1 auto; min-width: 0; }
 
 .chatAction {

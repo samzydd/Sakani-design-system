@@ -41,8 +41,14 @@
 
 /* ─── Body ── */
 transition: background-color var(--transition-base);
+/* Rows animate on hover; selected rows keep their tint while hovered. */
+.bodyRow {
+  background: transparent;
+  transition: background-color var(--transition-base);
+}
 .bodyRow:hover { background: var(--color-bg-subtle); }
 .bodyRow--selected { background: var(--color-accent-subtle); }
+.bodyRow--selected:hover { background: var(--color-accent-subtle); }
 .bodyCell {
   height: 44px;
   padding: var(--space-12) var(--space-16);

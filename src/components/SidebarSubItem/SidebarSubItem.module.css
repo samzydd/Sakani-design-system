@@ -1,5 +1,7 @@
 /* SidebarSubItem — radius-sm, padding 0/10 with height, label/sm, indented */
 .subItem {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   display: flex;
   align-items: center;
   width: 100%;
@@ -32,7 +34,8 @@
   background: var(--color-fg-subtle);
   transition: background-color var(--transition-base);
 }
-.subItem--active .subItem__dot { background: var(--color-accent-default); }
+/* Figma: the active indicator uses the brand colour. */
+.subItem--active .subItem__dot { background: var(--color-brand-default, var(--color-accent-default)); }
 .subItem__label {
   flex: 1;
   min-width: 0;

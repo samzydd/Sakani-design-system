@@ -37,17 +37,50 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
     onChange?.(v);
   };
 
+  // ---- sliding thumb ----------------------------------------------------
+  // The active state is a single element that translates between segments,
+  // so switching reads as movement rather than one background swapping for
+  // another. Position is measured from the DOM so it survives any width.
+  const trackRef = React.useRef<HTMLDivElement>(null);
+  const segRefs = React.useRef<Record<string, HTMLButtonElement | null>>({});
+  const [thumb, setThumb] = React.useState<{ left: number; width: number } | null>(null);
+  const [ready, setReady] = React.useState(false);
+
+  React.useLayoutEffect(() => {
+    const measure = () => {
+      const el = segRefs.current[active];
+      const track = trackRef.current;
+      if (!el || !track) return;
+      setThumb({ left: el.offsetLeft, width: el.offsetWidth });
+    };
+    measure();
+    // settle before enabling the transition, so the thumb doesn't fly in on mount
+    const id = window.requestAnimationFrame(() => setReady(true));
+    const ro = new ResizeObserver(measure);
+    if (trackRef.current) ro.observe(trackRef.current);
+    return () => { window.cancelAnimationFrame(id); ro.disconnect(); };
+  }, [active, options]);
+
   return (
     <div
+      ref={trackRef}
       role="tablist"
       className={[styles.track, fullWidth ? styles['track--fullWidth'] : '', className ?? '']
         .filter(Boolean).join(' ')}
     >
+      {thumb && (
+        <span
+          aria-hidden="true"
+          className={[styles.thumb, ready ? styles['thumb--animated'] : ''].filter(Boolean).join(' ')}
+          style={{ transform: `translateX(${thumb.left}px)`, width: thumb.width }}
+        />
+      )}
       {options.map((opt) => {
         const isActive = opt.value === active;
         return (
           <button
             key={opt.value}
+            ref={(el) => { segRefs.current[opt.value] = el; }}
             role="tab"
             type="button"
             aria-selected={isActive}

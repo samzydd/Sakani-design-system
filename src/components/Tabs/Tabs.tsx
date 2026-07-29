@@ -41,13 +41,35 @@ export const Tabs: React.FC<TabsProps> = ({
     onChange?.(v);
   };
 
+  // ---- sliding underline -------------------------------------------------
+  // One indicator that translates between tabs, so switching reads as the
+  // underline travelling rather than blinking out and back in.
+  const listRef = React.useRef<HTMLDivElement>(null);
+  const tabRefs = React.useRef<Record<string, HTMLButtonElement | null>>({});
+  const [bar, setBar] = React.useState<{ left: number; width: number } | null>(null);
+  const [ready, setReady] = React.useState(false);
+
+  React.useLayoutEffect(() => {
+    const measure = () => {
+      const el = tabRefs.current[active];
+      if (!el || !listRef.current) return;
+      setBar({ left: el.offsetLeft, width: el.offsetWidth });
+    };
+    measure();
+    const id = window.requestAnimationFrame(() => setReady(true));
+    const ro = new ResizeObserver(measure);
+    if (listRef.current) ro.observe(listRef.current);
+    return () => { window.cancelAnimationFrame(id); ro.disconnect(); };
+  }, [active, items]);
+
   return (
-    <div role="tablist" className={[styles.tabs, className ?? ''].filter(Boolean).join(' ')}>
+    <div ref={listRef} role="tablist" className={[styles.tabs, className ?? ''].filter(Boolean).join(' ')}>
       {items.map((item) => {
         const isActive = item.value === active;
         return (
           <button
             key={item.value}
+            ref={(el) => { tabRefs.current[item.value] = el; }}
             role="tab"
             type="button"
             aria-selected={isActive}
@@ -60,11 +82,18 @@ export const Tabs: React.FC<TabsProps> = ({
             onClick={() => select(item.value)}
           >
             {item.label}
-            {/* Active underline (brand/default, 2px) */}
-            {isActive && <span className={styles.tab__indicator} aria-hidden="true" />}
           </button>
         );
       })}
+      {bar && (
+        <span
+          aria-hidden="true"
+          className={[styles.indicator, ready ? styles['indicator--animated'] : ''].filter(Boolean).join(' ')}
+          style={{ transform: `translateX(${bar.left}px)`, width: bar.width }}
+        />
+      )}
+    </div>
+  );     })}
     </div>
   );
 };

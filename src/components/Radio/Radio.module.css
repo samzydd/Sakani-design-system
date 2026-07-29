@@ -37,7 +37,7 @@
   border-radius: var(--radius-full);
   background: var(--color-accent-default);
   transform: scale(0);
-  transition: transform 120ms ease-out;
+  transition: transform var(--transition-fast);
 }
 
 /* Checked (Figma: Checked) */

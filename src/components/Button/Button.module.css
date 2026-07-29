@@ -68,6 +68,8 @@
  * Maps to Figma: Variant=Primary
  */
 .button--primary {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   background-color: var(--color-accent-default);
   color: var(--color-fg-on-accent);
   border-color: var(--color-accent-default);
@@ -88,6 +90,8 @@
  * Maps to Figma: Variant=Secondary
  */
 .button--secondary {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   background-color: var(--color-bg-subtle);
   color: var(--color-fg-default);
   border-color: var(--color-border-default);
@@ -107,6 +111,8 @@
  * Maps to Figma: Variant=Outline
  */
 .button--outline {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   background-color: transparent;
   color: var(--color-fg-default);
   border-color: var(--color-border-default);
@@ -126,6 +132,8 @@
  * Maps to Figma: Variant=Ghost
  */
 .button--ghost {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   background-color: transparent;
   color: var(--color-fg-default);
   border-color: transparent;
@@ -144,6 +152,8 @@
  * Maps to Figma: Variant=Destructive
  */
 .button--destructive {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+
   background-color: var(--color-danger-solid);
   color: var(--color-fg-on-accent);
   border-color: var(--color-danger-solid);
