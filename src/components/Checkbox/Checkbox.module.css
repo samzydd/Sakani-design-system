@@ -2,7 +2,7 @@
 
 .wrapper {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-8);
   font-family: var(--font-sans);
   cursor: pointer;
@@ -75,3 +75,7 @@
 /* Hover — border strengthens (mirrors Figma Checkbox State=Hover) */
 .wrapper:hover .box,
 .checkbox:hover .box { border-color: var(--color-border-strong); }
+
+/* With a description the control aligns to the first line of text instead
+   of the block centre. */
+.wrapper--withDescription { align-items: flex-start; }

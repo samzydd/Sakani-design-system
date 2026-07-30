@@ -11,7 +11,7 @@
  */
 
 import React from 'react';
-import { Paperclip, Smile, ArrowUp, File as FileIcon, X } from 'lucide-react';
+import { Paperclip, Smile, Send, File as FileIcon, X } from 'lucide-react';
 import styles from './ChatComposer.module.css';
 
 export type ChatComposerState = 'default' | 'typing' | 'uploading' | 'disabled';
@@ -44,7 +44,11 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
   className,
 }) => {
   const disabled = state === 'disabled';
-  const canSend = state === 'typing' || (Boolean(value) && !disabled);
+  // Uncontrolled fallback: without this, typing in an uncontrolled composer
+  // never enables Send because `value` stays undefined.
+  const [internal, setInternal] = React.useState('');
+  const text = value !== undefined ? value : internal;
+  const canSend = !disabled && (text.trim().length > 0 || state === 'typing');
   return (
     <div className={[styles.composer, styles[`composer--${state}`], className ?? ''].filter(Boolean).join(' ')}>
       {state === 'uploading' && (
@@ -68,10 +72,13 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
         <input
           type="text"
           className={styles.input}
-          value={value}
+          value={text}
           placeholder={disabled ? "You can't reply to this conversation" : placeholder}
           disabled={disabled}
-          onChange={(e) => onChange?.(e.target.value)}
+          onChange={(e) => {
+            if (value === undefined) setInternal(e.target.value);
+            onChange?.(e.target.value);
+          }}
           onKeyDown={(e) => { if (e.key === 'Enter' && canSend) { e.preventDefault(); onSend?.(); } }}
         />
         <button type="button" className={styles.icon} disabled={disabled} aria-label="Add emoji">
@@ -84,7 +91,7 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
           disabled={!canSend}
           aria-label="Send message"
         >
-          <ArrowUp size={18} />
+          <Send size={16} />
         </button>
       </div>
     </div>

@@ -35,6 +35,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
         htmlFor={cbId}
         className={[
           styles.wrapper,
+          description ? styles['wrapper--withDescription'] : '',
           disabled ? styles['wrapper--disabled'] : '',
           className ?? '',
         ].filter(Boolean).join(' ')}

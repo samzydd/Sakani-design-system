@@ -2,7 +2,7 @@
 
 .wrapper {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-8);
   font-family: var(--font-sans);
   cursor: pointer;
@@ -54,3 +54,7 @@
 .text { display: flex; flex-direction: column; gap: var(--space-2); }
 .text__label { font-size: 14px; font-weight: 500; color: var(--color-fg-default); line-height: 1.4; }
 .text__description { font-size: 12px; color: var(--color-fg-muted); line-height: 1.4; }
+
+/* With a description the control aligns to the first line of text instead
+   of the block centre. */
+.wrapper--withDescription { align-items: flex-start; }

@@ -97,3 +97,16 @@
   flex-shrink: 0;
 }
 .input__icon svg { width: 16px; height: 16px; }
+
+/* Unstyled: the parent container owns border, background and focus highlight.
+   Used by TopBar's search field so the wrapper highlights, not the input. */
+.input--unstyled {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+.input--unstyled:focus-within {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}

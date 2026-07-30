@@ -35,9 +35,13 @@
   border: var(--border-width-150) solid var(--color-accent-default);
   box-shadow: var(--shadow-xs);
   cursor: pointer;
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+              border-color var(--transition-base);
 }
-.slider::-webkit-slider-thumb:active { transform: scale(1.1); }
+.slider:hover::-webkit-slider-thumb { transform: scale(1.08); box-shadow: var(--shadow-sm); }
+.slider:active::-webkit-slider-thumb { transform: scale(1.18); box-shadow: var(--shadow-md); }
+.slider:hover::-moz-range-thumb { transform: scale(1.08); }
+.slider:active::-moz-range-thumb { transform: scale(1.18); }
 
 /* Thumb — Firefox */
 .slider::-moz-range-thumb {
@@ -52,4 +56,10 @@
 
 .slider:focus-visible::-webkit-slider-thumb {
   box-shadow: 0 0 0 4px var(--color-accent-subtle);
+}
+
+/* The filled portion of the track eases with the thumb rather than jumping. */
+.slider { transition: background-size var(--transition-base), background-color var(--transition-base); }
+.slider::-moz-range-thumb {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }

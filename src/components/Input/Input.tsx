@@ -31,12 +31,16 @@ export interface InputProps
   error?: string;
   /** Figma Size axis. Defaults to "md". */
   size?: InputSize;
+  /** Strip the field's own border, background and focus highlight so a parent
+   *  container can own the chrome (used by TopBar's search). */
+  unstyled?: boolean;
   leadingIcon?: React.ReactNode;
   trailingIcon?: React.ReactNode;
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ label, description, error, size = 'md', leadingIcon, trailingIcon, disabled, id, className, ...rest }, ref) => {
+  ({ label, description, error, size = 'md',
+    unstyled, leadingIcon, trailingIcon, disabled, id, className, ...rest }, ref) => {
     const reactId = React.useId();
     const inputId = id ?? reactId;
     const hasError = Boolean(error);

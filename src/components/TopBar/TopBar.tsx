@@ -76,7 +76,7 @@ export const TopBar: React.FC<TopBarProps> = ({
         <PanelLeft size={density === 'md' ? 20 : 18} />
       </button>
     )}
-    <div className={styles.bar__left} data-type={type}>{left}</div>
+    <div className={[styles.bar__left, type === 'search' ? styles['bar__left--search'] : ''].filter(Boolean).join(' ')} data-type={type}>{left}</div>
     <div className={styles.bar__spacer} />
     {showActions && (
       <>

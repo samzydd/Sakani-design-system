@@ -51,3 +51,16 @@
   color: var(--color-fg-muted);
 }
 .bar__chatActions { display: flex; align-items: center; gap: var(--space-8); flex-shrink: 0; }
+
+/* Search wrapper owns the chrome: pass the Input `unstyled` and this container
+   carries the border and the focus highlight instead of the field itself. */
+.bar__left--search {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+.bar__left--search:focus-within {
+  border-color: var(--color-border-default);
+  box-shadow: var(--shadow-sm);
+}

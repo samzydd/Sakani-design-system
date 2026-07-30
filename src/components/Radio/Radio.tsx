@@ -27,6 +27,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
         htmlFor={radioId}
         className={[
           styles.wrapper,
+          description ? styles['wrapper--withDescription'] : '',
           disabled ? styles['wrapper--disabled'] : '',
           className ?? '',
         ].filter(Boolean).join(' ')}

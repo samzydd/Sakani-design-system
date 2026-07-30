@@ -6,6 +6,7 @@
   gap: var(--space-20);
   padding: var(--space-24);
   background: var(--color-bg-canvas);
+  overflow: visible;
 }
 .spacer { flex: 1 1 auto; }
 
@@ -21,7 +22,13 @@
   align-items: flex-start;
   gap: var(--space-16);
   overflow-x: auto;
-  padding-bottom: var(--space-4);
+  overflow-y: visible;
+  /* Inset padding with matching negative margin: the scroll container keeps its
+     bounds, but card shadows and the drop-target outline are no longer clipped
+     at the top, right and bottom edges. */
+  padding: var(--space-6);
+  margin: calc(-1 * var(--space-6));
+  scrollbar-gutter: stable;
 }
 
 /* ---- column ---- */

@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const Search: Story = {
   args: {
     type: 'search', density: 'md', hasUnread: true,
-    left: <div style={{ width: 320 }}><Input placeholder="Search anything" /></div>,
+    left: <div style={{ width: 320 }}><Input unstyled placeholder="Search anything" /></div>,
     account: <Avatar initials="SO" />,
   },
 };

@@ -23,7 +23,8 @@
 .select--md { height: 40px; }
 .select--lg { height: 48px; }
 
-.select:focus-within {
+.select--open,
+.select:focus-visible {
   border-color: var(--color-border-default);
   border-width: var(--border-width-150);
   box-shadow: var(--shadow-sm);
@@ -71,3 +72,62 @@
   pointer-events: none;
 }
 .select__chevron svg { width: 16px; height: 16px; }
+
+/* ---- custom listbox ---------------------------------------------------- */
+.anchor { position: relative; }
+
+.select { cursor: pointer; user-select: none; }
+
+.select__value {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.select__value--placeholder { color: var(--color-fg-subtle); font-weight: 400; }
+
+.select__chevron { transition: transform var(--transition-base); }
+.select__chevron--open { transform: rotate(180deg); }
+
+/* Panel mirrors the Combobox panel exactly. */
+.panel {
+  position: absolute;
+  top: calc(100% + var(--space-4));
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-height: 264px;
+  overflow-y: auto;
+  padding: var(--space-4);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: 36px;
+  padding: var(--space-8);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-fg-default);
+  cursor: pointer;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+.option:hover:not(.option--disabled),
+.option--active { background: var(--color-bg-subtle); }
+.option--selected { background: var(--color-bg-subtle); }
+.option--disabled { opacity: var(--opacity-60); cursor: not-allowed; }
+.option__label { flex: 1 1 auto; min-width: 0; }
+.option__check { display: inline-flex; color: var(--color-accent-default); flex-shrink: 0; }
