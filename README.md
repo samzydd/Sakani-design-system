@@ -116,6 +116,10 @@ The library ships with an audited AA baseline: contrast-checked token pairs in b
 - [ ] Theming CLI (custom brand token generation)
 - [ ] Vue port
 
+## Support
+
+If Sakani is useful to you, you can [tip the creator](https://csakani.gumroad.com/coffee). It funds the time that keeps the system maintained and growing.
+
 ## Author
 
 **Sam Okpere** — senior UI/UX & design systems designer
