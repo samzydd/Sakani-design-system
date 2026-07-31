@@ -14,7 +14,7 @@
   flex: 1 1 0;
   min-width: 0;
   text-align: center;
-  padding: var(--space-6) var(--space-12);
+  padding: var(--space-4) var(--space-12);
   border: none;
   background: transparent;
   border-radius: var(--radius-sm);
@@ -37,8 +37,8 @@
 /* The thumb: one element that slides between segments. */
 .thumb {
   position: absolute;
-  top: var(--space-4);
-  bottom: var(--space-4);
+  top: var(--space-2);
+  bottom: var(--space-2);
   left: 0;
   z-index: 0;
   border-radius: var(--radius-sm);

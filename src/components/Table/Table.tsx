@@ -29,6 +29,9 @@ export interface TableProps<T> {
   selectedRows?: number[];
   onSelectionChange?: (indices: number[]) => void;
   rowKey?: (row: T, index: number) => string | number;
+  /** Enable drag-to-reorder on rows. Fires with the new row order. */
+  reorderable?: boolean;
+  onReorder?: (rows: T[]) => void;
   className?: string;
 }
 
@@ -56,7 +59,7 @@ const TableCheckbox: React.FC<{
 };
 
 export function Table<T>({
-  columns, rows, selectable, selectedRows, onSelectionChange, rowKey, className,
+  columns, rows, selectable, selectedRows, onSelectionChange, rowKey, reorderable, onReorder, className,
 }: TableProps<T>) {
   const isControlled = selectedRows !== undefined;
   const [internal, setInternal] = React.useState<number[]>([]);
@@ -69,6 +72,20 @@ export function Table<T>({
 
   const allSelected = rows.length > 0 && selected.length === rows.length;
   const someSelected = selected.length > 0 && !allSelected;
+  const [dragIndex, setDragIndex] = React.useState<number | null>(null);
+  const [overIndex, setOverIndex] = React.useState<number | null>(null);
+
+  const handleDrop = () => {
+    if (dragIndex === null || overIndex === null || dragIndex === overIndex) {
+      setDragIndex(null); setOverIndex(null); return;
+    }
+    const next = [...rows];
+    const [moved] = next.splice(dragIndex, 1);
+    next.splice(overIndex, 0, moved);
+    onReorder?.(next);
+    setDragIndex(null); setOverIndex(null);
+  };
+
   const toggleAll = () => setSelected(allSelected ? [] : rows.map((_, i) => i));
   const toggleRow = (i: number) =>
     setSelected(selected.includes(i) ? selected.filter((x) => x !== i) : [...selected, i]);
@@ -94,7 +111,21 @@ export function Table<T>({
           {rows.map((row, i) => {
             const isSel = selected.includes(i);
             return (
-              <tr key={rowKey ? rowKey(row, i) : i} className={[styles.bodyRow, isSel ? styles['bodyRow--selected'] : ''].filter(Boolean).join(' ')}>
+              <tr
+                key={rowKey ? rowKey(row, i) : i}
+                draggable={reorderable || undefined}
+                onDragStart={reorderable ? () => setDragIndex(i) : undefined}
+                onDragOver={reorderable ? (e) => { e.preventDefault(); setOverIndex(i); } : undefined}
+                onDrop={reorderable ? handleDrop : undefined}
+                onDragEnd={reorderable ? () => { setDragIndex(null); setOverIndex(null); } : undefined}
+                className={[
+                  styles.bodyRow,
+                  isSel ? styles['bodyRow--selected'] : '',
+                  reorderable ? styles['bodyRow--draggable'] : '',
+                  overIndex === i && dragIndex !== null && dragIndex !== i ? styles['bodyRow--dropTarget'] : '',
+                  dragIndex === i ? styles['bodyRow--dragging'] : '',
+                ].filter(Boolean).join(' ')}
+              >
                 {selectable && (
                   <td className={styles.checkCell}>
                     <TableCheckbox checked={isSel} onChange={() => toggleRow(i)} label={`Select row ${i + 1}`} />

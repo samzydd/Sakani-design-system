@@ -7,10 +7,19 @@
   background: var(--color-bg-surface);
   border-bottom: 1px solid var(--color-border-subtle);
 }
-.bar--md { height: 64px; padding: 0 var(--space-24); }
-.bar--sm { height: 56px; padding: 0 var(--space-20); }
-.bar__left { display: flex; align-items: center; min-width: 0; }
+.bar--md { height: 64px; }
+.bar--sm { height: 56px; }
+.bar__left { display: flex; align-items: center; min-width: 0; padding-left: var(--space-20); }
 .bar__spacer { flex: 1 1 auto; }
+
+/* Right section: groups help button, bell, divider, and account together with consistent spacing */
+.bar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  flex-shrink: 0;
+  padding-right: var(--space-20);
+}
 .bar__icon {
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
   display: inline-flex; align-items: center; justify-content: center;
@@ -50,7 +59,7 @@
   font-family: var(--font-sans); font-size: 12px; line-height: 16px;
   color: var(--color-fg-muted);
 }
-.bar__chatActions { display: flex; align-items: center; gap: var(--space-8); flex-shrink: 0; }
+.bar__chatActions { display: flex; align-items: center; gap: var(--space-8); flex-shrink: 0; padding-right: var(--space-12); }
 
 /* Search wrapper owns the chrome: pass the Input `unstyled` and this container
    carries the border and the focus highlight instead of the field itself. */
@@ -63,4 +72,16 @@
 .bar__left--search:focus-within {
   border-color: var(--color-border-default);
   box-shadow: var(--shadow-sm);
+}
+
+/* Chevron indicator next to account avatar — shows dropdown intent. */
+.bar__accountChevron {
+  flex-shrink: 0;
+  margin-left: var(--space-4);
+  color: var(--color-fg-subtle);
+  transition: transform var(--transition-base), color var(--transition-base);
+}
+.bar__account:where(:hover) .bar__accountChevron {
+  transform: scaleY(-1);
+  color: var(--color-fg-default);
 }

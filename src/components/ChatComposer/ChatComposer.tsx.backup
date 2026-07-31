@@ -96,14 +96,12 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
 
   // Handle emoji picker button click
   const handleEmojiButtonClick = () => {
-    if (!showEmojiPicker && inputRef.current) {
-      // Position emoji picker above the input field with 4px gap
-      const inputRect = inputRef.current.getBoundingClientRect();
-      // Emoji picker height is approximately 104px (padding + 2 rows of emojis)
-      const estimatedPickerHeight = 104;
+    if (!showEmojiPicker && emojiButtonRef.current) {
+      // Calculate position of emoji button for portal
+      const rect = emojiButtonRef.current.getBoundingClientRect();
       setPickerPosition({
-        top: inputRect.top - estimatedPickerHeight - 4, // 4px above input
-        right: 20, // Same right margin as chat composer
+        top: rect.top - 10, // Position above the button
+        right: window.innerWidth - rect.right,
       });
     }
     setShowEmojiPicker(!showEmojiPicker);

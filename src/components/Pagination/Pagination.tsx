@@ -21,7 +21,7 @@ export interface PaginationProps {
   className?: string;
 }
 
-/** Build the list of page tokens with ellipses, e.g. [1, '…', 4, 5, 6, '…', 20]. */
+/** Build the list of page tokens with ellipses, e.g. [1, '...', 4, 5, 6, '...', 20]. */
 function buildRange(total: number, page: number, siblings: number): (number | 'ellipsis')[] {
   const range: (number | 'ellipsis')[] = [];
   const left = Math.max(2, page - siblings);

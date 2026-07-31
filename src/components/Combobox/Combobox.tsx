@@ -49,7 +49,7 @@ export interface ComboboxProps {
 
 export const Combobox: React.FC<ComboboxProps> = ({
   options, mode = 'single', size = 'md', label, description, error,
-  placeholder = 'Select…', disabled, loading, value, onChange, className,
+  placeholder = 'Select...', disabled, loading, value, onChange, className,
 }) => {
   const reactId = React.useId();
   const [open, setOpen] = React.useState(false);

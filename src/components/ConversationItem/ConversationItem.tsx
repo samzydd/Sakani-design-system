@@ -5,7 +5,7 @@
  *
  *   state (Figma "State" axis) -> default | hover | active | unread | typing | muted
  *
- * Avatar (+ presence dot) · name + timestamp · preview (or "typing…") ·
+ * Avatar (+ presence dot) · name + timestamp · preview (or "typing...") ·
  * unread count. Active uses accent/subtle; Unread bolds the name and adds a
  * count; Typing replaces the preview; Muted hides presence and adds a bell-off.
  */
@@ -62,7 +62,7 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
       </span>
       <span className={styles.item__row}>
         {state === 'typing'
-          ? <span className={styles.item__typing}>typing…</span>
+          ? <span className={styles.item__typing}>typing...</span>
           : <span className={styles.item__preview}>{preview}</span>}
         {state === 'unread' && unreadCount != null && (
           <span className={styles.item__badge}>{unreadCount}</span>

@@ -13,7 +13,7 @@
  */
 
 import React from 'react';
-import { PanelLeft, CircleHelp, Bell } from 'lucide-react';
+import { PanelLeft, CircleHelp, Bell, ChevronDown } from 'lucide-react';
 import styles from './TopBar.module.css';
 
 export type TopBarType = 'search' | 'breadcrumb' | 'tabs' | 'minimal' | 'chat';
@@ -78,21 +78,23 @@ export const TopBar: React.FC<TopBarProps> = ({
     )}
     <div className={[styles.bar__left, type === 'search' ? styles['bar__left--search'] : ''].filter(Boolean).join(' ')} data-type={type}>{left}</div>
     <div className={styles.bar__spacer} />
-    {showActions && (
-      <>
-        <button type="button" className={styles.bar__icon} aria-label="Help">
-          <CircleHelp size={density === 'md' ? 20 : 18} />
-        </button>
-        <button type="button" className={styles.bar__icon} aria-label="Notifications">
-          <span className={styles.bar__bell}>
-            <Bell size={density === 'md' ? 20 : 18} />
-            {hasUnread && <span className={styles.bar__dot} aria-hidden="true" />}
-          </span>
-        </button>
-        <span className={styles.bar__divider} />
-      </>
-    )}
-    {account && <div className={styles.bar__account}>{account}</div>}
+    <div className={styles.bar__right}>
+      {showActions && (
+        <>
+          <button type="button" className={styles.bar__icon} aria-label="Help">
+            <CircleHelp size={density === 'md' ? 20 : 18} />
+          </button>
+          <button type="button" className={styles.bar__icon} aria-label="Notifications">
+            <span className={styles.bar__bell}>
+              <Bell size={density === 'md' ? 20 : 18} />
+              {hasUnread && <span className={styles.bar__dot} aria-hidden="true" />}
+            </span>
+          </button>
+          <span className={styles.bar__divider} />
+        </>
+      )}
+      {account && <div className={styles.bar__account}>{account}<ChevronDown size={16} className={styles.bar__accountChevron} /></div>}
+    </div>
     </>
     )}
   </header>

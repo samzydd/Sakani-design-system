@@ -58,7 +58,9 @@
 
 .item--collapsed { justify-content: center; padding: var(--space-8); }
 
-transition: color var(--transition-base);
+.item {
+  transition: color var(--transition-base);
+}
 .item__label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .item__badge {
@@ -67,6 +69,7 @@ transition: color var(--transition-base);
   min-width: 20px;
   padding: 0 var(--space-6);
   height: 20px;
+  border-radius: var(--radius-full);
   display: inline-flex;
   align-items: center;
   justify-content: center;

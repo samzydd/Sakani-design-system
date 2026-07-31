@@ -109,6 +109,7 @@ export const DataTableBlock: React.FC<DataTableBlockProps> = ({
 }) => {
   const [page, setPage] = React.useState(1);
   const [selected, setSelected] = React.useState<number[]>(state === 'bulk' ? [0, 1, 2] : []);
+  const [orderedRows, setOrderedRows] = React.useState<Member[]>(MEMBERS);
 
   // Keep the demo selection in sync when the `state` prop changes (e.g. the
   // Storybook control). In your own copy you'd drive this from real state.
@@ -159,8 +160,8 @@ export const DataTableBlock: React.FC<DataTableBlockProps> = ({
             )}
           </div>
           <div className={styles.toolbar__right}>
-            <Button variant="secondary" size="md" leftIcon={<Columns3 size={16} />}>Columns</Button>
-            <Button variant="primary" size="md" leftIcon={<Plus size={16} />}>Add member</Button>
+            <Button variant="secondary" size="sm" leftIcon={<Columns3 size={16} />}>Columns</Button>
+            <Button variant="primary" size="sm" leftIcon={<Plus size={16} />}>Add member</Button>
           </div>
         </div>
       )}
@@ -188,11 +189,13 @@ export const DataTableBlock: React.FC<DataTableBlockProps> = ({
       ) : (
         <Table<Member>
           columns={columns}
-          rows={rows}
+          rows={state === 'filtered' ? rows : orderedRows}
           selectable
           selectedRows={selected}
           onSelectionChange={setSelected}
           rowKey={(row) => row.email}
+          reorderable={state === 'default'}
+          onReorder={setOrderedRows}
         />
       )}
 

@@ -3,7 +3,8 @@
 
 .block {
   display: flex;
-  height: 930px;
+  width: 100vw;
+  height: 100vh;
   background: var(--color-bg-canvas);
   overflow: hidden;
 }
@@ -36,7 +37,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 1;
   min-width: 0;
   padding: 0 var(--space-8) var(--space-12);
 }
@@ -53,7 +54,7 @@
   gap: var(--space-8);
   flex: 1 1 auto;
   min-height: 0;
-  padding: var(--space-12) var(--space-20);
+  padding: var(--space-12) var(--space-20) var(--space-12) var(--space-12);
   background: var(--color-bg-canvas);
   /* Figma: border/subtle hairline, radius ~20 (file reads 0.68px / 19.06 —
      both scaling artifacts of a resized frame; 1px / 20px is the intent). */
@@ -62,9 +63,16 @@
 }
 
 /* ---- header row: list filter (240) + conversation header ---- */
-.headerRow { display: flex; align-items: center; flex-shrink: 0; }
-.headerRow__filter { width: 300px; flex-shrink: 0; }
-.headerRow__chat { flex: 1 1 auto; min-width: 0; }
+.headerRow { display: flex; align-items: center; flex-shrink: 0; width: 100%; }
+/* Figma "Wrap": 240px column with 6px horizontal padding, so the control
+   inside measures 228px. */
+.headerRow__filter {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0 var(--space-6);
+  box-sizing: border-box;
+}
+.headerRow__chat { flex: 1; width: 100%; min-width: 0; }
 
 .chatAction {
   display: inline-flex; align-items: center; justify-content: center;
@@ -80,6 +88,16 @@
 .panes { display: flex; flex: 1 1 auto; min-height: 0; }
 
 /* conversation list (240) */
+
+/* Chat column: groups header and messages with flex: 1 width */
+.chatColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: var(--space-8);
+}
+
 .list {
   display: flex;
   flex-direction: column;
@@ -87,7 +105,7 @@
   width: 240px;
   flex-shrink: 0;
   min-width: 0;
-  padding: 0 var(--space-8);
+  padding: var(--space-12) 0;
   overflow-y: auto;
   overflow-x: hidden;   /* the list is a fixed rail — never scroll sideways */
 }
@@ -160,7 +178,7 @@
 }
 
 /* ---- app-level top bar: transparent in this block (Figma fill = none) ---- */
-.appBar {
+.appBar { padding-right: var(--space-20);
   background: transparent;
   border-bottom: none;
 }

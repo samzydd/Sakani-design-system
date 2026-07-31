@@ -21,7 +21,7 @@ export interface SpinnerProps {
 
 export const Spinner: React.FC<SpinnerProps> = ({
   size = 'md',
-  label = 'Loading…',
+  label = 'Loading...',
   className,
 }) => (
   <span
