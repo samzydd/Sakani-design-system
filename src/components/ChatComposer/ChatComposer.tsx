@@ -13,6 +13,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Paperclip, Smile, Send, File as FileIcon, X } from 'lucide-react';
+import { IconButton } from '../IconButton';
 import styles from './ChatComposer.module.css';
 
 export type ChatComposerState = 'default' | 'typing' | 'uploading' | 'disabled';
@@ -161,9 +162,13 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
               <div className={styles.upload__fill} style={{ width: `${uploadProgress}%` }} />
             </div>
           </div>
-          <button type="button" className={styles.icon} onClick={onCancelUpload} aria-label="Cancel upload">
-            <X size={16} />
-          </button>
+          <IconButton 
+            icon={X} 
+            variant="ghost" 
+            size="md" 
+            onClick={onCancelUpload} 
+            aria-label="Cancel upload"
+          />
         </div>
       )}
       
@@ -247,15 +252,14 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
       />
       
       <div className={styles.row}>
-        <button
-          type="button"
-          className={styles.icon}
+        <IconButton
+          icon={Paperclip}
+          variant="ghost"
+          size="md"
           onClick={handleAttachClick}
           disabled={disabled}
           aria-label="Attach file"
-        >
-          <Paperclip size={18} />
-        </button>
+        />
         <input
           ref={inputRef}
           type="text"
@@ -270,17 +274,15 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
           onKeyDown={(e) => { if (e.key === 'Enter' && canSend) { e.preventDefault(); onSend?.(); } }}
         />
         
-        {/* Emoji picker container */}
-        <button
+        <IconButton
           ref={emojiButtonRef}
-          type="button"
-          className={styles.icon}
+          icon={Smile}
+          variant="ghost"
+          size="md"
           onClick={handleEmojiButtonClick}
           disabled={disabled}
           aria-label="Add emoji"
-        >
-          <Smile size={18} />
-        </button>
+        />
         
         {showEmojiPicker && !disabled && ReactDOM.createPortal(
           <div
@@ -328,15 +330,14 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
           document.body
         )}
         
-        <button
-          type="button"
-          className={[styles.icon, styles.send].join(' ')}
+        <IconButton
+          icon={Send}
+          variant="primary"
+          size="md"
           onClick={onSend}
           disabled={!canSend}
           aria-label="Send message"
-        >
-          <Send size={16} />
-        </button>
+        />
       </div>
     </div>
   );

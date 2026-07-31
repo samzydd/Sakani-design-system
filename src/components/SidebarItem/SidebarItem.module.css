@@ -46,7 +46,9 @@
 /* ─── Active states ─── */
 .item--active {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
- background: var(--color-accent-subtle); color: var(--color-fg-default); }
+  background: var(--color-accent-subtle);
+  color: var(--color-fg-default);
+}
 .item--active:hover { background: var(--color-accent-subtle); }
 .item--active .item__bar { opacity: 1; }
 .item--active .item__icon { color: var(--color-fg-default); }

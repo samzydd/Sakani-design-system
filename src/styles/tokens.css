@@ -6,13 +6,13 @@
   --color-neutral-50: #FAFAF9;
   --color-neutral-100: #F5F4F2;
   --color-neutral-200: #E7E5E1;
-  --color-neutral-300: #D6D3CD;
+  --color-neutral-300: #DBDAD7;
   --color-neutral-400: #A8A29B;
   --color-neutral-500: #78716A;
   --color-neutral-600: #57534E;
-  --color-neutral-700: #44403B;
-  --color-neutral-800: #292524;
-  --color-neutral-900: #1C1917;
+  --color-neutral-700: #3A3837;
+  --color-neutral-800: #1F1F1F;
+  --color-neutral-900: #141414;
   --color-neutral-950: #0F0E0C;
   --color-primary-50: #FFF3ED;
   --color-primary-100: #FFE4D4;
@@ -25,7 +25,7 @@
   --color-primary-800: #99290A;
   --color-primary-900: #7D250D;
   --color-primary-950: #431004;
-  --color-success-50: #ECFDF3;
+  --color-success-50: #F1FEF6;
   --color-success-100: #D1FADF;
   --color-success-200: #A6F4C5;
   --color-success-300: #6CE9A6;
@@ -36,7 +36,7 @@
   --color-success-800: #05603A;
   --color-success-900: #054F31;
   --color-success-950: #033524;
-  --color-warning-50: #FFFAEB;
+  --color-warning-50: #FFFBF0;
   --color-warning-100: #FEF0C7;
   --color-warning-200: #FEDF89;
   --color-warning-300: #FEC84B;
@@ -87,12 +87,12 @@
   --color-border-default: var(--color-neutral-300);
   --color-border-strong: var(--color-neutral-400);
   --color-border-focus: var(--color-primary-500);
-  /* chart tokens (light) */
-  --color-chart-1: #ff4700;
-  --color-chart-2: #2e90fa;
-  --color-chart-3: #039855;
-  --color-chart-4: #d92d20;
-  --color-chart-5: #78716a;
+  /* chart tokens (light) — aliased to primitives, mirrors Figma Semantic/chart */
+  --color-chart-1: var(--color-primary-500);
+  --color-chart-2: var(--color-info-500);
+  --color-chart-3: var(--color-success-600);
+  --color-chart-4: var(--color-danger-600);
+  --color-chart-5: var(--color-neutral-500);
   --color-accent-default: var(--color-neutral-900);
   --color-accent-hover: var(--color-neutral-800);
   --color-accent-active: var(--color-neutral-700);
@@ -140,12 +140,14 @@
 
   /* ---- radius ---- */
   --radius-none: 0px;
+  --radius-2xs: 2px;
   --radius-xs: 4px;
   --radius-sm: 6px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-2xl: 24px;
+  --radius-3xl: 28px;
   --radius-full: 9999px;
 
   /* ---- border width ---- */
@@ -169,6 +171,10 @@
   --shadow-md: 0 4px 8px -2px rgba(16,15,12,0.10), 0 2px 4px -2px rgba(16,15,12,0.06);
   --shadow-lg: 0 12px 16px -4px rgba(16,15,12,0.08), 0 4px 6px -2px rgba(16,15,12,0.03);
   --shadow-xl: 0 20px 24px -4px rgba(16,15,12,0.10), 0 8px 8px -4px rgba(16,15,12,0.03);
+  --shadow-2xl: 0 24px 48px -12px rgba(16,15,12,0.18);
+  --shadow-left: -12px 0 32px -8px rgba(16,15,12,0.16);
+  --shadow-right: 12px 0 32px -8px rgba(16,15,12,0.16);
+  --shadow-up: 0 -12px 32px -8px rgba(16,15,12,0.16);
 
   /* ---- motion ---- */
   --motion-fast: 150ms;
@@ -208,12 +214,12 @@ html, body {
   --color-border-default: var(--color-neutral-700);
   --color-border-strong: var(--color-neutral-600);
   --color-border-focus: var(--color-primary-400);
-  /* chart tokens (dark) */
-  --color-chart-1: #1570ef;
-  --color-chart-2: #53b1fd;
-  --color-chart-3: #32d583;
-  --color-chart-4: #f97066;
-  --color-chart-5: #a8a29b;
+  /* chart tokens (dark) — aliased to primitives, mirrors Figma Semantic/chart */
+  --color-chart-1: var(--color-info-600);
+  --color-chart-2: var(--color-info-400);
+  --color-chart-3: var(--color-success-400);
+  --color-chart-4: var(--color-danger-400);
+  --color-chart-5: var(--color-neutral-400);
   --color-accent-default: var(--color-neutral-50);
   --color-accent-hover: var(--color-neutral-200);
   --color-accent-active: var(--color-neutral-300);

@@ -6,11 +6,12 @@
   border-radius: var(--radius-sm);
   border: var(--border-width-100) solid transparent;
   cursor: pointer;
-  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
   flex-shrink: 0;
   padding: 0;
+  box-shadow: var(--shadow-xs);
 }
-.button:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus); }
+.button:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus), var(--shadow-sm); }
 .button:disabled { opacity: var(--opacity-60); cursor: not-allowed; }
 
 /* Sizes (square) */
@@ -22,27 +23,27 @@
 .button--primary {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
  background: var(--color-accent-default); color: var(--color-fg-on-accent); border-color: var(--color-accent-default); }
-.button--primary:hover:not(:disabled) { background: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+.button--primary:hover:not(:disabled) { background: var(--color-accent-hover); border-color: var(--color-accent-hover); box-shadow: var(--shadow-sm); }
 
 .button--secondary {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
  background: var(--color-bg-subtle); color: var(--color-fg-default); border-color: var(--color-border-default); }
-.button--secondary:hover:not(:disabled) { background: var(--color-bg-muted); }
+.button--secondary:hover:not(:disabled) { background: var(--color-bg-muted); box-shadow: var(--shadow-sm); }
 
 .button--outline {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
  background: transparent; color: var(--color-fg-default); border-color: var(--color-border-default); }
-.button--outline:hover:not(:disabled) { background: var(--color-bg-subtle); }
+.button--outline:hover:not(:disabled) { background: var(--color-bg-subtle); box-shadow: var(--shadow-sm); }
 
 .button--ghost {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
  background: transparent; color: var(--color-fg-muted); border-color: transparent; }
-.button--ghost:hover:not(:disabled) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.button--ghost:hover:not(:disabled) { background: var(--color-bg-subtle); color: var(--color-fg-default); box-shadow: var(--shadow-sm); }
 
 .button--destructive {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
  background: var(--color-danger-solid); color: var(--color-fg-on-accent); border-color: var(--color-danger-solid); }
-.button--destructive:hover:not(:disabled) { background: var(--color-danger-fg); border-color: var(--color-danger-fg); }
+.button--destructive:hover:not(:disabled) { background: var(--color-danger-fg); border-color: var(--color-danger-fg); box-shadow: var(--shadow-sm); }
 
 /* Pressed (mirrors Button's :active states / Figma State=Pressed) */
 .button--primary:active:not(:disabled) { background: var(--color-accent-active); border-color: var(--color-accent-active); }

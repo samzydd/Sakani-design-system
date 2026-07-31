@@ -40,7 +40,6 @@
 }
 
 /* ─── Body ── */
-transition: background-color var(--transition-base);
 /* Rows animate on hover; selected rows keep their tint while hovered. */
 .bodyRow {
   background: transparent;

@@ -44,7 +44,9 @@
     background-color var(--transition-base),
     color var(--transition-base),
     border-color var(--transition-base),
+    box-shadow var(--transition-base),
     opacity var(--transition-base);
+  box-shadow: var(--shadow-xs);
 
   /* Focus ring — chromatic so it's always visible regardless of variant */
   outline: none;
@@ -52,7 +54,7 @@
 
 .button:focus-visible {
   /* Uses brand/focus token so focus ring stays orange even on charcoal buttons */
-  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
+  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus), var(--shadow-sm);
 }
 
 .button:disabled {
@@ -78,6 +80,7 @@
 .button--primary:hover:not(:disabled) {
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-sm);
 }
 
 .button--primary:active:not(:disabled) {
@@ -100,6 +103,7 @@
 .button--secondary:hover:not(:disabled) {
   background-color: var(--color-bg-muted);
   border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
 }
 
 .button--secondary:active:not(:disabled) {
@@ -121,6 +125,7 @@
 .button--outline:hover:not(:disabled) {
   background-color: var(--color-bg-subtle);
   border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
 }
 
 .button--outline:active:not(:disabled) {
@@ -141,6 +146,7 @@
 
 .button--ghost:hover:not(:disabled) {
   background-color: var(--color-bg-subtle);
+  box-shadow: var(--shadow-sm);
 }
 
 .button--ghost:active:not(:disabled) {
@@ -162,6 +168,7 @@
 .button--destructive:hover:not(:disabled) {
   background-color: var(--color-danger-fg);
   border-color: var(--color-danger-fg);
+  box-shadow: var(--shadow-sm);
 }
 
 .button--destructive:active:not(:disabled) {
