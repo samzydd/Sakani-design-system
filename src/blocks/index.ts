@@ -12,3 +12,5 @@ export { KanbanBoardBlock } from './KanbanBoardBlock';
 export type { KanbanBoardBlockProps, KanbanBoardBlockState } from './KanbanBoardBlock';
 export { ChatInterfaceBlock } from './ChatInterfaceBlock';
 export type { ChatInterfaceBlockProps, ChatInterfaceBlockState } from './ChatInterfaceBlock';
+export { CRMDashboardBlock } from './CRMDashboardBlock';
+export type { CRMDashboardBlockProps } from './CRMDashboardBlock';

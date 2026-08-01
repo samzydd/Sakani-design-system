@@ -1,0 +1,266 @@
+/* CRMDashboardBlock.module.css — layout scaffolding only.
+   All component chrome comes from the Sakani components themselves;
+   these rules just place them and bind to semantic tokens. */
+
+.root {
+  display: flex;
+  height: 900px;
+  width: 100%;
+  background: var(--color-bg-canvas);
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+/* ---- Main column ---- */
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  background: var(--color-bg-surface);
+  overflow: hidden;
+}
+
+.navScroll {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  width: 100%;
+}
+
+/* ---- Entity tabs ---- */
+.tabsBar {
+  display: flex;
+  align-items: center;
+  padding: var(--space-20) var(--space-16) 0;
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+
+/* ---- Body: filter panel + table ---- */
+.body {
+  display: flex;
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+}
+
+/* ---- Filter panel ---- */
+.filters {
+  display: flex;
+  flex-direction: column;
+  width: 288px;
+  flex-shrink: 0;
+  height: 100%;
+  border-right: var(--border-width-100) solid var(--color-border-subtle);
+  background: var(--color-bg-surface);
+  overflow: hidden;
+}
+
+.filtersHead {
+  padding: var(--space-16) var(--space-16) var(--space-12);
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+
+.filtersHeadRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+}
+
+.filtersTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--color-fg-default);
+}
+
+.filterTabs {
+  padding: var(--space-16) var(--space-16) 0;
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+
+.filtersScroll {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-12) var(--space-16);
+  background: var(--color-bg-canvas);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+}
+
+.groupTitle {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-fg-default);
+}
+
+.checkGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--space-24);
+  row-gap: var(--space-8);
+}
+
+/* Per-status checked-fill overrides — scopes the CSS custom property the
+   shared Checkbox component reads, so each lead status keeps its own Figma
+   color without forking the component. */
+.checkSuccess       { --color-accent-default: var(--color-chart-3); }
+.checkWarning        { --color-accent-default: var(--color-warning-solid); }
+.checkDanger          { --color-accent-default: var(--color-danger-solid); }
+.checkNeutral    { --color-accent-default: var(--color-chart-5); }
+.checkBrand { --color-accent-default: var(--color-brand-default); }
+.checkSuccessSolid          { --color-accent-default: var(--color-success-solid); }
+
+.rangeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.rangeRow > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* ---- Table region ---- */
+.tableRegion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  padding: var(--space-16);
+  background: var(--color-bg-surface);
+  overflow: auto;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.searchField {
+  width: 288px;
+}
+
+.toolbarRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* ---- Loading state (shown while an unimplemented entity tab is active) ---- */
+.panel {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  overflow: hidden;
+}
+
+.skeletonRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  height: 44px;
+  padding: 0 var(--space-16);
+  border-top: var(--border-width-100) solid var(--color-border-subtle);
+}
+.skeletonRow:first-child { border-top: none; }
+
+/* ---- Footer ---- */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerText {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--color-fg-subtle);
+}
+
+/* ---- Table cell helpers ---- */
+.cellInline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.cellStack {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cellText {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.cellSub {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--color-fg-subtle);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .filters { width: 240px; }
+  .searchField { width: 200px; }
+}
+
+@media (max-width: 880px) {
+  .filters { display: none; }
+}

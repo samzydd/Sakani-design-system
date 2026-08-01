@@ -6,7 +6,7 @@
   width: 100vw;
   height: 100vh;
   background: var(--color-bg-canvas);
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* ---- app navigation sidebar (240 · 64 collapsed) ---- */
@@ -19,6 +19,7 @@
   padding: var(--space-8);
   background: var(--color-bg-canvas);
   transition: width var(--motion-slow) var(--ease-out);
+  overflow: visible;
 }
 .nav--collapsed { width: 64px; }
 
@@ -29,8 +30,16 @@
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
+  /* 2px padding + matching negative margin: cancels out visually, but gives
+     the active-item accent bar (left:-1px) room inside the padding box so
+     it isn't clipped by this container's vertical scroll (overflow-y:auto
+     forces overflow-x to auto too, per the CSS spec). border-box keeps the
+     padding from growing the flex-stretched width. */
+  box-sizing: border-box;
+  padding-left: 2px;
+  margin-left: -2px;
 }
-.nav__group { display: flex; flex-direction: column; gap: var(--space-4); }
+.nav__group { display: flex; flex-direction: column; gap: var(--space-4); overflow: visible; }
 .nav__footer { display: flex; flex-direction: column; gap: var(--space-2); }
 
 /* ---- main ---- */

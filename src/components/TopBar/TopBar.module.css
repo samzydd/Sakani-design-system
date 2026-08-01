@@ -2,7 +2,11 @@
 .bar {
   display: flex;
   align-items: center;
-  gap: var(--space-12);
+  /* Figma: the toggle icon button sits 8px from the left-slot content
+     (breadcrumb/search/tabs) — same 8px rhythm the right-side icon
+     cluster uses. The spacer absorbs all the remaining width, so this
+     gap only ever governs those two edges. */
+  gap: var(--space-8);
   width: 100%;
   background: var(--color-bg-surface);
   border-bottom: 1px solid var(--color-border-subtle);
@@ -16,7 +20,7 @@
 .bar__right {
   display: flex;
   align-items: center;
-  gap: var(--space-10);
+  gap: var(--space-8);
   flex-shrink: 0;
   padding-right: var(--space-20);
 }

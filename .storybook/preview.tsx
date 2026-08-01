@@ -4,6 +4,10 @@ import type { Preview } from '@storybook/react-vite'
 
 const preview: Preview = {
   parameters: {
+    // Centre every story in the canvas. Stories that need the full width
+    // (blocks, Top Bar) override this with `layout: 'fullscreen'`.
+    layout: 'centered',
+
     controls: {
       matchers: {
        color: /(background|color)$/i,

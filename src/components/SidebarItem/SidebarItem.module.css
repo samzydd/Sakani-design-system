@@ -21,6 +21,7 @@
   text-align: left;
   text-decoration: none;
   box-sizing: border-box;
+  overflow: visible;
   transition: background-color var(--transition-base), color var(--transition-base);
 }
 .item:hover:not(.item--disabled) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
@@ -29,7 +30,10 @@
 
 /* ─── Left accent bar (brand/default, 3x20 pill) ───
  * Absolutely positioned at left:-1px so the 3px bar's CENTER sits on the
- * button's left edge (spans -1..+2px), overlapping it — matches Figma. */
+ * button's left edge (spans -1..+2px), overlapping it — matches Figma.
+ * Needs 1px of buffer inside any scrollable ancestor's padding box, since
+ * overflow-y:auto forces overflow-x to auto too and would otherwise clip
+ * this negative offset — see .nav__body in ChatInterfaceBlock.module.css. */
 .item__bar {
   position: absolute;
   left: -1px;
@@ -60,9 +64,6 @@
 
 .item--collapsed { justify-content: center; padding: var(--space-8); }
 
-.item {
-  transition: color var(--transition-base);
-}
 .item__label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .item__badge {
