@@ -6,10 +6,17 @@
   align-items: stretch;
   font-family: var(--font-sans);
   border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+  /* Tabs never wrap (see .tab) — in a narrow container (e.g. a sidebar
+     filter panel) that can make the row wider than its box. Scroll rather
+     than let an ancestor's overflow:hidden clip a label mid-word. */
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+.tabs::-webkit-scrollbar { display: none; }
 
 .tab {
   position: relative;
+  flex-shrink: 0;
   padding: var(--space-10) var(--space-16);
   background: transparent;
   border: none;
@@ -19,6 +26,7 @@
   line-height: 20px;
   font-weight: 500;
   color: var(--color-fg-muted);
+  white-space: nowrap;
   transition: color var(--transition-base);
 }
 .tab:hover:not(.tab--disabled) { color: var(--color-fg-default); }

@@ -8,16 +8,23 @@
 }
 .header--collapsed { justify-content: center; }
 
+/* Fixed 28x28 frame — the actual size constraint. .header__logo fills it. */
+.header__logoWrap {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
 .header__logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 100%;
+  height: 100%;
   border-radius: var(--radius-md);   /* Figma: 8px */
   background: var(--color-accent-default);
   color: var(--color-fg-on-accent);
-  flex-shrink: 0;
+  font-weight: 600;
 }
 .header__text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .header__title { font-size: 14px; font-weight: 600; line-height: 20px; color: var(--color-fg-default); }

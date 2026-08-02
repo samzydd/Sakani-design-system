@@ -4,8 +4,8 @@
 
 .root {
   display: flex;
-  height: 900px;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   background: var(--color-bg-canvas);
   font-family: var(--font-sans);
   overflow: hidden;
@@ -36,6 +36,8 @@
   gap: var(--space-4);
   align-items: center;
   width: 100%;
+  padding: 0 var(--space-16);
+  box-sizing: border-box;
 }
 
 /* ---- Entity tabs ---- */
@@ -89,6 +91,15 @@
 .filterTabs {
   padding: var(--space-16) var(--space-16) 0;
   border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+
+/* The Active/Archived/Assigned-to-me segmented control: buttons hug their
+   own text (see Tabs' .tab) but the row itself fills the panel's width,
+   with a fixed 8px gap between buttons instead of relying on their padding
+   alone for separation. */
+.filterSegmented {
+  width: 100%;
+  gap: var(--space-8);
 }
 
 .filtersScroll {
@@ -207,6 +218,23 @@
   border-top: var(--border-width-100) solid var(--color-border-subtle);
 }
 .skeletonRow:first-child { border-top: none; }
+
+/* One per real table column, sized to that column's width so every column
+   gets its own loader instead of a fixed handful of placeholder blocks. */
+.skeletonCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Filter panel loading state (Archived / Assigned to me aren't implemented). */
+.filterSkeletonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
 
 /* ---- Footer ---- */
 .footer {

@@ -71,12 +71,14 @@ export const TopBar: React.FC<TopBarProps> = ({
       </>
     ) : (
     <>
-    {showToggle && (
-      <button type="button" className={styles.bar__icon} onClick={onToggle} aria-label="Toggle sidebar">
-        <PanelLeft size={density === 'md' ? 20 : 18} />
-      </button>
-    )}
-    <div className={[styles.bar__left, type === 'search' ? styles['bar__left--search'] : ''].filter(Boolean).join(' ')} data-type={type}>{left}</div>
+    <div className={styles.bar__leftGroup}>
+      {showToggle && (
+        <button type="button" className={styles.bar__icon} onClick={onToggle} aria-label="Toggle sidebar">
+          <PanelLeft size={density === 'md' ? 20 : 18} />
+        </button>
+      )}
+      <div className={[styles.bar__left, type === 'search' ? styles['bar__left--search'] : ''].filter(Boolean).join(' ')} data-type={type}>{left}</div>
+    </div>
     <div className={styles.bar__spacer} />
     <div className={styles.bar__right}>
       {showActions && (

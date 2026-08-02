@@ -17,7 +17,7 @@
 import React from 'react';
 import {
   LayoutGrid, Mail, Database, CalendarDays, Users, Workflow, Zap, Target,
-  Plug, Settings, MessageCircle, Search, ChevronDown, PanelLeftClose, Circle,
+  Plug, Settings, MessageCircle, Search, ChevronDown, ChevronUp, PanelLeftClose, Circle,
 } from 'lucide-react';
 
 import { Sidebar } from '../../components/Sidebar';
@@ -124,15 +124,30 @@ const TAB_LABEL: Record<string, string> = {
 
 const initialsOf = (name: string) => name.split(' ').map((p) => p[0]).slice(0, 2).join('');
 
-/** Filter section header: title + collapse chevron. Mirrors Figma "Page Header". */
-function FilterGroupHeader({ title }: { title: string }) {
+/** Filter section header: title + collapse chevron. Mirrors Figma "Page Header".
+ *  Chevron points up while the section is open (click to collapse) and down
+ *  while it's closed (click to expand). */
+function FilterGroupHeader({ title, isOpen, onToggle }: { title: string; isOpen: boolean; onToggle: () => void }) {
   return (
     <div className={styles.groupHeader}>
       <span className={styles.groupTitle}>{title}</span>
-      <IconButton size="sm" variant="ghost" icon={ChevronDown} aria-label={`Collapse ${title}`} />
+      <IconButton
+        size="sm"
+        variant="ghost"
+        icon={isOpen ? ChevronUp : ChevronDown}
+        aria-label={isOpen ? `Collapse ${title}` : `Expand ${title}`}
+        aria-expanded={isOpen}
+        onClick={onToggle}
+      />
     </div>
   );
 }
+
+/** Formats a raw dollar amount as the deal-value range's display figure. */
+const formatDealValue = (n: number) => `$${Math.round(n).toLocaleString('en-US')}`;
+
+const FILTER_SECTIONS = ['status', 'source', 'industry', 'dealValue', 'owner', 'country'] as const;
+type FilterSection = (typeof FILTER_SECTIONS)[number];
 
 /* ------------------------------------------------------------------ *
  * The block
@@ -151,6 +166,13 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
   // Figma shows all statuses checked, sources unchecked.
   const [statuses, setStatuses] = React.useState<Set<LeadStatus>>(new Set(STATUS_OPTIONS));
   const [sources, setSources] = React.useState<Set<string>>(new Set());
+
+  // All filter sections start expanded; clicking a header's chevron collapses
+  // just that section.
+  const [openSections, setOpenSections] = React.useState<Set<FilterSection>>(new Set(FILTER_SECTIONS));
+  const toggleSection = (key: FilterSection) => setOpenSections((prev) => toggle(prev, key));
+
+  const [dealValue, setDealValue] = React.useState(70000);
 
   const toggle = <T,>(set: Set<T>, key: T) => {
     const next = new Set(set);
@@ -227,7 +249,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
     <div className={[styles.root, className ?? ''].filter(Boolean).join(' ')}>
       {/* ---- Sidebar (icon rail) ---- */}
       <Sidebar collapsed>
-        <SidebarHeader type="brand" title="Sakani" collapsed />
+        <SidebarHeader type="brand" title="Sakani" logo="S" collapsed />
         <SidebarDivider />
         <div className={styles.navScroll}>
           <div className={styles.navGroup}>
@@ -291,6 +313,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
 
             <div className={styles.filterTabs}>
               <Tabs
+                className={styles.filterSegmented}
                 value={filterTab}
                 onChange={setFilterTab}
                 items={[
@@ -301,74 +324,108 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
               />
             </div>
 
+            {filterTab !== 'active' ? (
+              // Archived / Assigned-to-me filter sets aren't implemented in
+              // this example — show a loading skeleton in place of the real
+              // filter sections rather than the (wrong) Active set.
+              <div className={styles.filtersScroll}>
+                {Array.from({ length: 3 }).map((_, i) => (
+                  <div key={i} className={styles.filterSkeletonGroup}>
+                    <Skeleton variant="text" width={90} height={14} />
+                    <Skeleton variant="rect" width="100%" height={32} />
+                  </div>
+                ))}
+              </div>
+            ) : (
             <div className={styles.filtersScroll}>
               {/* Lead status */}
               <section className={styles.group}>
-                <FilterGroupHeader title="Lead status" />
-                <div className={styles.checkGrid}>
-                  {STATUS_OPTIONS.map((s) => (
-                    <Checkbox
-                      key={s}
-                      className={STATUS_CHECK_CLASS[s]}
-                      label={s}
-                      checked={statuses.has(s)}
-                      onChange={() => setStatuses((prev) => toggle(prev, s))}
-                    />
-                  ))}
-                </div>
+                <FilterGroupHeader title="Lead status" isOpen={openSections.has('status')} onToggle={() => toggleSection('status')} />
+                {openSections.has('status') && (
+                  <div className={styles.checkGrid}>
+                    {STATUS_OPTIONS.map((s) => (
+                      <Checkbox
+                        key={s}
+                        className={STATUS_CHECK_CLASS[s]}
+                        label={s}
+                        checked={statuses.has(s)}
+                        onChange={() => setStatuses((prev) => toggle(prev, s))}
+                      />
+                    ))}
+                  </div>
+                )}
               </section>
 
               <Divider />
 
               {/* Lead source */}
               <section className={styles.group}>
-                <FilterGroupHeader title="Lead source" />
-                <div className={styles.checkGrid}>
-                  {SOURCE_OPTIONS.map((s) => (
-                    <Checkbox
-                      key={s}
-                      label={s}
-                      checked={sources.has(s)}
-                      onChange={() => setSources((prev) => toggle(prev, s))}
-                    />
-                  ))}
-                </div>
+                <FilterGroupHeader title="Lead source" isOpen={openSections.has('source')} onToggle={() => toggleSection('source')} />
+                {openSections.has('source') && (
+                  <div className={styles.checkGrid}>
+                    {SOURCE_OPTIONS.map((s) => (
+                      <Checkbox
+                        key={s}
+                        label={s}
+                        checked={sources.has(s)}
+                        onChange={() => setSources((prev) => toggle(prev, s))}
+                      />
+                    ))}
+                  </div>
+                )}
               </section>
 
               <Divider />
 
               {/* Industry */}
               <section className={styles.group}>
-                <FilterGroupHeader title="Industry" />
-                <Select placeholder="Select industry" options={INDUSTRY_OPTIONS} />
+                <FilterGroupHeader title="Industry" isOpen={openSections.has('industry')} onToggle={() => toggleSection('industry')} />
+                {openSections.has('industry') && (
+                  <Select placeholder="Select industry" options={INDUSTRY_OPTIONS} />
+                )}
               </section>
 
               <Divider />
 
               {/* Deal value */}
               <section className={styles.group}>
-                <FilterGroupHeader title="Deal value" />
-                <Slider min={0} max={100000} defaultValue={70000} aria-label="Deal value" />
-                <div className={styles.rangeRow}>
-                  <Input size="sm" defaultValue="$0" aria-label="Minimum deal value" />
-                  <Input size="sm" defaultValue="$100,00K" aria-label="Maximum deal value" />
-                </div>
+                <FilterGroupHeader title="Deal value" isOpen={openSections.has('dealValue')} onToggle={() => toggleSection('dealValue')} />
+                {openSections.has('dealValue') && (
+                  <>
+                    <Slider
+                      min={0}
+                      max={100000}
+                      value={dealValue}
+                      onChange={(e) => setDealValue(Number(e.target.value))}
+                      aria-label="Deal value"
+                    />
+                    <div className={styles.rangeRow}>
+                      <Input size="sm" value="$0" readOnly aria-label="Minimum deal value" />
+                      <Input size="sm" value={formatDealValue(dealValue)} readOnly aria-label="Maximum deal value" />
+                    </div>
+                  </>
+                )}
               </section>
 
               <Divider />
 
               {/* Owner */}
               <section className={styles.group}>
-                <FilterGroupHeader title="Owner" />
-                <Select placeholder="Select owner" options={OWNER_OPTIONS} />
+                <FilterGroupHeader title="Owner" isOpen={openSections.has('owner')} onToggle={() => toggleSection('owner')} />
+                {openSections.has('owner') && (
+                  <Select placeholder="Select owner" options={OWNER_OPTIONS} />
+                )}
               </section>
 
               {/* Country */}
               <section className={styles.group}>
-                <FilterGroupHeader title="Country" />
-                <Select placeholder="Select country" options={COUNTRY_OPTIONS} />
+                <FilterGroupHeader title="Country" isOpen={openSections.has('country')} onToggle={() => toggleSection('country')} />
+                {openSections.has('country') && (
+                  <Select placeholder="Select country" options={COUNTRY_OPTIONS} />
+                )}
               </section>
             </div>
+            )}
           </aside>
 
           {/* Table region */}
@@ -386,9 +443,9 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
                 <FilterChip type="add">Add filter</FilterChip>
               </div>
               <div className={styles.toolbarRight}>
-                <Button variant="secondary" size="sm" rightIcon={<ChevronDown size={16} />}>Assign owner</Button>
-                <Button variant="secondary" size="sm" rightIcon={<ChevronDown size={16} />}>Change status</Button>
-                <Button variant="secondary" size="sm" rightIcon={<ChevronDown size={16} />}>Add tags</Button>
+                <Button variant="outline" size="sm" rightIcon={<ChevronDown size={16} />}>Assign owner</Button>
+                <Button variant="outline" size="sm" rightIcon={<ChevronDown size={16} />}>Change status</Button>
+                <Button variant="outline" size="sm" rightIcon={<ChevronDown size={16} />}>Add tags</Button>
               </div>
             </div>
 
@@ -404,16 +461,21 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
             ) : (
               // Contacts / Companies / Deals aren't implemented in this example —
               // a loading skeleton communicates that rather than showing stale
-              // Leads rows under the wrong tab.
+              // Leads rows under the wrong tab. One loader per real column
+              // (not just the first few), so every row reads as "loading the
+              // whole table" rather than a partial placeholder.
               <div className={styles.panel}>
                 {Array.from({ length: 8 }).map((_, i) => (
                   <div key={i} className={styles.skeletonRow}>
                     <Skeleton variant="rect" width={16} height={16} />
-                    <Skeleton variant="circle" width={24} height={24} />
-                    <Skeleton variant="text" width={140} height={12} />
-                    <Skeleton variant="text" width={100} height={12} />
-                    <Skeleton variant="text" width={80} height={12} />
-                    <Skeleton variant="text" width={120} height={12} />
+                    {columns.map((col) => (
+                      <span key={col.key} className={styles.skeletonCell} style={{ width: col.width }}>
+                        {(col.key === 'company' || col.key === 'contact' || col.key === 'owner') && (
+                          <Skeleton variant="circle" width={24} height={24} />
+                        )}
+                        <Skeleton variant="text" width="60%" height={12} />
+                      </span>
+                    ))}
                   </div>
                 ))}
               </div>

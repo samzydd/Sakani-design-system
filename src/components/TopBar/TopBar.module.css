@@ -2,18 +2,27 @@
 .bar {
   display: flex;
   align-items: center;
-  /* Figma: the toggle icon button sits 8px from the left-slot content
-     (breadcrumb/search/tabs) — same 8px rhythm the right-side icon
-     cluster uses. The spacer absorbs all the remaining width, so this
-     gap only ever governs those two edges. */
-  gap: var(--space-8);
   width: 100%;
+  box-sizing: border-box;
   background: var(--color-bg-surface);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .bar--md { height: 64px; }
-.bar--sm { height: 56px; }
-.bar__left { display: flex; align-items: center; min-width: 0; padding-left: var(--space-20); }
+.bar--sm {
+  height: 56px;
+  padding: var(--space-12) var(--space-16);
+}
+
+/* Left group — toggle icon button + left-slot content (breadcrumb/search/
+   tabs), grouped into one Frame per Figma: 8px internal gap, 20px inset
+   from the bar's left edge (matches bar__right's 20px inset on the right). */
+.bar__leftGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-width: 0;
+}
+.bar__left { display: flex; align-items: center; min-width: 0; }
 .bar__spacer { flex: 1 1 auto; }
 
 /* Right section: groups help button, bell, divider, and account together with consistent spacing */

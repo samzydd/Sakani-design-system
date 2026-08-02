@@ -25,7 +25,11 @@ export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
   type = 'brand', title, subtitle, logo, collapsed, onToggle,
 }) => (
   <div className={[styles.header, collapsed ? styles['header--collapsed'] : ''].filter(Boolean).join(' ')}>
-    {logo && <span className={styles.header__logo} aria-hidden="true">{logo}</span>}
+    {logo && (
+      <span className={styles.header__logoWrap} aria-hidden="true">
+        <span className={styles.header__logo}>{logo}</span>
+      </span>
+    )}
     {!collapsed && (
       <span className={styles.header__text}>
         <span className={styles.header__title}>{title}</span>
