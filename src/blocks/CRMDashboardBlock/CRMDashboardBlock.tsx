@@ -329,6 +329,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
               <Tabs
                 className={styles.filterSegmented}
                 bordered={false}
+                fill
                 value={filterTab}
                 onChange={setFilterTab}
                 items={[

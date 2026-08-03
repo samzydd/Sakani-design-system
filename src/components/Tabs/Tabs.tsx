@@ -28,11 +28,14 @@ export interface TabsProps {
   onChange?: (value: string) => void;
   /** Bottom border under the whole track. Defaults to true. */
   bordered?: boolean;
+  /** Stretch every tab to share the row's width equally, like a segmented
+   * control, instead of each tab hugging its own label. Defaults to false. */
+  fill?: boolean;
   className?: string;
 }
 
 export const Tabs: React.FC<TabsProps> = ({
-  items, value, defaultValue, onChange, bordered = true, className,
+  items, value, defaultValue, onChange, bordered = true, fill = false, className,
 }) => {
   const isControlled = value !== undefined;
   const [internal, setInternal] = React.useState(defaultValue ?? items[0]?.value);
@@ -68,7 +71,12 @@ export const Tabs: React.FC<TabsProps> = ({
     <div
       ref={listRef}
       role="tablist"
-      className={[styles.tabs, !bordered ? styles['tabs--borderless'] : '', className ?? ''].filter(Boolean).join(' ')}
+      className={[
+        styles.tabs,
+        !bordered ? styles['tabs--borderless'] : '',
+        fill ? styles['tabs--fill'] : '',
+        className ?? '',
+      ].filter(Boolean).join(' ')}
     >
       {items.map((item) => {
         const isActive = item.value === active;

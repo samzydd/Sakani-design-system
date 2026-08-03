@@ -14,6 +14,18 @@
 }
 .tabs::-webkit-scrollbar { display: none; }
 .tabs--borderless { border-bottom: none; }
+/* Segmented-control mode: every tab claims an equal share of the row
+   instead of hugging its own label, so a short label (e.g. "Assigned")
+   sits centered in a slot as wide as its siblings' instead of a slot
+   sized to its own text. */
+.tabs--fill .tab {
+  flex: 1 1 0;
+  /* Flex items default to min-width:auto, which floors shrinking at the
+     label's own content width — that silently defeats flex-basis:0 and
+     leaves each tab sized by its text again instead of splitting the
+     row evenly. */
+  min-width: 0;
+}
 
 .tab {
   position: relative;
