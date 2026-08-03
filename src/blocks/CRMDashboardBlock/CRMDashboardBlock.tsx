@@ -44,6 +44,39 @@ import { Table, type TableColumn } from '../../components/Table';
 
 import styles from './CRMDashboardBlock.module.css';
 
+/* Avatar photos — exported from the Figma "CRM dashboard" node (889:35330)
+ * and downscaled to 96x96 (the design's originals were 1024x1024 source
+ * uploads, ~1-1.4MB each, wildly oversized for a 24px circle). Bundled
+ * locally rather than referencing the Figma asset URLs directly since
+ * those expire after ~7 days. */
+import r1Company from '../../assets/avatars/r1-company-figma.jpg';
+import r1Contact from '../../assets/avatars/r1-contact-novak-balazs.jpg';
+import r1Owner from '../../assets/avatars/r1-owner-kende-attila.jpg';
+import r2Company from '../../assets/avatars/r2-company-invision.jpg';
+import r2Contact from '../../assets/avatars/r2-contact-szabo-jakab.jpg';
+import r2Owner from '../../assets/avatars/r2-owner-orosz-boldizsar.jpg';
+import r3Company from '../../assets/avatars/r3-company-infogenix.jpg';
+import r3Contact from '../../assets/avatars/r3-contact-bogdan-norbert.jpg';
+import r3Owner from '../../assets/avatars/r3-owner-simon-arpad.jpg';
+import r4Company from '../../assets/avatars/r4-company-google.jpg';
+import r4Contact from '../../assets/avatars/r4-contact-ramai-ivette.jpg';
+import r4Owner from '../../assets/avatars/r4-owner-novak-balazs.jpg';
+import r5Company from '../../assets/avatars/r5-company-lendio.jpg';
+import r5Contact from '../../assets/avatars/r5-contact-csatar-geza.jpg';
+import r5Owner from '../../assets/avatars/r5-owner-ramai-ivette.jpg';
+import r6Company from '../../assets/avatars/r6-company-google.jpg';
+import r6Contact from '../../assets/avatars/r6-contact-veres-viktor.jpg';
+import r6Owner from '../../assets/avatars/r6-owner-kiraly-vince.jpg';
+import r7Company from '../../assets/avatars/r7-company-infogenix.jpg';
+import r7Contact from '../../assets/avatars/r7-contact-hajdu-szilveszter.jpg';
+import r7Owner from '../../assets/avatars/r7-owner-szigmund-kalman.jpg';
+import r8Company from '../../assets/avatars/r8-company-trello.jpg';
+import r8Contact from '../../assets/avatars/r8-contact-kende-attila.jpg';
+import r8Owner from '../../assets/avatars/r8-owner-bogdan-norbert.jpg';
+import r9Company from '../../assets/avatars/r9-company-invision.jpg';
+import r9Contact from '../../assets/avatars/r9-contact-aprod-endre.jpg';
+import r9Owner from '../../assets/avatars/r9-owner-antal-andras.jpg';
+
 /* ------------------------------------------------------------------ *
  * Sample data — replace with your own
  * ------------------------------------------------------------------ */
@@ -51,26 +84,29 @@ type LeadStatus = 'Qualified' | 'Negotiation' | 'Lost' | 'Contacted' | 'Proposal
 
 interface Lead {
   company: string;
+  companyAvatar: string;
   contact: string;
+  contactAvatar: string;
   email: string;
   status: LeadStatus;
   source: string;
   owner: string;
+  ownerAvatar: string;
   value: string;
   lastActivity: string;
   nextFollowUp: string;
 }
 
 const LEADS: Lead[] = [
-  { company: 'Figma',      contact: 'Novák Balázs',      email: 'alma.lawson@example.com',      status: 'Qualified',     source: 'Website',    owner: 'Kende Attila',     value: '$18,560',    lastActivity: '18 hrs ago',  nextFollowUp: 'Feb 11' },
-  { company: 'Invision',   contact: 'Szabó Jakab',       email: 'dolores.chambers@example.com', status: 'Proposal sent', source: 'Cold email', owner: 'Orosz Boldizsár', value: '$218,560',   lastActivity: '6 mins ago',  nextFollowUp: 'Aug 2'  },
-  { company: 'Infogenix',  contact: 'Bogdán Norbert',    email: 'tim.jennings@example.com',     status: 'Negotiation',   source: 'LinkedIn',   owner: 'Simon Árpád',      value: '$11,000',    lastActivity: '13 secs ago', nextFollowUp: 'Mar 23' },
-  { company: 'Google',     contact: 'Rámai Ivette',      email: 'georgia.young@example.com',    status: 'Contacted',     source: 'Website',    owner: 'Novák Balázs',     value: '$200.00',    lastActivity: '13 secs ago', nextFollowUp: 'Apr 28' },
-  { company: 'Lendio',     contact: 'Csatár Géza',       email: 'jessica.hanson@example.com',   status: 'Won',           source: 'Paid ads',   owner: 'Rámai Ivette',     value: '$1200.00',   lastActivity: '6 mins ago',  nextFollowUp: 'Nov 28' },
-  { company: 'Google',     contact: 'Veres Viktor',      email: 'michael.mitc@example.com',     status: 'Won',           source: 'Paid ads',   owner: 'Király Vince',     value: '$1201.00',   lastActivity: '18 hrs ago',  nextFollowUp: 'Oct 31' },
-  { company: 'Infogenix',  contact: 'Hajdú Szilveszter', email: 'bill.sanders@example.com',     status: 'Qualified',     source: 'Website',    owner: 'Szigmund Kálmán',  value: '$20,000.50', lastActivity: '6 mins ago',  nextFollowUp: 'Oct 25' },
-  { company: 'Trello',     contact: 'Kende Attila',      email: 'michelle.rivera@example.com',  status: 'Won',           source: 'LinkedIn',   owner: 'Bogdán Norbert',   value: '$13,091.20', lastActivity: '18 hrs ago',  nextFollowUp: 'Jul 14' },
-  { company: 'Invision',   contact: 'Apród Endre',       email: 'nathan.roberts@example.com',   status: 'Negotiation',   source: 'LinkedIn',   owner: 'Antal András',     value: '$1220.00',   lastActivity: '18 hrs ago',  nextFollowUp: 'Nov 7'  },
+  { company: 'Figma',      companyAvatar: r1Company, contact: 'Novák Balázs',      contactAvatar: r1Contact, email: 'alma.lawson@example.com',      status: 'Qualified',     source: 'Website',    owner: 'Kende Attila',     ownerAvatar: r1Owner, value: '$18,560',    lastActivity: '18 hrs ago',  nextFollowUp: 'Feb 11' },
+  { company: 'Invision',   companyAvatar: r2Company, contact: 'Szabó Jakab',       contactAvatar: r2Contact, email: 'dolores.chambers@example.com', status: 'Proposal sent', source: 'Cold email', owner: 'Orosz Boldizsár', ownerAvatar: r2Owner, value: '$218,560',   lastActivity: '6 mins ago',  nextFollowUp: 'Aug 2'  },
+  { company: 'Infogenix',  companyAvatar: r3Company, contact: 'Bogdán Norbert',    contactAvatar: r3Contact, email: 'tim.jennings@example.com',     status: 'Negotiation',   source: 'LinkedIn',   owner: 'Simon Árpád',      ownerAvatar: r3Owner, value: '$11,000',    lastActivity: '13 secs ago', nextFollowUp: 'Mar 23' },
+  { company: 'Google',     companyAvatar: r4Company, contact: 'Rámai Ivette',      contactAvatar: r4Contact, email: 'georgia.young@example.com',    status: 'Contacted',     source: 'Website',    owner: 'Novák Balázs',     ownerAvatar: r4Owner, value: '$200.00',    lastActivity: '13 secs ago', nextFollowUp: 'Apr 28' },
+  { company: 'Lendio',     companyAvatar: r5Company, contact: 'Csatár Géza',       contactAvatar: r5Contact, email: 'jessica.hanson@example.com',   status: 'Won',           source: 'Paid ads',   owner: 'Rámai Ivette',     ownerAvatar: r5Owner, value: '$1200.00',   lastActivity: '6 mins ago',  nextFollowUp: 'Nov 28' },
+  { company: 'Google',     companyAvatar: r6Company, contact: 'Veres Viktor',      contactAvatar: r6Contact, email: 'michael.mitc@example.com',     status: 'Won',           source: 'Paid ads',   owner: 'Király Vince',     ownerAvatar: r6Owner, value: '$1201.00',   lastActivity: '18 hrs ago',  nextFollowUp: 'Oct 31' },
+  { company: 'Infogenix',  companyAvatar: r7Company, contact: 'Hajdú Szilveszter', contactAvatar: r7Contact, email: 'bill.sanders@example.com',     status: 'Qualified',     source: 'Website',    owner: 'Szigmund Kálmán',  ownerAvatar: r7Owner, value: '$20,000.50', lastActivity: '6 mins ago',  nextFollowUp: 'Oct 25' },
+  { company: 'Trello',     companyAvatar: r8Company, contact: 'Kende Attila',      contactAvatar: r8Contact, email: 'michelle.rivera@example.com',  status: 'Won',           source: 'LinkedIn',   owner: 'Bogdán Norbert',   ownerAvatar: r8Owner, value: '$13,091.20', lastActivity: '18 hrs ago',  nextFollowUp: 'Jul 14' },
+  { company: 'Invision',   companyAvatar: r9Company, contact: 'Apród Endre',       contactAvatar: r9Contact, email: 'nathan.roberts@example.com',   status: 'Negotiation',   source: 'LinkedIn',   owner: 'Antal András',     ownerAvatar: r9Owner, value: '$1220.00',   lastActivity: '18 hrs ago',  nextFollowUp: 'Nov 7'  },
 ];
 
 const STATUS_VARIANT: Record<LeadStatus, BadgeVariant> = {
@@ -121,8 +157,6 @@ const TAB_LABEL: Record<string, string> = {
   companies: 'companies',
   deals: 'deals',
 };
-
-const initialsOf = (name: string) => name.split(' ').map((p) => p[0]).slice(0, 2).join('');
 
 /** Filter section header: title + collapse chevron. Mirrors Figma "Page Header".
  *  Chevron points up while the section is open (click to collapse) and down
@@ -273,7 +307,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
       key: 'company', header: 'Company', width: '13%',
       render: (r) => (
         <span className={styles.cellInline}>
-          <Avatar size="sm" initials={r.company.slice(0, 2)} />
+          <Avatar size="sm" src={r.companyAvatar} alt={r.company} />
           <span className={styles.cellText}>{r.company}</span>
         </span>
       ),
@@ -282,7 +316,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
       key: 'contact', header: 'Contact', width: '17%',
       render: (r) => (
         <span className={styles.cellInline}>
-          <Avatar size="sm" initials={initialsOf(r.contact)} />
+          <Avatar size="sm" src={r.contactAvatar} alt={r.contact} />
           <span className={styles.cellStack}>
             <span className={styles.cellText}>{r.contact}</span>
             <span className={styles.cellSub}>{r.email}</span>
@@ -307,7 +341,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
       key: 'owner', header: 'Owner', width: '15%',
       render: (r) => (
         <span className={styles.cellInline}>
-          <Avatar size="sm" initials={initialsOf(r.owner)} />
+          <Avatar size="sm" src={r.ownerAvatar} alt={r.owner} />
           <span className={styles.cellText}>{r.owner}</span>
         </span>
       ),
