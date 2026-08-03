@@ -36,7 +36,7 @@
 .bar__icon {
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
   display: inline-flex; align-items: center; justify-content: center;
-  width: 36px; height: 36px; border: none; background: none;
+  width: 36px; height: 36px; padding: 0; border: none; background: none;
   color: var(--color-fg-muted); border-radius: var(--radius-md); cursor: pointer; flex-shrink: 0;
 }
 .bar__icon:where(:hover) { background: var(--color-bg-subtle); color: var(--color-fg-default); }

@@ -39,6 +39,7 @@ import { Pagination } from '../../components/Pagination';
 import { Select } from '../../components/Select';
 import { Skeleton } from '../../components/Skeleton';
 import { Slider } from '../../components/Slider';
+import { Tooltip } from '../../components/Tooltip';
 import { Table, type TableColumn } from '../../components/Table';
 
 import styles from './CRMDashboardBlock.module.css';
@@ -139,6 +140,16 @@ function FilterGroupHeader({ title, isOpen, onToggle }: { title: string; isOpen:
         onClick={onToggle}
       />
     </div>
+  );
+}
+
+/* Collapsed sidebar items rely on the icon alone — a tooltip surfaces the
+   label on hover/focus instead of the native title attribute. */
+function NavItem(props: React.ComponentProps<typeof SidebarItem>) {
+  return (
+    <Tooltip title={props.label} pointer="center-right">
+      <SidebarItem {...props} nativeTooltip={false} />
+    </Tooltip>
   );
 }
 
@@ -248,28 +259,30 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
     <div className={[styles.root, className ?? ''].filter(Boolean).join(' ')}>
       {/* ---- Sidebar (icon rail) ---- */}
       <Sidebar collapsed>
-        <SidebarHeader type="brand" title="Sakani" logo="S" collapsed />
+        <Tooltip title="Sakani" pointer="center-right">
+          <SidebarHeader type="brand" title="Sakani" logo="S" collapsed />
+        </Tooltip>
         <SidebarDivider />
         <div className={styles.navScroll}>
           <div className={styles.navGroup}>
-            <SidebarItem collapsed icon={LayoutGrid} label="Dashboard" />
-            <SidebarItem collapsed icon={Mail} label="Inbox" />
-            <SidebarItem collapsed icon={Database} label="Database" active />
-            <SidebarItem collapsed icon={CalendarDays} label="Calendar" />
+            <NavItem collapsed icon={LayoutGrid} label="Dashboard" />
+            <NavItem collapsed icon={Mail} label="Inbox" />
+            <NavItem collapsed icon={Database} label="Database" active />
+            <NavItem collapsed icon={CalendarDays} label="Calendar" />
           </div>
           <SidebarDivider />
           <div className={styles.navGroup}>
-            <SidebarItem collapsed icon={Users} label="Contacts" />
-            <SidebarItem collapsed icon={Workflow} label="Pipelines" />
-            <SidebarItem collapsed icon={Zap} label="Automations" />
-            <SidebarItem collapsed icon={Target} label="Goals" />
+            <NavItem collapsed icon={Users} label="Contacts" />
+            <NavItem collapsed icon={Workflow} label="Pipelines" />
+            <NavItem collapsed icon={Zap} label="Automations" />
+            <NavItem collapsed icon={Target} label="Goals" />
           </div>
         </div>
         <SidebarDivider />
         <div className={styles.navGroup}>
-          <SidebarItem collapsed icon={Plug} label="Integrations" />
-          <SidebarItem collapsed icon={Settings} label="Settings" />
-          <SidebarItem collapsed icon={MessageCircle} label="Support" />
+          <NavItem collapsed icon={Plug} label="Integrations" />
+          <NavItem collapsed icon={Settings} label="Settings" />
+          <NavItem collapsed icon={MessageCircle} label="Support" />
         </div>
         <SidebarDivider />
       </Sidebar>
@@ -435,6 +448,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
               <div className={styles.toolbarLeft}>
                 <div className={styles.searchField}>
                   <Input
+                    size="sm"
                     placeholder="Search customers, email, phone..."
                     leadingIcon={<Search size={16} />}
                     value={query}

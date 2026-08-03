@@ -31,10 +31,14 @@ export interface SidebarItemProps {
   collapsed?: boolean;
   onClick?: () => void;
   href?: string;
+  /** Native title-attribute tooltip on collapse. Defaults to true; set
+   * false when the caller already wraps this in its own Tooltip component
+   * to avoid the two competing on hover. */
+  nativeTooltip?: boolean;
 }
 
 export const SidebarItem: React.FC<SidebarItemProps> = ({
-  icon: Icon, label, active, disabled, badge, hasSubmenu, collapsed, onClick, href,
+  icon: Icon, label, active, disabled, badge, hasSubmenu, collapsed, onClick, href, nativeTooltip = true,
 }) => {
   const cls = [
     styles.item,
@@ -57,7 +61,15 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
     </>
   );
 
-  const common = { className: cls, title: collapsed ? label : undefined, 'aria-current': active ? ('page' as const) : undefined };
+  const common = {
+    className: cls,
+    title: collapsed && nativeTooltip ? label : undefined,
+    // Collapsed items have no visible text — keep an accessible name for
+    // screen readers even when the native title tooltip is suppressed in
+    // favor of a caller-supplied Tooltip component.
+    'aria-label': collapsed ? label : undefined,
+    'aria-current': active ? ('page' as const) : undefined,
+  };
   if (href && !disabled) return <a href={href} {...common}>{content}</a>;
   return <button type="button" disabled={disabled} onClick={onClick} {...common}>{content}</button>;
 };
