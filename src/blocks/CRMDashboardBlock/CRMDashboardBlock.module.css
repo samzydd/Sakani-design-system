@@ -201,6 +201,8 @@
 /* Mirrors IconButton's ghost/sm exactly (32x32, radius-sm, fg-muted,
    bg-subtle + shadow-sm on hover) -- see IconButton.module.css -- since
    it's now a decorative span rather than its own nested button. */
+/* No hover/pressed state of its own -- it's a decorative span, not an
+   interactive element; the row it sits in is the actual button. */
 .groupHeaderIcon {
   display: inline-flex;
   align-items: center;
@@ -208,18 +210,13 @@
   flex-shrink: 0;
   width: 32px;
   height: 32px;
+  /* IconButton (a <button>) gets border-box for free from the browser's
+     default form-control UA styles; this plain <span> doesn't, so its
+     1px border was pushing the real rendered size to 34x34. */
+  box-sizing: border-box;
   border-radius: var(--radius-sm);
   border: var(--border-width-100) solid transparent;
   color: var(--color-fg-muted);
-  transition: background-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
-}
-.groupHeader:hover .groupHeaderIcon {
-  background: var(--color-bg-subtle);
-  color: var(--color-fg-default);
-  box-shadow: var(--shadow-sm);
-}
-.groupHeader:active .groupHeaderIcon {
-  background: var(--color-bg-muted);
 }
 
 .checkGrid {
