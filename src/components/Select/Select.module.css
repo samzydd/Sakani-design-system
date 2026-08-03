@@ -111,6 +111,25 @@
   border: 1px solid var(--color-border-default);
   border-radius: 6px;
   box-shadow: var(--shadow-lg);
+  transform-origin: top;
+}
+
+/* Keyframe animations rather than a plain transition: a transition needs
+   the browser to paint the "before" style on one frame before a class
+   change can animate to the "after" style, which doesn't work for an
+   element that mounts and gets its open state in the same commit.
+   Animations define their own `from`, so they play correctly the very
+   first frame regardless of when the class was applied. */
+.panel--entering { animation: sakani-select-panel-in 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+.panel--exiting { animation: sakani-select-panel-out 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+@keyframes sakani-select-panel-in {
+  from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes sakani-select-panel-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-4px) scale(0.98); }
 }
 
 .option {

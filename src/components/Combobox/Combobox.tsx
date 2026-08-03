@@ -53,8 +53,16 @@ export const Combobox: React.FC<ComboboxProps> = ({
 }) => {
   const reactId = React.useId();
   const [open, setOpen] = React.useState(false);
+  // Keeps the panel mounted a beat past open:false so its exit keyframe
+  // animation can play before it leaves the DOM (see Select.tsx for why
+  // this uses animation classes rather than a transition + extra state).
+  const [panelMounted, setPanelMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const rootRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (open) setPanelMounted(true);
+  }, [open]);
 
   // Uncontrolled fallback
   const [internal, setInternal] = React.useState<string | string[]>(mode === 'multi' ? [] : '');
@@ -164,8 +172,14 @@ export const Combobox: React.FC<ComboboxProps> = ({
       </div>
 
       {/* Panel */}
-      {open && !disabled && (
-        <div className={styles.panel} id={`${reactId}-panel`} role="listbox" aria-busy={loading || undefined}>
+      {panelMounted && !disabled && (
+        <div
+          className={[styles.panel, open ? styles['panel--entering'] : styles['panel--exiting']].filter(Boolean).join(' ')}
+          id={`${reactId}-panel`}
+          role="listbox"
+          aria-busy={loading || undefined}
+          onAnimationEnd={() => { if (!open) setPanelMounted(false); }}
+        >
           {loading ? (
             <div className={styles.panel__loading}>
               <span className={styles.panel__spinner} aria-hidden="true" />

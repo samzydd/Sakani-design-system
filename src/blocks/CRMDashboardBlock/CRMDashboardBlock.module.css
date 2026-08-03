@@ -66,12 +66,21 @@
   border-right: var(--border-width-100) solid var(--color-border-subtle);
   background: var(--color-bg-surface);
   overflow: hidden;
-  /* Gentle ease in both directions, rather than an abrupt snap. */
-  transition: width 320ms ease, border-color 320ms ease;
+  opacity: 1;
+  /* Standard "ease-in-out" cubic-bezier rather than the flatter keyword
+     ease -- it holds a beat longer at both ends, so opening/closing reads
+     as a deliberate glide rather than a linear-ish snap. Content fades
+     with the same timing so the text dissolves as the panel narrows
+     instead of getting clipped mid-word by overflow:hidden. */
+  transition:
+    width 360ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 360ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 360ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filters--closed {
   width: 0;
+  opacity: 0;
   border-right-color: transparent;
 }
 
@@ -120,6 +129,27 @@
   background: var(--color-bg-canvas);
 }
 
+/* Faint scrollbar thumb (12% of fg/default) rather than the browser's
+   solid-gray default, which reads heavy against this panel's light bg. */
+.filtersScroll,
+.tableRegion {
+  scrollbar-color: color-mix(in srgb, var(--color-fg-default) 12%, transparent) transparent;
+}
+.filtersScroll::-webkit-scrollbar,
+.tableRegion::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.filtersScroll::-webkit-scrollbar-track,
+.tableRegion::-webkit-scrollbar-track {
+  background: transparent;
+}
+.filtersScroll::-webkit-scrollbar-thumb,
+.tableRegion::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-fg-default) 12%, transparent);
+  border-radius: var(--radius-full);
+}
+
 .group {
   display: flex;
   flex-direction: column;
@@ -158,16 +188,31 @@
 .checkBrand { --color-accent-default: var(--color-brand-default); }
 .checkSuccessSolid          { --color-accent-default: var(--color-success-solid); }
 
-.rangeRow {
+/* Wraps the slider + its min/max readout with its own 8px gap. */
+.dealValueGroup {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   gap: var(--space-8);
 }
 
-.rangeRow > * {
-  flex: 1 1 0;
-  min-width: 0;
+.rangeRow {
+  display: flex;
+  align-items: center;
+  /* Two auto-width labels pinned to the slider's own extremes, not
+     stretched boxes — there's no track width to fill without a border
+     or fill color of their own. */
+  justify-content: space-between;
+}
+
+.rangeLabel {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-fg-default);
 }
 
 /* ---- Table region ---- */
@@ -188,13 +233,24 @@
    with the same gentle ease as the panel's own collapse. */
 .filtersReopen {
   position: absolute;
-  top: var(--space-16);
-  left: var(--space-16);
+  /* top comes from inline style (draggable, see the component) --
+     starts at 16px to match .tableRegion's own padding rhythm. */
+  /* left:0 ignores .tableRegion's own padding (offsets for an absolutely
+     positioned child are measured from the padding edge, not inset by
+     it) so the button sits flush against the sidebar's right edge
+     instead of floating 16px clear of it. Fixed -- only top ever
+     changes -- since dragging is vertical-only. */
+  left: 0;
+  width: 32px;
+  height: 32px;
   z-index: 5;
   background: var(--color-bg-surface);
   box-shadow: var(--shadow-md);
-  animation: sakani-crm-filters-reopen-in 320ms ease;
+  cursor: grab;
+  touch-action: none;
+  animation: sakani-crm-filters-reopen-in 360ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.filtersReopen:active { cursor: grabbing; }
 
 @keyframes sakani-crm-filters-reopen-in {
   from { opacity: 0; transform: scale(0.9); }

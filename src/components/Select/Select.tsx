@@ -68,8 +68,20 @@ export const Select: React.FC<SelectProps> = ({
   const selectedOption = options.find((o) => o.value === selected);
 
   const [open, setOpen] = React.useState(false);
+  // Keeps the panel mounted a beat past open:false so its closing
+  // animation can play before it actually leaves the DOM (see the
+  // panel--entering/panel--exiting keyframes in Select.module.css).
+  // Keyframe animations -- unlike a plain transition -- always start
+  // from their own `from` block regardless of when the class lands, so
+  // this doesn't need a requestAnimationFrame-delayed second class the
+  // way a transition-based approach would.
+  const [panelMounted, setPanelMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const rootRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (open) setPanelMounted(true);
+  }, [open]);
 
   // Dismiss on outside click.
   React.useEffect(() => {
@@ -167,8 +179,13 @@ export const Select: React.FC<SelectProps> = ({
           </span>
         </div>
 
-        {open && (
-          <div id={panelId} role="listbox" className={styles.panel}>
+        {panelMounted && (
+          <div
+            id={panelId}
+            role="listbox"
+            className={[styles.panel, open ? styles['panel--entering'] : styles['panel--exiting']].filter(Boolean).join(' ')}
+            onAnimationEnd={() => { if (!open) setPanelMounted(false); }}
+          >
             {options.map((o, i) => (
               <div
                 key={o.value}

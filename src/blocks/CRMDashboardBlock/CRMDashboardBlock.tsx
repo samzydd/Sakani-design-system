@@ -185,8 +185,47 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
   const [dealValue, setDealValue] = React.useState(70000);
 
   // The whole filter panel can be tucked away to give the table more room;
-  // a floating button takes its place so it can be reopened.
+  // a floating button takes its place so it can be reopened. The button
+  // can be dragged up/down (only) along the sidebar edge to wherever's
+  // convenient; horizontal position is fixed by .filtersReopen's own
+  // left:0, so there's nothing to clamp on that axis.
   const [filtersOpen, setFiltersOpen] = React.useState(true);
+  const [reopenButtonTop, setReopenButtonTop] = React.useState(16);
+  const tableRegionRef = React.useRef<HTMLElement>(null);
+  // A click still fires on pointerup regardless of how far the pointer
+  // travelled in between -- this is what keeps a real drag from also
+  // reopening the panel the instant it's released.
+  const draggedRef = React.useRef(false);
+
+  const onReopenButtonPointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const container = tableRegionRef.current;
+    if (!container) return;
+    draggedRef.current = false;
+    const startClientY = e.clientY;
+    const startTop = reopenButtonTop;
+    // Keep the same 16px breathing room off both edges that it starts
+    // with, rather than letting it dock flush against the corners.
+    const minTop = 16;
+    const maxTop = Math.max(minTop, container.clientHeight - 32 - 16);
+
+    const onMove = (ev: PointerEvent) => {
+      const delta = ev.clientY - startClientY;
+      if (Math.abs(delta) > 3) draggedRef.current = true;
+      setReopenButtonTop(Math.min(Math.max(startTop + delta, minTop), maxTop));
+    };
+    const onUp = () => {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+    };
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+  };
+
+  const onReopenButtonClick = () => {
+    if (draggedRef.current) return;
+    setFiltersOpen(true);
+  };
 
   const toggle = <T,>(set: Set<T>, key: T) => {
     const next = new Set(set);
@@ -417,7 +456,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
               <section className={styles.group}>
                 <FilterGroupHeader title="Deal value" isOpen={openSections.has('dealValue')} onToggle={() => toggleSection('dealValue')} />
                 {openSections.has('dealValue') && (
-                  <>
+                  <div className={styles.dealValueGroup}>
                     <Slider
                       min={0}
                       max={100000}
@@ -426,10 +465,10 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
                       aria-label="Deal value"
                     />
                     <div className={styles.rangeRow}>
-                      <Input size="sm" value="$0" readOnly aria-label="Minimum deal value" />
-                      <Input size="sm" value={formatDealValue(dealValue)} readOnly aria-label="Maximum deal value" />
+                      <div className={styles.rangeLabel} aria-label="Minimum deal value">$0</div>
+                      <div className={styles.rangeLabel} aria-label="Maximum deal value">{formatDealValue(dealValue)}</div>
                     </div>
-                  </>
+                  </div>
                 )}
               </section>
 
@@ -455,7 +494,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
           </aside>
 
           {/* Table region */}
-          <main className={styles.tableRegion}>
+          <main className={styles.tableRegion} ref={tableRegionRef}>
             {!filtersOpen && (
               <IconButton
                 size="sm"
@@ -463,7 +502,9 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
                 icon={Filter}
                 aria-label="Show filter panel"
                 className={styles.filtersReopen}
-                onClick={() => setFiltersOpen(true)}
+                style={{ top: reopenButtonTop }}
+                onPointerDown={onReopenButtonPointerDown}
+                onClick={onReopenButtonClick}
               />
             )}
             <div className={styles.toolbar}>
