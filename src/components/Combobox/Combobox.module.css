@@ -1,7 +1,7 @@
 /* Combobox.module.css — read from Figma:
  * field: bg/surface, border/default 1px, radius-md, padding 10/12/10/14, heights 32/40/48
  * panel: bg/surface, border/default, radius-sm, padding 4, gap 2, shadow/lg
- * option: radius-sm(4-ish uses radius-sm), padding 8, gap 8, hover/selected bg/subtle, body/sm
+ * option: radius-sm(4-ish uses radius-sm), h32, padding 6, gap 8, hover/selected bg/subtle, body/sm
  */
 
 .field { display: flex; flex-direction: column; gap: var(--space-6); font-family: var(--font-sans); position: relative; }
@@ -124,7 +124,9 @@
   display: flex;
   align-items: center;
   gap: var(--space-8);
-  padding: var(--space-8);
+  box-sizing: border-box;
+  min-height: 32px;
+  padding: var(--space-6);
   border-radius: var(--radius-sm);
   cursor: pointer;
   font-size: 14px;
