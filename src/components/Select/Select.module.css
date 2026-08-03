@@ -94,12 +94,13 @@
 .select__chevron { transition: transform var(--transition-base); }
 .select__chevron--open { transform: rotate(180deg); }
 
-/* Panel mirrors the Combobox panel exactly. */
+/* Panel mirrors the Combobox panel exactly. Position (fixed + top/left/
+   width) is set inline from the trigger's own measured rect -- see
+   Select.tsx -- since the panel portals to <body> instead of sitting in
+   flow under the trigger, precisely so a Select inside a scrollable
+   container (e.g. a filter sidebar) can't have its open panel clipped by
+   that ancestor's overflow. */
 .panel {
-  position: absolute;
-  top: calc(100% + var(--space-4));
-  left: 0;
-  right: 0;
   z-index: 20;
   display: flex;
   flex-direction: column;

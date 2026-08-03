@@ -17,6 +17,7 @@
  */
 
 import React from 'react';
+import { createPortal } from 'react-dom';
 import styles from './Select.module.css';
 
 export type SelectSize = 'sm' | 'md' | 'lg';
@@ -78,16 +79,53 @@ export const Select: React.FC<SelectProps> = ({
   const [panelMounted, setPanelMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const rootRef = React.useRef<HTMLDivElement>(null);
+  const triggerRef = React.useRef<HTMLDivElement>(null);
+  const panelRef = React.useRef<HTMLDivElement>(null);
+
+  // The panel portals to <body> and positions itself with fixed
+  // coordinates rather than sitting in normal flow under the trigger
+  // (see the panelRect comment below for why).
+  const [panelRect, setPanelRect] = React.useState<{ top: number; left: number; width: number } | null>(null);
 
   React.useEffect(() => {
     if (open) setPanelMounted(true);
   }, [open]);
 
-  // Dismiss on outside click.
+  // Recompute the panel's position whenever it's open, and keep it pinned
+  // to the trigger through scrolling/resizing. This is a portal specifically
+  // so a Select sitting inside a scrollable panel (e.g. the CRM dashboard's
+  // filter sidebar) doesn't have its open panel silently clipped by that
+  // ancestor's overflow -- a plain position:absolute child can never escape
+  // an ancestor's overflow:hidden/auto, no matter how high its z-index is.
+  React.useLayoutEffect(() => {
+    if (!open) return;
+    const measure = () => {
+      const el = triggerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      setPanelRect({ top: rect.bottom + 4, left: rect.left, width: rect.width });
+    };
+    measure();
+    window.addEventListener('scroll', measure, true);
+    window.addEventListener('resize', measure);
+    return () => {
+      window.removeEventListener('scroll', measure, true);
+      window.removeEventListener('resize', measure);
+    };
+  }, [open]);
+
+  // Dismiss on outside click. The panel is portaled to <body> (see
+  // panelRect above), so it's no longer a DOM descendant of rootRef --
+  // a click inside it has to be checked against panelRef too, or every
+  // click on an option would register as "outside" and close the panel
+  // out from under the click.
   React.useEffect(() => {
     if (!open) return;
     const onDoc = (e: MouseEvent) => {
-      if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
+      const target = e.target as Node;
+      if (rootRef.current?.contains(target)) return;
+      if (panelRef.current?.contains(target)) return;
+      setOpen(false);
     };
     document.addEventListener('mousedown', onDoc);
     return () => document.removeEventListener('mousedown', onDoc);
@@ -141,6 +179,7 @@ export const Select: React.FC<SelectProps> = ({
 
       <div className={styles.anchor}>
         <div
+          ref={triggerRef}
           id={triggerId}
           role="combobox"
           tabIndex={disabled ? -1 : 0}
@@ -179,11 +218,13 @@ export const Select: React.FC<SelectProps> = ({
           </span>
         </div>
 
-        {panelMounted && (
+        {panelMounted && panelRect && createPortal(
           <div
+            ref={panelRef}
             id={panelId}
             role="listbox"
             className={[styles.panel, open ? styles['panel--entering'] : styles['panel--exiting']].filter(Boolean).join(' ')}
+            style={{ position: 'fixed', top: panelRect.top, left: panelRect.left, width: panelRect.width }}
             onAnimationEnd={() => { if (!open) setPanelMounted(false); }}
           >
             {options.map((o, i) => (
@@ -213,7 +254,8 @@ export const Select: React.FC<SelectProps> = ({
                 )}
               </div>
             ))}
-          </div>
+          </div>,
+          document.body
         )}
       </div>
 
