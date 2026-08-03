@@ -130,7 +130,10 @@ const STATUS_CHECK_CLASS: Record<LeadStatus, string> = {
   Won:             styles.checkSuccessSolid,
 };
 
-const STATUS_OPTIONS: LeadStatus[] = ['Qualified', 'Negotiation', 'Lost', 'Contacted', 'Proposal sent', 'Won'];
+// Column-major so the 2-col grid renders Qualified/Negotiation/Lost down the
+// left and Contacted/Proposal sent/Won down the right (grid flows row-major,
+// so the source order has to interleave to land in that layout).
+const STATUS_OPTIONS: LeadStatus[] = ['Qualified', 'Contacted', 'Negotiation', 'Proposal sent', 'Lost', 'Won'];
 const SOURCE_OPTIONS = ['Website', 'LinkedIn', 'Cold email', 'Referral', 'Paid ads', 'Events'];
 
 const INDUSTRY_OPTIONS = [

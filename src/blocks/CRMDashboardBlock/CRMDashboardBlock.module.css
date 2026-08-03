@@ -221,7 +221,10 @@
 
 .checkGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* max-content (not 1fr) so each column is exactly as wide as its own
+     longest label -- "Proposal sent" needs more room than "Won", and
+     equal fractional columns were forcing it to wrap instead. */
+  grid-template-columns: repeat(2, max-content);
   column-gap: var(--space-24);
   row-gap: var(--space-8);
 }
