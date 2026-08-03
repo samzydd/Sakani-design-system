@@ -66,6 +66,13 @@
   border-right: var(--border-width-100) solid var(--color-border-subtle);
   background: var(--color-bg-surface);
   overflow: hidden;
+  /* Gentle ease in both directions, rather than an abrupt snap. */
+  transition: width 320ms ease, border-color 320ms ease;
+}
+
+.filters--closed {
+  width: 0;
+  border-right-color: transparent;
 }
 
 .filtersHead {
@@ -165,6 +172,7 @@
 
 /* ---- Table region ---- */
 .tableRegion {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
@@ -174,6 +182,23 @@
   padding: var(--space-16);
   background: var(--color-bg-surface);
   overflow: auto;
+}
+
+/* Stands in for the filter panel while it's tucked away; fades/scales in
+   with the same gentle ease as the panel's own collapse. */
+.filtersReopen {
+  position: absolute;
+  top: var(--space-16);
+  left: var(--space-16);
+  z-index: 5;
+  background: var(--color-bg-surface);
+  box-shadow: var(--shadow-md);
+  animation: sakani-crm-filters-reopen-in 320ms ease;
+}
+
+@keyframes sakani-crm-filters-reopen-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .toolbar {

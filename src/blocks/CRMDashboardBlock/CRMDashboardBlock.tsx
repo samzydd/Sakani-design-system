@@ -17,7 +17,7 @@
 import React from 'react';
 import {
   LayoutGrid, Mail, Database, CalendarDays, Users, Workflow, Zap, Target,
-  Plug, Settings, MessageCircle, Search, ChevronDown, ChevronUp, PanelLeftClose, Circle,
+  Plug, Settings, MessageCircle, Search, ChevronDown, ChevronUp, PanelLeftClose, Circle, Filter,
 } from 'lucide-react';
 
 import { Sidebar } from '../../components/Sidebar';
@@ -184,6 +184,10 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
 
   const [dealValue, setDealValue] = React.useState(70000);
 
+  // The whole filter panel can be tucked away to give the table more room;
+  // a floating button takes its place so it can be reopened.
+  const [filtersOpen, setFiltersOpen] = React.useState(true);
+
   const toggle = <T,>(set: Set<T>, key: T) => {
     const next = new Set(set);
     next.has(key) ? next.delete(key) : next.add(key);
@@ -317,11 +321,17 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
         {/* ---- Filter panel + table ---- */}
         <div className={styles.body}>
           {/* Filter panel */}
-          <aside className={styles.filters}>
+          <aside className={[styles.filters, !filtersOpen ? styles['filters--closed'] : ''].filter(Boolean).join(' ')}>
             <div className={styles.filtersHead}>
               <div className={styles.filtersHeadRow}>
                 <h2 className={styles.filtersTitle}>Filter</h2>
-                <IconButton size="sm" variant="outline" icon={PanelLeftClose} aria-label="Collapse filter panel" />
+                <IconButton
+                  size="sm"
+                  variant="outline"
+                  icon={PanelLeftClose}
+                  aria-label="Collapse filter panel"
+                  onClick={() => setFiltersOpen(false)}
+                />
               </div>
             </div>
 
@@ -446,6 +456,16 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
 
           {/* Table region */}
           <main className={styles.tableRegion}>
+            {!filtersOpen && (
+              <IconButton
+                size="sm"
+                variant="outline"
+                icon={Filter}
+                aria-label="Show filter panel"
+                className={styles.filtersReopen}
+                onClick={() => setFiltersOpen(true)}
+              />
+            )}
             <div className={styles.toolbar}>
               <div className={styles.toolbarLeft}>
                 <div className={styles.searchField}>
