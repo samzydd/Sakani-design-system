@@ -46,7 +46,12 @@
 /* Shared underline — one element that slides between tabs. */
 .indicator {
   position: absolute;
-  bottom: calc(-1 * var(--border-width-100));
+  /* Sits flush at the track's padding-box edge rather than bleeding
+     1px past it. .tabs needs overflow-x:auto so long tab rows can scroll
+     in narrow containers, but CSS computes overflow-y to auto too the
+     moment overflow-x isn't visible — a negative offset here used to
+     stick out past that boundary and get half-clipped as a result. */
+  bottom: 0;
   left: 0;
   height: 2px;
   border-radius: 1px;
