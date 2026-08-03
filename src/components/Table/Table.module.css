@@ -61,9 +61,16 @@
 
 /* ─── Checkbox cell — fixed width, content vertically + horizontally centered ── */
 .checkCell {
-  /* No fixed width: the cell shrinks to its content (the 18px checkbox),
-     so padding alone produces exactly 12px on each side — no box-sizing
-     ambiguity, no extra gap. */
+  /* Locked to 44px (18px checkbox + 12px padding each side, box-sizing:
+     border-box) rather than left to shrink-to-content -- in auto table
+     layout, an unspecified-width column is exactly the one that absorbs
+     extra space once the table stretches wider than its content, which
+     grew this column along with the rest instead of leaving it fixed.
+     min/max pin it so it can't grow OR shrink regardless of what the
+     layout algorithm decides to do with everyone else. */
+  width: 44px;
+  min-width: 44px;
+  max-width: 44px;
   padding: 0 12px;
   /* <th> centers by default (UA stylesheet) while <td> left-aligns --
      since this class is shared by the header row's <th> and every body
