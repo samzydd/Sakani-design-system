@@ -9,6 +9,7 @@
  */
 
 import React from 'react';
+import type { LucideIcon } from 'lucide-react';
 import styles from './Tabs.module.css';
 
 export interface TabItem {
@@ -16,6 +17,8 @@ export interface TabItem {
   value: string;
   /** Visible label. */
   label: string;
+  /** Optional 16px leading glyph (Figma "Tab Item": icon adds a leading glyph). */
+  icon?: LucideIcon;
   disabled?: boolean;
 }
 
@@ -80,6 +83,7 @@ export const Tabs: React.FC<TabsProps> = ({
     >
       {items.map((item) => {
         const isActive = item.value === active;
+        const Icon = item.icon;
         return (
           <button
             key={item.value}
@@ -95,6 +99,7 @@ export const Tabs: React.FC<TabsProps> = ({
             ].filter(Boolean).join(' ')}
             onClick={() => select(item.value)}
           >
+            {Icon && <Icon size={16} strokeWidth={1.5} aria-hidden="true" />}
             {item.label}
           </button>
         );

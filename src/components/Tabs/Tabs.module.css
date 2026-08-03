@@ -39,6 +39,11 @@
 .tab {
   position: relative;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Figma "Tab Item": icon + label content gap is 6px. */
+  gap: var(--space-6);
   padding: 0 var(--space-16) var(--space-10);
   background: transparent;
   border: none;
@@ -52,6 +57,7 @@
   white-space: nowrap;
   transition: color var(--transition-base);
 }
+.tab svg { flex-shrink: 0; }
 .tab:hover:not(.tab--disabled) { color: var(--color-fg-default); }
 
 .tab--active { color: var(--color-fg-default); }

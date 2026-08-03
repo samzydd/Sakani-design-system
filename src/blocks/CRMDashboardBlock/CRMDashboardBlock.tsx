@@ -18,6 +18,7 @@ import React from 'react';
 import {
   LayoutGrid, Mail, Database, CalendarDays, Users, Workflow, Zap, Target,
   Plug, Settings, MessageCircle, Search, ChevronDown, ChevronUp, PanelLeftClose, Circle, Filter,
+  User, Phone, Building2, Coins,
 } from 'lucide-react';
 
 import { Sidebar } from '../../components/Sidebar';
@@ -421,10 +422,10 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
             value={tab}
             onChange={setTab}
             items={[
-              { value: 'leads', label: 'Leads' },
-              { value: 'contacts', label: 'Contacts' },
-              { value: 'companies', label: 'Companies' },
-              { value: 'deals', label: 'Deals' },
+              { value: 'leads', label: 'Leads', icon: User },
+              { value: 'contacts', label: 'Contacts', icon: Phone },
+              { value: 'companies', label: 'Companies', icon: Building2 },
+              { value: 'deals', label: 'Deals', icon: Coins },
             ]}
           />
         </div>
