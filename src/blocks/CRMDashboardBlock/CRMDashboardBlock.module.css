@@ -15,6 +15,10 @@
      overrides further down (.checkSuccess etc.) are scoped to their own
      element and still win locally, so lead-status colors are unaffected. */
   --color-accent-default: var(--color-info-solid);
+  /* Separate token -- the active SidebarItem's left accent bar and the
+     Tabs sliding indicator read --color-brand-default specifically, not
+     --color-accent-default, so they needed their own override. */
+  --color-brand-default: var(--color-info-solid);
 }
 
 /* ---- Main column ---- */
