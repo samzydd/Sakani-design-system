@@ -26,11 +26,13 @@ export interface TabsProps {
   /** Uncontrolled initial value. */
   defaultValue?: string;
   onChange?: (value: string) => void;
+  /** Bottom border under the whole track. Defaults to true. */
+  bordered?: boolean;
   className?: string;
 }
 
 export const Tabs: React.FC<TabsProps> = ({
-  items, value, defaultValue, onChange, className,
+  items, value, defaultValue, onChange, bordered = true, className,
 }) => {
   const isControlled = value !== undefined;
   const [internal, setInternal] = React.useState(defaultValue ?? items[0]?.value);
@@ -63,7 +65,11 @@ export const Tabs: React.FC<TabsProps> = ({
   }, [active, items]);
 
   return (
-    <div ref={listRef} role="tablist" className={[styles.tabs, className ?? ''].filter(Boolean).join(' ')}>
+    <div
+      ref={listRef}
+      role="tablist"
+      className={[styles.tabs, !bordered ? styles['tabs--borderless'] : '', className ?? ''].filter(Boolean).join(' ')}
+    >
       {items.map((item) => {
         const isActive = item.value === active;
         return (
