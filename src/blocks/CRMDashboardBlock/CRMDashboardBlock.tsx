@@ -308,7 +308,14 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
 
   const columns: TableColumn<Lead>[] = React.useMemo(() => [
     {
-      key: 'company', header: 'Company', width: '13%',
+      // No fixed width: with Table's table-layout:fixed, a column left
+      // unspecified divides whatever space is left over the fixed-width
+      // columns equally -- the native table equivalent of a CSS Grid
+      // 1fr track, so Company/Contact (not Status/Source/etc.) are the
+      // ones that absorb the table stretching past 1440px instead of
+      // leaving an unpredictable gap wherever the browser's auto-layout
+      // heuristic happened to put it.
+      key: 'company', header: 'Company',
       render: (r) => (
         <span className={styles.cellInline}>
           <Avatar size="sm" src={r.companyAvatar} alt={r.company} />
@@ -317,7 +324,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
       ),
     },
     {
-      key: 'contact', header: 'Contact', width: '17%',
+      key: 'contact', header: 'Contact',
       render: (r) => (
         <span className={styles.cellInline}>
           <Avatar size="sm" src={r.contactAvatar} alt={r.contact} />

@@ -15,6 +15,15 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-sans);
+  /* Auto layout only takes column widths as a hint alongside content
+     size, and once the table stretches past the sum of those hints
+     (e.g. a wide 1440px viewport), it's the browser's own heuristic --
+     not the specified percentages -- that decides which column soaks up
+     the surplus. Fixed layout makes that deterministic: with it, any
+     column left without an explicit width (see the Company/Contact
+     columns in CRMDashboardBlock) divides the table's leftover space
+     equally, the closest native table equivalent to CSS Grid's 1fr. */
+  table-layout: fixed;
 }
 .table th,
 .table td {
