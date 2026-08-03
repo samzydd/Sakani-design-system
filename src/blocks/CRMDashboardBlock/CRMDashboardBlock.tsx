@@ -272,6 +272,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
           <SidebarItem collapsed icon={Settings} label="Settings" />
           <SidebarItem collapsed icon={MessageCircle} label="Support" />
         </div>
+        <SidebarDivider />
       </Sidebar>
 
       {/* ---- Main column ---- */}
