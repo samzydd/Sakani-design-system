@@ -65,6 +65,12 @@
      so padding alone produces exactly 12px on each side — no box-sizing
      ambiguity, no extra gap. */
   padding: 0 12px;
+  /* <th> centers by default (UA stylesheet) while <td> left-aligns --
+     since this class is shared by the header row's <th> and every body
+     row's <td>, that mismatch alone shifts the header checkbox sideways
+     the moment the column has any slack to center within (e.g. once the
+     table stretches wider than its content). */
+  text-align: left;
   vertical-align: middle;
   border-bottom: var(--border-width-100) solid var(--color-border-subtle);
 }
