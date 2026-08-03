@@ -25,6 +25,15 @@
      leaves each tab sized by its text again instead of splitting the
      row evenly. */
   min-width: 0;
+  /* The base 16px side padding was eating into an equal-share slot enough
+     that a label like "Assigned" (needs ~61px) no longer fit inside its
+     own content box (an 80px slot leaves only 48px once 16px padding is
+     taken off both sides) — nowrap text wider than its box overflows
+     asymmetrically instead of centering cleanly. 8px keeps the same
+     label comfortably inside its box so text-align:center has no
+     overflow to resolve either way. */
+  padding-left: var(--space-8);
+  padding-right: var(--space-8);
 }
 
 .tab {
