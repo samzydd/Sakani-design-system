@@ -45,10 +45,10 @@
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
-/* Sizes — vertical padding varies, horizontal fixed at 14px (space-14) */
-.input--sm { padding: var(--space-6)  var(--space-14); }
-.input--md { padding: var(--space-10) var(--space-14); }
-.input--lg { padding: var(--space-12) var(--space-14); }
+/* Sizes — vertical padding varies, horizontal fixed at 12px (space-12) */
+.input--sm { padding: var(--space-6)  var(--space-12); }
+.input--md { padding: var(--space-10) var(--space-12); }
+.input--lg { padding: var(--space-12) var(--space-12); }
 
 /* Focus — neutral border + soft shadow (no accent ring) */
 .input:focus-within {
