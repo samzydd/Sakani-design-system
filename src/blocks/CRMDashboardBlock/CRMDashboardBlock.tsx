@@ -128,17 +128,52 @@ const initialsOf = (name: string) => name.split(' ').map((p) => p[0]).slice(0, 2
  *  Chevron points up while the section is open (click to collapse) and down
  *  while it's closed (click to expand). */
 function FilterGroupHeader({ title, isOpen, onToggle }: { title: string; isOpen: boolean; onToggle: () => void }) {
+  // The whole row is the trigger, not just the chevron -- a real <button>
+  // nested inside another <button> is invalid HTML, so the chevron here
+  // is a plain decorative span rather than a second IconButton, sized and
+  // colored to match IconButton's own ghost/sm (32x32, fg-muted, bg-subtle
+  // on hover) so it still reads as "the button" even though the click
+  // target is the full header.
+  const Chevron = isOpen ? ChevronUp : ChevronDown;
   return (
-    <div className={styles.groupHeader}>
+    <button type="button" className={styles.groupHeader} onClick={onToggle} aria-expanded={isOpen}>
       <span className={styles.groupTitle}>{title}</span>
-      <IconButton
-        size="sm"
-        variant="ghost"
-        icon={isOpen ? ChevronUp : ChevronDown}
-        aria-label={isOpen ? `Collapse ${title}` : `Expand ${title}`}
-        aria-expanded={isOpen}
-        onClick={onToggle}
-      />
+      <span className={styles.groupHeaderIcon} aria-hidden="true">
+        <Chevron size={16} strokeWidth={1.5} />
+      </span>
+    </button>
+  );
+}
+
+/* Animates a filter section open/closed via CSS Grid's 0fr/1fr trick
+ * rather than a plain height transition -- a `height` transition needs a
+ * concrete pixel value on both ends, and this content's natural height
+ * isn't known up front (it varies per section and can reflow). Content
+ * stays mounted at all times so there's something to transition between;
+ * grid-template-rows going from 0fr to 1fr is what actually animates.
+ *
+ * The trick needs overflow:hidden while animating (otherwise content
+ * visibly juts out of the shrinking row instead of clipping cleanly),
+ * but Industry/Owner/Country each hold a Select whose open dropdown
+ * panel is positioned *below* its own box -- overflow:hidden left on
+ * permanently would clip that panel the moment it's open. So it's only
+ * held during the transition: switched to visible once the open
+ * animation actually finishes, and back to hidden the instant a close
+ * starts (by which point any dropdown inside should already be closed). */
+function CollapsibleSection({ isOpen, children }: { isOpen: boolean; children: React.ReactNode }) {
+  const [overflowVisible, setOverflowVisible] = React.useState(false);
+  React.useEffect(() => {
+    if (!isOpen) setOverflowVisible(false);
+  }, [isOpen]);
+  return (
+    <div
+      className={[styles.collapsible, isOpen ? styles['collapsible--open'] : ''].filter(Boolean).join(' ')}
+      style={overflowVisible ? { overflow: 'visible' } : undefined}
+      onTransitionEnd={(e) => {
+        if (e.propertyName === 'grid-template-rows' && isOpen) setOverflowVisible(true);
+      }}
+    >
+      <div className={styles.collapsibleInner}>{children}</div>
     </div>
   );
 }
@@ -406,7 +441,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
               {/* Lead status */}
               <section className={styles.group}>
                 <FilterGroupHeader title="Lead status" isOpen={openSections.has('status')} onToggle={() => toggleSection('status')} />
-                {openSections.has('status') && (
+                <CollapsibleSection isOpen={openSections.has('status')}>
                   <div className={styles.checkGrid}>
                     {STATUS_OPTIONS.map((s) => (
                       <Checkbox
@@ -418,7 +453,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
                       />
                     ))}
                   </div>
-                )}
+                </CollapsibleSection>
               </section>
 
               <Divider />
@@ -426,7 +461,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
               {/* Lead source */}
               <section className={styles.group}>
                 <FilterGroupHeader title="Lead source" isOpen={openSections.has('source')} onToggle={() => toggleSection('source')} />
-                {openSections.has('source') && (
+                <CollapsibleSection isOpen={openSections.has('source')}>
                   <div className={styles.checkGrid}>
                     {SOURCE_OPTIONS.map((s) => (
                       <Checkbox
@@ -437,7 +472,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
                       />
                     ))}
                   </div>
-                )}
+                </CollapsibleSection>
               </section>
 
               <Divider />
@@ -445,9 +480,9 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
               {/* Industry */}
               <section className={styles.group}>
                 <FilterGroupHeader title="Industry" isOpen={openSections.has('industry')} onToggle={() => toggleSection('industry')} />
-                {openSections.has('industry') && (
+                <CollapsibleSection isOpen={openSections.has('industry')}>
                   <Select placeholder="Select industry" options={INDUSTRY_OPTIONS} />
-                )}
+                </CollapsibleSection>
               </section>
 
               <Divider />
@@ -455,7 +490,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
               {/* Deal value */}
               <section className={styles.group}>
                 <FilterGroupHeader title="Deal value" isOpen={openSections.has('dealValue')} onToggle={() => toggleSection('dealValue')} />
-                {openSections.has('dealValue') && (
+                <CollapsibleSection isOpen={openSections.has('dealValue')}>
                   <div className={styles.dealValueGroup}>
                     <Slider
                       min={0}
@@ -469,7 +504,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
                       <div className={styles.rangeLabel} aria-label="Maximum deal value">{formatDealValue(dealValue)}</div>
                     </div>
                   </div>
-                )}
+                </CollapsibleSection>
               </section>
 
               <Divider />
@@ -477,17 +512,17 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
               {/* Owner */}
               <section className={styles.group}>
                 <FilterGroupHeader title="Owner" isOpen={openSections.has('owner')} onToggle={() => toggleSection('owner')} />
-                {openSections.has('owner') && (
+                <CollapsibleSection isOpen={openSections.has('owner')}>
                   <Select placeholder="Select owner" options={OWNER_OPTIONS} />
-                )}
+                </CollapsibleSection>
               </section>
 
               {/* Country */}
               <section className={styles.group}>
                 <FilterGroupHeader title="Country" isOpen={openSections.has('country')} onToggle={() => toggleSection('country')} />
-                {openSections.has('country') && (
+                <CollapsibleSection isOpen={openSections.has('country')}>
                   <Select placeholder="Select country" options={COUNTRY_OPTIONS} />
-                )}
+                </CollapsibleSection>
               </section>
             </div>
             )}
