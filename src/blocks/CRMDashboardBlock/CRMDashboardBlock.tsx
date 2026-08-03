@@ -70,7 +70,6 @@ const LEADS: Lead[] = [
   { company: 'Infogenix',  contact: 'Hajdú Szilveszter', email: 'bill.sanders@example.com',     status: 'Qualified',     source: 'Website',    owner: 'Szigmund Kálmán',  value: '$20,000.50', lastActivity: '6 mins ago',  nextFollowUp: 'Oct 25' },
   { company: 'Trello',     contact: 'Kende Attila',      email: 'michelle.rivera@example.com',  status: 'Won',           source: 'LinkedIn',   owner: 'Bogdán Norbert',   value: '$13,091.20', lastActivity: '18 hrs ago',  nextFollowUp: 'Jul 14' },
   { company: 'Invision',   contact: 'Apród Endre',       email: 'nathan.roberts@example.com',   status: 'Negotiation',   source: 'LinkedIn',   owner: 'Antal András',     value: '$1220.00',   lastActivity: '18 hrs ago',  nextFollowUp: 'Nov 7'  },
-  { company: 'Entrata',    contact: 'Király Vince',      email: 'tanya.hill@example.com',       status: 'Proposal sent', source: 'Paid ads',   owner: 'Csatár Géza',      value: '$3200.00',   lastActivity: '22 hrs ago',  nextFollowUp: 'Mar 13' },
 ];
 
 const STATUS_VARIANT: Record<LeadStatus, BadgeVariant> = {
@@ -281,6 +280,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
           type="breadcrumb"
           density="sm"
           showToggle
+          toggleIcon={Database}
           showActions
           hasUnread
           left={<Breadcrumb items={[{ label: 'Database', href: '#' }, { label: 'CRM', href: '#' }, { label: 'Leads' }]} />}

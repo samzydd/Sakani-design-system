@@ -13,7 +13,7 @@
  */
 
 import React from 'react';
-import { PanelLeft, CircleHelp, Bell, ChevronDown } from 'lucide-react';
+import { PanelLeft, CircleHelp, Bell, ChevronDown, type LucideIcon } from 'lucide-react';
 import styles from './TopBar.module.css';
 
 export type TopBarType = 'search' | 'breadcrumb' | 'tabs' | 'minimal' | 'chat';
@@ -27,6 +27,8 @@ export interface TopBarProps {
   /** Show the sidebar toggle. Defaults to true. */
   showToggle?: boolean;
   onToggle?: () => void;
+  /** Icon for the sidebar toggle button. Defaults to PanelLeft. */
+  toggleIcon?: LucideIcon;
   /** Show help + notification icons. Defaults to true. */
   showActions?: boolean;
   hasUnread?: boolean;
@@ -49,6 +51,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   left,
   showToggle = true,
   onToggle,
+  toggleIcon: ToggleIcon = PanelLeft,
   showActions = true,
   hasUnread = false,
   account,
@@ -74,7 +77,7 @@ export const TopBar: React.FC<TopBarProps> = ({
     <div className={styles.bar__leftGroup}>
       {showToggle && (
         <button type="button" className={styles.bar__icon} onClick={onToggle} aria-label="Toggle sidebar">
-          <PanelLeft size={density === 'md' ? 20 : 18} />
+          <ToggleIcon size={density === 'md' ? 20 : 18} />
         </button>
       )}
       <div className={[styles.bar__left, type === 'search' ? styles['bar__left--search'] : ''].filter(Boolean).join(' ')} data-type={type}>{left}</div>

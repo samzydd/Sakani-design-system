@@ -55,6 +55,14 @@
 }
 .item--active:hover { background: var(--color-accent-subtle); }
 .item--active .item__bar { opacity: 1; }
+
+/* Collapsed + active (icon-only rail): Figma uses a bg/canvas surface +
+ * shadow/sm instead of the expanded layout's accent-tinted background. */
+.item--active.item--collapsed,
+.item--active.item--collapsed:hover {
+  background: var(--color-bg-canvas);
+  box-shadow: var(--shadow-sm);
+}
 .item--active .item__icon { color: var(--color-fg-default); }
 .item--active .item__chevron { color: var(--color-accent-default); }
 .item--active .item__badge { background: var(--color-accent-default); color: var(--color-fg-on-accent); }
@@ -62,7 +70,13 @@
 .item--disabled { color: var(--color-fg-subtle); cursor: not-allowed; pointer-events: none; }
 .item--disabled .item__icon { color: var(--color-fg-subtle); }
 
-.item--collapsed { justify-content: center; padding: var(--space-8); }
+.item--collapsed {
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: var(--space-8);
+  box-sizing: border-box;
+}
 
 .item__label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
