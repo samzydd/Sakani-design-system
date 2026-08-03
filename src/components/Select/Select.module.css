@@ -116,8 +116,9 @@
   display: flex;
   align-items: center;
   gap: var(--space-8);
-  min-height: 36px;
-  padding: var(--space-8);
+  box-sizing: border-box;
+  min-height: 32px;
+  padding: var(--space-6);
   border-radius: var(--radius-sm);
   font-family: var(--font-sans);
   font-size: 13px;
