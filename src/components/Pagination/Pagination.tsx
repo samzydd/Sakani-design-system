@@ -21,17 +21,27 @@ export interface PaginationProps {
   className?: string;
 }
 
-/** Build the list of page tokens with ellipses, e.g. [1, '...', 4, 5, 6, '...', 20]. */
+/** Build the list of page tokens with ellipses, e.g. [1, '...', 4, 5, '...', 20].
+ *
+ * The visible window trails the current page forward -- {page, page+1, ...,
+ * page+siblings} -- rather than sitting centered on it. So landing on page 2
+ * reveals 3 (not 1 and 3): the set becomes {1, 2, 3, total}. Landing on 3
+ * then drops 2 and reveals 4: {1, 3, 4, total}. 1 and total are always
+ * present as fixed anchors; everything else only exists once it's adjacent
+ * to (at or after) the current page. */
 function buildRange(total: number, page: number, siblings: number): (number | 'ellipsis')[] {
-  const range: (number | 'ellipsis')[] = [];
-  const left = Math.max(2, page - siblings);
-  const right = Math.min(total - 1, page + siblings);
+  const windowStart = page;
+  const windowEnd = Math.min(page + siblings, total);
 
-  range.push(1);
-  if (left > 2) range.push('ellipsis');
-  for (let i = left; i <= right; i++) range.push(i);
-  if (right < total - 1) range.push('ellipsis');
-  if (total > 1) range.push(total);
+  const pages = new Set<number>([1, total]);
+  for (let i = windowStart; i <= windowEnd; i++) pages.add(i);
+
+  const sorted = Array.from(pages).sort((a, b) => a - b);
+  const range: (number | 'ellipsis')[] = [];
+  sorted.forEach((n, i) => {
+    if (i > 0 && n - sorted[i - 1] > 1) range.push('ellipsis');
+    range.push(n);
+  });
 
   return range;
 }
