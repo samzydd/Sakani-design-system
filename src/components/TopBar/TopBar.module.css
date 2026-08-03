@@ -9,7 +9,7 @@
 }
 .bar--md { height: 64px; }
 .bar--sm {
-  height: 56px;
+  height: 57px;
   padding: var(--space-12) var(--space-16);
 }
 

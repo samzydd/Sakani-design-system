@@ -9,6 +9,12 @@
   background: var(--color-bg-canvas);
   font-family: var(--font-sans);
   overflow: hidden;
+  /* Dashboard-wide primary color -- cascades to every descendant that
+     reads --color-accent-default (Slider fill, Checkbox checked fill,
+     active SidebarItem, accent Badges, etc). Per-status checkbox
+     overrides further down (.checkSuccess etc.) are scoped to their own
+     element and still win locally, so lead-status colors are unaffected. */
+  --color-accent-default: var(--color-info-solid);
 }
 
 /* ---- Main column ---- */
@@ -105,7 +111,7 @@
 }
 
 .filterTabs {
-  padding: 25px var(--space-16) 0;
+  padding: var(--space-24) var(--space-16) 0;
   border-bottom: var(--border-width-100) solid var(--color-border-subtle);
 }
 
@@ -172,7 +178,7 @@
   /* Replaces .group's old flex gap -- living inside the collapsing box
      means it disappears along with the content instead of leaving an
      8px gap under a closed section's header. */
-  padding-top: var(--space-8);
+  padding-top: var(--space-12);
 }
 
 /* Now a <button> (was a <div> with just the chevron clickable) so the

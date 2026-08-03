@@ -593,9 +593,9 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
                 <FilterChip type="add">Add filter</FilterChip>
               </div>
               <div className={styles.toolbarRight}>
-                <Button variant="outline" size="sm" rightIcon={<ChevronDown size={16} />}>Assign owner</Button>
-                <Button variant="outline" size="sm" rightIcon={<ChevronDown size={16} />}>Change status</Button>
-                <Button variant="outline" size="sm" rightIcon={<ChevronDown size={16} />}>Add tags</Button>
+                <Button variant="ghost" size="sm" rightIcon={<ChevronDown size={16} />}>Assign owner</Button>
+                <Button variant="ghost" size="sm" rightIcon={<ChevronDown size={16} />}>Change status</Button>
+                <Button variant="ghost" size="sm" rightIcon={<ChevronDown size={16} />}>Add tags</Button>
               </div>
             </div>
 
