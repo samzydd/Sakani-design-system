@@ -2,7 +2,8 @@
  * Sidebar (container)
  *
  * The shell that sidebar parts compose into. Matches Figma "Sidebar":
- * 248px expanded / 64px collapsed, bg/surface, border/default right edge, padding 12, gap 2.
+ * 248px expanded / 64px collapsed, no fill (transparent — re-read from Figma
+ * 2026-08-06, was incorrectly bg/surface before), border/default right edge, padding 12, gap 2.
  *
  * Compose with the standalone parts: SidebarHeader, SidebarSearch, SidebarItem,
  * SidebarSubItem, SidebarGroupLabel, SidebarDivider, SidebarPromo, SidebarFooter.
