@@ -47,13 +47,17 @@
   transition: opacity var(--transition-base);
 }
 
-/* ─── Active states ─── */
+/* ─── Active states ───
+ * Figma (re-read 2026-08-06): expanded active is now a bg/surface card +
+ * soft shadow — not the old accent/subtle tint. Matches the collapsed
+ * treatment below, just with a lighter shadow. */
 .item--active {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
-  background: var(--color-accent-subtle);
+  background: var(--color-bg-surface);
+  box-shadow: 0 1px 1px rgba(16, 15, 12, 0.06), 0 1px 1.5px rgba(16, 15, 12, 0.1);
   color: var(--color-fg-default);
 }
-.item--active:hover { background: var(--color-accent-subtle); }
+.item--active:hover { background: var(--color-bg-surface); }
 .item--active .item__bar { opacity: 1; }
 
 /* Collapsed + active (icon-only rail): Figma uses a bg/canvas surface +
