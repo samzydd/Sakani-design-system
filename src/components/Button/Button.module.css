@@ -207,6 +207,19 @@
   gap: var(--space-8);
 }
 
+/**
+ * Icon-side padding — 2px tighter than the size's base padding on
+ * whichever side carries an icon, so the glyph doesn't read as extra
+ * padding stacked on top of its own visual weight.
+ */
+.button--sm.button--hasLeftIcon  { padding-left:  var(--space-10); }
+.button--sm.button--hasRightIcon { padding-right: var(--space-10); }
+.button--md.button--hasLeftIcon  { padding-left:  var(--space-14); }
+.button--md.button--hasRightIcon { padding-right: var(--space-14); }
+/* No --space-18 token on the scale (16 -> 20) -- 20px minus 2px, hardcoded. */
+.button--lg.button--hasLeftIcon  { padding-left:  18px; }
+.button--lg.button--hasRightIcon { padding-right: 18px; }
+
 /* ─── Sub-elements ───────────────────────────────────────────────────────────── */
 
 /**
