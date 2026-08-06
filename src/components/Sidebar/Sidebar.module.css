@@ -1,5 +1,5 @@
 /* Sidebar container — 248/64px, no fill (transparent, page canvas shows
-   through), border/default right, gap 2. Padding is asymmetric per Figma:
+   through), no border, gap 2. Padding is asymmetric per Figma:
    8px top, 12px sides, 5px bottom. */
 .sidebar {
   display: flex;
@@ -9,7 +9,6 @@
   height: 100%;
   padding: var(--space-8) var(--space-12) 5px;
   background: transparent;
-  border-right: var(--border-width-100) solid var(--color-border-default);
   font-family: var(--font-sans);
   box-sizing: border-box;
   transition: width var(--transition-fast);

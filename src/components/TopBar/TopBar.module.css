@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  background: var(--color-bg-surface);
+  background: transparent;
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .bar--md { height: 64px; }
