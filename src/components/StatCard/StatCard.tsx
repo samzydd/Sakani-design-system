@@ -11,6 +11,7 @@
 
 import React from 'react';
 import { TrendingUp, TrendingDown, Minus, MoreHorizontal, type LucideIcon } from 'lucide-react';
+import { Badge } from '../Badge';
 import styles from './StatCard.module.css';
 
 export type StatCardStyle = 'minimal' | 'icon' | 'featured';
@@ -36,6 +37,7 @@ export interface StatCardProps {
 }
 
 const trendIcon = { up: TrendingUp, down: TrendingDown, flat: Minus };
+const trendBadgeVariant = { up: 'success', down: 'danger', flat: 'neutral' } as const;
 
 /** Tiny inline sparkline — normalized to a 100x32 viewBox, stroke follows the trend color. */
 const Sparkline: React.FC<{ data: number[] }> = ({ data }) => {
@@ -77,14 +79,16 @@ export const StatCard: React.FC<StatCardProps> = ({
 
       {sparkline && <Sparkline data={sparkline} />}
 
-      {delta && (
-        <div className={[styles.card__delta, styles[`card__delta--${trend}`]].join(' ')}>
-          <TrendIcon size={14} strokeWidth={2} aria-hidden="true" />
-          <span>{delta}</span>
+      {(delta || description) && (
+        <div className={styles.card__meta}>
+          {delta && (
+            <Badge variant={trendBadgeVariant[trend]} leftIcon={<TrendIcon size={12} strokeWidth={2} />}>
+              {delta}
+            </Badge>
+          )}
+          {description && <p className={styles.card__description}>{description}</p>}
         </div>
       )}
-
-      {description && <p className={styles.card__description}>{description}</p>}
     </div>
   );
 };
