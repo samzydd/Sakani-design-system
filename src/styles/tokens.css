@@ -250,8 +250,20 @@ html, body {
 /* ── Global accessibility baseline ─────────────────────────────────────────── */
 
 /* Consistent, token-driven focus ring on every interactive element.
- * :where() keeps specificity at 0 so component-specific rings still win. */
-:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+ * :where() keeps specificity at 0 so component-specific rings still win.
+ *
+ * input/select/textarea were dropped from this list: every field component
+ * (Input, Select, Combobox, Textarea, SidebarSearch) already designs its own
+ * focus treatment on its *wrapper*, but this rule was ALSO matching the raw
+ * native element nested inside that wrapper -- a second, independent
+ * box-shadow rendering right on top of the component's own, since the two
+ * target different elements rather than actually competing for the same
+ * property. That showed up as an unwanted inner ring inside the field's own
+ * border. Checkbox/Radio/Switch (hidden native input + a styled sibling) and
+ * Slider (custom ::-webkit-slider-thumb treatment) each already have their
+ * own dedicated :focus-visible rule too, so nothing loses its focus
+ * indicator by removing these three tags here. */
+:where(button, a, [tabindex]):focus-visible {
   outline: none;
   box-shadow:
     0 0 0 2px var(--color-bg-surface),
