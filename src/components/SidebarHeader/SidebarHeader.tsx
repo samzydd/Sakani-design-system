@@ -19,10 +19,12 @@ export interface SidebarHeaderProps {
   logo?: React.ReactNode;
   collapsed?: boolean;
   onToggle?: () => void;
+  /** Icon for the toggle button. Defaults to PanelLeftClose. */
+  toggleIcon?: LucideIcon;
 }
 
 export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
-  type = 'brand', title, subtitle, logo, collapsed, onToggle,
+  type = 'brand', title, subtitle, logo, collapsed, onToggle, toggleIcon: ToggleIcon = PanelLeftClose,
 }) => (
   <div className={[styles.header, collapsed ? styles['header--collapsed'] : ''].filter(Boolean).join(' ')}>
     {logo && (
@@ -40,7 +42,7 @@ export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
     )}
     {!collapsed && type === 'brand-toggle' && (
       <button type="button" className={styles.header__toggle} onClick={onToggle} aria-label="Collapse sidebar">
-        <PanelLeftClose size={18} strokeWidth={1.5} />
+        <ToggleIcon size={18} strokeWidth={1.5} />
       </button>
     )}
   </div>

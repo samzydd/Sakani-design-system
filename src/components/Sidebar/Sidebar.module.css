@@ -10,6 +10,7 @@
   padding: var(--space-8) var(--space-12) 5px;
   background: transparent;
   font-family: var(--font-sans);
+  overflow: visible;
   box-sizing: border-box;
   transition: width var(--transition-fast);
 }
