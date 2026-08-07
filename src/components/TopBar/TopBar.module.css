@@ -5,6 +5,8 @@
   width: 100%;
   box-sizing: border-box;
   background: transparent;
+  padding-left: var(--space-24);
+  padding-right: var(--space-24);
 }
 .bar--md { height: 64px; }
 .bar--sm {
@@ -30,7 +32,6 @@
   align-items: center;
   gap: var(--space-8);
   flex-shrink: 0;
-  padding-right: var(--space-20);
 }
 .bar__icon {
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
