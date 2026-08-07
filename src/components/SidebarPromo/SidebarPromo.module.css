@@ -4,6 +4,7 @@
 .promo {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: var(--space-8);
   padding: var(--space-14);
   background: var(--color-brand-subtle);

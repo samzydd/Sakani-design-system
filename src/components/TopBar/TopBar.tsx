@@ -31,7 +31,11 @@ export interface TopBarProps {
   toggleIcon?: LucideIcon;
   /** Show help + notification icons. Defaults to true. */
   showActions?: boolean;
+  /** Show the help icon within the actions group. Defaults to true. */
+  showHelp?: boolean;
   hasUnread?: boolean;
+  /** Extra content rendered in bar__right, before the built-in action icons. */
+  rightSlot?: React.ReactNode;
   /** Account cluster (Avatar + chevron) that opens a Menu. */
   account?: React.ReactNode;
   /** type="chat" — conversation avatar. */
@@ -53,7 +57,9 @@ export const TopBar: React.FC<TopBarProps> = ({
   onToggle,
   toggleIcon: ToggleIcon = PanelLeft,
   showActions = true,
+  showHelp = true,
   hasUnread = false,
+  rightSlot,
   account,
   avatar,
   title,
@@ -84,11 +90,14 @@ export const TopBar: React.FC<TopBarProps> = ({
     </div>
     <div className={styles.bar__spacer} />
     <div className={styles.bar__right}>
+      {rightSlot}
       {showActions && (
         <>
-          <button type="button" className={styles.bar__icon} aria-label="Help">
-            <CircleHelp size={density === 'md' ? 20 : 18} />
-          </button>
+          {showHelp && (
+            <button type="button" className={styles.bar__icon} aria-label="Help">
+              <CircleHelp size={density === 'md' ? 20 : 18} />
+            </button>
+          )}
           <button type="button" className={styles.bar__icon} aria-label="Notifications">
             <span className={styles.bar__bell}>
               <Bell size={density === 'md' ? 20 : 18} />

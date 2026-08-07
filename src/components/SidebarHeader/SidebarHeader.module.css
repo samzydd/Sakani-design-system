@@ -15,6 +15,13 @@
   height: 28px;
   flex-shrink: 0;
 }
+button.header__logoWrap {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
 .header__logo {
   display: inline-flex;
   align-items: center;
