@@ -20,6 +20,11 @@
   flex: 1; min-width: 0; border: none; outline: none; background: transparent;
   font-family: inherit; font-size: 14px; font-weight: 500; color: var(--color-fg-default);
 }
+/* Same fix as Input's .input__control: the wrapper's own :focus-within
+   above is the field's focus indicator, so the global :focus-visible
+   ring baseline needs suppressing here or it nests a second ring inside
+   the wrapper's. */
+.search__input:focus-visible { outline: none; box-shadow: none; }
 .search__input::placeholder { color: var(--color-fg-subtle);
   font-weight: 400;
 }

@@ -27,7 +27,7 @@
 .control--lg { min-height: 48px; }
 
 .control--open,
-.control:focus-visible {
+.control:focus-within {
   border-color: var(--color-border-default);
   border-width: var(--border-width-150);
   box-shadow: var(--shadow-sm);
@@ -66,6 +66,12 @@
   padding: var(--space-10) 0;
 }
 .control__input::placeholder { color: var(--color-fg-subtle); font-weight: 400; }
+/* Same fix as Input's .input__control: the wrapper above now uses
+   :focus-within (was :focus-visible, which never actually fired since
+   typing focuses this inner input, not the wrapper div) as the field's
+   focus indicator, so the global :focus-visible ring baseline needs
+   suppressing here or it nests a second ring inside the wrapper's. */
+.control__input:focus-visible { outline: none; box-shadow: none; }
 
 .control__chevron { display: inline-flex; color: var(--color-fg-muted); transition: transform var(--transition-base); flex-shrink: 0; }
 .control__chevron--open { transform: rotate(180deg); }

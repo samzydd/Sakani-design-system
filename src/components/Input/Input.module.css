@@ -88,6 +88,16 @@
   font-weight: 400;
 }
 .input__control:disabled { cursor: not-allowed; }
+/* The wrapper's own :focus-within (border-color + shadow, above) is the
+   field's focus indicator -- without this, tokens.css's global
+   :where(input):focus-visible baseline ring also lands on this native
+   <input> itself, showing up as a second, tighter ring nested inside the
+   wrapper's. Specificity is why this needed its own override rather than
+   relying on the wrapper's rule to "cover" it: :where() in the global
+   rule zeroes its own specificity, but the :focus-visible it's paired
+   with still counts, so it still applies to this element too unless
+   something at equal-or-higher specificity says otherwise here. */
+.input__control:focus-visible { outline: none; box-shadow: none; }
 
 /* Icons — 16px, fg/muted */
 .input__icon {
