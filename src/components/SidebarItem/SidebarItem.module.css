@@ -61,8 +61,12 @@
   box-shadow: 0 1px 1px rgba(16, 15, 12, 0.06), 0 1px 1.5px rgba(16, 15, 12, 0.1);
   color: var(--color-fg-default);
 }
+/* Active Hover (re-read 2026-08-11): stays on bg/surface -- the earlier
+ * accent/subtle tint swap was wrong. Only the shadow drops (a "flatten"
+ * effect), same on both expanded and collapsed since neither overrides
+ * .item--active's background anymore. */
 .item--active:hover {
-  background: var(--color-accent-subtle);
+  background: var(--color-bg-surface);
   box-shadow: none;
 }
 .item--active .item__bar { opacity: 1; }
