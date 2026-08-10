@@ -82,6 +82,19 @@
   box-sizing: border-box;
 }
 
+/* Only ever had color rules (:hover/.item--active) targeting this class --
+   no rule set its own display, so the span defaulted to inline. An inline
+   box wrapping an SVG picks up baseline/descender spacing below the icon,
+   inflating the span's own line-box height enough that .item's
+   align-items:center centered *that* box, not the icon's actual visual
+   bounds -- reading as a few px off-center against the label next to it. */
+.item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 .item__label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .item__badge {
