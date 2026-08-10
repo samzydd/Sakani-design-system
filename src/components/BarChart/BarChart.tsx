@@ -59,9 +59,12 @@ export const BarChart: React.FC<BarChartProps> = ({ data, size = 'md', multicolo
               fontFamily: 'var(--font-sans)',
             }}
           />
+          {/* Figma's className is the plain `rounded-[...]` utility, not
+              `rounded-t-[...]` -- all four corners round, not just the top
+              two (a bar-chart convention I wrongly defaulted to before). */}
           <Bar
             dataKey="value"
-            radius={[cornerRadius, cornerRadius, 0, 0]}
+            radius={[cornerRadius, cornerRadius, cornerRadius, cornerRadius]}
             fill={palette[0]}
             onMouseEnter={(_, i) => setActiveIndex(i)}
             onMouseLeave={() => setActiveIndex(null)}

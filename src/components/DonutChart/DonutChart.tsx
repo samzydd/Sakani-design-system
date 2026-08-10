@@ -43,11 +43,10 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   const hoverFill = cssVar('--color-chart-2') ?? '#2e90fa';
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const d = dims[size];
-  // Figma's segments end in a fully rounded cap (a semicircle the width of
-  // the ring), not a square-cut edge -- that's cornerRadius set to half the
-  // ring's own thickness, the max Recharts allows before it stops adding
-  // visible rounding.
-  const cornerRadius = (d.outer - d.inner) / 2;
+  // Figma's segments end in a rounded cap -- half the ring's own thickness
+  // is the max Recharts allows before it stops adding visible rounding, so
+  // that was the starting point, minus 4px to back it off from that max.
+  const cornerRadius = (d.outer - d.inner) / 2 - 4;
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
