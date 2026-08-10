@@ -30,9 +30,11 @@ export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
     {logo && (
       collapsed && type === 'brand-toggle' && onToggle ? (
         <button type="button" className={styles.header__logoWrap} onClick={onToggle} aria-label="Expand sidebar">
-          <span className={styles.header__logo}>{logo}</span>
-          <span className={styles.header__logoToggle} aria-hidden="true">
-            <ToggleIcon size={16} strokeWidth={1.5} />
+          <span className={styles.header__logo}>
+            <span className={styles.header__logoContent}>{logo}</span>
+            <span className={styles.header__logoIcon} aria-hidden="true">
+              <ToggleIcon size={16} strokeWidth={1.5} />
+            </span>
           </span>
         </button>
       ) : (
