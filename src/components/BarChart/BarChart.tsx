@@ -35,9 +35,13 @@ const cssVar = (name: string) =>
     : undefined;
 
 export const BarChart: React.FC<BarChartProps> = ({ data, size = 'md', multicolor, className }) => {
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
+  const hoverFill = cssVar('--color-chart-2') ?? '#2e90fa';
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const axis = cssVar('--color-fg-muted') ?? '#6b6375';
+  // Figma: radius/md (8px) at sm/md/lg, radius/lg (12px) at xl.
+  const cornerRadius = size === 'xl' ? 12 : 8;
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
@@ -55,8 +59,16 @@ export const BarChart: React.FC<BarChartProps> = ({ data, size = 'md', multicolo
               fontFamily: 'var(--font-sans)',
             }}
           />
-          <Bar dataKey="value" radius={[4, 4, 0, 0]} fill={palette[0]}>
-            {multicolor && data.map((_, i) => <Cell key={i} fill={palette[i % palette.length]} />)}
+          <Bar
+            dataKey="value"
+            radius={[cornerRadius, cornerRadius, 0, 0]}
+            fill={palette[0]}
+            onMouseEnter={(_, i) => setActiveIndex(i)}
+            onMouseLeave={() => setActiveIndex(null)}
+          >
+            {data.map((_, i) => (
+              <Cell key={i} fill={i === activeIndex ? hoverFill : multicolor ? palette[i % palette.length] : palette[0]} />
+            ))}
           </Bar>
         </ReBarChart>
       </ResponsiveContainer>

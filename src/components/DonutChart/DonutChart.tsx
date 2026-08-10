@@ -38,9 +38,16 @@ const cssVar = (name: string) =>
 export const DonutChart: React.FC<DonutChartProps> = ({
   data, size = 'md', centerValue, centerCaption, className,
 }) => {
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
+  const hoverFill = cssVar('--color-chart-2') ?? '#2e90fa';
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const d = dims[size];
+  // Figma's segments end in a fully rounded cap (a semicircle the width of
+  // the ring), not a square-cut edge -- that's cornerRadius set to half the
+  // ring's own thickness, the max Recharts allows before it stops adding
+  // visible rounding.
+  const cornerRadius = (d.outer - d.inner) / 2;
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
@@ -52,10 +59,15 @@ export const DonutChart: React.FC<DonutChartProps> = ({
             nameKey="label"
             innerRadius={d.inner}
             outerRadius={d.outer}
+            cornerRadius={cornerRadius}
             paddingAngle={2}
             stroke="none"
+            onMouseEnter={(_, i) => setActiveIndex(i)}
+            onMouseLeave={() => setActiveIndex(null)}
           >
-            {data.map((_, i) => <Cell key={i} fill={palette[i % palette.length]} />)}
+            {data.map((_, i) => (
+              <Cell key={i} fill={i === activeIndex ? hoverFill : palette[i % palette.length]} />
+            ))}
           </Pie>
           <Tooltip
             contentStyle={{
