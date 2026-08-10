@@ -45,8 +45,9 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   const d = dims[size];
   // Figma's segments end in a rounded cap -- half the ring's own thickness
   // is the max Recharts allows before it stops adding visible rounding, so
-  // that was the starting point, minus 4px to back it off from that max.
-  const cornerRadius = (d.outer - d.inner) / 2 - 4;
+  // that was the starting point, backed off 4px then another 3px (7 total)
+  // per subsequent adjustment requests.
+  const cornerRadius = (d.outer - d.inner) / 2 - 7;
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
