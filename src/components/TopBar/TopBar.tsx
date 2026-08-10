@@ -38,6 +38,8 @@ export interface TopBarProps {
   rightSlot?: React.ReactNode;
   /** Account cluster (Avatar + chevron) that opens a Menu. */
   account?: React.ReactNode;
+  /** Flips the account chevron when the menu it opens is open. Defaults to false. */
+  accountOpen?: boolean;
   /** type="chat" — conversation avatar. */
   avatar?: React.ReactNode;
   /** type="chat" — conversation name. */
@@ -61,6 +63,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   hasUnread = false,
   rightSlot,
   account,
+  accountOpen = false,
   avatar,
   title,
   subtitle,
@@ -107,7 +110,15 @@ export const TopBar: React.FC<TopBarProps> = ({
           <span className={styles.bar__divider} />
         </>
       )}
-      {account && <div className={styles.bar__account}>{account}<ChevronDown size={16} className={styles.bar__accountChevron} /></div>}
+      {account && (
+        <div className={styles.bar__account}>
+          {account}
+          <ChevronDown
+            size={16}
+            className={[styles.bar__accountChevron, accountOpen ? styles['bar__accountChevron--open'] : ''].filter(Boolean).join(' ')}
+          />
+        </div>
+      )}
     </div>
     </>
     )}

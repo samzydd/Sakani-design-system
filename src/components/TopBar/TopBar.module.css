@@ -94,7 +94,7 @@
   color: var(--color-fg-subtle);
   transition: transform var(--transition-base), color var(--transition-base);
 }
-.bar__account:where(:hover) .bar__accountChevron {
+.bar__accountChevron--open {
   transform: scaleY(-1);
   color: var(--color-fg-default);
 }
