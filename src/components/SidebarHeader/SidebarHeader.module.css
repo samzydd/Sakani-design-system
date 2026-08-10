@@ -10,6 +10,7 @@
 
 /* Fixed 28x28 frame — the actual size constraint. .header__logo fills it. */
 .header__logoWrap {
+  position: relative;
   display: inline-flex;
   width: 28px;
   height: 28px;
@@ -32,7 +33,26 @@ button.header__logoWrap {
   background: var(--color-accent-default);
   color: var(--color-fg-on-accent);
   font-weight: 600;
+  transition: opacity var(--transition-base);
 }
+button.header__logoWrap:hover .header__logo { opacity: 0; }
+
+/* Collapsed brand-toggle: on hover, the logo fades out and this expand
+ * affordance fades in over it, in the same 28x28 frame. */
+.header__logoToggle {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-subtle);
+  color: var(--color-fg-default);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+button.header__logoWrap:hover .header__logoToggle { opacity: 1; }
 .header__text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .header__title { font-size: 14px; font-weight: 600; line-height: 20px; color: var(--color-fg-default); }
 .header__subtitle { font-size: 12px; line-height: 16px; color: var(--color-fg-muted); }
