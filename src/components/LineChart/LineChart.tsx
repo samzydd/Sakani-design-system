@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {
-  LineChart as ReLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
+  LineChart as ReLineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
 } from 'recharts';
 import styles from './LineChart.module.css';
 
@@ -42,10 +42,9 @@ export const LineChart: React.FC<LineChartProps> = ({
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
       <ResponsiveContainer width="100%" height={heights[size]}>
-        <ReLineChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: -12 }}>
+        <ReLineChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: 12 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={grid} vertical={false} />
-          <XAxis dataKey={xKey} stroke={axis} fontSize={12} tickLine={false} axisLine={false} />
-          <YAxis stroke={axis} fontSize={12} tickLine={false} axisLine={false} />
+          <XAxis dataKey={xKey} stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />
           <Tooltip
             contentStyle={{
               background: cssVar('--color-bg-surface'),

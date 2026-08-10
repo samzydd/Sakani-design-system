@@ -10,7 +10,7 @@
 
 import React from 'react';
 import {
-  BarChart as ReBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
+  BarChart as ReBarChart, Bar, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
 } from 'recharts';
 import styles from './BarChart.module.css';
 
@@ -42,10 +42,9 @@ export const BarChart: React.FC<BarChartProps> = ({ data, size = 'md', multicolo
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
       <ResponsiveContainer width="100%" height={heights[size]}>
-        <ReBarChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: -12 }}>
+        <ReBarChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={grid} vertical={false} />
-          <XAxis dataKey="label" stroke={axis} fontSize={12} tickLine={false} axisLine={false} />
-          <YAxis stroke={axis} fontSize={12} tickLine={false} axisLine={false} />
+          <XAxis dataKey="label" stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />
           <Tooltip
             cursor={{ fill: cssVar('--color-bg-subtle') ?? '#f4f3ec' }}
             contentStyle={{
