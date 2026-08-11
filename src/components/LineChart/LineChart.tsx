@@ -22,6 +22,12 @@ export interface LineChartProps {
   /** Field used for the x-axis (defaults to "label"). */
   xKey?: string;
   size?: ChartSize;
+  /** Pixel height override, takes precedence over `size`'s preset. Recharts'
+   * ResponsiveContainer renders its SVG at whatever literal number this prop
+   * resolves to and does not re-measure it from CSS, so shrinking a chart to
+   * fit a constrained layout must go through this prop, not a CSS override
+   * on an ancestor. */
+  height?: number;
   showLegend?: boolean;
   className?: string;
 }
@@ -33,7 +39,7 @@ const cssVar = (name: string) =>
     : undefined;
 
 export const LineChart: React.FC<LineChartProps> = ({
-  data, series, xKey = 'label', size = 'md', showLegend, className,
+  data, series, xKey = 'label', size = 'md', height, showLegend, className,
 }) => {
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
@@ -41,7 +47,7 @@ export const LineChart: React.FC<LineChartProps> = ({
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
-      <ResponsiveContainer width="100%" height={heights[size]}>
+      <ResponsiveContainer width="100%" height={height ?? heights[size]}>
         <ReLineChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: 12 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={grid} vertical={false} />
           <XAxis dataKey={xKey} stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />

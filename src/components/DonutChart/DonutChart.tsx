@@ -21,6 +21,8 @@ export interface DonutChartProps {
   centerValue?: string;
   /** Small caption under the center value (Figma: caption). */
   centerCaption?: string;
+  /** Pixel height override, takes precedence over `size`'s preset. */
+  height?: number;
   className?: string;
 }
 
@@ -36,13 +38,13 @@ const cssVar = (name: string) =>
     : undefined;
 
 export const DonutChart: React.FC<DonutChartProps> = ({
-  data, size = 'md', centerValue, centerCaption, className,
+  data, size = 'md', centerValue, centerCaption, height, className,
 }) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
   const hoverFill = cssVar('--color-chart-2') ?? '#2e90fa';
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
-  const d = dims[size];
+  const d = { ...dims[size], h: height ?? dims[size].h };
   // Figma's segments end in a rounded cap -- half the ring's own thickness
   // is the max Recharts allows before it stops adding visible rounding, so
   // that was the starting point, backed off 4px then another 3px (7 total)
