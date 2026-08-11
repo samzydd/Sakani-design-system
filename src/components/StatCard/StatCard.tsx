@@ -11,7 +11,7 @@
 
 import React from 'react';
 import { TrendingUp, TrendingDown, Minus, MoreHorizontal, type LucideIcon } from 'lucide-react';
-import { Badge } from '../Badge';
+import { Badge, type BadgeVariant } from '../Badge';
 import styles from './StatCard.module.css';
 
 export type StatCardStyle = 'minimal' | 'icon' | 'featured';
@@ -27,6 +27,9 @@ export interface StatCardProps {
   /** e.g. "+12.5%" — colored by trend. */
   delta?: string;
   trend?: StatCardTrend;
+  /** Overrides the trend-derived badge color (e.g. a "down" delta that
+   * Figma still wants shown as warning, not danger, for a given card). */
+  badgeVariant?: BadgeVariant;
   variant?: StatCardStyle;
   /** Leading icon (shown for Icon/Featured styles). */
   icon?: LucideIcon;
@@ -56,7 +59,7 @@ const Sparkline: React.FC<{ data: number[] }> = ({ data }) => {
 const sparkStyles = styles.card__sparkline;
 
 export const StatCard: React.FC<StatCardProps> = ({
-  title, value, description, sparkline, delta, trend = 'up', variant = 'minimal', icon: Icon, showMenu, onMenu, className,
+  title, value, description, sparkline, delta, trend = 'up', badgeVariant, variant = 'minimal', icon: Icon, showMenu, onMenu, className,
 }) => {
   const TrendIcon = trendIcon[trend];
   const showIcon = (variant === 'icon' || variant === 'featured') && Icon;
@@ -82,7 +85,7 @@ export const StatCard: React.FC<StatCardProps> = ({
       {(delta || description) && (
         <div className={styles.card__meta}>
           {delta && (
-            <Badge variant={trendBadgeVariant[trend]} leftIcon={<TrendIcon size={12} strokeWidth={2} />}>
+            <Badge variant={badgeVariant ?? trendBadgeVariant[trend]} leftIcon={<TrendIcon size={12} strokeWidth={2} />}>
               {delta}
             </Badge>
           )}
