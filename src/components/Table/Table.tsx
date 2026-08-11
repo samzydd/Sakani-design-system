@@ -32,6 +32,10 @@ export interface TableProps<T> {
   /** Enable drag-to-reorder on rows. Fires with the new row order. */
   reorderable?: boolean;
   onReorder?: (rows: T[]) => void;
+  /** Draws the table's own container border/radius. Defaults to true; set
+   * false when nesting inside a card that already has its own border
+   * (Figma: some Table instances sit borderless inside a Panel). */
+  bordered?: boolean;
   className?: string;
 }
 
@@ -59,7 +63,7 @@ const TableCheckbox: React.FC<{
 };
 
 export function Table<T>({
-  columns, rows, selectable, selectedRows, onSelectionChange, rowKey, reorderable, onReorder, className,
+  columns, rows, selectable, selectedRows, onSelectionChange, rowKey, reorderable, onReorder, bordered = true, className,
 }: TableProps<T>) {
   const isControlled = selectedRows !== undefined;
   const [internal, setInternal] = React.useState<number[]>([]);
@@ -91,7 +95,7 @@ export function Table<T>({
     setSelected(selected.includes(i) ? selected.filter((x) => x !== i) : [...selected, i]);
 
   return (
-    <div className={[styles.wrap, className ?? ''].filter(Boolean).join(' ')}>
+    <div className={[styles.wrap, bordered ? styles['wrap--bordered'] : '', className ?? ''].filter(Boolean).join(' ')}>
       <table className={styles.table}>
         <thead>
           <tr className={styles.headerRow}>

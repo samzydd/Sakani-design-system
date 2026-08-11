@@ -5,10 +5,13 @@
 
 .wrap {
   background: var(--color-bg-surface);
-  border: var(--border-width-100) solid var(--color-border-subtle);
-  border-radius: var(--radius-md);
   overflow: hidden;
   font-family: var(--font-sans);
+}
+
+.wrap--bordered {
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
 }
 
 .table {
