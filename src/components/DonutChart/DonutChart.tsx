@@ -42,7 +42,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
 }) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
-  const hoverFill = cssVar('--color-chart-2') ?? '#2e90fa';
+  const hoverFill = cssVar('--color-chart-5') ?? '#78716a';
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const d = { ...dims[size], h: height ?? dims[size].h };
   // Figma's segments end in a rounded cap -- half the ring's own thickness
