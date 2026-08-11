@@ -12,7 +12,7 @@
   font-family: var(--font-sans);
   overflow: visible;
   box-sizing: border-box;
-  transition: width var(--transition-fast);
+  transition: width var(--transition-fast), padding var(--transition-fast);
 }
 /* Collapsed rail: no horizontal inset on the container itself — dividers and
    the header run full-bleed edge to edge, and each nav group owns its own

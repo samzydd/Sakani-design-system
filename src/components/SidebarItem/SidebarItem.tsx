@@ -55,7 +55,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
       <span className={styles.item__bar} aria-hidden="true" />
 
       {Icon && <span className={styles.item__icon} aria-hidden="true"><Icon size={18} strokeWidth={1.5} /></span>}
-      {!collapsed && <span className={styles.item__label}>{label}</span>}
+      <span className={[styles.item__label, collapsed ? styles['item__label--collapsed'] : ''].filter(Boolean).join(' ')}>{label}</span>
       {!collapsed && badge && <span className={styles.item__badge}>{badge}</span>}
       {!collapsed && hasSubmenu && (
         <span className={styles.item__chevron} aria-hidden="true"><ChevronRight size={16} strokeWidth={1.5} /></span>

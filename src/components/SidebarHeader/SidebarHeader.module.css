@@ -41,9 +41,13 @@ button.header__logoWrap {
 .header__logoIcon { display: none; align-items: center; justify-content: center; }
 button.header__logoWrap:hover .header__logoContent { display: none; }
 button.header__logoWrap:hover .header__logoIcon { display: inline-flex; }
-.header__text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
-.header__title { font-size: 14px; font-weight: 600; line-height: 20px; color: var(--color-fg-default); }
-.header__subtitle { font-size: 12px; line-height: 16px; color: var(--color-fg-muted); }
+/* Kept mounted even when collapsed (opacity-faded) instead of unmounting
+   instantly, so it fades/clips in step with the sidebar's own width
+   transition rather than popping. */
+.header__text { display: flex; flex-direction: column; flex: 1; min-width: 0; opacity: 1; transition: opacity var(--transition-fast); }
+.header__text--collapsed { opacity: 0; }
+.header__title { font-size: 14px; font-weight: 600; line-height: 20px; color: var(--color-fg-default); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.header__subtitle { font-size: 12px; line-height: 16px; color: var(--color-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .header__toggle {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
 

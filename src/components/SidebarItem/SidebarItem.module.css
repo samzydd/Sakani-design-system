@@ -23,7 +23,8 @@
   text-decoration: none;
   box-sizing: border-box;
   overflow: visible;
-  transition: background-color var(--transition-base), color var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base),
+    width var(--transition-base), padding var(--transition-base), gap var(--transition-base);
 }
 .item:hover:not(.item--disabled):not(.item--active) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
 .item:hover:not(.item--disabled):not(.item--active) .item__icon { color: var(--color-fg-default); }
@@ -82,6 +83,7 @@
   width: 32px;
   height: 32px;
   padding: var(--space-8);
+  gap: 0;
   box-sizing: border-box;
 }
 
@@ -98,7 +100,22 @@
   flex-shrink: 0;
 }
 
-.item__label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* Kept mounted (not conditionally unmounted) even when collapsed, so it
+   clips via .item's own width transition (flex-basis:0% lets it shrink)
+   instead of popping in/out abruptly -- opacity fades a little faster than
+   the width collapses so it doesn't linger as squashed/truncated text. */
+.item__label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 1;
+  transition: opacity var(--transition-fast);
+}
+
+.item__label--collapsed {
+  opacity: 0;
+}
 
 .item__badge {
   flex-shrink: 0;

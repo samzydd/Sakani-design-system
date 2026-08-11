@@ -43,14 +43,12 @@ export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
         </span>
       )
     )}
-    {!collapsed && (
-      <span className={styles.header__text}>
-        <span className={styles.header__title}>{title}</span>
-        {(type === 'workspace' || subtitle) && subtitle && (
-          <span className={styles.header__subtitle}>{subtitle}</span>
-        )}
-      </span>
-    )}
+    <span className={[styles.header__text, collapsed ? styles['header__text--collapsed'] : ''].filter(Boolean).join(' ')}>
+      <span className={styles.header__title}>{title}</span>
+      {(type === 'workspace' || subtitle) && subtitle && (
+        <span className={styles.header__subtitle}>{subtitle}</span>
+      )}
+    </span>
     {!collapsed && type === 'brand-toggle' && (
       <button type="button" className={styles.header__toggle} onClick={onToggle} aria-label="Collapse sidebar">
         <ToggleIcon size={18} strokeWidth={1.5} />
