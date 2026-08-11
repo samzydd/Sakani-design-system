@@ -1,5 +1,5 @@
 /* Table.module.css — Geist (via --font-sans), Figma-accurate alignment.
- * Header bg/canvas 44px overline; body rows 44px body/sm; border/subtle dividers.
+ * Header bg/canvas 40px overline; body rows 44px body/sm; border/subtle dividers.
  * Checkbox: 18px radius-sm, bg/surface, shadow/sm drop shadow, accent fill when on.
  */
 
@@ -35,7 +35,7 @@
 /* ─── Header ── */
 .headerRow { background: var(--color-bg-canvas); }
 .headerCell {
-  height: 44px;
+  height: 40px;
   padding: var(--space-12) var(--space-16);
   font-size: 11px;
   font-weight: 600;
