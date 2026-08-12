@@ -5,8 +5,11 @@
   gap: var(--space-10);
   padding: var(--space-6) var(--space-4);
   font-family: var(--font-sans);
+  transition: gap var(--transition-base);
 }
-.header--collapsed { justify-content: center; }
+/* gap still applies between the logo and a 0-width header__text, so it
+   must be zeroed too or it pushes the logo off the true center. */
+.header--collapsed { justify-content: center; gap: 0; }
 
 /* Fixed 28x28 frame — the actual size constraint. .header__logo fills it. */
 .header__logoWrap {
@@ -44,8 +47,21 @@ button.header__logoWrap:hover .header__logoIcon { display: inline-flex; }
 /* Kept mounted even when collapsed (opacity-faded) instead of unmounting
    instantly, so it fades/clips in step with the sidebar's own width
    transition rather than popping. */
-.header__text { display: flex; flex-direction: column; flex: 1; min-width: 0; opacity: 1; transition: opacity var(--transition-fast); }
-.header__text--collapsed { opacity: 0; }
+.header__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  opacity: 1;
+  transition: opacity var(--transition-fast), flex-basis var(--transition-base), flex-grow var(--transition-base);
+}
+/* flex:1 alone still consumes all leftover row space even at opacity:0,
+   which starves justify-content:center on .header--collapsed of any space
+   to center the logo within -- collapse it to zero-basis, non-growing too. */
+.header__text--collapsed {
+  flex: 0 0 0%;
+  opacity: 0;
+}
 .header__title { font-size: 14px; font-weight: 600; line-height: 20px; color: var(--color-fg-default); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .header__subtitle { font-size: 12px; line-height: 16px; color: var(--color-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .header__toggle {
