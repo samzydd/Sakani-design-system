@@ -270,6 +270,17 @@ html, body {
     0 0 0 4px var(--color-border-focus);
 }
 
+/* Smooth color crossfade on theme change (the light/dark switch). Zero
+ * specificity (a bare universal selector), so any component's own more
+ * specific transition rule -- for hover, focus, etc. -- always wins outright
+ * and is completely unaffected; this only fills in elements that don't
+ * declare their own, so toggling .dark doesn't leave some things fading
+ * while everything else snaps instantly. */
+*, *::before, *::after {
+  transition: background-color var(--transition-base), color var(--transition-base),
+    border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
 /* Respect the user's motion preference (WCAG 2.3.3). */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
