@@ -8,6 +8,7 @@
 
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { useThemeTick } from '../../lib/useThemeTick';
 import styles from './DonutChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -41,6 +42,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   data, size = 'md', centerValue, centerCaption, height, className,
 }) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
   const hoverFill = cssVar('--color-chart-5') ?? '#78716a';
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';

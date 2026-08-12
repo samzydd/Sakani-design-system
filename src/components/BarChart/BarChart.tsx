@@ -12,6 +12,7 @@ import React from 'react';
 import {
   BarChart as ReBarChart, Bar, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
 } from 'recharts';
+import { useThemeTick } from '../../lib/useThemeTick';
 import styles from './BarChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -36,6 +37,7 @@ const cssVar = (name: string) =>
 
 export const BarChart: React.FC<BarChartProps> = ({ data, size = 'md', multicolor, className }) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
   const hoverFill = cssVar('--color-chart-2') ?? '#2e90fa';
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';

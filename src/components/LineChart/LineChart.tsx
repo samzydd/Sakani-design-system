@@ -10,6 +10,7 @@ import React from 'react';
 import {
   LineChart as ReLineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
 } from 'recharts';
+import { useThemeTick } from '../../lib/useThemeTick';
 import styles from './LineChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -41,6 +42,7 @@ const cssVar = (name: string) =>
 export const LineChart: React.FC<LineChartProps> = ({
   data, series, xKey = 'label', size = 'md', height, showLegend, className,
 }) => {
+  useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const axis = cssVar('--color-fg-muted') ?? '#6b6375';
