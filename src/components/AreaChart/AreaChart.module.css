@@ -1,0 +1,15 @@
+/* AreaChart.module.css — force Geist on Recharts SVG text (axis ticks, tooltip). */
+.chart {
+  width: 100%;
+  font-family: var(--font-sans);
+}
+.chart text {
+  font-family: var(--font-sans) !important;
+}
+
+/* SVG's root element defaults to overflow:hidden per spec -- clips anything
+   drawn past the chart's own bounds (e.g. an active-dot radius right at
+   the edge). */
+.chart :global(.recharts-surface) {
+  overflow: visible;
+}

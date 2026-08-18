@@ -66,6 +66,14 @@ export const DonutChart: React.FC<DonutChartProps> = ({
             cornerRadius={cornerRadius}
             paddingAngle={2}
             stroke="none"
+            // On mount, Recharts 3.9.2 sometimes commits the entrance
+            // animation's *empty* intermediate frame for Sector-based shapes
+            // (Pie, RadialBar) and never repaints past it -- the shape's <g>
+            // renders with no <path> child at all, so nothing shows even
+            // though every prop above is correct. Bar/Area/Line don't hit
+            // this (rects and line paths animate differently). Disabling the
+            // animation skips the broken transition entirely.
+            isAnimationActive={false}
             onMouseEnter={(_, i) => setActiveIndex(i)}
             onMouseLeave={() => setActiveIndex(null)}
           >

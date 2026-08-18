@@ -7,6 +7,8 @@
 
 export * from './components/Accordion';
 export * from './components/Alert';
+export { AreaChart } from './components/AreaChart';
+export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
 export * from './components/Avatar';
 export * from './components/AvatarGroup';
 export * from './components/Badge';
@@ -41,8 +43,12 @@ export * from './components/Menu';
 export * from './components/MenuItem';
 export * from './components/MessageBubble';
 export * from './components/Pagination';
+export { PieChart } from './components/PieChart';
+export type { PieChartProps, PieDatum, PieChartVariant } from './components/PieChart';
 export * from './components/Popover';
 export * from './components/Progress';
+export { RadialChart } from './components/RadialChart';
+export type { RadialChartProps, RadialDatum, RadialChartVariant } from './components/RadialChart';
 export * from './components/Radio';
 export * from './components/SegmentedControl';
 export * from './components/Select';
