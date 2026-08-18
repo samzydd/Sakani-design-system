@@ -1,0 +1,11 @@
+/* FunnelChart.module.css — force Geist on Recharts SVG text. */
+.chart {
+  width: 100%;
+  font-family: var(--font-sans);
+}
+.chart text {
+  font-family: var(--font-sans) !important;
+}
+.chart :global(.recharts-surface) {
+  overflow: visible;
+}
