@@ -11,6 +11,7 @@ import {
   LineChart as ReLineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
 } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './LineChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -55,15 +56,7 @@ export const LineChart: React.FC<LineChartProps> = ({
           <XAxis dataKey={xKey} stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />
           <Tooltip
             cursor={{ stroke: cssVar('--color-border-default') ?? '#d6d3ce', strokeWidth: 1 }}
-            contentStyle={{
-              background: cssVar('--color-bg-canvas'),
-              border: 'none',
-              borderRadius: 8,
-              padding: '12px',
-              boxShadow: cssVar('--shadow-lg'),
-              fontSize: 13,
-              fontFamily: 'var(--font-sans)',
-            }}
+            content={<ChartTooltip />}
           />
           {showLegend && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
           {series.map((key, i) => {

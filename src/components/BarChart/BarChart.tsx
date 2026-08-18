@@ -20,6 +20,7 @@ import {
   BarChart as ReBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell, Rectangle,
 } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './BarChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -70,20 +71,7 @@ export const BarChart: React.FC<BarChartProps> = ({
 
   const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
 
-  const tooltip = (
-    <Tooltip
-      cursor={false}
-      contentStyle={{
-        background: cssVar('--color-bg-canvas'),
-        border: 'none',
-        borderRadius: 8,
-        padding: '12px',
-        boxShadow: cssVar('--shadow-lg'),
-        fontSize: 13,
-        fontFamily: 'var(--font-sans)',
-      }}
-    />
-  );
+  const tooltip = <Tooltip cursor={false} content={<ChartTooltip />} />;
 
   // Hovering never recolors a bar -- only "active" (the persistent marker
   // bar, unrelated to hover) and "negative" (sign-based) change fill.
@@ -185,6 +173,12 @@ export const BarChart: React.FC<BarChartProps> = ({
           ) : (
             <Bar
               dataKey="value"
+              name="Value"
+              // Recharts' tooltip payload derives its color swatch from the
+              // Bar's own `fill`, not from per-index Cells -- keep it in
+              // sync with whichever bar is actually hovered so the
+              // tooltip's dot matches (Cells still drive the real render).
+              fill={hoverIndex !== null ? singleSeriesFill(hoverIndex) : chartDefault}
               radius={[CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS]}
               isAnimationActive={false}
               activeBar={makeActiveBar('value')}

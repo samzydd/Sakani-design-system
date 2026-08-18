@@ -9,6 +9,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './DonutChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -80,17 +81,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
               <Cell key={i} fill={i === activeIndex ? hoverFill : palette[i % palette.length]} />
             ))}
           </Pie>
-          <Tooltip
-            contentStyle={{
-              background: cssVar('--color-bg-canvas'),
-              border: 'none',
-              borderRadius: 8,
-              padding: '12px',
-              boxShadow: cssVar('--shadow-lg'),
-              fontSize: 13,
-              fontFamily: 'var(--font-sans)',
-            }}
-          />
+          <Tooltip content={<ChartTooltip />} />
         </PieChart>
       </ResponsiveContainer>
 
