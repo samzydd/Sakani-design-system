@@ -10,12 +10,12 @@
 /* Typing/focus: NO accent border — neutral border + soft shadow only. */
 .composer--typing {
   border: 1px solid var(--color-border-default) !important;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 /* Belt-and-braces: strip any focus ring the base input might emit. */
 .composer:focus-within {
   border-color: var(--color-border-default);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 .input:focus, .input:focus-visible { outline: none; box-shadow: none; }
 .composer--disabled { opacity: 0.6; }
@@ -32,6 +32,10 @@
 .upload__fill { height: 100%; background: var(--color-accent-default); border-radius: var(--radius-full); }
 
 .row { display: flex; align-items: center; gap: var(--space-6); }
+/* Send is an IconButton (radius-sm by default) -- scoped to .row so this
+   wins on specificity regardless of stylesheet order, without touching
+   every other IconButton in the system. */
+.row .sendButton { border-radius: var(--radius-md); }
 .icon {
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
   display: inline-flex; align-items: center; justify-content: center;
