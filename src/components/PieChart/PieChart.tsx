@@ -2,11 +2,12 @@
  * PieChart
  *
  * Recharts wrapper styled with Sakani chart tokens. Matches Figma's "Pie
- * chart" component set (9 variants):
+ * chart" component set (10 variants):
  *
  *   pie                — full pie, white separator strokes between slices
  *   pie-no-separator    — full pie, slices touch directly
  *   label               — full pie, outside leader-line value labels
+ *   custom-label        — full pie, leader-line labels in a filled pill
  *   label-list          — full pie, category-name labels inside each slice
  *   donut               — plain ring, no labels
  *   donut-active        — ring with one slice pushed outward ("exploded")
@@ -14,8 +15,9 @@
  *   stacked             — ring + center value/caption + one exploded slice
  *   interactive         — ring + a halo ring bracketing one slice
  *
- * "custom label" (Figma) reads identically to "label" in the reference --
- * folded into one variant rather than duplicated.
+ * No variant has an angular gap between slices (Figma's slices always
+ * touch) -- "pie"'s separator is a thin stroke drawn on top of the shared
+ * edge, not an actual padding-angle gap.
  *
  * The exploded slice and halo ring aren't things Pie's `activeShape` can
  * do on their own (Recharts 3 dropped `activeIndex` from Pie's types, so
@@ -33,7 +35,7 @@ import styles from './PieChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
 export type PieChartVariant =
-  | 'pie' | 'pie-no-separator' | 'label' | 'label-list'
+  | 'pie' | 'pie-no-separator' | 'label' | 'custom-label' | 'label-list'
   | 'donut' | 'donut-active' | 'donut-with-text' | 'stacked' | 'interactive';
 
 export interface PieDatum { label: string; value: number; }
@@ -115,13 +117,60 @@ export const PieChart: React.FC<PieChartProps> = ({
   };
 
   // Figma's outside leader-line labels are plain fg/default text, not
-  // tinted to match each slice (Recharts' own label-color default).
+  // tinted to match each slice (Recharts' own label-color default). Drawing
+  // the connecting line ourselves -- as a radial-then-horizontal "elbow",
+  // long enough to actually read as a line -- instead of relying on the
+  // separate `labelLine` prop (whose default 20px offset renders far too
+  // short and faint to notice at this chart size).
+  const leaderPath = (props: any) => {
+    const { cx, cy, midAngle, outerRadius: or_ } = props;
+    const angle = midAngle ?? 0;
+    const cos = Math.cos(-angle * RAD);
+    const sin = Math.sin(-angle * RAD);
+    const startX = cx + or_ * cos;
+    const startY = cy + or_ * sin;
+    const bendX = cx + (or_ + 16) * cos;
+    const bendY = cy + (or_ + 16) * sin;
+    const isRight = cos >= 0;
+    const endX = bendX + (isRight ? 14 : -14);
+    return {
+      d: `M ${startX} ${startY} L ${bendX} ${bendY} L ${endX} ${bendY}`,
+      endX,
+      endY: bendY,
+      textAnchor: isRight ? 'start' as const : 'end' as const,
+    };
+  };
+
   const renderOutsideLabel = (props: any) => {
-    const { x, y, textAnchor, value } = props;
+    const { value } = props;
+    const { d, endX, endY, textAnchor } = leaderPath(props);
+    const tx = endX + (textAnchor === 'start' ? 4 : -4);
     return (
-      <text x={x} y={y} textAnchor={textAnchor} dominantBaseline="central" fill={fgDefault} fontSize={12} fontFamily="var(--font-sans)">
-        {value}
-      </text>
+      <g>
+        <path d={d} fill="none" stroke={borderColor} strokeWidth={1} />
+        <text x={tx} y={endY} textAnchor={textAnchor} dominantBaseline="central" fill={fgDefault} fontSize={12} fontFamily="var(--font-sans)">
+          {value}
+        </text>
+      </g>
+    );
+  };
+
+  // "custom label": same leader-line anchor, but the value sits in a
+  // filled pill matching the slice's own color instead of plain text.
+  const renderCustomLabel = (props: any) => {
+    const { value, fill } = props;
+    const { d, endX, endY, textAnchor } = leaderPath(props);
+    const text = String(value);
+    const w = Math.max(28, text.length * 7 + 14);
+    const rectX = textAnchor === 'end' ? endX - w : endX;
+    return (
+      <g>
+        <path d={d} fill="none" stroke={borderColor} strokeWidth={1} />
+        <rect x={rectX} y={endY - 10} width={w} height={20} rx={10} fill={fill} />
+        <text x={rectX + w / 2} y={endY} textAnchor="middle" dominantBaseline="central" fill="#fff" fontSize={11} fontWeight={500} fontFamily="var(--font-sans)">
+          {text}
+        </text>
+      </g>
     );
   };
 
@@ -147,7 +196,9 @@ export const PieChart: React.FC<PieChartProps> = ({
             nameKey="label"
             innerRadius={innerRadius}
             outerRadius={d.outer}
-            paddingAngle={hasHole ? 2 : variant === 'pie' ? 0 : 1}
+            // Figma's slices always touch -- "pie"'s separator is a stroke
+            // drawn on the shared edge, not an angular gap.
+            paddingAngle={0}
             stroke={variant === 'pie' ? surfaceBg : 'none'}
             strokeWidth={variant === 'pie' ? 2 : 0}
             // See DonutChart.tsx: Recharts 3.9.2 can commit Sector-based
@@ -155,8 +206,13 @@ export const PieChart: React.FC<PieChartProps> = ({
             // never repaint past it, rendering nothing. Disabled here too.
             isAnimationActive={false}
             shape={hasExplode || hasHalo ? renderSector : undefined}
-            label={variant === 'label' ? renderOutsideLabel : variant === 'label-list' ? renderInsideLabel : undefined}
-            labelLine={variant === 'label' ? { stroke: borderColor } : false}
+            label={
+              variant === 'label' ? renderOutsideLabel
+                : variant === 'custom-label' ? renderCustomLabel
+                : variant === 'label-list' ? renderInsideLabel
+                : undefined
+            }
+            labelLine={false}
             onMouseEnter={(_, i) => setHoverIdx(i)}
             onMouseLeave={() => setHoverIdx(undefined)}
           >

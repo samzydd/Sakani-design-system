@@ -16,7 +16,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['pie', 'pie-no-separator', 'label', 'label-list', 'donut', 'donut-active', 'donut-with-text', 'stacked', 'interactive'],
+      options: ['pie', 'pie-no-separator', 'label', 'custom-label', 'label-list', 'donut', 'donut-active', 'donut-with-text', 'stacked', 'interactive'],
     },
     size: { control: 'select', options: ['sm', 'md', 'lg', 'xl'] },
   },
@@ -30,6 +30,7 @@ type Story = StoryObj<typeof meta>;
 export const Pie: Story = { args: { variant: 'pie' } };
 export const PieNoSeparator: Story = { args: { variant: 'pie-no-separator' } };
 export const Label: Story = { args: { variant: 'label' } };
+export const CustomLabel: Story = { args: { variant: 'custom-label' } };
 export const LabelList: Story = { args: { variant: 'label-list' } };
 export const Donut: Story = { args: { variant: 'donut' } };
 export const DonutActive: Story = { args: { variant: 'donut-active' } };

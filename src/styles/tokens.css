@@ -1,4 +1,12 @@
 :root {
+  /* Breakpoints — matches the Figma "Breakpoints" variable collection.
+     CSS custom properties can't be used inside @media conditions, so these
+     exist as the documented source of truth; media queries below reference
+     the same pixel values directly (see each component's responsive CSS). */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+
   /* Typography — Geist via @fontsource-variable/geist */
   --font-sans: "Geist Variable", "Geist", system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, monospace;
@@ -71,6 +79,15 @@
   --color-info-950: #102A56;
   --color-base-white: #FFFFFF;
   --color-base-black: #000000;
+  /* Chart primitives (Figma "chart/1".."chart/5") — a dedicated data-vis
+     palette, not a reuse of the semantic success/danger/info/neutral ramps.
+     The old aliasing to those ramps was a coincidental, wrong substitute:
+     none of their steps actually match Figma's chart hex values. */
+  --color-chart-orange: #FF4700;
+  --color-chart-blue: #5B92DD;
+  --color-chart-teal: #47A8A2;
+  --color-chart-purple: #9179D6;
+  --color-chart-gold: #DCA84F;
 
   /* ---- semantic (light) ---- */
   --color-bg-canvas: var(--color-neutral-50);
@@ -87,12 +104,13 @@
   --color-border-default: var(--color-neutral-300);
   --color-border-strong: var(--color-neutral-400);
   --color-border-focus: var(--color-primary-500);
-  /* chart tokens (light) — aliased to primitives, mirrors Figma Semantic/chart */
-  --color-chart-1: var(--color-primary-500);
-  --color-chart-2: var(--color-info-500);
-  --color-chart-3: var(--color-success-600);
-  --color-chart-4: var(--color-danger-600);
-  --color-chart-5: var(--color-neutral-500);
+  /* chart tokens — aliased to the dedicated chart primitives above (Figma
+     chart/1..5). Brand-consistent data-vis colors, same in light and dark. */
+  --color-chart-1: var(--color-chart-orange);
+  --color-chart-2: var(--color-chart-blue);
+  --color-chart-3: var(--color-chart-teal);
+  --color-chart-4: var(--color-chart-purple);
+  --color-chart-5: var(--color-chart-gold);
   --color-accent-default: var(--color-neutral-900);
   --color-accent-hover: var(--color-neutral-800);
   --color-accent-active: var(--color-neutral-700);
@@ -214,12 +232,9 @@ html, body {
   --color-border-default: var(--color-neutral-700);
   --color-border-strong: var(--color-neutral-600);
   --color-border-focus: var(--color-primary-400);
-  /* chart tokens (dark) — aliased to primitives, mirrors Figma Semantic/chart */
-  --color-chart-1: var(--color-info-600);
-  --color-chart-2: var(--color-info-400);
-  --color-chart-3: var(--color-success-400);
-  --color-chart-4: var(--color-danger-400);
-  --color-chart-5: var(--color-neutral-400);
+  /* chart tokens deliberately NOT overridden here -- they're primitives,
+     not semantics, and stay the same brand-consistent hue in both modes
+     (see the :root primitives block). */
   --color-accent-default: var(--color-neutral-50);
   --color-accent-hover: var(--color-neutral-200);
   --color-accent-active: var(--color-neutral-300);

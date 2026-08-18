@@ -48,6 +48,22 @@ const cssVar = (name: string) =>
 const HALF_CIRCLE = new Set<RadialChartVariant>(['stacked', 'stacked-3-layers']);
 const RAD = Math.PI / 180;
 
+// Per-variant [innerRadius%, outerRadius%] of the chart's own max radius.
+// "multi"/"grid"/"stacked-label" divide this band evenly across N rings
+// automatically; "text"/"shape"/half-circle variants have a fixed single
+// (or fixed-count) band instead, since reusing "multi"'s 30%-100% band for
+// a single ring made it comically thick.
+const RADIUS_BAND: Record<RadialChartVariant, [string, string]> = {
+  multi: ['30%', '100%'],
+  grid: ['30%', '100%'],
+  'stacked-label': ['30%', '100%'],
+  text: ['76%', '100%'],
+  shape: ['86%', '100%'],
+  stacked: ['45%', '88%'],
+  'stacked-3-layers': ['45%', '88%'],
+  'gauge-tick': ['0%', '0%'],
+};
+
 const GaugeTick: React.FC<{ value: number; max: number; color: string; track: string; centerValue?: string; centerCaption?: string }> = ({
   value, max, color, track, centerValue, centerCaption,
 }) => {
@@ -111,8 +127,7 @@ export const RadialChart: React.FC<RadialChartProps> = ({
   const h = dims[size];
   const isHalfCircle = HALF_CIRCLE.has(variant);
   const showCenter = variant !== 'multi' && variant !== 'grid' && (centerValue || centerCaption);
-  // "shape" is a visibly thinner ring than "text" -- same concept, lighter weight.
-  const barSize = variant === 'shape' ? '18%' : undefined;
+  const [innerR, outerR] = RADIUS_BAND[variant];
 
   if (variant === 'gauge-tick') {
     const d = data[0];
@@ -136,9 +151,8 @@ export const RadialChart: React.FC<RadialChartProps> = ({
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           data={data}
-          innerRadius={isHalfCircle ? '35%' : '30%'}
-          outerRadius="100%"
-          barSize={barSize}
+          innerRadius={innerR}
+          outerRadius={outerR}
           startAngle={isHalfCircle ? 180 : 90}
           endAngle={isHalfCircle ? 0 : -270}
           barCategoryGap={isHalfCircle ? '20%' : '12%'}
@@ -149,7 +163,15 @@ export const RadialChart: React.FC<RadialChartProps> = ({
               intermediate frame and never repaint past it -- confirmed here
               too (background track rendered, the actual value arcs didn't,
               until this was added). */}
-          <RadialBar dataKey="value" background={{ fill: track }} cornerRadius={8} isAnimationActive={false}>
+          <RadialBar
+            dataKey="value"
+            // "grid" relies on the polar grid itself as the backdrop --  a
+            // solid track disc would paint over the grid lines completely
+            // (they share the same 30%-100% band), so it's disabled there.
+            background={variant === 'grid' ? false : { fill: track }}
+            cornerRadius={8}
+            isAnimationActive={false}
+          >
             {data.map((_, i) => <Cell key={i} fill={palette[i % palette.length]} />)}
           </RadialBar>
         </RadialBarChart>
