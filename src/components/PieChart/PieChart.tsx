@@ -51,7 +51,6 @@ export const PieChart: React.FC<PieChartProps> = ({
   useThemeTick();
   const [activeIndex, setActiveIndex] = React.useState<number | undefined>(undefined);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
-  const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const d = dims[size];
   const hasHole = variant !== 'pie';
   const innerRadius = hasHole ? d.outer * 0.6 : 0;
@@ -93,9 +92,13 @@ export const PieChart: React.FC<PieChartProps> = ({
           </Pie>
           <Tooltip
             contentStyle={{
-              background: cssVar('--color-bg-surface'),
-              border: `1px solid ${grid}`,
-              borderRadius: 8, fontSize: 12, fontFamily: 'var(--font-sans)',
+              background: cssVar('--color-bg-canvas'),
+              border: 'none',
+              borderRadius: 8,
+              padding: '12px',
+              boxShadow: cssVar('--shadow-lg'),
+              fontSize: 13,
+              fontFamily: 'var(--font-sans)',
             }}
           />
         </RePieChart>

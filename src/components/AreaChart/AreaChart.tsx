@@ -75,12 +75,14 @@ export const AreaChart: React.FC<AreaChartProps> = ({
           <CartesianGrid strokeDasharray="3 3" stroke={grid} vertical={false} />
           <XAxis dataKey="label" stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />
           <Tooltip
-            cursor={{ stroke: axis, strokeDasharray: '3 3' }}
+            cursor={{ stroke: cssVar('--color-border-default') ?? '#d6d3ce', strokeWidth: 1 }}
             contentStyle={{
-              background: cssVar('--color-bg-surface'),
-              border: `1px solid ${grid}`,
+              background: cssVar('--color-bg-canvas'),
+              border: 'none',
               borderRadius: 8,
-              fontSize: 12,
+              padding: '12px',
+              boxShadow: cssVar('--shadow-lg'),
+              fontSize: 13,
               fontFamily: 'var(--font-sans)',
             }}
           />
@@ -94,7 +96,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
               strokeWidth={2}
               fill="url(#sakani-area-2)"
               dot={false}
-              activeDot={{ r: 4 }}
+              activeDot={{ r: 4, fill: chart2, stroke: cssVar('--color-bg-canvas'), strokeWidth: 1.5 }}
             />
           )}
           <Area
@@ -106,7 +108,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
             strokeWidth={2}
             fill="url(#sakani-area-1)"
             dot={false}
-            activeDot={{ r: 4 }}
+            activeDot={{ r: 4, fill: chart1, stroke: cssVar('--color-bg-canvas'), strokeWidth: 1.5 }}
           />
         </ReAreaChart>
       </ResponsiveContainer>

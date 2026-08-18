@@ -45,7 +45,6 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
   const hoverFill = cssVar('--color-chart-5') ?? '#78716a';
-  const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const d = { ...dims[size], h: height ?? dims[size].h };
   // Figma's segments end in a rounded cap -- half the ring's own thickness
   // is the max Recharts allows before it stops adding visible rounding, so
@@ -83,9 +82,13 @@ export const DonutChart: React.FC<DonutChartProps> = ({
           </Pie>
           <Tooltip
             contentStyle={{
-              background: cssVar('--color-bg-surface'),
-              border: `1px solid ${grid}`,
-              borderRadius: 8, fontSize: 12, fontFamily: 'var(--font-sans)',
+              background: cssVar('--color-bg-canvas'),
+              border: 'none',
+              borderRadius: 8,
+              padding: '12px',
+              boxShadow: cssVar('--shadow-lg'),
+              fontSize: 13,
+              fontFamily: 'var(--font-sans)',
             }}
           />
         </PieChart>
