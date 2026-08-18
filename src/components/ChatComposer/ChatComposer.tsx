@@ -333,7 +333,7 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
         <IconButton
           icon={Send}
           variant="primary"
-          size="md"
+          size="sm"
           className={styles.sendButton}
           onClick={onSend}
           disabled={!canSend}
