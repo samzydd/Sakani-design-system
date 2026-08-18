@@ -13,3 +13,11 @@
 .chart :global(.recharts-surface) {
   overflow: visible;
 }
+
+/* The active dot appears/repositions on hover with no CSS transition rule
+   in place -- this makes its fill and radius ease in smoothly instead of
+   snapping, matching the same flow-like easing used everywhere else in
+   the system. */
+.chart :global(.recharts-active-dot) {
+  transition: r var(--transition-slow), fill var(--transition-slow), opacity var(--transition-slow);
+}

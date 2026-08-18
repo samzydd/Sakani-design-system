@@ -14,6 +14,14 @@
 .chart :global(.recharts-surface) {
   overflow: visible;
 }
+
+/* Hover ("active" variant) dims via fill-opacity, which snaps instantly
+   with no CSS transition rule in place -- this makes that change animate
+   smoothly instead, matching the same flow-like easing used everywhere
+   else in the system. */
+.chart :global(.recharts-sector) {
+  transition: fill var(--transition-slow), fill-opacity var(--transition-slow);
+}
 .center {
   position: absolute;
   inset: 0;

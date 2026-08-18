@@ -9,3 +9,11 @@
 .chart :global(.recharts-surface) {
   overflow: visible;
 }
+
+/* Hover recolor/dim happens by React re-rendering fill-opacity, which
+   snaps instantly with no CSS transition rule in place -- this makes that
+   change animate smoothly instead, matching the same flow-like easing used
+   everywhere else in the system. */
+.chart :global(.recharts-trapezoid) {
+  transition: fill var(--transition-slow), fill-opacity var(--transition-slow);
+}

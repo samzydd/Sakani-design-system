@@ -17,7 +17,7 @@
 
 import React from 'react';
 import {
-  BarChart as ReBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell,
+  BarChart as ReBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell, Rectangle,
 } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
 import styles from './BarChart.module.css';
@@ -68,6 +68,8 @@ export const BarChart: React.FC<BarChartProps> = ({
   // "Active": the most recent category is always highlighted, independent of hover.
   const activeIdx = variant === 'active' ? data.length - 1 : null;
 
+  const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
+
   const tooltip = (
     <Tooltip
       cursor={false}
@@ -83,14 +85,36 @@ export const BarChart: React.FC<BarChartProps> = ({
     />
   );
 
+  // Hovering never recolors a bar -- only "active" (the persistent marker
+  // bar, unrelated to hover) and "negative" (sign-based) change fill.
+  // Hover itself is communicated purely by dimming every OTHER bar to 45%.
   const singleSeriesFill = (i: number) => {
-    if (variant === 'negative' && data[i].value < 0) {
-      return i === hoverIndex ? chartHover : chartNegative;
-    }
-    return i === hoverIndex || i === activeIdx ? chartHover : chartDefault;
+    if (variant === 'active' && i === activeIdx) return chartHover;
+    if (variant === 'negative' && data[i].value < 0) return chartNegative;
+    return chartDefault;
   };
   const singleSeriesOpacity = (i: number) =>
     hoverIndex !== null && i !== hoverIndex && i !== activeIdx ? 0.45 : 1;
+
+  // Figma's hover state adds a small ring-stroked dot at the tip of the
+  // hovered bar (the same marker AreaChart/LineChart use at their active
+  // point) -- Recharts' `activeBar` renders only the currently-hovered bar,
+  // so this reuses the default Rectangle shape and layers the dot on top,
+  // keeping the bar's own resting fill instead of Recharts' default
+  // active-bar recolor.
+  const makeActiveBar = (dataKey: 'value' | 'value2') => (props: any) => {
+    const { x, y, width, height, fill, radius } = props;
+    const raw = Number(data[props.index]?.[dataKey] ?? 0);
+    const isHorizontal = variant === 'horizontal';
+    const cx = isHorizontal ? x + width : x + width / 2;
+    const cy = isHorizontal ? y + height / 2 : raw < 0 ? y + height : y;
+    return (
+      <g>
+        <Rectangle x={x} y={y} width={width} height={height} fill={fill} radius={radius} />
+        <circle cx={cx} cy={cy} r={4} fill={fill} stroke={canvasBg} strokeWidth={1.5} />
+      </g>
+    );
+  };
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
@@ -132,6 +156,7 @@ export const BarChart: React.FC<BarChartProps> = ({
                 // repaint past it. Confirmed here too for grouped/stacked
                 // Bars (plain single-series Bar wasn't affected).
                 isAnimationActive={false}
+                activeBar={makeActiveBar('value')}
                 onMouseEnter={(_, i) => setHoverIndex(i)}
                 onMouseLeave={() => setHoverIndex(null)}
               >
@@ -147,6 +172,7 @@ export const BarChart: React.FC<BarChartProps> = ({
                   stackId={variant === 'stacked' ? 'stack' : undefined}
                   radius={variant === 'stacked' ? [CORNER_RADIUS, CORNER_RADIUS, 0, 0] : [CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS]}
                   isAnimationActive={false}
+                  activeBar={makeActiveBar('value2')}
                   onMouseEnter={(_, i) => setHoverIndex(i)}
                   onMouseLeave={() => setHoverIndex(null)}
                 >
@@ -161,6 +187,7 @@ export const BarChart: React.FC<BarChartProps> = ({
               dataKey="value"
               radius={[CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS]}
               isAnimationActive={false}
+              activeBar={makeActiveBar('value')}
               onMouseEnter={(_, i) => setHoverIndex(i)}
               onMouseLeave={() => setHoverIndex(null)}
             >

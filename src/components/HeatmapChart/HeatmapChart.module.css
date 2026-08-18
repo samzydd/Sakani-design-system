@@ -31,7 +31,8 @@
   min-height: 14px;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: opacity var(--transition-base);
+  /* Slower, flow-like easing -- matches the other charts' hover transitions. */
+  transition: opacity var(--transition-slow);
 }
 .chart--sm .cell { min-height: 14px; }
 .chart--md .cell { min-height: 20px; }
