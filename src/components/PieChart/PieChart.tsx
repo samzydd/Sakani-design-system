@@ -1,23 +1,42 @@
 /**
  * PieChart
  *
- * Recharts wrapper styled with Sakani chart tokens. Matches Figma "Pie chart"
- * component set: true pie (no hole) alongside donut variants, with an
- * optional center value/caption and an "active" mode that expands whichever
- * slice is hovered (Figma's "donut active" / "interactive" states) rather
- * than just recoloring it, since a pie/donut has no natural "hover fill"
- * the way a bar's flat rectangle does.
+ * Recharts wrapper styled with Sakani chart tokens. Matches Figma's "Pie
+ * chart" component set (10 variants):
  *
- * Segments cycle through the 5 chart tokens so they re-theme in dark mode.
+ *   pie                — full pie, white separator strokes between slices
+ *   pie-no-separator    — full pie, slices touch directly
+ *   label               — full pie, outside leader-line value labels
+ *   custom-label        — full pie, leader-line labels in a filled pill
+ *   label-list          — full pie, category-name labels inside each slice
+ *   donut               — plain ring, no labels
+ *   donut-active        — ring with one slice pushed outward ("exploded")
+ *   donut-with-text     — ring + center value/caption
+ *   stacked             — ring + center value/caption + one exploded slice
+ *   interactive         — ring + a halo ring bracketing one slice
+ *
+ * No variant has an angular gap between slices (Figma's slices always
+ * touch) -- "pie"'s separator is a thin stroke drawn on top of the shared
+ * edge, not an actual padding-angle gap.
+ *
+ * The exploded slice and halo ring aren't things Pie's `activeShape` can
+ * do on their own (Recharts 3 dropped `activeIndex` from Pie's types, so
+ * there's no way to force a *default* active slice without a real hover) --
+ * both are built via a custom `shape` render function using the exported
+ * `Sector` primitive, driven by this component's own hover/default-active
+ * state instead.
  */
 
 import React from 'react';
-import { PieChart as RePieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { PieChart as RePieChart, Pie, Cell, Sector, ResponsiveContainer, Tooltip } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './PieChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
-export type PieChartVariant = 'pie' | 'donut' | 'donut-with-text' | 'active';
+export type PieChartVariant =
+  | 'pie' | 'pie-no-separator' | 'label' | 'custom-label' | 'label-list'
+  | 'donut' | 'donut-active' | 'donut-with-text' | 'stacked' | 'interactive';
 
 export interface PieDatum { label: string; value: number; }
 
@@ -26,36 +45,146 @@ export interface PieChartProps {
   variant?: PieChartVariant;
   size?: ChartSize;
   /** Big number shown in the center. Only rendered for "donut-with-text"
-   * and "active" (both have a hole to put it in). */
+   * and "stacked" (both have a hole to put it in). */
   centerValue?: string;
   centerCaption?: string;
-  /** Leader-line value labels outside each slice (Figma: "Pie chart - label"). */
-  showLabels?: boolean;
   className?: string;
 }
 
-const dims: Record<ChartSize, { h: number; inner: number; outer: number }> = {
-  sm: { h: 180, inner: 0, outer: 72 },
-  md: { h: 220, inner: 0, outer: 90 },
-  lg: { h: 280, inner: 0, outer: 116 },
-  xl: { h: 340, inner: 0, outer: 142 },
+const dims: Record<ChartSize, { h: number; outer: number }> = {
+  sm: { h: 180, outer: 72 },
+  md: { h: 220, outer: 90 },
+  lg: { h: 280, outer: 116 },
+  xl: { h: 340, outer: 142 },
 };
 const cssVar = (name: string) =>
   typeof window !== 'undefined'
     ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
     : undefined;
 
+const HAS_HOLE = new Set<PieChartVariant>(['donut', 'donut-active', 'donut-with-text', 'stacked', 'interactive']);
+const HAS_EXPLODE = new Set<PieChartVariant>(['donut-active', 'stacked']);
+const HAS_HALO = new Set<PieChartVariant>(['interactive']);
+const HAS_CENTER = new Set<PieChartVariant>(['donut-with-text', 'stacked']);
+const RAD = Math.PI / 180;
+
 export const PieChart: React.FC<PieChartProps> = ({
-  data, variant = 'donut', size = 'md', centerValue, centerCaption, showLabels, className,
+  data, variant = 'donut', size = 'md', centerValue, centerCaption, className,
 }) => {
   useThemeTick();
-  const [activeIndex, setActiveIndex] = React.useState<number | undefined>(undefined);
+  const [hoverIdx, setHoverIdx] = React.useState<number | undefined>(undefined);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
-  const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
+  const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
+  const surfaceBg = cssVar('--color-bg-surface') ?? '#ffffff';
+  // canvasBg alone reads as invisible against a plain white page (they're
+  // nearly the same color) -- a thin border gives the halo ring an actual
+  // visible edge.
+  const borderColor = cssVar('--color-border-default') ?? '#d6d3ce';
+  const fgDefault = cssVar('--color-fg-default') ?? '#141414';
   const d = dims[size];
-  const hasHole = variant !== 'pie';
+  const hasHole = HAS_HOLE.has(variant);
+  const hasExplode = HAS_EXPLODE.has(variant);
+  const hasHalo = HAS_HALO.has(variant);
   const innerRadius = hasHole ? d.outer * 0.6 : 0;
-  const showCenter = (variant === 'donut-with-text' || variant === 'active') && (centerValue || centerCaption);
+  const showCenter = HAS_CENTER.has(variant) && (centerValue || centerCaption);
+  // "donut-active"/"stacked"/"interactive" show a persistent highlighted
+  // slice in Figma's static mockups even with nothing hovered -- default to
+  // the first slice, let a real hover override it.
+  const activeIdx = hoverIdx ?? ((hasExplode || hasHalo) ? 0 : undefined);
+
+  const renderSector = (props: any) => {
+    const { cx, cy, innerRadius: ir, outerRadius: or_, startAngle, endAngle, fill, index, midAngle } = props;
+    const isActive = index === activeIdx;
+    const angle = midAngle ?? (startAngle + endAngle) / 2;
+    const offset = isActive && hasExplode ? 8 : 0;
+    const ox = cx + offset * Math.cos(-angle * RAD);
+    const oy = cy + offset * Math.sin(-angle * RAD);
+    return (
+      <g>
+        <Sector cx={ox} cy={oy} innerRadius={ir} outerRadius={or_} startAngle={startAngle} endAngle={endAngle} fill={fill} />
+        {isActive && hasHalo && (
+          <Sector
+            cx={cx} cy={cy}
+            innerRadius={or_ + 3} outerRadius={or_ + 7}
+            startAngle={startAngle} endAngle={endAngle}
+            fill={canvasBg}
+            stroke={borderColor}
+            strokeWidth={1}
+          />
+        )}
+      </g>
+    );
+  };
+
+  // Figma's outside leader-line labels are plain fg/default text, not
+  // tinted to match each slice (Recharts' own label-color default). Drawing
+  // the connecting line ourselves -- as a radial-then-horizontal "elbow",
+  // long enough to actually read as a line -- instead of relying on the
+  // separate `labelLine` prop (whose default 20px offset renders far too
+  // short and faint to notice at this chart size).
+  const leaderPath = (props: any) => {
+    const { cx, cy, midAngle, outerRadius: or_ } = props;
+    const angle = midAngle ?? 0;
+    const cos = Math.cos(-angle * RAD);
+    const sin = Math.sin(-angle * RAD);
+    const startX = cx + or_ * cos;
+    const startY = cy + or_ * sin;
+    const bendX = cx + (or_ + 16) * cos;
+    const bendY = cy + (or_ + 16) * sin;
+    const isRight = cos >= 0;
+    const endX = bendX + (isRight ? 14 : -14);
+    return {
+      d: `M ${startX} ${startY} L ${bendX} ${bendY} L ${endX} ${bendY}`,
+      endX,
+      endY: bendY,
+      textAnchor: isRight ? 'start' as const : 'end' as const,
+    };
+  };
+
+  const renderOutsideLabel = (props: any) => {
+    const { value, fill } = props;
+    const { d, endX, endY, textAnchor } = leaderPath(props);
+    const tx = endX + (textAnchor === 'start' ? 4 : -4);
+    return (
+      <g>
+        <path d={d} fill="none" stroke={fill} strokeWidth={1} />
+        <text x={tx} y={endY} textAnchor={textAnchor} dominantBaseline="central" fill={fgDefault} fontSize={12} fontFamily="var(--font-sans)">
+          {value}
+        </text>
+      </g>
+    );
+  };
+
+  // "custom label": same leader-line anchor, but the value sits in a
+  // filled pill matching the slice's own color instead of plain text.
+  const renderCustomLabel = (props: any) => {
+    const { value, fill } = props;
+    const { d, endX, endY, textAnchor } = leaderPath(props);
+    const text = String(value);
+    const w = Math.max(28, text.length * 7 + 14);
+    const rectX = textAnchor === 'end' ? endX - w : endX;
+    return (
+      <g>
+        <path d={d} fill="none" stroke={borderColor} strokeWidth={1} />
+        <rect x={rectX} y={endY - 10} width={w} height={20} rx={10} fill={fill} />
+        <text x={rectX + w / 2} y={endY} textAnchor="middle" dominantBaseline="central" fill="#fff" fontSize={11} fontWeight={500} fontFamily="var(--font-sans)">
+          {text}
+        </text>
+      </g>
+    );
+  };
+
+  const renderInsideLabel = (props: any) => {
+    const { cx, cy, midAngle, innerRadius: ir, outerRadius: or_, index } = props;
+    const r = (ir + or_) / 2;
+    const x = cx + r * Math.cos(-midAngle * RAD);
+    const y = cy + r * Math.sin(-midAngle * RAD);
+    return (
+      <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fill="#fff" fontSize={11} fontWeight={500} fontFamily="var(--font-sans)">
+        {data[index]?.label}
+      </text>
+    );
+  };
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
@@ -67,37 +196,31 @@ export const PieChart: React.FC<PieChartProps> = ({
             nameKey="label"
             innerRadius={innerRadius}
             outerRadius={d.outer}
-            paddingAngle={hasHole ? 2 : 1}
-            stroke="none"
+            // Figma's slices always touch -- "pie"'s separator is a stroke
+            // drawn on the shared edge, not an angular gap.
+            paddingAngle={0}
+            stroke={variant === 'pie' ? surfaceBg : 'none'}
+            strokeWidth={variant === 'pie' ? 2 : 0}
             // See DonutChart.tsx: Recharts 3.9.2 can commit Sector-based
             // shapes' entrance animation on an empty intermediate frame and
             // never repaint past it, rendering nothing. Disabled here too.
             isAnimationActive={false}
-            label={showLabels ? ({ name, value }) => `${name}: ${value}` : undefined}
-            labelLine={showLabels}
-            onMouseEnter={(_, i) => setActiveIndex(i)}
-            onMouseLeave={() => setActiveIndex(undefined)}
+            shape={hasExplode || hasHalo ? renderSector : undefined}
+            label={
+              variant === 'label' ? renderOutsideLabel
+                : variant === 'custom-label' ? renderCustomLabel
+                : variant === 'label-list' ? renderInsideLabel
+                : undefined
+            }
+            labelLine={false}
+            onMouseEnter={(_, i) => setHoverIdx(i)}
+            onMouseLeave={() => setHoverIdx(undefined)}
           >
             {data.map((_, i) => (
-              <Cell
-                key={i}
-                fill={palette[i % palette.length]}
-                // Recharts 3's Pie dropped activeIndex/activeShape from its
-                // types (an actual "explode the hovered slice outward" effect
-                // needs those), so "active" leans on the next best type-safe
-                // signal instead: full opacity on the hovered slice, the rest
-                // dimmed -- still a clear, deliberate highlight.
-                fillOpacity={variant === 'active' && activeIndex !== undefined && activeIndex !== i ? 0.45 : 1}
-              />
+              <Cell key={i} fill={palette[i % palette.length]} />
             ))}
           </Pie>
-          <Tooltip
-            contentStyle={{
-              background: cssVar('--color-bg-surface'),
-              border: `1px solid ${grid}`,
-              borderRadius: 8, fontSize: 12, fontFamily: 'var(--font-sans)',
-            }}
-          />
+          <Tooltip content={<ChartTooltip />} />
         </RePieChart>
       </ResponsiveContainer>
 

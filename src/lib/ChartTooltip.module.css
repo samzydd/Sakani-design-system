@@ -1,0 +1,35 @@
+/* Matches Figma's "Chart Tooltip" spec exactly: bg/canvas, no border,
+   shadow/lg, 8px radius, 12px padding, 6px internal gap. */
+.tooltip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-12);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-canvas);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.title {
+  color: var(--color-fg-muted);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  white-space: nowrap;
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+}
+
+.label { color: var(--color-fg-subtle); }
+.value { color: var(--color-fg-default); font-weight: 500; margin-left: auto; }

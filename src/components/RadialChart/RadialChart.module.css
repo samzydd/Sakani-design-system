@@ -10,6 +10,27 @@
 .chart :global(.recharts-surface) {
   overflow: visible;
 }
+.chart :global(.recharts-sector) {
+  transition: fill var(--transition-slow), fill-opacity var(--transition-slow);
+}
+
+.gridSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Spoke lines now extend past the viewBox's own 0-100 radius bound;
+     SVG clips to its viewBox by default, so this is needed for them to
+     actually reach past the outer ring instead of getting cut off. */
+  overflow: visible;
+}
+
+.gaugeSvg {
+  width: 100%;
+  height: 100%;
+}
+
 .center {
   position: absolute;
   inset: 0;

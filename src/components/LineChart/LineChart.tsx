@@ -11,6 +11,7 @@ import {
   LineChart as ReLineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
 } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './LineChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -54,24 +55,24 @@ export const LineChart: React.FC<LineChartProps> = ({
           <CartesianGrid strokeDasharray="3 3" stroke={grid} vertical={false} />
           <XAxis dataKey={xKey} stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />
           <Tooltip
-            contentStyle={{
-              background: cssVar('--color-bg-surface'),
-              border: `1px solid ${grid}`,
-              borderRadius: 8, fontSize: 12, fontFamily: 'var(--font-sans)',
-            }}
+            cursor={{ stroke: cssVar('--color-border-default') ?? '#d6d3ce', strokeWidth: 1 }}
+            content={<ChartTooltip />}
           />
           {showLegend && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
-          {series.map((key, i) => (
-            <Line
-              key={key}
-              type="monotone"
-              dataKey={key}
-              stroke={palette[i % palette.length]}
-              strokeWidth={2}
-              dot={false}
-              activeDot={{ r: 4 }}
-            />
-          ))}
+          {series.map((key, i) => {
+            const color = palette[i % palette.length];
+            return (
+              <Line
+                key={key}
+                type="monotone"
+                dataKey={key}
+                stroke={color}
+                strokeWidth={2}
+                dot={false}
+                activeDot={{ r: 4, fill: color, stroke: cssVar('--color-bg-canvas'), strokeWidth: 1.5 }}
+              />
+            );
+          })}
         </ReLineChart>
       </ResponsiveContainer>
     </div>

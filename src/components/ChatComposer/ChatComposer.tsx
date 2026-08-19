@@ -255,7 +255,7 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
         <IconButton
           icon={Paperclip}
           variant="ghost"
-          size="md"
+          size="sm"
           onClick={handleAttachClick}
           disabled={disabled}
           aria-label="Attach file"
@@ -278,7 +278,7 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
           ref={emojiButtonRef}
           icon={Smile}
           variant="ghost"
-          size="md"
+          size="sm"
           onClick={handleEmojiButtonClick}
           disabled={disabled}
           aria-label="Add emoji"
@@ -333,7 +333,8 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
         <IconButton
           icon={Send}
           variant="primary"
-          size="md"
+          size="sm"
+          className={styles.sendButton}
           onClick={onSend}
           disabled={!canSend}
           aria-label="Send message"

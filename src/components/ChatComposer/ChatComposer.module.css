@@ -1,21 +1,23 @@
 /* ChatComposer.module.css */
 .composer {
-  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
+  transition: background-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
   display: flex; flex-direction: column; gap: var(--space-8);
   padding: var(--space-8);
   border-radius: var(--radius-lg);
   background: var(--color-bg-surface);
-  border: 1px solid var(--color-border-default);
+  /* Figma's stroke is inside-aligned, so it doesn't add to the frame's Auto
+     Layout height -- a real `border` always adds its own width to the box,
+     which pushed this 2px past Figma's 48px (8 padding + 32 row + 8 padding).
+     An inset box-shadow draws the same 1px line without affecting layout. */
+  box-shadow: inset 0 0 0 1px var(--color-border-default);
 }
-/* Typing/focus: NO accent border — neutral border + soft shadow only. */
+/* Typing/focus: NO accent border — neutral inset border + soft elevation shadow. */
 .composer--typing {
-  border: 1px solid var(--color-border-default) !important;
-  box-shadow: var(--shadow-sm);
+  box-shadow: inset 0 0 0 1px var(--color-border-default), var(--shadow-md);
 }
 /* Belt-and-braces: strip any focus ring the base input might emit. */
 .composer:focus-within {
-  border-color: var(--color-border-default);
-  box-shadow: var(--shadow-sm);
+  box-shadow: inset 0 0 0 1px var(--color-border-default), var(--shadow-md);
 }
 .input:focus, .input:focus-visible { outline: none; box-shadow: none; }
 .composer--disabled { opacity: 0.6; }
@@ -32,6 +34,10 @@
 .upload__fill { height: 100%; background: var(--color-accent-default); border-radius: var(--radius-full); }
 
 .row { display: flex; align-items: center; gap: var(--space-6); }
+/* Send is an IconButton (radius-sm by default) -- scoped to .row so this
+   wins on specificity regardless of stylesheet order, without touching
+   every other IconButton in the system. */
+.row .sendButton { border-radius: var(--radius-md); }
 .icon {
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
   display: inline-flex; align-items: center; justify-content: center;

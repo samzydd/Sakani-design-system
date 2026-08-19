@@ -51,24 +51,16 @@
   transition: opacity var(--transition-base);
 }
 
-/* ─── Active states (re-read 2026-08-10) ───
- * Active (resting): bg/surface card + soft shadow -- identical for expanded
- * and collapsed now (collapsed no longer gets its own bg/canvas + shadow/sm).
- * Active Hover is a DISTINCT state, not "active with no hover change": it
- * drops the shadow and swaps to an accent/subtle tint instead. */
+/* ─── Active state (re-read 2026-08-18) ───
+ * Active: bg/surface card + soft shadow -- identical for expanded and
+ * collapsed, and no longer has a distinct hover treatment -- stays exactly
+ * as-is whether hovered or not (removed the earlier shadow-drop "flatten"
+ * effect on hover). */
 .item--active {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
   background: var(--color-bg-surface);
   box-shadow: 0 1px 1px rgba(16, 15, 12, 0.06), 0 1px 1.5px rgba(16, 15, 12, 0.1);
   color: var(--color-fg-default);
-}
-/* Active Hover (re-read 2026-08-11): stays on bg/surface -- the earlier
- * accent/subtle tint swap was wrong. Only the shadow drops (a "flatten"
- * effect), same on both expanded and collapsed since neither overrides
- * .item--active's background anymore. */
-.item--active:hover {
-  background: var(--color-bg-surface);
-  box-shadow: none;
 }
 .item--active .item__bar { opacity: 1; }
 .item--active .item__icon { color: var(--color-fg-default); }
