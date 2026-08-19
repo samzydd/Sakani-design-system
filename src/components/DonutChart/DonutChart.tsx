@@ -45,7 +45,6 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
-  const hoverFill = cssVar('--color-chart-5') ?? '#78716a';
   const d = { ...dims[size], h: height ?? dims[size].h };
   // Figma's segments end in a rounded cap -- half the ring's own thickness
   // is the max Recharts allows before it stops adding visible rounding, so
@@ -78,7 +77,11 @@ export const DonutChart: React.FC<DonutChartProps> = ({
             onMouseLeave={() => setActiveIndex(null)}
           >
             {data.map((_, i) => (
-              <Cell key={i} fill={i === activeIndex ? hoverFill : palette[i % palette.length]} />
+              <Cell
+                key={i}
+                fill={palette[i % palette.length]}
+                fillOpacity={activeIndex !== null && i !== activeIndex ? 0.45 : 1}
+              />
             ))}
           </Pie>
           <Tooltip content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} />
