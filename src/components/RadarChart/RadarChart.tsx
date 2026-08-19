@@ -95,11 +95,15 @@ export const RadarChart: React.FC<RadarChartProps> = ({
         <ReRadarChart data={data} outerRadius="70%">
           <PolarGrid
             gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
-            radialLines={variant !== 'circle-grid-no-lines'}
+            radialLines={variant !== 'circle-grid-no-lines' && variant !== 'default'}
             stroke={grid}
           />
           <PolarAngleAxis dataKey="label" stroke={axis} tick={{ fill: axis, fontSize: 12, fontFamily: 'var(--font-sans)' }} />
-          <PolarRadiusAxis tick={false} axisLine={false} />
+          {/* "default" shows only the outer boundary -- no inner concentric
+              rings, no radial spokes. tickCount=2 on a [0, max] domain
+              collapses PolarGrid's auto-generated rings down to just the
+              zero-radius point and the outer one. */}
+          <PolarRadiusAxis tick={false} axisLine={false} tickCount={variant === 'default' ? 2 : undefined} />
           <Tooltip content={<ChartTooltip />} />
           {isMultiple && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
           {isMultiple && (
