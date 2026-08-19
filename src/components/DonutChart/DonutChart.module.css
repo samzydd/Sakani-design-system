@@ -15,13 +15,16 @@
   overflow: visible;
 }
 
-/* Hover recolor happens by React re-rendering the fill attribute, which
-   snaps instantly with no CSS transition rule in place -- this makes that
-   change animate smoothly instead. Ease-out (not the symmetric
-   --transition-slow) so it settles into place after the cursor arrives,
-   rather than reading as a snap. */
+/* Hover dims via fill-opacity and grows the active segment's outer radius --
+   both snap instantly with no transition rule in place. `d` is the sector's
+   actual path data, so animating it is what makes the grow-out/shrink-back
+   read as smooth motion instead of a pop; modern browsers interpolate `d`
+   natively as long as the path's command structure matches between frames,
+   which it does here (same arc command sequence, just a different radius).
+   Ease-out (not the symmetric --transition-slow) so the growth settles into
+   place after the cursor arrives, rather than reading as a snap. */
 .chart :global(.recharts-sector) {
-  transition: fill var(--transition-hover), fill-opacity var(--transition-hover);
+  transition: fill var(--transition-hover), fill-opacity var(--transition-hover), d var(--transition-hover);
 }
 .center {
   position: absolute;
