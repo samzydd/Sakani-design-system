@@ -108,10 +108,23 @@ export const BarChart: React.FC<BarChartProps> = ({
     const { x, y, width, height, fill, radius } = props;
     const raw = Number(data[props.index]?.[dataKey] ?? 0);
     const { x: cx, y: cy } = tipTip(variant === 'horizontal', x, y, width, height, raw);
+
+    // "stacked": value (bottom) paints before value2 (top) so the whole
+    // column reads bottom-to-top -- but that means a dot drawn at the seam
+    // from value's own <g> gets its upper half painted over by value2's
+    // rectangle, which renders right after it. Both dots are drawn from
+    // value2's <g> instead, since it paints last and nothing covers it.
+    if (variant === 'stacked' && dataKey === 'value') {
+      return <Rectangle x={x} y={y} width={width} height={height} fill={fill} radius={radius} />;
+    }
+
     return (
       <g>
         <Rectangle x={x} y={y} width={width} height={height} fill={fill} radius={radius} />
         <circle cx={cx} cy={cy} r={4} fill={fill} stroke={canvasBg} strokeWidth={1.5} />
+        {variant === 'stacked' && dataKey === 'value2' && (
+          <circle cx={x + width / 2} cy={y + height} r={4} fill={chartDefault} stroke={canvasBg} strokeWidth={1.5} />
+        )}
       </g>
     );
   };
@@ -129,6 +142,21 @@ export const BarChart: React.FC<BarChartProps> = ({
     setHoverPos(null);
   };
 
+  // Recharts' default legend icon is an SVG <path> rectangle -- no `rx`
+  // option, so no way to round its corners via the built-in `iconType`s.
+  // Rendered as plain HTML instead so the swatch can be a normal
+  // border-radius box.
+  const renderLegend = (props: any) => (
+    <ul className={styles.legend}>
+      {props.payload?.map((entry: any) => (
+        <li key={entry.value} className={styles.legendItem}>
+          <span className={styles.legendSwatch} style={{ background: entry.color }} />
+          <span style={{ color: entry.color }}>{entry.value}</span>
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
       <ResponsiveContainer width="100%" height={heights[size]}>
@@ -140,7 +168,7 @@ export const BarChart: React.FC<BarChartProps> = ({
           <CartesianGrid
             strokeDasharray="3 3"
             stroke={grid}
-            horizontal={variant === 'horizontal'}
+            horizontal={variant === 'horizontal' || variant === 'multiple'}
             vertical={variant === 'horizontal'}
           />
           {variant === 'horizontal' ? (
@@ -152,9 +180,7 @@ export const BarChart: React.FC<BarChartProps> = ({
             <XAxis dataKey="label" stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />
           )}
           {tooltip}
-          {isGrouped && (
-            <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />
-          )}
+          {isGrouped && <Legend content={renderLegend} />}
 
           {isGrouped ? (
             <>

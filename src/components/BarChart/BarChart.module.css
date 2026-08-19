@@ -24,3 +24,28 @@
 .chart :global(.recharts-rectangle) {
   transition: fill var(--transition-hover), fill-opacity var(--transition-hover);
 }
+
+/* Custom legend content -- Recharts' own icon is an SVG <path> rectangle
+   with no `rx` option, so the "multiple" variant's swatch is plain HTML
+   here instead, giving it a real border-radius. */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-16);
+  list-style: none;
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: var(--font-sans);
+}
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+.legendSwatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
