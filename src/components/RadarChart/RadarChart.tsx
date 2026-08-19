@@ -64,7 +64,10 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   useThemeTick();
   const chart1 = cssVar('--color-chart-1') ?? '#ff4700';
   const chart2 = cssVar('--color-chart-2') ?? '#5b92dd';
-  const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
+  // Figma's Radar chart set uses border/default for its grid strokes
+  // (confirmed via its variable defs), not border/subtle like most of the
+  // other charts here.
+  const grid = cssVar('--color-border-default') ?? '#dbdad7';
   const axis = cssVar('--color-fg-muted') ?? '#6b6375';
   const fgDefault = cssVar('--color-fg-default') ?? '#141414';
   const isMultiple = variant === 'multiple';
