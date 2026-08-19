@@ -161,7 +161,7 @@ export const PieChart: React.FC<PieChartProps> = ({
   const renderCustomLabel = (props: any) => {
     const { x, y, textAnchor, value } = props;
     return (
-      <text x={x} y={y} textAnchor={textAnchor} dominantBaseline="central" fill={fgDefault} fontSize={20} fontWeight={500} fontFamily="var(--font-sans)">
+      <text x={x} y={y} textAnchor={textAnchor} dominantBaseline="central" fill={fgDefault} fontSize={20} fontWeight={400} fontFamily="var(--font-sans)">
         {value}
       </text>
     );
