@@ -201,7 +201,7 @@ export const RadialChart: React.FC<RadialChartProps> = ({
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
-      {variant === 'grid' && <PolarGrid rings={4} spokes={12} color={gridColor} />}
+      {variant === 'grid' && <PolarGrid rings={8} spokes={12} color={gridColor} />}
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           data={data}
