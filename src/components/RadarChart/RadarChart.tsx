@@ -6,9 +6,10 @@
  *
  *   default             — solid filled area, polygon grid, no dots
  *   dots                — filled area + dot markers at each data point
+ *   dots-grid-none      — dots, but no grid/boundary at all
  *   lines-only          — two series, stroke only (no fill), no dots
- *   circle-grid         — circular grid instead of polygon
- *   circle-grid-no-lines — circular grid, no radial spoke lines
+ *   circle-grid         — circular grid instead of polygon, with dots
+ *   circle-grid-no-lines — circular grid with dots, no radial spoke lines
  *   grid-custom         — boundary-only grid, same treatment as "default"
  *   grid-filled         — polygon grid, alternating filled concentric bands
  *   circle-grid-filled  — same, circular bands instead of polygon
@@ -45,7 +46,7 @@ import styles from './RadarChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
 export type RadarChartVariant =
-  | 'default' | 'dots' | 'lines-only' | 'circle-grid' | 'circle-grid-no-lines'
+  | 'default' | 'dots' | 'dots-grid-none' | 'lines-only' | 'circle-grid' | 'circle-grid-no-lines'
   | 'grid-custom' | 'grid-filled' | 'circle-grid-filled' | 'multiple' | 'custom-label';
 
 export interface RadarDatum {
@@ -73,16 +74,17 @@ const cssVar = (name: string) =>
 const CIRCLE_GRID = new Set<RadarChartVariant>(['circle-grid', 'circle-grid-no-lines', 'circle-grid-filled']);
 // "Boundary only" grid variants -- no inner concentric rings, no spokes.
 const MINIMAL_GRID = new Set<RadarChartVariant>(['default', 'grid-custom']);
+// No grid or boundary at all -- just the shape, dots, and axis labels.
+const NO_GRID = new Set<RadarChartVariant>(['dots-grid-none']);
 // "grid-filled"'s bands follow the polygon's own vertex directions, so
 // they're built from stacked `<Radar>` series (see the module doc
 // comment). "circle-grid-filled" wants smooth round bands instead, which
-// `<Radar>` can't draw -- a CSS radial-gradient backdrop does that job
-// directly, no synthetic series needed.
+// `<Radar>` can't draw -- a measured SVG circle overlay does that job.
 const FILLED_GRID = new Set<RadarChartVariant>(['grid-filled']);
 const isCircleFilled = (v: RadarChartVariant) => v === 'circle-grid-filled';
 // These variants' shape has no stroke around it in Figma -- just the fill.
 const NO_STROKE = new Set<RadarChartVariant>([
-  'default', 'dots', 'circle-grid', 'circle-grid-no-lines', 'multiple', 'custom-label',
+  'default', 'dots', 'dots-grid-none', 'circle-grid', 'circle-grid-no-lines', 'multiple', 'custom-label',
   'grid-custom', 'grid-filled', 'circle-grid-filled',
 ]);
 const RING_LEVELS = [1, 0.8, 0.6, 0.4, 0.2];
@@ -107,9 +109,10 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   // labels already identify each point; lines-only has no fill to need one).
   const showSecondSeries = isMultiple || variant === 'custom-label' || isLinesOnly;
   const showFill = !isLinesOnly;
-  const showDots = variant === 'dots' || variant === 'circle-grid';
+  const showDots = variant === 'dots' || variant === 'dots-grid-none' || variant === 'circle-grid' || variant === 'circle-grid-no-lines';
   const isFilledGrid = FILLED_GRID.has(variant);
   const isMinimalGrid = MINIMAL_GRID.has(variant);
+  const isNoGrid = NO_GRID.has(variant);
   const circleFilled = isCircleFilled(variant);
 
   // circle-grid-filled: measure the container so the filled-circle overlay
@@ -223,7 +226,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
               them would just compete visually (Figma's reference has
               none). circle-grid-filled keeps PolarGrid enabled for its
               spokes/ring outlines, on top of the filled circles above. */}
-          {!isFilledGrid && (
+          {!isFilledGrid && !isNoGrid && (
             <PolarGrid
               gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
               radialLines={variant !== 'circle-grid-no-lines' && !isMinimalGrid}

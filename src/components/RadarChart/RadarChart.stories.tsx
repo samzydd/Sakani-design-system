@@ -27,7 +27,7 @@ const meta = {
     variant: {
       control: 'select',
       options: [
-        'default', 'dots', 'lines-only', 'circle-grid', 'circle-grid-no-lines',
+        'default', 'dots', 'dots-grid-none', 'lines-only', 'circle-grid', 'circle-grid-no-lines',
         'grid-custom', 'grid-filled', 'circle-grid-filled', 'multiple', 'custom-label',
       ],
     },
@@ -42,6 +42,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const Dots: Story = { args: { variant: 'dots' } };
+export const DotsGridNone: Story = { args: { variant: 'dots-grid-none' } };
 export const LinesOnly: Story = { args: { variant: 'lines-only', data: multiData } };
 export const CircleGrid: Story = { args: { variant: 'circle-grid' } };
 export const CircleGridNoLines: Story = { args: { variant: 'circle-grid-no-lines' } };
