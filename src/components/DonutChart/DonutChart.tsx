@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { PieChart, Pie, Cell, Sector, ResponsiveContainer, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './DonutChart.module.css';
@@ -45,37 +45,13 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
+  const hoverFill = cssVar('--color-chart-5') ?? '#78716a';
   const d = { ...dims[size], h: height ?? dims[size].h };
   // Figma's segments end in a rounded cap -- half the ring's own thickness
   // is the max Recharts allows before it stops adding visible rounding, so
   // that was the starting point, backed off 4px then another 3px (7 total)
   // per subsequent adjustment requests.
   const cornerRadius = (d.outer - d.inner) / 2 - 7;
-
-  // Same hover rule as every other multi-segment chart in this system
-  // (PieChart's donut-active/interactive, BarChart's dimming): the hovered
-  // segment keeps its own color and grows in place -- outer radius only, cx/
-  // cy untouched, so it stays flush with its neighbors instead of pulling
-  // away and leaving negative space -- while every other segment dims to
-  // 45% opacity. No recolor to an unrelated hover color.
-  const renderSector = (props: any) => {
-    const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, index } = props;
-    const isActive = index === activeIndex;
-    const growth = isActive ? 16 : 0;
-    const fillOpacity = activeIndex !== null && !isActive ? 0.45 : 1;
-    return (
-      <Sector
-        cx={cx}
-        cy={cy}
-        innerRadius={innerRadius}
-        outerRadius={outerRadius + growth}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        fill={fill}
-        fillOpacity={fillOpacity}
-      />
-    );
-  };
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
@@ -98,12 +74,11 @@ export const DonutChart: React.FC<DonutChartProps> = ({
             // this (rects and line paths animate differently). Disabling the
             // animation skips the broken transition entirely.
             isAnimationActive={false}
-            shape={renderSector}
             onMouseEnter={(_, i) => setActiveIndex(i)}
             onMouseLeave={() => setActiveIndex(null)}
           >
             {data.map((_, i) => (
-              <Cell key={i} fill={palette[i % palette.length]} />
+              <Cell key={i} fill={i === activeIndex ? hoverFill : palette[i % palette.length]} />
             ))}
           </Pie>
           <Tooltip content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} />
