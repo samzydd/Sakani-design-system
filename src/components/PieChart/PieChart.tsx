@@ -93,15 +93,18 @@ export const PieChart: React.FC<PieChartProps> = ({
   const activeIdx = hoverIdx ?? ((hasExplode || hasHalo) ? 0 : undefined);
 
   const renderSector = (props: any) => {
-    const { cx, cy, innerRadius: ir, outerRadius: or_, startAngle, endAngle, fill, index, midAngle } = props;
+    const { cx, cy, innerRadius: ir, outerRadius: or_, startAngle, endAngle, fill, index } = props;
     const isActive = index === activeIdx;
-    const angle = midAngle ?? (startAngle + endAngle) / 2;
-    const offset = isActive && hasExplode ? 18 : 0;
-    const ox = cx + offset * Math.cos(-angle * RAD);
-    const oy = cy + offset * Math.sin(-angle * RAD);
+    // Grow the active slice's own outer radius instead of translating the
+    // whole sector outward -- translating keeps its start/end angles fixed
+    // but moves its center away from cx/cy, which pulls it out of contact
+    // with its neighbors on both sides and leaves a wedge of empty space.
+    // Growing in place keeps it flush against its neighbors; only the
+    // outer edge pokes out further than the rest of the ring.
+    const growth = isActive && hasExplode ? 16 : 0;
     return (
       <g>
-        <Sector cx={ox} cy={oy} innerRadius={ir} outerRadius={or_} startAngle={startAngle} endAngle={endAngle} fill={fill} />
+        <Sector cx={cx} cy={cy} innerRadius={ir} outerRadius={or_ + growth} startAngle={startAngle} endAngle={endAngle} fill={fill} />
         {isActive && hasHalo && (
           <Sector
             cx={cx} cy={cy}
