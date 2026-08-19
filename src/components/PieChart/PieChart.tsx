@@ -12,7 +12,7 @@
  *   donut               — plain ring, no labels
  *   donut-active        — ring with one slice pushed outward ("exploded")
  *   donut-with-text     — ring + center value/caption
- *   stacked             — ring + center value/caption + one exploded slice
+ *   stacked             — two concentric rings, same data, same colors
  *   interactive         — ring + a halo ring bracketing one slice
  *
  * No variant has an angular gap between slices (Figma's slices always
@@ -44,8 +44,7 @@ export interface PieChartProps {
   data: PieDatum[];
   variant?: PieChartVariant;
   size?: ChartSize;
-  /** Big number shown in the center. Only rendered for "donut-with-text"
-   * and "stacked" (both have a hole to put it in). */
+  /** Big number shown in the center. Only rendered for "donut-with-text". */
   centerValue?: string;
   centerCaption?: string;
   className?: string;
@@ -62,10 +61,10 @@ const cssVar = (name: string) =>
     ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
     : undefined;
 
-const HAS_HOLE = new Set<PieChartVariant>(['donut', 'donut-active', 'donut-with-text', 'stacked', 'interactive']);
-const HAS_EXPLODE = new Set<PieChartVariant>(['donut-active', 'stacked']);
+const HAS_HOLE = new Set<PieChartVariant>(['donut', 'donut-active', 'donut-with-text', 'interactive']);
+const HAS_EXPLODE = new Set<PieChartVariant>(['donut-active']);
 const HAS_HALO = new Set<PieChartVariant>(['interactive']);
-const HAS_CENTER = new Set<PieChartVariant>(['donut-with-text', 'stacked']);
+const HAS_CENTER = new Set<PieChartVariant>(['donut-with-text']);
 const RAD = Math.PI / 180;
 
 export const PieChart: React.FC<PieChartProps> = ({
@@ -181,6 +180,56 @@ export const PieChart: React.FC<PieChartProps> = ({
       </text>
     );
   };
+
+  // "stacked": not a single ring at all -- two concentric rings sharing
+  // the same data/colors (an outer thin ring, a gap, then a thicker inner
+  // ring), not the single-ring + exploded-slice shape every other variant
+  // here uses. Handled as its own branch rather than folded into the
+  // shared shape/label plumbing below, which doesn't apply to it.
+  if (variant === 'stacked') {
+    const ringFillOpacity = (i: number) => (hoverIdx !== undefined && hoverIdx !== i ? 0.45 : 1);
+    return (
+      <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <RePieChart>
+            <Pie
+              data={data}
+              dataKey="value"
+              nameKey="label"
+              innerRadius={d.outer * 0.82}
+              outerRadius={d.outer}
+              paddingAngle={0}
+              stroke="none"
+              isAnimationActive={false}
+              onMouseEnter={(_, i) => setHoverIdx(i)}
+              onMouseLeave={() => setHoverIdx(undefined)}
+            >
+              {data.map((_, i) => (
+                <Cell key={i} fill={palette[i % palette.length]} fillOpacity={ringFillOpacity(i)} />
+              ))}
+            </Pie>
+            <Pie
+              data={data}
+              dataKey="value"
+              nameKey="label"
+              innerRadius={d.outer * 0.22}
+              outerRadius={d.outer * 0.62}
+              paddingAngle={0}
+              stroke="none"
+              isAnimationActive={false}
+              onMouseEnter={(_, i) => setHoverIdx(i)}
+              onMouseLeave={() => setHoverIdx(undefined)}
+            >
+              {data.map((_, i) => (
+                <Cell key={i} fill={palette[i % palette.length]} fillOpacity={ringFillOpacity(i)} />
+              ))}
+            </Pie>
+            <Tooltip content={<ChartTooltip />} />
+          </RePieChart>
+        </ResponsiveContainer>
+      </div>
+    );
+  }
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
