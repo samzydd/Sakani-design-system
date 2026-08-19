@@ -107,8 +107,10 @@ const PolarGrid: React.FC<{ rings: number; spokes: number; color: string }> = ({
     ))}
     {Array.from({ length: spokes }).map((_, i) => {
       const deg = (i / spokes) * 360;
-      const x = 100 + 96 * Math.cos(deg * RAD);
-      const y = 100 + 96 * Math.sin(deg * RAD);
+      // Poke out past the outermost ring circle (96) instead of stopping
+      // flush with it, for a more visible starburst edge.
+      const x = 100 + 99.5 * Math.cos(deg * RAD);
+      const y = 100 + 99.5 * Math.sin(deg * RAD);
       return <line key={i} x1={100} y1={100} x2={x} y2={y} stroke={color} strokeWidth={1} />;
     })}
   </svg>
