@@ -43,6 +43,17 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   data, size = 'md', centerValue, centerCaption, height, className,
 }) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  // Recharts anchors a Pie slice's tooltip at polarToCartesian(cx, cy,
+  // middleRadius, midAngle) -- the sector's own geometric middle, not the
+  // actual hover point. Fine for a narrow slice, but on a wide one that
+  // can sit far around the ring from wherever the cursor actually is. This
+  // tracks the real pointer position instead and pins the Tooltip there via
+  // its `position` prop.
+  const [hoverPos, setHoverPos] = React.useState<{ x: number; y: number } | null>(null);
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setHoverPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
   useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
   const d = { ...dims[size], h: height ?? dims[size].h };
@@ -53,7 +64,11 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   const cornerRadius = (d.outer - d.inner) / 2 - 7;
 
   return (
-    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
+    <div
+      className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}
+      style={{ height: d.h }}
+      onMouseMove={handleMouseMove}
+    >
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
@@ -74,7 +89,10 @@ export const DonutChart: React.FC<DonutChartProps> = ({
             // animation skips the broken transition entirely.
             isAnimationActive={false}
             onMouseEnter={(_, i) => setActiveIndex(i)}
-            onMouseLeave={() => setActiveIndex(null)}
+            onMouseLeave={() => {
+              setActiveIndex(null);
+              setHoverPos(null);
+            }}
           >
             {data.map((_, i) => (
               <Cell
@@ -84,7 +102,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
               />
             ))}
           </Pie>
-          <Tooltip content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} />
+          <Tooltip content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} position={hoverPos ?? undefined} />
         </PieChart>
       </ResponsiveContainer>
 
