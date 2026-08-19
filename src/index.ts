@@ -40,7 +40,7 @@ export * from './components/Input';
 export * from './components/Kbd';
 export * from './components/Label';
 export { LineChart } from './components/LineChart';
-export type { LineChartProps } from './components/LineChart';
+export type { LineChartProps, LineChartVariant } from './components/LineChart';
 export * from './components/Link';
 export * from './components/ListItem';
 export * from './components/Menu';
