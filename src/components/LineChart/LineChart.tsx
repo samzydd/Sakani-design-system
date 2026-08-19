@@ -72,15 +72,18 @@ export const LineChart: React.FC<LineChartProps> = ({
   const curveType = variant === 'linear' ? 'linear' : variant === 'step' ? 'step' : 'monotone';
   const showDots = ALWAYS_DOTS.has(variant);
 
-  // "custom-dots": a ringed marker instead of a plain filled circle -- ring
-  // stroke matches the line's own weight so the marker reads as one
-  // continuous unit with the line passing through it, not a thin accent.
+  // "custom-dots": a small filled circle with a short straight tick
+  // attached directly above and below it (always vertical, independent of
+  // the line's local slope) -- not a ring the line passes through.
   const renderRingDot = (color: string) => (props: any) => {
     const { cx, cy } = props;
+    const r = 3;
+    const tick = 6;
     return (
-      <g>
-        <circle cx={cx} cy={cy} r={7} fill="none" stroke={color} strokeWidth={2} />
-        <circle cx={cx} cy={cy} r={3} fill={color} />
+      <g stroke={color} strokeWidth={2} strokeLinecap="round">
+        <line x1={cx} y1={cy - r} x2={cx} y2={cy - r - tick} />
+        <line x1={cx} y1={cy + r} x2={cx} y2={cy + r + tick} />
+        <circle cx={cx} cy={cy} r={r} fill={color} stroke="none" />
       </g>
     );
   };
