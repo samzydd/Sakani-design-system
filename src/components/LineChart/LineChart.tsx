@@ -65,6 +65,10 @@ export const LineChart: React.FC<LineChartProps> = ({
 }) => {
   useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
+  // Figma: the single default series is chart/2, and the second line added
+  // by "Multiple" is chart/1 -- reversed from the raw token numbering (the
+  // rest of the palette, for 3+ series, keeps the plain chart/3.. order).
+  const seriesPalette = [palette[1], palette[0], ...palette.slice(2)];
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const axis = cssVar('--color-fg-muted') ?? '#6b6375';
   const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
@@ -126,7 +130,7 @@ export const LineChart: React.FC<LineChartProps> = ({
           />
           {showLegend && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
           {series.map((key, i) => {
-            const color = palette[i % palette.length];
+            const color = seriesPalette[i % seriesPalette.length];
             const dot = !showDots ? false
               : variant === 'custom-dots' ? renderRingDot(color)
               : variant === 'dots-colors' ? renderPaletteDot

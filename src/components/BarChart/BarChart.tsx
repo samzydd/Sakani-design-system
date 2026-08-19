@@ -78,15 +78,17 @@ export const BarChart: React.FC<BarChartProps> = ({
   const [hoverPos, setHoverPos] = React.useState<{ x: number; y: number } | null>(null);
   useThemeTick();
   const chartDefault = cssVar('--color-chart-2') ?? '#2e90fa';
-  const chartHover = cssVar('--color-chart-1') ?? '#ff4700';
   const chartSecondary = cssVar('--color-chart-5') ?? '#78716a';
-  const chartNegative = cssVar('--color-chart-4') ?? '#e5484d';
+  // Figma: "Negative" bars use chart/1, not a semantic red -- chart/2 stays
+  // the positive-value color, same as "Default".
+  const chartNegative = cssVar('--color-chart-1') ?? '#ff4700';
+  // Figma: "Active" isn't one highlighted bar -- every bar gets its own
+  // color, cycling through the full chart/1..6 categorical palette.
+  const activePalette = [1, 2, 3, 4, 5, 6].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const axis = cssVar('--color-fg-muted') ?? '#6b6375';
   const isGrouped = variant === 'multiple' || variant === 'stacked';
   const hasSecondSeries = isGrouped && data.some((d) => d.value2 !== undefined);
-  // "Active": the most recent category is always highlighted, independent of hover.
-  const activeIdx = variant === 'active' ? data.length - 1 : null;
 
   const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
 
@@ -103,16 +105,16 @@ export const BarChart: React.FC<BarChartProps> = ({
     <Tooltip cursor={false} content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} position={hoverPos ?? undefined} />
   );
 
-  // Hovering never recolors a bar -- only "active" (the persistent marker
-  // bar, unrelated to hover) and "negative" (sign-based) change fill.
-  // Hover itself is communicated purely by dimming every OTHER bar to 45%.
+  // Hovering never recolors a bar -- only "active" (categorical, every bar
+  // its own color) and "negative" (sign-based) change fill. Hover itself is
+  // communicated purely by dimming every OTHER bar to 45%.
   const singleSeriesFill = (i: number) => {
-    if (variant === 'active' && i === activeIdx) return chartHover;
+    if (variant === 'active') return activePalette[i % activePalette.length];
     if (variant === 'negative' && data[i].value < 0) return chartNegative;
     return chartDefault;
   };
   const singleSeriesOpacity = (i: number) =>
-    hoverIndex !== null && i !== hoverIndex && i !== activeIdx ? 0.45 : 1;
+    hoverIndex !== null && i !== hoverIndex ? 0.45 : 1;
 
   // Figma's hover state adds a small ring-stroked dot at the tip of the
   // hovered bar (the same marker AreaChart/LineChart use at their active
