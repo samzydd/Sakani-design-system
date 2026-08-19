@@ -53,6 +53,18 @@ const cssVar = (name: string) =>
     ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
     : undefined;
 
+/** Rounds up to the nearest "nice" 1/2/5 step at the value's own magnitude
+ * (310 -> 500, 42 -> 50, 1400 -> 2000) -- the usual axis-rounding rule so a
+ * symmetric domain built from it lands on round numbers instead of
+ * whatever the raw data max happens to be. */
+const niceCeil = (value: number) => {
+  if (value <= 0) return 1;
+  const magnitude = 10 ** Math.floor(Math.log10(value));
+  const residual = value / magnitude;
+  const niceResidual = residual <= 1 ? 1 : residual <= 2 ? 2 : residual <= 5 ? 5 : 10;
+  return niceResidual * magnitude;
+};
+
 export const BarChart: React.FC<BarChartProps> = ({
   data, variant = 'default', size = 'md', seriesLabels = ['Value', 'Value 2'], className,
 }) => {
@@ -77,6 +89,15 @@ export const BarChart: React.FC<BarChartProps> = ({
   const activeIdx = variant === 'active' ? data.length - 1 : null;
 
   const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
+
+  // "negative": the value axis's zero crossing is where every bar actually
+  // starts, but with no explicit domain/ticks Recharts' auto-generated grid
+  // lines land wherever its own "nice number" pass puts them -- not
+  // necessarily through zero. Forcing a symmetric domain and an odd tick
+  // count centered on 0 guarantees one of CartesianGrid's lines is that
+  // zero line, so it reads as the bars' actual reference line.
+  const negativeMax = niceCeil(Math.max(1, ...data.map((d) => Math.abs(d.value))));
+  const negativeTicks = [-negativeMax, -negativeMax / 2, 0, negativeMax / 2, negativeMax];
 
   const tooltip = (
     <Tooltip cursor={false} content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} position={hoverPos ?? undefined} />
@@ -179,6 +200,7 @@ export const BarChart: React.FC<BarChartProps> = ({
           ) : (
             <XAxis dataKey="label" stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />
           )}
+          {variant === 'negative' && <YAxis hide domain={[-negativeMax, negativeMax]} ticks={negativeTicks} />}
           {tooltip}
           {isGrouped && <Legend content={renderLegend} />}
 
