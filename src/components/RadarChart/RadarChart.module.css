@@ -1,0 +1,21 @@
+/* RadarChart.module.css — Geist on SVG text. */
+.chart {
+  position: relative;
+  width: 100%;
+  font-family: var(--font-sans);
+}
+.chart text {
+  font-family: var(--font-sans) !important;
+}
+.chart :global(.recharts-surface) {
+  overflow: visible;
+}
+
+/* "circle-grid-filled"'s measured concentric-circle overlay -- see the
+   module doc comment for why this needs real pixel measurement instead of
+   a CSS trick. */
+.circleFillSvg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}

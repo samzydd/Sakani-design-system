@@ -39,18 +39,37 @@ const cssVar = (name: string) =>
 const MIN_OPACITY = 0.12;
 const DIM_OPACITY = 0.45;
 
+interface HoverState { row: number; col: number; value: number; left: number; top: number; }
+
 export const HeatmapChart: React.FC<HeatmapChartProps> = ({
   data, rowLabels, colLabels, valueLabel = 'Value', size = 'md', className,
 }) => {
   useThemeTick();
-  const [hover, setHover] = React.useState<{ row: number; col: number } | null>(null);
+  const gridRef = React.useRef<HTMLDivElement>(null);
+  // A single tooltip lives outside the per-cell markup and is repositioned/
+  // recontented on hover, instead of each cell mounting its own -- moving
+  // from one section to an adjacent one would otherwise unmount one
+  // tooltip element and mount a brand new one (a visible flicker), rather
+  // than the same tooltip just updating in place.
+  const [hover, setHover] = React.useState<HoverState | null>(null);
   const chart1 = cssVar('--color-chart-1') ?? '#ff4700';
   const max = Math.max(1, ...data.flat());
   const cols = data[0]?.length ?? 0;
 
+  const handleEnter = (row: number, col: number, value: number) => (e: React.MouseEvent<HTMLDivElement>) => {
+    const cellRect = e.currentTarget.getBoundingClientRect();
+    const gridRect = gridRef.current?.getBoundingClientRect();
+    if (!gridRect) return;
+    setHover({
+      row, col, value,
+      left: cellRect.left - gridRect.left + cellRect.width / 2,
+      top: cellRect.top - gridRect.top,
+    });
+  };
+
   return (
     <div className={[styles.chart, styles[`chart--${size}`], className ?? ''].filter(Boolean).join(' ')}>
-      <div className={styles.grid} style={{ gridTemplateColumns: `auto repeat(${cols}, 1fr)` }}>
+      <div ref={gridRef} className={styles.grid} style={{ gridTemplateColumns: `auto repeat(${cols}, 1fr)` }}>
         {data.map((row, r) => (
           <React.Fragment key={r}>
             <span className={styles.rowLabel}>{rowLabels?.[r] ?? ''}</span>
@@ -63,22 +82,9 @@ export const HeatmapChart: React.FC<HeatmapChartProps> = ({
                   key={c}
                   className={styles.cell}
                   style={{ background: chart1, opacity: dimmed ? DIM_OPACITY : opacity }}
-                  onMouseEnter={() => setHover({ row: r, col: c })}
+                  onMouseEnter={handleEnter(r, c, value)}
                   onMouseLeave={() => setHover(null)}
-                >
-                  {isHovered && (
-                    <div className={styles.tooltip}>
-                      <span className={styles.tooltip__title}>
-                        {[rowLabels?.[r], colLabels?.[c]].filter(Boolean).join(' · ') || `Row ${r + 1}, Col ${c + 1}`}
-                      </span>
-                      <div className={styles.tooltip__row}>
-                        <span className={styles.tooltip__dot} />
-                        <span className={styles.tooltip__label}>{valueLabel}</span>
-                        <span className={styles.tooltip__value}>{value}</span>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                />
               );
             })}
           </React.Fragment>
@@ -88,6 +94,19 @@ export const HeatmapChart: React.FC<HeatmapChartProps> = ({
             <span />
             {colLabels.map((label, c) => <span key={c} className={styles.colLabel}>{label}</span>)}
           </>
+        )}
+
+        {hover && (
+          <div className={styles.tooltip} style={{ left: hover.left, top: hover.top }}>
+            <span className={styles.tooltip__title}>
+              {[rowLabels?.[hover.row], colLabels?.[hover.col]].filter(Boolean).join(' · ') || `Row ${hover.row + 1}, Col ${hover.col + 1}`}
+            </span>
+            <div className={styles.tooltip__row}>
+              <span className={styles.tooltip__dot} />
+              <span className={styles.tooltip__label}>{valueLabel}</span>
+              <span className={styles.tooltip__value}>{hover.value}</span>
+            </div>
+          </div>
         )}
       </div>
     </div>

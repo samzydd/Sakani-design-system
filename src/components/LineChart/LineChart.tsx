@@ -1,9 +1,22 @@
 /**
  * LineChart
  *
- * Recharts wrapper styled with Sakani chart tokens. Matches Figma "Line Chart"
- * (Size sm|md|lg|xl). Supports one or more series; each series uses the next
- * chart token color so it re-themes in dark mode.
+ * Recharts wrapper styled with Sakani chart tokens. Matches Figma's "Line
+ * chart" component set:
+ *
+ *   default      — smooth (monotone) curve, single series, no dots
+ *   linear       — straight-line segments instead of a smooth curve
+ *   step         — step/staircase line
+ *   multiple     — two series overlaid (pass 2 entries in `series`)
+ *   dots         — smooth curve, dot markers always visible (not just on hover)
+ *   custom-dots  — smooth curve, ringed/halo dot markers
+ *   dots-colors  — smooth curve, each dot cycles through the full chart
+ *                  palette instead of matching its own series' color
+ *   label        — dots + the raw value shown above each point
+ *   custom-label — dots + a custom label per point (see `labelKey`)
+ *
+ * A thin wrapper throughout -- every variant is a Recharts `type`/`dot`/
+ * `label` prop combination, no hand-rolled SVG needed.
  */
 
 import React from 'react';
@@ -15,6 +28,8 @@ import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './LineChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
+export type LineChartVariant =
+  | 'default' | 'linear' | 'step' | 'multiple' | 'dots' | 'custom-dots' | 'dots-colors' | 'label' | 'custom-label';
 
 export interface LineChartProps {
   /** Rows keyed by label plus one field per series. */
@@ -23,6 +38,9 @@ export interface LineChartProps {
   series: string[];
   /** Field used for the x-axis (defaults to "label"). */
   xKey?: string;
+  variant?: LineChartVariant;
+  /** Field holding each point's custom label text (variant="custom-label"). */
+  labelKey?: string;
   size?: ChartSize;
   /** Pixel height override, takes precedence over `size`'s preset. Recharts'
    * ResponsiveContainer renders its SVG at whatever literal number this prop
@@ -40,13 +58,64 @@ const cssVar = (name: string) =>
     ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
     : undefined;
 
+const ALWAYS_DOTS = new Set<LineChartVariant>(['dots', 'custom-dots', 'dots-colors', 'label', 'custom-label']);
+
 export const LineChart: React.FC<LineChartProps> = ({
-  data, series, xKey = 'label', size = 'md', height, showLegend, className,
+  data, series, xKey = 'label', variant = 'default', labelKey, size = 'md', height, showLegend, className,
 }) => {
   useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
+  // Figma: the single default series is chart/2, and the second line added
+  // by "Multiple" is chart/1 -- reversed from the raw token numbering (the
+  // rest of the palette, for 3+ series, keeps the plain chart/3.. order).
+  const seriesPalette = [palette[1], palette[0], ...palette.slice(2)];
   const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const axis = cssVar('--color-fg-muted') ?? '#6b6375';
+  const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
+  const fgDefault = cssVar('--color-fg-default') ?? '#141414';
+  const curveType = variant === 'linear' ? 'linear' : variant === 'step' ? 'step' : 'monotone';
+  const showDots = ALWAYS_DOTS.has(variant);
+
+  // "custom-dots": a small filled circle with a short straight tick
+  // attached directly above and below it (always vertical, independent of
+  // the line's local slope) -- not a ring the line passes through.
+  const renderRingDot = (color: string) => (props: any) => {
+    const { cx, cy } = props;
+    const r = 3;
+    const tick = 6;
+    return (
+      <g stroke={color} strokeWidth={2} strokeLinecap="round">
+        <line x1={cx} y1={cy - r} x2={cx} y2={cy - r - tick} />
+        <line x1={cx} y1={cy + r} x2={cx} y2={cy + r + tick} />
+        <circle cx={cx} cy={cy} r={r} fill={color} stroke="none" />
+      </g>
+    );
+  };
+
+  // "dots-colors": each point's dot cycles through the full chart palette,
+  // independent of its own series' line color.
+  const renderPaletteDot = (props: any) => {
+    const { cx, cy, index } = props;
+    const color = palette[(index ?? 0) % palette.length];
+    return <circle cx={cx} cy={cy} r={4} fill={color} stroke={canvasBg} strokeWidth={1.5} />;
+  };
+
+  // "label"/"custom-label": Line's `label` prop is routed through a
+  // Cartesian LabelList context. Unlike Radar's equivalent, the actual
+  // props handed to a custom render function here don't include `payload`
+  // (confirmed via a live console check, despite the source computing it) --
+  // `index` is present instead, so the custom label text is read off the
+  // closure-captured `data` array directly.
+  const renderPointLabel = (props: any) => {
+    const { x, y, value, index } = props;
+    const text = variant === 'custom-label' && labelKey ? data[index]?.[labelKey] : value;
+    if (text === undefined) return <g />;
+    return (
+      <text x={x} y={y - 12} textAnchor="middle" fill={fgDefault} fontSize={12} fontWeight={500} fontFamily="var(--font-sans)">
+        {text}
+      </text>
+    );
+  };
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
@@ -57,19 +126,25 @@ export const LineChart: React.FC<LineChartProps> = ({
           <Tooltip
             cursor={{ stroke: cssVar('--color-border-default') ?? '#d6d3ce', strokeWidth: 1 }}
             content={<ChartTooltip />}
+            wrapperStyle={{ zIndex: 50 }}
           />
           {showLegend && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
           {series.map((key, i) => {
-            const color = palette[i % palette.length];
+            const color = seriesPalette[i % seriesPalette.length];
+            const dot = !showDots ? false
+              : variant === 'custom-dots' ? renderRingDot(color)
+              : variant === 'dots-colors' ? renderPaletteDot
+              : { r: 4, fill: color, stroke: canvasBg, strokeWidth: 1.5 };
             return (
               <Line
                 key={key}
-                type="monotone"
+                type={curveType}
                 dataKey={key}
                 stroke={color}
                 strokeWidth={2}
-                dot={false}
-                activeDot={{ r: 4, fill: color, stroke: cssVar('--color-bg-canvas'), strokeWidth: 1.5 }}
+                dot={dot}
+                activeDot={{ r: 4, fill: color, stroke: canvasBg, strokeWidth: 1.5 }}
+                label={variant === 'label' || variant === 'custom-label' ? renderPointLabel : undefined}
               />
             );
           })}

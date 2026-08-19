@@ -79,7 +79,7 @@
   --color-info-950: #102A56;
   --color-base-white: #FFFFFF;
   --color-base-black: #000000;
-  /* Chart primitives (Figma "chart/1".."chart/5") — a dedicated data-vis
+  /* Chart primitives (Figma "chart/1".."chart/6") — a dedicated data-vis
      palette, not a reuse of the semantic success/danger/info/neutral ramps.
      The old aliasing to those ramps was a coincidental, wrong substitute:
      none of their steps actually match Figma's chart hex values. */
@@ -88,6 +88,7 @@
   --color-chart-teal: #47A8A2;
   --color-chart-purple: #9179D6;
   --color-chart-gold: #DCA84F;
+  --color-chart-green: #12B76A;
 
   /* ---- semantic (light) ---- */
   --color-bg-canvas: var(--color-neutral-50);
@@ -105,12 +106,13 @@
   --color-border-strong: var(--color-neutral-400);
   --color-border-focus: var(--color-primary-500);
   /* chart tokens — aliased to the dedicated chart primitives above (Figma
-     chart/1..5). Brand-consistent data-vis colors, same in light and dark. */
+     chart/1..6). Brand-consistent data-vis colors, same in light and dark. */
   --color-chart-1: var(--color-chart-orange);
   --color-chart-2: var(--color-chart-blue);
   --color-chart-3: var(--color-chart-teal);
   --color-chart-4: var(--color-chart-purple);
   --color-chart-5: var(--color-chart-gold);
+  --color-chart-6: var(--color-chart-green);
   --color-accent-default: var(--color-neutral-900);
   --color-accent-hover: var(--color-neutral-800);
   --color-accent-active: var(--color-neutral-700);

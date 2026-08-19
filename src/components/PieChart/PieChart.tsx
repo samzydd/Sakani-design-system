@@ -73,12 +73,7 @@ export const PieChart: React.FC<PieChartProps> = ({
   useThemeTick();
   const [hoverIdx, setHoverIdx] = React.useState<number | undefined>(undefined);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
-  const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
   const surfaceBg = cssVar('--color-bg-surface') ?? '#ffffff';
-  // canvasBg alone reads as invisible against a plain white page (they're
-  // nearly the same color) -- a thin border gives the halo ring an actual
-  // visible edge.
-  const borderColor = cssVar('--color-border-default') ?? '#d6d3ce';
   const fgDefault = cssVar('--color-fg-default') ?? '#141414';
   const d = dims[size];
   const hasHole = HAS_HOLE.has(variant);
@@ -94,27 +89,30 @@ export const PieChart: React.FC<PieChartProps> = ({
   const renderSector = (props: any) => {
     const { cx, cy, innerRadius: ir, outerRadius: or_, startAngle, endAngle, fill, index } = props;
     const isActive = index === activeIdx;
-    // Grow the active slice's own outer radius instead of translating the
-    // whole sector outward -- translating keeps its start/end angles fixed
-    // but moves its center away from cx/cy, which pulls it out of contact
-    // with its neighbors on both sides and leaves a wedge of empty space.
-    // Growing in place keeps it flush against its neighbors; only the
-    // outer edge pokes out further than the rest of the ring.
-    const growth = isActive && hasExplode ? 16 : 0;
+
+    // "donut-active"/"stacked"/"interactive": grow the active slice's own
+    // outer radius instead of translating it -- translating pulls it out
+    // of contact with its neighbors on both sides, leaving a wedge of
+    // empty space; growing in place keeps it flush against them, only the
+    // outer edge pokes out further than the rest of the ring. "interactive"
+    // behaves exactly like "donut-active" here -- same growth amount, same
+    // slice size -- the only difference is the extra thin arc added below.
+    const growth = isActive && (hasExplode || hasHalo) ? 16 : 0;
+
+    if (isActive && hasHalo) {
+      // "interactive" adds one thing on top of the plain grow-in-place
+      // above: a thin extra arc just past the grown slice's new outer
+      // edge, in the same color as the slice itself (not a neutral halo).
+      return (
+        <g>
+          <Sector cx={cx} cy={cy} innerRadius={ir} outerRadius={or_ + growth} startAngle={startAngle} endAngle={endAngle} fill={fill} />
+          <Sector cx={cx} cy={cy} innerRadius={or_ + growth + 3} outerRadius={or_ + growth + 7} startAngle={startAngle} endAngle={endAngle} fill={fill} />
+        </g>
+      );
+    }
+
     return (
-      <g>
-        <Sector cx={cx} cy={cy} innerRadius={ir} outerRadius={or_ + growth} startAngle={startAngle} endAngle={endAngle} fill={fill} />
-        {isActive && hasHalo && (
-          <Sector
-            cx={cx} cy={cy}
-            innerRadius={or_ + 3} outerRadius={or_ + 7}
-            startAngle={startAngle} endAngle={endAngle}
-            fill={canvasBg}
-            stroke={borderColor}
-            strokeWidth={1}
-          />
-        )}
-      </g>
+      <Sector cx={cx} cy={cy} innerRadius={ir} outerRadius={or_ + growth} startAngle={startAngle} endAngle={endAngle} fill={fill} />
     );
   };
 
@@ -226,7 +224,7 @@ export const PieChart: React.FC<PieChartProps> = ({
                 <Cell key={i} fill={palette[i % palette.length]} fillOpacity={ringFillOpacity(i)} />
               ))}
             </Pie>
-            <Tooltip content={<ChartTooltip />} />
+            <Tooltip content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} />
           </RePieChart>
         </ResponsiveContainer>
       </div>
@@ -267,7 +265,7 @@ export const PieChart: React.FC<PieChartProps> = ({
               <Cell key={i} fill={palette[i % palette.length]} />
             ))}
           </Pie>
-          <Tooltip content={<ChartTooltip />} />
+          <Tooltip content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} />
         </RePieChart>
       </ResponsiveContainer>
 

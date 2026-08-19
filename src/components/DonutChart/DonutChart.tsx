@@ -43,9 +43,19 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   data, size = 'md', centerValue, centerCaption, height, className,
 }) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  // Recharts anchors a Pie slice's tooltip at polarToCartesian(cx, cy,
+  // middleRadius, midAngle) -- the sector's own geometric middle, not the
+  // actual hover point. Fine for a narrow slice, but on a wide one that
+  // can sit far around the ring from wherever the cursor actually is. This
+  // tracks the real pointer position instead and pins the Tooltip there via
+  // its `position` prop.
+  const [hoverPos, setHoverPos] = React.useState<{ x: number; y: number } | null>(null);
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setHoverPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
   useThemeTick();
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
-  const hoverFill = cssVar('--color-chart-5') ?? '#78716a';
   const d = { ...dims[size], h: height ?? dims[size].h };
   // Figma's segments end in a rounded cap -- half the ring's own thickness
   // is the max Recharts allows before it stops adding visible rounding, so
@@ -54,7 +64,11 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   const cornerRadius = (d.outer - d.inner) / 2 - 7;
 
   return (
-    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
+    <div
+      className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}
+      style={{ height: d.h }}
+      onMouseMove={handleMouseMove}
+    >
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
@@ -75,13 +89,20 @@ export const DonutChart: React.FC<DonutChartProps> = ({
             // animation skips the broken transition entirely.
             isAnimationActive={false}
             onMouseEnter={(_, i) => setActiveIndex(i)}
-            onMouseLeave={() => setActiveIndex(null)}
+            onMouseLeave={() => {
+              setActiveIndex(null);
+              setHoverPos(null);
+            }}
           >
             {data.map((_, i) => (
-              <Cell key={i} fill={i === activeIndex ? hoverFill : palette[i % palette.length]} />
+              <Cell
+                key={i}
+                fill={palette[i % palette.length]}
+                fillOpacity={activeIndex !== null && i !== activeIndex ? 0.45 : 1}
+              />
             ))}
           </Pie>
-          <Tooltip content={<ChartTooltip />} />
+          <Tooltip content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} position={hoverPos ?? undefined} />
         </PieChart>
       </ResponsiveContainer>
 
