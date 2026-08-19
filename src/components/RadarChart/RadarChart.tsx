@@ -71,8 +71,9 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   // (confirmed via its variable defs), not border/subtle like most of the
   // other charts here.
   const grid = cssVar('--color-border-default') ?? '#dbdad7';
-  const axis = cssVar('--color-fg-muted') ?? '#6b6375';
-  const fgDefault = cssVar('--color-fg-default') ?? '#141414';
+  // Every label in this chart (axis category ticks, custom-label's
+  // value+category block) uses fg/subtle.
+  const label = cssVar('--color-fg-subtle') ?? '#78716a';
   const isMultiple = variant === 'multiple';
   // "custom-label" also gets the second (red) series, same as "multiple" --
   // just without the legend, since its own vertex value labels already
@@ -88,25 +89,49 @@ export const RadarChart: React.FC<RadarChartProps> = ({
     const { x, y, cx, cy, payload, textAnchor } = props;
     const row = data.find((d) => d.label === payload?.value) ?? data[payload?.index];
     if (!row) return <g />;
-    // Recharts' default tick position sits right at the hexagon's own
-    // vertex -- push it out 4px along the same cx/cy -> x/y ray for a
-    // clear gap from the grid line. Using Recharts' own computed
-    // `textAnchor` (not a hardcoded "middle") is what right-aligns the
-    // group at right-side vertices and left-aligns it at left-side ones,
-    // matching Figma -- top/bottom vertices already resolve to "middle".
+    // Recharts' own computed `textAnchor` (not a hardcoded "middle") is
+    // what right-aligns the group at right-side vertices and left-aligns
+    // it at left-side ones, matching Figma -- top/bottom vertices already
+    // resolve to "middle".
     const dx = x - cx;
     const dy = y - cy;
-    const len = Math.sqrt(dx * dx + dy * dy) || 1;
-    const offset = 4;
-    const lx = x + (dx / len) * offset;
-    const ly = y + (dy / len) * offset;
+    const gap = 4;
     const combined = row.value2 !== undefined ? `${row.value}/${row.value2}` : `${row.value}`;
+
+    // Left/right vertices: the two lines straddle the vertex's own height
+    // (value above, category below), so a small outward push along the
+    // cx/cy -> x/y ray is enough to clear the grid line horizontally.
+    // Top/bottom vertices need direction-aware stacking instead -- both
+    // lines have to land on the *same* side of the vertex (both above for
+    // the top vertex, both below for the bottom one), with whichever line
+    // sits nearest the hexagon getting the actual 4px gap; the symmetric
+    // straddle used for the sides would otherwise put one line on the
+    // wrong side of the vertex, on top of the grid line.
+    const isVertical = Math.abs(dy) > Math.abs(dx);
+    let valueY: number;
+    let labelY: number;
+    if (isVertical && dy < 0) {
+      // top vertex: category line (nearest) 4px above, value further above
+      labelY = y - gap - 6;
+      valueY = labelY - 16;
+    } else if (isVertical) {
+      // bottom vertex: value line (nearest) 4px below, category further below
+      valueY = y + gap + 10;
+      labelY = valueY + 18;
+    } else {
+      const len = Math.sqrt(dx * dx + dy * dy) || 1;
+      const ly = y + (dy / len) * gap;
+      valueY = ly - 8;
+      labelY = ly + 12;
+    }
+    const lx = isVertical ? x : x + (dx / Math.sqrt(dx * dx + dy * dy || 1)) * gap;
+
     return (
       <g>
-        <text x={lx} y={ly - 8} textAnchor={textAnchor} fill={fgDefault} fontSize={15} fontWeight={600} fontFamily="var(--font-sans)">
+        <text x={lx} y={valueY} textAnchor={textAnchor} fill={label} fontSize={15} fontWeight={600} fontFamily="var(--font-sans)">
           {combined}
         </text>
-        <text x={lx} y={ly + 12} textAnchor={textAnchor} fill={axis} fontSize={13} fontFamily="var(--font-sans)">
+        <text x={lx} y={labelY} textAnchor={textAnchor} fill={label} fontSize={13} fontFamily="var(--font-sans)">
           {row.label}
         </text>
       </g>
@@ -131,7 +156,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
           <PolarAngleAxis
             dataKey="label"
             axisLine={false}
-            tick={variant === 'custom-label' ? renderVertexTick : { fill: axis, fontSize: 12, fontFamily: 'var(--font-sans)' }}
+            tick={variant === 'custom-label' ? renderVertexTick : { fill: label, fontSize: 12, fontFamily: 'var(--font-sans)' }}
           />
           {/* "default" shows only the outer boundary -- no inner concentric
               rings, no radial spokes. tickCount=2 on a [0, max] domain
