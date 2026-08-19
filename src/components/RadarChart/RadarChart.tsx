@@ -73,6 +73,10 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   const axis = cssVar('--color-fg-muted') ?? '#6b6375';
   const fgDefault = cssVar('--color-fg-default') ?? '#141414';
   const isMultiple = variant === 'multiple';
+  // "custom-label" also gets the second (red) series, same as "multiple" --
+  // just without the legend, since its own vertex value labels already
+  // identify each point.
+  const showSecondSeries = isMultiple || variant === 'custom-label';
   const showFill = variant !== 'lines-only';
   const showDots = variant === 'dots' || variant === 'lines-only';
 
@@ -126,7 +130,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
             dataKey="value"
             stroke={NO_STROKE.has(variant) ? 'none' : chart2}
             fill={showFill ? chart2 : 'none'}
-            fillOpacity={showFill ? (variant === 'default' ? 1 : isMultiple ? 0.45 : 0.5) : 0}
+            fillOpacity={showFill ? (variant === 'default' ? 1 : showSecondSeries ? 0.45 : 0.5) : 0}
             strokeWidth={NO_STROKE.has(variant) ? 0 : 2}
             // Recharts' dot markers default to the parent Radar's own
             // stroke color -- with that set to "none" above, plain
@@ -136,9 +140,9 @@ export const RadarChart: React.FC<RadarChartProps> = ({
             isAnimationActive={false}
             label={variant === 'custom-label' ? renderVertexLabel : undefined}
           />
-          {isMultiple && (
+          {showSecondSeries && (
             <Radar
-              name={seriesLabels[1] ?? 'Value 2'}
+              name={isMultiple ? (seriesLabels[1] ?? 'Value 2') : undefined}
               dataKey="value2"
               stroke="none"
               fill={chart1}
