@@ -201,7 +201,6 @@ export const RadialChart: React.FC<RadialChartProps> = ({
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
-      {variant === 'grid' && <PolarGrid rings={4} spokes={12} color={gridColor} />}
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           data={data}
@@ -230,6 +229,12 @@ export const RadialChart: React.FC<RadialChartProps> = ({
           </RadialBar>
         </RadialBarChart>
       </ResponsiveContainer>
+
+      {/* Painted on top of the rings, not behind -- Figma's grid lines cut
+          across the colored arcs wherever a ring doesn't reach (each ring
+          sweeps less than a full circle), not just show through the empty
+          center hole. */}
+      {variant === 'grid' && <PolarGrid rings={8} spokes={12} color={gridColor} />}
 
       {showCenter && (
         <div className={styles.center}>
