@@ -155,22 +155,15 @@ export const PieChart: React.FC<PieChartProps> = ({
     );
   };
 
-  // "custom label": same leader-line anchor, but the value sits in a
-  // filled pill matching the slice's own color instead of plain text.
+  // "custom label": unlike "label", there's no leader line at all -- just
+  // larger, bolder plain text sitting close to the slice's own edge, at
+  // Recharts' own default outside-label position.
   const renderCustomLabel = (props: any) => {
-    const { value, fill } = props;
-    const { d, endX, endY, textAnchor } = leaderPath(props);
-    const text = String(value);
-    const w = Math.max(28, text.length * 7 + 14);
-    const rectX = textAnchor === 'end' ? endX - w : endX;
+    const { x, y, textAnchor, value } = props;
     return (
-      <g>
-        <path d={d} fill="none" stroke={borderColor} strokeWidth={1} />
-        <rect x={rectX} y={endY - 10} width={w} height={20} rx={10} fill={fill} />
-        <text x={rectX + w / 2} y={endY} textAnchor="middle" dominantBaseline="central" fill="#fff" fontSize={11} fontWeight={500} fontFamily="var(--font-sans)">
-          {text}
-        </text>
-      </g>
+      <text x={x} y={y} textAnchor={textAnchor} dominantBaseline="central" fill={fgDefault} fontSize={20} fontWeight={500} fontFamily="var(--font-sans)">
+        {value}
+      </text>
     );
   };
 
