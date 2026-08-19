@@ -21,13 +21,17 @@
  * a structurally different chart.
  *
  * grid-filled/circle-grid-filled's alternating bands aren't something
- * PolarGrid can do (it only strokes rings, never fills them) -- built as
- * extra low-opacity `<Radar>` series at fixed fractions of the data's max
- * value instead of a hand-rolled overlay, so they automatically share the
- * exact same polygon/circle geometry, center, and radius as the real data
- * series with no separate coordinate math. Stacking N same-color
- * semi-transparent layers at decreasing size is also what gives the "more
- * saturated toward center" look for free, via ordinary alpha compositing.
+ * PolarGrid can do (it only strokes rings, never fills them).
+ * grid-filled's bands are built as extra low-opacity `<Radar>` series at
+ * fixed fractions of the data's max value, so they automatically share the
+ * real series' exact polygon geometry with no separate coordinate math.
+ * circle-grid-filled needs true circles, which `<Radar>` can't draw (it
+ * only ever connects data points with straight lines) -- those are a
+ * measured SVG overlay instead, replicating Recharts' own
+ * cx/cy/outerRadius="70%" math (confirmed against its PolarUtils source)
+ * via a ResizeObserver, with PolarGrid left enabled on top of it for the
+ * spokes/ring outlines. Both give the "denser toward center" look for
+ * free, via ordinary alpha compositing of same-color layers.
  */
 
 import React from 'react';
@@ -106,6 +110,23 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   const showDots = variant === 'dots';
   const isFilledGrid = FILLED_GRID.has(variant);
   const isMinimalGrid = MINIMAL_GRID.has(variant);
+  const circleFilled = isCircleFilled(variant);
+
+  // circle-grid-filled: measure the container so the filled-circle overlay
+  // below can compute cx/cy/outerRadius pixel-for-pixel the same way
+  // Recharts itself does (getMaxRadius in its PolarUtils: half of
+  // min(width, height) minus the default 5px margin on each side, times
+  // the 70% passed to outerRadius) -- height is already known statically
+  // via `heights[size]`, only width needs a runtime measurement.
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = React.useState(0);
+  React.useEffect(() => {
+    if (!circleFilled || !containerRef.current) return;
+    const el = containerRef.current;
+    const observer = new ResizeObserver(([entry]) => setContainerWidth(entry.contentRect.width));
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [circleFilled]);
 
   // grid-filled/circle-grid-filled: augment the shared dataset with N extra
   // fields, each a fixed fraction of the real data's max value, so a
@@ -177,25 +198,32 @@ export const RadarChart: React.FC<RadarChartProps> = ({
     );
   };
 
+  const height = heights[size];
+  const maxRadius = containerWidth > 0 ? Math.min(containerWidth, height) / 2 - 5 : 0;
+  const outerR = maxRadius * 0.7;
+
   return (
-    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
-      {/* "circle-grid-filled": a CSS radial-gradient standing in for
-          concentric filled circles -- matches Recharts' own outerRadius="70%"
-          convention by sizing off the container's own (fixed) height, the
-          shorter dimension in these typically-wide chart cards. */}
-      {isCircleFilled(variant) && (
-        <div
-          className={styles.circleFill}
-          style={{ background: `radial-gradient(circle, ${chart2}66 0%, ${chart2}00 70%)` }}
-        />
+    <div ref={containerRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
+      {/* "circle-grid-filled": concentric filled circles, measured to align
+          pixel-for-pixel with Recharts' own circle grid/spokes underneath
+          (see the module doc comment). Rendered before ResponsiveContainer
+          so the real chart content (including PolarGrid's spokes and ring
+          outlines) paints on top of it. */}
+      {circleFilled && containerWidth > 0 && (
+        <svg className={styles.circleFillSvg} width={containerWidth} height={height}>
+          {RING_LEVELS.map((lvl) => (
+            <circle key={lvl} cx={containerWidth / 2} cy={height / 2} r={outerR * lvl} fill={chart2} fillOpacity={0.1} />
+          ))}
+        </svg>
       )}
-      <ResponsiveContainer width="100%" height={heights[size]}>
+      <ResponsiveContainer width="100%" height={height}>
         <ReRadarChart data={chartData} outerRadius="70%">
-          {/* grid-filled/circle-grid-filled skip PolarGrid's stroked rings
-              entirely -- the filled bands are the "grid" there, and stroke
-              lines on top of them would just compete visually (Figma's
-              reference has none). */}
-          {!isFilledGrid && !isCircleFilled(variant) && (
+          {/* grid-filled skips PolarGrid's stroked rings entirely -- the
+              filled bands are the "grid" there, and stroke lines on top of
+              them would just compete visually (Figma's reference has
+              none). circle-grid-filled keeps PolarGrid enabled for its
+              spokes/ring outlines, on top of the filled circles above. */}
+          {!isFilledGrid && (
             <PolarGrid
               gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
               radialLines={variant !== 'circle-grid-no-lines' && !isMinimalGrid}
