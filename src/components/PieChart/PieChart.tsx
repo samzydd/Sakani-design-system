@@ -73,7 +73,6 @@ export const PieChart: React.FC<PieChartProps> = ({
   useThemeTick();
   const [hoverIdx, setHoverIdx] = React.useState<number | undefined>(undefined);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
-  const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
   const surfaceBg = cssVar('--color-bg-surface') ?? '#ffffff';
   const fgDefault = cssVar('--color-fg-default') ?? '#141414';
   const d = dims[size];
@@ -88,33 +87,30 @@ export const PieChart: React.FC<PieChartProps> = ({
   const activeIdx = hoverIdx ?? ((hasExplode || hasHalo) ? 0 : undefined);
 
   const renderSector = (props: any) => {
-    const { cx, cy, innerRadius: ir, outerRadius: or_, startAngle, endAngle, fill, index, midAngle } = props;
+    const { cx, cy, innerRadius: ir, outerRadius: or_, startAngle, endAngle, fill, index } = props;
     const isActive = index === activeIdx;
 
+    // "donut-active"/"stacked"/"interactive": grow the active slice's own
+    // outer radius instead of translating it -- translating pulls it out
+    // of contact with its neighbors on both sides, leaving a wedge of
+    // empty space; growing in place keeps it flush against them, only the
+    // outer edge pokes out further than the rest of the ring. "interactive"
+    // behaves exactly like "donut-active" here -- same growth amount, same
+    // slice size -- the only difference is the extra thin arc added below.
+    const growth = isActive && (hasExplode || hasHalo) ? 16 : 0;
+
     if (isActive && hasHalo) {
-      // "interactive": the active slice is pulled outward (translated, not
-      // grown), leaving a same-color "shadow" behind at its resting
-      // position -- still flush against its neighbors, so there's no
-      // empty wedge -- with a thin canvas-colored stroke separating the
-      // pulled-out slice from that shadow underneath it.
-      const angle = midAngle ?? (startAngle + endAngle) / 2;
-      const offset = 20;
-      const ox = cx + offset * Math.cos(-angle * RAD);
-      const oy = cy + offset * Math.sin(-angle * RAD);
+      // "interactive" adds one thing on top of the plain grow-in-place
+      // above: a thin extra arc just past the grown slice's new outer
+      // edge, in the same color as the slice itself (not a neutral halo).
       return (
         <g>
-          <Sector cx={cx} cy={cy} innerRadius={ir} outerRadius={or_} startAngle={startAngle} endAngle={endAngle} fill={fill} />
-          <Sector cx={ox} cy={oy} innerRadius={ir} outerRadius={or_} startAngle={startAngle} endAngle={endAngle} fill={fill} stroke={canvasBg} strokeWidth={2} />
+          <Sector cx={cx} cy={cy} innerRadius={ir} outerRadius={or_ + growth} startAngle={startAngle} endAngle={endAngle} fill={fill} />
+          <Sector cx={cx} cy={cy} innerRadius={or_ + growth + 3} outerRadius={or_ + growth + 7} startAngle={startAngle} endAngle={endAngle} fill={fill} />
         </g>
       );
     }
 
-    // "donut-active"/"stacked": grow the active slice's own outer radius
-    // instead of translating it -- translating pulls it out of contact
-    // with its neighbors on both sides, leaving a wedge of empty space;
-    // growing in place keeps it flush against them, only the outer edge
-    // pokes out further than the rest of the ring.
-    const growth = isActive && hasExplode ? 16 : 0;
     return (
       <Sector cx={cx} cy={cy} innerRadius={ir} outerRadius={or_ + growth} startAngle={startAngle} endAngle={endAngle} fill={fill} />
     );
