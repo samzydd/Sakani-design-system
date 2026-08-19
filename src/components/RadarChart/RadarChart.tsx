@@ -57,6 +57,8 @@ const cssVar = (name: string) =>
     : undefined;
 
 const CIRCLE_GRID = new Set<RadarChartVariant>(['circle-grid', 'circle-grid-no-lines']);
+// These variants' shape has no stroke around it in Figma -- just the fill.
+const NO_STROKE = new Set<RadarChartVariant>(['default', 'dots', 'circle-grid', 'circle-grid-no-lines']);
 
 export const RadarChart: React.FC<RadarChartProps> = ({
   data, variant = 'default', size = 'md', seriesLabels = ['Value', 'Value 2'], className,
@@ -124,18 +126,23 @@ export const RadarChart: React.FC<RadarChartProps> = ({
               isAnimationActive={false}
             />
           )}
-          {/* "default": Figma's shape has no stroke at all and a fully
-              opaque fill (every other variant keeps the semi-transparent
-              fill + stroke, since they need to show overlapping series or
-              the grid through it). */}
+          {/* "default"/"dots"/"circle-grid"(-no-lines): Figma's shape has
+              no stroke at all around it, just the fill -- "default" is
+              also fully opaque (every other variant here keeps the
+              semi-transparent fill + stroke, since they need to show
+              overlapping series or the grid through it). */}
           <Radar
             name={isMultiple ? (seriesLabels[0] ?? 'Value') : undefined}
             dataKey="value"
-            stroke={variant === 'default' ? 'none' : chart2}
+            stroke={NO_STROKE.has(variant) ? 'none' : chart2}
             fill={showFill ? chart2 : 'none'}
             fillOpacity={showFill ? (variant === 'default' ? 1 : isMultiple ? 0.25 : 0.5) : 0}
-            strokeWidth={variant === 'default' ? 0 : 2}
-            dot={showDots}
+            strokeWidth={NO_STROKE.has(variant) ? 0 : 2}
+            // Recharts' dot markers default to the parent Radar's own
+            // stroke color -- with that set to "none" above, plain
+            // `dot={true}` would render invisible dots. Giving them their
+            // own explicit fill keeps them visible regardless.
+            dot={showDots ? { r: 4, fill: chart2, stroke: 'none' } : false}
             isAnimationActive={false}
             label={variant === 'custom-label' ? renderVertexLabel : undefined}
           />
