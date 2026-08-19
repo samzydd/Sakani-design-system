@@ -124,13 +124,17 @@ export const RadarChart: React.FC<RadarChartProps> = ({
               isAnimationActive={false}
             />
           )}
+          {/* "default": Figma's shape has no stroke at all and a fully
+              opaque fill (every other variant keeps the semi-transparent
+              fill + stroke, since they need to show overlapping series or
+              the grid through it). */}
           <Radar
             name={isMultiple ? (seriesLabels[0] ?? 'Value') : undefined}
             dataKey="value"
-            stroke={chart2}
+            stroke={variant === 'default' ? 'none' : chart2}
             fill={showFill ? chart2 : 'none'}
-            fillOpacity={showFill ? (isMultiple ? 0.25 : 0.5) : 0}
-            strokeWidth={2}
+            fillOpacity={showFill ? (variant === 'default' ? 1 : isMultiple ? 0.25 : 0.5) : 0}
+            strokeWidth={variant === 'default' ? 0 : 2}
             dot={showDots}
             isAnimationActive={false}
             label={variant === 'custom-label' ? renderVertexLabel : undefined}
