@@ -58,7 +58,7 @@ const cssVar = (name: string) =>
 
 const CIRCLE_GRID = new Set<RadarChartVariant>(['circle-grid', 'circle-grid-no-lines']);
 // These variants' shape has no stroke around it in Figma -- just the fill.
-const NO_STROKE = new Set<RadarChartVariant>(['default', 'dots', 'circle-grid', 'circle-grid-no-lines', 'multiple']);
+const NO_STROKE = new Set<RadarChartVariant>(['default', 'dots', 'circle-grid', 'circle-grid-no-lines', 'multiple', 'custom-label']);
 
 export const RadarChart: React.FC<RadarChartProps> = ({
   data, variant = 'default', size = 'md', seriesLabels = ['Value', 'Value 2'], className,
