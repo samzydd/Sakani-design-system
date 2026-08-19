@@ -10,7 +10,7 @@
  *   circle-grid         — circular grid instead of polygon
  *   circle-grid-no-lines — circular grid, no radial spoke lines
  *   multiple            — two series overlaid, semi-transparent fills
- *   custom-label        — two series, no grid, vertex labels replaced by a
+ *   custom-label        — two series, vertex labels replaced by a
  *                          "value/value2" + category name block
  *
  * Not ported: Figma's alternating-filled-ring grid and the soft blurred
@@ -105,15 +105,11 @@ export const RadarChart: React.FC<RadarChartProps> = ({
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
       <ResponsiveContainer width="100%" height={heights[size]}>
         <ReRadarChart data={data} outerRadius="70%">
-          {/* "custom-label" has no grid at all in Figma's reference -- just
-              the two shapes and their vertex labels. */}
-          {variant !== 'custom-label' && (
-            <PolarGrid
-              gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
-              radialLines={variant !== 'circle-grid-no-lines' && variant !== 'default'}
-              stroke={grid}
-            />
-          )}
+          <PolarGrid
+            gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
+            radialLines={variant !== 'circle-grid-no-lines' && variant !== 'default'}
+            stroke={grid}
+          />
           {/* `stroke` on PolarAngleAxis colors its own outer boundary
               polygon (axisLine), not just the tick text -- left at its
               default it drew a second, fg-muted-colored hexagon directly
