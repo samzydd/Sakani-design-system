@@ -12,7 +12,7 @@
  *   shape          — a single 240° gauge arc, data rows stacked angularly
  *                    (not concentric), remainder shown as a track
  *   stacked        — same 240° gauge arc, no track (rows fill it exactly)
- *   stacked-3-layers — same idea as a full 360° ring instead of a gauge arc
+ *   stacked-3-layers — same 240° gauge arc, sized for a 3-row breakdown
  *
  * `gauge-tick` (individual tick marks) and `shape`/`stacked`/
  * `stacked-3-layers` (angularly-stacked segments in one band) have no
@@ -119,19 +119,19 @@ const PolarGrid: React.FC<{ rings: number; spokes: number; color: string }> = ({
 );
 
 // "shape"/"stacked"/"stacked-3-layers": data rows stacked *angularly* in
-// one ring band (not concentric rings), sweeping either a 240° gauge arc
-// (shape/stacked) or the full 360° circle (stacked-3-layers). A gray track
-// sector fills whatever's left over when the rows don't add up to `max`.
+// one 240° gauge-arc ring band (not concentric rings, not a full circle --
+// all three share this exact shape in Figma). A gray track sector fills
+// whatever's left over when the rows don't add up to `max`.
 const ArcGauge: React.FC<{
-  data: RadialDatum[]; palette: string[]; track: string; full: boolean;
+  data: RadialDatum[]; palette: string[]; track: string;
   centerValue?: string; centerCaption?: string;
-}> = ({ data, palette, track, full, centerValue, centerCaption }) => {
+}> = ({ data, palette, track, centerValue, centerCaption }) => {
   const cx = 100;
   const cy = 100;
   const outerR = 88;
-  const innerR = full ? 74 : 64;
-  const startDeg = full ? 90 : 210;
-  const endDeg = full ? -270 : -30;
+  const innerR = 64;
+  const startDeg = 210;
+  const endDeg = -30;
   const sweepDeg = startDeg - endDeg;
   const max = data[0]?.max ?? data.reduce((sum, d) => sum + d.value, 0);
   let cursor = startDeg;
@@ -143,11 +143,10 @@ const ArcGauge: React.FC<{
     return { segStart, segEnd, fill: palette[i % palette.length] };
   });
   return (
-    // Non-full (gauge-arc) case: same tight-viewBox, label-around-cy
-    // approach as GaugeTick (cy-8/cy+12) rather than chasing the arc's own
-    // open ends down to their actual base -- Figma centers the label in
-    // the arc's upper region, with the arc's legs extending past it.
-    <svg viewBox={full ? '0 0 200 200' : '0 0 200 160'} className={styles.gaugeSvg}>
+    // Same tight-viewBox, label-around-cy approach as GaugeTick (cy-8/
+    // cy+12) -- Figma centers the label in the arc's upper region, with
+    // the arc's legs extending past it, not framing it from below.
+    <svg viewBox="0 0 200 160" className={styles.gaugeSvg}>
       {segments.map((s, i) => (
         <Sector key={i} cx={cx} cy={cy} innerRadius={innerR} outerRadius={outerR} startAngle={s.segStart} endAngle={s.segEnd} fill={s.fill} cornerRadius={4} />
       ))}
@@ -156,8 +155,8 @@ const ArcGauge: React.FC<{
       )}
       {(centerValue || centerCaption) && (
         <g textAnchor="middle" fontFamily="var(--font-sans)">
-          {centerValue && <text x={cx} y={cy - 8} fontSize={full ? 26 : 22} fontWeight={500} fill={cssVar('--color-fg-default') ?? '#141414'}>{centerValue}</text>}
-          {centerCaption && <text x={cx} y={cy + 12} fontSize={full ? 13 : 12} fill={cssVar('--color-fg-muted') ?? '#78716a'}>{centerCaption}</text>}
+          {centerValue && <text x={cx} y={cy - 8} fontSize={22} fontWeight={500} fill={cssVar('--color-fg-default') ?? '#141414'}>{centerValue}</text>}
+          {centerCaption && <text x={cx} y={cy + 12} fontSize={12} fill={cssVar('--color-fg-muted') ?? '#78716a'}>{centerCaption}</text>}
         </g>
       )}
     </svg>
@@ -196,7 +195,6 @@ export const RadialChart: React.FC<RadialChartProps> = ({
           data={data}
           palette={palette}
           track={track}
-          full={variant === 'stacked-3-layers'}
           centerValue={centerValue}
           centerCaption={centerCaption}
         />
