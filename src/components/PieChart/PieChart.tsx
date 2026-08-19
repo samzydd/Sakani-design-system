@@ -96,7 +96,7 @@ export const PieChart: React.FC<PieChartProps> = ({
     const { cx, cy, innerRadius: ir, outerRadius: or_, startAngle, endAngle, fill, index, midAngle } = props;
     const isActive = index === activeIdx;
     const angle = midAngle ?? (startAngle + endAngle) / 2;
-    const offset = isActive && hasExplode ? 8 : 0;
+    const offset = isActive && hasExplode ? 18 : 0;
     const ox = cx + offset * Math.cos(-angle * RAD);
     const oy = cy + offset * Math.sin(-angle * RAD);
     return (
