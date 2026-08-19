@@ -1,5 +1,6 @@
 /* RadarChart.module.css — Geist on SVG text. */
 .chart {
+  position: relative;
   width: 100%;
   font-family: var(--font-sans);
 }
@@ -8,4 +9,18 @@
 }
 .chart :global(.recharts-surface) {
   overflow: visible;
+}
+
+/* "circle-grid-filled"'s radial-gradient backdrop -- centered, sized off
+   height (the shorter dimension in these wide chart cards), matching
+   Recharts' own outerRadius="70%" convention on the real chart above it. */
+.circleFill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 70%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
 }

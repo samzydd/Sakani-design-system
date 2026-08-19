@@ -9,17 +9,25 @@
  *   lines-only          — two series, stroke only (no fill), no dots
  *   circle-grid         — circular grid instead of polygon
  *   circle-grid-no-lines — circular grid, no radial spoke lines
+ *   grid-custom         — boundary-only grid, same treatment as "default"
+ *   grid-filled         — polygon grid, alternating filled concentric bands
+ *   circle-grid-filled  — same, circular bands instead of polygon
  *   multiple            — two series overlaid, semi-transparent fills
  *   custom-label        — two series, vertex labels replaced by a
  *                          "value/value2" + category name block
  *
- * Not ported: Figma's alternating-filled-ring grid and the soft blurred
- * glow behind one mockup ("Variant12") -- both are decorative embellishments
- * on top of the same underlying shape rather than a structurally different
- * chart, so (consistent with e.g. RadialChart's un-ported gauge micro-styling)
- * they're left as a polish item rather than a hand-rolled SVG port. Recharts'
- * native RadarChart/PolarGrid/Radar map directly onto everything else here,
- * so this stays a thin wrapper.
+ * Not ported: the soft blurred glow behind one mockup ("Variant12") -- a
+ * decorative embellishment on top of the same underlying shape rather than
+ * a structurally different chart.
+ *
+ * grid-filled/circle-grid-filled's alternating bands aren't something
+ * PolarGrid can do (it only strokes rings, never fills them) -- built as
+ * extra low-opacity `<Radar>` series at fixed fractions of the data's max
+ * value instead of a hand-rolled overlay, so they automatically share the
+ * exact same polygon/circle geometry, center, and radius as the real data
+ * series with no separate coordinate math. Stacking N same-color
+ * semi-transparent layers at decreasing size is also what gives the "more
+ * saturated toward center" look for free, via ordinary alpha compositing.
  */
 
 import React from 'react';
@@ -33,7 +41,8 @@ import styles from './RadarChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
 export type RadarChartVariant =
-  | 'default' | 'dots' | 'lines-only' | 'circle-grid' | 'circle-grid-no-lines' | 'multiple' | 'custom-label';
+  | 'default' | 'dots' | 'lines-only' | 'circle-grid' | 'circle-grid-no-lines'
+  | 'grid-custom' | 'grid-filled' | 'circle-grid-filled' | 'multiple' | 'custom-label';
 
 export interface RadarDatum {
   label: string;
@@ -57,9 +66,22 @@ const cssVar = (name: string) =>
     ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
     : undefined;
 
-const CIRCLE_GRID = new Set<RadarChartVariant>(['circle-grid', 'circle-grid-no-lines']);
+const CIRCLE_GRID = new Set<RadarChartVariant>(['circle-grid', 'circle-grid-no-lines', 'circle-grid-filled']);
+// "Boundary only" grid variants -- no inner concentric rings, no spokes.
+const MINIMAL_GRID = new Set<RadarChartVariant>(['default', 'grid-custom']);
+// "grid-filled"'s bands follow the polygon's own vertex directions, so
+// they're built from stacked `<Radar>` series (see the module doc
+// comment). "circle-grid-filled" wants smooth round bands instead, which
+// `<Radar>` can't draw -- a CSS radial-gradient backdrop does that job
+// directly, no synthetic series needed.
+const FILLED_GRID = new Set<RadarChartVariant>(['grid-filled']);
+const isCircleFilled = (v: RadarChartVariant) => v === 'circle-grid-filled';
 // These variants' shape has no stroke around it in Figma -- just the fill.
-const NO_STROKE = new Set<RadarChartVariant>(['default', 'dots', 'circle-grid', 'circle-grid-no-lines', 'multiple', 'custom-label']);
+const NO_STROKE = new Set<RadarChartVariant>([
+  'default', 'dots', 'circle-grid', 'circle-grid-no-lines', 'multiple', 'custom-label',
+  'grid-custom', 'grid-filled', 'circle-grid-filled',
+]);
+const RING_LEVELS = [1, 0.8, 0.6, 0.4, 0.2];
 
 export const RadarChart: React.FC<RadarChartProps> = ({
   data, variant = 'default', size = 'md', seriesLabels = ['Value', 'Value 2'], className,
@@ -82,6 +104,22 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   const showSecondSeries = isMultiple || variant === 'custom-label' || isLinesOnly;
   const showFill = !isLinesOnly;
   const showDots = variant === 'dots';
+  const isFilledGrid = FILLED_GRID.has(variant);
+  const isMinimalGrid = MINIMAL_GRID.has(variant);
+
+  // grid-filled/circle-grid-filled: augment the shared dataset with N extra
+  // fields, each a fixed fraction of the real data's max value, so a
+  // background `<Radar>` per level can reuse the exact same geometry as
+  // the real series (see the module doc comment for why).
+  const chartData = React.useMemo(() => {
+    if (!isFilledGrid) return data;
+    const maxValue = Math.max(1, ...data.flatMap((d) => [d.value, d.value2 ?? 0]));
+    return data.map((d) => {
+      const rings: Record<string, number> = {};
+      RING_LEVELS.forEach((lvl, i) => { rings[`ring${i}`] = lvl * maxValue; });
+      return { ...d, ...rings };
+    });
+  }, [data, isFilledGrid]);
 
   // "custom-label" replaces the plain category tick with a two-line block:
   // bold "value/value2" on top, the category name muted underneath --
@@ -141,13 +179,29 @@ export const RadarChart: React.FC<RadarChartProps> = ({
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
+      {/* "circle-grid-filled": a CSS radial-gradient standing in for
+          concentric filled circles -- matches Recharts' own outerRadius="70%"
+          convention by sizing off the container's own (fixed) height, the
+          shorter dimension in these typically-wide chart cards. */}
+      {isCircleFilled(variant) && (
+        <div
+          className={styles.circleFill}
+          style={{ background: `radial-gradient(circle, ${chart2}66 0%, ${chart2}00 70%)` }}
+        />
+      )}
       <ResponsiveContainer width="100%" height={heights[size]}>
-        <ReRadarChart data={data} outerRadius="70%">
-          <PolarGrid
-            gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
-            radialLines={variant !== 'circle-grid-no-lines' && variant !== 'default'}
-            stroke={grid}
-          />
+        <ReRadarChart data={chartData} outerRadius="70%">
+          {/* grid-filled/circle-grid-filled skip PolarGrid's stroked rings
+              entirely -- the filled bands are the "grid" there, and stroke
+              lines on top of them would just compete visually (Figma's
+              reference has none). */}
+          {!isFilledGrid && !isCircleFilled(variant) && (
+            <PolarGrid
+              gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
+              radialLines={variant !== 'circle-grid-no-lines' && !isMinimalGrid}
+              stroke={grid}
+            />
+          )}
           {/* `stroke` on PolarAngleAxis colors its own outer boundary
               polygon (axisLine), not just the tick text -- left at its
               default it drew a second, fg-muted-colored hexagon directly
@@ -163,9 +217,20 @@ export const RadarChart: React.FC<RadarChartProps> = ({
               rings, no radial spokes. tickCount=2 on a [0, max] domain
               collapses PolarGrid's auto-generated rings down to just the
               zero-radius point and the outer one. */}
-          <PolarRadiusAxis tick={false} axisLine={false} tickCount={variant === 'default' ? 2 : undefined} />
+          <PolarRadiusAxis tick={false} axisLine={false} tickCount={isMinimalGrid ? 2 : undefined} />
           <Tooltip content={<ChartTooltip />} />
           {isMultiple && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
+          {isFilledGrid && RING_LEVELS.map((_, i) => (
+            <Radar
+              key={`ring${i}`}
+              dataKey={`ring${i}`}
+              stroke="none"
+              fill={chart2}
+              fillOpacity={0.1}
+              isAnimationActive={false}
+              legendType="none"
+            />
+          ))}
           {/* "default"/"dots"/"circle-grid"(-no-lines): Figma's shape has
               no stroke at all around it, just the fill -- "default" is
               also fully opaque (every other variant here keeps the
@@ -178,7 +243,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
             dataKey="value"
             stroke={NO_STROKE.has(variant) ? 'none' : chart2}
             fill={showFill ? chart2 : 'none'}
-            fillOpacity={showFill ? (variant === 'default' ? 1 : showSecondSeries ? 0.45 : 0.5) : 0}
+            fillOpacity={showFill ? (isMinimalGrid ? 1 : showSecondSeries ? 0.45 : 0.5) : 0}
             strokeWidth={NO_STROKE.has(variant) ? 0 : 2}
             // Recharts' dot markers default to the parent Radar's own
             // stroke color -- with that set to "none" above, plain

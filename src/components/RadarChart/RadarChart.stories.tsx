@@ -26,7 +26,10 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'dots', 'lines-only', 'circle-grid', 'circle-grid-no-lines', 'multiple', 'custom-label'],
+      options: [
+        'default', 'dots', 'lines-only', 'circle-grid', 'circle-grid-no-lines',
+        'grid-custom', 'grid-filled', 'circle-grid-filled', 'multiple', 'custom-label',
+      ],
     },
     size: { control: 'select', options: ['sm', 'md', 'lg', 'xl'] },
   },
@@ -42,6 +45,9 @@ export const Dots: Story = { args: { variant: 'dots' } };
 export const LinesOnly: Story = { args: { variant: 'lines-only', data: multiData } };
 export const CircleGrid: Story = { args: { variant: 'circle-grid' } };
 export const CircleGridNoLines: Story = { args: { variant: 'circle-grid-no-lines' } };
+export const GridCustom: Story = { args: { variant: 'grid-custom' } };
+export const GridFilled: Story = { args: { variant: 'grid-filled' } };
+export const CircleGridFilled: Story = { args: { variant: 'circle-grid-filled' } };
 export const Multiple: Story = {
   args: { variant: 'multiple', data: multiData, seriesLabels: ['Revenue', 'Costs'] },
 };
