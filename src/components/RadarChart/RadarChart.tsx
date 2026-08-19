@@ -85,26 +85,28 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   // bold "value/value2" on top, the category name muted underneath --
   // there's no separate axis label or grid in Figma's reference, just this.
   const renderVertexTick = (props: any) => {
-    const { x, y, cx, cy, payload } = props;
+    const { x, y, cx, cy, payload, textAnchor } = props;
     const row = data.find((d) => d.label === payload?.value) ?? data[payload?.index];
     if (!row) return <g />;
-    // Recharts' default tick position sits only ~8px past the hexagon's
-    // own vertex -- enough for a single short category word, not this
-    // two-line value+category block, which was overlapping the grid/shape.
-    // Push it further out along the same cx/cy -> x/y ray instead.
+    // Recharts' default tick position sits right at the hexagon's own
+    // vertex -- push it out 4px along the same cx/cy -> x/y ray for a
+    // clear gap from the grid line. Using Recharts' own computed
+    // `textAnchor` (not a hardcoded "middle") is what right-aligns the
+    // group at right-side vertices and left-aligns it at left-side ones,
+    // matching Figma -- top/bottom vertices already resolve to "middle".
     const dx = x - cx;
     const dy = y - cy;
     const len = Math.sqrt(dx * dx + dy * dy) || 1;
-    const offset = 16;
+    const offset = 4;
     const lx = x + (dx / len) * offset;
     const ly = y + (dy / len) * offset;
     const combined = row.value2 !== undefined ? `${row.value}/${row.value2}` : `${row.value}`;
     return (
       <g>
-        <text x={lx} y={ly - 8} textAnchor="middle" fill={fgDefault} fontSize={15} fontWeight={600} fontFamily="var(--font-sans)">
+        <text x={lx} y={ly - 8} textAnchor={textAnchor} fill={fgDefault} fontSize={15} fontWeight={600} fontFamily="var(--font-sans)">
           {combined}
         </text>
-        <text x={lx} y={ly + 12} textAnchor="middle" fill={axis} fontSize={13} fontFamily="var(--font-sans)">
+        <text x={lx} y={ly + 12} textAnchor={textAnchor} fill={axis} fontSize={13} fontFamily="var(--font-sans)">
           {row.label}
         </text>
       </g>
