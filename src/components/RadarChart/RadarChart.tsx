@@ -1,0 +1,131 @@
+/**
+ * RadarChart
+ *
+ * Recharts wrapper styled with Sakani chart tokens. Matches Figma's "Radar
+ * charts" component set:
+ *
+ *   default             — solid filled area, polygon grid, no dots
+ *   dots                — filled area + dot markers at each data point
+ *   lines-only          — stroke only (no fill), dots
+ *   circle-grid         — circular grid instead of polygon
+ *   circle-grid-no-lines — circular grid, no radial spoke lines
+ *   multiple            — two series overlaid, semi-transparent fills
+ *   custom-label        — filled area + the raw value shown at each vertex
+ *
+ * Not ported: Figma's alternating-filled-ring grid and the soft blurred
+ * glow behind one mockup ("Variant12") -- both are decorative embellishments
+ * on top of the same underlying shape rather than a structurally different
+ * chart, so (consistent with e.g. RadialChart's un-ported gauge micro-styling)
+ * they're left as a polish item rather than a hand-rolled SVG port. Recharts'
+ * native RadarChart/PolarGrid/Radar map directly onto everything else here,
+ * so this stays a thin wrapper.
+ */
+
+import React from 'react';
+import {
+  RadarChart as ReRadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+  ResponsiveContainer, Tooltip, Legend,
+} from 'recharts';
+import { useThemeTick } from '../../lib/useThemeTick';
+import { ChartTooltip } from '../../lib/ChartTooltip';
+import styles from './RadarChart.module.css';
+
+export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
+export type RadarChartVariant =
+  | 'default' | 'dots' | 'lines-only' | 'circle-grid' | 'circle-grid-no-lines' | 'multiple' | 'custom-label';
+
+export interface RadarDatum {
+  label: string;
+  value: number;
+  /** Second series (variant="multiple"). */
+  value2?: number;
+}
+
+export interface RadarChartProps {
+  data: RadarDatum[];
+  variant?: RadarChartVariant;
+  size?: ChartSize;
+  /** Legend labels for `value` / `value2`, shown for "multiple". */
+  seriesLabels?: [string, string?];
+  className?: string;
+}
+
+const heights: Record<ChartSize, number> = { sm: 200, md: 260, lg: 340, xl: 420 };
+const cssVar = (name: string) =>
+  typeof window !== 'undefined'
+    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
+    : undefined;
+
+const CIRCLE_GRID = new Set<RadarChartVariant>(['circle-grid', 'circle-grid-no-lines']);
+
+export const RadarChart: React.FC<RadarChartProps> = ({
+  data, variant = 'default', size = 'md', seriesLabels = ['Value', 'Value 2'], className,
+}) => {
+  useThemeTick();
+  const chart1 = cssVar('--color-chart-1') ?? '#ff4700';
+  const chart2 = cssVar('--color-chart-2') ?? '#5b92dd';
+  const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
+  const axis = cssVar('--color-fg-muted') ?? '#6b6375';
+  const fgDefault = cssVar('--color-fg-default') ?? '#141414';
+  const isMultiple = variant === 'multiple';
+  const showFill = variant !== 'lines-only';
+  const showDots = variant === 'dots' || variant === 'lines-only' || isMultiple;
+
+  // Radar's `label` prop is routed through a Cartesian LabelList context,
+  // not the {cx, cy, index, ...} shape Pie's label gets -- it only ever
+  // hands back {x, y, value} for a degenerate zero-size box at the vertex,
+  // with no chart center to compute an outward radial offset from. A fixed
+  // upward nudge is what "position: top" would do anyway, and reads fine
+  // regardless of which side of the shape the vertex is on.
+  const renderVertexLabel = (props: any) => {
+    const { x, y, value } = props;
+    return (
+      <text x={x} y={y - 10} textAnchor="middle" fill={fgDefault} fontSize={12} fontWeight={500} fontFamily="var(--font-sans)">
+        {value}
+      </text>
+    );
+  };
+
+  return (
+    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
+      <ResponsiveContainer width="100%" height={heights[size]}>
+        <ReRadarChart data={data} outerRadius="70%">
+          <PolarGrid
+            gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
+            radialLines={variant !== 'circle-grid-no-lines'}
+            stroke={grid}
+          />
+          <PolarAngleAxis dataKey="label" stroke={axis} tick={{ fill: axis, fontSize: 12, fontFamily: 'var(--font-sans)' }} />
+          <PolarRadiusAxis tick={false} axisLine={false} />
+          <Tooltip content={<ChartTooltip />} />
+          {isMultiple && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
+          {isMultiple && (
+            <Radar
+              name={seriesLabels[1] ?? 'Value 2'}
+              dataKey="value2"
+              stroke={chart1}
+              fill={chart1}
+              fillOpacity={0.25}
+              strokeWidth={2}
+              dot={showDots}
+              isAnimationActive={false}
+            />
+          )}
+          <Radar
+            name={isMultiple ? (seriesLabels[0] ?? 'Value') : undefined}
+            dataKey="value"
+            stroke={chart2}
+            fill={showFill ? chart2 : 'none'}
+            fillOpacity={showFill ? (isMultiple ? 0.25 : 0.5) : 0}
+            strokeWidth={2}
+            dot={showDots}
+            isAnimationActive={false}
+            label={variant === 'custom-label' ? renderVertexLabel : undefined}
+          />
+        </ReRadarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
+
+export default RadarChart;

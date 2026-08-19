@@ -51,6 +51,8 @@ export { PieChart } from './components/PieChart';
 export type { PieChartProps, PieDatum, PieChartVariant } from './components/PieChart';
 export * from './components/Popover';
 export * from './components/Progress';
+export { RadarChart } from './components/RadarChart';
+export type { RadarChartProps, RadarDatum, RadarChartVariant } from './components/RadarChart';
 export { RadialChart } from './components/RadialChart';
 export type { RadialChartProps, RadialDatum, RadialChartVariant } from './components/RadialChart';
 export * from './components/Radio';
