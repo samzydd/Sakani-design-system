@@ -12,7 +12,7 @@
  *   donut               — plain ring, no labels
  *   donut-active        — ring with one slice pushed outward ("exploded")
  *   donut-with-text     — ring + center value/caption
- *   stacked             — ring + center value/caption + one exploded slice
+ *   stacked             — two concentric rings, same data, same colors
  *   interactive         — ring + a halo ring bracketing one slice
  *
  * No variant has an angular gap between slices (Figma's slices always
@@ -44,8 +44,7 @@ export interface PieChartProps {
   data: PieDatum[];
   variant?: PieChartVariant;
   size?: ChartSize;
-  /** Big number shown in the center. Only rendered for "donut-with-text"
-   * and "stacked" (both have a hole to put it in). */
+  /** Big number shown in the center. Only rendered for "donut-with-text". */
   centerValue?: string;
   centerCaption?: string;
   className?: string;
@@ -62,10 +61,10 @@ const cssVar = (name: string) =>
     ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
     : undefined;
 
-const HAS_HOLE = new Set<PieChartVariant>(['donut', 'donut-active', 'donut-with-text', 'stacked', 'interactive']);
-const HAS_EXPLODE = new Set<PieChartVariant>(['donut-active', 'stacked']);
+const HAS_HOLE = new Set<PieChartVariant>(['donut', 'donut-active', 'donut-with-text', 'interactive']);
+const HAS_EXPLODE = new Set<PieChartVariant>(['donut-active']);
 const HAS_HALO = new Set<PieChartVariant>(['interactive']);
-const HAS_CENTER = new Set<PieChartVariant>(['donut-with-text', 'stacked']);
+const HAS_CENTER = new Set<PieChartVariant>(['donut-with-text']);
 const RAD = Math.PI / 180;
 
 export const PieChart: React.FC<PieChartProps> = ({
@@ -93,15 +92,18 @@ export const PieChart: React.FC<PieChartProps> = ({
   const activeIdx = hoverIdx ?? ((hasExplode || hasHalo) ? 0 : undefined);
 
   const renderSector = (props: any) => {
-    const { cx, cy, innerRadius: ir, outerRadius: or_, startAngle, endAngle, fill, index, midAngle } = props;
+    const { cx, cy, innerRadius: ir, outerRadius: or_, startAngle, endAngle, fill, index } = props;
     const isActive = index === activeIdx;
-    const angle = midAngle ?? (startAngle + endAngle) / 2;
-    const offset = isActive && hasExplode ? 8 : 0;
-    const ox = cx + offset * Math.cos(-angle * RAD);
-    const oy = cy + offset * Math.sin(-angle * RAD);
+    // Grow the active slice's own outer radius instead of translating the
+    // whole sector outward -- translating keeps its start/end angles fixed
+    // but moves its center away from cx/cy, which pulls it out of contact
+    // with its neighbors on both sides and leaves a wedge of empty space.
+    // Growing in place keeps it flush against its neighbors; only the
+    // outer edge pokes out further than the rest of the ring.
+    const growth = isActive && hasExplode ? 16 : 0;
     return (
       <g>
-        <Sector cx={ox} cy={oy} innerRadius={ir} outerRadius={or_} startAngle={startAngle} endAngle={endAngle} fill={fill} />
+        <Sector cx={cx} cy={cy} innerRadius={ir} outerRadius={or_ + growth} startAngle={startAngle} endAngle={endAngle} fill={fill} />
         {isActive && hasHalo && (
           <Sector
             cx={cx} cy={cy}
@@ -155,22 +157,15 @@ export const PieChart: React.FC<PieChartProps> = ({
     );
   };
 
-  // "custom label": same leader-line anchor, but the value sits in a
-  // filled pill matching the slice's own color instead of plain text.
+  // "custom label": unlike "label", there's no leader line at all -- just
+  // larger, bolder plain text sitting close to the slice's own edge, at
+  // Recharts' own default outside-label position.
   const renderCustomLabel = (props: any) => {
-    const { value, fill } = props;
-    const { d, endX, endY, textAnchor } = leaderPath(props);
-    const text = String(value);
-    const w = Math.max(28, text.length * 7 + 14);
-    const rectX = textAnchor === 'end' ? endX - w : endX;
+    const { x, y, textAnchor, value } = props;
     return (
-      <g>
-        <path d={d} fill="none" stroke={borderColor} strokeWidth={1} />
-        <rect x={rectX} y={endY - 10} width={w} height={20} rx={10} fill={fill} />
-        <text x={rectX + w / 2} y={endY} textAnchor="middle" dominantBaseline="central" fill="#fff" fontSize={11} fontWeight={500} fontFamily="var(--font-sans)">
-          {text}
-        </text>
-      </g>
+      <text x={x} y={y} textAnchor={textAnchor} dominantBaseline="central" fill={fgDefault} fontSize={20} fontWeight={400} fontFamily="var(--font-sans)">
+        {value}
+      </text>
     );
   };
 
@@ -185,6 +180,58 @@ export const PieChart: React.FC<PieChartProps> = ({
       </text>
     );
   };
+
+  // "stacked": not a single ring at all -- an outer thin donut ring plus a
+  // separate inner full pie (no hole, no separator), sharing the same
+  // data/colors. Not the single-ring + exploded-slice shape every other
+  // variant here uses, so it's handled as its own branch rather than
+  // folded into the shared shape/label plumbing below.
+  if (variant === 'stacked') {
+    const ringFillOpacity = (i: number) => (hoverIdx !== undefined && hoverIdx !== i ? 0.45 : 1);
+    return (
+      <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <RePieChart>
+            <Pie
+              data={data}
+              dataKey="value"
+              nameKey="label"
+              innerRadius={d.outer * 0.82}
+              outerRadius={d.outer}
+              paddingAngle={0}
+              stroke="none"
+              isAnimationActive={false}
+              onMouseEnter={(_, i) => setHoverIdx(i)}
+              onMouseLeave={() => setHoverIdx(undefined)}
+            >
+              {data.map((_, i) => (
+                <Cell key={i} fill={palette[i % palette.length]} fillOpacity={ringFillOpacity(i)} />
+              ))}
+            </Pie>
+            {/* Inner shape is a full pie (no hole), matching "pie-no-separator"
+                -- not a second donut ring. */}
+            <Pie
+              data={data}
+              dataKey="value"
+              nameKey="label"
+              innerRadius={0}
+              outerRadius={d.outer * 0.62}
+              paddingAngle={0}
+              stroke="none"
+              isAnimationActive={false}
+              onMouseEnter={(_, i) => setHoverIdx(i)}
+              onMouseLeave={() => setHoverIdx(undefined)}
+            >
+              {data.map((_, i) => (
+                <Cell key={i} fill={palette[i % palette.length]} fillOpacity={ringFillOpacity(i)} />
+              ))}
+            </Pie>
+            <Tooltip content={<ChartTooltip />} />
+          </RePieChart>
+        </ResponsiveContainer>
+      </div>
+    );
+  }
 
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>

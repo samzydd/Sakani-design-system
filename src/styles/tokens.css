@@ -209,6 +209,11 @@
   --transition-base: var(--motion-base) var(--ease-in-out);
   --transition-fast: var(--motion-fast) var(--ease-in-out);
   --transition-slow: var(--motion-slow) var(--ease-in-out);
+  /* Hover-triggered motion specifically: ease-in-out's steep middle
+     acceleration (see --ease-in-out above) reads as a snap for a response
+     to the cursor arriving -- ease-out's immediate-then-settling curve
+     feels like the natural way something "catches up" to a hover instead. */
+  --transition-hover: var(--motion-slow) var(--ease-out);
 }
 
 /* Base font — everything using `font-family: inherit` resolves through here. */

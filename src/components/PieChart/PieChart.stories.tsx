@@ -37,9 +37,7 @@ export const DonutActive: Story = { args: { variant: 'donut-active' } };
 export const DonutWithText: Story = {
   args: { variant: 'donut-with-text', centerValue: '2,230', centerCaption: 'Users' },
 };
-export const Stacked: Story = {
-  args: { variant: 'stacked', centerValue: '2,230', centerCaption: 'Users' },
-};
+export const Stacked: Story = { args: { variant: 'stacked' } };
 export const Interactive: Story = { args: { variant: 'interactive' } };
 export const Large: Story = { args: { size: 'lg', variant: 'donut-with-text', centerValue: '2,230', centerCaption: 'Users' } };
 export const DarkMode: Story = {
