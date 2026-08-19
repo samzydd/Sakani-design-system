@@ -181,11 +181,11 @@ export const PieChart: React.FC<PieChartProps> = ({
     );
   };
 
-  // "stacked": not a single ring at all -- two concentric rings sharing
-  // the same data/colors (an outer thin ring, a gap, then a thicker inner
-  // ring), not the single-ring + exploded-slice shape every other variant
-  // here uses. Handled as its own branch rather than folded into the
-  // shared shape/label plumbing below, which doesn't apply to it.
+  // "stacked": not a single ring at all -- an outer thin donut ring plus a
+  // separate inner full pie (no hole, no separator), sharing the same
+  // data/colors. Not the single-ring + exploded-slice shape every other
+  // variant here uses, so it's handled as its own branch rather than
+  // folded into the shared shape/label plumbing below.
   if (variant === 'stacked') {
     const ringFillOpacity = (i: number) => (hoverIdx !== undefined && hoverIdx !== i ? 0.45 : 1);
     return (
@@ -208,11 +208,13 @@ export const PieChart: React.FC<PieChartProps> = ({
                 <Cell key={i} fill={palette[i % palette.length]} fillOpacity={ringFillOpacity(i)} />
               ))}
             </Pie>
+            {/* Inner shape is a full pie (no hole), matching "pie-no-separator"
+                -- not a second donut ring. */}
             <Pie
               data={data}
               dataKey="value"
               nameKey="label"
-              innerRadius={d.outer * 0.22}
+              innerRadius={0}
               outerRadius={d.outer * 0.62}
               paddingAngle={0}
               stroke="none"
