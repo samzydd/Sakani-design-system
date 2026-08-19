@@ -21,9 +21,11 @@
    makes the grow-out/shrink-back read as smooth motion instead of a pop;
    modern browsers interpolate `d` natively as long as the path's command
    structure matches between frames, which it does here (same arc command
-   sequence, just a different radius). */
+   sequence, just a different radius). Ease-out (not the symmetric
+   --transition-slow) so the growth settles into place after the cursor
+   arrives, rather than reading as a snap. */
 .chart :global(.recharts-sector) {
-  transition: fill var(--transition-slow), fill-opacity var(--transition-slow), d var(--transition-slow);
+  transition: fill var(--transition-hover), fill-opacity var(--transition-hover), d var(--transition-hover);
 }
 .center {
   position: absolute;

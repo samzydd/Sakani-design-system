@@ -17,8 +17,10 @@
 
 /* Hover recolor/dim happens by React re-rendering fill/fill-opacity
    attributes, which snap instantly with no CSS transition rule in place --
-   this makes that change animate smoothly instead, matching the same
-   flow-like easing used everywhere else in the system. */
+   this makes that change animate smoothly instead. Ease-out (not the
+   symmetric --transition-slow) since hover motion should feel like it's
+   settling into place after the cursor arrives, not snapping through an
+   accelerate-then-decelerate curve. */
 .chart :global(.recharts-rectangle) {
-  transition: fill var(--transition-slow), fill-opacity var(--transition-slow);
+  transition: fill var(--transition-hover), fill-opacity var(--transition-hover);
 }

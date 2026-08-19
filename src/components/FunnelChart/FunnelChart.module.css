@@ -10,8 +10,10 @@
 }
 
 .segment { cursor: pointer; }
+/* Ease-out (not the symmetric --transition-slow) so the hover dim settles
+   into place after the cursor arrives, rather than reading as a snap. */
 .segment path {
-  transition: fill-opacity var(--transition-slow);
+  transition: fill-opacity var(--transition-hover);
 }
 
 .pctLabel {

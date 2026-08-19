@@ -18,8 +18,8 @@
 
 /* The active dot appears/repositions on hover with no CSS transition rule
    in place -- this makes its fill and radius ease in smoothly instead of
-   snapping, matching the same flow-like easing used everywhere else in
-   the system. */
+   snapping. Ease-out (not the symmetric --transition-slow) so it settles
+   into place after the cursor arrives, rather than reading as a snap. */
 .chart :global(.recharts-active-dot) {
-  transition: r var(--transition-slow), fill var(--transition-slow), opacity var(--transition-slow);
+  transition: r var(--transition-hover), fill var(--transition-hover), opacity var(--transition-hover);
 }
