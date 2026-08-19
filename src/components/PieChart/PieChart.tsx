@@ -142,12 +142,12 @@ export const PieChart: React.FC<PieChartProps> = ({
   };
 
   const renderOutsideLabel = (props: any) => {
-    const { value } = props;
+    const { value, fill } = props;
     const { d, endX, endY, textAnchor } = leaderPath(props);
     const tx = endX + (textAnchor === 'start' ? 4 : -4);
     return (
       <g>
-        <path d={d} fill="none" stroke={borderColor} strokeWidth={1} />
+        <path d={d} fill="none" stroke={fill} strokeWidth={1} />
         <text x={tx} y={endY} textAnchor={textAnchor} dominantBaseline="central" fill={fgDefault} fontSize={12} fontFamily="var(--font-sans)">
           {value}
         </text>
