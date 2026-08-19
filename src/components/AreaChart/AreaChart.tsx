@@ -78,6 +78,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
           <Tooltip
             cursor={{ stroke: cssVar('--color-border-default') ?? '#d6d3ce', strokeWidth: 1 }}
             content={<ChartTooltip />}
+            wrapperStyle={{ marginTop: -8, marginLeft: -8, zIndex: 50 }}
           />
           {hasSecondSeries && (
             <Area

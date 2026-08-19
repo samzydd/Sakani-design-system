@@ -117,6 +117,7 @@ export const LineChart: React.FC<LineChartProps> = ({
           <Tooltip
             cursor={{ stroke: cssVar('--color-border-default') ?? '#d6d3ce', strokeWidth: 1 }}
             content={<ChartTooltip />}
+            wrapperStyle={{ marginTop: -8, marginLeft: -8, zIndex: 50 }}
           />
           {showLegend && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
           {series.map((key, i) => {

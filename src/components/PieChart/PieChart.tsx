@@ -224,7 +224,7 @@ export const PieChart: React.FC<PieChartProps> = ({
                 <Cell key={i} fill={palette[i % palette.length]} fillOpacity={ringFillOpacity(i)} />
               ))}
             </Pie>
-            <Tooltip content={<ChartTooltip />} />
+            <Tooltip content={<ChartTooltip />} wrapperStyle={{ marginTop: -8, marginLeft: -8, zIndex: 50 }} />
           </RePieChart>
         </ResponsiveContainer>
       </div>
