@@ -57,6 +57,13 @@ export const BarChart: React.FC<BarChartProps> = ({
   data, variant = 'default', size = 'md', seriesLabels = ['Value', 'Value 2'], className,
 }) => {
   const [hoverIndex, setHoverIndex] = React.useState<number | null>(null);
+  // Recharts anchors a Bar's tooltip coordinate to the bar's own vertical
+  // *center* (x + width/2, y + height/2), not its top -- fine for a short
+  // bar, but on a tall one the center can sit well below the ring-dot
+  // marker `makeActiveBar` draws at the tip, reading as "too far from the
+  // pointer". Each Bar's onMouseEnter below recomputes that same tip
+  // position and pins the Tooltip there via its `position` prop instead.
+  const [hoverPos, setHoverPos] = React.useState<{ x: number; y: number } | null>(null);
   useThemeTick();
   const chartDefault = cssVar('--color-chart-2') ?? '#2e90fa';
   const chartHover = cssVar('--color-chart-1') ?? '#ff4700';
@@ -71,7 +78,9 @@ export const BarChart: React.FC<BarChartProps> = ({
 
   const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
 
-  const tooltip = <Tooltip cursor={false} content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} />;
+  const tooltip = (
+    <Tooltip cursor={false} content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} position={hoverPos ?? undefined} />
+  );
 
   // Hovering never recolors a bar -- only "active" (the persistent marker
   // bar, unrelated to hover) and "negative" (sign-based) change fill.
@@ -90,18 +99,34 @@ export const BarChart: React.FC<BarChartProps> = ({
   // so this reuses the default Rectangle shape and layers the dot on top,
   // keeping the bar's own resting fill instead of Recharts' default
   // active-bar recolor.
+  const tipTip = (isHorizontal: boolean, x: number, y: number, width: number, height: number, raw: number) => ({
+    x: isHorizontal ? x + width : x + width / 2,
+    y: isHorizontal ? y + height / 2 : raw < 0 ? y + height : y,
+  });
+
   const makeActiveBar = (dataKey: 'value' | 'value2') => (props: any) => {
     const { x, y, width, height, fill, radius } = props;
     const raw = Number(data[props.index]?.[dataKey] ?? 0);
-    const isHorizontal = variant === 'horizontal';
-    const cx = isHorizontal ? x + width : x + width / 2;
-    const cy = isHorizontal ? y + height / 2 : raw < 0 ? y + height : y;
+    const { x: cx, y: cy } = tipTip(variant === 'horizontal', x, y, width, height, raw);
     return (
       <g>
         <Rectangle x={x} y={y} width={width} height={height} fill={fill} radius={radius} />
         <circle cx={cx} cy={cy} r={4} fill={fill} stroke={canvasBg} strokeWidth={1.5} />
       </g>
     );
+  };
+
+  // Same tip position as the dot above, computed from the hovered Bar
+  // entry's own geometry (Recharts passes x/y/width/height directly on the
+  // entry object here) so the Tooltip can be pinned to match via `position`.
+  const handleBarEnter = (dataKey: 'value' | 'value2') => (entry: any, index: number) => {
+    setHoverIndex(index);
+    const raw = Number(data[index]?.[dataKey] ?? 0);
+    setHoverPos(tipTip(variant === 'horizontal', entry.x, entry.y, entry.width, entry.height, raw));
+  };
+  const handleBarLeave = () => {
+    setHoverIndex(null);
+    setHoverPos(null);
   };
 
   return (
@@ -145,8 +170,8 @@ export const BarChart: React.FC<BarChartProps> = ({
                 // Bars (plain single-series Bar wasn't affected).
                 isAnimationActive={false}
                 activeBar={makeActiveBar('value')}
-                onMouseEnter={(_, i) => setHoverIndex(i)}
-                onMouseLeave={() => setHoverIndex(null)}
+                onMouseEnter={handleBarEnter('value')}
+                onMouseLeave={handleBarLeave}
               >
                 {data.map((_, i) => (
                   <Cell key={i} fill={chartDefault} fillOpacity={hoverIndex !== null && i !== hoverIndex ? 0.45 : 1} />
@@ -161,8 +186,8 @@ export const BarChart: React.FC<BarChartProps> = ({
                   radius={variant === 'stacked' ? [CORNER_RADIUS, CORNER_RADIUS, 0, 0] : [CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS]}
                   isAnimationActive={false}
                   activeBar={makeActiveBar('value2')}
-                  onMouseEnter={(_, i) => setHoverIndex(i)}
-                  onMouseLeave={() => setHoverIndex(null)}
+                  onMouseEnter={handleBarEnter('value2')}
+                  onMouseLeave={handleBarLeave}
                 >
                   {data.map((_, i) => (
                     <Cell key={i} fill={chartSecondary} fillOpacity={hoverIndex !== null && i !== hoverIndex ? 0.45 : 1} />
@@ -182,8 +207,8 @@ export const BarChart: React.FC<BarChartProps> = ({
               radius={[CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS, CORNER_RADIUS]}
               isAnimationActive={false}
               activeBar={makeActiveBar('value')}
-              onMouseEnter={(_, i) => setHoverIndex(i)}
-              onMouseLeave={() => setHoverIndex(null)}
+              onMouseEnter={handleBarEnter('value')}
+              onMouseLeave={handleBarLeave}
             >
               {data.map((_, i) => (
                 <Cell key={i} fill={singleSeriesFill(i)} fillOpacity={singleSeriesOpacity(i)} />
