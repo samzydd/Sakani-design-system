@@ -85,16 +85,26 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   // bold "value/value2" on top, the category name muted underneath --
   // there's no separate axis label or grid in Figma's reference, just this.
   const renderVertexTick = (props: any) => {
-    const { x, y, payload } = props;
+    const { x, y, cx, cy, payload } = props;
     const row = data.find((d) => d.label === payload?.value) ?? data[payload?.index];
     if (!row) return <g />;
+    // Recharts' default tick position sits only ~8px past the hexagon's
+    // own vertex -- enough for a single short category word, not this
+    // two-line value+category block, which was overlapping the grid/shape.
+    // Push it further out along the same cx/cy -> x/y ray instead.
+    const dx = x - cx;
+    const dy = y - cy;
+    const len = Math.sqrt(dx * dx + dy * dy) || 1;
+    const offset = 16;
+    const lx = x + (dx / len) * offset;
+    const ly = y + (dy / len) * offset;
     const combined = row.value2 !== undefined ? `${row.value}/${row.value2}` : `${row.value}`;
     return (
       <g>
-        <text x={x} y={y - 8} textAnchor="middle" fill={fgDefault} fontSize={15} fontWeight={600} fontFamily="var(--font-sans)">
+        <text x={lx} y={ly - 8} textAnchor="middle" fill={fgDefault} fontSize={15} fontWeight={600} fontFamily="var(--font-sans)">
           {combined}
         </text>
-        <text x={x} y={y + 12} textAnchor="middle" fill={axis} fontSize={13} fontFamily="var(--font-sans)">
+        <text x={lx} y={ly + 12} textAnchor="middle" fill={axis} fontSize={13} fontFamily="var(--font-sans)">
           {row.label}
         </text>
       </g>
