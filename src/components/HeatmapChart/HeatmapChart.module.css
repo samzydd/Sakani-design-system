@@ -50,6 +50,12 @@
   left: 0;
   top: 0;
   transform: translate(-50%, calc(-100% - 8px));
+  /* Recharts' own tooltip wrapper (used by every other chart in this
+     system, e.g. LineChart) transitions its position on every move instead
+     of snapping -- gliding from one point's coordinate to the next. `left`/
+     `top` are this tooltip's equivalent of that moving coordinate, so they
+     get the same treatment here. */
+  transition: left var(--transition-hover), top var(--transition-hover);
   z-index: 10;
   display: flex;
   flex-direction: column;
