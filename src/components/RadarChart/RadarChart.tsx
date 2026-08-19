@@ -74,7 +74,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   const fgDefault = cssVar('--color-fg-default') ?? '#141414';
   const isMultiple = variant === 'multiple';
   const showFill = variant !== 'lines-only';
-  const showDots = variant === 'dots' || variant === 'lines-only' || isMultiple;
+  const showDots = variant === 'dots' || variant === 'lines-only';
 
   // Radar's `label` prop is routed through a Cartesian LabelList context,
   // not the {cx, cy, index, ...} shape Pie's label gets -- it only ever
@@ -114,29 +114,19 @@ export const RadarChart: React.FC<RadarChartProps> = ({
           <PolarRadiusAxis tick={false} axisLine={false} tickCount={variant === 'default' ? 2 : undefined} />
           <Tooltip content={<ChartTooltip />} />
           {isMultiple && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
-          {isMultiple && (
-            <Radar
-              name={seriesLabels[1] ?? 'Value 2'}
-              dataKey="value2"
-              stroke="none"
-              fill={chart1}
-              fillOpacity={0.25}
-              strokeWidth={0}
-              dot={showDots ? { r: 4, fill: chart1, stroke: 'none' } : false}
-              isAnimationActive={false}
-            />
-          )}
           {/* "default"/"dots"/"circle-grid"(-no-lines): Figma's shape has
               no stroke at all around it, just the fill -- "default" is
               also fully opaque (every other variant here keeps the
               semi-transparent fill + stroke, since they need to show
-              overlapping series or the grid through it). */}
+              overlapping series or the grid through it).
+              Rendered before value2 (Recharts paints children in JSX
+              order, later on top) so the red series sits above blue. */}
           <Radar
             name={isMultiple ? (seriesLabels[0] ?? 'Value') : undefined}
             dataKey="value"
             stroke={NO_STROKE.has(variant) ? 'none' : chart2}
             fill={showFill ? chart2 : 'none'}
-            fillOpacity={showFill ? (variant === 'default' ? 1 : isMultiple ? 0.25 : 0.5) : 0}
+            fillOpacity={showFill ? (variant === 'default' ? 1 : isMultiple ? 0.45 : 0.5) : 0}
             strokeWidth={NO_STROKE.has(variant) ? 0 : 2}
             // Recharts' dot markers default to the parent Radar's own
             // stroke color -- with that set to "none" above, plain
@@ -146,6 +136,18 @@ export const RadarChart: React.FC<RadarChartProps> = ({
             isAnimationActive={false}
             label={variant === 'custom-label' ? renderVertexLabel : undefined}
           />
+          {isMultiple && (
+            <Radar
+              name={seriesLabels[1] ?? 'Value 2'}
+              dataKey="value2"
+              stroke="none"
+              fill={chart1}
+              fillOpacity={0.8}
+              strokeWidth={0}
+              dot={showDots ? { r: 4, fill: chart1, stroke: 'none' } : false}
+              isAnimationActive={false}
+            />
+          )}
         </ReRadarChart>
       </ResponsiveContainer>
     </div>
