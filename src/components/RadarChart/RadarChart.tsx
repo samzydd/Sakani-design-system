@@ -107,7 +107,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   // labels already identify each point; lines-only has no fill to need one).
   const showSecondSeries = isMultiple || variant === 'custom-label' || isLinesOnly;
   const showFill = !isLinesOnly;
-  const showDots = variant === 'dots';
+  const showDots = variant === 'dots' || variant === 'circle-grid';
   const isFilledGrid = FILLED_GRID.has(variant);
   const isMinimalGrid = MINIMAL_GRID.has(variant);
   const circleFilled = isCircleFilled(variant);
