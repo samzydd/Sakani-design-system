@@ -1,6 +1,6 @@
 # Sakani Design System
 
-An open-source, token-driven React component library for SaaS products — **45+ accessible components**, light/dark theming, and a fully documented design system built in Figma.
+An open-source, token-driven React component library for SaaS products — **75+ accessible components**, light/dark theming, and a fully documented design system built in Figma.
 
 **[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/design/Fd3uY263mEQKnaTEfrzQxh/)**
 
@@ -73,7 +73,7 @@ Three layers, defined in Figma and exported to `tokens.css`:
 
 Change a semantic token and every component follows — in both the design file and the code.
 
-## Components (45+)
+## Components (75+)
 
 **Core** — Button · Icon Button · Badge · Label · Divider · Link · Kbd · Spinner · Skeleton · Progress · Tooltip · Avatar · Avatar Group
 
