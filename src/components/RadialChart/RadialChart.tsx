@@ -7,20 +7,25 @@
  *   multi          — one concentric ring per data row, full circle
  *   grid           — "multi" + a faint polar grid (spokes + rings) behind it
  *   text           — one thick ring + center value/caption
- *   shape          — one thin ring + center value/caption
  *   gauge-tick     — a dial built from individual radial tick marks
- *   stacked        — half-circle, 2 nested arcs, value/caption below
- *   stacked-3-layers — half-circle, 3 nested arcs, value/caption below
  *   stacked-label  — "multi" + a center value/caption overlay
+ *   shape          — a single 240° gauge arc, data rows stacked angularly
+ *                    (not concentric), remainder shown as a track
+ *   stacked        — same 240° gauge arc, no track (rows fill it exactly)
+ *   stacked-3-layers — same idea as a full 360° ring instead of a gauge arc
  *
- * `gauge-tick` has no Recharts equivalent (it's ~40 independently-colored
- * tick marks, not a bar/arc shape), so it's a hand-rolled SVG -- same call
- * as HeatmapChart/FunnelChart. Every other variant is RadialBarChart with
- * different angle/radius/track configuration, so those stay thin wrappers.
+ * `gauge-tick` (individual tick marks) and `shape`/`stacked`/
+ * `stacked-3-layers` (angularly-stacked segments in one band) have no
+ * RadialBarChart equivalent -- RadialBarChart only stacks rows as
+ * concentric rings, never as angular segments sharing one ring -- so all
+ * four are hand-rolled SVG using the exported `Sector` primitive, same
+ * call as HeatmapChart/FunnelChart. "multi"/"grid"/"text"/"stacked-label"
+ * are genuine concentric-ring cases, so those stay thin RadialBarChart
+ * wrappers.
  */
 
 import React from 'react';
-import { RadialBarChart, RadialBar, Cell, ResponsiveContainer, PolarAngleAxis } from 'recharts';
+import { RadialBarChart, RadialBar, Cell, Sector, ResponsiveContainer, PolarAngleAxis } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
 import styles from './RadialChart.module.css';
 
@@ -45,23 +50,15 @@ const cssVar = (name: string) =>
     ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
     : undefined;
 
-const HALF_CIRCLE = new Set<RadialChartVariant>(['stacked', 'stacked-3-layers']);
 const RAD = Math.PI / 180;
 
-// Per-variant [innerRadius%, outerRadius%] of the chart's own max radius.
-// "multi"/"grid"/"stacked-label" divide this band evenly across N rings
-// automatically; "text"/"shape"/half-circle variants have a fixed single
-// (or fixed-count) band instead, since reusing "multi"'s 30%-100% band for
-// a single ring made it comically thick.
-const RADIUS_BAND: Record<RadialChartVariant, [string, string]> = {
+// [innerRadius%, outerRadius%] of the chart's own max radius, for the
+// RadialBarChart-backed ring variants only.
+const RADIUS_BAND: Partial<Record<RadialChartVariant, [string, string]>> = {
   multi: ['30%', '100%'],
   grid: ['30%', '100%'],
   'stacked-label': ['30%', '100%'],
   text: ['76%', '100%'],
-  shape: ['86%', '100%'],
-  stacked: ['45%', '88%'],
-  'stacked-3-layers': ['45%', '88%'],
-  'gauge-tick': ['0%', '0%'],
 };
 
 const GaugeTick: React.FC<{ value: number; max: number; color: string; track: string; centerValue?: string; centerCaption?: string }> = ({
@@ -117,6 +114,48 @@ const PolarGrid: React.FC<{ rings: number; spokes: number; color: string }> = ({
   </svg>
 );
 
+// "shape"/"stacked"/"stacked-3-layers": data rows stacked *angularly* in
+// one ring band (not concentric rings), sweeping either a 240° gauge arc
+// (shape/stacked) or the full 360° circle (stacked-3-layers). A gray track
+// sector fills whatever's left over when the rows don't add up to `max`.
+const ArcGauge: React.FC<{
+  data: RadialDatum[]; palette: string[]; track: string; full: boolean;
+  centerValue?: string; centerCaption?: string;
+}> = ({ data, palette, track, full, centerValue, centerCaption }) => {
+  const cx = 100;
+  const cy = 100;
+  const outerR = 88;
+  const innerR = full ? 74 : 64;
+  const startDeg = full ? 90 : 210;
+  const endDeg = full ? -270 : -30;
+  const sweepDeg = startDeg - endDeg;
+  const max = data[0]?.max ?? data.reduce((sum, d) => sum + d.value, 0);
+  let cursor = startDeg;
+  const segments = data.map((d, i) => {
+    const segSweep = max > 0 ? (d.value / max) * sweepDeg : 0;
+    const segStart = cursor;
+    const segEnd = cursor - segSweep;
+    cursor = segEnd;
+    return { segStart, segEnd, fill: palette[i % palette.length] };
+  });
+  return (
+    <svg viewBox={full ? '0 0 200 200' : '0 0 200 150'} className={styles.gaugeSvg}>
+      {segments.map((s, i) => (
+        <Sector key={i} cx={cx} cy={cy} innerRadius={innerR} outerRadius={outerR} startAngle={s.segStart} endAngle={s.segEnd} fill={s.fill} cornerRadius={4} />
+      ))}
+      {cursor > endDeg + 0.5 && (
+        <Sector cx={cx} cy={cy} innerRadius={innerR} outerRadius={outerR} startAngle={cursor} endAngle={endDeg} fill={track} cornerRadius={4} />
+      )}
+      {(centerValue || centerCaption) && (
+        <g textAnchor="middle" fontFamily="var(--font-sans)">
+          {centerValue && <text x={cx} y={full ? cy - 6 : cy - 22} fontSize={26} fontWeight={500} fill={cssVar('--color-fg-default') ?? '#141414'}>{centerValue}</text>}
+          {centerCaption && <text x={cx} y={full ? cy + 16 : cy} fontSize={13} fill={cssVar('--color-fg-muted') ?? '#78716a'}>{centerCaption}</text>}
+        </g>
+      )}
+    </svg>
+  );
+};
+
 export const RadialChart: React.FC<RadialChartProps> = ({
   data, variant = 'multi', size = 'md', centerValue, centerCaption, className,
 }) => {
@@ -125,9 +164,6 @@ export const RadialChart: React.FC<RadialChartProps> = ({
   const track = cssVar('--color-bg-subtle') ?? '#f5f4f2';
   const gridColor = cssVar('--color-border-subtle') ?? '#e5e4e7';
   const h = dims[size];
-  const isHalfCircle = HALF_CIRCLE.has(variant);
-  const showCenter = variant !== 'multi' && variant !== 'grid' && (centerValue || centerCaption);
-  const [innerR, outerR] = RADIUS_BAND[variant];
 
   if (variant === 'gauge-tick') {
     const d = data[0];
@@ -145,6 +181,24 @@ export const RadialChart: React.FC<RadialChartProps> = ({
     );
   }
 
+  if (variant === 'shape' || variant === 'stacked' || variant === 'stacked-3-layers') {
+    return (
+      <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
+        <ArcGauge
+          data={data}
+          palette={palette}
+          track={track}
+          full={variant === 'stacked-3-layers'}
+          centerValue={centerValue}
+          centerCaption={centerCaption}
+        />
+      </div>
+    );
+  }
+
+  const [innerR, outerR] = RADIUS_BAND[variant] ?? ['30%', '100%'];
+  const showCenter = variant === 'stacked-label' && (centerValue || centerCaption);
+
   return (
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
       {variant === 'grid' && <PolarGrid rings={4} spokes={12} color={gridColor} />}
@@ -153,9 +207,9 @@ export const RadialChart: React.FC<RadialChartProps> = ({
           data={data}
           innerRadius={innerR}
           outerRadius={outerR}
-          startAngle={isHalfCircle ? 180 : 90}
-          endAngle={isHalfCircle ? 0 : -270}
-          barCategoryGap={isHalfCircle ? '20%' : '12%'}
+          startAngle={90}
+          endAngle={-270}
+          barCategoryGap="12%"
         >
           <PolarAngleAxis type="number" domain={[0, data[0]?.max ?? 100]} tick={false} axisLine={false} />
           {/* See DonutChart.tsx: Recharts 3.9.2 can commit Sector-based
@@ -178,7 +232,7 @@ export const RadialChart: React.FC<RadialChartProps> = ({
       </ResponsiveContainer>
 
       {showCenter && (
-        <div className={[styles.center, isHalfCircle ? styles['center--below'] : ''].filter(Boolean).join(' ')}>
+        <div className={styles.center}>
           {centerValue && <span className={styles.center__value}>{centerValue}</span>}
           {centerCaption && <span className={styles.center__caption}>{centerCaption}</span>}
         </div>

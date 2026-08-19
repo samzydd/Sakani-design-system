@@ -36,7 +36,15 @@ export const Text: Story = {
   args: { data: [{ label: 'Users', value: 800, max: 1000 }], variant: 'text', centerValue: '800', centerCaption: 'Users' },
 };
 export const Shape: Story = {
-  args: { data: [{ label: 'Users', value: 620, max: 1000 }], variant: 'shape', centerValue: '2,230', centerCaption: 'Users' },
+  args: {
+    data: [
+      { label: 'Direct', value: 40, max: 200 },
+      { label: 'Referral', value: 50, max: 200 },
+    ],
+    variant: 'shape',
+    centerValue: '2,230',
+    centerCaption: 'Users',
+  },
 };
 export const GaugeTick: Story = {
   args: { data: [{ label: 'Users', value: 780, max: 1000 }], variant: 'gauge-tick', centerValue: '3,130', centerCaption: 'Users' },
