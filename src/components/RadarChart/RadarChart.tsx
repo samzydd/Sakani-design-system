@@ -98,7 +98,13 @@ export const RadarChart: React.FC<RadarChartProps> = ({
             radialLines={variant !== 'circle-grid-no-lines' && variant !== 'default'}
             stroke={grid}
           />
-          <PolarAngleAxis dataKey="label" stroke={axis} tick={{ fill: axis, fontSize: 12, fontFamily: 'var(--font-sans)' }} />
+          {/* `stroke` on PolarAngleAxis colors its own outer boundary
+              polygon (axisLine), not just the tick text -- left at its
+              default it drew a second, fg-muted-colored hexagon directly
+              on top of PolarGrid's correct border/default one, reading as
+              one much darker/heavier border. PolarGrid already draws the
+              real boundary, so this one is switched off entirely. */}
+          <PolarAngleAxis dataKey="label" axisLine={false} tick={{ fill: axis, fontSize: 12, fontFamily: 'var(--font-sans)' }} />
           {/* "default" shows only the outer boundary -- no inner concentric
               rings, no radial spokes. tickCount=2 on a [0, max] domain
               collapses PolarGrid's auto-generated rings down to just the
