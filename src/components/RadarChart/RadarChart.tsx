@@ -249,7 +249,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
               collapses PolarGrid's auto-generated rings down to just the
               zero-radius point and the outer one. */}
           <PolarRadiusAxis tick={false} axisLine={false} tickCount={isMinimalGrid ? 2 : undefined} />
-          <Tooltip content={<ChartTooltip />} wrapperStyle={{ marginTop: -8, marginLeft: -8, zIndex: 50 }} />
+          <Tooltip content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} />
           {isMultiple && <Legend wrapperStyle={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} />}
           {isFilledGrid && RING_LEVELS.map((_, i) => (
             <Radar

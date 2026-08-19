@@ -11,6 +11,13 @@
   font-family: var(--font-sans);
   font-size: 13px;
   line-height: 18px;
+  /* The outer .recharts-tooltip-wrapper is positioned at the pointer's own
+     coordinate, box growing right/down from there -- a fixed margin on that
+     wrapper can't put this content ABOVE the pointer since it doesn't know
+     the box's own rendered height. translateY(-100%) shifts by exactly this
+     element's height regardless of content (1 series vs many), then the
+     extra 8px in each axis is the actual gap from the pointer. */
+  transform: translate(8px, calc(-100% - 8px));
 }
 
 .title {

@@ -71,7 +71,7 @@ export const BarChart: React.FC<BarChartProps> = ({
 
   const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
 
-  const tooltip = <Tooltip cursor={false} content={<ChartTooltip />} wrapperStyle={{ marginTop: -8, marginLeft: -8, zIndex: 50 }} />;
+  const tooltip = <Tooltip cursor={false} content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} />;
 
   // Hovering never recolors a bar -- only "active" (the persistent marker
   // bar, unrelated to hover) and "negative" (sign-based) change fill.

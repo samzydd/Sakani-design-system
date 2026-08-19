@@ -81,7 +81,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
               <Cell key={i} fill={i === activeIndex ? hoverFill : palette[i % palette.length]} />
             ))}
           </Pie>
-          <Tooltip content={<ChartTooltip />} wrapperStyle={{ marginTop: -8, marginLeft: -8, zIndex: 50 }} />
+          <Tooltip content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} />
         </PieChart>
       </ResponsiveContainer>
 
