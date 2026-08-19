@@ -10,7 +10,8 @@
  *   circle-grid         — circular grid instead of polygon
  *   circle-grid-no-lines — circular grid, no radial spoke lines
  *   multiple            — two series overlaid, semi-transparent fills
- *   custom-label        — filled area + the raw value shown at each vertex
+ *   custom-label        — two series, no grid, vertex labels replaced by a
+ *                          "value/value2" + category name block
  *
  * Not ported: Figma's alternating-filled-ring grid and the soft blurred
  * glow behind one mockup ("Variant12") -- both are decorative embellishments
@@ -80,18 +81,23 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   const showFill = variant !== 'lines-only';
   const showDots = variant === 'dots' || variant === 'lines-only';
 
-  // Radar's `label` prop is routed through a Cartesian LabelList context,
-  // not the {cx, cy, index, ...} shape Pie's label gets -- it only ever
-  // hands back {x, y, value} for a degenerate zero-size box at the vertex,
-  // with no chart center to compute an outward radial offset from. A fixed
-  // upward nudge is what "position: top" would do anyway, and reads fine
-  // regardless of which side of the shape the vertex is on.
-  const renderVertexLabel = (props: any) => {
-    const { x, y, value } = props;
+  // "custom-label" replaces the plain category tick with a two-line block:
+  // bold "value/value2" on top, the category name muted underneath --
+  // there's no separate axis label or grid in Figma's reference, just this.
+  const renderVertexTick = (props: any) => {
+    const { x, y, payload } = props;
+    const row = data.find((d) => d.label === payload?.value) ?? data[payload?.index];
+    if (!row) return <g />;
+    const combined = row.value2 !== undefined ? `${row.value}/${row.value2}` : `${row.value}`;
     return (
-      <text x={x} y={y - 10} textAnchor="middle" fill={fgDefault} fontSize={12} fontWeight={500} fontFamily="var(--font-sans)">
-        {value}
-      </text>
+      <g>
+        <text x={x} y={y - 8} textAnchor="middle" fill={fgDefault} fontSize={15} fontWeight={600} fontFamily="var(--font-sans)">
+          {combined}
+        </text>
+        <text x={x} y={y + 12} textAnchor="middle" fill={axis} fontSize={13} fontFamily="var(--font-sans)">
+          {row.label}
+        </text>
+      </g>
     );
   };
 
@@ -99,18 +105,26 @@ export const RadarChart: React.FC<RadarChartProps> = ({
     <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
       <ResponsiveContainer width="100%" height={heights[size]}>
         <ReRadarChart data={data} outerRadius="70%">
-          <PolarGrid
-            gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
-            radialLines={variant !== 'circle-grid-no-lines' && variant !== 'default'}
-            stroke={grid}
-          />
+          {/* "custom-label" has no grid at all in Figma's reference -- just
+              the two shapes and their vertex labels. */}
+          {variant !== 'custom-label' && (
+            <PolarGrid
+              gridType={CIRCLE_GRID.has(variant) ? 'circle' : 'polygon'}
+              radialLines={variant !== 'circle-grid-no-lines' && variant !== 'default'}
+              stroke={grid}
+            />
+          )}
           {/* `stroke` on PolarAngleAxis colors its own outer boundary
               polygon (axisLine), not just the tick text -- left at its
               default it drew a second, fg-muted-colored hexagon directly
               on top of PolarGrid's correct border/default one, reading as
               one much darker/heavier border. PolarGrid already draws the
               real boundary, so this one is switched off entirely. */}
-          <PolarAngleAxis dataKey="label" axisLine={false} tick={{ fill: axis, fontSize: 12, fontFamily: 'var(--font-sans)' }} />
+          <PolarAngleAxis
+            dataKey="label"
+            axisLine={false}
+            tick={variant === 'custom-label' ? renderVertexTick : { fill: axis, fontSize: 12, fontFamily: 'var(--font-sans)' }}
+          />
           {/* "default" shows only the outer boundary -- no inner concentric
               rings, no radial spokes. tickCount=2 on a [0, max] domain
               collapses PolarGrid's auto-generated rings down to just the
@@ -138,7 +152,6 @@ export const RadarChart: React.FC<RadarChartProps> = ({
             // own explicit fill keeps them visible regardless.
             dot={showDots ? { r: 4, fill: chart2, stroke: 'none' } : false}
             isAnimationActive={false}
-            label={variant === 'custom-label' ? renderVertexLabel : undefined}
           />
           {showSecondSeries && (
             <Radar
