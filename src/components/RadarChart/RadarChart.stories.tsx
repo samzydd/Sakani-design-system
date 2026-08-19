@@ -39,7 +39,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const Dots: Story = { args: { variant: 'dots' } };
-export const LinesOnly: Story = { args: { variant: 'lines-only' } };
+export const LinesOnly: Story = { args: { variant: 'lines-only', data: multiData } };
 export const CircleGrid: Story = { args: { variant: 'circle-grid' } };
 export const CircleGridNoLines: Story = { args: { variant: 'circle-grid-no-lines' } };
 export const Multiple: Story = {

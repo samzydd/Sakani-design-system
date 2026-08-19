@@ -6,7 +6,7 @@
  *
  *   default             — solid filled area, polygon grid, no dots
  *   dots                — filled area + dot markers at each data point
- *   lines-only          — stroke only (no fill), dots
+ *   lines-only          — two series, stroke only (no fill), no dots
  *   circle-grid         — circular grid instead of polygon
  *   circle-grid-no-lines — circular grid, no radial spoke lines
  *   multiple            — two series overlaid, semi-transparent fills
@@ -75,12 +75,13 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   // value+category block) uses fg/subtle.
   const label = cssVar('--color-fg-subtle') ?? '#78716a';
   const isMultiple = variant === 'multiple';
-  // "custom-label" also gets the second (red) series, same as "multiple" --
-  // just without the legend, since its own vertex value labels already
-  // identify each point.
-  const showSecondSeries = isMultiple || variant === 'custom-label';
-  const showFill = variant !== 'lines-only';
-  const showDots = variant === 'dots' || variant === 'lines-only';
+  const isLinesOnly = variant === 'lines-only';
+  // "custom-label"/"lines-only" also get the second series, same as
+  // "multiple" -- neither shows a legend though (custom-label's own vertex
+  // labels already identify each point; lines-only has no fill to need one).
+  const showSecondSeries = isMultiple || variant === 'custom-label' || isLinesOnly;
+  const showFill = !isLinesOnly;
+  const showDots = variant === 'dots';
 
   // "custom-label" replaces the plain category tick with a two-line block:
   // bold "value/value2" on top, the category name muted underneath --
@@ -190,10 +191,10 @@ export const RadarChart: React.FC<RadarChartProps> = ({
             <Radar
               name={isMultiple ? (seriesLabels[1] ?? 'Value 2') : undefined}
               dataKey="value2"
-              stroke="none"
-              fill={chart1}
-              fillOpacity={0.8}
-              strokeWidth={0}
+              stroke={isLinesOnly ? chart1 : 'none'}
+              fill={isLinesOnly ? 'none' : chart1}
+              fillOpacity={isLinesOnly ? 0 : 0.8}
+              strokeWidth={isLinesOnly ? 2 : 0}
               dot={showDots ? { r: 4, fill: chart1, stroke: 'none' } : false}
               isAnimationActive={false}
             />
