@@ -168,7 +168,7 @@ export const BarChart: React.FC<BarChartProps> = ({
           <CartesianGrid
             strokeDasharray="3 3"
             stroke={grid}
-            horizontal={variant === 'horizontal' || variant === 'multiple'}
+            horizontal
             vertical={variant === 'horizontal'}
           />
           {variant === 'horizontal' ? (
