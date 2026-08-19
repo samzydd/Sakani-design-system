@@ -143,12 +143,11 @@ const ArcGauge: React.FC<{
     return { segStart, segEnd, fill: palette[i % palette.length] };
   });
   return (
-    // Non-full (gauge-arc) case gets a taller viewBox than the arc itself
-    // needs -- the arc's open ends (at startDeg/endDeg) dip down to ~144 in
-    // this coordinate space, well past its own center (cy=100), so the
-    // extra room below is what lets the label sit at the shape's actual
-    // base instead of floating above it.
-    <svg viewBox={full ? '0 0 200 200' : '0 0 200 180'} className={styles.gaugeSvg}>
+    // Non-full (gauge-arc) case: same tight-viewBox, label-around-cy
+    // approach as GaugeTick (cy-8/cy+12) rather than chasing the arc's own
+    // open ends down to their actual base -- Figma centers the label in
+    // the arc's upper region, with the arc's legs extending past it.
+    <svg viewBox={full ? '0 0 200 200' : '0 0 200 160'} className={styles.gaugeSvg}>
       {segments.map((s, i) => (
         <Sector key={i} cx={cx} cy={cy} innerRadius={innerR} outerRadius={outerR} startAngle={s.segStart} endAngle={s.segEnd} fill={s.fill} cornerRadius={4} />
       ))}
@@ -157,8 +156,8 @@ const ArcGauge: React.FC<{
       )}
       {(centerValue || centerCaption) && (
         <g textAnchor="middle" fontFamily="var(--font-sans)">
-          {centerValue && <text x={cx} y={full ? cy - 6 : 152} fontSize={26} fontWeight={500} fill={cssVar('--color-fg-default') ?? '#141414'}>{centerValue}</text>}
-          {centerCaption && <text x={cx} y={full ? cy + 16 : 172} fontSize={13} fill={cssVar('--color-fg-muted') ?? '#78716a'}>{centerCaption}</text>}
+          {centerValue && <text x={cx} y={cy - 8} fontSize={full ? 26 : 22} fontWeight={500} fill={cssVar('--color-fg-default') ?? '#141414'}>{centerValue}</text>}
+          {centerCaption && <text x={cx} y={cy + 12} fontSize={full ? 13 : 12} fill={cssVar('--color-fg-muted') ?? '#78716a'}>{centerCaption}</text>}
         </g>
       )}
     </svg>
