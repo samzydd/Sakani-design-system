@@ -98,7 +98,7 @@
   --color-bg-inverse: var(--color-neutral-900);
   --color-fg-default: var(--color-neutral-900);
   --color-fg-muted: var(--color-neutral-600);
-  --color-fg-subtle: var(--color-neutral-500); /* was neutral-400 (2.53:1) — AA fix */
+  --color-fg-subtle: var(--color-neutral-400); /* synced from Figma; note: 2.53:1 contrast on canvas bg, below WCAG AA's 4.5:1 for text */
   --color-fg-on-accent: var(--color-base-white);
   --color-fg-on-inverse: var(--color-neutral-50);
   --color-border-subtle: var(--color-neutral-200);
