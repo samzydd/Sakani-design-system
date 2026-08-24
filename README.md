@@ -1,6 +1,6 @@
 # Sakani Design System
 
-An open-source, token-driven React component library for SaaS products — **75+ accessible components**, light/dark theming, and a fully documented design system built in Figma.
+An open-source, token-driven React component library for SaaS products — **66 accessible components and counting**, built 1:1 from a Figma design system now spanning **1,500+ components and variants** across light and dark mode.
 
 **[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/design/Fd3uY263mEQKnaTEfrzQxh/)**
 
@@ -10,7 +10,7 @@ An open-source, token-driven React component library for SaaS products — **75+
 
 ## Why Sakani
 
-Most component libraries start in code and retrofit the design. Sakani was built the other way: every component was designed first in Figma with a strict three-layer token architecture, then implemented 1:1 in React — same variants, same states, same tokens. The Figma file and the code library are mirrors of each other.
+Most component libraries start in code and retrofit the design. Sakani was built the other way: every component is designed first in Figma with a strict three-layer token architecture, then implemented 1:1 in React — same variants, same states, same tokens. The Figma file has grown into a 1,500+ component-and-variant system across light and dark mode; the React library mirrors it component by component, with new ones landing as they're built out.
 
 - **Token-driven** — components bind only to semantic tokens (`bg/surface`, `fg/muted`, `accent/default`…), so the entire library re-themes from one place
 - **Light & dark mode** — add the `.dark` class to any container; every component re-themes automatically, no per-component dark styles
@@ -73,7 +73,7 @@ Three layers, defined in Figma and exported to `tokens.css`:
 
 Change a semantic token and every component follows — in both the design file and the code.
 
-## Components (75+)
+## Components (66+, syncing toward Figma's 1,500+)
 
 **Core** — Button · Icon Button · Badge · Label · Divider · Link · Kbd · Spinner · Skeleton · Progress · Tooltip · Avatar · Avatar Group
 
@@ -83,7 +83,7 @@ Change a semantic token and every component follows — in both the design file 
 
 **Sidebar kit** — Sidebar · Header · Search · Item · Sub Item · Group Label · Divider · Promo · Footer — nine standalone parts that compose into full navigation
 
-**Charts** — Bar · Line · Donut — Recharts wrappers styled entirely with the `chart/1–5` tokens
+**Charts** — Area · Bar · Donut · Funnel · Heatmap · Line · Pie · Radar · Radial — Recharts wrappers styled entirely with the `chart/1–6` tokens
 
 ## Blocks
 
