@@ -11,11 +11,9 @@
  *     the row's own data, so its presence is driven by whether `chart`
  *     data was passed, same idea as NotificationItem's card-vs-row split.
  *
- * `logo` is a required, fully consumer-supplied slot -- Figma's own
- * reference uses real Apple/Tesla marks, which this component deliberately
- * does not ship or reproduce (third-party trademarks, not this design
- * system's own asset to redistribute, unlike e.g. RichSeparator's Sakani
- * mark). Stories use a plain generic badge instead.
+ * `logo` is a required, fully consumer-supplied slot -- the component itself
+ * ships no brand marks. The stories use the real Apple/Tesla glyphs (pulled
+ * directly from the Figma file) purely as fixtures to demonstrate the slot.
  *
  * The chart reuses the real BarChart component (its default variant's blue
  * fill already matches Figma's chart/2 bars exactly) rather than a bespoke
