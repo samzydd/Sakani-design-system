@@ -20,6 +20,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const WithHeader: Story = { args: { filename: 'App.tsx' } };
+export const Editable: Story = {
+  args: { filename: 'App.tsx', editable: true },
+};
+export const EditableEmpty: Story = {
+  args: { filename: 'scratch.ts', editable: true, code: '', placeholder: 'Write or paste code…' },
+};
 export const DarkMode: Story = {
   args: { filename: 'App.tsx' },
   decorators: [(S) => <div className="dark" style={{ width: 520, padding: 24, background: 'var(--color-bg-canvas)' }}><S /></div>],
