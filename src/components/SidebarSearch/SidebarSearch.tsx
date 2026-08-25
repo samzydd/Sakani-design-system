@@ -9,6 +9,7 @@
 
 import React from 'react';
 import { Search } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './SidebarSearch.module.css';
 
 export interface SidebarSearchProps {
@@ -26,7 +27,7 @@ export const SidebarSearch: React.FC<SidebarSearchProps> = ({
   if (collapsed) {
     return (
       <button type="button" className={styles.collapsed} onClick={onClick} aria-label="Search">
-        <Search size={18} strokeWidth={1.5} />
+        <Search size={18} strokeWidth={iconStrokeWidth(18)} />
       </button>
     );
   }
@@ -35,7 +36,7 @@ export const SidebarSearch: React.FC<SidebarSearchProps> = ({
   if (type === 'command') {
     return (
       <button type="button" className={styles.search} onClick={onClick}>
-        <Search size={16} strokeWidth={1.5} className={styles.search__icon} />
+        <Search size={16} strokeWidth={iconStrokeWidth(16)} className={styles.search__icon} />
         <span className={styles.search__placeholder}>{placeholder}</span>
         <kbd className={styles.search__kbd}>⌘K</kbd>
       </button>
@@ -44,7 +45,7 @@ export const SidebarSearch: React.FC<SidebarSearchProps> = ({
 
   return (
     <div className={styles.search}>
-      <Search size={16} strokeWidth={1.5} className={styles.search__icon} />
+      <Search size={16} strokeWidth={iconStrokeWidth(16)} className={styles.search__icon} />
       <input
         className={styles.search__input}
         placeholder={placeholder}

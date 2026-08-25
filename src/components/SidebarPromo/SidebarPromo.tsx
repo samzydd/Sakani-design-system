@@ -12,6 +12,7 @@
 
 import React from 'react';
 import { Sparkles, X, type LucideIcon } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './SidebarPromo.module.css';
 
 export interface SidebarPromoProps {
@@ -30,11 +31,11 @@ export const SidebarPromo: React.FC<SidebarPromoProps> = ({
 }) => (
   <div className={[styles.promo, styles[`promo--${type}`]].join(' ')}>
     <div className={styles.promo__head}>
-      <span className={styles.promo__icon} aria-hidden="true"><Icon size={16} strokeWidth={1.5} /></span>
+      <span className={styles.promo__icon} aria-hidden="true"><Icon size={16} strokeWidth={iconStrokeWidth(16)} /></span>
       <span className={styles.promo__title}>{title}</span>
       {onDismiss && (
         <button type="button" className={styles.promo__dismiss} onClick={onDismiss} aria-label="Dismiss">
-          <X size={14} strokeWidth={1.5} />
+          <X size={14} strokeWidth={iconStrokeWidth(14)} />
         </button>
       )}
     </div>

@@ -10,6 +10,7 @@
 
 import React from 'react';
 import type { LucideIcon } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Tabs.module.css';
 
 export interface TabItem {
@@ -99,7 +100,7 @@ export const Tabs: React.FC<TabsProps> = ({
             ].filter(Boolean).join(' ')}
             onClick={() => select(item.value)}
           >
-            {Icon && <Icon size={16} strokeWidth={1.5} aria-hidden="true" />}
+            {Icon && <Icon size={16} strokeWidth={iconStrokeWidth(16)} aria-hidden="true" />}
             {item.label}
           </button>
         );

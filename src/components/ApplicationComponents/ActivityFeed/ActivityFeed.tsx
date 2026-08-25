@@ -9,7 +9,17 @@
 
 import React from 'react';
 import { Avatar } from '../../Avatar';
+import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './ActivityFeed.module.css';
+
+const RAIL_ICON_SIZE = 16;
+/** Forces every consumer-supplied rail icon to the same 16px/1.5px-stroke
+ * spec regardless of what size/strokeWidth it was authored with -- callers
+ * shouldn't have to know about Lucide's scaling quirk themselves. */
+const renderRailIcon = (icon: React.ReactNode) =>
+  React.isValidElement<{ size?: number; strokeWidth?: number }>(icon)
+    ? React.cloneElement(icon, { size: RAIL_ICON_SIZE, strokeWidth: iconStrokeWidth(RAIL_ICON_SIZE) })
+    : icon;
 
 export type ActivityFeedVariant = 'default' | 'compact';
 
@@ -60,7 +70,7 @@ export const ActivityFeed: React.FC<ActivityFeedProps> = ({
         return (
           <div key={key} className={styles['row--default']}>
             <div className={styles.rail}>
-              <div className={styles.dot}>{item.icon}</div>
+              <div className={styles.dot}>{renderRailIcon(item.icon)}</div>
               {!isLast && <div className={styles.connector} />}
             </div>
             <div className={[styles.content, isLast ? '' : styles['content--spaced']].filter(Boolean).join(' ')}>

@@ -23,6 +23,7 @@ import { Camera } from 'lucide-react';
 import { Avatar } from '../../Avatar';
 import { Link } from '../../Link';
 import { Button } from '../../Button';
+import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './AvatarUpload.module.css';
 
 export type AvatarUploadOrientation = 'vertical' | 'horizontal';
@@ -80,7 +81,7 @@ export const AvatarUpload: React.FC<AvatarUploadProps> = ({
         />
         {!isHorizontal && (
           <button type="button" className={styles.badge} onClick={openPicker} aria-label="Change photo">
-            <Camera size={16} strokeWidth={1.5} />
+            <Camera size={16} strokeWidth={iconStrokeWidth(16)} />
           </button>
         )}
       </div>

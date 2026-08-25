@@ -11,6 +11,7 @@
 
 import React from 'react';
 import { TrendingUp, TrendingDown, Minus, MoreHorizontal, type LucideIcon } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import { Badge, type BadgeVariant } from '../Badge';
 import styles from './StatCard.module.css';
 
@@ -68,12 +69,12 @@ export const StatCard: React.FC<StatCardProps> = ({
     <div className={[styles.card, styles[`card--${variant}`], styles[`card--trend-${trend}`], className ?? ''].filter(Boolean).join(' ')}>
       <div className={styles.card__head}>
         {showIcon && (
-          <span className={styles.card__icon} aria-hidden="true"><Icon size={18} strokeWidth={1.5} /></span>
+          <span className={styles.card__icon} aria-hidden="true"><Icon size={18} strokeWidth={iconStrokeWidth(18)} /></span>
         )}
         <span className={styles.card__title}>{title}</span>
         {showMenu && (
           <button type="button" className={styles.card__menu} onClick={onMenu} aria-label="More options">
-            <MoreHorizontal size={16} strokeWidth={1.5} />
+            <MoreHorizontal size={16} strokeWidth={iconStrokeWidth(16)} />
           </button>
         )}
       </div>

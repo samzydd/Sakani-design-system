@@ -11,6 +11,7 @@
 
 import React from 'react';
 import { UploadCloud, File as FileIcon, X } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './FileUpload.module.css';
 
 export interface FileUploadProps {
@@ -55,7 +56,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         tabIndex={0}
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') inputRef.current?.click(); }}
       >
-        <span className={styles.dropzone__icon} aria-hidden="true"><UploadCloud size={22} strokeWidth={1.5} /></span>
+        <span className={styles.dropzone__icon} aria-hidden="true"><UploadCloud size={22} strokeWidth={iconStrokeWidth(22)} /></span>
         <span className={styles.dropzone__label}>
           <span className={styles.dropzone__link}>Click to upload</span> or drag and drop
         </span>
@@ -75,10 +76,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         <ul className={styles.files}>
           {files.map((f, i) => (
             <li key={i} className={styles.file}>
-              <span className={styles.file__icon} aria-hidden="true"><FileIcon size={16} strokeWidth={1.5} /></span>
+              <span className={styles.file__icon} aria-hidden="true"><FileIcon size={16} strokeWidth={iconStrokeWidth(16)} /></span>
               <span className={styles.file__name}>{f.name}</span>
               <button type="button" className={styles.file__remove} onClick={() => removeFile(i)} aria-label={`Remove ${f.name}`}>
-                <X size={14} strokeWidth={1.5} />
+                <X size={14} strokeWidth={iconStrokeWidth(14)} />
               </button>
             </li>
           ))}

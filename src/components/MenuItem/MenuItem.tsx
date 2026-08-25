@@ -13,6 +13,7 @@
 
 import React from 'react';
 import { Check } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './MenuItem.module.css';
 
 export type MenuItemState = 'default' | 'checked' | 'disabled' | 'destructive';
@@ -54,7 +55,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       {icon && <span className={styles.item__icon} aria-hidden="true">{icon}</span>}
       <span className={styles.item__label}>{children}</span>
       {shortcut && <kbd className={styles.item__shortcut}>{shortcut}</kbd>}
-      {state === 'checked' && <Check size={16} className={styles.item__check} aria-hidden="true" />}
+      {state === 'checked' && <Check size={16} strokeWidth={iconStrokeWidth(16)} className={styles.item__check} aria-hidden="true" />}
     </div>
   );
 };

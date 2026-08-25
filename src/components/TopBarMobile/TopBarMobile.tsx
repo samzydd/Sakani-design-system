@@ -11,6 +11,7 @@
 
 import React from 'react';
 import { Menu as MenuIcon, Plus, X } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './TopBarMobile.module.css';
 
 export type TopBarMobileType = 'title' | 'title-centered' | 'title-action' | 'search';
@@ -40,7 +41,7 @@ export const TopBarMobile: React.FC<TopBarMobileProps> = ({
 }) => (
   <header className={[styles.bar, className ?? ''].filter(Boolean).join(' ')}>
     <button type="button" className={styles.bar__icon} onClick={onMenu} aria-label="Open menu">
-      <MenuIcon size={18} />
+      <MenuIcon size={18} strokeWidth={iconStrokeWidth(18)} />
     </button>
     {type === 'search' ? (
       <div className={styles.bar__search}>{search}</div>
@@ -51,12 +52,12 @@ export const TopBarMobile: React.FC<TopBarMobileProps> = ({
     )}
     {type === 'title-action' && (
       <button type="button" className={styles.bar__icon} onClick={onAction} aria-label="Add">
-        <Plus size={18} />
+        <Plus size={18} strokeWidth={iconStrokeWidth(18)} />
       </button>
     )}
     {type === 'search' && (
       <button type="button" className={styles.bar__icon} onClick={onClose} aria-label="Close search">
-        <X size={18} />
+        <X size={18} strokeWidth={iconStrokeWidth(18)} />
       </button>
     )}
     {(type === 'title' || type === 'title-centered') && trailing}

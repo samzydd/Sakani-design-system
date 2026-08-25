@@ -26,6 +26,7 @@ import React from 'react';
 import { Eye, EyeOff, TrendingUp, TrendingDown } from 'lucide-react';
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { useThemeTick } from '../../../lib/useThemeTick';
+import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './Balance.module.css';
 
 const MASK_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -164,7 +165,9 @@ export const Balance: React.FC<BalanceProps> = ({
           aria-label={isHidden ? 'Show balance' : 'Hide balance'}
           onClick={toggleHidden}
         >
-          {isHidden ? <EyeOff size={16} strokeWidth={1.5} /> : <Eye size={16} strokeWidth={1.5} />}
+          {isHidden
+            ? <EyeOff size={16} strokeWidth={iconStrokeWidth(16)} />
+            : <Eye size={16} strokeWidth={iconStrokeWidth(16)} />}
         </button>
       </div>
       <p
