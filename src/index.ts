@@ -12,6 +12,7 @@ export * from './components/ApplicationComponents/AvatarUpload';
 export * from './components/ApplicationComponents/Balance';
 export * from './components/ApplicationComponents/CodeSnippet';
 export * from './components/ApplicationComponents/Expenses';
+export * from './components/ApplicationComponents/InlineHint';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
