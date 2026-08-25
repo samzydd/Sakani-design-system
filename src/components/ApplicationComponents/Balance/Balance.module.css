@@ -34,6 +34,29 @@
   white-space: nowrap;
 }
 
+/* Bare icon, no button chrome -- background/border/shadow are deliberately
+   never set, even on hover. Hover feedback is a contrast bump only. */
+.hideToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-fg-muted);
+  transition: color var(--transition-base);
+}
+.hideToggle:hover {
+  color: var(--color-fg-default);
+}
+.hideToggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
+  border-radius: var(--radius-sm);
+}
+
 .value {
   margin: 0;
   font-size: 40px;

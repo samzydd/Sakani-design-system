@@ -6,9 +6,12 @@
  * props rather than a single Figma-mirroring `variant` enum, since they're
  * genuinely independent pieces of the same widget, not mutually exclusive):
  *
- *   - label row: caption + an Eye/EyeOff toggle that masks the value
- *   - big value (display/xl, 40px)
- *   - optional change row: trend icon + colored delta + caption
+ *   - label row: caption + a bare Eye/EyeOff icon (no button chrome, just a
+ *     contrast bump on hover) that masks the value
+ *   - big value (display/xl, 40px) -- masked as a random alphanumeric
+ *     string the same length as the real value, not dots
+ *   - optional change row: trend icon + colored delta (also masked when
+ *     hidden, rather than the whole row disappearing) + caption
  *   - optional progress ring: shown beside the content when `progress` is set
  *
  * The ring isn't a reuse of RadialChart -- its smallest preset is 180px vs.
@@ -23,8 +26,13 @@ import React from 'react';
 import { Eye, EyeOff, TrendingUp, TrendingDown } from 'lucide-react';
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { useThemeTick } from '../../../lib/useThemeTick';
-import { IconButton } from '../../IconButton';
 import styles from './Balance.module.css';
+
+const MASK_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+/** Same length as the real string, so the masked value keeps roughly the
+ * same visual weight instead of collapsing to a fixed-width placeholder. */
+const randomMask = (length: number) =>
+  Array.from({ length }, () => MASK_CHARS[Math.floor(Math.random() * MASK_CHARS.length)]).join('');
 
 export interface BalanceChangeInfo {
   /** e.g. "+$1,240.50" -- sign/formatting is the caller's responsibility. */
@@ -105,22 +113,32 @@ export const Balance: React.FC<BalanceProps> = ({
     if (!isControlled) setInternalHidden(next);
   };
 
+  // Stable per real value -- regenerates only if the underlying value
+  // actually changes, not on every hide/show toggle or re-render (a fresh
+  // mask each render would read as jittering static, not a redaction).
+  const maskedValue = React.useMemo(() => randomMask(value.length), [value]);
+  const maskedChange = React.useMemo(
+    () => (change ? randomMask(change.value.length) : ''),
+    [change?.value],
+  );
+
   const content = (
     <div className={styles.content}>
       <div className={styles.labelRow}>
         <p className={styles.label}>{label}</p>
-        <IconButton
-          icon={isHidden ? EyeOff : Eye}
-          variant="ghost"
-          size="sm"
+        <button
+          type="button"
+          className={styles.hideToggle}
           aria-label={isHidden ? 'Show balance' : 'Hide balance'}
           onClick={toggleHidden}
-        />
+        >
+          {isHidden ? <EyeOff size={16} strokeWidth={1.5} /> : <Eye size={16} strokeWidth={1.5} />}
+        </button>
       </div>
       <p className={[styles.value, isHidden ? styles['value--hidden'] : ''].filter(Boolean).join(' ')}>
-        {isHidden ? '••••••' : value}
+        {isHidden ? maskedValue : value}
       </p>
-      {change && !isHidden && (
+      {change && (
         <div className={styles.changeRow}>
           <TrendIcon
             size={24}
@@ -128,7 +146,7 @@ export const Balance: React.FC<BalanceProps> = ({
             className={direction === 'up' ? styles.trendIcon__up : styles.trendIcon__down}
           />
           <span className={direction === 'up' ? styles.changeValue__up : styles.changeValue__down}>
-            {change.value}
+            {isHidden ? maskedChange : change.value}
           </span>
           <span className={styles.changeLabel}>{change.label ?? 'this month'}</span>
         </div>
