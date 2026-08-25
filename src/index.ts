@@ -6,6 +6,7 @@
  */
 
 export * from './components/Accordion';
+export * from './components/ApplicationComponents/ActivityFeed';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
