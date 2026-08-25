@@ -1,0 +1,107 @@
+/* ─── Simple row (Unread / Read) ── */
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+  padding: var(--space-12);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-sans);
+}
+.row--unread {
+  background: var(--color-accent-subtle);
+  padding-right: var(--space-20);
+}
+
+.iconWrapSurface,
+.iconWrapCanvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+  color: var(--color-fg-default);
+}
+.iconWrapSurface { background: var(--color-bg-surface); }
+.iconWrapCanvas { background: var(--color-bg-canvas); }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.titleBold {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-fg-default);
+}
+.titleMuted {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+.timestamp {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-subtle);
+  white-space: nowrap;
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-fg-default);
+}
+
+/* ─── Actionable card (Dismissable) ── */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-12);
+  width: 100%;
+  max-width: 327px;
+  box-sizing: border-box;
+  padding: var(--space-12);
+  background: var(--color-bg-canvas);
+  border: var(--border-width-050) solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-sans);
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  width: 100%;
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-subtle);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  /* Aligns with the content column, not the icon-wrap above it. */
+  padding-left: 48px;
+}
