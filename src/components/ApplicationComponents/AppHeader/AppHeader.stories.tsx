@@ -3,7 +3,7 @@ import { UserPlus, Upload, Download } from 'lucide-react';
 import { AppHeader } from './AppHeader';
 
 const meta = {
-  title: 'Components/App Header',
+  title: 'Application/App Header',
   component: AppHeader,
   tags: ['autodocs'],
   decorators: [(S) => <div style={{ width: 892 }}><S /></div>],

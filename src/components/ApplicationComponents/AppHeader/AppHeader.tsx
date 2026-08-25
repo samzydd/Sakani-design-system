@@ -16,8 +16,8 @@
  */
 
 import React from 'react';
-import { Breadcrumb, type BreadcrumbItem } from '../Breadcrumb';
-import { Button, type ButtonVariant } from '../Button';
+import { Breadcrumb, type BreadcrumbItem } from '../../Breadcrumb';
+import { Button, type ButtonVariant } from '../../Button';
 import styles from './AppHeader.module.css';
 
 export interface AppHeaderAction {

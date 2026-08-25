@@ -8,6 +8,7 @@
 export * from './components/Accordion';
 export * from './components/ApplicationComponents/ActivityFeed';
 export * from './components/ApplicationComponents/Announcement';
+export * from './components/ApplicationComponents/AppHeader';
 export * from './components/ApplicationComponents/AvatarUpload';
 export * from './components/ApplicationComponents/Balance';
 export * from './components/ApplicationComponents/CodeSnippet';
@@ -24,7 +25,6 @@ export * from './components/ApplicationComponents/Tags';
 export * from './components/ApplicationComponents/Ticker';
 export * from './components/ApplicationComponents/Transactions';
 export * from './components/Alert';
-export * from './components/AppHeader';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
 export * from './components/Avatar';
