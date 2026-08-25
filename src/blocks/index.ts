@@ -8,6 +8,8 @@
  */
 export { AccountOverviewBlock } from './AccountOverviewBlock';
 export type { AccountOverviewBlockProps, AccountOverviewBlockState } from './AccountOverviewBlock';
+export { ActivityLogBlock } from './ActivityLogBlock';
+export type { ActivityLogBlockProps, ActivityLogBlockState } from './ActivityLogBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
