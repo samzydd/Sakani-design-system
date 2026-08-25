@@ -10,6 +10,7 @@
 }
 .wrap--horizontal {
   flex-direction: row;
+  align-items: flex-start;
   gap: var(--space-12);
 }
 
