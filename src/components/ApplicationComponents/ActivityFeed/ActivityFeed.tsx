@@ -5,12 +5,27 @@
  *   Style: Default — icon-in-circle rail with a connector stub between dots,
  *          content wraps onto multiple lines if long.
  *        | Compact — avatar-led single-line row, timestamp right-aligned.
+ *
+ * Figma's latest update highlights more than just the actor: the specific
+ * object being acted on (a doc name, a file, a quoted task title) is also
+ * colored fg/default within an otherwise fg/muted sentence, while the verb
+ * connecting them ("commented on", "uploaded", "marked") stays muted. Since
+ * which words get highlighted is per-item and doesn't follow a rule (compare
+ * "uploaded 3 [files to Assets]" vs. "edited the [Pricing Table]"), that
+ * can't be derived from a plain string -- `description` accepts ReactNode
+ * instead, and the exported `ActivityFeedHighlight` wraps whichever span the
+ * caller wants colored.
  */
 
 import React from 'react';
 import { Avatar } from '../../Avatar';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './ActivityFeed.module.css';
+
+/** Colors its children fg/default within an otherwise-muted description. */
+export const ActivityFeedHighlight: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span className={styles.highlight}>{children}</span>
+);
 
 const RAIL_ICON_SIZE = 16;
 /** Forces every consumer-supplied rail icon to the same 16px/1.5px-stroke
@@ -27,8 +42,9 @@ export interface ActivityFeedItem {
   id?: string | number;
   /** Who performed the action — rendered in fg/default, the rest in fg/muted. */
   actor: string;
-  /** Rest of the sentence, e.g. "commented on Design Review". */
-  description: string;
+  /** Rest of the sentence, e.g. "commented on Design Review". Wrap the
+   * object/target span in `ActivityFeedHighlight` to color it fg/default. */
+  description: React.ReactNode;
   timestamp: string;
   /** Rail dot icon (variant="default"). Rendered at 16px, colored fg/muted. */
   icon?: React.ReactNode;

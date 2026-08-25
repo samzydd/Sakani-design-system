@@ -15,7 +15,7 @@
 
 import React from 'react';
 import { MessageCircle, Upload, Pencil, CircleCheck } from 'lucide-react';
-import { ActivityFeed } from '../../components/ApplicationComponents/ActivityFeed';
+import { ActivityFeed, ActivityFeedHighlight } from '../../components/ApplicationComponents/ActivityFeed';
 import amaraKalu from '../../assets/avatars/activity-amara-kalu.jpg';
 import chidiDuru from '../../assets/avatars/activity-chidi-duru.jpg';
 import jadeSilva from '../../assets/avatars/activity-jade-silva.jpg';
@@ -30,10 +30,10 @@ export interface ActivityLogBlockProps {
 }
 
 const items = [
-  { actor: 'Amara Kalu', description: 'commented on Design Review', timestamp: '2m ago', icon: <MessageCircle />, avatarSrc: amaraKalu },
-  { actor: 'Chidi Duru', description: 'uploaded 3 files to Assets', timestamp: '1h ago', icon: <Upload />, avatarSrc: chidiDuru },
-  { actor: 'Jade Silva', description: 'edited the Pricing Table component', timestamp: '3h ago', icon: <Pencil />, avatarSrc: jadeSilva },
-  { actor: 'Ravi Menon', description: 'marked "Fix Table overflow" as done', timestamp: 'Yesterday', icon: <CircleCheck />, avatarSrc: raviMenon },
+  { actor: 'Amara Kalu', description: <>commented on <ActivityFeedHighlight>Design Review</ActivityFeedHighlight></>, timestamp: '2m ago', icon: <MessageCircle />, avatarSrc: amaraKalu },
+  { actor: 'Chidi Duru', description: <>uploaded 3 <ActivityFeedHighlight>files to Assets</ActivityFeedHighlight></>, timestamp: '1h ago', icon: <Upload />, avatarSrc: chidiDuru },
+  { actor: 'Jade Silva', description: <>edited the <ActivityFeedHighlight>Pricing Table</ActivityFeedHighlight> component</>, timestamp: '3h ago', icon: <Pencil />, avatarSrc: jadeSilva },
+  { actor: 'Ravi Menon', description: <>marked <ActivityFeedHighlight>"Fix Table overflow"</ActivityFeedHighlight> as done</>, timestamp: 'Yesterday', icon: <CircleCheck />, avatarSrc: raviMenon },
 ];
 
 export const ActivityLogBlock: React.FC<ActivityLogBlockProps> = ({
