@@ -1,5 +1,8 @@
 /**
- * AppHeader
+ * AppHeaderBlock — Blocks / Application / App Header
+ *
+ * A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+ * your project and edit it directly.
  *
  * Page-level header: breadcrumb trail, title + optional description, and
  * right-aligned actions, sitting above a divider. Matches Figma "App Header"
@@ -16,11 +19,11 @@
  */
 
 import React from 'react';
-import { Breadcrumb, type BreadcrumbItem } from '../../Breadcrumb';
-import { Button, type ButtonVariant } from '../../Button';
-import styles from './AppHeader.module.css';
+import { Breadcrumb, type BreadcrumbItem } from '../../components/Breadcrumb';
+import { Button, type ButtonVariant } from '../../components/Button';
+import styles from './AppHeaderBlock.module.css';
 
-export interface AppHeaderAction {
+export interface AppHeaderBlockAction {
   label: string;
   icon?: React.ReactNode;
   onClick?: () => void;
@@ -28,15 +31,15 @@ export interface AppHeaderAction {
   variant?: ButtonVariant;
 }
 
-export interface AppHeaderProps {
+export interface AppHeaderBlockProps {
   breadcrumbs: BreadcrumbItem[];
   title: string;
   description?: string;
-  actions?: AppHeaderAction[];
+  actions?: AppHeaderBlockAction[];
   className?: string;
 }
 
-export const AppHeader: React.FC<AppHeaderProps> = ({
+export const AppHeaderBlock: React.FC<AppHeaderBlockProps> = ({
   breadcrumbs, title, description, actions = [], className,
 }) => (
   <div className={[styles.header, className ?? ''].filter(Boolean).join(' ')}>
@@ -68,4 +71,4 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
   </div>
 );
 
-export default AppHeader;
+export default AppHeaderBlock;

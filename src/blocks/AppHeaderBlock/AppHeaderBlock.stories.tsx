@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { UserPlus, Upload, Download } from 'lucide-react';
-import { AppHeader } from './AppHeader';
+import { AppHeaderBlock } from './AppHeaderBlock';
 
 const meta = {
-  title: 'Application/App Header',
-  component: AppHeader,
+  title: 'Blocks/Application/App Header',
+  component: AppHeaderBlock,
   tags: ['autodocs'],
   decorators: [(S) => <div style={{ width: 892 }}><S /></div>],
-} satisfies Meta<typeof AppHeader>;
+} satisfies Meta<typeof AppHeaderBlock>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

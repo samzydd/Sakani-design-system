@@ -8,7 +8,6 @@
 export * from './components/Accordion';
 export * from './components/ApplicationComponents/ActivityFeed';
 export * from './components/ApplicationComponents/Announcement';
-export * from './components/ApplicationComponents/AppHeader';
 export * from './components/ApplicationComponents/AvatarUpload';
 export * from './components/ApplicationComponents/Balance';
 export * from './components/ApplicationComponents/CodeSnippet';
