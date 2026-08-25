@@ -7,6 +7,7 @@
 
 import React from 'react';
 import { PanelLeftClose, type LucideIcon } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './SidebarHeader.module.css';
 
 export type SidebarHeaderType = 'brand' | 'workspace' | 'brand-toggle';
@@ -33,7 +34,7 @@ export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
           <span className={styles.header__logo}>
             <span className={styles.header__logoContent}>{logo}</span>
             <span className={styles.header__logoIcon} aria-hidden="true">
-              <ToggleIcon size={16} strokeWidth={1.5} />
+              <ToggleIcon size={16} strokeWidth={iconStrokeWidth(16)} />
             </span>
           </span>
         </button>
@@ -51,7 +52,7 @@ export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
     </span>
     {!collapsed && type === 'brand-toggle' && (
       <button type="button" className={styles.header__toggle} onClick={onToggle} aria-label="Collapse sidebar">
-        <ToggleIcon size={18} strokeWidth={1.5} />
+        <ToggleIcon size={18} strokeWidth={iconStrokeWidth(18)} />
       </button>
     )}
   </div>

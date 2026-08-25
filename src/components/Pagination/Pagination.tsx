@@ -8,6 +8,7 @@
 
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Pagination.module.css';
 
 export interface PaginationProps {
@@ -60,7 +61,7 @@ export const Pagination: React.FC<PaginationProps> = ({
         onClick={() => onPageChange(page - 1)}
         aria-label="Previous page"
       >
-        <ChevronLeft size={16} strokeWidth={1.5} />
+        <ChevronLeft size={16} strokeWidth={iconStrokeWidth(16)} />
       </button>
 
       {pages.map((p, i) =>
@@ -86,7 +87,7 @@ export const Pagination: React.FC<PaginationProps> = ({
         onClick={() => onPageChange(page + 1)}
         aria-label="Next page"
       >
-        <ChevronRight size={16} strokeWidth={1.5} />
+        <ChevronRight size={16} strokeWidth={iconStrokeWidth(16)} />
       </button>
     </nav>
   );

@@ -9,6 +9,7 @@
 
 import React from 'react';
 import { LogOut, EllipsisVertical } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import { Avatar } from '../Avatar/Avatar';
 import styles from './SidebarFooter.module.css';
 
@@ -47,7 +48,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
     return (
       <div className={styles.footer}>
         <button type="button" className={styles.footer__action} onClick={onSignOut}>
-          <LogOut size={16} strokeWidth={1.5} /> Sign out
+          <LogOut size={16} strokeWidth={iconStrokeWidth(16)} /> Sign out
         </button>
       </div>
     );
@@ -62,7 +63,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
       </span>
       {type === 'user-menu' && (
         <button type="button" className={styles.footer__menu} onClick={onMenu} aria-label="Open menu">
-          <EllipsisVertical size={16} strokeWidth={1.5} />
+          <EllipsisVertical size={16} strokeWidth={iconStrokeWidth(16)} />
         </button>
       )}
     </div>

@@ -18,6 +18,7 @@
 
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Calendar.module.css';
 
 export interface DateRange { from?: Date; to?: Date; }
@@ -106,7 +107,7 @@ export const Calendar: React.FC<CalendarProps> = ({
       {/* Header — Arrows or Dropdowns (Figma: Calendar Header Type) */}
       <div className={styles.header}>
         <button type="button" className={styles.navBtn} onClick={() => setView(new Date(year, month - 1, 1))} aria-label="Previous month">
-          <ChevronLeft size={16} strokeWidth={1.5} />
+          <ChevronLeft size={16} strokeWidth={iconStrokeWidth(16)} />
         </button>
 
         {headerType === 'dropdowns' ? (
@@ -133,7 +134,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         )}
 
         <button type="button" className={styles.navBtn} onClick={() => setView(new Date(year, month + 1, 1))} aria-label="Next month">
-          <ChevronRight size={16} strokeWidth={1.5} />
+          <ChevronRight size={16} strokeWidth={iconStrokeWidth(16)} />
         </button>
       </div>
 

@@ -9,6 +9,7 @@
  */
 
 import React from 'react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Breadcrumb.module.css';
 
 export interface BreadcrumbItem {
@@ -23,7 +24,7 @@ export interface BreadcrumbProps {
 
 const Separator = () => (
   <span className={styles.separator} aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={iconStrokeWidth(16)}
       strokeLinecap="round" strokeLinejoin="round" width={16} height={16}>
       <path d="m9 18 6-6-6-6" />
     </svg>

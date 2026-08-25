@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Accordion.module.css';
 
 export interface AccordionItemProps {
@@ -40,7 +41,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
         <span className={styles.item__title}>{title}</span>
         {/* Chevron rotates when open */}
         <span className={[styles.item__chevron, isOpen ? styles['item__chevron--open'] : ''].join(' ')} aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={iconStrokeWidth(18)}
             strokeLinecap="round" strokeLinejoin="round" width={18} height={18}>
             <path d="m6 9 6 6 6-6" />
           </svg>

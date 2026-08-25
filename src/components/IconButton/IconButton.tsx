@@ -11,6 +11,7 @@
 
 import React from 'react';
 import { type LucideIcon } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './IconButton.module.css';
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive';
@@ -40,7 +41,10 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
       ].filter(Boolean).join(' ')}
       {...rest}
     >
-      <Icon size={iconSizes[size]} strokeWidth={1.5} aria-hidden="true" />
+      {/* Sizes here (16/18/20) are all below Lucide's fixed 24-unit grid,
+          so a flat strokeWidth={1.5} would render visibly thinner than
+          Figma's own same-size-native icon exports -- see iconStrokeWidth. */}
+      <Icon size={iconSizes[size]} strokeWidth={iconStrokeWidth(iconSizes[size])} aria-hidden="true" />
     </button>
   )
 );

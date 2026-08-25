@@ -21,6 +21,7 @@
 
 import React from 'react';
 import { ChevronRight, type LucideIcon } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './SidebarItem.module.css';
 
 export interface SidebarItemProps {
@@ -54,11 +55,11 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
       {/* Left accent bar — brand/default pill, present in both layouts, visible when active */}
       <span className={styles.item__bar} aria-hidden="true" />
 
-      {Icon && <span className={styles.item__icon} aria-hidden="true"><Icon size={18} strokeWidth={1.5} /></span>}
+      {Icon && <span className={styles.item__icon} aria-hidden="true"><Icon size={18} strokeWidth={iconStrokeWidth(18)} /></span>}
       <span className={[styles.item__label, collapsed ? styles['item__label--collapsed'] : ''].filter(Boolean).join(' ')}>{label}</span>
       {!collapsed && badge && <span className={styles.item__badge}>{badge}</span>}
       {!collapsed && hasSubmenu && (
-        <span className={styles.item__chevron} aria-hidden="true"><ChevronRight size={16} strokeWidth={1.5} /></span>
+        <span className={styles.item__chevron} aria-hidden="true"><ChevronRight size={16} strokeWidth={iconStrokeWidth(16)} /></span>
       )}
     </>
   );

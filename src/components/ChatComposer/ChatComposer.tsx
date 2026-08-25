@@ -13,6 +13,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Paperclip, Smile, Send, File as FileIcon, X } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import { IconButton } from '../IconButton';
 import styles from './ChatComposer.module.css';
 
@@ -155,7 +156,7 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
     <div className={[styles.composer, styles[`composer--${state}`], className ?? ''].filter(Boolean).join(' ')}>
       {state === 'uploading' && (
         <div className={styles.upload}>
-          <FileIcon size={16} className={styles.upload__icon} aria-hidden="true" />
+          <FileIcon size={16} strokeWidth={iconStrokeWidth(16)} className={styles.upload__icon} aria-hidden="true" />
           <div className={styles.upload__body}>
             <span className={styles.upload__name}>{uploadName}</span>
             <div className={styles.upload__track}>
@@ -206,7 +207,7 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
                 />
               ) : (
                 <div style={{ textAlign: 'center', padding: '8px' }}>
-                  <FileIcon size={24} />
+                  <FileIcon size={24} strokeWidth={1.5} />
                   <div style={{ fontSize: '10px', marginTop: '4px', color: 'var(--color-fg-muted)' }}>
                     {file.name.split('.').pop()?.toUpperCase()}
                   </div>

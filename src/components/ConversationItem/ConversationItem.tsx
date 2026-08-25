@@ -12,6 +12,7 @@
 
 import React from 'react';
 import { BellOff } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './ConversationItem.module.css';
 
 export type ConversationItemState = 'default' | 'hover' | 'active' | 'unread' | 'typing' | 'muted';
@@ -57,7 +58,7 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
     <span className={styles.item__body}>
       <span className={styles.item__row}>
         <span className={styles.item__name}>{name}</span>
-        {state === 'muted' && <BellOff size={12} className={styles.item__mute} aria-hidden="true" />}
+        {state === 'muted' && <BellOff size={12} strokeWidth={iconStrokeWidth(12)} className={styles.item__mute} aria-hidden="true" />}
         {timestamp && <span className={styles.item__time}>{timestamp}</span>}
       </span>
       <span className={styles.item__row}>

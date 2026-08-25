@@ -12,6 +12,7 @@
 
 import React from 'react';
 import { Inbox, Search, CircleAlert } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './EmptyState.module.css';
 
 export type EmptyStateType = 'no-data' | 'no-results' | 'error';
@@ -29,9 +30,9 @@ export interface EmptyStateProps {
 }
 
 const DEFAULTS: Record<EmptyStateType, { icon: React.ReactNode; title: string; description: string }> = {
-  'no-data':    { icon: <Inbox size={18} />,       title: 'No data yet',        description: 'Records will appear here once they are added.' },
-  'no-results': { icon: <Search size={18} />,      title: 'No results found',   description: 'Try adjusting your search or removing filters.' },
-  'error':      { icon: <CircleAlert size={18} />, title: "Couldn't load data", description: 'Something went wrong while fetching records.' },
+  'no-data':    { icon: <Inbox size={18} strokeWidth={iconStrokeWidth(18)} />,       title: 'No data yet',        description: 'Records will appear here once they are added.' },
+  'no-results': { icon: <Search size={18} strokeWidth={iconStrokeWidth(18)} />,      title: 'No results found',   description: 'Try adjusting your search or removing filters.' },
+  'error':      { icon: <CircleAlert size={18} strokeWidth={iconStrokeWidth(18)} />, title: "Couldn't load data", description: 'Something went wrong while fetching records.' },
 };
 
 export const EmptyState: React.FC<EmptyStateProps> = ({

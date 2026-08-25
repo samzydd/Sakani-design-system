@@ -1,0 +1,38 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-12);
+  width: 400px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-20);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  font-family: var(--font-sans);
+}
+
+.savingsGoal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 100%;
+}
+.savingsGoal__labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.savingsGoal__label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
+.savingsGoal__value {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-fg-muted);
+}

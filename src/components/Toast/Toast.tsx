@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Toast.module.css';
 
 export type ToastStatus = 'success' | 'error' | 'info';
@@ -39,7 +40,7 @@ export const Toast: React.FC<ToastProps> = ({
     className={[styles.toast, styles[`toast--${status}`], className ?? ''].filter(Boolean).join(' ')}
   >
     <span className={styles.toast__icon} aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={iconStrokeWidth(18)}
         strokeLinecap="round" strokeLinejoin="round" width={18} height={18}>
         {icons[status]}
       </svg>
@@ -52,7 +53,7 @@ export const Toast: React.FC<ToastProps> = ({
 
     {onDismiss && (
       <button type="button" className={styles.toast__dismiss} onClick={onDismiss} aria-label="Dismiss">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={iconStrokeWidth(16)}
           strokeLinecap="round" strokeLinejoin="round" width={16} height={16}>
           <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
         </svg>

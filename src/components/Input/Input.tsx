@@ -17,7 +17,18 @@
  */
 
 import React from 'react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Input.module.css';
+
+const ICON_PX = 16;
+/** .input__icon svg forces every leading/trailing icon to 16px via CSS
+ * regardless of what the caller passed it -- cloning in a matching
+ * compensated strokeWidth so it renders a true 1.5px line, same as
+ * Avatar's custom icon slot and ActivityFeed's rail icon. */
+const renderInputIcon = (icon: React.ReactNode) =>
+  React.isValidElement<{ size?: number; strokeWidth?: number }>(icon)
+    ? React.cloneElement(icon, { size: ICON_PX, strokeWidth: iconStrokeWidth(ICON_PX) })
+    : icon;
 
 export type InputSize = 'sm' | 'md' | 'lg';
 
@@ -61,7 +72,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             disabled ? styles['input--disabled'] : '',
           ].filter(Boolean).join(' ')}
         >
-          {leadingIcon && <span className={styles.input__icon} aria-hidden="true">{leadingIcon}</span>}
+          {leadingIcon && <span className={styles.input__icon} aria-hidden="true">{renderInputIcon(leadingIcon)}</span>}
           <input
             ref={ref}
             id={inputId}
@@ -71,7 +82,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             aria-describedby={description || error ? `${inputId}-desc` : undefined}
             {...rest}
           />
-          {trailingIcon && <span className={styles.input__icon} aria-hidden="true">{trailingIcon}</span>}
+          {trailingIcon && <span className={styles.input__icon} aria-hidden="true">{renderInputIcon(trailingIcon)}</span>}
         </div>
 
         {/* Description (Figma) or error message */}

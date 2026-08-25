@@ -12,6 +12,7 @@
 
 import React from 'react';
 import { Plus, MoreHorizontal } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './BoardColumn.module.css';
 
 export type BoardColumnState = 'default' | 'empty' | 'loading';
@@ -47,10 +48,10 @@ export const BoardColumn: React.FC<BoardColumnProps> = ({
       {count != null && <span className={styles.col__count}>{count}</span>}
       <span className={styles.col__spacer} />
       <button type="button" className={styles.col__action} onClick={onAdd} aria-label="Add task">
-        <Plus size={16} />
+        <Plus size={16} strokeWidth={iconStrokeWidth(16)} />
       </button>
       <button type="button" className={styles.col__action} onClick={onMenu} aria-label="Column options">
-        <MoreHorizontal size={16} />
+        <MoreHorizontal size={16} strokeWidth={iconStrokeWidth(16)} />
       </button>
     </div>
 
@@ -63,7 +64,7 @@ export const BoardColumn: React.FC<BoardColumnProps> = ({
     </div>
 
     <button type="button" className={styles.col__add} onClick={onAdd}>
-      <Plus size={16} aria-hidden="true" />
+      <Plus size={16} strokeWidth={iconStrokeWidth(16)} aria-hidden="true" />
       Add task
     </button>
   </div>

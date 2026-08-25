@@ -12,6 +12,7 @@
 
 import React from 'react';
 import { ChevronDown, X, Plus } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './FilterChip.module.css';
 
 export type FilterChipType = 'default' | 'active' | 'add';
@@ -38,9 +39,9 @@ export const FilterChip: React.FC<FilterChipProps> = ({
     onClick={onClick}
     className={[styles.chip, styles[`chip--${type}`], className ?? ''].filter(Boolean).join(' ')}
   >
-    {type === 'add' && <Plus size={14} className={styles.chip__lead} aria-hidden="true" />}
+    {type === 'add' && <Plus size={14} strokeWidth={iconStrokeWidth(14)} className={styles.chip__lead} aria-hidden="true" />}
     <span className={styles.chip__label}>{children}</span>
-    {type === 'default' && <ChevronDown size={14} className={styles.chip__trail} aria-hidden="true" />}
+    {type === 'default' && <ChevronDown size={14} strokeWidth={iconStrokeWidth(14)} className={styles.chip__trail} aria-hidden="true" />}
     {type === 'active' && (
       <span
         role="button"
@@ -48,7 +49,7 @@ export const FilterChip: React.FC<FilterChipProps> = ({
         className={styles.chip__remove}
         onClick={(e) => { e.stopPropagation(); onRemove?.(); }}
       >
-        <X size={14} aria-hidden="true" />
+        <X size={14} strokeWidth={iconStrokeWidth(14)} aria-hidden="true" />
       </span>
     )}
   </button>

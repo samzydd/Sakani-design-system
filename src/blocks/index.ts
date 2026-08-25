@@ -6,6 +6,8 @@
  * They are not configurable components — the `state` prop exists only to
  * demonstrate the states each block ships with.
  */
+export { AccountOverviewBlock } from './AccountOverviewBlock';
+export type { AccountOverviewBlockProps, AccountOverviewBlockState } from './AccountOverviewBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';

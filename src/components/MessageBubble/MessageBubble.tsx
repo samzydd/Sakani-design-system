@@ -13,6 +13,7 @@
 
 import React from 'react';
 import { CheckCheck, File as FileIcon, Download } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './MessageBubble.module.css';
 
 export type MessageBubbleType = 'received' | 'sent' | 'system';
@@ -76,12 +77,12 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({
           {content === 'image' && <div className={styles.bubble__image}>{image}</div>}
           {content === 'file' && (
             <div className={styles.file}>
-              <FileIcon size={18} className={styles.file__icon} aria-hidden="true" />
+              <FileIcon size={18} strokeWidth={iconStrokeWidth(18)} className={styles.file__icon} aria-hidden="true" />
               <span className={styles.file__meta}>
                 <span className={styles.file__name}>{fileName}</span>
                 <span className={styles.file__size}>{fileSize}</span>
               </span>
-              <Download size={16} className={styles.file__dl} aria-hidden="true" />
+              <Download size={16} strokeWidth={iconStrokeWidth(16)} className={styles.file__dl} aria-hidden="true" />
             </div>
           )}
           {children && <span className={styles.bubble__text}>{children}</span>}
@@ -91,7 +92,7 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({
           {sent && (
             <>
               {timestamp && <span className={styles.foot__time}>{timestamp}</span>}
-              {read && <CheckCheck size={13} className={styles.foot__receipt} aria-hidden="true" />}
+              {read && <CheckCheck size={13} strokeWidth={iconStrokeWidth(13)} className={styles.foot__receipt} aria-hidden="true" />}
             </>
           )}
         </div>

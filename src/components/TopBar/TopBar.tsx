@@ -14,6 +14,7 @@
 
 import React from 'react';
 import { PanelLeft, CircleHelp, Bell, ChevronDown, type LucideIcon } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './TopBar.module.css';
 
 export type TopBarType = 'search' | 'breadcrumb' | 'tabs' | 'minimal' | 'chat';
@@ -69,7 +70,10 @@ export const TopBar: React.FC<TopBarProps> = ({
   subtitle,
   actions,
   className,
-}) => (
+}) => {
+  const actionIconSize = density === 'md' ? 20 : 18;
+  const actionIconStroke = iconStrokeWidth(actionIconSize);
+  return (
   <header className={[styles.bar, styles[`bar--${density}`], styles[`bar--${type}`], className ?? ''].filter(Boolean).join(' ')}>
     {type === 'chat' ? (
       <>
@@ -86,7 +90,7 @@ export const TopBar: React.FC<TopBarProps> = ({
     <div className={styles.bar__leftGroup}>
       {showToggle && (
         <button type="button" className={styles.bar__icon} onClick={onToggle} aria-label="Toggle sidebar">
-          <ToggleIcon size={density === 'md' ? 20 : 18} />
+          <ToggleIcon size={actionIconSize} strokeWidth={actionIconStroke} />
         </button>
       )}
       <div className={[styles.bar__left, type === 'search' ? styles['bar__left--search'] : ''].filter(Boolean).join(' ')} data-type={type}>{left}</div>
@@ -98,12 +102,12 @@ export const TopBar: React.FC<TopBarProps> = ({
         <>
           {showHelp && (
             <button type="button" className={styles.bar__icon} aria-label="Help">
-              <CircleHelp size={density === 'md' ? 20 : 18} />
+              <CircleHelp size={actionIconSize} strokeWidth={actionIconStroke} />
             </button>
           )}
           <button type="button" className={styles.bar__icon} aria-label="Notifications">
             <span className={styles.bar__bell}>
-              <Bell size={density === 'md' ? 20 : 18} />
+              <Bell size={actionIconSize} strokeWidth={actionIconStroke} />
               {hasUnread && <span className={styles.bar__dot} aria-hidden="true" />}
             </span>
           </button>
@@ -115,6 +119,7 @@ export const TopBar: React.FC<TopBarProps> = ({
           {account}
           <ChevronDown
             size={16}
+            strokeWidth={iconStrokeWidth(16)}
             className={[styles.bar__accountChevron, accountOpen ? styles['bar__accountChevron--open'] : ''].filter(Boolean).join(' ')}
           />
         </div>
@@ -123,6 +128,7 @@ export const TopBar: React.FC<TopBarProps> = ({
     </>
     )}
   </header>
-);
+  );
+};
 
 export default TopBar;

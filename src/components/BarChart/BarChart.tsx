@@ -101,8 +101,13 @@ export const BarChart: React.FC<BarChartProps> = ({
   const negativeMax = niceCeil(Math.max(1, ...data.map((d) => Math.abs(d.value))));
   const negativeTicks = [-negativeMax, -negativeMax / 2, 0, negativeMax / 2, negativeMax];
 
+  // Only `y` is pinned to fix the tall-bar vertical-offset issue above --
+  // `x` is left for Recharts to compute itself, which clamps it to the
+  // chart's own viewBox so the tooltip never overflows the container's
+  // left/right edge (a full {x, y} `position` bypasses that clamping
+  // entirely and let the tooltip get cut off by an ancestor's overflow).
   const tooltip = (
-    <Tooltip cursor={false} content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} position={hoverPos ?? undefined} />
+    <Tooltip cursor={false} content={<ChartTooltip />} wrapperStyle={{ zIndex: 50 }} position={hoverPos ? { y: hoverPos.y } : undefined} />
   );
 
   // Hovering never recolors a bar -- only "active" (categorical, every bar

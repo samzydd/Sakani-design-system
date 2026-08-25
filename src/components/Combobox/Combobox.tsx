@@ -18,6 +18,7 @@
  */
 
 import React from 'react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Combobox.module.css';
 
 export type ComboboxSize = 'sm' | 'md' | 'lg';
@@ -167,7 +168,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
 
         <span className={[styles.control__chevron, open ? styles['control__chevron--open'] : ''].join(' ')} aria-hidden="true">
           <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+            strokeWidth={iconStrokeWidth(16)} strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
         </span>
       </div>
 

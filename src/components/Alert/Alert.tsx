@@ -9,6 +9,7 @@
  */
 
 import React from 'react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Alert.module.css';
 
 export type AlertColor = 'info' | 'success' | 'warning' | 'danger' | 'neutral';
@@ -40,7 +41,7 @@ export const Alert: React.FC<AlertProps> = ({
     className={[styles.alert, styles[`alert--${color}`], className ?? ''].filter(Boolean).join(' ')}
   >
     <span className={styles.alert__icon} aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={iconStrokeWidth(18)}
         strokeLinecap="round" strokeLinejoin="round" width={18} height={18}>
         {icon ?? icons[color]}
       </svg>

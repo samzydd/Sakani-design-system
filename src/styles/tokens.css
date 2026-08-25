@@ -89,6 +89,12 @@
   --color-chart-purple: #9179D6;
   --color-chart-gold: #DCA84F;
   --color-chart-green: #12B76A;
+  /* Code syntax-highlight primitives (Figma "Code Snippet") -- a fixed
+     highlighting palette, not app UI, so it isn't drawn from the semantic
+     bg/fg/border ramps or reused from chart/status colors that happen to
+     share a similar hue. Same in light and dark, like the chart primitives. */
+  --color-code-keyword: #7B4BD9;
+  --color-code-string: #16A34A;
 
   /* ---- semantic (light) ---- */
   --color-bg-canvas: var(--color-neutral-50);
@@ -97,7 +103,7 @@
   --color-bg-muted: var(--color-neutral-200);
   --color-bg-inverse: var(--color-neutral-900);
   --color-fg-default: var(--color-neutral-900);
-  --color-fg-muted: var(--color-neutral-600);
+  --color-fg-muted: var(--color-neutral-500); /* synced from Figma (was neutral-600) */
   --color-fg-subtle: var(--color-neutral-400); /* synced from Figma; note: 2.53:1 contrast on canvas bg, below WCAG AA's 4.5:1 for text */
   --color-fg-on-accent: var(--color-base-white);
   --color-fg-on-inverse: var(--color-neutral-50);

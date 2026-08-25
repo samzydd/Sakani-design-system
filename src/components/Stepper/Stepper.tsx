@@ -4,15 +4,22 @@
  * Progress stepper. Matches Figma "Stepper" (Steps 2-6) + "Stepper Step"
  * (Completed | Current | Upcoming).
  *
- * Figma spec (28px circles):
- *   Completed — accent/default fill, white check
- *   Current   — bg/surface fill, accent/default 2px ring, number, bold label
- *   Upcoming  — bg/subtle fill, border/default 1.5px, number, muted label
+ * The circle is Figma's own standalone "Progress Item Value" component
+ * (node 1679:45850) embedded here, not a bespoke shape -- its 3 statuses
+ * map 1:1 to completed/current/upcoming:
+ *   Completed  — bg/inverse fill (32px), fg/on-inverse check
+ *   Current    — bg/surface fill, accent/default 2px ring, fg/default number, bold label
+ *   Upcoming   — bg/surface fill, border/subtle 2px ring, fg/muted number, muted label
+ * (Verified directly against that node -- an earlier pass had drifted: 28px
+ * instead of 32, accent/default instead of bg/inverse for Completed, and
+ * bg/subtle + border/default 1.5px instead of bg/surface + border/subtle 2px
+ * for Upcoming.)
  * Connectors between steps color accent up to the current step.
  */
 
 import React from 'react';
 import { Check } from 'lucide-react';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Stepper.module.css';
 
 export type StepState = 'completed' | 'current' | 'upcoming';
@@ -41,7 +48,7 @@ export const StepperStep: React.FC<{
 }> = ({ index, state, label, description, orientation = 'horizontal' }) => (
   <div className={[styles.step, styles[`step--${orientation}`]].join(' ')}>
     <span className={[styles.circle, styles[`circle--${state}`]].join(' ')} aria-hidden="true">
-      {state === 'completed' ? <Check size={14} strokeWidth={3} /> : <span className={styles.circle__num}>{index + 1}</span>}
+      {state === 'completed' ? <Check size={14} strokeWidth={iconStrokeWidth(14)} /> : <span className={styles.circle__num}>{index + 1}</span>}
     </span>
     <span className={styles.step__text}>
       <span className={[styles.step__label, state === 'current' ? styles['step__label--current'] : '', state === 'upcoming' ? styles['step__label--upcoming'] : ''].filter(Boolean).join(' ')}>{label}</span>

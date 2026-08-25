@@ -1,0 +1,76 @@
+.snippet {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  background: var(--color-bg-canvas);
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-8) var(--space-8) var(--space-8) var(--space-16);
+  border-bottom: var(--border-width-100) solid var(--color-border-default);
+}
+.filename {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+/* A single pre-wrapped block, not one flex-gapped <p> per line -- literal
+   \n characters in the highlighted text already render as real line breaks
+   this way, and critically it's the only layout model a plain <textarea>
+   overlay (line-height driven, no flex gap) can be pixel-matched against. */
+.body {
+  margin: 0;
+  padding: var(--space-16);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 20px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--color-fg-default);
+}
+
+.tokenKeyword { color: var(--color-code-keyword); }
+.tokenString { color: var(--color-code-string); }
+
+/* Editable: a transparent textarea sits directly on top of the same
+   highlighted block. Only the textarea's caret and selection paint --
+   its actual text is invisible, so the highlighted layer underneath is
+   what's seen; every font/spacing value below must match .body exactly
+   or the invisible caret drifts from the visible text. */
+.editableBody {
+  position: relative;
+  width: 100%;
+  min-height: 96px;
+}
+.textarea {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: var(--space-16);
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 20px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: transparent;
+  caret-color: var(--color-fg-default);
+}
+.textarea::placeholder {
+  color: var(--color-fg-subtle);
+}
