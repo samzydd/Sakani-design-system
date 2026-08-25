@@ -1,0 +1,54 @@
+.announcement {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  /* No global box-sizing reset is guaranteed in a consuming app -- without
+     border-box here, width:100% + padding renders wider than its parent
+     and overflows/clips instead of including the padding in that 100%. */
+  box-sizing: border-box;
+  padding: var(--space-12) var(--space-16);
+  font-family: var(--font-sans);
+}
+.announcement--neutral {
+  background: var(--color-accent-subtle);
+}
+.announcement--urgent {
+  background: var(--color-info-bg);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+.icon__neutral {
+  color: var(--color-accent-default);
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.announcement--neutral .message {
+  color: var(--color-accent-default);
+}
+.announcement--urgent .message {
+  color: var(--color-info-solid);
+}
+
+.link {
+  flex-shrink: 0;
+}
