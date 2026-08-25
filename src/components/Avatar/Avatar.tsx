@@ -8,6 +8,7 @@
  *   sizes: sm 24 · md 32 · lg 40 · xl 48 (all radius-full)
  *   fill: bg/subtle · initials text: fg/muted, scaling label style per size
  *   Type is inferred from props: `src` -> Image, `initials` -> Initials, else Icon
+ *   Image type only: 1px border/subtle ring (added across every size).
  */
 
 import React from 'react';
@@ -47,7 +48,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   // Image type
   if (src) {
     return (
-      <span className={cls}>
+      <span className={[cls, styles['avatar--bordered']].join(' ')}>
         <img src={src} alt={alt} className={styles.avatar__image} />
       </span>
     );

@@ -19,6 +19,14 @@
 .avatar--lg { width: 40px; height: 40px; }
 .avatar--xl { width: 48px; height: 48px; }
 
+/* Image type only -- border-box so the added border doesn't grow the
+   circle past its size token (e.g. a plain 1px border would make a 24px
+   avatar render at 26px). */
+.avatar--bordered {
+  box-sizing: border-box;
+  border: var(--border-width-100) solid var(--color-border-subtle);
+}
+
 /* Image fills the circle */
 .avatar__image {
   width: 100%;
