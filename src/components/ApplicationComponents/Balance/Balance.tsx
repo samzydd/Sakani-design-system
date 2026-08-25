@@ -29,10 +29,16 @@ import { useThemeTick } from '../../../lib/useThemeTick';
 import styles from './Balance.module.css';
 
 const MASK_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-/** Same length as the real string, so the masked value keeps roughly the
- * same visual weight instead of collapsing to a fixed-width placeholder. */
-const randomMask = (length: number) =>
-  Array.from({ length }, () => MASK_CHARS[Math.floor(Math.random() * MASK_CHARS.length)]).join('');
+const MASK_MAX_LENGTH = 8;
+const GLITCH_FRAMES = 6;
+const GLITCH_INTERVAL_MS = 90;
+
+/** Same length as the real string (capped at 8), so the masked value keeps
+ * roughly the same visual weight instead of running arbitrarily long. */
+const randomMask = (length: number) => {
+  const len = Math.min(length, MASK_MAX_LENGTH);
+  return Array.from({ length: len }, () => MASK_CHARS[Math.floor(Math.random() * MASK_CHARS.length)]).join('');
+};
 
 export interface BalanceChangeInfo {
   /** e.g. "+$1,240.50" -- sign/formatting is the caller's responsibility. */
@@ -113,13 +119,39 @@ export const Balance: React.FC<BalanceProps> = ({
     if (!isControlled) setInternalHidden(next);
   };
 
-  // Stable per real value -- regenerates only if the underlying value
-  // actually changes, not on every hide/show toggle or re-render (a fresh
-  // mask each render would read as jittering static, not a redaction).
-  const maskedValue = React.useMemo(() => randomMask(value.length), [value]);
+  // Show -> hidden runs a brief scramble (a handful of random re-rolls in
+  // quick succession) before settling, rather than snapping straight to the
+  // final masked string. Only the reveal-to-mask direction glitches, per
+  // the ask -- unhiding just shows the real value immediately.
+  const [isGlitching, setIsGlitching] = React.useState(false);
+  const [glitchTick, setGlitchTick] = React.useState(0);
+  const wasHiddenRef = React.useRef(false);
+
+  React.useEffect(() => {
+    if (isHidden && !wasHiddenRef.current) {
+      setIsGlitching(true);
+      let frame = 0;
+      const id = setInterval(() => {
+        frame += 1;
+        setGlitchTick((t) => t + 1);
+        if (frame >= GLITCH_FRAMES) {
+          clearInterval(id);
+          setIsGlitching(false);
+        }
+      }, GLITCH_INTERVAL_MS);
+      wasHiddenRef.current = true;
+      return () => clearInterval(id);
+    }
+    wasHiddenRef.current = isHidden;
+  }, [isHidden]);
+
+  // Depends on glitchTick so each scramble frame re-rolls the mask; once the
+  // interval above stops advancing it, the mask stays put like the plain
+  // memoized version this replaced.
+  const maskedValue = React.useMemo(() => randomMask(value.length), [value, glitchTick]);
   const maskedChange = React.useMemo(
     () => (change ? randomMask(change.value.length) : ''),
-    [change?.value],
+    [change?.value, glitchTick],
   );
 
   const content = (
@@ -135,7 +167,13 @@ export const Balance: React.FC<BalanceProps> = ({
           {isHidden ? <EyeOff size={16} strokeWidth={1.5} /> : <Eye size={16} strokeWidth={1.5} />}
         </button>
       </div>
-      <p className={[styles.value, isHidden ? styles['value--hidden'] : ''].filter(Boolean).join(' ')}>
+      <p
+        className={[
+          styles.value,
+          isHidden ? styles['value--hidden'] : '',
+          isGlitching ? styles['value--glitching'] : '',
+        ].filter(Boolean).join(' ')}
+      >
         {isHidden ? maskedValue : value}
       </p>
       {change && (
@@ -145,7 +183,12 @@ export const Balance: React.FC<BalanceProps> = ({
             strokeWidth={1.5}
             className={direction === 'up' ? styles.trendIcon__up : styles.trendIcon__down}
           />
-          <span className={direction === 'up' ? styles.changeValue__up : styles.changeValue__down}>
+          <span
+            className={[
+              direction === 'up' ? styles.changeValue__up : styles.changeValue__down,
+              isGlitching ? styles['value--glitching'] : '',
+            ].filter(Boolean).join(' ')}
+          >
             {isHidden ? maskedChange : change.value}
           </span>
           <span className={styles.changeLabel}>{change.label ?? 'this month'}</span>

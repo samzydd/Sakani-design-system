@@ -1,7 +1,7 @@
 .balance {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   gap: var(--space-4);
   font-family: var(--font-sans);
 }
@@ -11,12 +11,23 @@
   gap: var(--space-16);
 }
 
+/* width:100% (not the shrink-to-fit flex-start default) so the label row
+   -- and the eye icon inside it -- stay put regardless of how wide the
+   value/change text below happens to render, mask vs. real value included. */
 .content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-4);
+  width: 100%;
   min-width: 0;
+}
+/* In the progress layout .content sits beside a fixed-width ring in a row,
+   so it needs to grow to fill the remaining space instead of demanding a
+   literal 100% of that row. */
+.balance--progress .content {
+  width: auto;
+  flex: 1 1 0%;
 }
 
 .labelRow {
@@ -59,21 +70,40 @@
 
 .value {
   margin: 0;
+  width: 100%;
   font-size: 40px;
   line-height: 48px;
   font-weight: 500;
   letter-spacing: -0.8px;
   color: var(--color-fg-default);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .value--hidden {
   color: var(--color-fg-muted);
+}
+
+/* Brief scramble on reveal -> mask, driven by the component re-rolling the
+   random string a few times in quick succession -- this just sells it
+   visually with a jitter/flicker on top of the text actually changing. */
+.value--glitching {
+  animation: balance-glitch 180ms steps(2) infinite;
+}
+@keyframes balance-glitch {
+  0% { transform: translateX(0); opacity: 1; }
+  25% { transform: translateX(-1px); opacity: 0.7; }
+  50% { transform: translateX(1px); opacity: 1; }
+  75% { transform: translateX(-1px); opacity: 0.85; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
 .changeRow {
   display: flex;
   align-items: center;
   gap: var(--space-4);
+  width: 100%;
+  min-width: 0;
 }
 .trendIcon__up { color: var(--color-success-solid); }
 .trendIcon__down { color: var(--color-danger-solid); }
