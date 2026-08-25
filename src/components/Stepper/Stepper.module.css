@@ -1,4 +1,5 @@
-/* Stepper — 28px circles, accent completed / ringed current / muted upcoming. */
+/* Stepper — 32px circles (Figma's standalone "Progress Item Value"
+   component), bg/inverse completed / ringed current / ringed upcoming. */
 .stepper { display: flex; font-family: var(--font-sans); }
 .stepper--horizontal { flex-direction: row; align-items: flex-start; }
 .stepper--vertical { flex-direction: column; }
@@ -12,25 +13,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-full);
   flex-shrink: 0;
   box-sizing: border-box;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
 .circle__num { line-height: 1; }
 
-.circle--completed { background: var(--color-accent-default); color: var(--color-fg-on-accent); }
+.circle--completed { background: var(--color-bg-inverse); color: var(--color-fg-on-inverse); }
 .circle--current {
   background: var(--color-bg-surface);
-  border: 2px solid var(--color-accent-default);
+  border: var(--border-width-200) solid var(--color-accent-default);
   color: var(--color-fg-default);
 }
 .circle--upcoming {
-  background: var(--color-bg-subtle);
-  border: var(--border-width-150) solid var(--color-border-default);
+  background: var(--color-bg-surface);
+  border: var(--border-width-200) solid var(--color-border-subtle);
   color: var(--color-fg-muted);
 }
 
@@ -43,6 +44,6 @@
 
 /* Connectors */
 .connector { background: var(--color-bg-muted); flex: 1; }
-.connector--horizontal { height: 2px; margin-top: 13px; min-width: 24px; }
-.connector--vertical { width: 2px; margin-left: 13px; min-height: 24px; }
+.connector--horizontal { height: 2px; margin-top: 15px; min-width: 24px; }
+.connector--vertical { width: 2px; margin-left: 15px; min-height: 24px; }
 .connector--filled { background: var(--color-accent-default); }
