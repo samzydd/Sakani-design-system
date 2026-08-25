@@ -91,23 +91,28 @@
 /**
  * Secondary — subtle surface, default foreground.
  * Maps to Figma: Variant=Secondary
+ * Figma's Secondary has no stroke at all (unlike Outline, which does) --
+ * border-color is set to match its own background so the base class's
+ * border-width stays for layout but renders invisible, same technique
+ * Primary uses.
  */
 .button--secondary {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
 
   background-color: var(--color-bg-subtle);
   color: var(--color-fg-default);
-  border-color: var(--color-border-default);
+  border-color: var(--color-bg-subtle);
 }
 
 .button--secondary:hover:not(:disabled) {
   background-color: var(--color-bg-muted);
-  border-color: var(--color-border-strong);
+  border-color: var(--color-bg-muted);
   box-shadow: var(--shadow-sm);
 }
 
 .button--secondary:active:not(:disabled) {
   background-color: var(--color-bg-muted);
+  border-color: var(--color-bg-muted);
 }
 
 /**

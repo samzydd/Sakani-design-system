@@ -25,10 +25,12 @@
  background: var(--color-accent-default); color: var(--color-fg-on-accent); border-color: var(--color-accent-default); }
 .button--primary:hover:not(:disabled) { background: var(--color-accent-hover); border-color: var(--color-accent-hover); box-shadow: var(--shadow-sm); }
 
+/* Figma's Secondary has no stroke (unlike Outline) -- border-color matches
+   its own background so it renders invisible, same as Button's Secondary. */
 .button--secondary {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
- background: var(--color-bg-subtle); color: var(--color-fg-default); border-color: var(--color-border-default); }
-.button--secondary:hover:not(:disabled) { background: var(--color-bg-muted); box-shadow: var(--shadow-sm); }
+ background: var(--color-bg-subtle); color: var(--color-fg-default); border-color: var(--color-bg-subtle); }
+.button--secondary:hover:not(:disabled) { background: var(--color-bg-muted); border-color: var(--color-bg-muted); box-shadow: var(--shadow-sm); }
 
 .button--outline {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
@@ -47,7 +49,7 @@
 
 /* Pressed (mirrors Button's :active states / Figma State=Pressed) */
 .button--primary:active:not(:disabled) { background: var(--color-accent-active); border-color: var(--color-accent-active); }
-.button--secondary:active:not(:disabled) { background: var(--color-bg-muted); }
+.button--secondary:active:not(:disabled) { background: var(--color-bg-muted); border-color: var(--color-bg-muted); }
 .button--outline:active:not(:disabled) { background: var(--color-bg-muted); }
 .button--ghost:active:not(:disabled) { background: var(--color-bg-muted); }
 .button--destructive:active:not(:disabled) { opacity: 0.9; }
