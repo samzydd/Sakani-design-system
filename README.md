@@ -1,6 +1,6 @@
 # Sakani Design System
 
-An open-source, token-driven React component library for SaaS products — **66 accessible components and counting**, built 1:1 from a Figma design system now spanning **1,500+ components and variants** across light and dark mode.
+An open-source, token-driven React component library for SaaS products — **1,500+ accessible components and variants**, built 1:1 from a Figma design system and now spanning **1,500+ components and variants** across light and dark modes.
 
 **[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/design/Fd3uY263mEQKnaTEfrzQxh/)**
 
