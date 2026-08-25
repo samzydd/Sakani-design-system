@@ -16,6 +16,7 @@ export * from './components/ApplicationComponents/InlineHint';
 export * from './components/ApplicationComponents/Modal';
 export * from './components/ApplicationComponents/NotificationItem';
 export * from './components/ApplicationComponents/ProgressItem';
+export * from './components/ApplicationComponents/ProgressStat';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
