@@ -104,6 +104,10 @@
    siblings, so a Select opened inside a Modal (e.g. FormModalBlock's Role
    field) needs to explicitly outrank it or the backdrop paints over it. */
 .panel {
+  /* Width is set inline to the trigger's own measured rect (see Select.tsx)
+     -- without border-box, the panel's padding + border added on top of
+     that width, so it rendered wider than the trigger it's anchored to. */
+  box-sizing: border-box;
   z-index: 1100;
   display: flex;
   flex-direction: column;
