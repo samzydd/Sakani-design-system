@@ -99,9 +99,12 @@
    Select.tsx -- since the panel portals to <body> instead of sitting in
    flow under the trigger, precisely so a Select inside a scrollable
    container (e.g. a filter sidebar) can't have its open panel clipped by
-   that ancestor's overflow. */
+   that ancestor's overflow.
+   z-index is above Modal's backdrop (1000) -- both portal to <body> as
+   siblings, so a Select opened inside a Modal (e.g. FormModalBlock's Role
+   field) needs to explicitly outrank it or the backdrop paints over it. */
 .panel {
-  z-index: 20;
+  z-index: 1100;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
