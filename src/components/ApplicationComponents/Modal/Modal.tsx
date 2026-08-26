@@ -46,13 +46,18 @@ export interface ModalProps {
   confirmLoading?: boolean;
   closeOnEscape?: boolean;
   closeOnBackdropClick?: boolean;
+  /** Custom body content (e.g. a form) rendered below `description`, above
+   *  the footer's Divider. Lets consumers like FormModalBlock reuse this
+   *  component's portal/focus-trap/dark-mode plumbing instead of
+   *  duplicating it just to swap in different body content. */
+  children?: React.ReactNode;
   className?: string;
 }
 
 export const Modal: React.FC<ModalProps> = ({
   open, onClose, title, description, variant = 'default', icon,
   cancelLabel = 'Cancel', confirmLabel, onCancel, onConfirm, confirmLoading,
-  closeOnEscape = true, closeOnBackdropClick = true, className,
+  closeOnEscape = true, closeOnBackdropClick = true, children, className,
 }) => {
   const isDestructive = variant === 'destructive';
   const cardRef = React.useRef<HTMLDivElement>(null);
@@ -135,6 +140,8 @@ export const Modal: React.FC<ModalProps> = ({
             </div>
 
             {description && <p className={styles.description}>{description}</p>}
+
+            {children}
 
             <Divider />
 
