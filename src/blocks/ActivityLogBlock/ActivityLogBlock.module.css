@@ -1,0 +1,23 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-20);
+  width: 480px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-20);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  font-family: var(--font-sans);
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+  color: var(--color-fg-default);
+}

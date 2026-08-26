@@ -85,7 +85,8 @@
   font-weight: 500;
   color: var(--color-fg-muted);
 }
-.actor {
+.actor,
+.highlight {
   color: var(--color-fg-default);
 }
 .timestamp {
