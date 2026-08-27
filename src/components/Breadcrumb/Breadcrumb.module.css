@@ -31,3 +31,24 @@ a.crumb:hover { color: var(--color-fg-default); text-decoration: underline; text
 }
 
 .separator { display: inline-flex; color: var(--color-fg-subtle); }
+
+/* ─── Type=Button (added 2026-08-27, node 436:120) ───
+ * Every crumb -- current included -- is a small Ghost-style chip: fg/default
+ * text always, radius-md, shadow-xs, tighter 4px gap between elements. */
+.list--button { gap: var(--space-4); }
+.list--button .item { gap: var(--space-4); }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-6);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  text-decoration: none;
+  box-shadow: var(--shadow-xs);
+  transition: background-color var(--transition-base);
+}
+a.chip:hover { background: var(--color-bg-subtle); }

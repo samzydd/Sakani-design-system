@@ -51,13 +51,30 @@ export interface ModalProps {
    *  component's portal/focus-trap/dark-mode plumbing instead of
    *  duplicating it just to swap in different body content. */
   children?: React.ReactNode;
+  /** Hides the title+close-X header row entirely, so `children` owns the
+   *  whole top of the card (e.g. MultistepModalBlock's own steps-row +
+   *  title + description, which Figma draws with no header bar or close
+   *  control at all). `title` is still required and used as the dialog's
+   *  aria-label in this mode, since there's no #modal-title element to
+   *  point aria-labelledby at. */
+  hideHeader?: boolean;
+  /** Hides the Divider between the body and the footer buttons (Figma's
+   *  Multistep Modal has no such rule). */
+  hideFooterDivider?: boolean;
+  /** Footer button alignment. 'end' (default) clusters Cancel/Confirm at
+   *  the right, matching the base Modal's Figma spec. 'between' spreads
+   *  them across the full width (Figma: Multistep Modal's Back / Continue
+   *  footer), so the footer <div> fills the card instead of just wrapping
+   *  its two buttons. */
+  footerJustify?: 'end' | 'between';
   className?: string;
 }
 
 export const Modal: React.FC<ModalProps> = ({
   open, onClose, title, description, variant = 'default', icon,
   cancelLabel = 'Cancel', confirmLabel, onCancel, onConfirm, confirmLoading,
-  closeOnEscape = true, closeOnBackdropClick = true, children, className,
+  closeOnEscape = true, closeOnBackdropClick = true, children,
+  hideHeader = false, hideFooterDivider = false, footerJustify = 'end', className,
 }) => {
   const isDestructive = variant === 'destructive';
   const cardRef = React.useRef<HTMLDivElement>(null);
@@ -123,29 +140,32 @@ export const Modal: React.FC<ModalProps> = ({
             ref={cardRef}
             role="alertdialog"
             aria-modal="true"
-            aria-labelledby="modal-title"
+            aria-labelledby={hideHeader ? undefined : 'modal-title'}
+            aria-label={hideHeader ? title : undefined}
             tabIndex={-1}
             className={[styles.card, className ?? ''].filter(Boolean).join(' ')}
           >
-            <div className={styles.header}>
-              <div className={styles.titleGroup}>
-                {isDestructive && (
-                  <span className={styles.iconWrap} aria-hidden="true">
-                    {icon ?? <TriangleAlert size={24} strokeWidth={iconStrokeWidth(24)} className={styles.icon} />}
-                  </span>
-                )}
-                <p id="modal-title" className={styles.title}>{title}</p>
+            {!hideHeader && (
+              <div className={styles.header}>
+                <div className={styles.titleGroup}>
+                  {isDestructive && (
+                    <span className={styles.iconWrap} aria-hidden="true">
+                      {icon ?? <TriangleAlert size={24} strokeWidth={iconStrokeWidth(24)} className={styles.icon} />}
+                    </span>
+                  )}
+                  <p id="modal-title" className={styles.title}>{title}</p>
+                </div>
+                <IconButton icon={X} variant="ghost" size="lg" aria-label="Close" onClick={onClose} />
               </div>
-              <IconButton icon={X} variant="ghost" size="lg" aria-label="Close" onClick={onClose} />
-            </div>
+            )}
 
             {description && <p className={styles.description}>{description}</p>}
 
             {children}
 
-            <Divider />
+            {!hideFooterDivider && <Divider />}
 
-            <div className={styles.footer}>
+            <div className={[styles.footer, footerJustify === 'between' ? styles['footer--between'] : ''].filter(Boolean).join(' ')}>
               {/* Button's secondary variant always draws a border/default
                   outline; Figma's Cancel here has none, just the bg/subtle
                   fill, so it's stripped via inline style rather than

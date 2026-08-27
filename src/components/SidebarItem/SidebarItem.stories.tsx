@@ -15,6 +15,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const Active: Story = { args: { active: true } };
+export const ActiveDefault: Story = { args: { active: true, activeIndicator: false } };
 export const WithBadge: Story = { args: { badge: '12' } };
 export const WithSubmenu: Story = { args: { hasSubmenu: true } };
 export const Disabled: Story = { args: { disabled: true } };
@@ -24,7 +25,8 @@ export const AllStates: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <SidebarItem icon={House} label="Default" />
-      <SidebarItem icon={ChartLine} label="Active" active />
+      <SidebarItem icon={ChartLine} label="Active - Indicator" active />
+      <SidebarItem icon={ChartLine} label="Active - Default" active activeIndicator={false} />
       <SidebarItem icon={Settings} label="With badge" badge="3" />
       <SidebarItem icon={Settings} label="Disabled" disabled />
     </div>
@@ -39,7 +41,8 @@ export const DarkMode: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <SidebarItem icon={House} label="Default" />
-      <SidebarItem icon={ChartLine} label="Active" active />
+      <SidebarItem icon={ChartLine} label="Active - Indicator" active />
+      <SidebarItem icon={ChartLine} label="Active - Default" active activeIndicator={false} />
       <SidebarItem icon={Settings} label="With badge" badge="3" />
     </div>
   ),

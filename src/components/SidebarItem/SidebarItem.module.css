@@ -26,8 +26,8 @@
   transition: background-color var(--transition-base), color var(--transition-base),
     width var(--transition-base), padding var(--transition-base), gap var(--transition-base);
 }
-.item:hover:not(.item--disabled):not(.item--active) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
-.item:hover:not(.item--disabled):not(.item--active) .item__icon { color: var(--color-fg-default); }
+.item:hover:not(.item--disabled):not(.item--active):not(.item--active-flat) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.item:hover:not(.item--disabled):not(.item--active):not(.item--active-flat) .item__icon { color: var(--color-fg-default); }
 /* Focus (re-read 2026-08-10): a solid 2px brand border directly on the item,
  * not the old two-layer white-gap ring. */
 .item:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--color-border-focus); }
@@ -51,21 +51,36 @@
   transition: opacity var(--transition-base);
 }
 
-/* ─── Active state (re-read 2026-08-18) ───
- * Active: bg/surface card + soft shadow -- identical for expanded and
- * collapsed, and no longer has a distinct hover treatment -- stays exactly
- * as-is whether hovered or not (removed the earlier shadow-drop "flatten"
- * effect on hover). */
-.item--active {
+/* ─── Active states (re-read 2026-08-27) ───
+ * Figma split expanded Active/Active Hover into two flavors each -- collapsed
+ * is unchanged and always renders the "Indicator" look:
+ *   "- Indicator" (.item--active): bg/surface card + soft shadow + left
+ *     accent bar -- the original Active look, still the default.
+ *   "- Default" (.item--active-flat): flat bg/subtle tint, no bar, no shadow
+ *     -- same background as Hover, but keeps Active's icon/label/badge/chevron.
+ * Neither flavor has a distinct hover treatment -- stays exactly as-is
+ * whether hovered or not. */
+.item--active,
+.item--active-flat {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
-  background: var(--color-bg-surface);
-  box-shadow: 0 1px 1px rgba(16, 15, 12, 0.06), 0 1px 1.5px rgba(16, 15, 12, 0.1);
   color: var(--color-fg-default);
 }
+.item--active .item__icon,
+.item--active-flat .item__icon { color: var(--color-fg-default); }
+.item--active .item__chevron,
+.item--active-flat .item__chevron { color: var(--color-accent-default); }
+.item--active .item__badge,
+.item--active-flat .item__badge { background: var(--color-accent-default); color: var(--color-fg-on-accent); }
+
+.item--active {
+  background: var(--color-bg-surface);
+  box-shadow: 0 1px 1px rgba(16, 15, 12, 0.06), 0 1px 1.5px rgba(16, 15, 12, 0.1);
+}
 .item--active .item__bar { opacity: 1; }
-.item--active .item__icon { color: var(--color-fg-default); }
-.item--active .item__chevron { color: var(--color-accent-default); }
-.item--active .item__badge { background: var(--color-accent-default); color: var(--color-fg-on-accent); }
+
+.item--active-flat {
+  background: var(--color-bg-subtle);
+}
 
 .item--disabled { color: var(--color-fg-subtle); opacity: var(--opacity-60, 0.6); cursor: not-allowed; pointer-events: none; }
 .item--disabled .item__icon { color: var(--color-fg-subtle); }

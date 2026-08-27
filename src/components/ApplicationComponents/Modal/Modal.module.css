@@ -85,3 +85,10 @@
   gap: var(--space-12);
   width: 100%;
 }
+
+/* footerJustify="between" (Figma: Multistep Modal's Back / Continue footer)
+   -- spreads the two buttons across the full card width instead of
+   clustering them at the right. */
+.footer--between {
+  justify-content: space-between;
+}
