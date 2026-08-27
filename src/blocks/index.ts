@@ -18,6 +18,8 @@ export { FormModalBlock } from './FormModalBlock';
 export type { FormModalBlockProps } from './FormModalBlock';
 export { InlineCtaBlock } from './InlineCtaBlock';
 export type { InlineCtaBlockProps, InlineCtaVariant } from './InlineCtaBlock';
+export { MultistepModalBlock } from './MultistepModalBlock';
+export type { MultistepModalBlockProps } from './MultistepModalBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
