@@ -2,18 +2,27 @@
  * SidebarItem
  *
  * Primary nav item. Matches Figma "Sidebar Item":
- *   State (Default|Hover|Active|Active Hover|Focus|Disabled) x Collapsed (No|Yes),
+ *   State (Default|Hover|Active - Indicator|Active - Default|Active Hover - Indicator|
+ *     Active Hover - Default|Focus|Disabled) x Collapsed (No|Yes),
  *   with Badge + Submenu-chevron toggles and a swappable Lucide icon (default: house).
  *
  * Figma spec (read from the component, expanded AND collapsed):
  *   - radius-sm (6), padding 6/10 expanded / 8 collapsed, gap 10, label/md
  *   - LEFT ACCENT BAR: 3x20px brand/default rounded pill — present in BOTH expanded
- *     and collapsed layouts, shown when active
+ *     and collapsed layouts, shown when active AND indicator-styled
  *   - Default/Hover: icon+label fg/muted->fg/default, badge bg/muted + fg/muted text
- *   - Active/Active Hover: bg/surface card + soft shadow (0 1px 1px rgba(16,15,12,.06),
- *       0 1px 1.5px rgba(16,15,12,.1)) — re-read from Figma 2026-08-06, replaces the
- *       older accent/subtle tinted background. icon+label fg/default,
- *       badge bg accent/default + fg/on-accent text, chevron accent-tinted
+ *   - Active states (re-read 2026-08-27 — Figma split expanded "Active"/"Active Hover"
+ *     into two flavors each; collapsed is unchanged and always indicator-styled):
+ *       "- Indicator": bg/surface card + soft shadow (0 1px 1px rgba(16,15,12,.06),
+ *         0 1px 1.5px rgba(16,15,12,.1)) + the left accent bar — this is the original
+ *         Active look, now opt-in via `activeIndicator` (default true, so existing
+ *         `active` usages render unchanged).
+ *       "- Default": flat bg/subtle tint, no bar, no shadow — same background as Hover,
+ *         but keeps Active's icon/label/badge/chevron treatment. Used by passing
+ *         `activeIndicator={false}`.
+ *     Both flavors: icon+label fg/default, badge bg accent/default + fg/on-accent
+ *     text, chevron accent-tinted. Neither flavor gets a further hover change —
+ *     an active item (either style) looks identical hovered or not, same as before.
  *   - Disabled: fg/subtle
  *
  * Dark mode: all colors are semantic tokens, so the .dark class re-themes automatically.
@@ -28,6 +37,11 @@ export interface SidebarItemProps {
   icon?: LucideIcon;
   label: string;
   active?: boolean;
+  /** Only matters when `active` and not `collapsed` (collapsed is always
+   * indicator-styled, matching Figma). true (default) = bg/surface card +
+   * shadow + left accent bar ("Active - Indicator"). false = flat bg/subtle
+   * tint, no bar, no shadow ("Active - Default"). */
+  activeIndicator?: boolean;
   disabled?: boolean;
   badge?: string;
   hasSubmenu?: boolean;
@@ -41,11 +55,14 @@ export interface SidebarItemProps {
 }
 
 export const SidebarItem: React.FC<SidebarItemProps> = ({
-  icon: Icon, label, active, disabled, badge, hasSubmenu, collapsed, onClick, href, nativeTooltip = true,
+  icon: Icon, label, active, activeIndicator = true, disabled, badge, hasSubmenu, collapsed, onClick, href, nativeTooltip = true,
 }) => {
+  const isActiveIndicator = active && (collapsed || activeIndicator);
+  const isActiveDefault = active && !collapsed && !activeIndicator;
   const cls = [
     styles.item,
-    active ? styles['item--active'] : '',
+    isActiveIndicator ? styles['item--active'] : '',
+    isActiveDefault ? styles['item--active-flat'] : '',
     disabled ? styles['item--disabled'] : '',
     collapsed ? styles['item--collapsed'] : '',
   ].filter(Boolean).join(' ');
