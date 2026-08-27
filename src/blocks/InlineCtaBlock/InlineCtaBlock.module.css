@@ -60,3 +60,11 @@
 .action {
   flex-shrink: 0;
 }
+
+/* Button's shared outline variant is transparent by default, which blends
+   into the Accent card's own accent/subtle fill -- Figma's "Add payment
+   method" button here is a solid bg/surface white, so it's given back
+   explicitly, scoped to this card. */
+.ctaAccent .action {
+  background-color: var(--color-bg-surface);
+}
