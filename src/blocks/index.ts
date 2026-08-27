@@ -16,6 +16,8 @@ export { FileUploadPanelBlock } from './FileUploadPanelBlock';
 export type { FileUploadPanelBlockProps, FileUploadPanelBlockState } from './FileUploadPanelBlock';
 export { FormModalBlock } from './FormModalBlock';
 export type { FormModalBlockProps } from './FormModalBlock';
+export { InlineCtaBlock } from './InlineCtaBlock';
+export type { InlineCtaBlockProps, InlineCtaVariant } from './InlineCtaBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
