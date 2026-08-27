@@ -8,8 +8,11 @@
  * lines between circles, unlike the standalone Stepper component) -> title
  * + description -> Back / Continue-or-Submit footer. No divider before the
  * footer and no header/close-X row at all -- both toggled off via Modal's
- * `hideFooterDivider`/`hideHeader` props (added for this block) so the
- * shared Modal still owns the portal/backdrop/focus-trap/dark-mode plumbing.
+ * `hideFooterDivider`/`hideHeader` props (added for this block), and the
+ * Back/Continue footer spans the full card width via `footerJustify="between"`
+ * (also added for this block; the base Modal's Cancel/Confirm stay clustered
+ * at the right) -- so the shared Modal still owns the portal/backdrop/
+ * focus-trap/dark-mode plumbing.
  *
  * The steps row is NOT a reuse of the shared Stepper component: Stepper
  * always draws a connector between circles and sizes them at 32px (matching
@@ -110,6 +113,7 @@ export const MultistepModalBlock: React.FC<MultistepModalBlockProps> = ({
       title={active.title}
       hideHeader
       hideFooterDivider
+      footerJustify="between"
       cancelLabel="Back"
       onCancel={handleBack}
       confirmLabel={isLast ? (submitting ? 'Submitting…' : 'Submit') : 'Continue'}

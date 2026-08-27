@@ -61,6 +61,12 @@ export interface ModalProps {
   /** Hides the Divider between the body and the footer buttons (Figma's
    *  Multistep Modal has no such rule). */
   hideFooterDivider?: boolean;
+  /** Footer button alignment. 'end' (default) clusters Cancel/Confirm at
+   *  the right, matching the base Modal's Figma spec. 'between' spreads
+   *  them across the full width (Figma: Multistep Modal's Back / Continue
+   *  footer), so the footer <div> fills the card instead of just wrapping
+   *  its two buttons. */
+  footerJustify?: 'end' | 'between';
   className?: string;
 }
 
@@ -68,7 +74,7 @@ export const Modal: React.FC<ModalProps> = ({
   open, onClose, title, description, variant = 'default', icon,
   cancelLabel = 'Cancel', confirmLabel, onCancel, onConfirm, confirmLoading,
   closeOnEscape = true, closeOnBackdropClick = true, children,
-  hideHeader = false, hideFooterDivider = false, className,
+  hideHeader = false, hideFooterDivider = false, footerJustify = 'end', className,
 }) => {
   const isDestructive = variant === 'destructive';
   const cardRef = React.useRef<HTMLDivElement>(null);
@@ -159,7 +165,7 @@ export const Modal: React.FC<ModalProps> = ({
 
             {!hideFooterDivider && <Divider />}
 
-            <div className={styles.footer}>
+            <div className={[styles.footer, footerJustify === 'between' ? styles['footer--between'] : ''].filter(Boolean).join(' ')}>
               {/* Button's secondary variant always draws a border/default
                   outline; Figma's Cancel here has none, just the bg/subtle
                   fill, so it's stripped via inline style rather than
