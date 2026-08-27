@@ -4,6 +4,7 @@
   align-items: center;
   gap: var(--space-12);
   width: 100%;
+  box-sizing: border-box;
   padding: var(--space-12);
   border-radius: var(--radius-lg);
   font-family: var(--font-sans);
