@@ -5,6 +5,9 @@ const meta = {
   title: 'Composite/Breadcrumb',
   component: Breadcrumb,
   tags: ['autodocs'],
+  argTypes: {
+    variant: { control: 'select', options: ['text', 'button'] },
+  },
 } satisfies Meta<typeof Breadcrumb>;
 
 export default meta;
@@ -16,6 +19,17 @@ export const Default: Story = {
     { label: 'Projects', href: '#' },
     { label: 'Current' },
   ] },
+};
+
+export const ButtonVariant: Story = {
+  args: {
+    variant: 'button',
+    items: [
+      { label: 'Files', href: '#' },
+      { label: 'Archive', href: '#' },
+      { label: 'Current' },
+    ],
+  },
 };
 
 export const TwoLevels: Story = {
@@ -35,6 +49,15 @@ export const DeepTrail: Story = {
 /** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
 export const DarkMode: Story = {
   args: { items: [{ label: 'Home', href: '#' }, { label: 'Projects', href: '#' }, { label: 'Current' }] },
+  decorators: [(S) => (
+    <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
+      <S />
+    </div>
+  )],
+};
+
+export const ButtonVariantDarkMode: Story = {
+  args: ButtonVariant.args,
   decorators: [(S) => (
     <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
       <S />
