@@ -3,17 +3,32 @@ import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import path from 'node:path';
 
-// Library build — produces the dist/ output consumed by other apps as a
-// local package dependency (npm `file:` install). Run with:
+// Library build — produces the dist/ output published to npm as
+// @sakaniui/react. Run with:
 //   npm run build:lib
+//
+// Two entry points, published as two subpaths:
+//   .        -> src/index.ts   (stable, fully-configurable components)
+//   ./blocks -> src/blocks/index.ts (copy-paste composition examples --
+//     kept out of the main entry so importing them is an explicit,
+//     separate choice, matching how they're already split out in Storybook)
 export default defineConfig({
   plugins: [
     react(),
     dts({
       entryRoot: 'src',
       tsconfigPath: './tsconfig.app.json',
-      include: ['src/components/**/*.ts', 'src/components/**/*.tsx', 'src/index.ts'],
-      exclude: ['src/components/**/*.stories.tsx', 'src/components/**/*.test.tsx', 'src/components/**/*.test.ts'],
+      include: [
+        'src/components/**/*.ts', 'src/components/**/*.tsx', 'src/index.ts',
+        'src/blocks/**/*.ts', 'src/blocks/**/*.tsx',
+      ],
+      exclude: [
+        'src/components/**/*.stories.tsx', 'src/components/**/*.test.tsx', 'src/components/**/*.test.ts',
+        'src/blocks/**/*.stories.tsx', 'src/blocks/**/*.test.tsx', 'src/blocks/**/*.test.ts',
+        // Experimental/broken alternate file, not part of the real
+        // blocks/index.ts export graph -- see ChatInterfaceBlock/index.ts.
+        'src/blocks/**/*-simple.tsx', 'src/blocks/**/*.backup',
+      ],
       insertTypesEntry: true,
       rollupTypes: false,
     }),
@@ -23,10 +38,13 @@ export default defineConfig({
     emptyOutDir: true,
     cssCodeSplit: false,
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: {
+        index: path.resolve(__dirname, 'src/index.ts'),
+        blocks: path.resolve(__dirname, 'src/blocks/index.ts'),
+      },
       name: 'SakaniDesignSystem',
       formats: ['es', 'cjs'],
-      fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`,
+      fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'mjs' : 'cjs'}`,
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime', 'recharts', 'lucide-react'],
@@ -37,9 +55,13 @@ export default defineConfig({
         // filename silently changed (sakani-design-system.css -> react.css)
         // the moment the package was renamed to @sakaniui/react, breaking
         // package.json's exports["./style.css"] pointer. Forced to a fixed
-        // name instead: cssCodeSplit:false means there's always exactly
-        // one CSS bundle, so there's nothing to disambiguate by name.
-        assetFileNames: 'style.css',
+        // name for CSS specifically; everything else (the JPG avatars a few
+        // blocks import directly) keeps its own hashed name instead of also
+        // being swept into "style.css".
+        assetFileNames: (info) => {
+          const name = info.name ?? (info as { names?: string[] }).names?.[0] ?? '';
+          return name.endsWith('.css') ? 'style.css' : 'assets/[name]-[hash][extname]';
+        },
       },
     },
   },

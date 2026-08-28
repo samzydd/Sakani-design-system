@@ -1,6 +1,6 @@
 {
   "name": "@sakaniui/react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Sakani Design System — 1500+ token-driven React components and blocks, with light & dark modes.",
   "license": "MIT",
   "repository": {
@@ -33,6 +33,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
+    },
+    "./blocks": {
+      "types": "./dist/blocks.d.ts",
+      "import": "./dist/blocks.mjs",
+      "require": "./dist/blocks.cjs"
     },
     "./style.css": "./dist/style.css",
     "./tokens.css": "./src/styles/tokens.css"

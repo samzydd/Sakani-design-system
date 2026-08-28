@@ -98,21 +98,34 @@ Change a semantic token and every component follows — in both the design file 
 
 ## Blocks
 
-Blocks are full sections assembled from Sakani components — **composition examples** you copy into your project and edit directly, rather than configurable components. Each ships with the states it needs (loading, empty, error, and so on).
+Blocks are full sections assembled from Sakani components — **composition examples**, not fully-configurable components like the ones above. Most ship with realistic sample data and manage their own demo state internally (a `state` prop just switches between the states each one ships with — loading, empty, error, and so on). They're meant as a working starting point you customize, not a drop-in you configure entirely through props.
 
-They live in `src/blocks`:
+They live in `src/blocks`, and are also published separately from the main package at **`@sakaniui/react/blocks`** — kept out of the main entry point on purpose, so importing them is a deliberate choice:
+
+```bash
+npm install @sakaniui/react
+```
+
+```tsx
+import { DataTableBlock } from '@sakaniui/react/blocks';
+
+<DataTableBlock />
+```
+
+To actually customize one, copy its source file straight from GitHub instead and edit it directly — that's still the intended workflow for anything beyond the states it ships with:
+
+```tsx
+// src/blocks/DataTableBlock/DataTableBlock.tsx, copied into your project
+import { DataTableBlock } from './DataTableBlock';
+
+// Swap the sample data for your own, edit the columns.
+<DataTableBlock />
+```
 
 | Block | States |
 |---|---|
 | **Data Table + Toolbar** | default · filtered · bulk selection · loading · empty · error |
 | **Kanban Board** | default · loading · empty column · dragging |
-
-```tsx
-import { DataTableBlock } from '@/blocks/DataTableBlock';
-
-// Copy the file, swap the sample data for your own, edit the columns.
-<DataTableBlock />
-```
 
 Browse every block and state in the [live Storybook](https://main--6a5a658b3681fcc010430db5.chromatic.com) under **Blocks**.
 
