@@ -1,7 +1,20 @@
 {
-  "name": "sakani-design-system",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@sakaniui/react",
+  "version": "0.1.0",
+  "description": "Sakani Design System — 1500+ token-driven React components and blocks, with light & dark modes.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samzydd/Sakani-design-system.git"
+  },
+  "homepage": "https://github.com/samzydd/Sakani-design-system#readme",
+  "keywords": [
+    "react",
+    "design-system",
+    "component-library",
+    "ui",
+    "sakani"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -12,13 +25,16 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./style.css": "./dist/sakani-design-system.css",
+    "./style.css": "./dist/style.css",
     "./tokens.css": "./src/styles/tokens.css"
   },
   "scripts": {
@@ -32,12 +48,14 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic"
   },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",
     "geist": "^1.7.2",
     "lucide-react": "^1.25.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
     "recharts": "^3.9.2"
   },
   "devDependencies": {
@@ -56,6 +74,8 @@
     "chromatic": "^18.0.1",
     "oxlint": "^1.71.0",
     "playwright": "^1.61.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "storybook": "^10.5.2",
     "typescript": "~6.0.2",
     "vite": "^8.1.1",

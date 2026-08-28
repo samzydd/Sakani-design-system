@@ -32,7 +32,14 @@ export default defineConfig({
       external: ['react', 'react-dom', 'react/jsx-runtime', 'recharts', 'lucide-react'],
       output: {
         preserveModules: false,
-        assetFileNames: (info) => (info.name === 'style.css' ? 'style.css' : (info.name ?? 'assets/[name][extname]')),
+        // Was a fallback to info.name, which Vite derives from
+        // package.json's "name" field by default -- so the emitted CSS
+        // filename silently changed (sakani-design-system.css -> react.css)
+        // the moment the package was renamed to @sakaniui/react, breaking
+        // package.json's exports["./style.css"] pointer. Forced to a fixed
+        // name instead: cssCodeSplit:false means there's always exactly
+        // one CSS bundle, so there's nothing to disambiguate by name.
+        assetFileNames: 'style.css',
       },
     },
   },
