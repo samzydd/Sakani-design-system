@@ -1,0 +1,150 @@
+[
+  {
+    "name": "account-overview-block",
+    "componentName": "AccountOverviewBlock",
+    "description": "Balance (available balance + change) -> Divider -> SpendingBalance -> optionally another Divider + a savings-goal Progress bar",
+    "files": [
+      "AccountOverviewBlock.tsx",
+      "AccountOverviewBlock.module.css"
+    ]
+  },
+  {
+    "name": "activity-log-block",
+    "componentName": "ActivityLogBlock",
+    "description": "Card shell (bg/surface, border/default, radius/xl) -> \"Recent activity\" heading -> ActivityFeed",
+    "files": [
+      "ActivityLogBlock.tsx",
+      "ActivityLogBlock.module.css",
+      "assets/activity-amara-kalu.jpg",
+      "assets/activity-chidi-duru.jpg",
+      "assets/activity-jade-silva.jpg",
+      "assets/activity-ravi-menon.jpg"
+    ]
+  },
+  {
+    "name": "app-header-block",
+    "componentName": "AppHeaderBlock",
+    "description": "Page-level header: breadcrumb trail, title + optional description, and right-aligned actions, sitting above a divider.",
+    "files": [
+      "AppHeaderBlock.tsx",
+      "AppHeaderBlock.module.css"
+    ]
+  },
+  {
+    "name": "chat-interface-block",
+    "componentName": "ChatInterfaceBlock",
+    "description": "Architecture (read from the Figma block, 1440x930):",
+    "files": [
+      "ChatInterfaceBlock.tsx",
+      "ChatInterfaceBlock.module.css"
+    ]
+  },
+  {
+    "name": "crm-dashboard-block",
+    "componentName": "CRMDashboardBlock",
+    "description": "A full-page CRM leads view assembled entirely from Sakani components: Sidebar (icon rail) · TopBar · Breadcrumb · Tabs · Checkbox · Select · Slider · Input ·…",
+    "files": [
+      "CRMDashboardBlock.tsx",
+      "CRMDashboardBlock.module.css",
+      "assets/r1-company-figma.jpg",
+      "assets/r1-contact-novak-balazs.jpg",
+      "assets/r1-owner-kende-attila.jpg",
+      "assets/r2-company-invision.jpg",
+      "assets/r2-contact-szabo-jakab.jpg",
+      "assets/r2-owner-orosz-boldizsar.jpg",
+      "assets/r3-company-infogenix.jpg",
+      "assets/r3-contact-bogdan-norbert.jpg",
+      "assets/r3-owner-simon-arpad.jpg",
+      "assets/r4-company-google.jpg",
+      "assets/r4-contact-ramai-ivette.jpg",
+      "assets/r4-owner-novak-balazs.jpg",
+      "assets/r5-company-lendio.jpg",
+      "assets/r5-contact-csatar-geza.jpg",
+      "assets/r5-owner-ramai-ivette.jpg",
+      "assets/r6-company-google.jpg",
+      "assets/r6-contact-veres-viktor.jpg",
+      "assets/r6-owner-kiraly-vince.jpg",
+      "assets/r7-company-infogenix.jpg",
+      "assets/r7-contact-hajdu-szilveszter.jpg",
+      "assets/r7-owner-szigmund-kalman.jpg",
+      "assets/r8-company-trello.jpg",
+      "assets/r8-contact-kende-attila.jpg",
+      "assets/r8-owner-bogdan-norbert.jpg",
+      "assets/r9-company-invision.jpg",
+      "assets/r9-contact-aprod-endre.jpg",
+      "assets/r9-owner-antal-andras.jpg"
+    ]
+  },
+  {
+    "name": "data-table-block",
+    "componentName": "DataTableBlock",
+    "description": "Mirrors the six states in the Figma block: default  · records loaded, no filters or selection filtered · search + filter chips applied bulk     · rows select…",
+    "files": [
+      "DataTableBlock.tsx",
+      "DataTableBlock.module.css"
+    ]
+  },
+  {
+    "name": "file-upload-panel-block",
+    "componentName": "FileUploadPanelBlock",
+    "description": "Matches Figma \"File Upload Panel\": dashed dropzone -> list of files, each showing a different status (Complete / Pending confirmation / Uploading).",
+    "files": [
+      "FileUploadPanelBlock.tsx",
+      "FileUploadPanelBlock.module.css"
+    ]
+  },
+  {
+    "name": "form-modal-block",
+    "componentName": "FormModalBlock",
+    "description": "Matches Figma \"Form Modal\": \"Invite a teammate\" -- Email input + Role select, Cancel/Send invite footer.",
+    "files": [
+      "FormModalBlock.tsx",
+      "FormModalBlock.module.css"
+    ]
+  },
+  {
+    "name": "inline-cta-block",
+    "componentName": "InlineCtaBlock",
+    "description": "Matches Figma \"Inline CTA\": Featured Icon + title/description + action Button, in a card.",
+    "files": [
+      "InlineCtaBlock.tsx",
+      "InlineCtaBlock.module.css"
+    ]
+  },
+  {
+    "name": "kanban-board-block",
+    "componentName": "KanbanBoardBlock",
+    "description": "Mirrors the four states in the Figma block: default      · columns with counts, cards, and an add affordance loading      · card skeletons hold each column's…",
+    "files": [
+      "KanbanBoardBlock.tsx",
+      "KanbanBoardBlock.module.css"
+    ]
+  },
+  {
+    "name": "multistep-modal-block",
+    "componentName": "MultistepModalBlock",
+    "description": "Matches Figma \"Multistep\" (node 1632:29532): a steps row (no connector lines between circles, unlike the standalone Stepper component) -> title + description…",
+    "files": [
+      "MultistepModalBlock.tsx",
+      "MultistepModalBlock.module.css"
+    ]
+  },
+  {
+    "name": "notification-panel-block",
+    "componentName": "NotificationPanelBlock",
+    "description": "Matches Figma \"Notifications Panel\": \"Notifications\" heading + \"Mark all as read\" Link -> list of NotificationItem rows, or an empty state.",
+    "files": [
+      "NotificationPanelBlock.tsx",
+      "NotificationPanelBlock.module.css"
+    ]
+  },
+  {
+    "name": "profile-settings-block",
+    "componentName": "ProfileSettingsBlock",
+    "description": "Matches Figma \"Profile Settings\": \"Profile\" heading -> AvatarUpload (horizontal, reused unmodified -- its own filled/empty states already are Figma's \"Remove…",
+    "files": [
+      "ProfileSettingsBlock.tsx",
+      "ProfileSettingsBlock.module.css"
+    ]
+  }
+]

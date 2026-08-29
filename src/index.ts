@@ -97,3 +97,7 @@ export * from './components/Toast';
 export * from './components/Tooltip';
 export * from './components/TopBar';
 export * from './components/TopBarMobile';
+
+/** Icon-scaling helper -- public because several Blocks (and any consumer
+ * rendering a Lucide icon below 24px) need it to match Figma's 1.5px stroke. */
+export { iconStrokeWidth } from './lib/iconStrokeWidth';

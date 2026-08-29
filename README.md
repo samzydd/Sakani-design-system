@@ -4,7 +4,7 @@ An open-source, token-driven React component library for SaaS products — **1,5
 
 **[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/design/Fd3uY263mEQKnaTEfrzQxh/)**
 
-![License](https://img.shields.io/badge/license-MIT-blue) ![React](https://img.shields.io/badge/React-18-61dafb) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6) ![Storybook](https://img.shields.io/badge/Storybook-10-ff4785)
+![npm](https://img.shields.io/npm/v/@sakaniui/react) ![License](https://img.shields.io/badge/license-MIT-blue) ![React](https://img.shields.io/badge/React-19-61dafb) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6) ![Storybook](https://img.shields.io/badge/Storybook-10-ff4785)
 
 ---
 
@@ -18,7 +18,19 @@ Most component libraries start in code and retrofit the design. Sakani was built
 - **Typed & composable** — strict TypeScript, generic `Table<T>`, slot-based composition, controlled + uncontrolled patterns
 - **Geist typography** and **Lucide icons** throughout, matching the Figma source exactly
 
-## Quick start
+## Install
+
+```bash
+npm install @sakaniui/react
+```
+
+Then import the tokens once at your app's entry point, and any component from the package root:
+
+```tsx
+import '@sakaniui/react/tokens.css';
+```
+
+## Quick start (contributing / browsing the source)
 
 ```bash
 git clone https://github.com/samzydd/Sakani-design-system.git
@@ -31,12 +43,11 @@ Storybook opens at `http://localhost:6006` with every component, all variants, a
 
 ## Usage
 
-Components live in `src/components`, tokens in `src/styles/tokens.css`. Import the tokens once, then use any component:
+Import the tokens once, then use any component from `@sakaniui/react`:
 
 ```tsx
-import '@/styles/tokens.css';
-import { Button } from '@/components/Button';
-import { StatCard } from '@/components/StatCard';
+import '@sakaniui/react/tokens.css';
+import { Button, StatCard } from '@sakaniui/react';
 import { DollarSign } from 'lucide-react';
 
 export const Dashboard = () => (
@@ -87,21 +98,34 @@ Change a semantic token and every component follows — in both the design file 
 
 ## Blocks
 
-Blocks are full sections assembled from Sakani components — **composition examples** you copy into your project and edit directly, rather than configurable components. Each ships with the states it needs (loading, empty, error, and so on).
+Blocks are full sections assembled from Sakani components — **composition examples**, not fully-configurable components like the ones above. Most ship with realistic sample data and manage their own demo state internally (a `state` prop just switches between the states each one ships with — loading, empty, error, and so on). They're meant as a working starting point you customize, not a drop-in you configure entirely through props.
 
-They live in `src/blocks`:
+They live in `src/blocks`, and are also published separately from the main package at **`@sakaniui/react/blocks`** — kept out of the main entry point on purpose, so importing them is a deliberate choice:
+
+```bash
+npm install @sakaniui/react
+```
+
+```tsx
+import { DataTableBlock } from '@sakaniui/react/blocks';
+
+<DataTableBlock />
+```
+
+To actually customize one, copy its source file straight from GitHub instead and edit it directly — that's still the intended workflow for anything beyond the states it ships with:
+
+```tsx
+// src/blocks/DataTableBlock/DataTableBlock.tsx, copied into your project
+import { DataTableBlock } from './DataTableBlock';
+
+// Swap the sample data for your own, edit the columns.
+<DataTableBlock />
+```
 
 | Block | States |
 |---|---|
 | **Data Table + Toolbar** | default · filtered · bulk selection · loading · empty · error |
 | **Kanban Board** | default · loading · empty column · dragging |
-
-```tsx
-import { DataTableBlock } from '@/blocks/DataTableBlock';
-
-// Copy the file, swap the sample data for your own, edit the columns.
-<DataTableBlock />
-```
 
 Browse every block and state in the [live Storybook](https://main--6a5a658b3681fcc010430db5.chromatic.com) under **Blocks**.
 
@@ -111,7 +135,7 @@ The library ships with an audited AA baseline: contrast-checked token pairs in b
 
 ## Roadmap
 
-- [ ] npm package (`@sakani/react`)
+- [x] npm package ([`@sakaniui/react`](https://www.npmjs.com/package/@sakaniui/react))
 - [ ] Figma Community publication
 - [ ] Theming CLI (custom brand token generation)
 - [ ] Vue port

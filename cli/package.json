@@ -1,0 +1,33 @@
+{
+  "name": "@sakaniui/cli",
+  "version": "0.1.0",
+  "description": "Copy Sakani Design System Block source files into your project. Companion CLI to @sakaniui/react.",
+  "type": "module",
+  "bin": {
+    "sakaniui": "./bin/sakaniui.mjs"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "sakani",
+    "design-system",
+    "ui",
+    "blocks",
+    "cli",
+    "react"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samzydd/Sakani-design-system.git",
+    "directory": "cli"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

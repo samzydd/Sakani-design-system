@@ -11,6 +11,10 @@
 .wrap--horizontal {
   flex-direction: row;
   align-items: flex-start;
+  /* .wrap's own justify-content: center centered this row inside any
+     flex-shrink:0 parent wider than its content (e.g. ProfileSettingsBlock's
+     avatar-wrap row) -- Figma's horizontal layout starts flush left. */
+  justify-content: flex-start;
   gap: var(--space-12);
 }
 
