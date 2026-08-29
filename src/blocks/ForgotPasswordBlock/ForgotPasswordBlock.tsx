@@ -124,6 +124,7 @@ export const ForgotPasswordBlock: React.FC<ForgotPasswordBlockProps> = ({
         disabled={isLoading}
         error={errorMessage}
         onChange={(e) => { setEmail(e.target.value); if (status !== 'idle') setStatus('idle'); }}
+        className={styles.fullWidth}
       />
 
       <Button variant="primary" className={styles.fullWidth} loading={isLoading} disabled={!isLoading && email.trim() === ''} onClick={handleSubmit}>
