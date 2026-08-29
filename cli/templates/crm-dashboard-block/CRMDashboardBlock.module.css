@@ -1,0 +1,437 @@
+/* CRMDashboardBlock.module.css — layout scaffolding only.
+   All component chrome comes from the Sakani components themselves;
+   these rules just place them and bind to semantic tokens. */
+
+.root {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-bg-canvas);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  /* Dashboard-wide primary color -- cascades to every descendant that
+     reads --color-accent-default (Slider fill, Checkbox checked fill,
+     active SidebarItem, accent Badges, etc). Per-status checkbox
+     overrides further down (.checkSuccess etc.) are scoped to their own
+     element and still win locally, so lead-status colors are unaffected. */
+  --color-accent-default: var(--color-info-solid);
+  /* Separate token -- the active SidebarItem's left accent bar and the
+     Tabs sliding indicator read --color-brand-default specifically, not
+     --color-accent-default, so they needed their own override. */
+  --color-brand-default: var(--color-info-solid);
+}
+
+/* ---- Main column ---- */
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  background: var(--color-bg-surface);
+  overflow: hidden;
+}
+
+.navScroll {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  width: 100%;
+  padding: 0 var(--space-16);
+  box-sizing: border-box;
+}
+
+/* ---- Entity tabs ---- */
+.tabsBar {
+  display: flex;
+  align-items: center;
+  padding: var(--space-20) var(--space-16) 0;
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+
+/* ---- Body: filter panel + table ---- */
+.body {
+  display: flex;
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+}
+
+/* ---- Filter panel ---- */
+.filters {
+  display: flex;
+  flex-direction: column;
+  width: 288px;
+  flex-shrink: 0;
+  height: 100%;
+  border-right: var(--border-width-100) solid var(--color-border-subtle);
+  background: var(--color-bg-surface);
+  overflow: hidden;
+  opacity: 1;
+  /* Standard "ease-in-out" cubic-bezier rather than the flatter keyword
+     ease -- it holds a beat longer at both ends, so opening/closing reads
+     as a deliberate glide rather than a linear-ish snap. Content fades
+     with the same timing so the text dissolves as the panel narrows
+     instead of getting clipped mid-word by overflow:hidden. */
+  transition:
+    width 360ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 360ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 360ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filters--closed {
+  width: 0;
+  opacity: 0;
+  border-right-color: transparent;
+}
+
+.filtersHead {
+  padding: var(--space-16) var(--space-16) var(--space-12);
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+
+.filtersHeadRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+}
+
+.filtersTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--color-fg-default);
+}
+
+.filterTabs {
+  padding: 23px var(--space-16) 0;
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+
+/* The Active/Archived/Assigned-to-me segmented control: buttons hug their
+   own text (see Tabs' .tab) but the row itself fills the panel's width,
+   with a fixed 8px gap between buttons instead of relying on their padding
+   alone for separation. */
+.filterSegmented {
+  width: 100%;
+  gap: var(--space-8);
+}
+
+.filtersScroll {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-12) var(--space-16);
+  background: var(--color-bg-canvas);
+}
+
+/* Faint scrollbar thumb (12% of fg/default) rather than the browser's
+   solid-gray default, which reads heavy against this panel's light bg. */
+.filtersScroll,
+.tableRegion {
+  scrollbar-color: color-mix(in srgb, var(--color-fg-default) 12%, transparent) transparent;
+}
+.filtersScroll::-webkit-scrollbar,
+.tableRegion::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.filtersScroll::-webkit-scrollbar-track,
+.tableRegion::-webkit-scrollbar-track {
+  background: transparent;
+}
+.filtersScroll::-webkit-scrollbar-thumb,
+.tableRegion::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-fg-default) 12%, transparent);
+  border-radius: var(--radius-full);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--space-16);
+}
+
+/* Grid-based collapse (see CollapsibleSection) -- 0fr/1fr rather than a
+   height transition, since the content's height isn't known up front. */
+.collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 380ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.collapsible--open {
+  grid-template-rows: 1fr;
+}
+.collapsibleInner {
+  min-height: 0;
+  /* Replaces .group's old flex gap -- living inside the collapsing box
+     means it disappears along with the content instead of leaving an
+     8px gap under a closed section's header. */
+  padding-top: var(--space-12);
+}
+
+/* Now a <button> (was a <div> with just the chevron clickable) so the
+   whole row -- title included -- opens/closes the section. */
+.groupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.groupTitle {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-fg-default);
+}
+
+/* Mirrors IconButton's ghost/sm exactly (32x32, radius-sm, fg-muted,
+   bg-subtle + shadow-sm on hover) -- see IconButton.module.css -- since
+   it's now a decorative span rather than its own nested button. */
+/* No hover/pressed state of its own -- it's a decorative span, not an
+   interactive element; the row it sits in is the actual button. */
+.groupHeaderIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  /* IconButton (a <button>) gets border-box for free from the browser's
+     default form-control UA styles; this plain <span> doesn't, so its
+     1px border was pushing the real rendered size to 34x34. */
+  box-sizing: border-box;
+  border-radius: var(--radius-sm);
+  border: var(--border-width-100) solid transparent;
+  color: var(--color-fg-muted);
+}
+
+.checkGrid {
+  display: grid;
+  /* max-content (not 1fr) so each column is exactly as wide as its own
+     longest label -- "Proposal sent" needs more room than "Won", and
+     equal fractional columns were forcing it to wrap instead. */
+  grid-template-columns: repeat(2, max-content);
+  column-gap: var(--space-24);
+  row-gap: var(--space-8);
+}
+
+/* Per-status checked-fill overrides — scopes the CSS custom property the
+   shared Checkbox component reads, so each lead status keeps its own Figma
+   color without forking the component. */
+.checkSuccess       { --color-accent-default: var(--color-chart-3); }
+.checkWarning        { --color-accent-default: var(--color-warning-solid); }
+.checkDanger          { --color-accent-default: var(--color-danger-solid); }
+.checkNeutral    { --color-accent-default: var(--color-chart-5); }
+.checkBrand { --color-accent-default: var(--color-brand-default); }
+.checkSuccessSolid          { --color-accent-default: var(--color-success-solid); }
+
+/* Wraps the slider + its min/max readout with its own 8px gap. */
+.dealValueGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.rangeRow {
+  display: flex;
+  align-items: center;
+  /* Two auto-width labels pinned to the slider's own extremes, not
+     stretched boxes — there's no track width to fill without a border
+     or fill color of their own. */
+  justify-content: space-between;
+}
+
+.rangeLabel {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-fg-default);
+}
+
+/* ---- Table region ---- */
+.tableRegion {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  padding: var(--space-16);
+  background: var(--color-bg-surface);
+  overflow: auto;
+}
+
+/* Stands in for the filter panel while it's tucked away; fades/scales in
+   with the same gentle ease as the panel's own collapse. */
+.filtersReopen {
+  position: absolute;
+  /* top comes from inline style (draggable, see the component) --
+     starts at 16px to match .tableRegion's own padding rhythm. */
+  /* left:0 ignores .tableRegion's own padding (offsets for an absolutely
+     positioned child are measured from the padding edge, not inset by
+     it) so the button sits flush against the sidebar's right edge
+     instead of floating 16px clear of it. Fixed -- only top ever
+     changes -- since dragging is vertical-only. */
+  left: 0;
+  width: 32px;
+  height: 32px;
+  z-index: 5;
+  background: var(--color-bg-surface);
+  box-shadow: var(--shadow-md);
+  cursor: grab;
+  touch-action: none;
+  animation: sakani-crm-filters-reopen-in 360ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.filtersReopen:active { cursor: grabbing; }
+
+@keyframes sakani-crm-filters-reopen-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.searchField {
+  width: 288px;
+}
+
+.toolbarRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* ---- Loading state (shown while an unimplemented entity tab is active) ---- */
+.panel {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  overflow: hidden;
+}
+
+.skeletonRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  height: 44px;
+  padding: 0 var(--space-16);
+  border-top: var(--border-width-100) solid var(--color-border-subtle);
+}
+.skeletonRow:first-child { border-top: none; }
+
+/* One per real table column, sized to that column's width so every column
+   gets its own loader instead of a fixed handful of placeholder blocks. */
+.skeletonCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Filter panel loading state (Archived / Assigned to me aren't implemented). */
+.filterSkeletonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ---- Footer ---- */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerText {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--color-fg-subtle);
+}
+
+/* ---- Table cell helpers ---- */
+.cellInline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.cellStack {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cellText {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.cellSub {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--color-fg-subtle);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .filters { width: 240px; }
+  .searchField { width: 200px; }
+}
+
+@media (max-width: 880px) {
+  .filters { display: none; }
+}

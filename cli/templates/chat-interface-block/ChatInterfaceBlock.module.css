@@ -1,0 +1,193 @@
+/* ChatInterfaceBlock.module.css
+   Widths and spacing read from the Figma block (1440×930). */
+
+.block {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-bg-canvas);
+  overflow: hidden;
+}
+
+/* ---- app navigation sidebar (240 · 64 collapsed) ---- */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 240px;
+  flex-shrink: 0;
+  padding: var(--space-8);
+  background: var(--color-bg-canvas);
+  transition: width var(--motion-slow) var(--ease-out);
+}
+.nav--collapsed { width: 64px; }
+
+.nav__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+.nav__group { display: flex; flex-direction: column; gap: var(--space-4); }
+.nav__footer { display: flex; flex-direction: column; gap: var(--space-2); }
+
+/* ---- main ---- */
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 0 var(--space-8) var(--space-12);
+}
+.pageTitle {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-fg-default);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: var(--space-12) var(--space-20) var(--space-12) var(--space-12);
+  background: var(--color-bg-canvas);
+  /* Figma: border/subtle hairline, radius ~20 (file reads 0.68px / 19.06 —
+     both scaling artifacts of a resized frame; 1px / 20px is the intent). */
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 20px;
+}
+
+/* ---- header row: list filter (240) + conversation header ---- */
+.headerRow { display: flex; align-items: center; flex-shrink: 0; width: 100%; }
+/* Figma "Wrap": 240px column with 6px horizontal padding, so the control
+   inside measures 228px. */
+.headerRow__filter {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0 var(--space-6);
+  box-sizing: border-box;
+}
+.headerRow__chat { flex: 1; width: 100%; min-width: 0; }
+
+.chatAction {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  border: none; background: none; cursor: pointer;
+  color: var(--color-fg-muted); border-radius: var(--radius-md);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+.chatAction:where(:hover) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.chatAction:where(:focus-visible) { outline: none; box-shadow: 0 0 0 2px var(--color-border-focus); }
+
+/* ---- panes ---- */
+.panes { display: flex; flex: 1 1 auto; min-height: 0; }
+
+/* conversation list (240) */
+
+/* Chat column: groups header and messages with flex: 1 width */
+.chatColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: var(--space-8);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 240px;
+  flex-shrink: 0;
+  min-width: 0;
+  padding: var(--space-12) 0;
+  overflow-y: auto;
+  overflow-x: hidden;   /* the list is a fixed rail — never scroll sideways */
+}
+.list__search { padding: var(--space-8) 0; }
+
+/* chat card — radius 24 on bg/surface, per Figma */
+.chat {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-left: var(--space-12);
+  padding: var(--space-12);
+  border-radius: 24px;
+  background: var(--color-bg-surface);
+}
+
+/* thread */
+.thread {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14, 14px);
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: var(--space-20) var(--space-20) var(--space-16);
+  overflow-y: auto;
+}
+.msgRow { display: flex; }
+.msgRow--sent { justify-content: flex-end; }
+
+/* date divider: rule · label · rule */
+.dateRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+.dateRow > *:first-child,
+.dateRow > *:last-child { flex: 1 1 auto; }
+
+.imagePlaceholder {
+  width: 280px;
+  height: 168px;
+  background: linear-gradient(135deg, var(--color-chart-1), var(--color-chart-3));
+}
+
+/* typing indicator */
+.typing {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-10) var(--space-12);
+  border-radius: var(--radius-lg);
+  border-bottom-left-radius: var(--radius-xs);
+  background: var(--color-bg-subtle);
+}
+.typing span {
+  width: 6px; height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-fg-subtle);
+}
+.typing span:nth-child(2) { opacity: 0.6; }
+.typing span:nth-child(3) { opacity: 0.35; }
+
+/* empty chat card */
+.chatEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+/* ---- app-level top bar: transparent in this block (Figma fill = none) ---- */
+.appBar { padding-right: var(--space-20);
+  background: transparent;
+  border-bottom: none;
+}
+
+/* ---- brand mark inside SidebarHeader's 28×28 accent chip ---- */
+.logoMark {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--color-fg-on-accent);
+}

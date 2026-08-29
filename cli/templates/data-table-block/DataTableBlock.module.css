@@ -1,0 +1,78 @@
+/* DataTableBlock.module.css — block-level layout only.
+   All visual language comes from the composed components + tokens. */
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 100%;
+  padding: var(--space-32);
+  background: var(--color-bg-canvas);
+}
+
+/* ---- toolbar ---- */
+.toolbar { display: flex; align-items: center; gap: var(--space-12); }
+.toolbar__left { display: flex; align-items: center; gap: var(--space-8); flex: 1 1 auto; min-width: 0; }
+.toolbar__right { display: flex; align-items: center; gap: var(--space-8); flex-shrink: 0; }
+.search { width: 280px; flex-shrink: 0; }
+.spacer { flex: 1 1 auto; }
+
+/* ---- bulk-actions bar (replaces the toolbar while rows are selected) ---- */
+.bulkBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-8) var(--space-8) var(--space-16);
+  border-radius: var(--radius-md);
+  /* Light treatment (Figma update): surface with a subtle border and an
+     accent-tinted wash, rather than the previous dark inverse bar. */
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border-subtle);
+}
+.bulkBar__count {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--color-fg-default);
+}
+
+/* ---- non-data states share this panel ---- */
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 360px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  overflow: hidden;
+}
+.skeletonRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  height: 44px;
+  padding: 0 var(--space-16);
+  border-top: 1px solid var(--color-border-subtle);
+}
+.skeletonRow:first-child { border-top: none; }
+
+/* ---- cells ---- */
+.cellUser { display: inline-flex; align-items: center; gap: var(--space-10); }
+.cellUser__text { display: flex; flex-direction: column; }
+.cellUser__name { font-family: var(--font-sans); font-weight: 500; font-size: 13px; color: var(--color-fg-default); }
+.cellUser__sub { font-family: var(--font-sans); font-size: 12px; color: var(--color-fg-muted); }
+
+.rowAction {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  border: none; background: none; cursor: pointer;
+  color: var(--color-fg-muted); border-radius: var(--radius-sm);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+.rowAction:where(:hover) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.rowAction:where(:focus-visible) { outline: none; box-shadow: 0 0 0 2px var(--color-border-focus); }
+
+/* ---- footer ---- */
+.footer { display: flex; align-items: center; justify-content: space-between; }
+.footer__count { font-family: var(--font-sans); font-size: 12px; color: var(--color-fg-muted); }
