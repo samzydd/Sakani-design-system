@@ -24,6 +24,8 @@ export { NotificationPanelBlock } from './NotificationPanelBlock';
 export type { NotificationPanelBlockProps, NotificationPanelItem } from './NotificationPanelBlock';
 export { ProfileSettingsBlock } from './ProfileSettingsBlock';
 export type { ProfileSettingsBlockProps } from './ProfileSettingsBlock';
+export { OnboardingProgressBlock } from './OnboardingProgressBlock';
+export type { OnboardingProgressBlockProps, OnboardingProgressItem, OnboardingProgressVariant } from './OnboardingProgressBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
