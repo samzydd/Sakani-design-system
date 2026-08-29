@@ -29,11 +29,13 @@
  * it has no such control.
  *
  * The three social sign-in icons in Figma are real Google/Apple/GitHub
- * marks -- like StockMarket's logo slot, this component does not ship or
- * reproduce third-party trademarks. `socialProviders` is a fully
- * consumer-supplied slot instead; if left empty, the divider + social row
- * doesn't render at all rather than showing an empty row. The story passes
- * generic placeholder icons, same pattern as StockMarket's LogoBadge.
+ * marks. Unlike StockMarket's logo slot, this component's *story* does
+ * render the real marks (path data matched to Figma) -- "Continue with
+ * Google/Apple/GitHub" is exactly the sanctioned use each of those brand
+ * guidelines calls for, not a general-purpose decorative placement. The
+ * component itself still doesn't hardcode them: `socialProviders` stays a
+ * fully consumer-supplied slot, and if left empty the divider + social
+ * row doesn't render at all rather than showing an empty row.
  *
  * The divider + "OR CONTINUE WITH" row is NOT a reuse of RichSeparator --
  * RichSeparator's overline sits centered as a single label with no
