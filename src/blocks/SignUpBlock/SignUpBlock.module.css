@@ -1,0 +1,195 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-16);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: var(--space-20);
+  background: var(--color-bg-surface);
+  border: var(--border-width-050) solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-sans);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+  color: var(--color-fg-default);
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ─── Password fields (hand-built, see file header for why) ── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  font-family: var(--font-sans);
+}
+
+.fieldLabel {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
+
+.fieldFrame {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--space-10) var(--space-12);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base);
+}
+.fieldFrame:focus-within {
+  border-color: var(--color-border-default);
+  box-shadow: var(--shadow-sm);
+}
+.fieldFrameError {
+  border-color: var(--color-danger-solid);
+  border-width: var(--border-width-150);
+}
+.fieldFrameDisabled {
+  background: var(--color-bg-subtle);
+  opacity: var(--opacity-60);
+}
+
+.fieldIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--color-fg-muted);
+}
+
+.fieldControl {
+  flex: 1 1 0%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
+.fieldControl::placeholder { color: var(--color-fg-subtle); }
+.fieldControl:disabled { cursor: not-allowed; }
+
+.visibilityToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+}
+.visibilityToggle:disabled { cursor: not-allowed; }
+
+.fieldError {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--color-danger-fg);
+}
+
+/* ─── Footer ── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+}
+.footerText {
+  margin: 0;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+
+/* ─── Divider row ── */
+.dividerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+}
+.dividerLine {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+.dividerLabel {
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+/* ─── Social row ── */
+.socialRow {
+  display: flex;
+  gap: var(--space-12);
+  width: 100%;
+}
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0%;
+  box-sizing: border-box;
+  padding: var(--space-10);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  color: var(--color-fg-default);
+  cursor: pointer;
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+.socialButton:hover:not(:disabled) { background: var(--color-bg-subtle); box-shadow: var(--shadow-sm); }
+.socialButton:disabled { opacity: var(--opacity-60); cursor: not-allowed; }
+
+/* ─── Skeleton ── */
+.skeletonHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+.skeletonSocialRow {
+  display: flex;
+  gap: var(--space-8);
+  width: 100%;
+}
