@@ -7,6 +7,9 @@
  *
  * Matches Figma "Email Verification" (7 states): card -> header -> 6-digit
  * OTP row -> primary Button -> "Didn't receive a code? Resend" footer.
+ * The Verify button stays disabled until all 6 digits are filled (derived
+ * from `code`, not a separate flag) -- so mid-entry it reads as
+ * unavailable, and only turns active once the code is complete.
  *
  * Default/Filled aren't a manual prop -- Figma's own two previews are the
  * exact same empty/filled OTP row, which is just `code` state, same
@@ -194,7 +197,13 @@ export const EmailVerificationBlock: React.FC<EmailVerificationBlockProps> = ({
         {isIncomplete && <p className={styles.hint}>Please enter the full 6-digit code.</p>}
       </div>
 
-      <Button variant="primary" className={styles.fullWidth} loading={isLoading} onClick={handleSubmit}>
+      <Button
+        variant="primary"
+        className={styles.fullWidth}
+        loading={isLoading}
+        disabled={!isLoading && code.some((d) => !d)}
+        onClick={handleSubmit}
+      >
         {isLoading ? 'Verifying…' : 'Verify email'}
       </Button>
 

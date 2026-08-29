@@ -7,9 +7,9 @@
  *
  * Matches Figma "2FA Verification" -- structurally identical to
  * EmailVerificationBlock (same 6-state machine, same OTP row behavior,
- * same reasoning for every reuse-vs-build call: see that file's header for
- * the full rationale, deliberately not repeated here) with two content
- * differences:
+ * same disabled-until-complete Verify button, same reasoning for every
+ * reuse-vs-build call: see that file's header for the full rationale,
+ * deliberately not repeated here) with two content differences:
  *   - a "Trust this device for 30 days" Checkbox between the OTP row and
  *     the Button (reuses the shared Checkbox component directly)
  *   - footer reads "Lost your device? Use a backup code" instead of a
@@ -186,7 +186,13 @@ export const TwoFactorAuthBlock: React.FC<TwoFactorAuthBlockProps> = ({
         className={styles.checkboxRow}
       />
 
-      <Button variant="primary" className={styles.fullWidth} loading={isLoading} onClick={handleSubmit}>
+      <Button
+        variant="primary"
+        className={styles.fullWidth}
+        loading={isLoading}
+        disabled={!isLoading && code.some((d) => !d)}
+        onClick={handleSubmit}
+      >
         {isLoading ? 'Verifying…' : 'Verify'}
       </Button>
 
