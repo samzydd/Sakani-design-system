@@ -34,7 +34,7 @@
  */
 
 import React from 'react';
-import { Lock, Eye, EyeOff, ShieldCheck, Check } from 'lucide-react';
+import { Lock, Eye, EyeOff, ShieldCheck, CircleCheck } from 'lucide-react';
 import { Button } from '../../components/Button';
 import { Link } from '../../components/Link';
 import { Skeleton } from '../../components/Skeleton';
@@ -153,7 +153,7 @@ export const ResetPasswordBlock: React.FC<ResetPasswordBlockProps> = ({
     return (
       <div className={[styles.card, className ?? ''].filter(Boolean).join(' ')}>
         <span className={styles.iconWrap} aria-hidden="true">
-          <Check size={24} strokeWidth={iconStrokeWidth(24)} />
+          <CircleCheck size={24} strokeWidth={iconStrokeWidth(24)} />
         </span>
         <div className={styles.centeredHeader}>
           <h2 className={styles.title}>Password updated</h2>
