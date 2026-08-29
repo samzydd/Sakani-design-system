@@ -36,6 +36,8 @@ export { ForgotPasswordBlock } from './ForgotPasswordBlock';
 export type { ForgotPasswordBlockProps, ForgotPasswordStatus } from './ForgotPasswordBlock';
 export { ResetPasswordBlock } from './ResetPasswordBlock';
 export type { ResetPasswordBlockProps, ResetPasswordStatus } from './ResetPasswordBlock';
+export { LoginBlock } from './LoginBlock';
+export type { LoginBlockProps, LoginStatus, LoginSocialProvider } from './LoginBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
