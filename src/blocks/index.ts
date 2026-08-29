@@ -26,6 +26,8 @@ export { ProfileSettingsBlock } from './ProfileSettingsBlock';
 export type { ProfileSettingsBlockProps } from './ProfileSettingsBlock';
 export { OnboardingProgressBlock } from './OnboardingProgressBlock';
 export type { OnboardingProgressBlockProps, OnboardingProgressItem, OnboardingProgressVariant } from './OnboardingProgressBlock';
+export { SectionFooterBlock } from './SectionFooterBlock';
+export type { SectionFooterBlockProps, SectionFooterLink, SectionFooterVariant } from './SectionFooterBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
