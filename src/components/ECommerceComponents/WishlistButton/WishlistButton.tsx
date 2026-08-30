@@ -7,6 +7,16 @@
  * prop -- the icon itself is the only thing that changes (outline Heart
  * vs. filled Heart in brand/default orange, confirmed #FF4700 from the
  * asset), same toggle-button pattern as ColorSwatch's `selected`.
+ *
+ * Bounces the heart (a scale pop, classic "like" micro-interaction) only
+ * on the unsaved -> saved transition -- not on unsave, and not on mount if
+ * `saved` starts true, since this is meant to reward the act of saving,
+ * not just any state change. Triggered directly in the click handler
+ * (this component knows a click while unsaved means it's about to become
+ * saved) rather than by diffing `saved` across renders, since `saved` is
+ * a controlled prop -- waiting for it to actually change would delay or
+ * even skip the animation if the parent updates asynchronously.
+ * `prefers-reduced-motion` disables it via the stylesheet.
  */
 
 import React from 'react';
@@ -24,21 +34,31 @@ export interface WishlistButtonProps {
 
 export const WishlistButton: React.FC<WishlistButtonProps> = ({
   saved = false, onToggle, label = 'item', className,
-}) => (
-  <button
-    type="button"
-    className={[styles.button, className ?? ''].filter(Boolean).join(' ')}
-    aria-pressed={saved}
-    aria-label={saved ? `Remove ${label} from wishlist` : `Add ${label} to wishlist`}
-    onClick={() => onToggle?.(!saved)}
-  >
-    <Heart
-      size={16}
-      strokeWidth={iconStrokeWidth(16)}
-      className={saved ? styles.iconSaved : styles.icon}
-      fill={saved ? 'currentColor' : 'none'}
-    />
-  </button>
-);
+}) => {
+  const [bounce, setBounce] = React.useState(false);
+
+  const handleClick = () => {
+    if (!saved) setBounce(true);
+    onToggle?.(!saved);
+  };
+
+  return (
+    <button
+      type="button"
+      className={[styles.button, className ?? ''].filter(Boolean).join(' ')}
+      aria-pressed={saved}
+      aria-label={saved ? `Remove ${label} from wishlist` : `Add ${label} to wishlist`}
+      onClick={handleClick}
+    >
+      <Heart
+        size={16}
+        strokeWidth={iconStrokeWidth(16)}
+        className={[saved ? styles.iconSaved : styles.icon, bounce ? styles.bounce : ''].filter(Boolean).join(' ')}
+        fill={saved ? 'currentColor' : 'none'}
+        onAnimationEnd={() => setBounce(false)}
+      />
+    </button>
+  );
+};
 
 export default WishlistButton;
