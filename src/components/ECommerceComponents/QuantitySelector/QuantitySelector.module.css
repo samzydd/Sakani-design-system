@@ -1,0 +1,44 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+}
+
+.stepBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-fg-default);
+  cursor: pointer;
+}
+.stepBtn:disabled {
+  opacity: var(--opacity-45);
+  cursor: not-allowed;
+}
+
+.stepDivider {
+  width: 1px;
+  height: 32px;
+  background: var(--color-border-default);
+  flex-shrink: 0;
+}
+
+.stepValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-fg-default);
+}

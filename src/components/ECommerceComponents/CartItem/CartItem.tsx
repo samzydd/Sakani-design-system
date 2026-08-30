@@ -10,12 +10,10 @@
  * price; its absence renders the plain single price. Not a manual variant
  * prop since it's fully computable from the price data itself.
  *
- * The quantity stepper is a small dedicated element, not an IconButton
- * pair: its two buttons are flush against shared 1px dividers with no
- * radius or background of their own (only the outer 3-cell frame is
- * rounded/bordered) -- a genuinely different shape than IconButton's own
- * always-square, always-bordered button. Decrement disables (45% opacity)
- * once `quantity` reaches `minQuantity`, derived rather than a manual prop.
+ * The quantity stepper reuses the shared QuantitySelector component
+ * (also E-commerce set) directly -- it's the same standalone component
+ * Figma's own "Quantity Selector" node describes, not a separate
+ * approximation.
  *
  * The remove button (Minus icon, not Trash -- taken directly from Figma)
  * reuses the shared IconButton (variant="outline", size="sm") -- Figma's
@@ -26,9 +24,9 @@
  */
 
 import React from 'react';
-import { Minus, Plus } from 'lucide-react';
+import { Minus } from 'lucide-react';
 import { IconButton } from '../../IconButton';
-import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
+import { QuantitySelector } from '../QuantitySelector';
 import styles from './CartItem.module.css';
 
 export interface CartItemProps {
@@ -59,8 +57,6 @@ export const CartItem: React.FC<CartItemProps> = ({
   removeLabel = 'Remove item', formatPrice = defaultFormatPrice, className,
 }) => {
   const isSale = compareAtPrice !== undefined;
-  const canDecrement = quantity > minQuantity;
-  const canIncrement = maxQuantity === undefined || quantity < maxQuantity;
 
   return (
     <div className={[styles.item, className ?? ''].filter(Boolean).join(' ')}>
@@ -70,29 +66,13 @@ export const CartItem: React.FC<CartItemProps> = ({
         <p className={styles.name}>{name}</p>
         {variant && <p className={styles.variant}>{variant}</p>}
 
-        <div className={styles.stepper} role="group" aria-label={`Quantity for ${name}`}>
-          <button
-            type="button"
-            className={styles.stepBtn}
-            disabled={!canDecrement}
-            onClick={() => onQuantityChange?.(Math.max(minQuantity, quantity - 1))}
-            aria-label="Decrease quantity"
-          >
-            <Minus size={14} strokeWidth={iconStrokeWidth(14)} />
-          </button>
-          <span className={styles.stepDivider} aria-hidden="true" />
-          <span className={styles.stepValue}>{quantity}</span>
-          <span className={styles.stepDivider} aria-hidden="true" />
-          <button
-            type="button"
-            className={styles.stepBtn}
-            disabled={!canIncrement}
-            onClick={() => onQuantityChange?.(maxQuantity === undefined ? quantity + 1 : Math.min(maxQuantity, quantity + 1))}
-            aria-label="Increase quantity"
-          >
-            <Plus size={14} strokeWidth={iconStrokeWidth(14)} />
-          </button>
-        </div>
+        <QuantitySelector
+          quantity={quantity}
+          onQuantityChange={onQuantityChange}
+          min={minQuantity}
+          max={maxQuantity}
+          label={`Quantity for ${name}`}
+        />
       </div>
 
       <div className={styles.right}>

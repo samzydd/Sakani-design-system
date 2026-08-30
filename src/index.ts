@@ -29,6 +29,7 @@ export * from './components/ECommerceComponents/ColorSwatch';
 export * from './components/ECommerceComponents/PriceDisplay';
 export * from './components/ECommerceComponents/ProductCard';
 export * from './components/ECommerceComponents/ProductGallery';
+export * from './components/ECommerceComponents/QuantitySelector';
 export * from './components/ECommerceComponents/WishlistButton';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
