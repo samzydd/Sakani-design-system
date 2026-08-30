@@ -46,6 +46,8 @@ export { OrderConfirmationBlock } from './OrderConfirmationBlock';
 export type { OrderConfirmationBlockProps, OrderConfirmationItem } from './OrderConfirmationBlock';
 export { ProductDetailBlock } from './ProductDetailBlock';
 export type { ProductDetailBlockProps, ProductDetailColorOption, ProductDetailSizeOption } from './ProductDetailBlock';
+export { ProductGridBlock } from './ProductGridBlock';
+export type { ProductGridBlockProps, ProductGridItem } from './ProductGridBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
