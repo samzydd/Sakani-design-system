@@ -12,6 +12,17 @@
  * inline -- CartItem now reuses this component instead of its own copy,
  * so there's one implementation instead of two drifting in parallel.
  *
+ * The value cell is a real editable text field, not just +/- buttons --
+ * clicking in lets you type any number of digits directly, unrestricted
+ * while typing (only clamped to min/max on commit: blur or Enter), so
+ * jumping from 1 to, say, 24 doesn't need 23 clicks. While focused it
+ * shows your raw typed digits with no animation (mid-typing isn't a real
+ * "value change" yet); once committed, an invisible-text input sits under
+ * a `RollingValue` overlay that plays the odometer roll for the actual
+ * old-value -> new-value transition, same as a click on +/- would. That
+ * keeps free typing and the roll effect both working off the same
+ * underlying `quantity` prop change, not two separate code paths.
+ *
  * The value itself rolls like an odometer on change: incrementing slides
  * the old number up and out while the new one slides up into place from
  * below; decrementing reverses both (old slides down and out, new enters
@@ -47,24 +58,22 @@ const RollingValue: React.FC<{ value: number }> = ({ value }) => {
   }, [outgoing]);
 
   return (
-    <span className={styles.stepValue}>
-      <span className={styles.roll}>
-        {outgoing && (
-          <span
-            key={`out-${outgoing.value}`}
-            className={[styles.rollNum, outgoing.direction === 'up' ? styles.rollOutUp : styles.rollOutDown].join(' ')}
-            aria-hidden="true"
-          >
-            {outgoing.value}
-          </span>
-        )}
+    <span className={styles.roll}>
+      {outgoing && (
         <span
-          key={`in-${value}`}
-          className={[styles.rollNum, outgoing ? (outgoing.direction === 'up' ? styles.rollInUp : styles.rollInDown) : ''].filter(Boolean).join(' ')}
-          onAnimationEnd={() => setOutgoing(null)}
+          key={`out-${outgoing.value}`}
+          className={[styles.rollNum, outgoing.direction === 'up' ? styles.rollOutUp : styles.rollOutDown].join(' ')}
+          aria-hidden="true"
         >
-          {value}
+          {outgoing.value}
         </span>
+      )}
+      <span
+        key={`in-${value}`}
+        className={[styles.rollNum, outgoing ? (outgoing.direction === 'up' ? styles.rollInUp : styles.rollInDown) : ''].filter(Boolean).join(' ')}
+        onAnimationEnd={() => setOutgoing(null)}
+      >
+        {value}
       </span>
     </span>
   );
@@ -86,6 +95,29 @@ export const QuantitySelector: React.FC<QuantitySelectorProps> = ({
   const canDecrement = quantity > min;
   const canIncrement = max === undefined || quantity < max;
 
+  const inputRef = React.useRef<HTMLInputElement>(null);
+  const [isEditing, setIsEditing] = React.useState(false);
+  const [draft, setDraft] = React.useState(String(quantity));
+
+  const clamp = (n: number) => {
+    let v = n;
+    if (min !== undefined) v = Math.max(min, v);
+    if (max !== undefined) v = Math.min(max, v);
+    return v;
+  };
+
+  const commit = () => {
+    setIsEditing(false);
+    const parsed = Number.parseInt(draft, 10);
+    if (!Number.isNaN(parsed)) {
+      const next = clamp(parsed);
+      if (next !== quantity) onQuantityChange?.(next);
+    }
+    // Always resync the draft to the (possibly clamped, possibly
+    // unchanged-if-invalid) real quantity -- never leaves stray typed
+    // digits behind after a commit.
+  };
+
   return (
     <div className={[styles.stepper, className ?? ''].filter(Boolean).join(' ')} role="group" aria-label={label}>
       <button
@@ -98,7 +130,38 @@ export const QuantitySelector: React.FC<QuantitySelectorProps> = ({
         <Minus size={14} strokeWidth={iconStrokeWidth(14)} />
       </button>
       <span className={styles.stepDivider} aria-hidden="true" />
-      <RollingValue value={quantity} />
+
+      <span className={styles.stepValue}>
+        <input
+          ref={inputRef}
+          type="text"
+          inputMode="numeric"
+          size={Math.max((isEditing ? draft : String(quantity)).length, 1)}
+          className={[styles.stepInput, !isEditing ? styles.stepInputResting : ''].filter(Boolean).join(' ')}
+          value={isEditing ? draft : String(quantity)}
+          aria-label={label}
+          onFocus={(e) => { setDraft(String(quantity)); setIsEditing(true); e.target.select(); }}
+          onChange={(e) => setDraft(e.target.value.replace(/\D/g, ''))}
+          onBlur={commit}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') { e.preventDefault(); inputRef.current?.blur(); }
+            if (e.key === 'Escape') { setDraft(String(quantity)); inputRef.current?.blur(); }
+          }}
+        />
+        {/* Resting (unfocused) display -- the input above still owns focus/
+            click/typing, just with its own text made invisible via
+            .stepInputResting so this animated overlay is what's actually
+            seen. Hidden via CSS (not unmounted) while editing: RollingValue
+            tracks the previous value in a ref to know which way to roll,
+            so unmounting it here on every focus would reset that memory
+            and the roll would never play after a typed commit -- it needs
+            to stay mounted continuously to see the old-value -> new-value
+            transition when editing ends. */}
+        <span className={[styles.rollOverlay, isEditing ? styles.rollOverlayHidden : ''].filter(Boolean).join(' ')} aria-hidden="true">
+          <RollingValue value={quantity} />
+        </span>
+      </span>
+
       <span className={styles.stepDivider} aria-hidden="true" />
       <button
         type="button"

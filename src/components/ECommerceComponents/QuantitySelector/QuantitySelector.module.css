@@ -32,19 +32,65 @@
 }
 
 /* Clips the two stacked numbers to the cell -- the actual roll animation
-   lives on .rollNum below. */
+   lives on .rollNum below. Widened from a fixed 40px so multi-digit typed
+   quantities (e.g. 3+ digits) aren't clipped -- grows with content instead
+   of wrapping/truncating, min-width keeps the single-digit case matching
+   Figma exactly. */
 .stepValue {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  min-width: 40px;
+  width: auto;
   height: 32px;
+  padding: 0 var(--space-4);
+  box-sizing: border-box;
   overflow: hidden;
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
   color: var(--color-fg-default);
+}
+
+/* The real control -- always mounted so the cell is always focusable/
+   clickable/typeable. While resting (not focused) its own text is made
+   invisible and .rollOverlay (the animated RollingValue) is shown on top
+   instead; the instant it's focused the overlay unmounts and this input's
+   real text becomes visible for free typing. */
+.stepInput {
+  position: relative;
+  z-index: 1;
+  /* No width here on purpose -- sized via the native `size` attribute
+     (set in QuantitySelector.tsx from the current digit count) so the box
+     grows with typed digits instead of relying on a fixed CSS width. */
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: center;
+}
+.stepInputResting {
+  color: transparent;
+  caret-color: transparent;
+}
+
+.rollOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Clicks/typing should always reach the real input underneath. */
+  pointer-events: none;
+}
+/* Hidden (not unmounted) while editing -- see the comment above this
+   element's usage in QuantitySelector.tsx for why it must stay mounted. */
+.rollOverlayHidden {
+  visibility: hidden;
 }
 
 .roll {
