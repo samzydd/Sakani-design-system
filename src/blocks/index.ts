@@ -40,6 +40,8 @@ export { LoginBlock } from './LoginBlock';
 export type { LoginBlockProps, LoginStatus, LoginSocialProvider } from './LoginBlock';
 export { SignUpBlock } from './SignUpBlock';
 export type { SignUpBlockProps, SignUpStatus, SignUpSocialProvider } from './SignUpBlock';
+export { CheckoutFlowBlock } from './CheckoutFlowBlock';
+export type { CheckoutFlowBlockProps, CheckoutFlowItem, CheckoutFlowStep } from './CheckoutFlowBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
