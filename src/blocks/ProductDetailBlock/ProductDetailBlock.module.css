@@ -78,7 +78,7 @@
 .options {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-8);
+  gap: var(--space-4);
 }
 
 /* ─── Quantity + Add to cart ── */
