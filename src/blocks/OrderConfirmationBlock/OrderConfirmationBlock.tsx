@@ -21,7 +21,7 @@
  */
 
 import React from 'react';
-import { Check, Truck } from 'lucide-react';
+import { CircleCheck, Truck } from 'lucide-react';
 import { Divider } from '../../components/Divider';
 import { Button } from '../../components/Button';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
@@ -63,7 +63,7 @@ export const OrderConfirmationBlock: React.FC<OrderConfirmationBlockProps> = ({
   return (
     <div className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
       <span className={styles.iconWrap} aria-hidden="true">
-        <Check size={28} strokeWidth={iconStrokeWidth(28)} />
+        <CircleCheck size={28} strokeWidth={iconStrokeWidth(28)} />
       </span>
 
       <h2 className={styles.title}>Order confirmed</h2>
