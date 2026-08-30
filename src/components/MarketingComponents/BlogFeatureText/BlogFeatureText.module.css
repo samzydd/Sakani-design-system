@@ -1,0 +1,45 @@
+.root {
+  display: flex;
+  gap: var(--space-12);
+  font-family: var(--font-sans);
+}
+
+/* Row layout, rule stretches to match the text's own height. Deliberately
+   left the rule's own height unset (not 100%) so flexbox's align-items:
+   stretch sizes it directly off the row's cross size -- a 100% height
+   here couldn't resolve against this indefinite-height row and would
+   collapse to a min-height floor instead (the exact bug hit and fixed in
+   BlogBlockquote's own rail). */
+.rootLeft {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* Column layout, rule sits above the text at its own fixed width. */
+.rootTop {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ruleLeft {
+  flex-shrink: 0;
+  width: 2px;
+  background: var(--color-brand-default);
+  border-radius: var(--radius-full);
+}
+
+.ruleTop {
+  flex-shrink: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--color-brand-default);
+  border-radius: var(--radius-full);
+}
+
+.text {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
