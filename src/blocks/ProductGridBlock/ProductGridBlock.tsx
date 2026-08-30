@@ -23,10 +23,14 @@
  * Default, 24px in With Filters) -- a real inconsistency between two
  * separately-authored example states, not an intentional feature (a
  * grid's spacing can't sensibly depend on whether a filter bar happens to
- * render above it). This block uses 24px everywhere: With Filters reads
- * as the more deliberate, complete-feeling spacing, and 8px is tight
- * enough to look like cards touching, which is unlikely to be the
- * intended default for a real storefront grid.
+ * render above it). This block uses 8px everywhere, matching Default.
+ *
+ * Wishlist and color-swatch selection are real wired state, per card, not
+ * decorative -- ProductCard's `wishlisted`/`colors[].selected` are
+ * controlled props, so without this the heart and swatches would render
+ * but visibly do nothing when clicked. Keyed by each product's id/name
+ * rather than one shared piece of state, since selecting a color on one
+ * card must never affect another card's own selection.
  */
 
 import React from 'react';
@@ -60,27 +64,44 @@ export interface ProductGridBlockProps {
 export const ProductGridBlock: React.FC<ProductGridBlockProps> = ({
   eyebrow = 'Shop', title, subtitle, products, showFilterBar = false,
   sortLabel = 'Featured', onSortClick, columns = 4, className,
-}) => (
-  <div className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
-    <div className={styles.heading}>
-      {eyebrow && <Badge variant="accent" emphasis="subtle">{eyebrow}</Badge>}
-      <h2 className={styles.title}>{title}</h2>
-      {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-    </div>
+}) => {
+  const [wishlisted, setWishlisted] = React.useState<Record<string, boolean>>({});
+  const [selectedColors, setSelectedColors] = React.useState<Record<string, string>>({});
 
-    {showFilterBar && (
-      <div className={styles.filterBar}>
-        <span className={styles.count}>{products.length} product{products.length === 1 ? '' : 's'}</span>
-        <Button variant="secondary" size="sm" onClick={onSortClick}>Sort: {sortLabel}</Button>
+  return (
+    <div className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
+      <div className={styles.heading}>
+        {eyebrow && <Badge variant="accent" emphasis="subtle">{eyebrow}</Badge>}
+        <h2 className={styles.title}>{title}</h2>
+        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
       </div>
-    )}
 
-    <div className={styles.grid} style={{ '--product-grid-columns': columns } as React.CSSProperties}>
-      {products.map(({ id, ...product }, i) => (
-        <ProductCard key={id ?? product.name ?? i} {...product} />
-      ))}
+      {showFilterBar && (
+        <div className={styles.filterBar}>
+          <span className={styles.count}>{products.length} product{products.length === 1 ? '' : 's'}</span>
+          <Button variant="secondary" size="sm" onClick={onSortClick}>Sort: {sortLabel}</Button>
+        </div>
+      )}
+
+      <div className={styles.grid} style={{ '--product-grid-columns': columns } as React.CSSProperties}>
+        {products.map(({ id, colors, ...product }, i) => {
+          const key = id ?? product.name ?? String(i);
+          const selectedColor = selectedColors[key] ?? colors?.find((c) => c.selected)?.label;
+          return (
+            <ProductCard
+              key={key}
+              {...product}
+              className={styles.card}
+              colors={colors?.map((c) => ({ ...c, selected: (c.id ?? c.label) === selectedColor }))}
+              onColorSelect={(colorId) => setSelectedColors((current) => ({ ...current, [key]: colorId }))}
+              wishlisted={wishlisted[key] ?? product.wishlisted ?? false}
+              onWishlistToggle={(saved) => setWishlisted((current) => ({ ...current, [key]: saved }))}
+            />
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default ProductGridBlock;
