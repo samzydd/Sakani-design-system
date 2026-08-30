@@ -28,6 +28,7 @@ export * from './components/ECommerceComponents/CheckoutSteps';
 export * from './components/ECommerceComponents/ColorSwatch';
 export * from './components/ECommerceComponents/PriceDisplay';
 export * from './components/ECommerceComponents/ProductCard';
+export * from './components/ECommerceComponents/WishlistButton';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';

@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+.button:hover {
+  background: var(--color-bg-subtle);
+  box-shadow: var(--shadow-sm);
+}
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
+}
+
+.icon {
+  color: var(--color-fg-default);
+}
+.iconSaved {
+  color: var(--color-brand-default);
+}

@@ -44,9 +44,6 @@
   top: 12px;
   right: 12px;
 }
-.wishlistBtnActive {
-  color: var(--color-danger-solid);
-}
 
 .outOfStockLabel {
   position: absolute;

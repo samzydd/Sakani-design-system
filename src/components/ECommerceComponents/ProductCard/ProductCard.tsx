@@ -27,19 +27,17 @@
  * closer match) -- no standalone Rating component exists yet, and this is
  * scoped to what Product Card itself asked for.
  *
- * Color swatches reuse the shared ColorSwatch component directly.
- * Wishlist button reuses the shared IconButton (outline/sm) -- Figma's own
- * asset drops the button's border, but that reads as the same authoring
- * omission already seen on CartItem's remove button, not an intentional
- * borderless treatment.
+ * Color swatches reuse the shared ColorSwatch component directly. Wishlist
+ * button reuses the shared WishlistButton component (also E-commerce set)
+ * directly -- exact match for the card's own save/unsave affordance.
  */
 
 import React from 'react';
-import { Star, Heart } from 'lucide-react';
-import { IconButton } from '../../IconButton';
+import { Star } from 'lucide-react';
 import { Button } from '../../Button';
 import { Badge } from '../../Badge';
 import { ColorSwatch, type ColorSwatchProps } from '../ColorSwatch';
+import { WishlistButton } from '../WishlistButton';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './ProductCard.module.css';
 
@@ -62,7 +60,7 @@ export interface ProductCardProps {
   onColorSelect?: (id: string) => void;
   inStock?: boolean;
   wishlisted?: boolean;
-  onWishlistToggle?: () => void;
+  onWishlistToggle?: (wishlisted: boolean) => void;
   onAddItem?: () => void;
   addItemLabel?: string;
   formatPrice?: (amount: number) => string;
@@ -92,13 +90,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         )}
 
         {inStock && (
-          <IconButton
-            icon={Heart}
-            variant="outline"
-            size="sm"
-            aria-label={wishlisted ? `Remove ${name} from wishlist` : `Add ${name} to wishlist`}
-            className={[styles.wishlistBtn, wishlisted ? styles.wishlistBtnActive : ''].filter(Boolean).join(' ')}
-            onClick={onWishlistToggle}
+          <WishlistButton
+            saved={wishlisted}
+            label={name}
+            className={styles.wishlistBtn}
+            onToggle={onWishlistToggle}
           />
         )}
 

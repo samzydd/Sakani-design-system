@@ -24,6 +24,7 @@ const mugColors = [
 export const Default: Story = {
   render: () => {
     const [selected, setSelected] = React.useState('Bone');
+    const [wishlisted, setWishlisted] = React.useState(false);
     return (
       <ProductCard
         image={mug}
@@ -33,6 +34,8 @@ export const Default: Story = {
         rating={5}
         colors={mugColors.map((c) => ({ ...c, selected: selected === c.label }))}
         onColorSelect={setSelected}
+        wishlisted={wishlisted}
+        onWishlistToggle={setWishlisted}
       />
     );
   },
