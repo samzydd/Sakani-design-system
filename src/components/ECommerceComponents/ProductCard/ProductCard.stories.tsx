@@ -44,6 +44,7 @@ export const Default: Story = {
 export const Sale: Story = {
   render: () => {
     const [selected, setSelected] = React.useState('Bone');
+    const [wishlisted, setWishlisted] = React.useState(false);
     return (
       <ProductCard
         image={tableRunner}
@@ -54,6 +55,8 @@ export const Sale: Story = {
         rating={5}
         colors={mugColors.map((c) => ({ ...c, selected: selected === c.label }))}
         onColorSelect={setSelected}
+        wishlisted={wishlisted}
+        onWishlistToggle={setWishlisted}
       />
     );
   },
