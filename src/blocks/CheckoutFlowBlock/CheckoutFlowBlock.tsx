@@ -60,6 +60,14 @@ export interface CheckoutFlowBlockProps {
 const defaultFormatPrice = (amount: number) =>
   amount.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 
+/** Strips everything but digits, caps at 4 (MM + 2-digit YY), and
+ * auto-inserts the "/" once the month is complete -- the field's stored
+ * value is always numeric-plus-slash, never free text. */
+const formatExpiry = (raw: string) => {
+  const digits = raw.replace(/\D/g, '').slice(0, 4);
+  return digits.length <= 2 ? digits : `${digits.slice(0, 2)}/${digits.slice(2)}`;
+};
+
 export const CheckoutFlowBlock: React.FC<CheckoutFlowBlockProps> = ({
   items: initialItems, shippingCost = 0, initialStep = 'shipping',
   onComplete, formatPrice = defaultFormatPrice, className,
@@ -109,7 +117,14 @@ export const CheckoutFlowBlock: React.FC<CheckoutFlowBlockProps> = ({
             <>
               <h2 className={styles.title}>Payment details</h2>
               <Input label="Card number" placeholder="1234 1234 1234 1234" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} className={styles.fullWidth} />
-              <Input label="Expiry date" placeholder="MM / YY" value={expiry} onChange={(e) => setExpiry(e.target.value)} className={styles.fullWidth} />
+              <Input
+                label="Expiry date"
+                placeholder="MM/YY"
+                inputMode="numeric"
+                value={expiry}
+                onChange={(e) => setExpiry(formatExpiry(e.target.value))}
+                className={styles.fullWidth}
+              />
               <Input label="CVC" placeholder="123" value={cvc} onChange={(e) => setCvc(e.target.value)} className={styles.fullWidth} />
               <Button variant="primary" className={styles.fullWidth} onClick={handlePlaceOrder} disabled={!cardNumber.trim() || !expiry.trim() || !cvc.trim()}>
                 Place order
