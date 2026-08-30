@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { BlogImage } from './BlogImage';
-import hero from '../../../assets/products/card-serving-board.jpg';
+import hero from '../../../assets/marketing/blog-image-balloons.jpg';
 
 const meta = {
   title: 'Marketing/Blog Image',
@@ -12,13 +12,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: { src: hero, alt: 'Oak serving board on a kitchen counter', size: 'large' },
+  args: { src: hero, alt: 'Hot air balloons over a misty mountain range at sunrise', size: 'large' },
 };
 
 export const WithCaption: Story = {
   args: {
     src: hero,
-    alt: 'Oak serving board on a kitchen counter',
+    alt: 'Hot air balloons over a misty mountain range at sunrise',
     size: 'large',
     caption: 'The Sakani token layer, visualized as a dependency graph.',
   },
@@ -27,7 +27,7 @@ export const WithCaption: Story = {
 export const Small: Story = {
   args: {
     src: hero,
-    alt: 'Oak serving board on a kitchen counter',
+    alt: 'Hot air balloons over a misty mountain range at sunrise',
     size: 'small',
     caption: 'The Sakani token layer, visualized as a dependency graph.',
   },
@@ -36,7 +36,7 @@ export const Small: Story = {
 export const DarkMode: Story = {
   args: {
     src: hero,
-    alt: 'Oak serving board on a kitchen counter',
+    alt: 'Hot air balloons over a misty mountain range at sunrise',
     size: 'large',
     caption: 'The Sakani token layer, visualized as a dependency graph.',
   },

@@ -11,18 +11,29 @@
   display: block;
   position: relative;
   flex-shrink: 0;
+  width: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
 /* Figma's own fixed px presets -- Small deliberately isn't a scaled-down
-   Large (see file doc), so these are two literal sizes, not one ratio. */
-.root--large .imageWrap {
+   Large (see file doc), so these are two literal sizes, not one ratio.
+   The width lives on .root itself (not .imageWrap) so the column has a
+   DEFINITE width from the start: with only .imageWrap sized and .root
+   left to shrink-to-fit, the caption's own width:100% had nothing
+   resolved yet to size against during that measurement pass, so the
+   browser fell back to the caption text's own unwrapped max-content
+   width -- letting it overflow past the image instead of wrapping. */
+.root--large {
   width: 560px;
+}
+.root--large .imageWrap {
   height: 315px;
 }
-.root--small .imageWrap {
+.root--small {
   width: 320px;
+}
+.root--small .imageWrap {
   height: 315px;
 }
 
