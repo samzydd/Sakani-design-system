@@ -80,13 +80,19 @@ export const OutOfStock: Story = {
 };
 
 export const Grid: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-      <ProductCard image={mug} name="Ceramic Pour-Over Mug" price={28} rating={5} colors={mugColors} />
-      <ProductCard image={tableRunner} name="Linen Table Runner" price={34} compareAtPrice={48} rating={5} colors={mugColors} />
-      <ProductCard image={servingBoard} name="Oak Serving Board" price={56} rating={5} inStock={false} colors={mugColors} />
-    </div>
-  ),
+  render: () => {
+    // Out of stock doesn't render a wishlist button at all, so no state
+    // needed for the serving board card.
+    const [mugWishlisted, setMugWishlisted] = React.useState(false);
+    const [runnerWishlisted, setRunnerWishlisted] = React.useState(false);
+    return (
+      <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+        <ProductCard image={mug} name="Ceramic Pour-Over Mug" price={28} rating={5} colors={mugColors} wishlisted={mugWishlisted} onWishlistToggle={setMugWishlisted} />
+        <ProductCard image={tableRunner} name="Linen Table Runner" price={34} compareAtPrice={48} rating={5} colors={mugColors} wishlisted={runnerWishlisted} onWishlistToggle={setRunnerWishlisted} />
+        <ProductCard image={servingBoard} name="Oak Serving Board" price={56} rating={5} inStock={false} colors={mugColors} />
+      </div>
+    );
+  },
 };
 
 export const DarkMode: Story = {
