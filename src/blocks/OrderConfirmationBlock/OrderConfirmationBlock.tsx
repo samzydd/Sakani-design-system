@@ -97,14 +97,20 @@ export const OrderConfirmationBlock: React.FC<OrderConfirmationBlockProps> = ({
         </div>
       )}
 
-      {hasTracking && (
-        <Button variant="secondary" className={styles.fullWidth} onClick={onTrackOrder}>
-          Track order
+      {hasTracking ? (
+        <div className={styles.buttonGroup}>
+          <Button variant="secondary" className={styles.fullWidth} onClick={onTrackOrder}>
+            Track order
+          </Button>
+          <Button variant="primary" className={styles.fullWidth} onClick={onContinueShopping}>
+            Continue shopping
+          </Button>
+        </div>
+      ) : (
+        <Button variant="primary" className={styles.fullWidth} onClick={onContinueShopping}>
+          Continue shopping
         </Button>
       )}
-      <Button variant="primary" className={styles.fullWidth} onClick={onContinueShopping}>
-        Continue shopping
-      </Button>
     </div>
   );
 };

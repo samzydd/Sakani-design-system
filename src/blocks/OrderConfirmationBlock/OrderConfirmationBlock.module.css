@@ -148,3 +148,13 @@
 .trackingRow svg {
   flex-shrink: 0;
 }
+
+/* Groups "Track order" + "Continue shopping" (With Tracking style only)
+   with their own 12px gap, distinct from .block's own 16px gap between
+   every other child. */
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  width: 100%;
+}
