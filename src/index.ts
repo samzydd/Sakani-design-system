@@ -106,3 +106,7 @@ export * from './components/TopBarMobile';
 /** Icon-scaling helper -- public because several Blocks (and any consumer
  * rendering a Lucide icon below 24px) need it to match Figma's 1.5px stroke. */
 export { iconStrokeWidth } from './lib/iconStrokeWidth';
+
+/** WCAG contrast helper -- public because any consumer overlaying an icon
+ * or glyph on an arbitrary color (not just ColorSwatch) needs this same check. */
+export { getContrastColor } from './lib/getContrastColor';

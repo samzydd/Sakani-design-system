@@ -47,31 +47,28 @@
   border: var(--border-width-150) solid var(--color-border-subtle);
 }
 
-/* Fixed white, NOT --color-fg-on-inverse -- that token is theme-relative
-   (flips dark in dark mode), but this overlays an arbitrary consumer-
-   supplied `color`, not this system's own inverse surface. A dark check
-   on a dark-mode-flipped token would vanish against a dark swatch color
-   exactly the way it's meant to stay visible against. Matches Figma's own
-   asset, which hardcodes #FAFAF9 regardless of theme. */
+/* Color is set inline per-instance via getContrastColor(color) -- not a
+   fixed value here, NOT --color-fg-on-inverse either (that token is
+   theme-relative and flips dark in dark mode; this overlays an arbitrary
+   consumer-supplied swatch `color`, not this system's own inverse
+   surface). See ColorSwatch.tsx. */
 .check {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fafaf9;
   pointer-events: none;
 }
 
 /* Diagonal strike for unavailable -- a real rotated line, not a border
-   (confirmed from the asset: a white 1.5px rectangle rotated 30deg). Same
-   fixed-white reasoning as .check above. */
+   (confirmed from the asset: a 1.5px rectangle rotated 30deg). Same
+   inline-color reasoning as .check above. */
 .strike {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 24px;
   height: var(--border-width-150);
-  background: #fafaf9;
   transform: translate(-50%, -50%) rotate(-30deg);
   pointer-events: none;
 }

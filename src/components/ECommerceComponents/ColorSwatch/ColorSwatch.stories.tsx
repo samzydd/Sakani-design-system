@@ -55,6 +55,13 @@ export const Group: Story = {
   },
 };
 
+/** Regression case: a white checkmark on this light tan (#E0D8D1) failed
+ * contrast. getContrastColor should now switch the checkmark to dark
+ * automatically. */
+export const LightColorContrast: Story = {
+  args: { color: '#E0D8D1', label: 'Sand', selected: true },
+};
+
 export const DarkMode: Story = {
   args: { color: '#1B284D', label: 'Navy', selected: true },
   decorators: [(S) => <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}><S /></div>],
