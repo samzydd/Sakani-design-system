@@ -34,6 +34,7 @@ export * from './components/ECommerceComponents/SizeSelector';
 export * from './components/ECommerceComponents/StarRating';
 export * from './components/ECommerceComponents/StockStatus';
 export * from './components/ECommerceComponents/WishlistButton';
+export * from './components/MarketingComponents/BlogBlockquote';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';

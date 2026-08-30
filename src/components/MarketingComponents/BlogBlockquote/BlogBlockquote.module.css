@@ -1,0 +1,94 @@
+.root {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-16);
+  font-family: var(--font-sans);
+}
+
+/* "With Attribution" -- bg/surface card, radius/lg, vertically centered
+   against the rail. */
+.rootAttributed {
+  align-items: center;
+  padding: 0 var(--space-16) 0 0;
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+}
+
+/* "Simple" -- no card chrome, rail spans the full quote height. */
+.rootSimple {
+  align-items: stretch;
+}
+
+/* Divider's own height:100% can't resolve against this row's indefinite
+   (content-sized) height, so it falls back to its own min-height:1em
+   floor instead of matching the quote's actual height. Forcing height
+   back to auto here lets flexbox's align-items:stretch size it directly
+   off the row's cross size instead, which works regardless of height. */
+.rail {
+  flex-shrink: 0;
+  /* !important: source/import order between this module and Divider's own
+     stylesheet isn't guaranteed, and both rules are single-class
+     specificity -- without it this override can silently lose the
+     cascade depending on bundling order. */
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.markRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.markRowEnd {
+  justify-content: flex-end;
+}
+.mark {
+  color: var(--color-fg-subtle);
+  flex-shrink: 0;
+}
+
+.quoteAttributed {
+  margin: 0;
+  width: 100%;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
+
+.quoteSimple {
+  margin: 0;
+  align-self: stretch;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.authorText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+.authorName {
+  font-weight: 600;
+  color: var(--color-fg-default);
+}
