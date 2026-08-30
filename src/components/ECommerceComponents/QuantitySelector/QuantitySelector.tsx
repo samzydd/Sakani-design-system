@@ -11,12 +11,64 @@
  * This is the standalone version of the stepper CartItem already built
  * inline -- CartItem now reuses this component instead of its own copy,
  * so there's one implementation instead of two drifting in parallel.
+ *
+ * The value itself rolls like an odometer on change: incrementing slides
+ * the old number up and out while the new one slides up into place from
+ * below; decrementing reverses both (old slides down and out, new enters
+ * from above) -- direction always matches which way the number is
+ * actually moving, not a fixed animation. `RollingValue` below is kept
+ * internal/unexported since this is specifically a QuantitySelector
+ * concern, not a general-purpose primitive yet. `prefers-reduced-motion`
+ * disables it via the stylesheet (the new value still swaps instantly).
  */
 
 import React from 'react';
 import { Minus, Plus } from 'lucide-react';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './QuantitySelector.module.css';
+
+const RollingValue: React.FC<{ value: number }> = ({ value }) => {
+  const lastValue = React.useRef(value);
+  const [outgoing, setOutgoing] = React.useState<{ value: number; direction: 'up' | 'down' } | null>(null);
+
+  if (value !== lastValue.current) {
+    setOutgoing({ value: lastValue.current, direction: value > lastValue.current ? 'up' : 'down' });
+    lastValue.current = value;
+  }
+
+  // Fallback in case onAnimationEnd never fires (e.g. prefers-reduced-motion
+  // disables the animation via the stylesheet, so no animation ever
+  // completes) -- without this the outgoing number would stay stuck in the
+  // DOM forever, relying only on paint order to look correct.
+  React.useEffect(() => {
+    if (!outgoing) return;
+    const timeout = setTimeout(() => setOutgoing(null), 260);
+    return () => clearTimeout(timeout);
+  }, [outgoing]);
+
+  return (
+    <span className={styles.stepValue}>
+      <span className={styles.roll}>
+        {outgoing && (
+          <span
+            key={`out-${outgoing.value}`}
+            className={[styles.rollNum, outgoing.direction === 'up' ? styles.rollOutUp : styles.rollOutDown].join(' ')}
+            aria-hidden="true"
+          >
+            {outgoing.value}
+          </span>
+        )}
+        <span
+          key={`in-${value}`}
+          className={[styles.rollNum, outgoing ? (outgoing.direction === 'up' ? styles.rollInUp : styles.rollInDown) : ''].filter(Boolean).join(' ')}
+          onAnimationEnd={() => setOutgoing(null)}
+        >
+          {value}
+        </span>
+      </span>
+    </span>
+  );
+};
 
 export interface QuantitySelectorProps {
   quantity: number;
@@ -46,7 +98,7 @@ export const QuantitySelector: React.FC<QuantitySelectorProps> = ({
         <Minus size={14} strokeWidth={iconStrokeWidth(14)} />
       </button>
       <span className={styles.stepDivider} aria-hidden="true" />
-      <span className={styles.stepValue}>{quantity}</span>
+      <RollingValue value={quantity} />
       <span className={styles.stepDivider} aria-hidden="true" />
       <button
         type="button"
