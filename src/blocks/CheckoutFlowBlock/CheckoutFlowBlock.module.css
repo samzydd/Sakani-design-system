@@ -58,6 +58,25 @@
   width: 100%;
 }
 
+/* Card brand badge (Visa/Amex/Discover) shown as the card number field's
+   trailing icon -- sets its own color/background directly so it wins over
+   Input's icon-slot `color: fg-muted`, which only applies where nothing
+   more specific already set that property on this element. */
+.cardBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  padding: 0 5px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.3px;
+  color: #fff;
+  white-space: nowrap;
+}
+
 .summaryRow {
   display: flex;
   align-items: flex-start;

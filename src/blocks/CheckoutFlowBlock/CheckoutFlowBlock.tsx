@@ -25,11 +25,13 @@
  */
 
 import React from 'react';
+import { CreditCard } from 'lucide-react';
 import { CheckoutSteps } from '../../components/ECommerceComponents/CheckoutSteps';
 import { CartItem } from '../../components/ECommerceComponents/CartItem';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { Divider } from '../../components/Divider';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './CheckoutFlowBlock.module.css';
 
 export interface CheckoutFlowItem {
@@ -66,6 +68,56 @@ const defaultFormatPrice = (amount: number) =>
 const formatExpiry = (raw: string) => {
   const digits = raw.replace(/\D/g, '').slice(0, 4);
   return digits.length <= 2 ? digits : `${digits.slice(0, 2)}/${digits.slice(2)}`;
+};
+
+/** Strips everything but digits, caps at 19 (longest real PAN length), and
+ * groups into 4s with a space -- same "numeric-plus-formatting-chars only"
+ * approach as formatExpiry above. */
+const formatCardNumber = (raw: string) => {
+  const digits = raw.replace(/\D/g, '').slice(0, 19);
+  return (digits.match(/.{1,4}/g) ?? []).join(' ');
+};
+
+type CardBrand = 'visa' | 'mastercard' | 'amex' | 'discover' | 'unknown' | null;
+
+/** Identifies a card brand from its leading digits (IIN/BIN ranges) --
+ * good enough to drive a UI badge, not a substitute for real PAN
+ * validation (Luhn check, issuer lookup) which belongs server-side. */
+const detectCardBrand = (rawValue: string): CardBrand => {
+  const digits = rawValue.replace(/\D/g, '');
+  if (!digits) return null;
+  if (/^4/.test(digits)) return 'visa';
+  if (/^(5[1-5]|222[1-9]|22[3-9]\d|2[3-6]\d{2}|27[01]\d|2720)/.test(digits)) return 'mastercard';
+  if (/^3[47]/.test(digits)) return 'amex';
+  if (/^(6011|65|64[4-9])/.test(digits)) return 'discover';
+  return 'unknown';
+};
+
+/** Small brand mark shown as the card number field's trailing icon --
+ * Visa/Amex/Discover render as their familiar colored wordmark pill,
+ * Mastercard as its two-circle mark (the one case where a wordmark
+ * wouldn't actually read as the brand), and no/unrecognized input falls
+ * back to a plain muted card icon matching every other field's icon. */
+const CardBrandBadge: React.FC<{ brand: CardBrand }> = ({ brand }) => {
+  if (!brand || brand === 'unknown') {
+    return <CreditCard size={16} strokeWidth={iconStrokeWidth(16)} />;
+  }
+  if (brand === 'mastercard') {
+    return (
+      <svg width={16} height={16} viewBox="0 0 16 16" aria-label="Mastercard">
+        <circle cx="6" cy="8" r="5.5" fill="#EB001B" />
+        <circle cx="10" cy="8" r="5.5" fill="#F79E1B" />
+        <path d="M8 3a5.5 5.5 0 010 10 5.5 5.5 0 010-10z" fill="#FF5F00" />
+      </svg>
+    );
+  }
+  const label = { visa: 'VISA', amex: 'AMEX', discover: 'DISC' }[brand];
+  const bg = { visa: '#1A1F71', amex: '#006FCF', discover: '#FF6000' }[brand];
+  return (
+    <span className={styles.cardBadge} style={{ background: bg }} aria-label={label}>
+      {label}
+    </span>
+  );
 };
 
 export const CheckoutFlowBlock: React.FC<CheckoutFlowBlockProps> = ({
@@ -116,7 +168,15 @@ export const CheckoutFlowBlock: React.FC<CheckoutFlowBlockProps> = ({
           ) : (
             <>
               <h2 className={styles.title}>Payment details</h2>
-              <Input label="Card number" placeholder="1234 1234 1234 1234" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} className={styles.fullWidth} />
+              <Input
+                label="Card number"
+                placeholder="1234 1234 1234 1234"
+                inputMode="numeric"
+                value={cardNumber}
+                onChange={(e) => setCardNumber(formatCardNumber(e.target.value))}
+                trailingIcon={<CardBrandBadge brand={detectCardBrand(cardNumber)} />}
+                className={styles.fullWidth}
+              />
               <Input
                 label="Expiry date"
                 placeholder="MM/YY"
