@@ -42,6 +42,7 @@ export * from './components/MarketingComponents/BlogListingFeaturedCard';
 export * from './components/MarketingComponents/FeaturedIcon';
 export * from './components/MarketingComponents/FirstPageHeading';
 export * from './components/MarketingComponents/JobListing';
+export * from './components/MarketingComponents/LocationDot';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';

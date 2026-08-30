@@ -16,17 +16,16 @@
  * + fg/default is an exact match here, same as
  * BlogListingFeaturedCard's own "Read article").
  *
- * The small location dot + label is NOT a separate exported component:
- * Figma names its own sub-instance "LocationDot" with a `status` prop,
- * hinting at other status colors (on-site/hybrid) that aren't visible
- * from this listing's own instances -- built locally, scoped to what
- * this component actually needs, same reasoning BlogFeatureText gave
- * for its own accent rule.
+ * The location line reuses the shared LocationDot component (also
+ * Marketing primitives) rather than a local dot+label -- broken out into
+ * its own component specifically so any marketing component needing a
+ * location can reuse it instead of re-implementing the pattern.
  */
 
 import React from 'react';
 import { Badge } from '../../Badge';
 import { Button } from '../../Button';
+import { LocationDot, type LocationDotStatus } from '../LocationDot';
 import styles from './JobListing.module.css';
 
 export type JobListingLayout = 'card' | 'row';
@@ -37,6 +36,8 @@ export interface JobListingProps {
   department: string;
   employmentType: string;
   location: string;
+  /** Drives LocationDot's color. Defaults to "remote", matching Figma's own Job Listing instances. */
+  locationStatus?: LocationDotStatus;
   onApply?: () => void;
   applyLabel?: string;
   /** Figma Style axis. Defaults to "card". */
@@ -45,7 +46,7 @@ export interface JobListingProps {
 }
 
 export const JobListing: React.FC<JobListingProps> = ({
-  title, description, department, employmentType, location,
+  title, description, department, employmentType, location, locationStatus = 'remote',
   onApply, applyLabel = 'Apply now', layout = 'card', className,
 }) => {
   const isRow = layout === 'row';
@@ -59,10 +60,7 @@ export const JobListing: React.FC<JobListingProps> = ({
       <div className={styles.metaRow}>
         <Badge variant="accent" emphasis="subtle">{department}</Badge>
         <Badge variant="neutral" emphasis="subtle">{employmentType}</Badge>
-        <span className={styles.location}>
-          <span className={styles.locationDot} aria-hidden="true" />
-          {location}
-        </span>
+        <LocationDot location={location} status={locationStatus} />
       </div>
     </>
   );

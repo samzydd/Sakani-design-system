@@ -1,0 +1,27 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.dot {
+  display: block;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+}
+
+.dotActive {
+  background: var(--color-success-solid);
+}
+
+.dotRemote {
+  background: var(--color-fg-muted);
+}

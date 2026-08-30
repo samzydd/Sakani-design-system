@@ -69,26 +69,6 @@
   flex-wrap: wrap;
 }
 
-.location {
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
-  color: var(--color-fg-muted);
-  white-space: nowrap;
-}
-
-.locationDot {
-  display: block;
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: var(--radius-full);
-  background: var(--color-fg-muted);
-}
-
 .applyBtn {
   flex-shrink: 0;
 }
