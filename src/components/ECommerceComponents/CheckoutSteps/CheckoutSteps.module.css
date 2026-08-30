@@ -1,0 +1,61 @@
+.steps {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  height: 24px;
+  font-family: var(--font-sans);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-shrink: 0;
+}
+
+.connector {
+  flex-shrink: 0;
+  width: 32px;
+  height: 1px;
+  background: var(--color-border-default);
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+}
+
+.circleCompleted {
+  background: var(--color-bg-inverse);
+  color: var(--color-fg-on-inverse);
+}
+.circleActive {
+  background: var(--color-bg-surface);
+  border: var(--border-width-200) solid var(--color-accent-default);
+  color: var(--color-fg-default);
+}
+.circleUpcoming {
+  background: var(--color-bg-surface);
+  border: var(--border-width-200) solid var(--color-border-subtle);
+  color: var(--color-fg-subtle);
+}
+
+.label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+}
+.labelActive {
+  font-weight: 600;
+}
+.labelUpcoming {
+  color: var(--color-fg-subtle);
+}
