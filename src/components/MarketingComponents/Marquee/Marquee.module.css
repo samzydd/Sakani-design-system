@@ -1,0 +1,60 @@
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-bg-surface);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration, 20s) linear infinite;
+}
+
+/* Slows to 20% speed (5x the duration) on hover instead of pausing --
+   see the file doc for why this isn't the same "pause on hover" Ticker
+   uses. */
+.marquee:hover .track {
+  animation-duration: var(--marquee-duration-hover, 100s);
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  width: 168px;
+  max-width: 25%;
+  height: 100%;
+  pointer-events: none;
+}
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg-surface), transparent);
+}
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg-surface), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
