@@ -5,22 +5,15 @@
   background: var(--color-bg-surface);
 }
 
+/* No CSS animation here on purpose -- the scroll position is driven by
+   a manual requestAnimationFrame loop in Marquee.tsx (transform is set
+   directly, imperatively) so a hover-triggered speed change never
+   causes the position-jump a `animation-duration` swap on a running
+   CSS animation would. See the file doc in Marquee.tsx for why. */
 .track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll var(--marquee-duration, 20s) linear infinite;
-}
-
-/* Slows to 20% speed (5x the duration) on hover instead of pausing --
-   see the file doc for why this isn't the same "pause on hover" Ticker
-   uses. */
-.marquee:hover .track {
-  animation-duration: var(--marquee-duration-hover, 100s);
-}
-
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  will-change: transform;
 }
 
 .row {
@@ -51,10 +44,4 @@
 .fadeRight {
   right: 0;
   background: linear-gradient(to left, var(--color-bg-surface), transparent);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .track {
-    animation: none;
-  }
 }
