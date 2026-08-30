@@ -70,11 +70,11 @@ const formatExpiry = (raw: string) => {
   return digits.length <= 2 ? digits : `${digits.slice(0, 2)}/${digits.slice(2)}`;
 };
 
-/** Strips everything but digits, caps at 19 (longest real PAN length), and
- * groups into 4s with a space -- same "numeric-plus-formatting-chars only"
- * approach as formatExpiry above. */
+/** Strips everything but digits, caps at 16 (the globally standard PAN
+ * length this field targets), and groups into 4s with a space -- same
+ * "numeric-plus-formatting-chars only" approach as formatExpiry above. */
 const formatCardNumber = (raw: string) => {
-  const digits = raw.replace(/\D/g, '').slice(0, 19);
+  const digits = raw.replace(/\D/g, '').slice(0, 16);
   return (digits.match(/.{1,4}/g) ?? []).join(' ');
 };
 
@@ -120,6 +120,117 @@ const CardBrandBadge: React.FC<{ brand: CardBrand }> = ({ brand }) => {
   );
 };
 
+/** Demo suggestion pools for the Address/City fields -- copy this file into
+ * your project and swap these for a real places API (Google Places,
+ * Mapbox, a geocoding service) in place of the static arrays here. */
+const CITY_SUGGESTIONS = [
+  'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia',
+  'San Antonio', 'San Diego', 'Dallas', 'Austin', 'San Francisco', 'Seattle',
+  'Denver', 'Boston', 'Nashville', 'Portland', 'Miami', 'Atlanta',
+];
+const ADDRESS_SUGGESTIONS = [
+  '5th Avenue, New York', 'Broadway, New York', 'Wall Street, New York',
+  'Sunset Boulevard, Los Angeles', 'Hollywood Boulevard, Los Angeles',
+  'Michigan Avenue, Chicago', 'Rodeo Drive, Beverly Hills',
+  'Market Street, San Francisco', 'Congress Avenue, Austin',
+  'Peachtree Street, Atlanta',
+];
+
+/** Wraps the substring of `text` matching `query` (case-insensitive) in a
+ * <mark> so the shared part between what the user typed and each
+ * suggestion is visually called out, not just the suggestion list itself. */
+const highlightMatch = (text: string, query: string): React.ReactNode => {
+  const q = query.trim();
+  if (!q) return text;
+  const idx = text.toLowerCase().indexOf(q.toLowerCase());
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <mark className={styles.suggestMatch}>{text.slice(idx, idx + q.length)}</mark>
+      {text.slice(idx + q.length)}
+    </>
+  );
+};
+
+interface AddressAutocompleteProps {
+  label: string;
+  placeholder: string;
+  value: string;
+  onChange: (value: string) => void;
+  suggestions: string[];
+}
+
+/** Free-text Input with a filtered, substring-highlighted suggestions
+ * panel underneath -- distinct from the design system's Combobox (a
+ * click-to-select field with a fixed option list): this one filters
+ * live against whatever's typed and still accepts free text that isn't
+ * in the list at all, which fits an address/city field better than a
+ * closed set of choices. */
+const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
+  label, placeholder, value, onChange, suggestions,
+}) => {
+  const [open, setOpen] = React.useState(false);
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const rootRef = React.useRef<HTMLDivElement>(null);
+
+  const query = value.trim();
+  const filtered = query
+    ? suggestions.filter((s) => s.toLowerCase().includes(query.toLowerCase()))
+    : suggestions;
+
+  React.useEffect(() => {
+    const onDoc = (e: MouseEvent) => {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', onDoc);
+    return () => document.removeEventListener('mousedown', onDoc);
+  }, []);
+
+  React.useEffect(() => setActiveIndex(0), [value, open]);
+
+  const pick = (s: string) => { onChange(s); setOpen(false); };
+
+  return (
+    <div className={styles.autocomplete} ref={rootRef}>
+      <Input
+        label={label}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => { onChange(e.target.value); setOpen(true); }}
+        onFocus={() => setOpen(true)}
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowDown') { e.preventDefault(); setOpen(true); setActiveIndex((i) => Math.min(i + 1, filtered.length - 1)); }
+          else if (e.key === 'ArrowUp') { e.preventDefault(); setActiveIndex((i) => Math.max(i - 1, 0)); }
+          else if (e.key === 'Enter' && open && filtered[activeIndex]) { e.preventDefault(); pick(filtered[activeIndex]); }
+          else if (e.key === 'Escape') { setOpen(false); }
+        }}
+        autoComplete="off"
+        role="combobox"
+        aria-expanded={open}
+        aria-autocomplete="list"
+        className={styles.fullWidth}
+      />
+      {open && filtered.length > 0 && (
+        <div className={styles.suggestPanel} role="listbox">
+          {filtered.map((s, i) => (
+            <div
+              key={s}
+              role="option"
+              aria-selected={i === activeIndex}
+              className={[styles.suggestOption, i === activeIndex ? styles.suggestOptionActive : ''].filter(Boolean).join(' ')}
+              onMouseDown={(e) => { e.preventDefault(); pick(s); }}
+              onMouseEnter={() => setActiveIndex(i)}
+            >
+              {highlightMatch(s, value)}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 export const CheckoutFlowBlock: React.FC<CheckoutFlowBlockProps> = ({
   items: initialItems, shippingCost = 0, initialStep = 'shipping',
   onComplete, formatPrice = defaultFormatPrice, className,
@@ -159,8 +270,8 @@ export const CheckoutFlowBlock: React.FC<CheckoutFlowBlockProps> = ({
             <>
               <h2 className={styles.title}>Shipping address</h2>
               <Input label="Full name" placeholder="Enter your full name" value={fullName} onChange={(e) => setFullName(e.target.value)} className={styles.fullWidth} />
-              <Input label="Address" placeholder="Street address" value={address} onChange={(e) => setAddress(e.target.value)} className={styles.fullWidth} />
-              <Input label="City" placeholder="Enter your city" value={city} onChange={(e) => setCity(e.target.value)} className={styles.fullWidth} />
+              <AddressAutocomplete label="Address" placeholder="Street address" value={address} onChange={setAddress} suggestions={ADDRESS_SUGGESTIONS} />
+              <AddressAutocomplete label="City" placeholder="Enter your city" value={city} onChange={setCity} suggestions={CITY_SUGGESTIONS} />
               <Button variant="primary" className={styles.fullWidth} onClick={handleContinue} disabled={!fullName.trim() || !address.trim() || !city.trim()}>
                 Continue to payment
               </Button>

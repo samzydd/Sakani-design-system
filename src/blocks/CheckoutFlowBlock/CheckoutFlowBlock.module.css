@@ -58,6 +58,55 @@
   width: 100%;
 }
 
+/* Address/City suggestions -- panel styling mirrors the design system's
+   Combobox panel (same tokens: bg-surface, border-default, radius-sm,
+   shadow-lg) so it reads as the same "dropdown panel" pattern elsewhere
+   in the library, even though this is a filter-as-you-type field rather
+   than Combobox's click-to-select one. */
+.autocomplete {
+  position: relative;
+}
+.suggestPanel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  max-height: 220px;
+  overflow-y: auto;
+}
+.suggestOption {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  padding: var(--space-6) var(--space-8);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-fg-default);
+}
+.suggestOption:hover,
+.suggestOptionActive {
+  background: var(--color-bg-subtle);
+}
+/* The part of each suggestion matching the typed text -- highlighted, not
+   just bolded, so it's legible in both light and dark mode without
+   needing separate overrides. */
+.suggestMatch {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-default);
+  font-weight: 700;
+  border-radius: 2px;
+}
+
 /* Card brand badge (Visa/Amex/Discover) shown as the card number field's
    trailing icon -- sets its own color/background directly so it wins over
    Input's icon-slot `color: fg-muted`, which only applies where nothing
