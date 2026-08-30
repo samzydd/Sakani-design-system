@@ -48,6 +48,8 @@ export { ProductDetailBlock } from './ProductDetailBlock';
 export type { ProductDetailBlockProps, ProductDetailColorOption, ProductDetailSizeOption } from './ProductDetailBlock';
 export { ProductGridBlock } from './ProductGridBlock';
 export type { ProductGridBlockProps, ProductGridItem } from './ProductGridBlock';
+export { ShoppingCartBlock } from './ShoppingCartBlock';
+export type { ShoppingCartBlockProps, ShoppingCartItemData } from './ShoppingCartBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
