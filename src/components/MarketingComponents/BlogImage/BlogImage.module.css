@@ -1,0 +1,44 @@
+.root {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  font-family: var(--font-sans);
+}
+
+.imageWrap {
+  display: block;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Figma's own fixed px presets -- Small deliberately isn't a scaled-down
+   Large (see file doc), so these are two literal sizes, not one ratio. */
+.root--large .imageWrap {
+  width: 560px;
+  height: 315px;
+}
+.root--small .imageWrap {
+  width: 320px;
+  height: 315px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  text-align: center;
+}
