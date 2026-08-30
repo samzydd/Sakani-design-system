@@ -25,11 +25,13 @@
  */
 
 import React from 'react';
+import { CreditCard } from 'lucide-react';
 import { CheckoutSteps } from '../../components/ECommerceComponents/CheckoutSteps';
 import { CartItem } from '../../components/ECommerceComponents/CartItem';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { Divider } from '../../components/Divider';
+import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './CheckoutFlowBlock.module.css';
 
 export interface CheckoutFlowItem {
@@ -66,6 +68,167 @@ const defaultFormatPrice = (amount: number) =>
 const formatExpiry = (raw: string) => {
   const digits = raw.replace(/\D/g, '').slice(0, 4);
   return digits.length <= 2 ? digits : `${digits.slice(0, 2)}/${digits.slice(2)}`;
+};
+
+/** Strips everything but digits, caps at 16 (the globally standard PAN
+ * length this field targets), and groups into 4s with a space -- same
+ * "numeric-plus-formatting-chars only" approach as formatExpiry above. */
+const formatCardNumber = (raw: string) => {
+  const digits = raw.replace(/\D/g, '').slice(0, 16);
+  return (digits.match(/.{1,4}/g) ?? []).join(' ');
+};
+
+type CardBrand = 'visa' | 'mastercard' | 'amex' | 'discover' | 'unknown' | null;
+
+/** Identifies a card brand from its leading digits (IIN/BIN ranges) --
+ * good enough to drive a UI badge, not a substitute for real PAN
+ * validation (Luhn check, issuer lookup) which belongs server-side. */
+const detectCardBrand = (rawValue: string): CardBrand => {
+  const digits = rawValue.replace(/\D/g, '');
+  if (!digits) return null;
+  if (/^4/.test(digits)) return 'visa';
+  if (/^(5[1-5]|222[1-9]|22[3-9]\d|2[3-6]\d{2}|27[01]\d|2720)/.test(digits)) return 'mastercard';
+  if (/^3[47]/.test(digits)) return 'amex';
+  if (/^(6011|65|64[4-9])/.test(digits)) return 'discover';
+  return 'unknown';
+};
+
+/** Small brand mark shown as the card number field's trailing icon --
+ * Visa/Amex/Discover render as their familiar colored wordmark pill,
+ * Mastercard as its two-circle mark (the one case where a wordmark
+ * wouldn't actually read as the brand), and no/unrecognized input falls
+ * back to a plain muted card icon matching every other field's icon. */
+const CardBrandBadge: React.FC<{ brand: CardBrand }> = ({ brand }) => {
+  if (!brand || brand === 'unknown') {
+    return <CreditCard size={16} strokeWidth={iconStrokeWidth(16)} />;
+  }
+  if (brand === 'mastercard') {
+    return (
+      <svg width={16} height={16} viewBox="0 0 16 16" aria-label="Mastercard">
+        <circle cx="6" cy="8" r="5.5" fill="#EB001B" />
+        <circle cx="10" cy="8" r="5.5" fill="#F79E1B" />
+        <path d="M8 3a5.5 5.5 0 010 10 5.5 5.5 0 010-10z" fill="#FF5F00" />
+      </svg>
+    );
+  }
+  const label = { visa: 'VISA', amex: 'AMEX', discover: 'DISC' }[brand];
+  const bg = { visa: '#1A1F71', amex: '#006FCF', discover: '#FF6000' }[brand];
+  return (
+    <span className={styles.cardBadge} style={{ background: bg }} aria-label={label}>
+      {label}
+    </span>
+  );
+};
+
+/** Demo suggestion pools for the Address/City fields -- copy this file into
+ * your project and swap these for a real places API (Google Places,
+ * Mapbox, a geocoding service) in place of the static arrays here. */
+const CITY_SUGGESTIONS = [
+  'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia',
+  'San Antonio', 'San Diego', 'Dallas', 'Austin', 'San Francisco', 'Seattle',
+  'Denver', 'Boston', 'Nashville', 'Portland', 'Miami', 'Atlanta',
+];
+const ADDRESS_SUGGESTIONS = [
+  '5th Avenue, New York', 'Broadway, New York', 'Wall Street, New York',
+  'Sunset Boulevard, Los Angeles', 'Hollywood Boulevard, Los Angeles',
+  'Michigan Avenue, Chicago', 'Rodeo Drive, Beverly Hills',
+  'Market Street, San Francisco', 'Congress Avenue, Austin',
+  'Peachtree Street, Atlanta',
+];
+
+/** Wraps the substring of `text` matching `query` (case-insensitive) in a
+ * <mark> so the shared part between what the user typed and each
+ * suggestion is visually called out, not just the suggestion list itself. */
+const highlightMatch = (text: string, query: string): React.ReactNode => {
+  const q = query.trim();
+  if (!q) return text;
+  const idx = text.toLowerCase().indexOf(q.toLowerCase());
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <mark className={styles.suggestMatch}>{text.slice(idx, idx + q.length)}</mark>
+      {text.slice(idx + q.length)}
+    </>
+  );
+};
+
+interface AddressAutocompleteProps {
+  label: string;
+  placeholder: string;
+  value: string;
+  onChange: (value: string) => void;
+  suggestions: string[];
+}
+
+/** Free-text Input with a filtered, substring-highlighted suggestions
+ * panel underneath -- distinct from the design system's Combobox (a
+ * click-to-select field with a fixed option list): this one filters
+ * live against whatever's typed and still accepts free text that isn't
+ * in the list at all, which fits an address/city field better than a
+ * closed set of choices. */
+const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
+  label, placeholder, value, onChange, suggestions,
+}) => {
+  const [open, setOpen] = React.useState(false);
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const rootRef = React.useRef<HTMLDivElement>(null);
+
+  const query = value.trim();
+  const filtered = query
+    ? suggestions.filter((s) => s.toLowerCase().includes(query.toLowerCase()))
+    : suggestions;
+
+  React.useEffect(() => {
+    const onDoc = (e: MouseEvent) => {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', onDoc);
+    return () => document.removeEventListener('mousedown', onDoc);
+  }, []);
+
+  React.useEffect(() => setActiveIndex(0), [value, open]);
+
+  const pick = (s: string) => { onChange(s); setOpen(false); };
+
+  return (
+    <div className={styles.autocomplete} ref={rootRef}>
+      <Input
+        label={label}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => { onChange(e.target.value); setOpen(true); }}
+        onFocus={() => setOpen(true)}
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowDown') { e.preventDefault(); setOpen(true); setActiveIndex((i) => Math.min(i + 1, filtered.length - 1)); }
+          else if (e.key === 'ArrowUp') { e.preventDefault(); setActiveIndex((i) => Math.max(i - 1, 0)); }
+          else if (e.key === 'Enter' && open && filtered[activeIndex]) { e.preventDefault(); pick(filtered[activeIndex]); }
+          else if (e.key === 'Escape') { setOpen(false); }
+        }}
+        autoComplete="off"
+        role="combobox"
+        aria-expanded={open}
+        aria-autocomplete="list"
+        className={styles.fullWidth}
+      />
+      {open && filtered.length > 0 && (
+        <div className={styles.suggestPanel} role="listbox">
+          {filtered.map((s, i) => (
+            <div
+              key={s}
+              role="option"
+              aria-selected={i === activeIndex}
+              className={[styles.suggestOption, i === activeIndex ? styles.suggestOptionActive : ''].filter(Boolean).join(' ')}
+              onMouseDown={(e) => { e.preventDefault(); pick(s); }}
+              onMouseEnter={() => setActiveIndex(i)}
+            >
+              {highlightMatch(s, value)}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export const CheckoutFlowBlock: React.FC<CheckoutFlowBlockProps> = ({
@@ -107,8 +270,8 @@ export const CheckoutFlowBlock: React.FC<CheckoutFlowBlockProps> = ({
             <>
               <h2 className={styles.title}>Shipping address</h2>
               <Input label="Full name" placeholder="Enter your full name" value={fullName} onChange={(e) => setFullName(e.target.value)} className={styles.fullWidth} />
-              <Input label="Address" placeholder="Street address" value={address} onChange={(e) => setAddress(e.target.value)} className={styles.fullWidth} />
-              <Input label="City" placeholder="Enter your city" value={city} onChange={(e) => setCity(e.target.value)} className={styles.fullWidth} />
+              <AddressAutocomplete label="Address" placeholder="Street address" value={address} onChange={setAddress} suggestions={ADDRESS_SUGGESTIONS} />
+              <AddressAutocomplete label="City" placeholder="Enter your city" value={city} onChange={setCity} suggestions={CITY_SUGGESTIONS} />
               <Button variant="primary" className={styles.fullWidth} onClick={handleContinue} disabled={!fullName.trim() || !address.trim() || !city.trim()}>
                 Continue to payment
               </Button>
@@ -116,7 +279,15 @@ export const CheckoutFlowBlock: React.FC<CheckoutFlowBlockProps> = ({
           ) : (
             <>
               <h2 className={styles.title}>Payment details</h2>
-              <Input label="Card number" placeholder="1234 1234 1234 1234" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} className={styles.fullWidth} />
+              <Input
+                label="Card number"
+                placeholder="1234 1234 1234 1234"
+                inputMode="numeric"
+                value={cardNumber}
+                onChange={(e) => setCardNumber(formatCardNumber(e.target.value))}
+                trailingIcon={<CardBrandBadge brand={detectCardBrand(cardNumber)} />}
+                className={styles.fullWidth}
+              />
               <Input
                 label="Expiry date"
                 placeholder="MM/YY"

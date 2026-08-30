@@ -31,6 +31,7 @@ export * from './components/ECommerceComponents/ProductCard';
 export * from './components/ECommerceComponents/ProductGallery';
 export * from './components/ECommerceComponents/QuantitySelector';
 export * from './components/ECommerceComponents/SizeSelector';
+export * from './components/ECommerceComponents/StarRating';
 export * from './components/ECommerceComponents/StockStatus';
 export * from './components/ECommerceComponents/WishlistButton';
 export * from './components/Alert';

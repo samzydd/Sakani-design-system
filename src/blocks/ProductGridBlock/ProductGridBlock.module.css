@@ -1,0 +1,67 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  width: 1280px;
+  box-sizing: border-box;
+  padding: var(--space-40);
+  background: var(--color-bg-canvas);
+  font-family: var(--font-sans);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  width: 560px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  color: var(--color-fg-default);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.count {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+
+/* Real CSS Grid, not flex -- wraps onto additional rows once there are
+   more products than fit one row, unlike Figma's own single-row export. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--product-grid-columns, 4), minmax(0, 1fr));
+  gap: var(--space-8);
+  width: 100%;
+}
+
+/* ProductCard's own max-width:320px (a standalone-usage default) would
+   otherwise cap it below its grid cell's actual width and leave a gap --
+   overridden here so each card genuinely fills its column. */
+.card {
+  max-width: none;
+}

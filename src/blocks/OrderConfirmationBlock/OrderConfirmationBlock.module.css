@@ -1,0 +1,160 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  width: 520px;
+  box-sizing: border-box;
+  padding: var(--space-24) var(--space-20);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-2xl);
+  font-family: var(--font-sans);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ─── Icon + heading ── */
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--color-success-bg);
+  color: var(--color-success-fg);
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+  color: var(--color-fg-default);
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  text-align: center;
+  max-width: 324px;
+}
+
+.orderNumber {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-fg-default);
+}
+
+/* ─── Item row -- mirrors CartItem's own thumb/name/variant/price
+   treatment, but read-only: no quantity stepper, no remove button. ── */
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-8) 0;
+}
+
+.itemThumb {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.itemName {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.itemVariant {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.itemPrice {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Total paid summary row ── */
+.summaryRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+}
+.summaryLabel {
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+.summaryValue {
+  font-weight: 600;
+  color: var(--color-fg-default);
+}
+
+/* ─── Tracking row (With Tracking style only) ── */
+.trackingRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+.trackingRow svg {
+  flex-shrink: 0;
+}
+
+/* Groups "Track order" + "Continue shopping" (With Tracking style only)
+   with their own 12px gap, distinct from .block's own 16px gap between
+   every other child. */
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  width: 100%;
+}
