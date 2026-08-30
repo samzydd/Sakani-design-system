@@ -42,6 +42,8 @@ export { SignUpBlock } from './SignUpBlock';
 export type { SignUpBlockProps, SignUpStatus, SignUpSocialProvider } from './SignUpBlock';
 export { CheckoutFlowBlock } from './CheckoutFlowBlock';
 export type { CheckoutFlowBlockProps, CheckoutFlowItem, CheckoutFlowStep } from './CheckoutFlowBlock';
+export { OrderConfirmationBlock } from './OrderConfirmationBlock';
+export type { OrderConfirmationBlockProps, OrderConfirmationItem } from './OrderConfirmationBlock';
 export { DataTableBlock } from './DataTableBlock';
 export type { DataTableBlockProps, DataTableBlockState } from './DataTableBlock';
 export { KanbanBoardBlock } from './KanbanBoardBlock';
