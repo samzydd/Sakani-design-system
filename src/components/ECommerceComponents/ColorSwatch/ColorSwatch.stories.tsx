@@ -1,0 +1,68 @@
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ColorSwatch } from './ColorSwatch';
+
+const meta = {
+  title: 'E-commerce/Color Swatch',
+  component: ColorSwatch,
+  tags: ['autodocs'],
+} satisfies Meta<typeof ColorSwatch>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+/** ColorSwatch is a controlled component -- `selected` is a prop, not
+ * internal state, so clicking only fires `onSelect`; the story has to wire
+ * that back to `selected` itself for the click to visibly do anything
+ * (same pattern as the Group story below). */
+export const Unselected: Story = {
+  render: () => {
+    const [selected, setSelected] = React.useState(false);
+    return <ColorSwatch color="#1B284D" label="Navy" selected={selected} onSelect={() => setSelected(true)} />;
+  },
+};
+export const Selected: Story = {
+  render: () => {
+    const [selected, setSelected] = React.useState(true);
+    return <ColorSwatch color="#1B284D" label="Navy" selected={selected} onSelect={() => setSelected(!selected)} />;
+  },
+};
+export const Unavailable: Story = { args: { color: '#1B284D', label: 'Navy', available: false } };
+
+export const Group: Story = {
+  render: () => {
+    const colors = [
+      { color: '#1B284D', label: 'Navy' },
+      { color: '#D01B26', label: 'Red' },
+      { color: '#F5F4F2', label: 'Bone' },
+      { color: '#16A34A', label: 'Green' },
+      { color: '#78716A', label: 'Stone' },
+    ];
+    const [selected, setSelected] = React.useState('Navy');
+    return (
+      <div style={{ display: 'flex', gap: 4 }}>
+        {colors.map((c, i) => (
+          <ColorSwatch
+            key={c.label}
+            {...c}
+            selected={selected === c.label}
+            available={i !== 2}
+            onSelect={() => setSelected(c.label)}
+          />
+        ))}
+      </div>
+    );
+  },
+};
+
+/** Regression case: a white checkmark on this light tan (#E0D8D1) failed
+ * contrast. getContrastColor should now switch the checkmark to dark
+ * automatically. */
+export const LightColorContrast: Story = {
+  args: { color: '#E0D8D1', label: 'Sand', selected: true },
+};
+
+export const DarkMode: Story = {
+  args: { color: '#1B284D', label: 'Navy', selected: true },
+  decorators: [(S) => <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}><S /></div>],
+};

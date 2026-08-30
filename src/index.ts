@@ -23,6 +23,16 @@ export * from './components/ApplicationComponents/StockMarket';
 export * from './components/ApplicationComponents/Tags';
 export * from './components/ApplicationComponents/Ticker';
 export * from './components/ApplicationComponents/Transactions';
+export * from './components/ECommerceComponents/CartItem';
+export * from './components/ECommerceComponents/CheckoutSteps';
+export * from './components/ECommerceComponents/ColorSwatch';
+export * from './components/ECommerceComponents/PriceDisplay';
+export * from './components/ECommerceComponents/ProductCard';
+export * from './components/ECommerceComponents/ProductGallery';
+export * from './components/ECommerceComponents/QuantitySelector';
+export * from './components/ECommerceComponents/SizeSelector';
+export * from './components/ECommerceComponents/StockStatus';
+export * from './components/ECommerceComponents/WishlistButton';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
@@ -101,3 +111,7 @@ export * from './components/TopBarMobile';
 /** Icon-scaling helper -- public because several Blocks (and any consumer
  * rendering a Lucide icon below 24px) need it to match Figma's 1.5px stroke. */
 export { iconStrokeWidth } from './lib/iconStrokeWidth';
+
+/** WCAG contrast helper -- public because any consumer overlaying an icon
+ * or glyph on an arbitrary color (not just ColorSwatch) needs this same check. */
+export { getContrastColor } from './lib/getContrastColor';

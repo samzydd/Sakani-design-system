@@ -1,0 +1,85 @@
+.gallery {
+  display: flex;
+  gap: var(--space-12);
+}
+.galleryBottom {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.galleryLeft {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* ─── Main image ── */
+.mainImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.mainBottom {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mainLeft {
+  position: relative;
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ─── Thumbs ── */
+.thumbs {
+  display: flex;
+  flex-shrink: 0;
+}
+.thumbsBottom {
+  flex-direction: row;
+  gap: var(--space-8);
+  width: 100%;
+}
+.thumbsLeft {
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.thumb {
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 0;
+  border: var(--border-width-200) solid transparent;
+  background: transparent;
+  overflow: hidden;
+  cursor: pointer;
+}
+.thumbBottom {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+.thumbLeft {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+.thumbActive {
+  border-color: var(--color-accent-default);
+}
+
+.thumbImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}

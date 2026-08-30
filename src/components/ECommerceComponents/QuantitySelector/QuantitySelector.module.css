@@ -1,0 +1,139 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  border: var(--border-width-100) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+}
+
+.stepBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-fg-default);
+  cursor: pointer;
+}
+.stepBtn:disabled {
+  opacity: var(--opacity-45);
+  cursor: not-allowed;
+}
+
+.stepDivider {
+  width: 1px;
+  height: 32px;
+  background: var(--color-border-default);
+  flex-shrink: 0;
+}
+
+/* Clips the two stacked numbers to the cell -- the actual roll animation
+   lives on .rollNum below. Widened from a fixed 40px so multi-digit typed
+   quantities (e.g. 3+ digits) aren't clipped -- grows with content instead
+   of wrapping/truncating, min-width keeps the single-digit case matching
+   Figma exactly. */
+.stepValue {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  width: auto;
+  height: 32px;
+  padding: 0 var(--space-4);
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-fg-default);
+}
+
+/* The real control -- always mounted so the cell is always focusable/
+   clickable/typeable. While resting (not focused) its own text is made
+   invisible and .rollOverlay (the animated RollingValue) is shown on top
+   instead; the instant it's focused the overlay unmounts and this input's
+   real text becomes visible for free typing. */
+.stepInput {
+  position: relative;
+  z-index: 1;
+  /* No width here on purpose -- sized via the native `size` attribute
+     (set in QuantitySelector.tsx from the current digit count) so the box
+     grows with typed digits instead of relying on a fixed CSS width. */
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: center;
+}
+.stepInputResting {
+  color: transparent;
+  caret-color: transparent;
+}
+
+.rollOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Clicks/typing should always reach the real input underneath. */
+  pointer-events: none;
+}
+/* Hidden (not unmounted) while editing -- see the comment above this
+   element's usage in QuantitySelector.tsx for why it must stay mounted. */
+.rollOverlayHidden {
+  visibility: hidden;
+}
+
+.roll {
+  position: relative;
+  width: 100%;
+  height: 20px;
+}
+
+.rollNum {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Incrementing: old number exits upward, new one enters from below moving
+   up -- the number visually "counts up" past the viewport. */
+@keyframes roll-out-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-100%); }
+}
+@keyframes roll-in-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+/* Decrementing: reversed -- old exits downward, new enters from above. */
+@keyframes roll-out-down {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+@keyframes roll-in-down {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+.rollOutUp   { animation: roll-out-up 220ms ease-in forwards; }
+.rollInUp    { animation: roll-in-up 220ms ease-out; }
+.rollOutDown { animation: roll-out-down 220ms ease-in forwards; }
+.rollInDown  { animation: roll-in-down 220ms ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rollOutUp, .rollInUp, .rollOutDown, .rollInDown {
+    animation: none;
+  }
+}

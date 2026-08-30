@@ -1,0 +1,26 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-sans);
+}
+
+.original {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-subtle);
+  text-decoration: line-through;
+  white-space: nowrap;
+}
+
+.price {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+}
+.priceSale {
+  color: var(--color-danger-solid);
+}

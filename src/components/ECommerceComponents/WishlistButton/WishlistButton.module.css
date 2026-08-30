@@ -1,0 +1,49 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+.button:hover {
+  background: var(--color-bg-subtle);
+  box-shadow: var(--shadow-sm);
+}
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
+}
+
+.icon {
+  color: var(--color-fg-default);
+}
+.iconSaved {
+  color: var(--color-brand-default);
+}
+
+/* "Like" pop -- overshoots past full size then settles, only played on
+   the unsaved -> saved transition (see WishlistButton.tsx). */
+@keyframes wishlist-bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.35); }
+  55%  { transform: scale(0.92); }
+  75%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+.bounce {
+  transform-origin: center;
+  animation: wishlist-bounce 480ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bounce {
+    animation: none;
+  }
+}

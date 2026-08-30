@@ -1,0 +1,74 @@
+.swatch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.swatch:disabled {
+  cursor: not-allowed;
+}
+.swatch:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
+  border-radius: var(--radius-full);
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--swatch-color);
+}
+.circleUnavailable {
+  opacity: 0.35;
+}
+
+/* Offset ring around the circle -- doesn't touch it, matching Figma's
+   masked-outline asset (a ring cut out a few px beyond the circle, not a
+   plain border on the circle itself). */
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  border: var(--border-width-150) solid var(--color-border-subtle);
+}
+
+/* Color is set inline per-instance via getContrastColor(color) -- not a
+   fixed value here, NOT --color-fg-on-inverse either (that token is
+   theme-relative and flips dark in dark mode; this overlays an arbitrary
+   consumer-supplied swatch `color`, not this system's own inverse
+   surface). See ColorSwatch.tsx. */
+.check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Diagonal strike for unavailable -- a real rotated line, not a border
+   (confirmed from the asset: a 1.5px rectangle rotated 30deg). Same
+   inline-color reasoning as .check above. */
+.strike {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: var(--border-width-150);
+  transform: translate(-50%, -50%) rotate(-30deg);
+  pointer-events: none;
+}
