@@ -25,6 +25,7 @@ export * from './components/ApplicationComponents/Ticker';
 export * from './components/ApplicationComponents/Transactions';
 export * from './components/ECommerceComponents/CartItem';
 export * from './components/ECommerceComponents/CheckoutSteps';
+export * from './components/ECommerceComponents/ColorSwatch';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';

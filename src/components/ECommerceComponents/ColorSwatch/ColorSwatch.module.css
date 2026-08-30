@@ -1,0 +1,77 @@
+.swatch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.swatch:disabled {
+  cursor: not-allowed;
+}
+.swatch:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
+  border-radius: var(--radius-full);
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--swatch-color);
+}
+.circleUnavailable {
+  opacity: 0.35;
+}
+
+/* Offset ring around the circle -- doesn't touch it, matching Figma's
+   masked-outline asset (a ring cut out a few px beyond the circle, not a
+   plain border on the circle itself). */
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  border: var(--border-width-150) solid var(--color-border-subtle);
+}
+
+/* Fixed white, NOT --color-fg-on-inverse -- that token is theme-relative
+   (flips dark in dark mode), but this overlays an arbitrary consumer-
+   supplied `color`, not this system's own inverse surface. A dark check
+   on a dark-mode-flipped token would vanish against a dark swatch color
+   exactly the way it's meant to stay visible against. Matches Figma's own
+   asset, which hardcodes #FAFAF9 regardless of theme. */
+.check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fafaf9;
+  pointer-events: none;
+}
+
+/* Diagonal strike for unavailable -- a real rotated line, not a border
+   (confirmed from the asset: a white 1.5px rectangle rotated 30deg). Same
+   fixed-white reasoning as .check above. */
+.strike {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: var(--border-width-150);
+  background: #fafaf9;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  pointer-events: none;
+}
