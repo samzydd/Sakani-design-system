@@ -39,6 +39,7 @@ export * from './components/MarketingComponents/BlogFeatureText';
 export * from './components/MarketingComponents/BlogImage';
 export * from './components/MarketingComponents/BlogListingCard';
 export * from './components/MarketingComponents/BlogListingFeaturedCard';
+export * from './components/MarketingComponents/FeaturedIcon';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
