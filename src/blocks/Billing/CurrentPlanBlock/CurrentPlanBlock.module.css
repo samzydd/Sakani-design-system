@@ -1,0 +1,121 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-16);
+  box-sizing: border-box;
+  width: 480px;
+  padding: var(--space-16);
+  background: var(--color-bg-surface);
+  border: var(--border-width-050) solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-sans);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.planInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  min-width: 0;
+  flex: 1 1 0%;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.planName {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+
+.price {
+  margin: 0;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+}
+
+.priceSuffix {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.usage {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+.usageLabelRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.usageLabel { margin: 0; color: var(--color-fg-muted); }
+.usageValue { margin: 0; color: var(--color-fg-default); }
+
+.progress {
+  width: 100%;
+}
+
+.message {
+  margin: 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+
+.actions {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  width: 100%;
+}
+
+.actionFlex {
+  flex: 1 1 0%;
+}

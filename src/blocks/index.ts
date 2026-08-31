@@ -82,3 +82,5 @@ export { BillingAddressBlock } from './Billing/BillingAddressBlock';
 export type { BillingAddressBlockProps, BillingAddressValue, BillingAddressStatus } from './Billing/BillingAddressBlock';
 export { BillingHistoryBlock } from './Billing/BillingHistoryBlock';
 export type { BillingHistoryBlockProps, BillingHistoryInvoice, BillingHistoryStatus } from './Billing/BillingHistoryBlock';
+export { CurrentPlanBlock } from './Billing/CurrentPlanBlock';
+export type { CurrentPlanBlockProps, CurrentPlanStatus } from './Billing/CurrentPlanBlock';
