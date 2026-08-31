@@ -2,6 +2,10 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.3.2
+
+- **Fix: `@sakaniui/react/tokens.css` was never actually published.** The `exports` map pointed it at `./src/styles/tokens.css`, but `files: ["dist"]` only ever publishes the `dist` folder — so that path never existed in the installed package, and `import '@sakaniui/react/tokens.css'` (exactly as documented in the README) failed to resolve for every consumer. Without it, every component would have rendered completely unstyled: the CSS ships only the `var(--color-fg-default)` *references*, not the `:root { --color-fg-default: ... }` *definitions*. Fixed by copying `tokens.css` into `dist/` as part of the build and pointing the export there instead.
+
 ## 0.3.1
 
 - Fix: `Combobox`'s `loading` prop (the panel's loading state) was declared on `ComboboxOption` instead of `ComboboxProps`, so passing it to `<Combobox loading />` as documented was a type error and the prop was unreachable in a type-checked consumer. Moved to `ComboboxProps`, where the component was already reading it from at runtime.
