@@ -76,3 +76,5 @@ export { TeamSectionBlock } from './TeamSectionBlock';
 export type { TeamSectionBlockProps, TeamSectionMember } from './TeamSectionBlock';
 export { TestimonialBlock } from './TestimonialBlock';
 export type { TestimonialBlockProps, Testimonial } from './TestimonialBlock';
+export { FaqBlock } from './FaqBlock';
+export type { FaqBlockProps, FaqItem } from './FaqBlock';
