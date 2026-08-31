@@ -1,0 +1,25 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--color-fg-muted);
+}
+
+/* Figma's own literal presets -- see file doc for why these aren't one
+   shared scale ratio. */
+.root--sm {
+  width: 22px;
+  height: 22px;
+}
+.root--md {
+  width: 40px;
+  height: 40px;
+}
+.root--lg {
+  width: 46px;
+  height: 46px;
+}
