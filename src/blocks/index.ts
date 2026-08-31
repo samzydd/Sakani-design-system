@@ -68,3 +68,5 @@ export { FeatureGridBlock } from './FeatureGridBlock';
 export type { FeatureGridBlockProps, FeatureGridItem } from './FeatureGridBlock';
 export { HeroBlock } from './HeroBlock';
 export type { HeroBlockProps, HeroAction, HeroLayout } from './HeroBlock';
+export { LogoCloudBlock } from './LogoCloudBlock';
+export type { LogoCloudBlockProps, LogoCloudVariant, LogoCloudBrand } from './LogoCloudBlock';
