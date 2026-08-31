@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TeamCard } from './TeamCard';
 import { InstagramIcon, FacebookIcon, LinkedinIcon } from './TeamSocialIcons';
-import photo from '../../../assets/avatars/activity-chidi-duru.jpg';
+import photo from '../../../assets/marketing/team-card-chidi-duru.jpg';
 
 const meta = {
   title: 'Marketing/Team Card',
