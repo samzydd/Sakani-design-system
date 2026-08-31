@@ -49,6 +49,8 @@ export * from './components/MarketingComponents/Metric';
 export * from './components/MarketingComponents/MobileNavigationMenu';
 export * from './components/MarketingComponents/PlaceholderLogo';
 export * from './components/MarketingComponents/ProfileCard';
+export * from './components/MarketingComponents/RichTextHeading';
+export * from './components/MarketingComponents/RichTextParagraph';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
