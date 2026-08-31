@@ -2,6 +2,10 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.3.1
+
+- Fix: `Combobox`'s `loading` prop (the panel's loading state) was declared on `ComboboxOption` instead of `ComboboxProps`, so passing it to `<Combobox loading />` as documented was a type error and the prop was unreachable in a type-checked consumer. Moved to `ComboboxProps`, where the component was already reading it from at runtime.
+
 ## 0.3.0
 
 The library has grown substantially since the last published release —
