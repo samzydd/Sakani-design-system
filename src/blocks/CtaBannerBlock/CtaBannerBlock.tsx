@@ -11,16 +11,18 @@
  * prop, same naming choice already made by Badge/FeaturedIcon) -- a
  * genuine visual choice, not derivable from the banner's own copy.
  *
- * Both buttons reuse the shared Button component, but which variant
- * each one renders is DERIVED from `variant`, not a separate manual
- * prop per button: on 'neutral' the primary action is Button
- * variant="primary" (the usual dark-accent treatment) and the
- * secondary is variant="secondary" (bg/subtle) -- but on 'accent' the
- * banner's own background IS that same dark accent color, so BOTH
- * buttons switch to variant="secondary" (bg/subtle) instead, or the
- * primary action would vanish into its own background. Confirmed from
- * Figma's own Accent export, where neither button is the usual dark
- * "primary" -- both are the light bg/subtle treatment.
+ * Both buttons reuse the shared Button component at size="lg" (Figma's
+ * own 20/10px padding + 16px label here matches Button's lg preset far
+ * more closely than its default md), but which VARIANT each one renders
+ * is derived from `variant`, not a separate manual prop per button: on
+ * 'neutral' the primary action is Button variant="primary" (the usual
+ * dark-accent treatment) and the secondary is variant="secondary"
+ * (bg/subtle) -- but on 'accent' the banner's own background IS that
+ * same dark accent color, so BOTH buttons switch to variant="secondary"
+ * (bg/subtle) instead, or the primary action would vanish into its own
+ * background. Confirmed from Figma's own Accent export, where neither
+ * button is the usual dark "primary" -- both are the light bg/subtle
+ * treatment.
  *
  * The GitHub icon is a small local `currentColor` SVG (lucide-react
  * ships no brand icons in the version this library uses, same gap
@@ -79,6 +81,7 @@ export const CtaBannerBlock: React.FC<CtaBannerBlockProps> = ({
         <div className={styles.ctaRow}>
           <Button
             variant={isAccent ? 'secondary' : 'primary'}
+            size="lg"
             onClick={primaryAction.onClick}
           >
             {primaryAction.label}
@@ -86,6 +89,7 @@ export const CtaBannerBlock: React.FC<CtaBannerBlockProps> = ({
           {secondaryAction && (
             <Button
               variant="secondary"
+              size="lg"
               onClick={secondaryAction.onClick}
               leftIcon={secondaryActionIcon ? <GithubIcon /> : undefined}
             >
