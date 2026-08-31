@@ -78,3 +78,5 @@ export { TestimonialBlock } from './TestimonialBlock';
 export type { TestimonialBlockProps, Testimonial } from './TestimonialBlock';
 export { FaqBlock } from './FaqBlock';
 export type { FaqBlockProps, FaqItem } from './FaqBlock';
+export { BillingAddressBlock } from './Billing/BillingAddressBlock';
+export type { BillingAddressBlockProps, BillingAddressValue, BillingAddressStatus } from './Billing/BillingAddressBlock';
