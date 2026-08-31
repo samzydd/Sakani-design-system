@@ -64,3 +64,5 @@ export { CareersBlock } from './CareersBlock';
 export type { CareersBlockProps, CareersJob } from './CareersBlock';
 export { CtaBannerBlock } from './CtaBannerBlock';
 export type { CtaBannerBlockProps, CtaBannerAction, CtaBannerVariant } from './CtaBannerBlock';
+export { FeatureGridBlock } from './FeatureGridBlock';
+export type { FeatureGridBlockProps, FeatureGridItem } from './FeatureGridBlock';
