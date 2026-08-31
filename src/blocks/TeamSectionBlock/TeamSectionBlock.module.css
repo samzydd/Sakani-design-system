@@ -1,0 +1,35 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-48);
+  /* 1688px content width (4 cards x 404px + 3x24px gaps, matching Figma's
+     own grid frame exactly) + 48px padding on each side. Sizing the block
+     itself to this, rather than 1688px with padding eating into it, is
+     what keeps the grid's own `auto-fill` at exactly 4 columns -- padding
+     stealing 96px from a 1688px block previously left only 1592px for the
+     grid, which fits just 3 404px tracks and wrapped the 4th card onto a
+     new row (caught via computed `grid-template-columns` inspection in
+     Storybook, not visible at a glance since 3-then-1 still "looks" like
+     a grid). */
+  width: 1784px;
+  box-sizing: border-box;
+  padding: var(--space-48);
+  background: var(--color-bg-canvas);
+  font-family: var(--font-sans);
+}
+
+.heading {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(404px, 1fr));
+  gap: var(--space-24);
+  width: 100%;
+}
+
+.card {
+  max-width: none;
+}

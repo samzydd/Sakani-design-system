@@ -72,3 +72,5 @@ export { LogoCloudBlock } from './LogoCloudBlock';
 export type { LogoCloudBlockProps, LogoCloudVariant, LogoCloudBrand } from './LogoCloudBlock';
 export { PricingTableBlock } from './PricingTableBlock';
 export type { PricingTableBlockProps, PricingPlan } from './PricingTableBlock';
+export { TeamSectionBlock } from './TeamSectionBlock';
+export type { TeamSectionBlockProps, TeamSectionMember } from './TeamSectionBlock';
