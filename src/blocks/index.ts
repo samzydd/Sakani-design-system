@@ -74,3 +74,5 @@ export { PricingTableBlock } from './PricingTableBlock';
 export type { PricingTableBlockProps, PricingPlan } from './PricingTableBlock';
 export { TeamSectionBlock } from './TeamSectionBlock';
 export type { TeamSectionBlockProps, TeamSectionMember } from './TeamSectionBlock';
+export { TestimonialBlock } from './TestimonialBlock';
+export type { TestimonialBlockProps, Testimonial } from './TestimonialBlock';
