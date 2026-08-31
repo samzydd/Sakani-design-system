@@ -9,6 +9,7 @@
   background: var(--color-bg-surface);
   border: var(--border-width-100) solid var(--color-border-subtle);
   border-radius: var(--radius-xl);
+  overflow: hidden;
   font-family: var(--font-sans);
 }
 
@@ -44,12 +45,19 @@
 }
 
 /* Overrides LocationDot's own default fg/muted text color -- that's
-   meant for a plain surface background, not legibility over a photo. */
+   meant for a plain surface background, not legibility over a photo.
+   Deliberately a fixed white, NOT --color-fg-on-inverse: that token is
+   relative to the current app theme (white in light mode, but flips to
+   near-black in dark mode, since "inverse" means "opposite of
+   whichever theme is active") -- confirmed as a real bug via computed
+   style (rendered rgb(20,20,20), near-black, in the Dark Mode story).
+   This text sits on a permanently-dark photo scrim regardless of the
+   app's own theme, so it needs a color that never flips. */
 .locationDot {
   position: absolute;
   bottom: var(--space-8);
   right: var(--space-12);
-  color: var(--color-fg-on-inverse) !important;
+  color: #fafaf9 !important;
 }
 
 .info {
@@ -60,6 +68,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: var(--space-12) var(--space-12) 0;
+  overflow: hidden;
 }
 
 .metaRow {
