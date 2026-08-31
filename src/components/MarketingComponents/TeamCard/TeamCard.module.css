@@ -29,6 +29,20 @@
   object-fit: cover;
 }
 
+/* Frosted glass scrim behind the location line -- keeps the white text
+   legible over bright/high-contrast photo backgrounds specifically,
+   rather than relying on the raw photo always being dark enough there. */
+.locationBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: rgba(27, 27, 27, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
 /* Overrides LocationDot's own default fg/muted text color -- that's
    meant for a plain surface background, not legibility over a photo. */
 .locationDot {

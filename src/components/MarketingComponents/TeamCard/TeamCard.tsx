@@ -11,7 +11,11 @@
  * component directly -- but overridden to fg/on-inverse (white) text
  * via className, since LocationDot's own default text color (fg/muted)
  * is meant for a plain surface background, not a photo it needs to sit
- * legibly on top of.
+ * legibly on top of. It sits inside a frosted glass scrim bar (a
+ * translucent dark strip + backdrop blur spanning the image's full
+ * width) added in a later Figma revision -- keeps the white text
+ * legible over bright/high-contrast photo backgrounds specifically,
+ * rather than relying on the raw photo always being dark enough there.
  *
  * The 3 social icon chips reuse the shared FeaturedIcon component
  * (size="sm", variant="subtle" -- an exact match for Figma's own
@@ -56,7 +60,9 @@ export const TeamCard: React.FC<TeamCardProps> = ({
   <div className={[styles.card, className ?? ''].filter(Boolean).join(' ')}>
     <div className={styles.imageWrap}>
       <img src={image} alt={imageAlt ?? name} className={styles.image} />
-      <LocationDot location={location} status={locationStatus} className={styles.locationDot} />
+      <div className={styles.locationBar}>
+        <LocationDot location={location} status={locationStatus} className={styles.locationDot} />
+      </div>
     </div>
 
     <div className={styles.info}>
