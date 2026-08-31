@@ -53,6 +53,7 @@ export * from './components/MarketingComponents/RichTextHeading';
 export * from './components/MarketingComponents/RichTextParagraph';
 export * from './components/MarketingComponents/SectionHeading';
 export * from './components/MarketingComponents/SubFeature';
+export * from './components/MarketingComponents/TeamCard';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
