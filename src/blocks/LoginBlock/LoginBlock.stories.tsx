@@ -35,6 +35,42 @@ const meta = {
   title: 'Blocks/Authentication/Login',
   component: LoginBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly: wire \`onSubmit\` to your real auth
+call in place of the simulated one here.
+
+Matches Figma "Login" (6 states, collapsed into one \`status\` state
+machine, same pattern as the other Authentication blocks):
+- **'idle'** — Default/Filled: just field state, not a manual prop
+- **'validation-error'** — email fails a basic format check on submit
+- **'server-error'** — Alert banner ("Login failed"); Figma also clears and danger-borders the password field for retry while leaving the email value in place, followed literally here
+- **'loading'** — Figma's own Loading state only dims the password field, not email -- read as an authoring slip (there's no reason submitting should leave email editable but not password), so both fields are disabled here instead
+- **'skeleton'**
+
+No dedicated Success view -- a real login just navigates away, so there's
+nothing to render for it here.
+
+The password field is hand-built, not a reuse of Input, for the same
+reason as ResetPasswordBlock's fields: the trailing eye toggle is a real
+interactive control, and Input's trailingIcon slot is decorative-only
+(renders inside an aria-hidden span). Email reuses Input directly since
+it has no such control.
+
+The three social sign-in icons in Figma are real Google/Apple/GitHub
+marks. Unlike StockMarket's logo slot, this component's *story* does
+render the real marks (path data matched to Figma) -- "Continue with
+Google/Apple/GitHub" is exactly the sanctioned use each of those brand
+guidelines calls for, not a general-purpose decorative placement. The
+component itself still doesn't hardcode them: \`socialProviders\` stays a
+fully consumer-supplied slot, and if left empty the divider + social
+row doesn't render at all rather than showing an empty row.
+
+The divider + "OR CONTINUE WITH" row is NOT a reuse of RichSeparator --
+RichSeparator's overline sits centered as a single label with no
+required-flanking-line-length behavior; here both Dividers must flex to
+fill remaining space around the centered label, a distinct enough layout
+to build directly rather than fighting RichSeparator's own centering
+assumptions.` } } },
   args: { socialProviders },
   decorators: [(S) => <div style={{ width: 400 }}><S /></div>],
 } satisfies Meta<typeof LoginBlock>;

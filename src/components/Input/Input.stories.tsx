@@ -5,6 +5,19 @@ const meta = {
   title: 'Forms/Input',
   component: Input,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Text input with optional label (Title), help text (Description), and
+leading/trailing icons. Built to match the Figma "Input" parent component set:
+Size (sm|md|lg) x State (Default|Focus|Error|Disabled|Filled)
+
+Exact Figma spec (read from the parent component):
+- Field: vertical stack, 6px gap (space-6)
+- Label: label/md -> 14px / 500 / fg/default
+- Field frame: bg/surface, border/subtle 1px, radius-md (8px)
+padding: sm 6/14 · md 10/14 · lg 12/14 (horizontal always 14px)
+- Placeholder / value: body/sm -> 14px / 500, fg/subtle / fg/default
+- Description: body/xs -> 13px / fg/muted
+- Icons: 16px, fg/muted stroke
+- Focus: border/focus 1.5px · Error: danger/solid 1.5px · Disabled: bg/subtle` } } },
   argTypes: { size: { control: 'select', options: ['sm', 'md', 'lg'] } },
   args: { placeholder: 'Placeholder', size: 'md' },
 } satisfies Meta<typeof Input>;

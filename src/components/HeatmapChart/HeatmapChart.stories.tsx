@@ -12,6 +12,16 @@ const meta = {
   title: 'Charts/Heatmap Chart',
   component: HeatmapChart,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma's new "Other charts" set ("Heatmap chart" / "Heatmap chart
+hover"). Recharts has no native heatmap chart type, so this is a plain CSS
+grid of colored cells rather than a Recharts wrapper -- flagged here the
+same way RadialChart flags its omitted gauge-tick variant.
+
+Cell color is a single-hue chart/1 scale, matching Figma's own look:
+higher values get a more saturated fill. On hover, the hovered cell goes
+fully solid and every other cell dims to 45% opacity (a flat dim, not its
+own value-based shade) -- matching Figma's hover state exactly, and the
+same "highlight one, dim the rest" pattern used by BarChart.` } } },
   argTypes: { size: { control: 'select', options: ['sm', 'md', 'lg', 'xl'] } },
   args: { data, rowLabels, colLabels, valueLabel: 'Revenue', size: 'md' },
   decorators: [(S) => <div style={{ width: 560 }}><S /></div>],

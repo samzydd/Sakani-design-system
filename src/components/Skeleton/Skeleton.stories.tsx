@@ -5,6 +5,10 @@ const meta = {
   title: 'Core/Skeleton',
   component: Skeleton,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Placeholder loading shape — shimmer animation on a muted background.
+Use to represent content that is loading before data arrives.
+
+Variant → text (inline pill) | rect (block area) | circle (avatar)` } } },
   argTypes: { variant: { control: 'select', options: ['line', 'circle', 'block'] } },
 } satisfies Meta<typeof Skeleton>;
 

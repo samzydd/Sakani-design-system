@@ -6,6 +6,16 @@ const meta = {
   title: 'Application/Tags',
   component: Tags,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Tags" -- a wrapped row of pill tags. Its two style previews
+(Default / Removable) collapse to one axis, derived rather than a manual
+prop, same judgment applied throughout this Application set: passing
+\`onRemove\` is what turns every tag removable, since Figma's own spec
+toggles the whole list at once rather than per-tag.
+
+Each tag reuses the real Badge component directly (neutral/subtle is an
+exact token match: bg/subtle, fg/muted, radius/full, 2px/8px padding) --
+the remove "x" is Badge's own rightIcon slot, wrapped in a button so it's
+independently clickable/focusable.` } } },
   decorators: [(S) => <div style={{ width: 400 }}><S /></div>],
 } satisfies Meta<typeof Tags>;
 

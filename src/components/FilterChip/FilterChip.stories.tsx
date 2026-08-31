@@ -5,6 +5,13 @@ const meta = {
   title: 'Data/Filter Chip',
   component: FilterChip,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Toolbar filter pill. Matches the Figma "Filter Chip" set:
+
+type (Figma "Type" axis) -> default | active | add
+
+- default: label + chevron; opens a filter menu on click.
+- active: applied value (strong label) on accent/subtle + remove (×).
+- add: dashed outline + plus; appends a new filter.` } } },
   argTypes: { type: { control: 'inline-radio', options: ['default', 'active', 'add'] } },
   args: { children: 'Status', type: 'default' },
 } satisfies Meta<typeof FilterChip>;

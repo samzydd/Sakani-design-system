@@ -5,6 +5,8 @@ const meta = {
   title: 'Forms/Switch',
   component: Switch,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Toggle switch. Matches Figma "Switch" set (SW axis): Off | On | Disabled.
+Track spec from Figma: 36x20, radius-full, bg/muted (off) / accent/default (on).` } } },
 } satisfies Meta<typeof Switch>;
 
 export default meta;

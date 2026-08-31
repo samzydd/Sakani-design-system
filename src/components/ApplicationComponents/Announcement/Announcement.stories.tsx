@@ -5,6 +5,11 @@ const meta = {
   title: 'Application/Announcement',
   component: Announcement,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Full-width announcement bar. Matches Figma "Announcement":
+- **Style: Neutral** — sparkle icon, bold message, "Learn more" link, dismiss | Urgent — alert-triangle icon (info-colored), message, dismiss
+
+Both styles push the dismiss IconButton to the far right via a growing
+content group, matching Figma's two (functionally equivalent) structures.` } } },
   argTypes: {
     variant: { control: 'select', options: ['neutral', 'urgent'] },
   },

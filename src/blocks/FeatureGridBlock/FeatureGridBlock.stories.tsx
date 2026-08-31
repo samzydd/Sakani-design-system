@@ -6,7 +6,22 @@ const meta = {
   title: 'Blocks/Marketing/Feature Grid',
   component: FeatureGridBlock,
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly.
+
+Matches Figma "Feature Grid" (node 1507:27888, 3 previews: Columns=2/
+3/4). Figma's own "Columns" axis is fully derived from \`features.length\`
+in every one of its 3 examples (2 features -> 2 columns, 3 -> 3, 4 ->
+4) rather than an independent choice, so \`columns\` defaults to
+\`features.length\` here too instead of needing to be set manually for
+the common case -- it stays a real optional override, though, for
+wrapping more features onto fewer columns (e.g. 6 features at
+columns=3 makes two rows) since that genuinely can't be derived.
+
+Each feature's icon chip reuses the shared FeaturedIcon component
+(size="md", variant="light" -- an exact match for Figma's own 40px
+bg/surface+border/subtle chip here) -- no new visual primitives, this
+block is purely an icon + title + description repeated in a grid.` } }, layout: 'fullscreen' },
 } satisfies Meta<typeof FeatureGridBlock>;
 
 export default meta;

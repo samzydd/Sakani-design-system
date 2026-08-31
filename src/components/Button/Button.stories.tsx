@@ -17,6 +17,18 @@ const meta = {
   title: 'Core/Button',
   component: Button,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `The primary action primitive for the Sakani Design System.
+Maps 1:1 with the Figma "Button" component set (45 variants).
+
+Variant axis → variant prop (Primary | Secondary | Outline | Ghost | Destructive)
+Size axis → size prop (sm | md | lg)
+State axis → handled via CSS pseudo-classes (:hover, :focus-visible, :disabled)
+- **NOT props** — states are visual only in Figma, semantic in code.
+
+Icon slots → leftIcon / rightIcon (any ReactNode, typically a Lucide icon)
+
+All colors, spacing, radius and border-width values come from CSS custom properties
+defined in tokens.css — never hardcoded.` } } },
 
   /*
    * argTypes defines the controls panel in Storybook.

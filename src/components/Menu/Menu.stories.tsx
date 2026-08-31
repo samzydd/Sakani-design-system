@@ -7,6 +7,13 @@ const meta = {
   title: 'Overlays/Menu',
   component: Menu,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Dropdown menu container. Matches the Figma "Menu" component:
+mirrors Combobox Panel exactly — radius 6, padding 4, gap 2,
+bg/surface, border/default, shadow/lg.
+
+Composed from MenuItem children. Use MenuDivider to separate groups.
+This is a presentational surface; positioning/anchoring is left to the
+caller (pair with Popover for click-to-open behavior).` } } },
 } satisfies Meta<typeof Menu>;
 export default meta;
 type Story = StoryObj<typeof meta>;

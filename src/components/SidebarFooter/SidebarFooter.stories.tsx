@@ -5,6 +5,10 @@ const meta = {
   title: 'Composite/Sidebar/Footer',
   component: SidebarFooter,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Bottom user/actions area. Matches Figma "Sidebar Footer":
+Type (User | User + Menu | Actions) x Collapsed.
+Figma spec: padding 10/6, gap 10, title label/sm-strong (fg/default), subtitle caption (fg/muted),
+log-out icon (Lucide). The user avatar uses the system Avatar component.` } } },
   args: { title: 'Sam Okpere', subtitle: 'sam@sakani.com', avatarInitials: 'SO' },
   decorators: [(S) => <div style={{ width: 224, padding: 12, background: 'var(--color-bg-surface)' }}><S /></div>],
 } satisfies Meta<typeof SidebarFooter>;

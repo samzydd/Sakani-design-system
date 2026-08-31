@@ -11,6 +11,18 @@ const meta = {
   title: 'Composite/Board Card',
   component: BoardCard,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Flexible board/list card. Matches the Figma "Board Card" set:
+
+type (Figma "Type" axis) -> compact | default | cover
+state (Figma "State" axis) -> default | hover | selected | dragging | done
+
+Content type is NOT a variant — the leading slot, tags, and meta items are
+composed by the caller, so the same card expresses tasks, deals, files,
+bugs, or applicants. See the presets in the stories.
+
+Regions (top→bottom): cover (cover type) · header (leading + title +
+trailing) · description (non-compact) · tags (non-compact) · footer
+(meta items + avatars), separated by a hairline divider.` } } },
   argTypes: {
     type: { control: 'inline-radio', options: ['compact', 'default', 'cover'] },
     state: { control: 'select', options: ['default', 'hover', 'selected', 'dragging', 'done'] },

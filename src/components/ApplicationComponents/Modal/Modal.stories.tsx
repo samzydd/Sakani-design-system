@@ -7,6 +7,22 @@ const meta = {
   title: 'Application/Modal',
   component: Modal,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Confirmation dialog. Matches Figma "Modal":
+- **Default** — title + description + Cancel/Confirm
+- **Destructive** — danger icon-wrap next to the title, Delete-styled confirm
+
+"Destructive" is a real prop, not derived from \`icon\` presence -- unlike
+most of this Application set it governs three things at once (icon-wrap,
+icon-wrap color, confirm button color), so collapsing it into "pass an
+icon and we'll guess" would conflate a non-destructive modal that happens
+to want a custom icon with one that's actually destructive.
+
+Functional, not just the static card: portals to document.body (so it
+escapes any parent stacking/overflow context), dims a backdrop, closes on
+Escape or backdrop click (each can be disabled independently), locks body
+scroll while open, and does a lightweight focus trap + focus-return on
+close -- same portal technique already used by Select, same
+focus-return-on-close idea already used by Popover.` } } },
 } satisfies Meta<typeof Modal>;
 
 export default meta;

@@ -10,7 +10,30 @@ const meta = {
   title: 'Blocks/Marketing/Team Section',
   component: TeamSectionBlock,
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly.
+
+Matches Figma "Team Section". Composed entirely
+from existing library components -- SectionHeading (Marketing, the
+"Team" eyebrow + title + subtitle, align="center") and a grid of
+TeamCard (Marketing, the plain "Card" style -- no \`bio\`, matching
+every member shown here) -- no new visual primitives, this block is
+purely heading + grid layout.
+
+Figma's own grid instance is 1688px wide (4 cards x 404px + 3x24px
+gaps) inside an outer frame cropped to 1280px, clipping the grid's
+own right edge in that specific export -- not a real 1280px content
+width, just how that particular thumbnail was framed. This block
+sizes itself to the grid's actual, uncropped content width instead.
+
+The grid is real CSS Grid with auto-fill (min 404px per card,
+matching Figma exactly), not a fixed 4-card row -- it wraps onto
+additional rows for any other member count, same reasoning
+ProductGridBlock/BlogListingBlock give for their own grids.
+TeamCard's own max-width:404px (a standalone-usage default) is
+overridden so each card genuinely fills its grid cell rather than
+capping below it, same override pattern already established for
+ProductCard and BlogListingCard.` } }, layout: 'fullscreen' },
 } satisfies Meta<typeof TeamSectionBlock>;
 
 export default meta;

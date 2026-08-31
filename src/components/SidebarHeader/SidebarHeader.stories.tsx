@@ -6,6 +6,8 @@ const meta = {
   title: 'Composite/Sidebar/Header',
   component: SidebarHeader,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Sidebar Header": Type (Brand | Workspace | Brand + Toggle) x Collapsed.
+Figma spec: padding 6/4, gap 10, title label/md-strong (fg/default), subtitle caption (fg/muted).` } } },
   args: { title: 'Sakani', subtitle: 'Workspace', logo: <Box size={18} strokeWidth={1.5} /> },
   decorators: [(S) => <div style={{ width: 224, padding: 12, background: 'var(--color-bg-surface)' }}><S /></div>],
 } satisfies Meta<typeof SidebarHeader>;

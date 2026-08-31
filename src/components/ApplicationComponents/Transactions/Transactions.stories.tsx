@@ -17,6 +17,25 @@ const meta = {
   title: 'Application/Transactions',
   component: Transactions,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Transactions" -- both style previews collapse to one
+derived axis, same judgment applied throughout this Application set:
+the Empty state renders whenever \`transactions\` is empty, rather than a
+separate manual prop that could disagree with the actual data.
+
+Each row's \`icon\` is a required, consumer-supplied slot (like StockMarket's
+\`logo\`) -- category icons are arbitrary per integration, so there's no
+sensible default mapping to bake in.
+
+The Empty state is a bespoke block rather than a reuse of the shared
+EmptyState component: EmptyState wraps its icon in a 40px filled chip and
+uses 12px description text, but Figma's Transactions-Empty shows a bare
+unwrapped icon and 14px body text at tighter spacing -- a real shape
+difference, not a token nuance.
+
+Amount color is derived from its own sign (>= 0 -> success, < 0 ->
+danger), normalizing Figma's inconsistent hardcoded positive-green hex to
+the same success/danger-solid tokens as every other signed value in this
+set (StockMarket, SpendingBalance).` } } },
   decorators: [(S) => <div style={{ width: 400 }}><S /></div>],
 } satisfies Meta<typeof Transactions>;
 

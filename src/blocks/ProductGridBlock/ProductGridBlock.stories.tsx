@@ -63,6 +63,40 @@ const meta = {
   title: 'Blocks/E-commerce/Product Grid',
   component: ProductGridBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly: wire "Add Item"/wishlist/sort to your
+real cart/catalog state in place of the callbacks here.
+
+Matches Figma "Product Grid" (node 1658:29889, 2 states: Default, With
+Filters). Composed entirely from existing library components --
+SectionHeading (Marketing, the "Shop" eyebrow + title + subtitle --
+this block used to build that shape inline before SectionHeading
+existed as its own component; now reuses it instead of keeping a
+second copy to drift out of sync), Button (the "Sort" control), and
+ProductCard (E-commerce set, already covering the card's own image/
+rating/price/sale-badge/out-of-stock/swatches/button treatment) -- no
+new visual primitives, this block is purely heading + filter bar +
+grid layout.
+
+Whether the filter bar (product count + Sort button) renders is a real
+layout choice (Figma's "With Filters" style), not something derivable
+from the product data -- \`showFilterBar\` stays an explicit prop. The
+product COUNT itself, though, is derived from \`products.length\` rather
+than a separate manual prop, same "derive from data" reasoning used
+throughout this library.
+
+Figma's own two states actually disagree on the grid's gap (8px in
+Default, 24px in With Filters) -- a real inconsistency between two
+separately-authored example states, not an intentional feature (a
+grid's spacing can't sensibly depend on whether a filter bar happens to
+render above it). This block uses 8px everywhere, matching Default.
+
+Wishlist and color-swatch selection are real wired state, per card, not
+decorative -- ProductCard's \`wishlisted\`/\`colors[].selected\` are
+controlled props, so without this the heart and swatches would render
+but visibly do nothing when clicked. Keyed by each product's id/name
+rather than one shared piece of state, since selecting a color on one
+card must never affect another card's own selection.` } } },
   args: {
     title: 'New arrivals',
     subtitle: 'Thoughtfully made home goods, restocked every week.',

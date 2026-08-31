@@ -5,6 +5,11 @@ const meta = {
   title: 'Composite/Tabs',
   component: Tabs,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Horizontal tab navigation. Matches Figma "Tabs" set (2–6 tabs).
+
+Figma spec: horizontal row, label/md text (active fg/default, inactive fg/muted),
+a 2px brand/default underline under the active tab, bottom border on the track.
+Interaction is real: clicking a tab selects it (controlled or uncontrolled).` } } },
   decorators: [(S) => <div style={{ width: 520 }}><S /></div>],
 } satisfies Meta<typeof Tabs>;
 

@@ -12,6 +12,9 @@ const meta = {
   title: 'Charts/Donut Chart',
   component: DonutChart,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Recharts wrapper styled with Sakani chart tokens. Matches Figma "Donut Chart"
+(Size sm|md|lg|xl, with center value + caption). Segments cycle through the 5
+chart tokens so they re-theme in dark mode.` } } },
   argTypes: { size: { control: 'select', options: ['sm', 'md', 'lg', 'xl'] } },
   args: { data, size: 'md', centerValue: '100%', centerCaption: 'Traffic' },
   decorators: [(S) => <div style={{ width: 360 }}><S /></div>],

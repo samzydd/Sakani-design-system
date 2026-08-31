@@ -5,6 +5,9 @@ const meta = {
   title: 'Composite/Segmented Control',
   component: SegmentedControl,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `iOS-style toggle group. Matches Figma "Segmented Control" (2-6 buttons).
+Figma spec: track bg/subtle, radius-md, padding 4, gap 2;
+active segment bg/surface, radius-sm, label/md fg/default; inactive fg/muted.` } } },
   args: { options: [
     { value: 'day', label: 'Day' },
     { value: 'week', label: 'Week' },

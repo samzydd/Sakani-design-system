@@ -6,6 +6,17 @@ const meta = {
   title: 'Composite/Calendar',
   component: Calendar,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Month calendar / date picker. Matches the Figma "Calendar" kit:
+Calendar container (288px, radius-xl, bg/surface, border/default)
+Calendar Header — Type: Arrows | Dropdowns (month + year selects)
+Calendar Weekdays + Calendar Day
+Calendar Day states: Default|Hover|Selected|Today|In Range|Outside|Disabled
+
+Modes:
+- **single** — click to select one date (value/onChange)
+- **range** — first click sets the start, second completes it (range/onRangeChange); clicking before the start swaps the endpoints. Days between endpoints render the Figma "In Range" state (accent/subtle, square corners).
+
+A11y: every day button carries a full-date aria-label; selects are labelled.` } } },
 } satisfies Meta<typeof Calendar>;
 
 export default meta;

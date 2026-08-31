@@ -5,6 +5,10 @@ const meta = {
   title: 'Forms/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Checkbox" set: Unchecked | Checked | Indeterminate | Disabled,
+with Title/Description toggles (label + description props).
+
+Box spec from Figma: 18px, radius 4 (radius-sm), accent/default fill when checked.` } } },
   args: { label: 'Accept terms and conditions' },
 } satisfies Meta<typeof Checkbox>;
 

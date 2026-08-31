@@ -7,6 +7,27 @@ const meta = {
   title: 'Marketing/Blog Listing Card',
   component: BlogListingCard,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Blog Listing Card" (Marketing primitives set, 2 style
+previews: Default, Horizontal). \`layout\` stays a real, explicit prop
+(Figma's own axis) -- a genuine layout choice, not derivable from the
+post data:
+- **'default'** — image on top (240px, full card width), body below.
+- **'horizontal'** — a 1:1 square image on the left (self-stretch to match the body column's height), body to the right.
+
+The category pill reuses the shared Badge component (accent/subtle,
+an exact match). The "N mins read" chip is NOT a Badge, though --
+Figma's own instance there has no background at all despite being
+named "Badge", just matching padding/typography for baseline
+alignment with the category pill next to it -- Badge has no bare/
+transparent variant, so this is built locally as plain text, same
+reasoning BlogFeatureText gave for not reusing Divider for its accent
+rule.
+
+Author line reuses the shared Avatar (image type) component. Card
+width is flexible (\`width:100%; max-width\` capped to Figma's own
+literal px) rather than fixed, same pattern already established by
+ProductCard -- this is meant to drop into a listing grid of arbitrary
+width, not just render at exactly 313/460px.` } } },
 } satisfies Meta<typeof BlogListingCard>;
 
 export default meta;

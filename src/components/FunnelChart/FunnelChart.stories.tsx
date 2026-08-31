@@ -14,6 +14,16 @@ const meta = {
   title: 'Charts/Funnel Chart',
   component: FunnelChart,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma's new "Other charts" set ("Funnel chart" / "Funnel chart
+hover") exactly: stages run left to right (not top to bottom), narrowing
+via smooth curved transitions rather than straight diagonal edges.
+Recharts' native \`<Funnel>\` only renders a vertical, straight-edged
+funnel, so this is a hand-rolled SVG -- the same "no native fit" call as
+HeatmapChart, flagged the same way.
+
+Each stage is shaded chart/1 at increasing saturation (first stage
+palest, last stage full color). Hover: the hovered stage goes full
+opacity, every other stage dims to 45%, matching Figma's hover state.` } } },
   argTypes: { size: { control: 'select', options: ['sm', 'md', 'lg', 'xl'] } },
   args: { data, size: 'md' },
   decorators: [(S) => <div style={{ width: 560 }}><S /></div>],

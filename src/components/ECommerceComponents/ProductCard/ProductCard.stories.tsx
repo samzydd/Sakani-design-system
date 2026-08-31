@@ -9,6 +9,35 @@ const meta = {
   title: 'E-commerce/Product Card',
   component: ProductCard,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Product Card" (E-commerce set): image (wishlist button +
+sale badge overlay) -> rating -> name/price -> description -> color
+swatches -> "Add Item" button.
+
+Figma's 3 style previews collapse into two real, independent axes rather
+than a manual style prop, same reasoning as CartItem/PriceDisplay:
+\`compareAtPrice\` presence -> sale badge ("-X%", same ceil-rounding as
+PriceDisplay) + a struck-through original price next to the current
+one. NOT a reuse of the PriceDisplay component itself, though --
+Figma's card price row is plain 16px fg/default black for the
+current price (no danger-red, no 20px heading size), a genuinely
+different, more subdued treatment than PriceDisplay's own sale
+styling, so it's built locally here to match.
+\`inStock={false}\` -> dimmed image, "Out of stock" label, wishlist
+button hidden (Figma's own Out-of-Stock preview drops it), and the
+Add Item button disabled -- Figma's static mockup doesn't show a
+disabled button since it can't demonstrate interaction, but shipping
+an enabled "buy" button for something explicitly out of stock would
+be a real usability bug, so this adds it.
+
+Star rating is a small dedicated element (round-to-nearest-star fill,
+Lucide \`Star\` bound to warning/400 -- Figma's own gold #F9B427 sits
+between warning/400 (#FDB022) and warning/500 (#F79009); 400 is the
+closer match) -- no standalone Rating component exists yet, and this is
+scoped to what Product Card itself asked for.
+
+Color swatches reuse the shared ColorSwatch component directly. Wishlist
+button reuses the shared WishlistButton component (also E-commerce set)
+directly -- exact match for the card's own save/unsave affordance.` } } },
 } satisfies Meta<typeof ProductCard>;
 
 export default meta;

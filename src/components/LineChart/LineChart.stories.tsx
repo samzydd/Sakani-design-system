@@ -14,6 +14,21 @@ const meta = {
   title: 'Charts/Line Chart',
   component: LineChart,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Recharts wrapper styled with Sakani chart tokens. Matches Figma's "Line
+chart" component set:
+
+- **default** — smooth (monotone) curve, single series, no dots
+- **linear** — straight-line segments instead of a smooth curve
+- **step** — step/staircase line
+- **multiple** — two series overlaid (pass 2 entries in \`series\`)
+- **dots** — smooth curve, dot markers always visible (not just on hover)
+- **custom-dots** — smooth curve, ringed/halo dot markers
+- **dots-colors** — smooth curve, each dot cycles through the full chart palette instead of matching its own series' color
+- **label** — dots + the raw value shown above each point
+- **custom-label** — dots + a custom label per point (see \`labelKey\`)
+
+A thin wrapper throughout -- every variant is a Recharts \`type\`/\`dot\`/
+\`label\` prop combination, no hand-rolled SVG needed.` } } },
   argTypes: {
     variant: {
       control: 'select',

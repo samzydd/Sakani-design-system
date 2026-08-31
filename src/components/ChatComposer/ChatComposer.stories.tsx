@@ -5,6 +5,13 @@ const meta = {
   title: 'Chat/Chat Composer',
   component: ChatComposer,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Message input for the chat thread. Matches the Figma "Chat Composer" set:
+
+state (Figma "State" axis) -> default | typing | uploading | disabled
+
+Attach + input + emoji + send. Typing shows a focus ring and an enabled
+send; Uploading stacks an attachment row (with Progress) above the input;
+Disabled covers read-only conversations.` } } },
   argTypes: { state: { control: 'select', options: ['default', 'typing', 'uploading', 'disabled'] } },
   args: { state: 'default', placeholder: 'Message Amara…' },
   decorators: [(S) => (<div style={{ width: 552 }}><S /></div>)],

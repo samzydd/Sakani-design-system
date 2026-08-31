@@ -11,6 +11,22 @@ const meta = {
   title: 'Composite/Stepper',
   component: Stepper,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Stepper / StepperStep
+
+Progress stepper. Matches Figma "Stepper" (Steps 2-6) + "Stepper Step"
+(Completed | Current | Upcoming).
+
+The circle is Figma's own standalone "Progress Item Value" component embedded here, not a bespoke shape -- its 3 statuses
+map 1:1 to completed/current/upcoming:
+- **Completed** — bg/inverse fill (32px), fg/on-inverse check
+- **Current** — bg/surface fill, accent/default 2px ring, fg/default number, bold label
+- **Upcoming** — bg/surface fill, border/subtle 2px ring, fg/muted number, muted label
+
+(Verified directly against that node -- an earlier pass had drifted: 28px
+instead of 32, accent/default instead of bg/inverse for Completed, and
+bg/subtle + border/default 1.5px instead of bg/surface + border/subtle 2px
+for Upcoming.)
+Connectors between steps color accent up to the current step.` } } },
   args: { steps, current: 1 },
   decorators: [(S) => <div style={{ width: 560 }}><S /></div>],
 } satisfies Meta<typeof Stepper>;

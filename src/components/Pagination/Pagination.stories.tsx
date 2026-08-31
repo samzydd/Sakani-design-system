@@ -6,6 +6,9 @@ const meta = {
   title: 'Composite/Pagination',
   component: Pagination,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Page navigation. Matches Figma "Pagination": prev/next arrows + numbered page
+buttons (32px, radius-sm, bg/surface, border/subtle), active page filled accent.
+Collapses long ranges with ellipses.` } } },
 } satisfies Meta<typeof Pagination>;
 
 export default meta;

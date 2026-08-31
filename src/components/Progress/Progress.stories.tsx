@@ -5,6 +5,11 @@ const meta = {
   title: 'Core/Progress',
   component: Progress,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Linear progress bar. Two modes:
+- Determinate: pass value (0–100) to show completion percentage
+- Indeterminate: omit value for an animated scanning bar (e.g. page loading)
+
+Size axis → size prop (sm | md | lg) controls track height` } } },
   args: { value: 60, size: 'md' },
 } satisfies Meta<typeof Progress>;
 

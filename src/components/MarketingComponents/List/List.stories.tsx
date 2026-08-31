@@ -5,6 +5,21 @@ const meta = {
   title: 'Marketing/List',
   component: List,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "List" (Marketing primitives set, 3 styles: Check,
+Bullet, Arrow). \`style\` stays a real, explicit prop (Figma's own
+axis) -- a genuine visual-language choice for the marker, not
+derivable from the item text:
+- **'check'** — lucide Check, 18px.
+- **'bullet'** — a plain filled 8px dot (not an icon at all in Figma's own asset -- no lucide glyph needed).
+- **'arrow'** — lucide ArrowRight, 16px.
+
+All three use the same fg/muted color for both marker and label --
+confirmed identical across all three fetched previews, not just the
+bullet's own color.
+
+\`items\` is a plain string array (each item is a single label, no
+per-item icon override in Figma) rather than an array of objects --
+simplest shape that matches what the design actually shows.` } } },
 } satisfies Meta<typeof List>;
 
 export default meta;

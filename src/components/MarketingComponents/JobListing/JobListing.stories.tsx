@@ -5,6 +5,22 @@ const meta = {
   title: 'Marketing/Job Listing',
   component: JobListing,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Job Listing" (Marketing primitives set, 2 styles: Card,
+Row). \`layout\` stays a real, explicit prop (Figma's own axis) -- a
+genuine layout choice:
+- **'card'** — bg/surface + border/subtle + radius/lg card chrome, column layout, "Apply now" on its own row below the meta.
+- **'row'** — no card chrome at all (Figma's own Row preview has none), horizontal layout with the title/description/meta column on the left (flex:1) and "Apply now" aligned to the bottom-right.
+
+Department pill reuses the shared Badge (accent/subtle); employment
+type pill reuses Badge (neutral/subtle, its default). "Apply now"
+reuses the shared Button (variant="secondary", size="sm" -- bg/subtle
++ fg/default is an exact match here, same as
+BlogListingFeaturedCard's own "Read article").
+
+The location line reuses the shared LocationDot component (also
+Marketing primitives) rather than a local dot+label -- broken out into
+its own component specifically so any marketing component needing a
+location can reuse it instead of re-implementing the pattern.` } } },
 } satisfies Meta<typeof JobListing>;
 
 export default meta;

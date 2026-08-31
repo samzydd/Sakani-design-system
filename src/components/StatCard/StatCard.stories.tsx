@@ -6,6 +6,12 @@ const meta = {
   title: 'Composite/Stat Card',
   component: StatCard,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Dashboard metric card. Matches Figma "Stat Card":
+Style (Minimal | Icon | Featured) x Trend (Up | Down | Flat),
+with Icon / Menu / Trend / Sparkline toggles.
+
+Figma spec: bg/surface, border/subtle 1px, radius-xl (16), padding 12, gap 8.
+title label/sm fg/muted · value display/lg fg/default · delta trend-colored.` } } },
   argTypes: {
     variant: { control: 'select', options: ['minimal', 'icon', 'featured'] },
     trend: { control: 'inline-radio', options: ['up', 'down', 'flat'] },

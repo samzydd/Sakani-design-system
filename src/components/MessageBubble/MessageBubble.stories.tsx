@@ -6,6 +6,14 @@ const meta = {
   title: 'Chat/Message Bubble',
   component: MessageBubble,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A chat message. Matches the Figma "Message Bubble" set:
+
+type (Figma "Type" axis) -> received | sent | system
+content (Figma "Content" axis) -> text | image | file
+
+Received = bg/subtle with author + reactions; Sent = accent fill with
+timestamp + read receipt; System = centered pill. The tail corner (4px)
+marks the speaker side. Image/file content render inside the bubble.` } } },
   argTypes: {
     type: { control: 'inline-radio', options: ['received', 'sent', 'system'] },
     content: { control: 'inline-radio', options: ['text', 'image', 'file'] },

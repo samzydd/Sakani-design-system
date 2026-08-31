@@ -5,6 +5,11 @@ const meta = {
   title: 'Forms/Radio',
   component: Radio,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Single radio button. Matches Figma "Radio" set:
+Unchecked | Hover | Checked | Disabled, with Title/Description toggles.
+
+Hover is a CSS :hover state, not a prop.
+Use multiple Radios sharing the same \`name\` to form a group.` } } },
   args: { label: 'Option one', name: 'demo' },
 } satisfies Meta<typeof Radio>;
 

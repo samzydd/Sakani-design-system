@@ -12,6 +12,18 @@ const meta = {
   title: 'Blocks/Application/Notification Panel',
   component: NotificationPanelBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly.
+
+Matches Figma "Notifications Panel": "Notifications" heading + "Mark all
+as read" Link -> list of NotificationItem rows, or an empty state.
+Default/Empty isn't a manual prop -- the empty state renders once
+\`items\` is empty, same "derive from data" pattern used throughout this
+set. "Mark all as read" only shows when there's at least one unread item.
+
+The list reuses the existing NotificationItem component directly (its
+plain-row style, \`read\` toggling the unread background/dot/bold title) --
+an exact match for every row in this Figma panel, no new row needed.` } } },
   decorators: [(S) => <div style={{ width: 460 }}><S /></div>],
 } satisfies Meta<typeof NotificationPanelBlock>;
 

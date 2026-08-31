@@ -13,7 +13,21 @@ const meta = {
   title: 'Blocks/Marketing/Blog Listing',
   component: BlogListingBlock,
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly: wire "Read article"/card clicks to
+your real routing in place of the callbacks here.
+
+Matches Figma "Blog Listing". Composed entirely from
+existing library components -- SectionHeading (Marketing, the "Blog"
+eyebrow + title + subtitle), BlogListingFeaturedCard (Marketing,
+orientation="horizontal"), and a grid of BlogListingCard (Marketing,
+layout="default") -- no new visual primitives, this block is purely
+heading + featured post + grid layout.
+
+The grid is real CSS Grid (3 columns, matching Figma), not a fixed
+3-card row -- it wraps onto additional rows once there are more posts
+than fit one line, same reasoning ProductGridBlock gives for its own
+grid, unlike Figma's own single-row 3-post export.` } }, layout: 'fullscreen' },
 } satisfies Meta<typeof BlogListingBlock>;
 
 export default meta;

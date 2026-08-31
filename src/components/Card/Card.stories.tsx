@@ -15,6 +15,12 @@ const meta = {
   title: 'Composite/Card',
   component: Card,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Container surface. Matches Figma "Card" set:
+Variant (Default|Hover|Two buttons|Three buttons), Title/Description/CTA toggles.
+
+Figma spec: bg/surface, border/default 1px, radius-xl (16), padding 20, gap 16.
+In code, Hover is a CSS :hover state; the button-count variants are expressed
+by passing \`actions\` (an array of nodes) rather than separate components.` } } },
   args: { title: 'Card title', description: 'This is a description for the card content.' },
   decorators: [(S) => <div style={{ width: 360 }}><S /></div>],
 } satisfies Meta<typeof Card>;

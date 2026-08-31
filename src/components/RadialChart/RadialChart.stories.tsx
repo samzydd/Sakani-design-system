@@ -13,6 +13,26 @@ const meta = {
   title: 'Charts/Radial Chart',
   component: RadialChart,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Recharts wrapper styled with Sakani chart tokens. Matches Figma's "Radial
+chart" component set (8 variants):
+
+- **multi** — one concentric ring per data row, full circle
+- **grid** — "multi" + a faint polar grid (spokes + rings) behind it
+- **text** — one thick ring + center value/caption
+- **gauge-tick** — a dial built from individual radial tick marks
+- **stacked-label** — "multi" + a center value/caption overlay
+- **shape** — a single 240° gauge arc, data rows stacked angularly (not concentric), remainder shown as a track
+- **stacked** — same 240° gauge arc, no track (rows fill it exactly)
+- **stacked-3-layers** — same 240° gauge arc, sized for a 3-row breakdown
+
+\`gauge-tick\` (individual tick marks) and \`shape\`/\`stacked\`/
+\`stacked-3-layers\` (angularly-stacked segments in one band) have no
+RadialBarChart equivalent -- RadialBarChart only stacks rows as
+concentric rings, never as angular segments sharing one ring -- so all
+four are hand-rolled SVG using the exported \`Sector\` primitive, same
+call as HeatmapChart/FunnelChart. "multi"/"grid"/"text"/"stacked-label"
+are genuine concentric-ring cases, so those stay thin RadialBarChart
+wrappers.` } } },
   argTypes: {
     variant: {
       control: 'select',

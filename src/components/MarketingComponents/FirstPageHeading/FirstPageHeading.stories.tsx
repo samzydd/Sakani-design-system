@@ -8,6 +8,27 @@ const meta = {
   title: 'Marketing/First Page Heading',
   component: FirstPageHeading,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "First Page Heading" (Marketing primitives set, 16
+previews: Align (Center/Left) x CTAs/Badge/Avatars (each True/False)).
+Align stays a real, explicit prop (Figma's own axis) -- a genuine
+layout choice. The other three axes are all derived from data
+presence rather than manual booleans, same "derive from data" pattern
+used throughout this library:
+- **Badge** — shown when \`badgeLabel\` is provided.
+- **CTAs** — Figma's own toggle controls BOTH buttons together (every True/False preview shows or hides the whole row, never just one button), so the row renders when either \`primaryCta\` or \`secondaryCta\` is given, not two independent conditions.
+- **Avatars** — shown when \`avatars\` has at least one entry; the "N happy users" caption is a separate optional field under that (Figma always shows both together, but there's no reason a consumer couldn't want the stack without the count).
+
+"Get started" reuses Button variant="primary" -- Figma's own static
+export shows accent/HOVER as the background, but that's an
+incidentally-captured hover-state screenshot, not a real distinct
+default look (confirmed: accent/hover is literally Button's own
+:hover token, and Figma's "Watch demo" button shows the same
+hover-only drop-shadow at rest) -- same reasoning already applied
+elsewhere in this session for not chasing a snapshot's accidental
+interaction state. "Watch demo" reuses variant="secondary" with a
+Play glyph in the leftIcon slot. Avatars reuse the shared AvatarGroup
+component directly (Figma's own "Avatar Group" instance, already a
+component in this library).` } } },
 } satisfies Meta<typeof FirstPageHeading>;
 
 export default meta;

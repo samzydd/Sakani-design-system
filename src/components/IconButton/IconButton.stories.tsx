@@ -6,6 +6,12 @@ const meta = {
   title: 'Core/Icon Button',
   component: IconButton,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Icon-only button. Matches Figma "Icon Button":
+variant (IB axis): primary | secondary | outline | ghost | destructive
+size: sm (32) | md (40) | lg (48) — square, radius-sm
+State handled via CSS (:hover, :disabled).
+
+Mirrors Button's variant color logic, but square with a centered Lucide icon.` } } },
   argTypes: {
     variant: { control: 'select', options: ['primary', 'secondary', 'outline', 'ghost', 'destructive'] },
     size: { control: 'select', options: ['sm', 'md', 'lg'] },

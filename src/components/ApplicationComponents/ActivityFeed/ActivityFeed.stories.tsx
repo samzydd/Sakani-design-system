@@ -41,6 +41,18 @@ const meta = {
   title: 'Application/Activity Feed',
   component: ActivityFeed,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Timeline of recent activity. Matches Figma "Activity Feed":
+- **Style: Default** — icon-in-circle rail with a connector stub between dots, content wraps onto multiple lines if long. | Compact — avatar-led single-line row, timestamp right-aligned.
+
+Figma's latest update highlights more than just the actor: the specific
+object being acted on (a doc name, a file, a quoted task title) is also
+colored fg/default within an otherwise fg/muted sentence, while the verb
+connecting them ("commented on", "uploaded", "marked") stays muted. Since
+which words get highlighted is per-item and doesn't follow a rule (compare
+"uploaded 3 [files to Assets]" vs. "edited the [Pricing Table]"), that
+can't be derived from a plain string -- \`description\` accepts ReactNode
+instead, and the exported \`ActivityFeedHighlight\` wraps whichever span the
+caller wants colored.` } } },
   argTypes: {
     variant: { control: 'select', options: ['default', 'compact'] },
   },

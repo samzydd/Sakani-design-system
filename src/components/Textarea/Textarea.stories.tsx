@@ -5,6 +5,15 @@ const meta = {
   title: 'Forms/Textarea',
   component: Textarea,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Multi-line text input. Matches Figma "Textarea" parent component:
+State (Default|Focus|Error|Disabled|Filled), Title/Description toggles.
+
+Exact Figma spec:
+- Field: vertical, 6px gap
+- Label: label/md (14px/500, fg/default)
+- Box: bg/surface, border/default 1px, radius-md, padding 10/14, min-height 84px
+- Value/placeholder: body/sm (14px/500, fg/subtle placeholder / fg/default value)
+- Description: body/xs (13px, fg/muted)` } } },
   args: { placeholder: 'Enter text…' },
 } satisfies Meta<typeof Textarea>;
 

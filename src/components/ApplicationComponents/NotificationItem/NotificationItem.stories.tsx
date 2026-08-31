@@ -6,6 +6,18 @@ const meta = {
   title: 'Application/Notification Item',
   component: NotificationItem,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Notification Item" (3 style previews -- Unread, Read,
+Dismissable -- collapsed into composable props, same judgment already
+applied throughout this Application set):
+
+Simple row (no \`description\`) -- icon-wrap, title, timestamp, and
+(when \`read\` is false) an accent/subtle background + unread dot.
+\`read\` toggles bold/muted title weight and the background/dot, same
+idea as Balance's controlled/uncontrolled hidden state -- but here it's
+plain read-driven styling, no internal state to manage.
+
+- **Actionable card (\`description\` present)** — bordered/shadowed card, icon-wrap, title + description, a close X, and Dismiss/action buttons
+- **below. The X and the "Dismiss" button fire the same \`onDismiss\`** — Figma gives two entry points to what's the same action.` } } },
   args: { title: 'New comment on your design', timestamp: '2 minutes ago' },
   decorators: [(S) => <div style={{ width: 420 }}><S /></div>],
 } satisfies Meta<typeof NotificationItem>;

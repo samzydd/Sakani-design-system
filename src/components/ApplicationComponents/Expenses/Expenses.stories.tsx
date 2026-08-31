@@ -13,6 +13,20 @@ const meta = {
   title: 'Application/Expenses',
   component: Expenses,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Spending-by-category list. Matches Figma "Expenses":
+- **Default** — icon + label + amount, with an 8px bar underneath each row sized relative to the largest category in the list
+- **Compact** — the same rows with the bars omitted
+
+Unlike most of this Application set, the variant here isn't derivable
+from the data -- both styles use exactly the same rows, so it's a real
+display-density toggle, not a data-driven state.
+
+The bar reuses the existing Progress component (size="lg" is Figma's
+exact 8px track height, fill already binds to accent/default) rather
+than a bespoke one -- accepting its bg/subtle track over Figma's literal
+bg/canvas here, since the two are barely distinguishable off-whites and
+Progress has no style-override escape hatch to fix that without either
+fighting CSS cascade order or forking the component for one token.` } } },
   argTypes: {
     variant: { control: 'select', options: ['default', 'compact'] },
   },

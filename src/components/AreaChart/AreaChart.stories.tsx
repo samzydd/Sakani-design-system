@@ -14,6 +14,14 @@ const meta = {
   title: 'Charts/Area Chart',
   component: AreaChart,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Recharts wrapper styled with Sakani chart tokens. Matches Figma "Area Chart"
+(type: Default | Stacked | Step | Linear, each with an optional second
+series). A thin library wrapper, same philosophy as BarChart/LineChart/
+DonutChart — production charts use a charting library, not a hand-rolled
+SVG port.
+
+Hover shows Recharts' own tooltip + cursor line, matching Figma's
+"Indicator line" + "Chart Tooltip" atoms.` } } },
   argTypes: {
     variant: { control: 'select', options: ['default', 'stacked', 'step', 'linear'] },
     size: { control: 'select', options: ['sm', 'md', 'lg', 'xl'] },

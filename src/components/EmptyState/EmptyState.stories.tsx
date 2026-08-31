@@ -5,6 +5,13 @@ const meta = {
   title: 'Data/Empty State',
   component: EmptyState,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Reusable empty/error content for tables, lists, and cards. Matches the
+Figma "Empty State" set:
+
+type (Figma "Type" axis) -> no-data | no-results | error
+
+Icon chip + title + description + optional action button. The error type
+uses the danger token on its chip; the others use a neutral chip.` } } },
   argTypes: { type: { control: 'inline-radio', options: ['no-data', 'no-results', 'error'] } },
   args: { type: 'no-data', actionLabel: 'Add item' },
 } satisfies Meta<typeof EmptyState>;
