@@ -4,14 +4,16 @@
  * Matches Figma "Placeholder Logo" (Marketing primitives set, 3 sizes:
  * sm 22 / md 40 / lg 46) -- a bg/surface + border/subtle + radius/lg
  * square slot for a company/brand mark, same "empty-state avatar" role
- * Avatar's own Icon type fills for a person. Figma's own asset inside is
- * literally this library's own Sakani mark, but that's just this file's
- * own placeholder-of-a-placeholder in the design file -- a real consumer
- * (a logo wall, a company directory row, a "brands using this" grid)
- * needs to drop in an arbitrary company's mark, not permanently show
- * Sakani's -- so `logo` is a consumer-supplied slot exactly like
- * Avatar's own `icon` prop, defaulting to a generic building glyph
- * (lucide Building2) rather than any specific brand.
+ * Avatar's own Icon type fills for a person. Figma's own asset inside
+ * this frame is this library's own Sakani mark (a real image asset --
+ * a colored square with the wordmark baked in, not a plain stroke
+ * glyph), used here as the default fill exactly as shown in the design
+ * file. `logo` is still a consumer-supplied override slot exactly like
+ * Avatar's own `icon` prop -- a real usage (a logo wall, a company
+ * directory row, a "brands using this" grid) drops in an arbitrary
+ * company's own mark instead, whether that's another lucide icon (still
+ * cloned with the correct compensated size/strokeWidth) or a plain
+ * image/ReactNode.
  *
  * Container/icon px pairs per size are Figma's own literal presets, not
  * one shared ratio -- sm is 22/14, md is 40/16, lg is 46/18, none of
@@ -20,7 +22,7 @@
  */
 
 import React from 'react';
-import { Building2 } from 'lucide-react';
+import sakaniMark from '../../../assets/marketing/sakani-mark.svg';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './PlaceholderLogo.module.css';
 
@@ -31,7 +33,7 @@ const ICON_PX: Record<PlaceholderLogoSize, number> = { sm: 14, md: 16, lg: 18 };
 export interface PlaceholderLogoProps {
   /** Figma Size axis. Defaults to "md". */
   size?: PlaceholderLogoSize;
-  /** Custom logo/icon slot. Defaults to a generic building glyph when omitted. */
+  /** Custom logo/icon slot. Defaults to the Sakani mark, matching Figma. */
   logo?: React.ReactNode;
   /** Accessible name, e.g. "Acme Inc." */
   label?: string;
@@ -44,7 +46,7 @@ export const PlaceholderLogo: React.FC<PlaceholderLogoProps> = ({
   const iconPx = ICON_PX[size];
   const renderedLogo = React.isValidElement<{ size?: number; strokeWidth?: number }>(logo)
     ? React.cloneElement(logo, { size: iconPx, strokeWidth: iconStrokeWidth(iconPx) })
-    : (logo ?? <Building2 size={iconPx} strokeWidth={iconStrokeWidth(iconPx)} aria-hidden="true" />);
+    : (logo ?? <img src={sakaniMark} alt="" width={iconPx} height={iconPx} className={styles.defaultMark} />);
 
   return (
     <span
