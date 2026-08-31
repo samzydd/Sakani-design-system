@@ -26,6 +26,32 @@
  * and the horizontal rule above it DO reuse the shared Button
  * (variant="primary") and Divider components respectively -- exact
  * matches for Figma's own treatment there.
+ *
+ * The links/divider/CTA block is always mounted (never conditionally
+ * removed from the tree) specifically so open <-> close can animate:
+ * unmounting on close would cut off any closing transition instantly,
+ * and remounting on open would replay from nothing rather than expand
+ * smoothly. Its height is animated via `max-height` (unlike plain
+ * `height`, which can't transition to/from `auto`), between two
+ * concrete pixel lengths: `0` and a live-measured `contentHeight`
+ * (tracked off `.collapseInner`'s own scrollHeight via ResizeObserver --
+ * it's always rendered, just visually clipped when collapsed, so its
+ * natural height is measurable even while closed).
+ *
+ * Two earlier attempts at this didn't hold up once actually verified in
+ * the browser: `grid-template-rows: 0fr <-> 1fr` (the usual trick for
+ * this, since `height` itself can't animate to/from `auto`) interpolated
+ * fine when collapsing but snapped instantly to full height when
+ * expanding -- confirmed reproducible at multiple delays, not a flake.
+ * Swapping that same grid-template-rows property to animate between
+ * concrete pixel row-track values (`0px`/`{contentHeight}px`) instead of
+ * the fr keywords reproduced the identical one-directional snap, which
+ * narrowed the problem down to animating a CSS Grid row track
+ * specifically, not the fr unit. Moving off `display: grid` entirely and
+ * animating plain `max-height` on a block element sidesteps grid
+ * track-sizing animation altogether and was confirmed, via direct
+ * height sampling mid-transition, to animate correctly in both
+ * directions.
  */
 
 import React from 'react';
@@ -67,6 +93,21 @@ export const MobileNavigationMenu: React.FC<MobileNavigationMenuProps> = ({
     onOpenChange?.(next);
   };
 
+  const innerRef = React.useRef<HTMLDivElement>(null);
+  const [contentHeight, setContentHeight] = React.useState(0);
+
+  React.useEffect(() => {
+    const inner = innerRef.current;
+    if (!inner) return;
+
+    const measure = () => setContentHeight(inner.scrollHeight);
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(inner);
+    return () => observer.disconnect();
+  }, [links, ctaLabel]);
+
   return (
     <div className={[styles.root, className ?? ''].filter(Boolean).join(' ')}>
       <div className={styles.header}>
@@ -84,19 +125,36 @@ export const MobileNavigationMenu: React.FC<MobileNavigationMenuProps> = ({
         </button>
       </div>
 
-      {isOpen && (
-        <>
+      <div
+        className={[styles.collapse, isOpen ? styles.collapseOpen : ''].filter(Boolean).join(' ')}
+        style={{ maxHeight: isOpen ? `${contentHeight}px` : '0px' }}
+        aria-hidden={!isOpen}
+      >
+        <div ref={innerRef} className={styles.collapseInner}>
           <nav className={styles.navLinks} aria-label={label}>
             {links.map((link) => (
-              <a key={link.label} href={link.href} onClick={link.onClick} className={styles.navLink}>
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={link.onClick}
+                className={styles.navLink}
+                tabIndex={isOpen ? undefined : -1}
+              >
                 {link.label}
               </a>
             ))}
           </nav>
           <Divider className={styles.fullWidth} />
-          <Button variant="primary" className={styles.fullWidth} onClick={onCtaClick}>{ctaLabel}</Button>
-        </>
-      )}
+          <Button
+            variant="primary"
+            className={styles.fullWidth}
+            onClick={onCtaClick}
+            tabIndex={isOpen ? undefined : -1}
+          >
+            {ctaLabel}
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
