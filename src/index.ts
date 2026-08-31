@@ -51,6 +51,7 @@ export * from './components/MarketingComponents/PlaceholderLogo';
 export * from './components/MarketingComponents/ProfileCard';
 export * from './components/MarketingComponents/RichTextHeading';
 export * from './components/MarketingComponents/RichTextParagraph';
+export * from './components/MarketingComponents/SectionHeading';
 export * from './components/Alert';
 export { AreaChart } from './components/AreaChart';
 export type { AreaChartProps, AreaChartDatum, AreaChartVariant } from './components/AreaChart';
