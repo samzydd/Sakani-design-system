@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { HeroBlock } from './HeroBlock';
+import patternRefraction from '../../assets/marketing/hero-pattern-refraction.jpg';
 import heroImage from '../../assets/marketing/blog-image-balloons.jpg';
 
 const meta = {
@@ -20,7 +21,7 @@ export const Centered: Story = {
     primaryAction: { label: 'Get started' },
     secondaryAction: { label: 'View on GitHub' },
     secondaryActionIcon: true,
-    image: heroImage,
+    image: patternRefraction,
     caption: 'Free and open source · MIT licensed',
     layout: 'centered',
   },
@@ -34,9 +35,19 @@ export const Split: Story = {
     primaryAction: { label: 'Get started' },
     secondaryAction: { label: 'View on GitHub' },
     secondaryActionIcon: true,
-    image: heroImage,
+    image: patternRefraction,
     layout: 'split',
   },
+};
+
+/** `image` accepts any real photo in place of the Pattern Refraction placeholder. */
+export const WithRealImage: Story = {
+  args: { ...Centered.args, image: heroImage },
+};
+
+/** Swipe/drag over the image to erase the placeholder and reveal the real photo underneath. */
+export const ScratchReveal: Story = {
+  args: { ...Centered.args, image: patternRefraction, revealImage: heroImage },
 };
 
 export const DarkMode: Story = {

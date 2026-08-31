@@ -23,11 +23,35 @@
  * claiming 18px) -- same local GitHub icon, default size 16, reused
  * here rather than a shared export since blocks are copy-paste
  * composition examples.
+ *
+ * `image` is a required prop, not a bundled default: Figma's own hero
+ * mockup uses a named "Pattern Refraction" effect (an iridescent,
+ * diagonally-banded foil/glass texture) as its generic "image goes
+ * here" placeholder, and this file's own Storybook demo supplies the
+ * real downloaded graphic for that -- but it is NOT imported inside
+ * this component file. A real Vite constraint forced that split:
+ * imported assets get base64-inlined directly into the built JS in
+ * `vite build --lib` mode regardless of file size or the assetFileNames
+ * config (there's no HTML entry point in library output to resolve a
+ * hashed relative asset URL against, unlike a normal app build) --
+ * confirmed by measurement: bundling that one ~340KB image here
+ * ballooned blocks.cjs from ~350KB to over 1.2MB. Keeping large demo
+ * imagery confined to *.stories.tsx (excluded entirely from the
+ * published build) is the same convention every other block with
+ * photos already follows in this library.
+ *
+ * `revealImage` is an optional add-on: when set alongside `image`, the
+ * image area becomes a scratch-reveal -- dragging/swiping over it
+ * erases `image` to expose `revealImage` underneath, via a canvas
+ * (ScratchRevealImage.tsx, colocated in this folder) using
+ * destination-out compositing along the pointer's path. Omitting it
+ * keeps the image a plain static `<img>`, matching Figma exactly.
  */
 
 import React from 'react';
 import { Badge } from '../../components/Badge';
 import { Button } from '../../components/Button';
+import { ScratchRevealImage } from './ScratchRevealImage';
 import styles from './HeroBlock.module.css';
 
 const GithubIcon: React.FC<{ size?: number }> = ({ size = 16 }) => (
@@ -59,6 +83,8 @@ export interface HeroBlockProps {
   secondaryActionIcon?: boolean;
   image: string;
   imageAlt?: string;
+  /** Presence turns the image into a scratch-reveal: swiping over `image` erases it to expose this underneath. */
+  revealImage?: string;
   /** Centered layout only -- e.g. "Free and open source · MIT licensed". */
   caption?: string;
   /** Figma Layout axis. Defaults to "centered". */
@@ -68,7 +94,7 @@ export interface HeroBlockProps {
 
 export const HeroBlock: React.FC<HeroBlockProps> = ({
   eyebrow, title, description, primaryAction, secondaryAction, secondaryActionIcon = false,
-  image, imageAlt, caption, layout = 'centered', className,
+  image, imageAlt, revealImage, caption, layout = 'centered', className,
 }) => {
   const isSplit = layout === 'split';
 
@@ -88,6 +114,12 @@ export const HeroBlock: React.FC<HeroBlockProps> = ({
     </div>
   );
 
+  const renderImage = (imageClassName: string) => (
+    revealImage
+      ? <ScratchRevealImage frontSrc={image} backSrc={revealImage} alt={imageAlt} className={imageClassName} />
+      : <img src={image} alt={imageAlt ?? ''} className={imageClassName} />
+  );
+
   if (isSplit) {
     return (
       <div className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
@@ -98,7 +130,7 @@ export const HeroBlock: React.FC<HeroBlockProps> = ({
             <p className={styles.descriptionSplit}>{description}</p>
             {ctaRow}
           </div>
-          <img src={image} alt={imageAlt ?? ''} className={styles.imageSplit} />
+          {renderImage(styles.imageSplit)}
         </div>
       </div>
     );
@@ -110,7 +142,7 @@ export const HeroBlock: React.FC<HeroBlockProps> = ({
       <p className={styles.titleCentered}>{title}</p>
       <p className={styles.descriptionCentered}>{description}</p>
       {ctaRow}
-      <img src={image} alt={imageAlt ?? ''} className={styles.imageCentered} />
+      {renderImage(styles.imageCentered)}
       {caption && <p className={styles.caption}>{caption}</p>}
     </div>
   );
