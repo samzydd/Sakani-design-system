@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-16);
+  box-sizing: border-box;
+  width: 480px;
+  padding: var(--space-16);
+  background: var(--color-bg-surface);
+  border: var(--border-width-050) solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-sans);
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+  color: var(--color-fg-default);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-12);
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.rowField {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.submit {
+  width: 100%;
+}

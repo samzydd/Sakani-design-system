@@ -84,3 +84,7 @@ export { BillingHistoryBlock } from './Billing/BillingHistoryBlock';
 export type { BillingHistoryBlockProps, BillingHistoryInvoice, BillingHistoryStatus } from './Billing/BillingHistoryBlock';
 export { CurrentPlanBlock } from './Billing/CurrentPlanBlock';
 export type { CurrentPlanBlockProps, CurrentPlanStatus } from './Billing/CurrentPlanBlock';
+export { PaymentMethodBlock } from './Billing/PaymentMethodBlock';
+export type { PaymentMethodBlockProps, PaymentMethodCard, PaymentMethodStatus, PaymentMethodBrand } from './Billing/PaymentMethodBlock';
+export { AddCardFormBlock } from './Billing/AddCardFormBlock';
+export type { AddCardFormBlockProps, AddCardFormValue, AddCardFormStatus } from './Billing/AddCardFormBlock';
