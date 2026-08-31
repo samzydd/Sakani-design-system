@@ -60,3 +60,5 @@ export { CRMDashboardBlock } from './CRMDashboardBlock';
 export type { CRMDashboardBlockProps } from './CRMDashboardBlock';
 export { BlogListingBlock } from './BlogListingBlock';
 export type { BlogListingBlockProps, BlogListingFeaturedPost, BlogListingPost } from './BlogListingBlock';
+export { CareersBlock } from './CareersBlock';
+export type { CareersBlockProps, CareersJob } from './CareersBlock';
