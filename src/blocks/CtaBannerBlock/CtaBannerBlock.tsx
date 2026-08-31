@@ -29,15 +29,24 @@
  * already hit for ProfileCard's and TeamCard's own social marks) --
  * kept local to this block rather than a shared export, since blocks
  * are copy-paste composition examples, not part of the strict
- * component surface.
+ * component surface. Defaults to 16px: unlike Avatar/FeaturedIcon,
+ * Button does NOT clone-resize whatever it's handed via leftIcon/
+ * rightIcon -- the caller has to size the icon correctly itself.
+ * Button's own doc comment claims lg wants an 18px icon, but that's
+ * NOT what the actual CSS uses (the lg spinner stays at the same 16px
+ * as md, only sm shrinks to 14px) -- confirmed empirically: a hardcoded
+ * 20px made this button measurably taller than its sibling (46px vs
+ * 42px), 18px still measured 2px taller (44px vs 42px), and only 16px
+ * produces two buttons of identical height, since the flex row's own
+ * height is driven by its tallest child.
  */
 
 import React from 'react';
 import { Button } from '../../components/Button';
 import styles from './CtaBannerBlock.module.css';
 
-const GithubIcon: React.FC = () => (
-  <svg width={20} height={20} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+const GithubIcon: React.FC<{ size?: number }> = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path
       fillRule="evenodd"
       clipRule="evenodd"
