@@ -84,7 +84,7 @@ Three layers, defined in Figma and exported to `tokens.css`:
 
 Change a semantic token and every component follows — in both the design file and the code.
 
-## Components (66+, syncing toward Figma's 1,500+)
+## Components (114+, syncing toward Figma's 1,500+)
 
 **Core** — Button · Icon Button · Badge · Label · Divider · Link · Kbd · Spinner · Skeleton · Progress · Tooltip · Avatar · Avatar Group
 
@@ -94,9 +94,23 @@ Change a semantic token and every component follows — in both the design file 
 
 **Sidebar kit** — Sidebar · Header · Search · Item · Sub Item · Group Label · Divider · Promo · Footer — nine standalone parts that compose into full navigation
 
+**Navigation** — Top Bar · Top Bar (mobile)
+
+**Overlays** — Menu · Menu Item
+
+**Data** — Empty State · Filter Chip
+
 **Charts** — Area · Bar · Donut · Funnel · Heatmap · Line · Pie · Radar · Radial — Recharts wrappers styled entirely with the `chart/1–6` tokens
 
-## Blocks
+**Chat** — Chat Composer · Conversation Item · Message Bubble
+
+**Application** — Activity Feed · Announcement · Avatar Upload · Balance · Code Snippet · Expenses · Inline Hint · Modal · Notification Item · Progress Item · Progress Stat · Rich Separator · Spending Balance · Stock Market · Tags · Ticker · Transactions
+
+**E-commerce** — Cart Item · Checkout Steps · Color Swatch · Price Display · Product Card · Product Gallery · Quantity Selector · Size Selector · Star Rating · Stock Status · Wishlist Button
+
+**Marketing** — Blog Blockquote · Blog Feature Text · Blog Image · Blog Listing Card · Blog Listing Featured Card · Featured Icon · First Page Heading · Job Listing · List · Location Dot · Marquee · Metric · Mobile Navigation Menu · Placeholder Logo · Profile Card · Rich Text Heading · Rich Text Paragraph · Section Heading · Sub Feature · Team Card
+
+## Blocks (41)
 
 Blocks are full sections assembled from Sakani components — **composition examples**, not fully-configurable components like the ones above. Most ship with realistic sample data and manage their own demo state internally (a `state` prop just switches between the states each one ships with — loading, empty, error, and so on). They're meant as a working starting point you customize, not a drop-in you configure entirely through props.
 
@@ -122,10 +136,19 @@ import { DataTableBlock } from './DataTableBlock';
 <DataTableBlock />
 ```
 
-| Block | States |
-|---|---|
-| **Data Table + Toolbar** | default · filtered · bulk selection · loading · empty · error |
-| **Kanban Board** | default · loading · empty column · dragging |
+**Application (13)** — Account Overview · Activity Log · App Header · CRM Dashboard · Data Table + Toolbar · File Upload Panel · Form Modal · Inline CTA · Multistep Modal · Notification Panel · Onboarding Progress · Profile Settings · Section Footer
+
+**Authentication (6)** — Email Verification · Forgot Password · Login · Reset Password · Sign Up · Two-Factor Authentication
+
+**Billing (5)** — Add Card Form · Billing Address · Billing History · Current Plan · Payment Method
+
+**E-commerce (5)** — Checkout Flow · Order Confirmation · Product Detail · Product Grid · Shopping Cart
+
+**Marketing (10)** — Blog Listing · Careers · CTA Banner · FAQ · Feature Grid · Hero · Logo Cloud · Pricing Table · Team Section · Testimonial
+
+**Chat (1)** — Desktop Chat Interface
+
+**Data & Content (1)** — Kanban Board
 
 Browse every block and state in the [live Storybook](https://main--6a5a658b3681fcc010430db5.chromatic.com) under **Blocks**.
 
