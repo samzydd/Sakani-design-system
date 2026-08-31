@@ -66,3 +66,5 @@ export { CtaBannerBlock } from './CtaBannerBlock';
 export type { CtaBannerBlockProps, CtaBannerAction, CtaBannerVariant } from './CtaBannerBlock';
 export { FeatureGridBlock } from './FeatureGridBlock';
 export type { FeatureGridBlockProps, FeatureGridItem } from './FeatureGridBlock';
+export { HeroBlock } from './HeroBlock';
+export type { HeroBlockProps, HeroAction, HeroLayout } from './HeroBlock';
