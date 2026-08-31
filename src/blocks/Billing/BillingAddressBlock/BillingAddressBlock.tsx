@@ -52,12 +52,17 @@ export interface BillingAddressValue {
 
 export type BillingAddressStatus = 'idle' | 'invalid' | 'server-error' | 'loading';
 
+/** Flag emoji prefixed straight onto the label -- Select's own option
+ * shape is plain text, so this is the flag Figma shows to the left of
+ * the country name without extending Select with an icon slot just for
+ * this one field. Renders in both the trigger and the dropdown list
+ * since both just print `option.label` as-is. */
 const DEFAULT_COUNTRIES: SelectOption[] = [
-  { label: 'Nigeria', value: 'NG' },
-  { label: 'United States', value: 'US' },
-  { label: 'United Kingdom', value: 'GB' },
-  { label: 'Kenya', value: 'KE' },
-  { label: 'South Africa', value: 'ZA' },
+  { label: '🇳🇬 Nigeria', value: 'NG' },
+  { label: '🇺🇸 United States', value: 'US' },
+  { label: '🇬🇧 United Kingdom', value: 'GB' },
+  { label: '🇰🇪 Kenya', value: 'KE' },
+  { label: '🇿🇦 South Africa', value: 'ZA' },
 ];
 
 const EMPTY_VALUE: BillingAddressValue = {
