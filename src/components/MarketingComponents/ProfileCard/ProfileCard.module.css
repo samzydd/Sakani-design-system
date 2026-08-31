@@ -1,0 +1,88 @@
+.root {
+  display: flex;
+  font-family: var(--font-sans);
+}
+
+/* ─── Compact ── */
+.rootCompact {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+/* ─── Detailed ── */
+.rootDetailed {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  width: 280px;
+}
+
+.infoCompact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.infoDetailed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+}
+
+.name {
+  margin: 0;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+}
+
+.role {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.bio {
+  margin: 0;
+  width: 240px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+/* bg/surface + shadow/xs + no border -- not a shared IconButton variant,
+   same reasoning as MobileNavigationMenu's own toggle button. */
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  color: var(--color-fg-default);
+  text-decoration: none;
+  cursor: pointer;
+}
+.socialBtn img,
+.socialBtn svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
