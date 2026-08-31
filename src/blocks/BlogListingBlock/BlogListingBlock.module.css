@@ -1,0 +1,38 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+  width: 1200px;
+  box-sizing: border-box;
+  padding: var(--space-48);
+  background: var(--color-bg-canvas);
+  font-family: var(--font-sans);
+}
+
+.heading {
+  width: 560px;
+}
+
+/* BlogListingFeaturedCard's own max-width:874px (a standalone-usage
+   default) would otherwise cap it below this block's actual content
+   width (1104px) -- overridden so it genuinely fills the block, same
+   reasoning ProductGridBlock gives for its own card override. */
+.fullWidth {
+  width: 100%;
+  max-width: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-24);
+  width: 100%;
+}
+
+/* BlogListingCard's own max-width:313px would otherwise cap it below
+   its grid cell's actual width (352px) and leave a gap -- same
+   override reasoning as .fullWidth above. */
+.card {
+  max-width: none;
+}

@@ -58,3 +58,5 @@ export { ChatInterfaceBlock } from './ChatInterfaceBlock';
 export type { ChatInterfaceBlockProps, ChatInterfaceBlockState } from './ChatInterfaceBlock';
 export { CRMDashboardBlock } from './CRMDashboardBlock';
 export type { CRMDashboardBlockProps } from './CRMDashboardBlock';
+export { BlogListingBlock } from './BlogListingBlock';
+export type { BlogListingBlockProps, BlogListingFeaturedPost, BlogListingPost } from './BlogListingBlock';
