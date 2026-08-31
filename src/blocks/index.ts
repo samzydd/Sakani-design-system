@@ -80,3 +80,5 @@ export { FaqBlock } from './FaqBlock';
 export type { FaqBlockProps, FaqItem } from './FaqBlock';
 export { BillingAddressBlock } from './Billing/BillingAddressBlock';
 export type { BillingAddressBlockProps, BillingAddressValue, BillingAddressStatus } from './Billing/BillingAddressBlock';
+export { BillingHistoryBlock } from './Billing/BillingHistoryBlock';
+export type { BillingHistoryBlockProps, BillingHistoryInvoice, BillingHistoryStatus } from './Billing/BillingHistoryBlock';
