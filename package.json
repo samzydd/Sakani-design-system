@@ -1,6 +1,6 @@
 {
   "name": "@sakaniui/react",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Sakani Design System — 1500+ token-driven React components and blocks, with light & dark modes.",
   "license": "MIT",
   "repository": {
@@ -40,12 +40,12 @@
       "require": "./dist/blocks.cjs"
     },
     "./style.css": "./dist/style.css",
-    "./tokens.css": "./src/styles/tokens.css"
+    "./tokens.css": "./dist/tokens.css"
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:lib": "vite build --config vite.lib.config.ts",
+    "build:lib": "vite build --config vite.lib.config.ts && cp src/styles/tokens.css dist/tokens.css",
     "prepare": "npm run build:lib",
     "lint": "oxlint",
     "preview": "vite preview",
