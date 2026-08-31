@@ -15,6 +15,8 @@ export const WithLabel: Story = {};
 export const NoLabel: Story = { args: { showLabel: false } };
 export const HalfStar: Story = { args: { rating: 3.5, reviewCount: 412 } };
 export const LowRating: Story = { args: { rating: 1.2, reviewCount: 8 } };
+export const HorizontalReverse: Story = { args: { orientation: 'horizontal-reverse' } };
+export const Vertical: Story = { args: { orientation: 'vertical' } };
 
 export const DarkMode: Story = {
   decorators: [(S) => <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}><S /></div>],
