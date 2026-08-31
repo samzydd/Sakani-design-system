@@ -1,0 +1,74 @@
+.root {
+  display: flex;
+  gap: var(--space-12);
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+}
+
+/* ─── Card ── */
+.rootCard {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 480px;
+  padding: var(--space-16);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+/* ─── Row -- no card chrome at all, matching Figma's own Row preview. ── */
+.rootRow {
+  align-items: flex-end;
+  width: 100%;
+  max-width: 480px;
+}
+
+.rowLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.description {
+  margin: 0;
+  width: 100%;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.applyBtn {
+  flex-shrink: 0;
+}

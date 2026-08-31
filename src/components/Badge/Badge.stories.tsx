@@ -5,6 +5,17 @@ const meta = {
   title: 'Core/Badge',
   component: Badge,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Compact label for status, category, or count.
+Matches the Figma "Badge" component set exactly:
+
+variant (Figma "BD" axis) -> neutral | accent | success | warning | danger | info
+emphasis (Figma "Emphasis" axis) -> subtle | solid
+
+6 variants x 2 emphasis = 12 combinations, matching Figma 1:1.
+No size axis (Figma has none) - padding is a fixed 2px/8px.
+No borders (Figma badges are borderless).
+
+Icon slots: leftIcon / rightIcon (any ReactNode).` } } },
   argTypes: {
     variant: {
       control: 'select',

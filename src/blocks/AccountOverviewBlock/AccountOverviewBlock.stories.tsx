@@ -5,6 +5,16 @@ const meta = {
   title: 'Blocks/Application/Account Overview',
   component: AccountOverviewBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly. Everything here is assembled from
+existing Sakani components -- no new primitives:
+
+Balance (available balance + change) -> Divider -> SpendingBalance
+-> optionally another Divider + a savings-goal Progress bar
+
+Mirrors the two states in the Figma block:
+- **default** — balance + spending only
+- **detailed** — adds a savings-goal section` } } },
   argTypes: {
     state: {
       control: 'select',

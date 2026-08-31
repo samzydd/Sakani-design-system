@@ -5,6 +5,8 @@ const meta = {
   title: 'Composite/Sidebar/Divider',
   component: SidebarDivider,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Horizontal rule between sections. Matches Figma "Sidebar Divider":
+border/subtle, full width, small vertical margin.` } } },
   decorators: [(S) => <div style={{ width: 224, padding: 12, background: 'var(--color-bg-surface)' }}><S /></div>],
 } satisfies Meta<typeof SidebarDivider>;
 

@@ -5,6 +5,8 @@ const meta = {
   title: 'Core/Label',
   component: Label,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Form field label with optional required asterisk.
+Wraps a native <label> so htmlFor wiring works correctly.` } } },
   args: { children: 'Email address' },
 } satisfies Meta<typeof Label>;
 

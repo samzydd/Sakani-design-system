@@ -26,6 +26,14 @@ const meta = {
   title: 'Composite/Table',
   component: Table,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Data table. Matches Figma "Table":
+- container: bg/surface, border/subtle 1px, radius-md
+- header row: bg/canvas, 44px, overline text (Geist), fg/muted, border/subtle divider
+- body rows: 44px, body/sm text (Geist), border/subtle dividers
+- selectable: custom checkbox — 18px, radius-sm, bg/surface, subtle border + shadow/sm
+drop shadow (NOT a heavy stroke), accent/default when checked
+
+Dark mode: all colors are semantic tokens, so .dark re-themes automatically.` } } },
   decorators: [(S) => <div style={{ width: 720 }}><S /></div>],
 } satisfies Meta<typeof Table>;
 
@@ -38,5 +46,22 @@ export const Selectable: Story = { render: () => <Table columns={columns as any}
 /** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
 export const DarkMode: Story = {
   decorators: [(S) => <div className="dark" style={{ width: 720, padding: 24, background: 'var(--color-bg-canvas)' }}><S /></div>],
+  render: () => <Table columns={columns as any} rows={rows} selectable />,
+};
+
+/** Matches Figma "Table" → Responsive=Stacked. Forced on regardless of viewport,
+ * so it's reviewable at any width — each row becomes a card, each column a
+ * label:value field. This is what `responsive="auto"` switches to automatically
+ * below --bp-sm (640px). */
+export const Stacked: Story = {
+  decorators: [(S) => <div style={{ width: 360 }}><S /></div>],
+  render: () => <Table columns={columns as any} rows={rows} selectable responsive="stacked" />,
+};
+
+/** Default mode is "auto" — resize this story's viewport (or the Storybook
+ * canvas) across 640px to see it switch between the table and stacked layouts
+ * live, with no prop change required. */
+export const AutoResponsive: Story = {
+  decorators: [(S) => <div style={{ width: '100%', maxWidth: 720, resize: 'horizontal', overflow: 'auto', border: '1px dashed var(--color-border-subtle)', padding: 16 }}><S /></div>],
   render: () => <Table columns={columns as any} rows={rows} selectable />,
 };

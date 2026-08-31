@@ -11,6 +11,18 @@ const meta = {
   title: 'Blocks/Application/Progress',
   component: OnboardingProgressBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly.
+
+Matches Figma "Progress": "Onboarding progress" heading -> a stack of
+label/percentage rows over bars. Each row is the existing ProgressStat
+component reused directly (label-row + Progress bar is exactly its own
+shape already) -- no new primitives here.
+
+\`variant\` stays an explicit prop (not derived): "Default" wraps the rows
+in a card with a heading, "Compact" is the bare stack with no card or
+heading at all -- a real structural difference, same reasoning as
+ActivityFeed's variant.` } } },
   args: { items },
 } satisfies Meta<typeof OnboardingProgressBlock>;
 

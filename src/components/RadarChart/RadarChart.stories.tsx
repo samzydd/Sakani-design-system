@@ -23,6 +23,37 @@ const meta = {
   title: 'Charts/Radar Chart',
   component: RadarChart,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Recharts wrapper styled with Sakani chart tokens. Matches Figma's "Radar
+charts" component set:
+
+- **default** — solid filled area, polygon grid, no dots
+- **dots** — filled area + dot markers at each data point
+- **dots-grid-none** — dots, but no grid/boundary at all
+- **lines-only** — two series, stroke only (no fill), no dots
+- **circle-grid** — circular grid instead of polygon, with dots
+- **circle-grid-no-lines** — circular grid with dots, no radial spoke lines
+- **grid-custom** — boundary-only grid, same treatment as "default"
+- **grid-filled** — polygon grid, alternating filled concentric bands
+- **circle-grid-filled** — same, circular bands instead of polygon
+- **multiple** — two series overlaid, semi-transparent fills
+- **custom-label** — two series, vertex labels replaced by a "value/value2" + category name block
+
+Not ported: the soft blurred glow behind one mockup ("Variant12") -- a
+decorative embellishment on top of the same underlying shape rather than
+a structurally different chart.
+
+grid-filled/circle-grid-filled's alternating bands aren't something
+PolarGrid can do (it only strokes rings, never fills them).
+grid-filled's bands are built as extra low-opacity \`<Radar>\` series at
+fixed fractions of the data's max value, so they automatically share the
+real series' exact polygon geometry with no separate coordinate math.
+circle-grid-filled needs true circles, which \`<Radar>\` can't draw (it
+only ever connects data points with straight lines) -- those are a
+measured SVG overlay instead, replicating Recharts' own
+cx/cy/outerRadius="70%" math (confirmed against its PolarUtils source)
+via a ResizeObserver, with PolarGrid left enabled on top of it for the
+spokes/ring outlines. Both give the "denser toward center" look for
+free, via ordinary alpha compositing of same-color layers.` } } },
   argTypes: {
     variant: {
       control: 'select',

@@ -5,6 +5,16 @@ const meta = {
   title: 'Blocks/Application/Activity Log',
   component: ActivityLogBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly. Assembled from existing Sakani
+components -- no new primitives:
+
+Card shell (bg/surface, border/default, radius/xl) -> "Recent activity"
+heading -> ActivityFeed
+
+Mirrors the two states in the Figma block:
+- **Timeline** — ActivityFeed's own "default" variant (icon rail)
+- **Compact** — ActivityFeed's "compact" variant (avatar-led rows)` } } },
   argTypes: {
     state: {
       control: 'select',

@@ -14,6 +14,9 @@ const meta = {
   title: 'Core/Avatar Group',
   component: AvatarGroup,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Overlapping stack of avatars with an optional "+N" overflow chip.
+Figma "Avatar Group" is a single composed component; this renders a
+flexible group from Avatar children with a ring gap so they read as a stack.` } } },
   argTypes: { size: { control: 'select', options: ['sm', 'md', 'lg', 'xl'] } },
   args: { avatars: people, max: 4, size: 'md' },
 } satisfies Meta<typeof AvatarGroup>;

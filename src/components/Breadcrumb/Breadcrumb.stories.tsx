@@ -5,6 +5,11 @@ const meta = {
   title: 'Composite/Breadcrumb',
   component: Breadcrumb,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Navigation trail. Matches Figma "Breadcrumb" set (1–6 crumbs) x Type:
+- **Text** — plain inline links, gap 6, chevron 16px. crumbs fg/muted, current crumb fg/default + medium, underline on link hover.
+- **Button** — added 2026-08-27. Every crumb (including the current one) renders as a small Ghost-style chip: fg/default text always (no muted/default split — the differentiation is the chip shape + hover, not text color), radius-md, shadow-xs, 2px/6px padding, gap 4, chevron 14px. Only linked crumbs get the bg/subtle hover; the current crumb stays static.
+
+Takes an array of items; the last is treated as the current page (not a link).` } } },
   argTypes: {
     variant: { control: 'select', options: ['text', 'button'] },
   },

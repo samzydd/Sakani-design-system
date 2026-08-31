@@ -5,6 +5,14 @@ const meta = {
   title: 'Composite/Accordion',
   component: Accordion,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Accordion / AccordionItem
+
+Collapsible content sections. Matches Figma "Accordion Item" set (Closed|Open)
+plus the "Accordion" wrapper component.
+
+Figma spec: item padding 14/16, gap 8, border/subtle bottom divider, title label/md.
+Interaction is real here (Figma can only show static Open/Closed): clicking the
+header toggles the panel. Supports single or multiple open items.` } } },
   decorators: [(S) => <div style={{ width: 480 }}><S /></div>],
 } satisfies Meta<typeof Accordion>;
 

@@ -25,6 +25,23 @@ const meta = {
   title: 'Blocks/E-commerce/Product Detail',
   component: ProductDetailBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly: wire "Add to cart" to your real cart
+state/API in place of the callback here.
+
+Matches Figma "Product Detail". Composed entirely from
+components already in this library: ProductGallery, WishlistButton,
+StarRating, StockStatus, PriceDisplay, ColorSwatch, SizeSelector,
+QuantitySelector, Button, and Divider -- this block is purely layout +
+wiring, no new visual primitives of its own (StarRating was the one
+piece genuinely missing from the library, since Figma's Star Rating had
+no matching component yet -- built alongside this block, not invented
+ad hoc inside it, so it's reusable everywhere else a rating shows up).
+
+Color/size selection and quantity are genuinely live, wired state (not
+decorative) -- picking a color updates the "Color: {label}" text above
+the swatches, same for size, matching Figma's own labeled-row behavior
+where the label reflects whatever's currently selected.` } } },
   args: {
     name: 'Ceramic Pour-Over Mug',
     images,

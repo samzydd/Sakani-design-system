@@ -5,6 +5,14 @@ const meta = {
   title: 'Core/Avatar',
   component: Avatar,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `User/entity avatar. Matches Figma "Avatar" set:
+AV size (sm|md|lg|xl) x Type (Initials|Icon|Image)
+
+Exact Figma spec:
+sizes: sm 24 · md 32 · lg 40 · xl 48 (all radius-full)
+fill: bg/subtle · initials text: fg/muted, scaling label style per size
+Type is inferred from props: \`src\` -> Image, \`initials\` -> Initials, else Icon
+Image type only: 1px border/subtle ring (added across every size).` } } },
   argTypes: { size: { control: 'select', options: ['sm', 'md', 'lg', 'xl'] } },
   args: { size: 'md' },
 } satisfies Meta<typeof Avatar>;

@@ -5,7 +5,19 @@ const meta = {
   title: 'Blocks/Data & Content/Kanban Board',
   component: KanbanBoardBlock,
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: {
+    docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file and edit
+it: change the columns, swap the sample tasks, adjust the card content.
+Assembled entirely from Sakani components.
+
+Mirrors the four states in the Figma block:
+- **default** — columns with counts, cards, and an add affordance
+- **loading** — card skeletons hold each column's shape
+- **empty-column** — a column with no cards shows a dashed drop zone
+- **dragging** — a card lifts while a placeholder marks the drop target
+
+The column is defined locally (below) rather than as a library component —
+it exists to serve this block, so it lives with the block.` } }, layout: 'fullscreen' },
   argTypes: {
     state: { control: 'select', options: ['default', 'loading', 'empty-column', 'dragging'] },
   },

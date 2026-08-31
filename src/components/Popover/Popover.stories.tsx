@@ -23,6 +23,11 @@ const meta = {
   title: 'Composite/Popover',
   component: Popover,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Floating panel anchored to a trigger. Matches Figma "Popover" (Buttons 1-3),
+with title/description toggles.
+
+Figma spec: bg/surface, border/subtle 1px, radius-md (8), padding 16, gap 10, shadow/lg.
+Opens on trigger click; closes on outside click or Escape.` } } },
   args: { trigger: <TriggerBtn />, title: 'Popover title', description: 'Supporting description text for this popover.' },
   decorators: [(S) => <div style={{ padding: 40 }}><S /></div>],
 } satisfies Meta<typeof Popover>;

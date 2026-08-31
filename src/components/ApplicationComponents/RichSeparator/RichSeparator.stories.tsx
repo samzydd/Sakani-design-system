@@ -18,6 +18,17 @@ const meta = {
   title: 'Application/Rich Separator',
   component: RichSeparator,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Two divider lines flanking arbitrary centered content. Matches Figma
+"Rich Separator" -- its 3 style previews (Text: an uppercase overline
+label; Badge text: a brand icon + name; Icon: a bordered icon-wrap
+circle) are really just 3 examples of "whatever sits in the middle",
+not a fixed enum, so this takes \`children\` rather than a variant prop.
+\`label\` is a convenience shorthand for the common Text case, styled as
+that same overline automatically.
+
+The two lines reuse the existing Divider component (its plain default
+horizontal line is a direct, unmodified match for Figma's line halves
+here) rather than a bespoke one.` } } },
   decorators: [(S) => <div style={{ width: 400 }}><S /></div>],
 } satisfies Meta<typeof RichSeparator>;
 

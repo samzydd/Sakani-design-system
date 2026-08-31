@@ -29,8 +29,6 @@ export interface ComboboxOption {
   label: string;
   icon?: React.ReactNode;
   disabled?: boolean;
-  /** Shows the panel's loading state (Figma: Panel State=Loading). */
-  loading?: boolean;
 }
 
 export interface ComboboxProps {
@@ -42,6 +40,8 @@ export interface ComboboxProps {
   error?: string;
   placeholder?: string;
   disabled?: boolean;
+  /** Shows the panel's loading state (Figma: Panel State=Loading). */
+  loading?: boolean;
   /** Controlled selected value(s). */
   value?: string | string[];
   onChange?: (value: string | string[]) => void;

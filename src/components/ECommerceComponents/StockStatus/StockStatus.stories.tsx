@@ -5,6 +5,21 @@ const meta = {
   title: 'E-commerce/Stock Status',
   component: StockStatus,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Stock Status" (E-commerce set): a subtle-emphasis Badge
+in success/warning/danger. A thin wrapper around the shared Badge
+component -- the bg/fg pairs match Badge's own success/warning/danger
+"subtle" variants exactly.
+
+Figma's 3 style previews all collapse into one derived value: since the
+"Low Stock" label itself shows a literal count ("Only 3 left"), the
+component takes inventory \`quantity\` directly rather than a manual
+status enum -- both the badge color AND the label text derive from
+\`quantity\` vs. \`lowStockThreshold\` (default 5):
+quantity <= 0 -> danger, "Out of stock"
+0 < quantity <= lowStockThreshold -> warning, "Only {quantity} left"
+quantity > lowStockThreshold -> success, "In stock"
+No separate manual status/label props needed for the common case; an
+optional \`label\` override still exists for anything unusual.` } } },
 } satisfies Meta<typeof StockStatus>;
 
 export default meta;

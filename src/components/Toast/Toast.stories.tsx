@@ -5,6 +5,12 @@ const meta = {
   title: 'Composite/Toast',
   component: Toast,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Transient notification. Matches Figma "Toast" set:
+Status (Success|Error|Info), Title/Description toggles.
+
+Figma spec: bg/surface, border/subtle 1px, radius-md, padding 14/12/14/14, gap 12,
+shadow/lg. A leading status icon is tinted per status; optional dismiss button.
+This is the presentational Toast; queueing/positioning is left to the app.` } } },
   argTypes: { status: { control: 'select', options: ['success', 'error', 'info'] } },
   args: { status: 'success', title: 'Saved', description: 'Your changes have been saved.', onDismiss: () => {} },
 } satisfies Meta<typeof Toast>;

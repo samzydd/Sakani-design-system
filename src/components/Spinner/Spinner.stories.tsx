@@ -5,6 +5,10 @@ const meta = {
   title: 'Core/Spinner',
   component: Spinner,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Animated loading indicator. Inherits currentColor so it works on any background.
+Use inside buttons (loading state) or as a standalone page/section loader.
+
+Size axis → size prop (sm | md | lg)` } } },
   args: { size: 'md' },
 } satisfies Meta<typeof Spinner>;
 

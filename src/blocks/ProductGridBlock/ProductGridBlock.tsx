@@ -6,11 +6,15 @@
  * real cart/catalog state in place of the callbacks here.
  *
  * Matches Figma "Product Grid" (node 1658:29889, 2 states: Default, With
- * Filters). Composed entirely from existing library components -- Badge
- * (the "Shop" eyebrow), Button (the "Sort" control), and ProductCard
- * (E-commerce set, already covering the card's own image/rating/price/
- * sale-badge/out-of-stock/swatches/button treatment) -- no new visual
- * primitives, this block is purely heading + filter bar + grid layout.
+ * Filters). Composed entirely from existing library components --
+ * SectionHeading (Marketing, the "Shop" eyebrow + title + subtitle --
+ * this block used to build that shape inline before SectionHeading
+ * existed as its own component; now reuses it instead of keeping a
+ * second copy to drift out of sync), Button (the "Sort" control), and
+ * ProductCard (E-commerce set, already covering the card's own image/
+ * rating/price/sale-badge/out-of-stock/swatches/button treatment) -- no
+ * new visual primitives, this block is purely heading + filter bar +
+ * grid layout.
  *
  * Whether the filter bar (product count + Sort button) renders is a real
  * layout choice (Figma's "With Filters" style), not something derivable
@@ -34,8 +38,8 @@
  */
 
 import React from 'react';
-import { Badge } from '../../components/Badge';
 import { Button } from '../../components/Button';
+import { SectionHeading } from '../../components/MarketingComponents/SectionHeading';
 import { ProductCard, type ProductCardProps } from '../../components/ECommerceComponents/ProductCard';
 import styles from './ProductGridBlock.module.css';
 
@@ -70,11 +74,7 @@ export const ProductGridBlock: React.FC<ProductGridBlockProps> = ({
 
   return (
     <div className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
-      <div className={styles.heading}>
-        {eyebrow && <Badge variant="accent" emphasis="subtle">{eyebrow}</Badge>}
-        <h2 className={styles.title}>{title}</h2>
-        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-      </div>
+      <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} align="center" className={styles.heading} />
 
       {showFilterBar && (
         <div className={styles.filterBar}>

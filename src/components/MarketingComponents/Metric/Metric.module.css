@@ -1,0 +1,50 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  font-family: var(--font-sans);
+}
+
+.numRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.value {
+  margin: 0;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+}
+
+.trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.trendUp {
+  color: var(--color-success-solid);
+}
+
+.trendDown {
+  color: var(--color-danger-solid);
+}
+
+.label {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}

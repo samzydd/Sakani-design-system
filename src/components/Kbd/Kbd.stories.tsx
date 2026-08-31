@@ -5,6 +5,10 @@ const meta = {
   title: 'Core/Kbd',
   component: Kbd,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Keyboard shortcut display. Renders a <kbd> element styled as a key cap.
+Use inline inside prose or next to menu items to hint shortcuts.
+
+Examples: <Kbd>⌘K</Kbd> <Kbd>Ctrl</Kbd> + <Kbd>S</Kbd>` } } },
   args: { children: '⌘K' },
 } satisfies Meta<typeof Kbd>;
 

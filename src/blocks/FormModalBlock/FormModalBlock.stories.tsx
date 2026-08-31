@@ -7,6 +7,19 @@ const meta = {
   title: 'Blocks/Application/Form Modal',
   component: FormModalBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly: swap the fields for your own form.
+
+Matches Figma "Form Modal": "Invite a teammate" -- Email input + Role
+select, Cancel/Send invite footer. Reuses the shared Modal shell (its
+\`children\` slot renders the form between the header and the footer's
+Divider) rather than duplicating Modal's portal/focus-trap/dark-mode
+plumbing here -- Input and Select are dropped straight in unmodified,
+both already exact matches for Figma's Input/Select components.
+
+Loading isn't a separate manual state either -- submitting sets
+\`confirmLoading\` on Modal, which already renders the spinner via Button;
+only the label text ("Send invite" -> "Sending…") is swapped alongside it.` } } },
 } satisfies Meta<typeof FormModalBlock>;
 
 export default meta;

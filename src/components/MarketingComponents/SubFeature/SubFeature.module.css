@@ -1,0 +1,63 @@
+.rootBordered {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-20);
+  font-family: var(--font-sans);
+}
+
+/* Divider's own height:100% can't resolve against this row's
+   content-sized (indefinite) height, so it falls back to its own
+   min-height:1em floor instead of stretching to match the icon+text
+   group's actual height -- same fix BlogBlockquote's own rail needed. */
+.rail {
+  flex-shrink: 0;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.contentHorizontal {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  font-family: var(--font-sans);
+}
+
+.contentVertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  font-family: var(--font-sans);
+}
+
+.textHorizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  width: 280px;
+}
+
+.textVertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  width: 240px;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}

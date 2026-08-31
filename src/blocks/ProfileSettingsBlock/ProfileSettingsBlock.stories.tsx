@@ -6,6 +6,18 @@ const meta = {
   title: 'Blocks/Application/Profile Settings',
   component: ProfileSettingsBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly.
+
+Matches Figma "Profile Settings": "Profile" heading -> AvatarUpload
+(horizontal, reused unmodified -- its own filled/empty states already
+are Figma's "Remove" (danger outline) vs "Upload" (outline) buttons) ->
+Full name / Email inputs -> full-width "Save changes" Button.
+
+Figma's "Filled"/"Empty" style isn't a manual prop here either -- every
+piece already derives its own look from data (AvatarUpload from \`src\`,
+each Input from its own value vs placeholder), same pattern used
+throughout this Application set.` } } },
   decorators: [(S) => <div style={{ width: 440 }}><S /></div>],
 } satisfies Meta<typeof ProfileSettingsBlock>;
 

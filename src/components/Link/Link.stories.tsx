@@ -5,6 +5,8 @@ const meta = {
   title: 'Core/Link',
   component: Link,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Inline anchor with hover/visited states and optional external icon.
+Use for navigation and inline references — not for page-level CTAs (use Button).` } } },
   args: { children: 'Read the docs', href: '#' },
 } satisfies Meta<typeof Link>;
 

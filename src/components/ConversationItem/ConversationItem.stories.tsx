@@ -6,6 +6,13 @@ const meta = {
   title: 'Chat/Conversation Item',
   component: ConversationItem,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `One row in a chat conversation list. Matches the Figma "Conversation Item" set:
+
+state (Figma "State" axis) -> default | hover | active | unread | typing | muted
+
+Avatar (+ presence dot) · name + timestamp · preview (or "typing...") ·
+unread count. Active uses accent/subtle; Unread bolds the name and adds a
+count; Typing replaces the preview; Muted hides presence and adds a bell-off.` } } },
   argTypes: { state: { control: 'select', options: ['default', 'hover', 'active', 'unread', 'typing', 'muted'] } },
   args: {
     avatar: <Avatar initials="AC" />,

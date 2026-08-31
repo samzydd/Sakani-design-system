@@ -5,6 +5,11 @@
   font-family: var(--font-sans);
 }
 
+.rowVertical {
+  flex-direction: column;
+  justify-content: center;
+}
+
 .stars {
   display: flex;
   align-items: flex-start;

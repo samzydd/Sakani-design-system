@@ -5,6 +5,8 @@ const meta = {
   title: 'Core/Divider',
   component: Divider,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Visual separator. Horizontal (default) or vertical.
+Optional label sits centred in the line — common for "or" dividers in auth forms.` } } },
 } satisfies Meta<typeof Divider>;
 
 export default meta;

@@ -31,6 +31,22 @@ const meta = {
   title: 'Application/Stock Market',
   component: StockMarket,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Stock Market" -- its 3 style previews collapse to 2 real
+axes, both derived rather than manual props (same judgment applied
+throughout this Application set):
+- **Positive vs. Negative** — entirely computable from \`change.amount\`, which also drives the trend icon/color.
+- **Compact row vs. Full card** — the Full card is a genuinely different structure (header + larger ticker + a bar chart), not derivable from the row's own data, so its presence is driven by whether \`chart\` data was passed, same idea as NotificationItem's card-vs-row split.
+
+\`logo\` is a required, fully consumer-supplied slot -- the component itself
+ships no brand marks. The stories use the real Apple/Tesla glyphs (pulled
+directly from the Figma file) purely as fixtures to demonstrate the slot.
+
+The chart reuses the real BarChart component (its default variant's blue
+fill already matches Figma's chart/2 bars exactly) rather than a bespoke
+one -- accepting that BarChart's default variant has no horizontal grid
+lines, where this Figma reference shows faint ones, since forcing
+variant="multiple" just to get gridlines on a single series would be a
+worse mismatch than the missing lines themselves.` } } },
   decorators: [(S) => <div style={{ width: 400 }}><S /></div>],
 } satisfies Meta<typeof StockMarket>;
 

@@ -10,6 +10,13 @@ const meta = {
   title: 'Composite/Board Column',
   component: BoardColumn,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `One Kanban column. Matches the Figma "Board Column" set:
+
+state (Figma "State" axis) -> default | empty | loading
+
+Header (status dot + title + count + add/menu actions) · a stack of
+BoardCard children · an "Add task" footer. Empty shows a dashed drop zone;
+Loading is handled by the caller passing skeleton children (or none).` } } },
 } satisfies Meta<typeof BoardColumn>;
 export default meta;
 type Story = StoryObj<typeof meta>;

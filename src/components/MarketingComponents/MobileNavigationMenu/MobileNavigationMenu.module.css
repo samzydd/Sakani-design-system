@@ -1,0 +1,119 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 375px;
+  box-sizing: border-box;
+  padding: var(--space-12);
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+.label {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
+
+/* bg/surface + shadow/xs + no border -- not a shared IconButton variant,
+   see file doc. No :hover rule -- this is a touch/mobile control, and a
+   mobile element shouldn't carry a hover state (there's no pointer to
+   hover with, and on touch devices a `:hover` rule can visibly "stick"
+   after a tap until the next unrelated touch elsewhere clears it). */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--space-8);
+  background: var(--color-bg-surface);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  color: var(--color-fg-default);
+  cursor: pointer;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Smooth open/close, animated via `max-height` (unlike plain `height`,
+   which can't transition to/from `auto`) between two concrete pixel
+   lengths -- 0 and the live-measured content height, set inline from
+   MobileNavigationMenu.tsx. Two earlier attempts didn't hold up in this
+   browser: the usual `grid-template-rows: 0fr <-> 1fr` trick interpolated
+   fine when collapsing but snapped instantly to full height when
+   expanding, and even switching that same grid approach to concrete
+   pixel row-track values (still via grid-template-rows) reproduced the
+   identical one-directional snap -- so the problem was specifically
+   animating a CSS Grid row track, not the fr-unit keywords. Plain
+   `max-height` on a non-grid block sidesteps grid track-sizing
+   animation entirely and transitions correctly in both directions.
+   margin-top and opacity ride the same transition so the reveal reads
+   as one smooth motion, not just a height change. Always mounted (see
+   file doc) so both directions can actually animate. */
+.collapse {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 0;
+  opacity: 0;
+  transition: max-height 260ms ease, margin-top 260ms ease, opacity 200ms ease;
+}
+.collapseOpen {
+  margin-top: var(--space-12);
+  opacity: 1;
+}
+.collapseInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapse {
+    transition: none;
+  }
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+/* No :hover rule -- see .toggle's own comment above; same reasoning
+   applies to every touch-target in this mobile menu. */
+.navLink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+  padding: var(--space-10) 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+}

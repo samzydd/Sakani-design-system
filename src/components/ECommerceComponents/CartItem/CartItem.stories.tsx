@@ -8,6 +8,26 @@ const meta = {
   title: 'E-commerce/Cart Item',
   component: CartItem,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Matches Figma "Cart Item" (E-commerce set): thumbnail + name/variant/
+quantity stepper -> price + remove button, right-aligned.
+
+Figma's "Default"/"Sale" style previews collapse into one derived axis --
+same reasoning as StockMarket's positive/negative: \`compareAtPrice\` being
+set switches to the struck-through original price + danger-solid sale
+price; its absence renders the plain single price. Not a manual variant
+prop since it's fully computable from the price data itself.
+
+The quantity stepper reuses the shared QuantitySelector component
+(also E-commerce set) directly -- it's the same standalone component
+Figma's own "Quantity Selector" node describes, not a separate
+approximation.
+
+The remove button (Minus icon, not Trash -- taken directly from Figma)
+reuses the shared IconButton (variant="outline", size="sm") -- Figma's
+"Sale" style export drops the button's own bg/border/shadow classes, but
+the screenshot shows both style previews with an identical bordered
+square, so that reads as an authoring slip in the export, not an
+intentional per-variant difference.` } } },
   decorators: [(S) => <div style={{ width: 472 }}><S /></div>],
 } satisfies Meta<typeof CartItem>;
 

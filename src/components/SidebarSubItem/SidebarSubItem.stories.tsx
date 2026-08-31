@@ -5,6 +5,9 @@ const meta = {
   title: 'Composite/Sidebar/Sub Item',
   component: SidebarSubItem,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Nested nav item. Matches Figma "Sidebar Sub Item": State (Default|Hover|Active|Disabled).
+Figma spec: radius-sm, padding 0/10, label/sm. Default/Hover fg/muted, Active fg/default.
+Indented under a parent SidebarItem (no icon).` } } },
   args: { label: 'Sub item' },
   decorators: [(S) => <div style={{ width: 224, padding: 12, background: 'var(--color-bg-surface)' }}><S /></div>],
 } satisfies Meta<typeof SidebarSubItem>;

@@ -31,6 +31,30 @@ const meta = {
   title: 'Blocks/Authentication/Sign Up',
   component: SignUpBlock,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly: wire \`onSubmit\` to your real
+registration call in place of the simulated one here.
+
+Matches Figma "Sign up" (6 states, collapsed into one \`status\` state
+machine, same pattern as the other Authentication blocks):
+- **'idle'** — Default/Filled: just field state, not a manual prop
+- **'validation-error'** — passwords don't match on submit; error surfaces only on the Confirm field, same as ResetPasswordBlock
+- **'server-error'** — Alert banner ("Sign up failed" / email already registered). Unlike LoginBlock's server-error, Figma does NOT clear or red-border any field here -- every value just stays as typed, which makes sense for an "email taken" failure (there's nothing wrong with what was typed, just followed literally from Figma)
+- **'loading'** — all four fields disabled here, and unlike LoginBlock's own (inconsistent) Loading state, Figma's Sign Up Loading dims all four consistently
+- **'skeleton'**
+
+No dedicated Success view -- same reasoning as LoginBlock: a real signup
+either logs the user straight in or sends a verification email (see
+EmailVerificationBlock), so there's nothing distinct to render here.
+
+Full name / Email reuse the shared Input directly (leading icon only,
+no interactive trailing control). Password / Confirm password are
+hand-built for the same reason as every other password field in this
+set: the trailing eye toggle is a real interactive control, and Input's
+trailingIcon slot is decorative-only (aria-hidden).
+
+Same third-party-trademark reasoning as LoginBlock for the social row:
+\`socialProviders\` is a fully consumer-supplied slot, not shipped here.` } } },
   args: { socialProviders },
   decorators: [(S) => <div style={{ width: 400 }}><S /></div>],
 } satisfies Meta<typeof SignUpBlock>;

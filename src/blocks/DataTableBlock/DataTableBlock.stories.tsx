@@ -5,7 +5,21 @@ const meta = {
   title: 'Blocks/Application/Data Table + Toolbar',
   component: DataTableBlock,
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: {
+    docs: { description: { component: `A COMPOSITION EXAMPLE, not a configurable component. Copy this file into
+your project and edit it directly: swap the sample data for your own, change
+the columns, add or remove toolbar controls. Everything here is assembled
+from Sakani components — no new primitives.
+
+Mirrors the six states in the Figma block:
+- **default** — records loaded, no filters or selection
+- **filtered** — search + filter chips applied
+- **bulk** — rows selected; toolbar swaps for a bulk-actions bar
+- **loading** — skeleton rows hold the layout
+- **empty** — query returned nothing
+- **error** — request failed, recovery offered
+
+Layout: toolbar → Table → footer (count + Pagination).` } }, layout: 'fullscreen' },
   argTypes: {
     state: {
       control: 'select',

@@ -14,6 +14,20 @@ const meta = {
   title: 'Composite/Combobox',
   component: Combobox,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Searchable select with single or multi-select. Matches the Figma Combobox family:
+- Combobox field: Mode (Single|Multi) x Size (sm|md|lg) x State (Default|Filled|Focus|Open|Error|Disabled)
+- Combobox Panel: Results | Empty | Loading
+- Combobox Option: Mode (Single|Multi) x State (Default|Hover|Selected|Disabled)
+
+Figma spec:
+field: bg/surface, border/default 1px, radius-md (8), padding 10/12/10/14
+focus border/focus 1.5px · error danger/solid 1.5px · disabled bg/subtle
+heights sm 32 · md 40 · lg 48
+panel: bg/surface, border/default, radius-sm (6), padding 4, gap 2, shadow/lg
+option: radius 4, padding 8, gap 8, hover/selected bg/subtle, label body/sm
+
+This is a functional, accessible combobox: keyboard open/close, filter-as-you-type,
+single or multi selection with chips.` } } },
   argTypes: {
     mode: { control: 'inline-radio', options: ['single', 'multi'] },
     size: { control: 'select', options: ['sm', 'md', 'lg'] },

@@ -5,6 +5,8 @@ const meta = {
   title: 'Composite/Sidebar/Group Label',
   component: SidebarGroupLabel,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Section heading. Matches Figma "Sidebar Group Label":
+padding 8/10/4, overline text style, fg/subtle, uppercase.` } } },
   args: { children: 'Platform' },
   decorators: [(S) => <div style={{ width: 224, padding: 12, background: 'var(--color-bg-surface)' }}><S /></div>],
 } satisfies Meta<typeof SidebarGroupLabel>;

@@ -1,0 +1,106 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-16);
+  box-sizing: border-box;
+  width: 480px;
+  padding: var(--space-16);
+  background: var(--color-bg-surface);
+  border: var(--border-width-050) solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-sans);
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+  color: var(--color-fg-default);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.cardRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  min-width: 0;
+}
+
+.brandWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 34px;
+  background: var(--color-bg-canvas);
+  border-radius: var(--radius-lg);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.numRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.number {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-fg-default);
+  white-space: nowrap;
+}
+
+.expiry {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  width: 100%;
+  padding: var(--space-8) 0;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: var(--color-fg-muted);
+}
+
+.emptyLabel {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}

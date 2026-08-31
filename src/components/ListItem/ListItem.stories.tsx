@@ -7,6 +7,10 @@ const meta = {
   title: 'Composite/List Item',
   component: ListItem,
   tags: ['autodocs'],
+  parameters: { docs: { description: { component: `Row for lists/menus. Matches Figma "List Item": State (Default|Hover|Selected),
+Title/Description toggles. Figma spec: bg/surface, radius-sm, padding 10/12, gap 12,
+title label/md fg/default, description body/xs fg/muted.
+Supports leading (icon/avatar) and trailing (badge/action) slots.` } } },
   args: { title: 'List item title', description: 'Supporting description text' },
   decorators: [(S) => <div style={{ width: 360 }}><S /></div>],
 } satisfies Meta<typeof ListItem>;
