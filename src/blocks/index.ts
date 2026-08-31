@@ -70,3 +70,5 @@ export { HeroBlock } from './HeroBlock';
 export type { HeroBlockProps, HeroAction, HeroLayout } from './HeroBlock';
 export { LogoCloudBlock } from './LogoCloudBlock';
 export type { LogoCloudBlockProps, LogoCloudVariant, LogoCloudBrand } from './LogoCloudBlock';
+export { PricingTableBlock } from './PricingTableBlock';
+export type { PricingTableBlockProps, PricingPlan } from './PricingTableBlock';
