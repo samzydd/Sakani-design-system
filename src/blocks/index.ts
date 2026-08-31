@@ -62,3 +62,5 @@ export { BlogListingBlock } from './BlogListingBlock';
 export type { BlogListingBlockProps, BlogListingFeaturedPost, BlogListingPost } from './BlogListingBlock';
 export { CareersBlock } from './CareersBlock';
 export type { CareersBlockProps, CareersJob } from './CareersBlock';
+export { CtaBannerBlock } from './CtaBannerBlock';
+export type { CtaBannerBlockProps, CtaBannerAction, CtaBannerVariant } from './CtaBannerBlock';

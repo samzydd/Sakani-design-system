@@ -1,0 +1,78 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 1263px;
+  box-sizing: border-box;
+  padding: var(--space-48);
+  background: var(--color-bg-canvas);
+  font-family: var(--font-sans);
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-64) var(--space-48);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+}
+
+.bannerNeutral {
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-default);
+}
+
+/* accent/default and fg/on-accent are a matched pair that both flip
+   together in dark mode by design (dark mode's own accent surface goes
+   light, so its text correctly flips dark to stay readable) -- same
+   mechanism Button's own primary variant already relies on, unlike
+   TeamCard's fg/on-inverse bug where the surface it sat on (a fixed,
+   never-flipping photo scrim) had no matching counterpart to flip with. */
+.bannerAccent {
+  background: var(--color-accent-default);
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  color: var(--color-fg-default);
+  text-align: center;
+}
+
+.titleAccent {
+  color: var(--color-fg-on-accent);
+}
+
+.description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-fg-default);
+  /* Figma's own Neutral copy wraps to 2 lines at this width; Accent's
+     copy is unconstrained and fits one line at the banner's actual
+     width -- a real difference between the two exports, not an
+     oversight, so it's kept per-variant rather than unified. */
+  width: 554px;
+  max-width: 100%;
+}
+
+.descriptionAccent {
+  width: auto;
+  white-space: nowrap;
+  color: var(--color-fg-subtle);
+}
+
+.ctaRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+}
