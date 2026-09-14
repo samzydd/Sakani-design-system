@@ -93,11 +93,17 @@ interface ColumnProps {
   dot: string;
   count: number | string;
   variant?: 'default' | 'empty' | 'loading';
+  /** When the board is stretched taller than its real content (e.g. embedded
+   * in a fixed-height demo frame), stretches every column to equal height
+   * and caps off its real cards with a dashed placeholder slot down to the
+   * bottom instead of leaving blank canvas. No-op at the board's natural
+   * height. */
+  fillPlaceholders?: boolean;
   children?: React.ReactNode;
 }
 
-const Column: React.FC<ColumnProps> = ({ title, dot, count, variant = 'default', children }) => (
-  <div className={styles.column}>
+const Column: React.FC<ColumnProps> = ({ title, dot, count, variant = 'default', fillPlaceholders, children }) => (
+  <div className={[styles.column, fillPlaceholders ? styles['column--fill'] : ''].filter(Boolean).join(' ')}>
     <div className={styles.column__header}>
       <span className={styles.column__dot} style={{ background: dot }} aria-hidden="true" />
       <span className={styles.column__title}>{title}</span>
@@ -111,7 +117,7 @@ const Column: React.FC<ColumnProps> = ({ title, dot, count, variant = 'default',
       </button>
     </div>
 
-    <div className={styles.column__body}>
+    <div className={[styles.column__body, fillPlaceholders ? styles['column__body--fill'] : ''].filter(Boolean).join(' ')}>
       {variant === 'empty' ? (
         <div className={styles.dropZone}>Drop tasks here</div>
       ) : variant === 'loading' ? (
@@ -123,7 +129,10 @@ const Column: React.FC<ColumnProps> = ({ title, dot, count, variant = 'default',
           </div>
         ))
       ) : (
-        children
+        <>
+          {children}
+          {fillPlaceholders && <div className={styles.columnFiller} aria-hidden="true" />}
+        </>
       )}
     </div>
 
@@ -181,11 +190,18 @@ const renderTask = (
 export interface KanbanBoardBlockProps {
   state?: KanbanBoardBlockState;
   className?: string;
+  /** When the board is stretched taller than its real content (e.g. embedded
+   * in a fixed-height demo frame), stretches every column to equal height
+   * and caps off its real cards with a dashed placeholder slot down to the
+   * bottom instead of leaving blank canvas. No-op at the board's natural
+   * height. */
+  fillPlaceholders?: boolean;
 }
 
 export const KanbanBoardBlock: React.FC<KanbanBoardBlockProps> = ({
   state = 'default',
   className,
+  fillPlaceholders,
 }) => {
   // ---- drag and drop -----------------------------------------------------
   // Native HTML5 drag and drop, kept deliberately simple: enough to feel the
@@ -228,7 +244,7 @@ export const KanbanBoardBlock: React.FC<KanbanBoardBlockProps> = ({
     </div>
 
     {/* ---- Columns ---- */}
-    <div className={styles.columns}>
+    <div className={[styles.columns, fillPlaceholders ? styles['columns--fill'] : ''].filter(Boolean).join(' ')}>
       {source.map((col, colIndex) => {
         const isEmptyCol = state === 'empty-column' && colIndex === 2;
         const variant =
@@ -247,6 +263,7 @@ export const KanbanBoardBlock: React.FC<KanbanBoardBlockProps> = ({
             dot={col.dot}
             count={state === 'loading' ? '—' : isEmptyCol ? 0 : col.tasks.length}
             variant={variant}
+            fillPlaceholders={fillPlaceholders}
           >
             {col.tasks.map((task, i) => {
               // In the dragging state the last card of column 2 lifts out,

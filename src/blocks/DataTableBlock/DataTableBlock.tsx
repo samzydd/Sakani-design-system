@@ -101,11 +101,17 @@ const columns: TableColumn<Member>[] = [
 export interface DataTableBlockProps {
   state?: DataTableBlockState;
   className?: string;
+  /** When the block is stretched taller than its real content (e.g. embedded
+   * in a fixed-height demo frame), extends the table with faint placeholder
+   * row dividers down to the bottom instead of leaving blank canvas below
+   * the footer. No-op at the block's natural height. */
+  fillPlaceholders?: boolean;
 }
 
 export const DataTableBlock: React.FC<DataTableBlockProps> = ({
   state = 'default',
   className,
+  fillPlaceholders,
 }) => {
   const [page, setPage] = React.useState(1);
   const [selected, setSelected] = React.useState<number[]>(state === 'bulk' ? [0, 1, 2] : []);
@@ -185,6 +191,21 @@ export const DataTableBlock: React.FC<DataTableBlockProps> = ({
       ) : state === 'error' ? (
         <div className={styles.panel}>
           <EmptyState type="error" actionLabel="Try again" onAction={() => {}} />
+        </div>
+      ) : fillPlaceholders ? (
+        <div className={styles.tableShell}>
+          <Table<Member>
+            columns={columns}
+            rows={state === 'filtered' ? rows : orderedRows}
+            selectable
+            selectedRows={selected}
+            onSelectionChange={setSelected}
+            rowKey={(row) => row.email}
+            reorderable={state === 'default'}
+            onReorder={setOrderedRows}
+            bordered={false}
+          />
+          <div className={styles.tableFiller} aria-hidden="true" />
         </div>
       ) : (
         <Table<Member>

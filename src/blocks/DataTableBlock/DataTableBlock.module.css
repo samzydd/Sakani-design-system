@@ -36,6 +36,36 @@
   color: var(--color-fg-default);
 }
 
+/* Wraps the real Table + its filler together so the pair reads as one
+   continuous bordered box -- the Table itself renders `bordered={false}`
+   here and this shell supplies the border/radius/clip instead. */
+.tableShell {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-height: 0;
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-surface);
+}
+
+/* Continues the table's own 44px row-divider rhythm (see Table.module.css
+   .bodyCell) down through whatever blank space is left below the real
+   rows -- only actually visible when an ancestor forces this block taller
+   than its content (fillPlaceholders); collapses to 0 height otherwise. */
+.tableFiller {
+  flex: 1 1 0;
+  min-height: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-border-subtle) 0,
+    var(--color-border-subtle) var(--border-width-100),
+    transparent var(--border-width-100),
+    transparent 44px
+  );
+}
+
 /* ---- non-data states share this panel ---- */
 .panel {
   display: flex;

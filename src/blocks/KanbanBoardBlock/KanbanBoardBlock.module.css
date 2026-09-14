@@ -31,6 +31,18 @@
   scrollbar-gutter: stable;
 }
 
+/* Only applied when fillPlaceholders is set -- stretches every column to
+   the row's own cross-size instead of each hugging its own content height
+   (the default flex-start), and lets the row itself grow into whatever
+   extra height an ancestor forces (e.g. a taller demo embed). Scoped to
+   this modifier so the board's normal uneven-column look is unaffected
+   when the prop is off. */
+.columns--fill {
+  align-items: stretch;
+  flex: 1 1 0;
+  min-height: 0;
+}
+
 /* ---- column ---- */
 .column {
   display: flex;
@@ -41,6 +53,9 @@
   padding: var(--space-12);
   border-radius: var(--radius-lg);
   background: var(--color-bg-subtle);
+}
+.column--fill {
+  height: 100%;
 }
 .column__header { display: flex; align-items: center; gap: var(--space-8); padding: 0 var(--space-2); }
 .column__dot { width: 8px; height: 8px; border-radius: var(--radius-full); flex-shrink: 0; }
@@ -58,6 +73,18 @@
 .column__action:where(:focus-visible) { outline: none; box-shadow: 0 0 0 2px var(--color-border-focus); }
 
 .column__body { display: flex; flex-direction: column; gap: var(--space-10); }
+.column__body--fill { flex: 1 1 0; min-height: 0; }
+
+/* Caps off a column's real cards, absorbing whatever extra height
+   fillPlaceholders exposes -- reads as "room for more tasks" rather than
+   blank canvas. Collapses to 0 height (invisible) when there's no extra
+   space to fill, e.g. the board's own natural height in Storybook. */
+.columnFiller {
+  flex: 1 1 0;
+  min-height: 0;
+  border: 1px dashed var(--color-border-default);
+  border-radius: var(--radius-lg);
+}
 
 .column__add {
   display: flex; align-items: center; justify-content: center; gap: var(--space-6);

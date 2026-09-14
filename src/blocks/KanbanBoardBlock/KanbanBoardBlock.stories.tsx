@@ -38,3 +38,11 @@ export const DarkMode: Story = {
   args: { state: 'default' },
   decorators: [(S) => (<div className="dark" style={{ background: 'var(--color-bg-canvas)' }}><S /></div>)],
 };
+
+/** Embedded taller than its real content (e.g. a demo frame) — every
+ * column stretches to equal height and caps its real cards with a dashed
+ * placeholder slot down to the bottom instead of leaving blank canvas. */
+export const FilledHeight: Story = {
+  args: { state: 'default', fillPlaceholders: true },
+  decorators: [(S) => (<div style={{ display: 'flex', height: '100vh' }}><S /></div>)],
+};
