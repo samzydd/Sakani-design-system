@@ -22,6 +22,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
+/** Embedded taller than its real content (e.g. a demo frame) — the leads
+ * table extends with faint placeholder row dividers down to the bottom
+ * instead of leaving blank canvas below the footer. */
+export const FilledHeight: Story = {
+  args: { fillPlaceholders: true },
+};
+
 export const DarkMode: Story = {
   decorators: [(S) => (<div className="dark" style={{ background: 'var(--color-bg-canvas)' }}><S /></div>)],
 };

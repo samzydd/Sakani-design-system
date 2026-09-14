@@ -237,9 +237,14 @@ type FilterSection = (typeof FILTER_SECTIONS)[number];
  * ------------------------------------------------------------------ */
 export interface CRMDashboardBlockProps {
   className?: string;
+  /** When the block is stretched taller than its real content (e.g. embedded
+   * in a fixed-height demo frame), extends the leads table with faint
+   * placeholder row dividers down to the bottom instead of leaving blank
+   * canvas below the footer. No-op at the block's natural height. */
+  fillPlaceholders?: boolean;
 }
 
-export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className }) => {
+export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className, fillPlaceholders }) => {
   const [tab, setTab] = React.useState('leads');
   const [filterTab, setFilterTab] = React.useState('active');
   const [query, setQuery] = React.useState('');
@@ -608,14 +613,29 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className 
             </div>
 
             {tab === 'leads' ? (
-              <Table<Lead>
-                columns={columns}
-                rows={filtered}
-                selectable
-                selectedRows={selected}
-                onSelectionChange={setSelected}
-                rowKey={(row) => row.email}
-              />
+              fillPlaceholders ? (
+                <div className={styles.tableShell}>
+                  <Table<Lead>
+                    columns={columns}
+                    rows={filtered}
+                    selectable
+                    selectedRows={selected}
+                    onSelectionChange={setSelected}
+                    rowKey={(row) => row.email}
+                    bordered={false}
+                  />
+                  <div className={styles.tableFiller} aria-hidden="true" />
+                </div>
+              ) : (
+                <Table<Lead>
+                  columns={columns}
+                  rows={filtered}
+                  selectable
+                  selectedRows={selected}
+                  onSelectionChange={setSelected}
+                  rowKey={(row) => row.email}
+                />
+              )
             ) : (
               // Contacts / Companies / Deals aren't implemented in this example —
               // a loading skeleton communicates that rather than showing stale
