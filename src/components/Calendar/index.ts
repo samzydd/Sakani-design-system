@@ -1,2 +1,2 @@
 export { Calendar, default } from './Calendar';
-export type { CalendarProps } from './Calendar';
+export type { CalendarProps, DateRange } from './Calendar';
