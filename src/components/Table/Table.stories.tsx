@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Table } from './Table';
 import { Badge } from '../Badge/Badge';
@@ -64,4 +65,18 @@ export const Stacked: Story = {
 export const AutoResponsive: Story = {
   decorators: [(S) => <div style={{ width: '100%', maxWidth: 720, resize: 'horizontal', overflow: 'auto', border: '1px dashed var(--color-border-subtle)', padding: 16 }}><S /></div>],
   render: () => <Table columns={columns as any} rows={rows} selectable />,
+};
+
+/** Hover a row to reveal the grip handle at its left edge -- the affordance
+ * that the row can be dragged. Drag only starts from the grip itself (not
+ * anywhere in the row), so selecting a status badge or its text doesn't
+ * accidentally start a drag. */
+export const Reorderable: Story = {
+  render: () => {
+    function ReorderableTable() {
+      const [order, setOrder] = useState(rows);
+      return <Table columns={columns as any} rows={order} rowKey={(r) => r.email} reorderable onReorder={setOrder} />;
+    }
+    return <ReorderableTable />;
+  },
 };

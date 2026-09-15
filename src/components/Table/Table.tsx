@@ -12,6 +12,7 @@
  */
 
 import React from 'react';
+import { GripVertical } from 'lucide-react';
 import styles from './Table.module.css';
 
 export interface TableColumn<T> {
@@ -36,7 +37,36 @@ export interface TableProps<T> {
    * false when nesting inside a card that already has its own border
    * (Figma: some Table instances sit borderless inside a Panel). */
   bordered?: boolean;
+  /** Matches Figma's "Responsive" variant (Default / Stacked).
+   * - 'auto' (default): renders as a normal table, and switches to the
+   *   stacked card layout automatically below --bp-sm (640px).
+   * - 'default' / 'stacked': force one layout regardless of viewport —
+   *   useful for Storybook, tests, or a deliberately narrow container. */
+  responsive?: 'auto' | 'default' | 'stacked';
   className?: string;
+}
+
+/** matches --bp-sm in tokens.css / the Figma "Breakpoints" collection.
+ *  Kept as a plain constant (not read from the CSS variable) because
+ *  matchMedia needs a literal px value; the two are meant to be edited
+ *  together if the breakpoint ever changes. */
+const BP_SM = 640;
+
+function useTableResponsiveMode(mode: 'auto' | 'default' | 'stacked'): 'default' | 'stacked' {
+  const [isNarrow, setIsNarrow] = React.useState(false);
+
+  React.useEffect(() => {
+    if (mode !== 'auto') return;
+    const mq = window.matchMedia(`(max-width: ${BP_SM}px)`);
+    setIsNarrow(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsNarrow(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, [mode]);
+
+  if (mode === 'default') return 'default';
+  if (mode === 'stacked') return 'stacked';
+  return isNarrow ? 'stacked' : 'default';
 }
 
 /** Custom checkbox matching Figma: rounded box with shadow/sm, accent fill + check when on. */
@@ -63,8 +93,10 @@ const TableCheckbox: React.FC<{
 };
 
 export function Table<T>({
-  columns, rows, selectable, selectedRows, onSelectionChange, rowKey, reorderable, onReorder, bordered = true, className,
+  columns, rows, selectable, selectedRows, onSelectionChange, rowKey, reorderable, onReorder, bordered = true,
+  responsive = 'auto', className,
 }: TableProps<T>) {
+  const mode = useTableResponsiveMode(responsive);
   const isControlled = selectedRows !== undefined;
   const [internal, setInternal] = React.useState<number[]>([]);
   const selected = isControlled ? selectedRows! : internal;
@@ -94,11 +126,43 @@ export function Table<T>({
   const toggleRow = (i: number) =>
     setSelected(selected.includes(i) ? selected.filter((x) => x !== i) : [...selected, i]);
 
+  if (mode === 'stacked') {
+    return (
+      <div className={[styles.stackedList, className ?? ''].filter(Boolean).join(' ')} role="list">
+        {rows.map((row, i) => {
+          const isSel = selected.includes(i);
+          return (
+            <div
+              key={rowKey ? rowKey(row, i) : i}
+              role="listitem"
+              className={[styles.card, isSel ? styles['card--selected'] : ''].filter(Boolean).join(' ')}
+            >
+              {selectable && (
+                <div className={styles.card__selectRow}>
+                  <TableCheckbox checked={isSel} onChange={() => toggleRow(i)} label={`Select row ${i + 1}`} />
+                </div>
+              )}
+              {columns.map((col) => (
+                <div key={col.key} className={styles.card__field}>
+                  <span className={styles.card__label}>{col.header}</span>
+                  <span className={styles.card__value}>
+                    {col.render ? col.render(row) : String(row[col.key] ?? '')}
+                  </span>
+                </div>
+              ))}
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
   return (
     <div className={[styles.wrap, bordered ? styles['wrap--bordered'] : '', className ?? ''].filter(Boolean).join(' ')}>
       <table className={styles.table}>
         <thead>
           <tr className={styles.headerRow}>
+            {reorderable && <th className={styles.dragCell} aria-hidden="true" />}
             {selectable && (
               <th className={styles.checkCell}>
                 <TableCheckbox checked={allSelected} indeterminate={someSelected} onChange={toggleAll} label="Select all rows" />
@@ -117,19 +181,40 @@ export function Table<T>({
             return (
               <tr
                 key={rowKey ? rowKey(row, i) : i}
-                draggable={reorderable || undefined}
-                onDragStart={reorderable ? () => setDragIndex(i) : undefined}
                 onDragOver={reorderable ? (e) => { e.preventDefault(); setOverIndex(i); } : undefined}
                 onDrop={reorderable ? handleDrop : undefined}
                 onDragEnd={reorderable ? () => { setDragIndex(null); setOverIndex(null); } : undefined}
                 className={[
                   styles.bodyRow,
                   isSel ? styles['bodyRow--selected'] : '',
-                  reorderable ? styles['bodyRow--draggable'] : '',
                   overIndex === i && dragIndex !== null && dragIndex !== i ? styles['bodyRow--dropTarget'] : '',
                   dragIndex === i ? styles['bodyRow--dragging'] : '',
                 ].filter(Boolean).join(' ')}
               >
+                {/* Grip lives to the left of everything else, hidden until the
+                    row is hovered (see .dragHandle), so the row doesn't look
+                    draggable until you're actually pointing at it. `draggable`
+                    sits on this handle rather than the <tr> so dragging only
+                    starts from the grip -- clicking a badge, a checkbox, or
+                    selecting cell text no longer accidentally drags the row.
+                    setDragImage still points at the whole row (closest('tr')
+                    from the handle) so the drag preview is the full row, not
+                    just this 14px icon. */}
+                {reorderable && (
+                  <td className={styles.dragCell}>
+                    <span
+                      className={styles.dragHandle}
+                      draggable
+                      onDragStart={(e) => {
+                        e.dataTransfer.setDragImage(e.currentTarget.closest('tr')!, 0, 0);
+                        setDragIndex(i);
+                      }}
+                      aria-hidden="true"
+                    >
+                      <GripVertical size={14} strokeWidth={1.5} />
+                    </span>
+                  </td>
+                )}
                 {selectable && (
                   <td className={styles.checkCell}>
                     <TableCheckbox checked={isSel} onChange={() => toggleRow(i)} label={`Select row ${i + 1}`} />

@@ -5,7 +5,12 @@
 
 .wrap {
   background: var(--color-bg-surface);
-  overflow: hidden;
+  /* overflow-x: auto (not hidden) so a table wider than its container can
+     be scrolled horizontally instead of having every column crushed —
+     the original `overflow: hidden` was clipping content with no escape
+     hatch on narrow viewports. Still clips to the rounded corners below. */
+  overflow-x: auto;
+  overflow-y: hidden;
   font-family: var(--font-sans);
 }
 
@@ -148,8 +153,98 @@
     0 0 0 3px var(--color-accent-subtle);
 }
 
+/* ─── Stacked (mobile) layout — matches Figma "Table" → Responsive=Stacked ───
+ * Each row becomes a card; each column becomes a label:value field row.
+ * Used when responsive="stacked", or automatically under --bp-sm when
+ * responsive="auto" (the default). See useTableResponsiveMode in Table.tsx. */
+.stackedList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  font-family: var(--font-sans);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-12) var(--space-16);
+  background: var(--color-bg-surface);
+  border: var(--border-width-100) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.card--selected { background: var(--color-accent-subtle); }
+
+.card__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  padding: var(--space-8) 0;
+}
+
+.card__label {
+  font-size: 13px;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.card__value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  text-align: right;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__selectRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+  margin-bottom: var(--space-4);
+}
+
 /* ---- drag to reorder ---- */
-.bodyRow--draggable { cursor: grab; }
-.bodyRow--draggable:active { cursor: grabbing; }
 .bodyRow--dragging { opacity: 0.5; }
 .bodyRow--dropTarget { box-shadow: inset 0 2px 0 0 var(--color-accent-default); }
+
+/* Fixed-width like .checkCell, for the same reason: in table-layout: fixed,
+   a column with no explicit width is exactly the one that absorbs slack
+   once the table stretches past its content, which would grow this one
+   along with the rest instead of leaving it pinned. Sits left of the
+   checkbox column (drag handle reads first, left to right). */
+.dragCell {
+  width: 32px;
+  min-width: 32px;
+  max-width: 32px;
+  padding: 0 0 0 var(--space-12);
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: var(--border-width-100) solid var(--color-border-subtle);
+}
+.bodyRow:last-child .dragCell { border-bottom: none; }
+
+/* Hidden until the row is hovered -- a row doesn't look draggable until
+   you're actually pointing at it, matching the row's own hover tint
+   turning on at the same moment. Stays visible mid-drag (dragging is a
+   hover state in every browser that supports HTML5 DnD) so the handle
+   doesn't disappear out from under the cursor while you're using it. */
+.dragHandle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-fg-subtle);
+  cursor: grab;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+.bodyRow:hover .dragHandle,
+.bodyRow--dragging .dragHandle {
+  opacity: 1;
+}
+.dragHandle:active { cursor: grabbing; }
