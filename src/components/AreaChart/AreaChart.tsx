@@ -55,8 +55,8 @@ export const AreaChart: React.FC<AreaChartProps> = ({
   // `value2` -- not chart/1/chart/2 as the token numbering might suggest.
   const valueColor = cssVar('--color-chart-5') ?? '#dca84f';
   const value2Color = cssVar('--color-chart-2') ?? '#5b92dd';
-  const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
-  const axis = cssVar('--color-fg-muted') ?? '#6b6375';
+  const grid = cssVar('--color-border-subtle') ?? '#e7e5e1';
+  const axis = cssVar('--color-fg-muted') ?? '#78716a';
   const hasSecondSeries = data.some((d) => d.value2 !== undefined);
 
   const curveType = variant === 'step' ? 'step' : variant === 'linear' ? 'linear' : 'monotone';
@@ -79,7 +79,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
           <CartesianGrid strokeDasharray="3 3" stroke={grid} vertical={false} />
           <XAxis dataKey="label" stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />
           <Tooltip
-            cursor={{ stroke: cssVar('--color-border-default') ?? '#d6d3ce', strokeWidth: 1 }}
+            cursor={{ stroke: cssVar('--color-border-default') ?? '#dbdad7', strokeWidth: 1 }}
             content={<ChartTooltip />}
             wrapperStyle={{ zIndex: 50 }}
           />

@@ -101,7 +101,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   const grid = cssVar('--color-border-default') ?? '#dbdad7';
   // Every label in this chart (axis category ticks, custom-label's
   // value+category block) uses fg/subtle.
-  const label = cssVar('--color-fg-subtle') ?? '#78716a';
+  const label = cssVar('--color-fg-subtle') ?? '#a8a29b';
   const isMultiple = variant === 'multiple';
   const isLinesOnly = variant === 'lines-only';
   // "custom-label"/"lines-only" also get the second series, same as

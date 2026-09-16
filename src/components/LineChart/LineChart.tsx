@@ -24,6 +24,7 @@ import {
   LineChart as ReLineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
 } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './LineChart.module.css';
 
@@ -64,13 +65,13 @@ export const LineChart: React.FC<LineChartProps> = ({
   data, series, xKey = 'label', variant = 'default', labelKey, size = 'md', height, showLegend, className,
 }) => {
   useThemeTick();
-  const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
+  const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? CHART_PALETTE_FALLBACK[n - 1]);
   // Figma: the single default series is chart/2, and the second line added
   // by "Multiple" is chart/1 -- reversed from the raw token numbering (the
   // rest of the palette, for 3+ series, keeps the plain chart/3.. order).
   const seriesPalette = [palette[1], palette[0], ...palette.slice(2)];
-  const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
-  const axis = cssVar('--color-fg-muted') ?? '#6b6375';
+  const grid = cssVar('--color-border-subtle') ?? '#e7e5e1';
+  const axis = cssVar('--color-fg-muted') ?? '#78716a';
   const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
   const fgDefault = cssVar('--color-fg-default') ?? '#141414';
   const curveType = variant === 'linear' ? 'linear' : variant === 'step' ? 'step' : 'monotone';
@@ -124,7 +125,7 @@ export const LineChart: React.FC<LineChartProps> = ({
           <CartesianGrid strokeDasharray="3 3" stroke={grid} vertical={false} />
           <XAxis dataKey={xKey} stroke={axis} fontSize={12} tickLine={false} axisLine={false} interval={0} />
           <Tooltip
-            cursor={{ stroke: cssVar('--color-border-default') ?? '#d6d3ce', strokeWidth: 1 }}
+            cursor={{ stroke: cssVar('--color-border-default') ?? '#dbdad7', strokeWidth: 1 }}
             content={<ChartTooltip />}
             wrapperStyle={{ zIndex: 50 }}
           />

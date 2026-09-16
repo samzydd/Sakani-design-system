@@ -20,6 +20,7 @@ import {
   BarChart as ReBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell, Rectangle,
 } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './BarChart.module.css';
 
@@ -77,16 +78,16 @@ export const BarChart: React.FC<BarChartProps> = ({
   // position and pins the Tooltip there via its `position` prop instead.
   const [hoverPos, setHoverPos] = React.useState<{ x: number; y: number } | null>(null);
   useThemeTick();
-  const chartDefault = cssVar('--color-chart-2') ?? '#2e90fa';
-  const chartSecondary = cssVar('--color-chart-5') ?? '#78716a';
+  const chartDefault = cssVar('--color-chart-2') ?? '#5b92dd';
+  const chartSecondary = cssVar('--color-chart-5') ?? '#dca84f';
   // Figma: "Negative" bars use chart/1, not a semantic red -- chart/2 stays
   // the positive-value color, same as "Default".
   const chartNegative = cssVar('--color-chart-1') ?? '#ff4700';
   // Figma: "Active" isn't one highlighted bar -- every bar gets its own
   // color, cycling through the full chart/1..6 categorical palette.
-  const activePalette = [1, 2, 3, 4, 5, 6].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
-  const grid = cssVar('--color-border-subtle') ?? '#e5e4e7';
-  const axis = cssVar('--color-fg-muted') ?? '#6b6375';
+  const activePalette = [1, 2, 3, 4, 5, 6].map((n) => cssVar(`--color-chart-${n}`) ?? CHART_PALETTE_FALLBACK[n - 1]);
+  const grid = cssVar('--color-border-subtle') ?? '#e7e5e1';
+  const axis = cssVar('--color-fg-muted') ?? '#78716a';
   const isGrouped = variant === 'multiple' || variant === 'stacked';
   const hasSecondSeries = isGrouped && data.some((d) => d.value2 !== undefined);
 

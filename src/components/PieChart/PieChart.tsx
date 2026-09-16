@@ -30,6 +30,7 @@
 import React from 'react';
 import { PieChart as RePieChart, Pie, Cell, Sector, ResponsiveContainer, Tooltip } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './PieChart.module.css';
 
@@ -72,7 +73,7 @@ export const PieChart: React.FC<PieChartProps> = ({
 }) => {
   useThemeTick();
   const [hoverIdx, setHoverIdx] = React.useState<number | undefined>(undefined);
-  const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
+  const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? CHART_PALETTE_FALLBACK[n - 1]);
   const surfaceBg = cssVar('--color-bg-surface') ?? '#ffffff';
   const fgDefault = cssVar('--color-fg-default') ?? '#141414';
   const d = dims[size];

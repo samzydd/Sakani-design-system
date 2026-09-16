@@ -14,6 +14,18 @@ export function useThemeTick(): number {
 
   useEffect(() => {
     if (typeof document === 'undefined') return;
+
+    // Bump once on mount, not only on theme changes. Under SSR there's no
+    // getComputedStyle, so every chart renders its hardcoded fallback colors
+    // on the server -- and React treats differing attributes on hydration as
+    // "this won't be patched up", so those fallbacks stay on screen forever.
+    // Nothing else re-renders a static chart, so without this first tick a
+    // server-rendered chart never reads its real tokens at all: the docs site
+    // was drawing polar grids in #e5e4e7 while the actual
+    // --color-border-subtle is #E7E5E1. Client-only hosts (Storybook, Vite)
+    // never hit this, which is why the two looked different.
+    setTick((t) => t + 1);
+
     const observer = new MutationObserver(() => setTick((t) => t + 1));
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
     return () => observer.disconnect();

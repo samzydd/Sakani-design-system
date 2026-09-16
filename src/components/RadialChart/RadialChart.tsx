@@ -27,6 +27,7 @@
 import React from 'react';
 import { RadialBarChart, RadialBar, Cell, Sector, ResponsiveContainer, PolarAngleAxis } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import styles from './RadialChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -52,6 +53,13 @@ const cssVar = (name: string) =>
 
 const RAD = Math.PI / 180;
 
+/** Trig results differ between Node and browser JS engines in the last
+ *  bit or two (41.61616164265411 vs ...413). Server-rendered charts then
+ *  hydrate with mismatched SVG coordinate attributes, which React reports
+ *  and refuses to patch. Rounding to 3dp is far below a subpixel at these
+ *  viewBox sizes and makes both sides agree exactly. */
+const svgRound = (n: number) => Math.round(n * 1000) / 1000;
+
 // [innerRadius%, outerRadius%] of the chart's own max radius, for the
 // RadialBarChart-backed ring variants only.
 const RADIUS_BAND: Partial<Record<RadialChartVariant, [string, string]>> = {
@@ -76,10 +84,10 @@ const GaugeTick: React.FC<{ value: number; max: number; color: string; track: st
         const deg = startDeg + (i / (TICKS - 1)) * sweepDeg;
         const outerR = 92;
         const innerR = 78;
-        const x1 = cx + innerR * Math.cos(deg * RAD);
-        const y1 = cy + innerR * Math.sin(deg * RAD);
-        const x2 = cx + outerR * Math.cos(deg * RAD);
-        const y2 = cy + outerR * Math.sin(deg * RAD);
+        const x1 = svgRound(cx + innerR * Math.cos(deg * RAD));
+        const y1 = svgRound(cy + innerR * Math.sin(deg * RAD));
+        const x2 = svgRound(cx + outerR * Math.cos(deg * RAD));
+        const y2 = svgRound(cy + outerR * Math.sin(deg * RAD));
         return (
           <line
             key={i}
@@ -111,8 +119,8 @@ const PolarGrid: React.FC<{ rings: number; spokes: number; color: string }> = ({
       // flush with it, for a more visible starburst edge. Extends past the
       // 0-200 viewBox itself now (needs overflow:visible on .gridSvg).
       const spokeR = 99.5 * 1.1;
-      const x = 100 + spokeR * Math.cos(deg * RAD);
-      const y = 100 + spokeR * Math.sin(deg * RAD);
+      const x = svgRound(100 + spokeR * Math.cos(deg * RAD));
+      const y = svgRound(100 + spokeR * Math.sin(deg * RAD));
       return <line key={i} x1={100} y1={100} x2={x} y2={y} stroke={color} strokeWidth={1} />;
     })}
   </svg>
@@ -167,9 +175,9 @@ export const RadialChart: React.FC<RadialChartProps> = ({
   data, variant = 'multi', size = 'md', centerValue, centerCaption, className,
 }) => {
   useThemeTick();
-  const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
+  const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? CHART_PALETTE_FALLBACK[n - 1]);
   const track = cssVar('--color-bg-subtle') ?? '#f5f4f2';
-  const gridColor = cssVar('--color-border-subtle') ?? '#e5e4e7';
+  const gridColor = cssVar('--color-border-subtle') ?? '#e7e5e1';
   const h = dims[size];
 
   if (variant === 'gauge-tick') {

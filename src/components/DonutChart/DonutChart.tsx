@@ -9,6 +9,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { useThemeTick } from '../../lib/useThemeTick';
+import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './DonutChart.module.css';
 
@@ -55,7 +56,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
     setHoverPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
   useThemeTick();
-  const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? '#ff4700');
+  const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? CHART_PALETTE_FALLBACK[n - 1]);
   const d = { ...dims[size], h: height ?? dims[size].h };
   // Figma's segments end in a rounded cap -- half the ring's own thickness
   // is the max Recharts allows before it stops adding visible rounding, so
