@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { useThemeTick } from '../../lib/useThemeTick';
+import { useChartTokens } from '../../lib/useChartTokens';
 import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './DonutChart.module.css';
@@ -35,10 +35,6 @@ const dims: Record<ChartSize, { h: number; inner: number; outer: number }> = {
   lg: { h: 280, inner: 80, outer: 116 },
   xl: { h: 340, inner: 98, outer: 142 },
 };
-const cssVar = (name: string) =>
-  typeof window !== 'undefined'
-    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
-    : undefined;
 
 export const DonutChart: React.FC<DonutChartProps> = ({
   data, size = 'md', centerValue, centerCaption, height, className,
@@ -55,7 +51,8 @@ export const DonutChart: React.FC<DonutChartProps> = ({
     const rect = e.currentTarget.getBoundingClientRect();
     setHoverPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
-  useThemeTick();
+  const chartRef = React.useRef<HTMLDivElement>(null);
+  const cssVar = useChartTokens(chartRef);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? CHART_PALETTE_FALLBACK[n - 1]);
   const d = { ...dims[size], h: height ?? dims[size].h };
   // Figma's segments end in a rounded cap -- half the ring's own thickness
@@ -66,6 +63,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
 
   return (
     <div
+      ref={chartRef}
       className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}
       style={{ height: d.h }}
       onMouseMove={handleMouseMove}

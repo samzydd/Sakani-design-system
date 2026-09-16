@@ -19,7 +19,7 @@ import React from 'react';
 import {
   BarChart as ReBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell, Rectangle,
 } from 'recharts';
-import { useThemeTick } from '../../lib/useThemeTick';
+import { useChartTokens } from '../../lib/useChartTokens';
 import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './BarChart.module.css';
@@ -49,10 +49,6 @@ const heights: Record<ChartSize, number> = { sm: 180, md: 240, lg: 320, xl: 420 
 const CORNER_RADIUS = 6;
 
 /** Reads a CSS custom property from :root so Recharts (which needs real color strings) can use it. */
-const cssVar = (name: string) =>
-  typeof window !== 'undefined'
-    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
-    : undefined;
 
 /** Rounds up to the nearest "nice" 1/2/5 step at the value's own magnitude
  * (310 -> 500, 42 -> 50, 1400 -> 2000) -- the usual axis-rounding rule so a
@@ -77,7 +73,8 @@ export const BarChart: React.FC<BarChartProps> = ({
   // pointer". Each Bar's onMouseEnter below recomputes that same tip
   // position and pins the Tooltip there via its `position` prop instead.
   const [hoverPos, setHoverPos] = React.useState<{ x: number; y: number } | null>(null);
-  useThemeTick();
+  const chartRef = React.useRef<HTMLDivElement>(null);
+  const cssVar = useChartTokens(chartRef);
   const chartDefault = cssVar('--color-chart-2') ?? '#5b92dd';
   const chartSecondary = cssVar('--color-chart-5') ?? '#dca84f';
   // Figma: "Negative" bars use chart/1, not a semantic red -- chart/2 stays
@@ -187,7 +184,7 @@ export const BarChart: React.FC<BarChartProps> = ({
   );
 
   return (
-    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
+    <div ref={chartRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
       <ResponsiveContainer width="100%" height={heights[size]}>
         <ReBarChart
           data={data}

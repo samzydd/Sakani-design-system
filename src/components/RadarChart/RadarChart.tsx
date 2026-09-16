@@ -40,7 +40,7 @@ import {
   RadarChart as ReRadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
   ResponsiveContainer, Tooltip, Legend,
 } from 'recharts';
-import { useThemeTick } from '../../lib/useThemeTick';
+import { useChartTokens } from '../../lib/useChartTokens';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './RadarChart.module.css';
 
@@ -66,10 +66,6 @@ export interface RadarChartProps {
 }
 
 const heights: Record<ChartSize, number> = { sm: 200, md: 260, lg: 340, xl: 420 };
-const cssVar = (name: string) =>
-  typeof window !== 'undefined'
-    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
-    : undefined;
 
 const CIRCLE_GRID = new Set<RadarChartVariant>(['circle-grid', 'circle-grid-no-lines', 'circle-grid-filled']);
 // "Boundary only" grid variants -- no inner concentric rings, no spokes.
@@ -92,7 +88,8 @@ const RING_LEVELS = [1, 0.8, 0.6, 0.4, 0.2];
 export const RadarChart: React.FC<RadarChartProps> = ({
   data, variant = 'default', size = 'md', seriesLabels = ['Value', 'Value 2'], className,
 }) => {
-  useThemeTick();
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const cssVar = useChartTokens(containerRef);
   const chart1 = cssVar('--color-chart-1') ?? '#ff4700';
   const chart2 = cssVar('--color-chart-2') ?? '#5b92dd';
   // Figma's Radar chart set uses border/default for its grid strokes
@@ -121,7 +118,6 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   // min(width, height) minus the default 5px margin on each side, times
   // the 70% passed to outerRadius) -- height is already known statically
   // via `heights[size]`, only width needs a runtime measurement.
-  const containerRef = React.useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = React.useState(0);
   React.useEffect(() => {
     if (!circleFilled || !containerRef.current) return;

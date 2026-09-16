@@ -14,7 +14,7 @@
  */
 
 import React from 'react';
-import { useThemeTick } from '../../lib/useThemeTick';
+import { useChartTokens } from '../../lib/useChartTokens';
 import styles from './HeatmapChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -30,10 +30,6 @@ export interface HeatmapChartProps {
   className?: string;
 }
 
-const cssVar = (name: string) =>
-  typeof window !== 'undefined'
-    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
-    : undefined;
 
 // Figma's palest cell is still visibly tinted, not near-white.
 const MIN_OPACITY = 0.12;
@@ -44,7 +40,8 @@ interface HoverState { row: number; col: number; value: number; left: number; to
 export const HeatmapChart: React.FC<HeatmapChartProps> = ({
   data, rowLabels, colLabels, valueLabel = 'Value', size = 'md', className,
 }) => {
-  useThemeTick();
+  const chartRef = React.useRef<HTMLDivElement>(null);
+  const cssVar = useChartTokens(chartRef);
   const gridRef = React.useRef<HTMLDivElement>(null);
   // A single tooltip lives outside the per-cell markup and is repositioned/
   // recontented on hover, instead of each cell mounting its own -- moving
@@ -68,7 +65,7 @@ export const HeatmapChart: React.FC<HeatmapChartProps> = ({
   };
 
   return (
-    <div className={[styles.chart, styles[`chart--${size}`], className ?? ''].filter(Boolean).join(' ')}>
+    <div ref={chartRef} className={[styles.chart, styles[`chart--${size}`], className ?? ''].filter(Boolean).join(' ')}>
       <div ref={gridRef} className={styles.grid} style={{ gridTemplateColumns: `auto repeat(${cols}, 1fr)` }}>
         {data.map((row, r) => (
           <React.Fragment key={r}>

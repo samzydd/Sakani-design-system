@@ -23,7 +23,7 @@ import React from 'react';
 import {
   LineChart as ReLineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
 } from 'recharts';
-import { useThemeTick } from '../../lib/useThemeTick';
+import { useChartTokens } from '../../lib/useChartTokens';
 import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './LineChart.module.css';
@@ -54,17 +54,14 @@ export interface LineChartProps {
 }
 
 const heights: Record<ChartSize, number> = { sm: 180, md: 240, lg: 320, xl: 420 };
-const cssVar = (name: string) =>
-  typeof window !== 'undefined'
-    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
-    : undefined;
 
 const ALWAYS_DOTS = new Set<LineChartVariant>(['dots', 'custom-dots', 'dots-colors', 'label', 'custom-label']);
 
 export const LineChart: React.FC<LineChartProps> = ({
   data, series, xKey = 'label', variant = 'default', labelKey, size = 'md', height, showLegend, className,
 }) => {
-  useThemeTick();
+  const chartRef = React.useRef<HTMLDivElement>(null);
+  const cssVar = useChartTokens(chartRef);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? CHART_PALETTE_FALLBACK[n - 1]);
   // Figma: the single default series is chart/2, and the second line added
   // by "Multiple" is chart/1 -- reversed from the raw token numbering (the
@@ -119,7 +116,7 @@ export const LineChart: React.FC<LineChartProps> = ({
   };
 
   return (
-    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
+    <div ref={chartRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
       <ResponsiveContainer width="100%" height={height ?? heights[size]}>
         <ReLineChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: 12 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={grid} vertical={false} />

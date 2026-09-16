@@ -29,7 +29,7 @@
 
 import React from 'react';
 import { PieChart as RePieChart, Pie, Cell, Sector, ResponsiveContainer, Tooltip } from 'recharts';
-import { useThemeTick } from '../../lib/useThemeTick';
+import { useChartTokens } from '../../lib/useChartTokens';
 import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './PieChart.module.css';
@@ -57,10 +57,6 @@ const dims: Record<ChartSize, { h: number; outer: number }> = {
   lg: { h: 280, outer: 116 },
   xl: { h: 340, outer: 142 },
 };
-const cssVar = (name: string) =>
-  typeof window !== 'undefined'
-    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
-    : undefined;
 
 const HAS_HOLE = new Set<PieChartVariant>(['donut', 'donut-active', 'donut-with-text', 'interactive']);
 const HAS_EXPLODE = new Set<PieChartVariant>(['donut-active']);
@@ -71,7 +67,8 @@ const RAD = Math.PI / 180;
 export const PieChart: React.FC<PieChartProps> = ({
   data, variant = 'donut', size = 'md', centerValue, centerCaption, className,
 }) => {
-  useThemeTick();
+  const chartRef = React.useRef<HTMLDivElement>(null);
+  const cssVar = useChartTokens(chartRef);
   const [hoverIdx, setHoverIdx] = React.useState<number | undefined>(undefined);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? CHART_PALETTE_FALLBACK[n - 1]);
   const surfaceBg = cssVar('--color-bg-surface') ?? '#ffffff';
@@ -188,7 +185,7 @@ export const PieChart: React.FC<PieChartProps> = ({
   if (variant === 'stacked') {
     const ringFillOpacity = (i: number) => (hoverIdx !== undefined && hoverIdx !== i ? 0.45 : 1);
     return (
-      <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
+      <div ref={chartRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
         <ResponsiveContainer width="100%" height="100%">
           <RePieChart>
             <Pie
@@ -233,7 +230,7 @@ export const PieChart: React.FC<PieChartProps> = ({
   }
 
   return (
-    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
+    <div ref={chartRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: d.h }}>
       <ResponsiveContainer width="100%" height="100%">
         <RePieChart>
           <Pie

@@ -26,7 +26,7 @@
 
 import React from 'react';
 import { RadialBarChart, RadialBar, Cell, Sector, ResponsiveContainer, PolarAngleAxis } from 'recharts';
-import { useThemeTick } from '../../lib/useThemeTick';
+import { useChartTokens } from '../../lib/useChartTokens';
 import { CHART_PALETTE_FALLBACK } from '../../lib/chartPalette';
 import styles from './RadialChart.module.css';
 
@@ -46,10 +46,6 @@ export interface RadialChartProps {
 }
 
 const dims: Record<ChartSize, number> = { sm: 180, md: 220, lg: 280, xl: 340 };
-const cssVar = (name: string) =>
-  typeof window !== 'undefined'
-    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
-    : undefined;
 
 const RAD = Math.PI / 180;
 
@@ -69,8 +65,8 @@ const RADIUS_BAND: Partial<Record<RadialChartVariant, [string, string]>> = {
   text: ['76%', '100%'],
 };
 
-const GaugeTick: React.FC<{ value: number; max: number; color: string; track: string; centerValue?: string; centerCaption?: string }> = ({
-  value, max, color, track, centerValue, centerCaption,
+const GaugeTick: React.FC<{ value: number; max: number; color: string; track: string; centerValue?: string; centerCaption?: string; labelColor: string; captionColor: string }> = ({
+  value, max, color, track, centerValue, centerCaption, labelColor, captionColor,
 }) => {
   const TICKS = 40;
   const cx = 100;
@@ -100,8 +96,8 @@ const GaugeTick: React.FC<{ value: number; max: number; color: string; track: st
       })}
       {(centerValue || centerCaption) && (
         <g textAnchor="middle" fontFamily="var(--font-sans)">
-          {centerValue && <text x={cx} y={cy - 8} fontSize={22} fontWeight={500} fill={cssVar('--color-fg-default') ?? '#141414'}>{centerValue}</text>}
-          {centerCaption && <text x={cx} y={cy + 12} fontSize={12} fill={cssVar('--color-fg-muted') ?? '#78716a'}>{centerCaption}</text>}
+          {centerValue && <text x={cx} y={cy - 8} fontSize={22} fontWeight={500} fill={labelColor}>{centerValue}</text>}
+          {centerCaption && <text x={cx} y={cy + 12} fontSize={12} fill={captionColor}>{centerCaption}</text>}
         </g>
       )}
     </svg>
@@ -133,7 +129,8 @@ const PolarGrid: React.FC<{ rings: number; spokes: number; color: string }> = ({
 const ArcGauge: React.FC<{
   data: RadialDatum[]; palette: string[]; track: string;
   centerValue?: string; centerCaption?: string;
-}> = ({ data, palette, track, centerValue, centerCaption }) => {
+  labelColor: string; captionColor: string;
+}> = ({ data, palette, track, centerValue, centerCaption, labelColor, captionColor }) => {
   const cx = 100;
   const cy = 100;
   const outerR = 88;
@@ -163,8 +160,8 @@ const ArcGauge: React.FC<{
       )}
       {(centerValue || centerCaption) && (
         <g textAnchor="middle" fontFamily="var(--font-sans)">
-          {centerValue && <text x={cx} y={cy - 8} fontSize={22} fontWeight={500} fill={cssVar('--color-fg-default') ?? '#141414'}>{centerValue}</text>}
-          {centerCaption && <text x={cx} y={cy + 12} fontSize={12} fill={cssVar('--color-fg-muted') ?? '#78716a'}>{centerCaption}</text>}
+          {centerValue && <text x={cx} y={cy - 8} fontSize={22} fontWeight={500} fill={labelColor}>{centerValue}</text>}
+          {centerCaption && <text x={cx} y={cy + 12} fontSize={12} fill={captionColor}>{centerCaption}</text>}
         </g>
       )}
     </svg>
@@ -174,16 +171,19 @@ const ArcGauge: React.FC<{
 export const RadialChart: React.FC<RadialChartProps> = ({
   data, variant = 'multi', size = 'md', centerValue, centerCaption, className,
 }) => {
-  useThemeTick();
+  const chartRef = React.useRef<HTMLDivElement>(null);
+  const cssVar = useChartTokens(chartRef);
   const palette = [1, 2, 3, 4, 5].map((n) => cssVar(`--color-chart-${n}`) ?? CHART_PALETTE_FALLBACK[n - 1]);
   const track = cssVar('--color-bg-subtle') ?? '#f5f4f2';
   const gridColor = cssVar('--color-border-subtle') ?? '#e7e5e1';
+  const labelColor = cssVar('--color-fg-default') ?? '#141414';
+  const captionColor = cssVar('--color-fg-muted') ?? '#78716a';
   const h = dims[size];
 
   if (variant === 'gauge-tick') {
     const d = data[0];
     return (
-      <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
+      <div ref={chartRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
         <GaugeTick
           value={d?.value ?? 0}
           max={d?.max ?? 100}
@@ -191,6 +191,8 @@ export const RadialChart: React.FC<RadialChartProps> = ({
           track={track}
           centerValue={centerValue}
           centerCaption={centerCaption}
+          labelColor={labelColor}
+          captionColor={captionColor}
         />
       </div>
     );
@@ -198,13 +200,15 @@ export const RadialChart: React.FC<RadialChartProps> = ({
 
   if (variant === 'shape' || variant === 'stacked' || variant === 'stacked-3-layers') {
     return (
-      <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
+      <div ref={chartRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
         <ArcGauge
           data={data}
           palette={palette}
           track={track}
           centerValue={centerValue}
           centerCaption={centerCaption}
+          labelColor={labelColor}
+          captionColor={captionColor}
         />
       </div>
     );
@@ -214,7 +218,7 @@ export const RadialChart: React.FC<RadialChartProps> = ({
   const showCenter = (variant === 'stacked-label' || variant === 'text') && (centerValue || centerCaption);
 
   return (
-    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
+    <div ref={chartRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
       {variant === 'grid' && <PolarGrid rings={8} spokes={12} color={gridColor} />}
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart

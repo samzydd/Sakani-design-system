@@ -14,7 +14,7 @@
  */
 
 import React from 'react';
-import { useThemeTick } from '../../lib/useThemeTick';
+import { useChartTokens } from '../../lib/useChartTokens';
 import styles from './FunnelChart.module.css';
 
 export type ChartSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -30,10 +30,6 @@ export interface FunnelChartProps {
 const heights: Record<ChartSize, number> = { sm: 180, md: 240, lg: 320, xl: 420 };
 const VIEW_W = 560;
 
-const cssVar = (name: string) =>
-  typeof window !== 'undefined'
-    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
-    : undefined;
 
 // Figma: first (largest) stage is palest, last (smallest) stage is full
 // chart/1 saturation -- a "narrowing = concentrating" visual metaphor.
@@ -44,7 +40,8 @@ const TIP_TAPER = 0.55;
 
 export const FunnelChart: React.FC<FunnelChartProps> = ({ data, size = 'md', className }) => {
   const [hoverIndex, setHoverIndex] = React.useState<number | null>(null);
-  useThemeTick();
+  const chartRef = React.useRef<HTMLDivElement>(null);
+  const cssVar = useChartTokens(chartRef);
   const chart1 = cssVar('--color-chart-1') ?? '#ff4700';
   const canvasBg = cssVar('--color-bg-canvas') ?? '#fafaf9';
   const total = data[0]?.value || 1;
@@ -69,7 +66,7 @@ export const FunnelChart: React.FC<FunnelChartProps> = ({ data, size = 'md', cla
   const hoveredMidX = hoverIndex !== null ? hoverIndex * segW + segW / 2 : 0;
 
   return (
-    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
+    <div ref={chartRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')} style={{ height: h }}>
       <svg viewBox={`0 0 ${VIEW_W} ${h}`} width="100%" height={h} className={styles.svg}>
         {data.map((d, i) => {
           const xLeft = i * segW;

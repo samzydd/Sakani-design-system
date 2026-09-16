@@ -15,7 +15,7 @@ import React from 'react';
 import {
   AreaChart as ReAreaChart, Area, XAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
-import { useThemeTick } from '../../lib/useThemeTick';
+import { useChartTokens } from '../../lib/useChartTokens';
 import { ChartTooltip } from '../../lib/ChartTooltip';
 import styles from './AreaChart.module.css';
 
@@ -41,15 +41,12 @@ export interface AreaChartProps {
 }
 
 const heights: Record<ChartSize, number> = { sm: 180, md: 240, lg: 320, xl: 420 };
-const cssVar = (name: string) =>
-  typeof window !== 'undefined'
-    ? getComputedStyle(document.documentElement).getPropertyValue(name).trim() || undefined
-    : undefined;
 
 export const AreaChart: React.FC<AreaChartProps> = ({
   data, variant = 'default', seriesLabels = ['Value', 'Value 2'], size = 'md', height, className,
 }) => {
-  useThemeTick();
+  const chartRef = React.useRef<HTMLDivElement>(null);
+  const cssVar = useChartTokens(chartRef);
   // Figma: single-series "Default" uses chart/5, and "Stacked Default"
   // (two series) keeps that same chart/5 for `value` and adds chart/2 for
   // `value2` -- not chart/1/chart/2 as the token numbering might suggest.
@@ -63,7 +60,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
   const stackId = variant === 'stacked' ? 'stack' : undefined;
 
   return (
-    <div className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
+    <div ref={chartRef} className={[styles.chart, className ?? ''].filter(Boolean).join(' ')}>
       <ResponsiveContainer width="100%" height={height ?? heights[size]}>
         <ReAreaChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: 0 }}>
           <defs>
