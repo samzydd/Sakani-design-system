@@ -18,6 +18,7 @@
 
 import React from 'react';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
+import { usePortalThemeClass } from '../../lib/usePortalThemeClass';
 import { createPortal } from 'react-dom';
 import styles from './Select.module.css';
 
@@ -82,6 +83,9 @@ export const Select: React.FC<SelectProps> = ({
   const rootRef = React.useRef<HTMLDivElement>(null);
   const triggerRef = React.useRef<HTMLDivElement>(null);
   const panelRef = React.useRef<HTMLDivElement>(null);
+  // The panel portals to <body>, which takes it out from under any .dark /
+  // .force-light container; re-apply whichever one encloses the trigger.
+  const portalTheme = usePortalThemeClass(rootRef, panelMounted);
 
   // The panel portals to <body> and positions itself with fixed
   // coordinates rather than sitting in normal flow under the trigger
@@ -224,7 +228,7 @@ export const Select: React.FC<SelectProps> = ({
             ref={panelRef}
             id={panelId}
             role="listbox"
-            className={[styles.panel, open ? styles['panel--entering'] : styles['panel--exiting']].filter(Boolean).join(' ')}
+            className={[portalTheme, styles.panel, open ? styles['panel--entering'] : styles['panel--exiting']].filter(Boolean).join(' ')}
             style={{ position: 'fixed', top: panelRect.top, left: panelRect.left, width: panelRect.width }}
             onAnimationEnd={() => { if (!open) setPanelMounted(false); }}
           >

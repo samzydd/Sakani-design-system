@@ -21,6 +21,7 @@
 
 import React from 'react';
 import { createPortal } from 'react-dom';
+import { usePortalThemeClass } from '../../../lib/usePortalThemeClass';
 import { X, TriangleAlert } from 'lucide-react';
 import { IconButton } from '../../IconButton';
 import { Button } from '../../Button';
@@ -80,16 +81,17 @@ export const Modal: React.FC<ModalProps> = ({
   const cardRef = React.useRef<HTMLDivElement>(null);
   const lastFocus = React.useRef<HTMLElement | null>(null);
 
-  // Portaling to document.body escapes any ancestor .dark container -- this
+  // Portaling to document.body escapes any ancestor theme container -- this
   // system's dark mode is a scoped class, not a global html/body attribute,
   // so without this a modal opened from inside a dark-themed section would
   // render light. An inert marker rendered inline (not portaled) reads its
   // real ancestry via closest() before the content teleports away from it.
+  // Shared with Select, which portals for the same reason; going through the
+  // helper also picks up force-light, which the old closest('.dark') check
+  // missed -- a modal opened from a pinned-light subtree on a dark page still
+  // came out dark.
   const markerRef = React.useRef<HTMLSpanElement>(null);
-  const [isDark, setIsDark] = React.useState(false);
-  React.useEffect(() => {
-    if (open) setIsDark(!!markerRef.current?.closest('.dark'));
-  }, [open]);
+  const portalTheme = usePortalThemeClass(markerRef, open);
 
   // Escape to close, and a lightweight Tab trap -- cycles focus within the
   // card instead of letting it escape to the page behind the backdrop.
@@ -129,11 +131,11 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <>
       {/* Always rendered (even closed) so its ancestry is readable the
-          instant `open` flips true -- see the isDark effect above. */}
+          instant `open` flips true -- see the portalTheme marker above. */}
       <span ref={markerRef} style={{ display: 'none' }} aria-hidden="true" />
       {open && createPortal(
         <div
-          className={[styles.backdrop, isDark ? 'dark' : ''].filter(Boolean).join(' ')}
+          className={[styles.backdrop, portalTheme].filter(Boolean).join(' ')}
           onMouseDown={(e) => { if (closeOnBackdropClick && e.target === e.currentTarget) onClose(); }}
         >
           <div
