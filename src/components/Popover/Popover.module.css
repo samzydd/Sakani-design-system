@@ -24,6 +24,54 @@
 .panel--bottom-end   { top: calc(100% + 8px); right: 0; }
 .panel--top          { bottom: calc(100% + 8px); left: 0; }
 
+/* Entrance/exit, matching Select's and Combobox's panels: 180ms on the same
+   curve, so every floating surface in the system arrives the same way.
+ *
+ * Animated through `translate` and `scale` -- the independent transform
+ * properties -- rather than `transform`. The placement rules above already
+ * own `transform` (.panel--bottom centres itself with translateX(-50%)), and
+ * a keyframe setting `transform` would replace that outright, snapping the
+ * panel sideways for the duration of the animation. The independent
+ * properties compose with it instead of fighting it.
+ *
+ * Both keyframes declare their own `from`, so they play correctly on the
+ * first frame however late the class lands. */
+.panel--entering { animation: sakani-popover-in 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+.panel--exiting { animation: sakani-popover-out 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+@keyframes sakani-popover-in {
+  from { opacity: 0; translate: 0 -4px; scale: 0.98; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
+}
+@keyframes sakani-popover-out {
+  from { opacity: 1; translate: 0 0; scale: 1; }
+  to { opacity: 0; translate: 0 -4px; scale: 0.98; }
+}
+
+/* Opening upward should travel upward: the panel sits above its trigger, so
+   the -4px start used above would have it drop in from the wrong side. */
+.panel--top.panel--entering { animation-name: sakani-popover-in-up; }
+.panel--top.panel--exiting { animation-name: sakani-popover-out-up; }
+
+@keyframes sakani-popover-in-up {
+  from { opacity: 0; translate: 0 4px; scale: 0.98; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
+}
+@keyframes sakani-popover-out-up {
+  from { opacity: 1; translate: 0 0; scale: 1; }
+  to { opacity: 0; translate: 0 4px; scale: 0.98; }
+}
+
+/* Still needs to run, or onAnimationEnd never fires and a dismissed popover
+   would stay mounted forever -- reduced to an imperceptible fade instead of
+   removed. */
+@media (prefers-reduced-motion: reduce) {
+  .panel--entering,
+  .panel--exiting {
+    animation-duration: 1ms;
+  }
+}
+
 .panel__title { font-size: 14px; font-weight: 600; color: var(--color-fg-default); }
 .panel__description { font-size: 13px; line-height: 18px; color: var(--color-fg-muted); }
 .panel__body { font-size: 14px; color: var(--color-fg-default); }

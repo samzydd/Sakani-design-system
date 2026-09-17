@@ -92,3 +92,50 @@
 .footer--between {
   justify-content: space-between;
 }
+
+/* Entrance/exit. Same 180ms and curve as Select, Combobox and Popover, so
+   every surface that opens in this system arrives the same way -- this one
+   used to appear and vanish on a single frame.
+ *
+ * The backdrop only fades: moving or scaling a full-viewport layer is both
+ * pointless and expensive. The card carries the motion, rising a little
+ * further than a popover does (8px vs 4px) because it enters over a dimmed
+ * page rather than next to its trigger, and needs slightly more travel to
+ * read as arriving rather than blinking.
+ *
+ * `translate`/`scale` rather than `transform`: the card is centred by its
+ * flex parent so nothing here conflicts today, but keeping the independent
+ * properties free means a future placement rule can use `transform` without
+ * silently breaking these keyframes. */
+.backdrop--entering { animation: sakani-modal-backdrop-in 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+.backdrop--exiting { animation: sakani-modal-backdrop-out 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+.card--entering { animation: sakani-modal-card-in 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+.card--exiting { animation: sakani-modal-card-out 180ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+@keyframes sakani-modal-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes sakani-modal-backdrop-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes sakani-modal-card-in {
+  from { opacity: 0; translate: 0 8px; scale: 0.97; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
+}
+@keyframes sakani-modal-card-out {
+  from { opacity: 1; translate: 0 0; scale: 1; }
+  to { opacity: 0; translate: 0 8px; scale: 0.97; }
+}
+
+/* Shortened, not removed: onAnimationEnd is what unmounts the modal, so a
+   dismissed dialog would stay on screen forever without it. */
+@media (prefers-reduced-motion: reduce) {
+  .backdrop--entering,
+  .backdrop--exiting,
+  .card--entering,
+  .card--exiting {
+    animation-duration: 1ms;
+  }
+}

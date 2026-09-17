@@ -29,6 +29,9 @@ import { Divider } from '../../Divider';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './Modal.module.css';
 
+/** Keep in step with the animation duration in Modal.module.css. */
+const EXIT_MS = 180;
+
 export type ModalVariant = 'default' | 'destructive';
 
 export interface ModalProps {
@@ -93,6 +96,26 @@ export const Modal: React.FC<ModalProps> = ({
   const markerRef = React.useRef<HTMLSpanElement>(null);
   const portalTheme = usePortalThemeClass(markerRef, open);
 
+  // Stays mounted past `open` so the exit animation has something to play
+  // on. `open` remains the consumer's signal and every behavioural effect
+  // below still keys off it -- the scroll lock releases and focus returns the
+  // moment it flips, while only the visuals linger.
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    if (open) setMounted(true);
+  }, [open]);
+
+  // onAnimationEnd alone isn't enough: it never fires if the animation
+  // doesn't actually run (a backgrounded tab, or anything suppressing
+  // animations), which for a modal would leave a full-screen backdrop
+  // mounted over the page after it was dismissed. Whichever fires first
+  // unmounts it.
+  React.useEffect(() => {
+    if (open || !mounted) return;
+    const timer = setTimeout(() => setMounted(false), EXIT_MS + 60);
+    return () => clearTimeout(timer);
+  }, [open, mounted]);
+
   // Escape to close, and a lightweight Tab trap -- cycles focus within the
   // card instead of letting it escape to the page behind the backdrop.
   React.useEffect(() => {
@@ -133,9 +156,13 @@ export const Modal: React.FC<ModalProps> = ({
       {/* Always rendered (even closed) so its ancestry is readable the
           instant `open` flips true -- see the portalTheme marker above. */}
       <span ref={markerRef} style={{ display: 'none' }} aria-hidden="true" />
-      {open && createPortal(
+      {mounted && createPortal(
         <div
-          className={[styles.backdrop, portalTheme].filter(Boolean).join(' ')}
+          className={[
+            styles.backdrop,
+            portalTheme,
+            open ? styles['backdrop--entering'] : styles['backdrop--exiting'],
+          ].filter(Boolean).join(' ')}
           onMouseDown={(e) => { if (closeOnBackdropClick && e.target === e.currentTarget) onClose(); }}
         >
           <div
@@ -145,7 +172,13 @@ export const Modal: React.FC<ModalProps> = ({
             aria-labelledby={hideHeader ? undefined : 'modal-title'}
             aria-label={hideHeader ? title : undefined}
             tabIndex={-1}
-            className={[styles.card, className ?? ''].filter(Boolean).join(' ')}
+            className={[
+              styles.card,
+              open ? styles['card--entering'] : styles['card--exiting'],
+              className ?? '',
+            ].filter(Boolean).join(' ')}
+            /* animationend bubbles; only the card's own should unmount. */
+            onAnimationEnd={(e) => { if (e.target === e.currentTarget && !open) setMounted(false); }}
           >
             {!hideHeader && (
               <div className={styles.header}>
