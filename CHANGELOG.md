@@ -2,6 +2,45 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.3.4
+
+0.3.3 was never actually published — a publish got stuck mid-flight on the
+registry (staged but never finalized) and had to be abandoned rather than
+retried, so this carries everything that would have shipped as 0.3.3:
+
+- **Fix: `Popover` and `Modal` had no entrance/exit animation at all.** They
+  appeared and vanished on a single frame, unlike `Select` and `Combobox`,
+  which already ease their panels in and out. Both now animate over 180ms on
+  the same curve, kept mounted past `open` so the exit has something to play
+  on, and fall back to a timeout if `animationend` never fires (a
+  backgrounded tab, or anything suppressing animations) — without it, a
+  dismissed popover, or worse a full-screen modal backdrop, could be left
+  mounted and invisible over the page while still able to take focus.
+- **Fix: charts read colour tokens from `document.documentElement`, ignoring
+  any `.dark`/`.force-light` scope between it and the chart.** A chart
+  rendered inside a themed container painted the *outer* theme's colours on
+  the *inner* theme's background. Tokens now resolve from the chart's own
+  element, and the reader re-renders when any ancestor's class changes, not
+  just `<html>`'s.
+- **Fix: server-rendered charts never picked up real tokens at all.**
+  `useThemeTick` only bumped on theme *changes*; under SSR there is no
+  `getComputedStyle`, so a server-rendered chart kept its hardcoded fallback
+  colours forever once hydrated (React won't patch a hydration mismatch). It
+  now also bumps once on mount. Several of those fallbacks were themselves
+  stale values from an older palette and are corrected.
+- **Fix: `Select`'s floating listbox and `Modal`'s backdrop ignored the
+  `.dark`/`.force-light` scope of whatever they were opened from.** Both
+  portal to `<body>` to position with `fixed`, which moves them out from
+  under any themed container; they now carry that container's theme class
+  onto the portaled element.
+- `Table` gained a drag handle: a grip icon at the left edge of a
+  `reorderable` row, hidden until hover, and the sole drag origin (dragging
+  no longer starts from clicking anywhere in the row).
+- `CRMDashboardBlock`, `KanbanBoardBlock` and `DataTableBlock` gained
+  `fillPlaceholders`, which extends the table to fill a taller container with
+  placeholder rows instead of leaving blank canvas below it.
+- `Calendar` now exports its `DateRange` type.
+
 ## 0.3.2
 
 - **Fix: `@sakaniui/react/tokens.css` was never actually published.** The `exports` map pointed it at `./src/styles/tokens.css`, but `files: ["dist"]` only ever publishes the `dist` folder — so that path never existed in the installed package, and `import '@sakaniui/react/tokens.css'` (exactly as documented in the README) failed to resolve for every consumer. Without it, every component would have rendered completely unstyled: the CSS ships only the `var(--color-fg-default)` *references*, not the `:root { --color-fg-default: ... }` *definitions*. Fixed by copying `tokens.css` into `dist/` as part of the build and pointing the export there instead.
