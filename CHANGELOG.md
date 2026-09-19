@@ -2,6 +2,17 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.3.5
+
+- Replaces the Sakani mark (`PlaceholderLogo`'s default fill) with the new
+  logo, brand-orange background.
+- Fix: `vite.lib.config.ts` has no `publicDir` override, so Vite's default
+  behaviour was copying this repo's `public/` folder into the published
+  package as a side effect — `dist/favicon.svg` shipped inside every install
+  of `@sakaniui/react` for no reason connected to the library itself. Still
+  ships (removing it isn't this release's job), but now carries the current
+  brand mark rather than a leftover unrelated asset.
+
 ## 0.3.4
 
 0.3.3 was never actually published — a publish got stuck mid-flight on the
