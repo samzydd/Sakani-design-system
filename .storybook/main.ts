@@ -12,6 +12,12 @@ const config: StorybookConfig = {
     "@storybook/addon-docs",
     "@storybook/addon-mcp"
   ],
-  "framework": "@storybook/react-vite"
+  "framework": "@storybook/react-vite",
+  // Without this, Storybook never serves this project's public/ at all and
+  // falls back to its own bundled default favicon (Storybook's own pink
+  // mark) -- so the tab icon on the published Storybook (linked directly
+  // from the docs site header) was never this project's brand, it was
+  // always the tool's.
+  "staticDirs": ["../public"]
 };
 export default config;
