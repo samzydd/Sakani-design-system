@@ -197,7 +197,17 @@ function FilterGroupHeader({ title, isOpen, onToggle }: { title: string; isOpen:
  * permanently would clip that panel the moment it's open. So it's only
  * held during the transition: switched to visible once the open
  * animation actually finishes, and back to hidden the instant a close
- * starts (by which point any dropdown inside should already be closed). */
+ * starts (by which point any dropdown inside should already be closed).
+ *
+ * "The instant a close starts" has to mean the same render that sets
+ * isOpen=false, which is why the style below is gated on isOpen and not on
+ * the flag alone. Resetting the flag from an effect is a frame too late: the
+ * effect runs after the browser has already painted the first frame of the
+ * collapse, so that frame painted a shrinking row with overflow still
+ * visible, and whatever stuck out of it stayed on screen -- most visibly the
+ * Deal value slider's thumb, which sits proud of its track and so was the
+ * last thing left hanging under a closed section. Gating on isOpen makes the
+ * clip and the collapse the same paint. */
 function CollapsibleSection({ isOpen, children }: { isOpen: boolean; children: React.ReactNode }) {
   const [overflowVisible, setOverflowVisible] = React.useState(false);
   React.useEffect(() => {
@@ -206,7 +216,7 @@ function CollapsibleSection({ isOpen, children }: { isOpen: boolean; children: R
   return (
     <div
       className={[styles.collapsible, isOpen ? styles['collapsible--open'] : ''].filter(Boolean).join(' ')}
-      style={overflowVisible ? { overflow: 'visible' } : undefined}
+      style={isOpen && overflowVisible ? { overflow: 'visible' } : undefined}
       onTransitionEnd={(e) => {
         if (e.propertyName === 'grid-template-rows' && isOpen) setOverflowVisible(true);
       }}

@@ -163,7 +163,10 @@
 .group {
   display: flex;
   flex-direction: column;
-  padding-bottom: var(--space-16);
+  /* Matches .collapsibleInner's padding-top, so an open section is framed by
+     the same space above its content as below it. These were 12 and 16, which
+     read as the sections sitting slightly low in their own slot. */
+  padding-bottom: var(--space-12);
 }
 
 /* Grid-based collapse (see CollapsibleSection) -- 0fr/1fr rather than a
@@ -430,6 +433,13 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-8);
+  /* An inline-flex box sizes to its content, and the table is
+     table-layout:fixed, so a long email in the Contact column grew this box
+     straight past its own cell and printed on top of the next column (the
+     cell is 143px; the content was rendering 187px). Capping it at the cell
+     width is what lets .cellStack's min-width:0 take effect, which is in turn
+     what lets .cellSub's ellipsis actually engage instead of overflowing. */
+  max-width: 100%;
 }
 
 .cellStack {

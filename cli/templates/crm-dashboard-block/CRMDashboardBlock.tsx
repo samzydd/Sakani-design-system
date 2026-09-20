@@ -206,7 +206,11 @@ function CollapsibleSection({ isOpen, children }: { isOpen: boolean; children: R
   return (
     <div
       className={[styles.collapsible, isOpen ? styles['collapsible--open'] : ''].filter(Boolean).join(' ')}
-      style={overflowVisible ? { overflow: 'visible' } : undefined}
+      // Gated on isOpen, not on the flag alone: resetting the flag from an
+      // effect is a frame too late, so the first frame of the collapse painted
+      // with overflow still visible and whatever stuck out of the box stayed
+      // on screen -- most visibly the Deal value slider's thumb.
+      style={isOpen && overflowVisible ? { overflow: 'visible' } : undefined}
       onTransitionEnd={(e) => {
         if (e.propertyName === 'grid-template-rows' && isOpen) setOverflowVisible(true);
       }}

@@ -63,6 +63,9 @@
   transition: background-color var(--transition-base);
 }
 .bodyRow:hover { background: var(--color-bg-subtle); }
+/* The whole row is the click target when rows are selectable, so it should
+   say so -- otherwise the pointer only changes over the 18px checkbox. */
+.bodyRow--selectable { cursor: pointer; }
 .bodyRow--selected { background: var(--color-accent-subtle); }
 .bodyRow--selected:hover { background: var(--color-accent-subtle); }
 .bodyCell {
@@ -173,6 +176,7 @@
   border: var(--border-width-100) solid var(--color-border-subtle);
   border-radius: var(--radius-md);
 }
+.card--selectable { cursor: pointer; }
 
 .card--selected { background: var(--color-accent-subtle); }
 

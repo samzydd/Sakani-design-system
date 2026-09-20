@@ -126,6 +126,27 @@ export function Table<T>({
   const toggleRow = (i: number) =>
     setSelected(selected.includes(i) ? selected.filter((x) => x !== i) : [...selected, i]);
 
+  /**
+   * Clicking anywhere in a selectable row ticks that row's checkbox, so the
+   * whole row is the hit target rather than an 18px box at its left edge.
+   *
+   * Two things are deliberately left alone. Anything interactive a cell
+   * renders -- a link, a button, a form control, and the checkbox's own
+   * <label> -- keeps its own behaviour: the label already toggles the input,
+   * so letting the row handle that click too would toggle twice and land back
+   * where it started. And a click that finished a text selection is someone
+   * copying a cell's contents, not choosing a row.
+   *
+   * The checkbox stays the keyboard path; this adds a pointer affordance
+   * rather than replacing it, so no extra tab stop is introduced.
+   */
+  const handleRowClick = (i: number) => (e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('a, button, input, select, textarea, label, [role="button"], [draggable="true"]')) return;
+    if (!window.getSelection()?.isCollapsed) return;
+    toggleRow(i);
+  };
+
   if (mode === 'stacked') {
     return (
       <div className={[styles.stackedList, className ?? ''].filter(Boolean).join(' ')} role="list">
@@ -135,7 +156,12 @@ export function Table<T>({
             <div
               key={rowKey ? rowKey(row, i) : i}
               role="listitem"
-              className={[styles.card, isSel ? styles['card--selected'] : ''].filter(Boolean).join(' ')}
+              onClick={selectable ? handleRowClick(i) : undefined}
+              className={[
+                styles.card,
+                isSel ? styles['card--selected'] : '',
+                selectable ? styles['card--selectable'] : '',
+              ].filter(Boolean).join(' ')}
             >
               {selectable && (
                 <div className={styles.card__selectRow}>
@@ -181,11 +207,13 @@ export function Table<T>({
             return (
               <tr
                 key={rowKey ? rowKey(row, i) : i}
+                onClick={selectable ? handleRowClick(i) : undefined}
                 onDragOver={reorderable ? (e) => { e.preventDefault(); setOverIndex(i); } : undefined}
                 onDrop={reorderable ? handleDrop : undefined}
                 onDragEnd={reorderable ? () => { setDragIndex(null); setOverIndex(null); } : undefined}
                 className={[
                   styles.bodyRow,
+                  selectable ? styles['bodyRow--selectable'] : '',
                   isSel ? styles['bodyRow--selected'] : '',
                   overIndex === i && dragIndex !== null && dragIndex !== i ? styles['bodyRow--dropTarget'] : '',
                   dragIndex === i ? styles['bodyRow--dragging'] : '',
