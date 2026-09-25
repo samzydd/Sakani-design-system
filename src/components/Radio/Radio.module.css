@@ -44,7 +44,32 @@
 .input:checked + .circle {
   border-color: var(--color-accent-default);
 }
-.input:checked + .circle .dot { transform: scale(1); }
+/* Selecting a radio lands the dot with a small spring: out to ~1.13x, back
+   a hair under 1x, settled. Deliberately far calmer than WishlistButton's
+   "like" pop (1.35x) -- this is a form control, not a celebration.
+
+   A transition rather than a keyframe animation, because transitions never
+   run on first render: a radio that mounts already checked shows its dot
+   still, instead of every default in a form bouncing on page load. The
+   timing function lives on the checked rule, so the spring plays only on
+   the way in; deselecting falls back to the plain ease above.
+
+   The curve is a sampled damped spring (damping ratio 0.55), which
+   cubic-bezier cannot express -- it overshoots once but cannot rebound.
+   The cubic-bezier line is the fallback for browsers without linear():
+   they drop the declaration below it and keep a single soft overshoot. It
+   has to be written out here rather than held in a custom property, since
+   an unsupported value inside var() voids the whole declaration at
+   computed-value time instead of falling back to the line above. */
+.input:checked + .circle .dot {
+  transform: scale(1);
+  transition: transform 450ms cubic-bezier(0.34, 1.4, 0.64, 1);
+  transition: transform 450ms linear(0, 0.069 4%, 0.232 8%, 0.435 12%, 0.638 16%, 0.815 20%, 0.953 24%, 1.047 28%, 1.102 32%, 1.125 36%, 1.126 37.6%, 1.123 40%, 1.106 44%, 1.082 48%, 1.056 52%, 1.032 56%, 1.012 60%, 0.998 64%, 0.989 68%, 0.985 72%, 0.984 75.2%, 0.986 80%, 0.988 84%, 0.992 88%, 0.995 92%, 0.998 96%, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input:checked + .circle .dot { transition: none; }
+}
 
 /* Focus */
 .input:focus-visible + .circle {
