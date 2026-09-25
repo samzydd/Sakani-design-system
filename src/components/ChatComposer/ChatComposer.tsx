@@ -335,7 +335,6 @@ export const ChatComposer: React.FC<ChatComposerProps> = ({
           icon={Send}
           variant="primary"
           size="sm"
-          className={styles.sendButton}
           onClick={onSend}
           disabled={!canSend}
           aria-label="Send message"

@@ -1,9 +1,9 @@
-/* IconButton — square, radius-sm; sizes 32/40/48; variant colors mirror Button. */
+/* IconButton — square, radius-md; sizes 32/40/48; variant colors mirror Button. */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   border: var(--border-width-100) solid transparent;
   cursor: pointer;
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
