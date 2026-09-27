@@ -1,11 +1,11 @@
-/* SegmentedControl — track bg/subtle radius-md pad 4 gap 2; active seg bg/surface radius-sm. */
+/* SegmentedControl — track bg/subtle radius-lg pad 4 gap 2; active seg bg/surface radius-md. */
 .track {
   position: relative;
   display: inline-flex;
   gap: var(--space-2);
   padding: var(--space-4);
   background: var(--color-bg-subtle);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   font-family: var(--font-sans);
 }
 
@@ -14,10 +14,16 @@
   flex: 1 1 0;
   min-width: 0;
   text-align: center;
-  padding: var(--space-4) var(--space-12);
+  /* Figma's Button instance is 32px tall via 6px top/bottom padding around a
+     20px label -- this was 4px (a 28px segment, 36px track), which read as
+     the label sitting cramped against the pill rather than hugging it with
+     room to spare. Checked directly against the file: identical across
+     every segment count (2 through 6), so this wasn't one variant drifting,
+     the padding token itself was one step short. */
+  padding: var(--space-6) var(--space-12);
   border: none;
   background: transparent;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   cursor: pointer;
   font-family: inherit;
   font-size: 14px;
@@ -41,7 +47,11 @@
   bottom: var(--space-2);
   left: 0;
   z-index: 0;
-  border-radius: var(--radius-sm);
+  /* Matches .segment's own radius-md -- this is the raised surface sitting
+     directly behind the active label, so a mismatched radius here would
+     show as the pill's corner poking out past (or short of) the segment
+     it's supposed to be filling. */
+  border-radius: var(--radius-md);
   background: var(--color-bg-surface);
   /* shadow/xs -> shadow/sm (re-read 2026-08-27) -- was also hand-hardcoded
      instead of the token var; bound to it now. */

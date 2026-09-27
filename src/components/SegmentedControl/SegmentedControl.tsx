@@ -2,8 +2,10 @@
  * SegmentedControl
  *
  * iOS-style toggle group. Matches Figma "Segmented Control" (2-6 buttons).
- * Figma spec: track bg/subtle, radius-md, padding 4, gap 2;
- * active segment bg/surface, radius-sm, label/md fg/default; inactive fg/muted.
+ * Figma spec: track bg/subtle, radius-lg, padding 4, gap 2;
+ * active segment bg/surface, radius-md, label/md fg/default; inactive fg/muted.
+ * Segment padding is 6/12 (not 4/12) -- checked directly against every
+ * segment-count variant in Figma, all identical: 40px track, 32px segment.
  */
 
 import React from 'react';
