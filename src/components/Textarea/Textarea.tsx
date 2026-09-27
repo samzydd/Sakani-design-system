@@ -7,9 +7,11 @@
  * Exact Figma spec:
  *   - Field: vertical, 6px gap
  *   - Label: label/md (14px/500, fg/default)
- *   - Box: bg/surface, border/default 1px, radius-md, padding 10/14, min-height 84px
+ *   - Box: bg/surface, border/default 1px, radius-md, padding 10/14, 84px tall
  *   - Value/placeholder: body/sm (14px/500, fg/subtle placeholder / fg/default value)
- *   - Description: body/xs (13px, fg/muted)
+ *   - Description: body/xs (13px/500, fg/muted)
+ *   - Focus: border/focus (brand) 1.5px · Error: danger/solid 1.5px
+ *   - Disabled: bg/subtle, border/subtle, 60% opacity
  */
 
 import React from 'react';
@@ -23,10 +25,13 @@ export interface TextareaProps
 }
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ label, description, error, disabled, id, className, rows = 4, ...rest }, ref) => {
+  // rows=3 is what lands on Figma's 84px box (3 x 20px lines + 10/10 padding);
+  // the old default of 4 rendered 102px, so min-height never applied.
+  ({ label, description, error, disabled, id, className, rows = 3, ...rest }, ref) => {
     const reactId = React.useId();
     const areaId = id ?? reactId;
     const hasError = Boolean(error);
+    const descId = description || error ? `${areaId}-desc` : undefined;
 
     return (
       <div className={[styles.field, className ?? ''].filter(Boolean).join(' ')}>
@@ -38,6 +43,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           rows={rows}
           disabled={disabled}
           aria-invalid={hasError || undefined}
+          aria-describedby={descId}
           className={[
             styles.textarea,
             hasError ? styles['textarea--error'] : '',
@@ -47,7 +53,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         />
 
         {(description || error) && (
-          <span className={hasError ? styles.field__error : styles.field__description}>
+          <span id={descId} className={hasError ? styles.field__error : styles.field__description}>
             {error || description}
           </span>
         )}
