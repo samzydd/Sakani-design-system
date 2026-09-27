@@ -27,10 +27,11 @@
 }
 .textarea::placeholder { color: var(--color-fg-subtle); font-weight: 400; }
 
+/* Focus — neutral border + soft shadow (no accent ring), matching Input's
+   own deliberate departure from Figma's raw brand-colored focus stroke. */
 .textarea:focus {
   outline: none;
-  border-color: var(--color-border-focus);
-  border-width: var(--border-width-150);
+  border-color: var(--color-border-default);
   box-shadow: var(--shadow-sm);
 }
 
