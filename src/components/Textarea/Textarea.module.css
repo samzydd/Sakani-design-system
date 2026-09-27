@@ -29,26 +29,24 @@
 /* Placeholder is body/sm Medium, same as the value -- only the color differs. */
 .textarea::placeholder { color: var(--color-fg-subtle); font-weight: 500; }
 
-/* Focus -- same treatment as Input's own focus-within (border-default +
-   shadow-sm), not Figma's raw brand-colored stroke: no width change, so
-   nothing needs a padding offset the way Error's 1.5px border does below. */
-.textarea:focus {
-  outline: none;
-  border-color: var(--color-border-default);
-  box-shadow: var(--shadow-sm);
-}
-
-/* Error (Figma: State=Error) -- 1.5px danger/solid. Border-box sizing means
-   the extra 0.5px would eat into the content box and nudge the text; taking
-   it back out of the padding keeps the text still. Focused+invalid keeps
-   the red border (declared after :focus) and adds shadow-sm on top,
-   mirroring Input's own error:focus-within exactly. */
+/* Focus and Error both go to 1.5px (re-read from Figma: Focus is now
+   border/strong, matching Input). Border-box sizing means the extra 0.5px
+   would eat into the content box and nudge the text; taking it back out
+   of the padding keeps the text still. */
+.textarea:focus,
 .textarea--error {
   border-width: var(--border-width-150);
   padding: calc(var(--space-10) - 0.5px) calc(var(--space-14) - 0.5px);
-  border-color: var(--color-danger-solid);
 }
-.textarea--error:focus { border-color: var(--color-danger-solid); box-shadow: var(--shadow-sm); }
+
+.textarea:focus { outline: none; border-color: var(--color-border-strong); }
+
+/* Error (Figma: State=Error) -- danger/solid. .textarea:focus's own
+   specificity (.textarea + :focus) already matches this rule's, so a
+   focused error field needs its own :focus variant declared below to
+   keep the red border instead of losing it to source order. */
+.textarea--error { border-color: var(--color-danger-solid); }
+.textarea--error:focus { border-color: var(--color-danger-solid); }
 
 /* Disabled (Figma: State=Disabled) -- bg/subtle, border/subtle, 60%. */
 .textarea--disabled {

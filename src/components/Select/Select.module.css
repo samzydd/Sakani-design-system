@@ -24,16 +24,24 @@
 .select--md { height: 40px; }
 .select--lg { height: 48px; }
 
+/* Open/Focus (re-read from Figma) -- border/strong at 1.5px, no shadow. */
 .select--open,
 .select:focus-visible {
-  border-color: var(--color-border-default);
+  border-color: var(--color-border-strong);
   border-width: var(--border-width-150);
-  box-shadow: var(--shadow-sm);
 }
 
+/* Error -- danger/solid. Needs its own open/focus-visible variant below:
+   .select:focus-visible's specificity already matches .select--open's, so
+   an errored select that's also open/focused would otherwise lose the red
+   border to border-strong regardless of source order. */
 .select--error {
   border-color: var(--color-danger-solid);
   border-width: var(--border-width-150);
+}
+.select--error.select--open,
+.select--error:focus-visible {
+  border-color: var(--color-danger-solid);
 }
 
 .select--disabled {

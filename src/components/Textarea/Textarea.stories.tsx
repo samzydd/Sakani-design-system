@@ -21,8 +21,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-/** autoFocus so the state renders without needing a click -- border-default
- *  + shadow-sm, matching Input's own focus-within treatment. */
+/** autoFocus so the state renders without needing a click -- border-strong
+ *  at 1.5px, no shadow, matching Input's own focus-within treatment. */
 export const Focus: Story = { args: { label: 'Message', autoFocus: true } };
 export const WithLabel: Story = { args: { label: 'Message', description: 'Max 500 characters.' } };
 export const Filled: Story = { args: { label: 'Message', defaultValue: 'Entered text goes here. It can span multiple lines.' } };

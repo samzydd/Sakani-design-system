@@ -26,16 +26,23 @@
 .control--md { min-height: 40px; }
 .control--lg { min-height: 48px; }
 
+/* Open/Focus (re-read from Figma) -- border/strong at 1.5px, no shadow. */
 .control--open,
 .control:focus-within {
-  border-color: var(--color-border-default);
+  border-color: var(--color-border-strong);
   border-width: var(--border-width-150);
-  box-shadow: var(--shadow-sm);
 }
+
+/* Error -- danger/solid. control--open and control--error are mutually
+   exclusive (one `state` string picks the class), but :focus-within isn't
+   -- a real DOM focus can still land on an errored control regardless of
+   `open`, and :focus-within's specificity already matches .control--open's,
+   so this needs its own variant below to keep the red border. */
 .control--error {
   border-color: var(--color-danger-solid);
   border-width: var(--border-width-150);
 }
+.control--error:focus-within { border-color: var(--color-danger-solid); }
 .control--disabled {
   background: var(--color-bg-subtle);
   cursor: not-allowed;

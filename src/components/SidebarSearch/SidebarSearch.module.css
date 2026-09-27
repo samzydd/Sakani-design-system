@@ -13,7 +13,14 @@
   cursor: text;
   box-sizing: border-box;
 }
-.search:focus-within { border-color: var(--color-border-default); box-shadow: var(--shadow-sm); }
+/* Focus (matching Input's re-read Figma spec) -- border/strong at 1.5px,
+   no shadow. The 0.5px extra width is taken back out of the padding so a
+   border-box, fixed-height field like this one doesn't nudge its content. */
+.search:focus-within {
+  border-color: var(--color-border-strong);
+  border-width: var(--border-width-150);
+  padding: calc(var(--space-8) - 0.5px) calc(var(--space-8) - 0.5px) calc(var(--space-8) - 0.5px) calc(var(--space-10) - 0.5px);
+}
 
 .search__icon { color: var(--color-fg-muted); flex-shrink: 0; }
 .search__input {

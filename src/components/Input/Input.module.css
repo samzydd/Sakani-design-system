@@ -50,18 +50,23 @@
 .input--md { padding: var(--space-10) var(--space-12); }
 .input--lg { padding: var(--space-12) var(--space-12); }
 
-/* Focus — neutral border + soft shadow (no accent ring) */
+/* Focus (re-read from Figma) — border/strong at 1.5px, no shadow. */
 .input:focus-within {
-  border-color: var(--color-border-default);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--color-border-strong);
+  border-width: var(--border-width-150);
 }
 
-/* Error — danger/solid 1.5px */
+/* Error — danger/solid 1.5px, same width :focus-within also sets, so
+   nothing to add there but the color. .input:focus-within's own
+   specificity (.input + :focus-within) already matches this rule's, so
+   without a dedicated :focus-within variant here, a focused error field
+   would take :focus-within's border-strong purely from source order --
+   this needs to be declared explicitly to win instead. */
 .input--error {
   border-color: var(--color-danger-solid);
   border-width: var(--border-width-150);
 }
-.input--error:focus-within { border-color: var(--color-danger-solid); box-shadow: var(--shadow-sm); }
+.input--error:focus-within { border-color: var(--color-danger-solid); }
 
 /* Disabled — bg/subtle */
 .input--disabled {

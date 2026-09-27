@@ -82,9 +82,11 @@
   background: var(--color-bg-surface);
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
+/* Focus (matching Input's re-read Figma spec) -- border/strong at 1.5px,
+   no shadow. */
 .bar__left--search:focus-within {
-  border-color: var(--color-border-default);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--color-border-strong);
+  border-width: var(--border-width-150);
 }
 
 /* Chevron indicator next to account avatar — shows dropdown intent. */
