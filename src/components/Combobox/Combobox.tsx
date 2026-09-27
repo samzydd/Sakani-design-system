@@ -113,6 +113,21 @@ export const Combobox: React.FC<ComboboxProps> = ({
   const selected = value !== undefined ? value : internal;
   const selectedArr = Array.isArray(selected) ? selected : selected ? [selected] : [];
 
+  // Rendered chips lag selectedArr by one exit animation: a deselected value
+  // stays in place flagged `leaving` until its fade ends, whichever path
+  // removed it (the chip's ×, the option list, or a controlled `value`).
+  const [chips, setChips] = React.useState(() => selectedArr.map((v) => ({ value: v, leaving: false })));
+  const selectedKey = selectedArr.join('\u0000');
+  React.useLayoutEffect(() => {
+    setChips((prev) => {
+      const next = prev.map((c) => ({ value: c.value, leaving: !selectedArr.includes(c.value) }));
+      for (const v of selectedArr) if (!next.some((c) => c.value === v)) next.push({ value: v, leaving: false });
+      return next;
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedKey]);
+  const dropChip = (v: string) => setChips((prev) => prev.filter((c) => !(c.value === v && c.leaving)));
+
   const hasError = Boolean(error);
 
   // Close on outside click
@@ -180,14 +195,20 @@ export const Combobox: React.FC<ComboboxProps> = ({
         onKeyDown={onKeyDown}
       >
         {/* Multi chips */}
-        {mode === 'multi' && selectedArr.length > 0 && (
+        {mode === 'multi' && chips.length > 0 && (
           <div className={styles.chips}>
-            {selectedArr.map((v) => (
-              <span key={v} className={styles.chip}>
+            {chips.map(({ value: v, leaving }) => (
+              <span
+                key={v}
+                className={[styles.chip, leaving ? styles['chip--leaving'] : ''].filter(Boolean).join(' ')}
+                aria-hidden={leaving || undefined}
+                onAnimationEnd={leaving ? () => dropChip(v) : undefined}
+              >
                 {labelFor(v)}
                 <button
                   type="button"
                   className={styles.chip__remove}
+                  tabIndex={leaving ? -1 : undefined}
                   onClick={(e) => { e.stopPropagation(); toggleOption(options.find((o) => o.value === v)!); }}
                   aria-label={`Remove ${labelFor(v)}`}
                 >×</button>
@@ -196,7 +217,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
           </div>
         )}
 
-        {!(mode === 'multi' && selectedArr.length > 0) && (
+        {!(mode === 'multi' && chips.length > 0) && (
           <span
             className={[
               styles.control__value,
