@@ -25,7 +25,13 @@
   border-radius: var(--radius-sm);
   flex-shrink: 0;
 }
-.card__title { flex: 1; font-size: 13px; font-weight: 500; color: var(--color-fg-muted); }
+/* label/md (checked directly against Figma's text style, not just the
+   component instance): 14px, weight 500, line-height 20px. Figma's own
+   title just moved here from label/md-strong (14/600) -- same size, only
+   the weight stepped down -- but the code was at neither: 13px with no
+   line-height at all, closer to label/sm's size than either labelled style.
+   Matching label/md exactly rather than just dropping the weight. */
+.card__title { flex: 1; font-size: 14px; font-weight: 500; line-height: 20px; color: var(--color-fg-muted); }
 .card__menu {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
 
