@@ -46,11 +46,16 @@
     border-color var(--transition-base),
     box-shadow var(--transition-base),
     opacity var(--transition-base),
-    /* Kept off --transition-base (220ms): a press has to read as
-       immediate, not eased in over two hundred milliseconds like a color
-       change. --transition-fast still eases both ways rather than
-       snapping, which is what keeps it feeling soft instead of glitchy. */
-    transform var(--transition-fast);
+    /* --transition-fast (150ms ease-in-out) was the first attempt here and
+       read as too sudden either direction -- press-down or release. The
+       problem was the curve as much as the duration: ease-in-out's steep
+       middle acceleration is the same "reads as a snap for a response to
+       user input" effect --transition-hover's own comment describes for
+       hover, just triggered by a press instead of a cursor arriving.
+       --transition-hover (320ms ease-out) is that fix already sitting in
+       the token set -- an immediate-then-settling curve rather than a
+       sharp middle snap, reused rather than inventing a new easing. */
+    transform var(--transition-hover);
   box-shadow: var(--shadow-xs);
 
   /* Focus ring — chromatic so it's always visible regardless of variant */
@@ -83,6 +88,10 @@
  * than motion -- a button that visibly bounced on every press would tire
  * fast. transform-origin is the box's own default centre, so sm/md/lg all
  * settle in place rather than toward one edge.
+ *
+ * Mirrored on IconButton's own base class -- same rule, same
+ * --transition-hover timing -- since it shares this exact press-then-color
+ * pattern and shouldn't feel like a different control under the pointer.
  */
 .button:active:not(:disabled) {
   transform: scale(0.97);
@@ -95,7 +104,7 @@
  * Maps to Figma: Variant=Primary
  */
 .button--primary {
-  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base), transform var(--transition-hover);
 
   background-color: var(--color-accent-default);
   color: var(--color-fg-on-accent);
@@ -122,7 +131,7 @@
  * Primary uses.
  */
 .button--secondary {
-  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base), transform var(--transition-hover);
 
   background-color: var(--color-bg-subtle);
   color: var(--color-fg-default);
@@ -145,7 +154,7 @@
  * Maps to Figma: Variant=Outline
  */
 .button--outline {
-  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base), transform var(--transition-hover);
 
   background-color: transparent;
   color: var(--color-fg-default);
@@ -167,7 +176,7 @@
  * Maps to Figma: Variant=Ghost
  */
 .button--ghost {
-  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base), transform var(--transition-hover);
 
   background-color: transparent;
   color: var(--color-fg-default);
@@ -188,7 +197,7 @@
  * Maps to Figma: Variant=Destructive
  */
 .button--destructive {
-  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base), transform var(--transition-hover);
 
   background-color: var(--color-danger-solid);
   color: var(--color-fg-on-accent);
