@@ -241,6 +241,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
           className={[styles.panel, open ? styles['panel--entering'] : styles['panel--exiting']].filter(Boolean).join(' ')}
           id={`${reactId}-panel`}
           role="listbox"
+          aria-multiselectable={mode === 'multi' || undefined}
           aria-busy={loading || undefined}
           onAnimationEnd={() => { if (!open) setPanelMounted(false); }}
         >
@@ -271,15 +272,27 @@ export const Combobox: React.FC<ComboboxProps> = ({
                   aria-selected={isSelected}
                   className={[
                     styles.option,
-                    isSelected ? styles['option--selected'] : '',
+                    isSelected && mode === 'single' ? styles['option--selected'] : '',
                     opt.disabled ? styles['option--disabled'] : '',
                   ].filter(Boolean).join(' ')}
                   onMouseEnter={() => { if (!opt.disabled) setActiveIndex(i); }}
                   onClick={() => toggleOption(opt)}
                 >
+                  {/* Visual only -- a real <input> inside role="option" would
+                      nest interactive content and double-fire the toggle;
+                      aria-selected already carries the state. */}
+                  {mode === 'multi' && (
+                    <span
+                      className={[styles.option__box, isSelected ? styles['option__box--checked'] : ''].filter(Boolean).join(' ')}
+                      aria-hidden="true"
+                    >
+                      <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        strokeWidth={iconStrokeWidth(12)} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                    </span>
+                  )}
                   {opt.icon && <span className={styles.option__icon} aria-hidden="true">{opt.icon}</span>}
                   <span className={styles.option__label}>{opt.label}</span>
-                  {isSelected && (
+                  {isSelected && mode === 'single' && (
                     <span className={styles.option__check} aria-hidden="true">
                       <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
