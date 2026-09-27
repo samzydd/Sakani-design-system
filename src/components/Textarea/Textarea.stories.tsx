@@ -21,8 +21,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-/** autoFocus so the state renders without needing a click -- Figma's
- *  State=Focus: a 1.5px border/focus (brand) stroke. */
+/** autoFocus so the state renders without needing a click -- border-default
+ *  + shadow-sm, matching Input's own focus-within treatment. */
 export const Focus: Story = { args: { label: 'Message', autoFocus: true } };
 export const WithLabel: Story = { args: { label: 'Message', description: 'Max 500 characters.' } };
 export const Filled: Story = { args: { label: 'Message', defaultValue: 'Entered text goes here. It can span multiple lines.' } };

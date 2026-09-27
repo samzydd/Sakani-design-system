@@ -10,7 +10,9 @@
  *   - Box: bg/surface, border/default 1px, radius-md, padding 10/14, 84px tall
  *   - Value/placeholder: body/sm (14px/500, fg/subtle placeholder / fg/default value)
  *   - Description: body/xs (13px/500, fg/muted)
- *   - Focus: border/focus (brand) 1.5px · Error: danger/solid 1.5px
+ *   - Focus: border/default + shadow/sm, matching Input's own focus-within
+ *     (a deliberate departure from Figma's raw brand-colored focus stroke)
+ *   - Error: danger/solid 1.5px, adding shadow/sm too if focused
  *   - Disabled: bg/subtle, border/subtle, 60% opacity
  */
 
