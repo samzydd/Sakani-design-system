@@ -1,4 +1,4 @@
-/* StatCard — bg/surface, border/subtle, radius-xl, padding 12, gap 8.
+/* StatCard — bg/surface, border/subtle (outside), radius-xl, padding 12, gap 8.
  * title label/sm fg/muted · value display/lg fg/default · delta trend-colored.
  */
 .card {
@@ -7,7 +7,14 @@
   gap: var(--space-8);
   padding: var(--space-12);
   background: var(--color-bg-surface);
-  border: var(--border-width-100) solid var(--color-border-subtle);
+  /* Figma's stroke align is Outside, not the plain `border` this used to be:
+     a border participates in the box model and sits at the inner edge of
+     the box, so it visually reads as inset from the card's own bounds. A
+     spread-only box-shadow (no blur, no offset) draws at exactly the box's
+     outer edge and extends past it instead, without adding to the card's
+     own width/height the way border-box border-width would if it were
+     ever changed -- the layout-neutral equivalent of Figma's Outside. */
+  box-shadow: 0 0 0 var(--border-width-100) var(--color-border-subtle);
   border-radius: var(--radius-xl);
   font-family: var(--font-sans);
   min-width: 200px;
