@@ -6,7 +6,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: var(--space-10);
+  /* 8px (re-read from Figma) -- was 10, the same value as the item's own
+     horizontal padding, which happened to look plausible but wasn't what
+     the icon/label gap actually measures. Sidebar Sub Item is a separate
+     component and stays at 10 -- checked directly, unchanged in Figma. */
+  gap: var(--space-8);
   width: 100%;
   height: 32px;
   padding: var(--space-6) var(--space-10);
@@ -18,6 +22,8 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+  /* Default-state label color: fg-muted (confirmed against Figma's Default
+     variant) -- this was already the value here, so no change needed. */
   color: var(--color-fg-muted);
   text-align: left;
   text-decoration: none;
