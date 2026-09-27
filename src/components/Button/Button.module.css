@@ -45,7 +45,12 @@
     color var(--transition-base),
     border-color var(--transition-base),
     box-shadow var(--transition-base),
-    opacity var(--transition-base);
+    opacity var(--transition-base),
+    /* Kept off --transition-base (220ms): a press has to read as
+       immediate, not eased in over two hundred milliseconds like a color
+       change. --transition-fast still eases both ways rather than
+       snapping, which is what keeps it feeling soft instead of glitchy. */
+    transform var(--transition-fast);
   box-shadow: var(--shadow-xs);
 
   /* Focus ring — chromatic so it's always visible regardless of variant */
@@ -61,6 +66,26 @@
   opacity: var(--opacity-60);
   cursor: not-allowed;
   pointer-events: none;
+}
+
+/**
+ * Press feedback: a small settle, not a bounce. Every variant already
+ * darkens its own background on :active (see below) -- that alone reads as
+ * a color change on a static shape, not a press. Scaling down while the
+ * pointer is held is what makes the button itself feel like the thing
+ * being pushed, on every variant and size at once, without duplicating the
+ * rule five times over.
+ *
+ * 0.97 rather than something more dramatic like Radio's or WishlistButton's
+ * spring: those celebrate a state changing to a new value and hold that
+ * pose. This undoes itself the instant the pointer lifts, on every click a
+ * user makes, so it has to stay small enough to read as texture rather
+ * than motion -- a button that visibly bounced on every press would tire
+ * fast. transform-origin is the box's own default centre, so sm/md/lg all
+ * settle in place rather than toward one edge.
+ */
+.button:active:not(:disabled) {
+  transform: scale(0.97);
 }
 
 /* ─── Variants ───────────────────────────────────────────────────────────────── */
