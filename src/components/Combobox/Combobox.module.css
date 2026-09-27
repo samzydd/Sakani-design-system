@@ -112,7 +112,9 @@
   padding: var(--space-4);
   background: var(--color-bg-surface);
   border: var(--border-width-100) solid var(--color-border-default);
-  border-radius: var(--radius-sm);
+  /* 8px (re-read from Figma, consistent across Results/Empty/Loading/Error) --
+     was radius-sm (6px). */
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   max-height: 260px;
   overflow-y: auto;
@@ -142,7 +144,14 @@
 
 /* ─── Option ── */
 .option {
-  transition: background-color var(--transition-base), color var(--transition-base);
+  /* No background transition here anymore -- .optionHighlight (below) is
+     what shows hover/keyboard position now, and it needs to paint behind
+     this text/icon content, not the other way round. position+z-index
+     lifts the option's own stacking context above the highlight's, the
+     same technique SegmentedControl's .segment uses over its .thumb. */
+  position: relative;
+  z-index: 1;
+  transition: color var(--transition-base);
   display: flex;
   align-items: center;
   gap: var(--space-8);
@@ -154,11 +163,46 @@
   font-size: 14px;
   color: var(--color-fg-default);
 }
-/* Pointer hover — this was missing entirely; only keyboard-active was styled. */
-.option:hover:not(.option--disabled) { background: var(--color-bg-subtle); }
-.option--active { background: var(--color-bg-subtle); }
+/* Kept as the option's own static background -- unlike hover/keyboard
+   position, "this is the chosen value" doesn't move with the pointer, so it
+   has no reason to live on the shared sliding highlight. Same color as that
+   highlight on purpose: hovering the selected option should look like one
+   surface, not two overlapping tints. */
 .option--selected { background: var(--color-bg-subtle); }
 .option--disabled { opacity: var(--opacity-60); cursor: not-allowed; }
+
+/* One element gliding between options, instead of each option's own
+   background fading in as another fades out -- the transform+height pairing
+   mirrors SegmentedControl's .thumb (translateX+width) exactly, just on the
+   vertical axis a list scrolls on. left/right match .panel's own padding so
+   the highlight lines up with an option's real horizontal extent instead of
+   the panel's full (padded) width.
+   z-index: 0, not "no z-index": .option above needs an actual stacking
+   context to lift above, which position+z-index create -- an implicit
+   z-index:auto here would still paint behind static content by default, but
+   pairing them explicitly is what makes the ordering a stated relationship
+   rather than an accident of paint order. */
+.optionHighlight {
+  position: absolute;
+  left: var(--space-4);
+  right: var(--space-4);
+  top: 0;
+  z-index: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-subtle);
+  pointer-events: none;
+}
+/* Same "settle before animating" gate as SegmentedControl's .thumb-
+   -animated: applied a frame after the highlight's first position is
+   measured, so opening the panel doesn't show it flying in from (0,0) to
+   wherever the initially-active option happens to sit.
+   --transition-fast (150ms), not --transition-base (220ms): this has to
+   keep pace with a pointer gliding down a list of closely-stacked rows --
+   220ms reads as trailing behind a normal mouse speed, where 150ms still
+   keeps up while remaining a real glide rather than a snap. */
+.optionHighlight--animated {
+  transition: transform 150ms var(--ease-in-out), height 150ms var(--ease-in-out);
+}
 .option__icon { display: inline-flex; color: var(--color-fg-muted); flex-shrink: 0; }
 .option__label { flex: 1; }
 .option__check { display: inline-flex; color: var(--color-accent-default); flex-shrink: 0; }

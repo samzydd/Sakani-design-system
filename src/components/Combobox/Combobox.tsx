@@ -60,10 +60,53 @@ export const Combobox: React.FC<ComboboxProps> = ({
   const [panelMounted, setPanelMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const rootRef = React.useRef<HTMLDivElement>(null);
+  const filtered = options; // click-to-select: no text filtering
 
   React.useEffect(() => {
     if (open) setPanelMounted(true);
   }, [open]);
+
+  // ---- flowing hover highlight -------------------------------------------
+  // One element glides between options instead of each option's own
+  // background fading in as another fades out -- the same technique
+  // SegmentedControl's thumb uses, just vertical. onMouseEnter below already
+  // drives activeIndex for keyboard purposes, so hovering and arrow-key
+  // navigation share this one highlight for free.
+  const optionRefs = React.useRef<Record<number, HTMLDivElement | null>>({});
+  const panelRef = React.useRef<HTMLDivElement>(null);
+  const [highlight, setHighlight] = React.useState<{ top: number; height: number } | null>(null);
+  const [highlightReady, setHighlightReady] = React.useState(false);
+
+  // Measures the active option's position. Runs on every activeIndex change
+  // (each hover/arrow-key move) -- deliberately NOT what resets
+  // highlightReady below, or every move would replay the "settle first"
+  // step and never actually animate.
+  React.useLayoutEffect(() => {
+    const el = optionRefs.current[activeIndex];
+    if (!el) { setHighlight(null); return; }
+    setHighlight({ top: el.offsetTop, height: el.offsetHeight });
+  }, [activeIndex, filtered.length]);
+
+  // Resets on every fresh open (panelMounted flips false -> true) so the
+  // highlight appears already in place at whichever option starts active,
+  // rather than visibly gliding in from wherever it last was.
+  React.useLayoutEffect(() => {
+    if (!panelMounted) { setHighlightReady(false); return; }
+    setHighlightReady(false);
+    const id = window.requestAnimationFrame(() => setHighlightReady(true));
+    return () => window.cancelAnimationFrame(id);
+  }, [panelMounted]);
+
+  React.useEffect(() => {
+    if (!panelRef.current) return;
+    const ro = new ResizeObserver(() => {
+      const el = optionRefs.current[activeIndex];
+      if (el) setHighlight({ top: el.offsetTop, height: el.offsetHeight });
+    });
+    ro.observe(panelRef.current);
+    return () => ro.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [panelMounted]);
 
   // Uncontrolled fallback
   const [internal, setInternal] = React.useState<string | string[]>(mode === 'multi' ? [] : '');
@@ -80,8 +123,6 @@ export const Combobox: React.FC<ComboboxProps> = ({
     document.addEventListener('mousedown', onDoc);
     return () => document.removeEventListener('mousedown', onDoc);
   }, []);
-
-  const filtered = options; // click-to-select: no text filtering
 
   const commit = (next: string | string[]) => {
     if (value === undefined) setInternal(next);
@@ -175,6 +216,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
       {/* Panel */}
       {panelMounted && !disabled && (
         <div
+          ref={panelRef}
           className={[styles.panel, open ? styles['panel--entering'] : styles['panel--exiting']].filter(Boolean).join(' ')}
           id={`${reactId}-panel`}
           role="listbox"
@@ -189,21 +231,29 @@ export const Combobox: React.FC<ComboboxProps> = ({
           ) : filtered.length === 0 ? (
             <div className={styles.panel__empty}>No options available</div>
           ) : (
-            filtered.map((opt, i) => {
+            <>
+              {highlight && (
+                <span
+                  aria-hidden="true"
+                  className={[styles.optionHighlight, highlightReady ? styles['optionHighlight--animated'] : ''].filter(Boolean).join(' ')}
+                  style={{ transform: `translateY(${highlight.top}px)`, height: highlight.height }}
+                />
+              )}
+              {filtered.map((opt, i) => {
               const isSelected = selectedArr.includes(opt.value);
               return (
                 <div
                   key={opt.value}
+                  ref={(el) => { optionRefs.current[i] = el; }}
                   id={`${reactId}-opt-${i}`}
                   role="option"
                   aria-selected={isSelected}
                   className={[
                     styles.option,
-                    i === activeIndex ? styles['option--active'] : '',
                     isSelected ? styles['option--selected'] : '',
                     opt.disabled ? styles['option--disabled'] : '',
                   ].filter(Boolean).join(' ')}
-                  onMouseEnter={() => setActiveIndex(i)}
+                  onMouseEnter={() => { if (!opt.disabled) setActiveIndex(i); }}
                   onClick={() => toggleOption(opt)}
                 >
                   {opt.icon && <span className={styles.option__icon} aria-hidden="true">{opt.icon}</span>}
@@ -216,7 +266,8 @@ export const Combobox: React.FC<ComboboxProps> = ({
                   )}
                 </div>
               );
-            })
+              })}
+            </>
           )}
         </div>
       )}
