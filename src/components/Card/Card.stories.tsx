@@ -13,7 +13,11 @@ Figma spec: bg/surface, border/default 1px, radius-xl (16), padding 20, gap 16.
 In code, Hover is a CSS :hover state. \`actions\` hugs left (Default's single
 button, Two buttons' pair); \`leadingAction\` adds a standalone button on the
 opposite end (Three buttons' Ghost button, space-between from the pair).` } } },
-  args: { title: 'Card title', description: 'Supporting description for the card.' },
+  args: {
+    title: 'Card title',
+    description: 'Supporting description for the card.',
+    children: 'Body content goes here. Use cards to group related information.',
+  },
   decorators: [(S) => <div style={{ width: 320 }}><S /></div>],
 } satisfies Meta<typeof Card>;
 
