@@ -1,15 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
-
-const Btn = ({ children, primary }: { children: React.ReactNode; primary?: boolean }) => (
-  <button style={{
-    padding: '8px 16px', borderRadius: 8, fontSize: 14, fontWeight: 500, cursor: 'pointer',
-    fontFamily: 'var(--font-sans)',
-    border: primary ? 'none' : '1px solid var(--color-border-default)',
-    background: primary ? 'var(--color-accent-default)' : 'var(--color-bg-surface)',
-    color: primary ? 'var(--color-fg-on-accent)' : 'var(--color-fg-default)',
-  }}>{children}</button>
-);
+import { Button } from '../Button/Button';
 
 const meta = {
   title: 'Composite/Card',
@@ -19,23 +10,41 @@ const meta = {
 Variant (Default|Hover|Two buttons|Three buttons), Title/Description/CTA toggles.
 
 Figma spec: bg/surface, border/default 1px, radius-xl (16), padding 20, gap 16.
-In code, Hover is a CSS :hover state; the button-count variants are expressed
-by passing \`actions\` (an array of nodes) rather than separate components.` } } },
-  args: { title: 'Card title', description: 'This is a description for the card content.' },
-  decorators: [(S) => <div style={{ width: 360 }}><S /></div>],
+In code, Hover is a CSS :hover state. \`actions\` hugs left (Default's single
+button, Two buttons' pair); \`leadingAction\` adds a standalone button on the
+opposite end (Three buttons' Ghost button, space-between from the pair).` } } },
+  args: { title: 'Card title', description: 'Supporting description for the card.' },
+  decorators: [(S) => <div style={{ width: 320 }}><S /></div>],
 } satisfies Meta<typeof Card>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: { actions: <Button variant="primary" size="md">Button</Button> },
+};
 export const Interactive: Story = { args: { interactive: true } };
-export const OneButton: Story = { args: { actions: <Btn primary>Confirm</Btn> } };
-export const TwoButtons: Story = { args: { actions: <><Btn>Cancel</Btn><Btn primary>Confirm</Btn></> } };
-export const ThreeButtons: Story = { args: { actions: <><Btn>Back</Btn><Btn>Skip</Btn><Btn primary>Next</Btn></> } };
+export const TwoButtons: Story = {
+  args: {
+    actions: <>
+      <Button variant="secondary" size="md">Button</Button>
+      <Button variant="primary" size="md">Button</Button>
+    </>,
+  },
+};
+export const ThreeButtons: Story = {
+  args: {
+    leadingAction: <Button variant="ghost" size="md">Button</Button>,
+    actions: <>
+      <Button variant="secondary" size="md">Button</Button>
+      <Button variant="primary" size="md">Button</Button>
+    </>,
+  },
+};
 
 /** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */
 export const DarkMode: Story = {
+  args: { actions: <Button variant="primary" size="md">Button</Button> },
   decorators: [(S) => (
     <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>
       <S />

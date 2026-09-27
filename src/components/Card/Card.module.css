@@ -12,35 +12,53 @@
   transition: box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
-/* Hover (Figma: Hover) */
+/* Hover (Figma: Hover) -- the border disappears entirely, not just recolors;
+   kept as a transparent border (not `border: none`) so the box doesn't
+   shift size. shadow-md is an exact match to Figma's two stacked
+   drop-shadows here (checked color/blur/spread/offset directly). */
 .card--interactive {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
  cursor: pointer; }
 .card--interactive:hover {
-  border-color: var(--color-border-strong);
+  border-color: transparent;
   box-shadow: var(--shadow-md);
 }
 
 .card__header { display: flex; flex-direction: column; gap: var(--space-4); }
+/* heading/xs, checked directly against Figma's text style (not just the
+   instance) -- was 600/24, a weight and line-height Figma's own style
+   doesn't have at any size. */
 .card__title {
   margin: 0;
   font-size: 16px;
-  line-height: 24px;
-  font-weight: 600;
+  line-height: 22px;
+  font-weight: 500;
   color: var(--color-fg-default);
 }
+/* body/xs -- was 14/400, closer to body/sm's size at heading/xs's absent
+   weight than either named style. */
 .card__description {
   margin: 0;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
   color: var(--color-fg-muted);
 }
 
-.card__body { color: var(--color-fg-default); font-size: 14px; }
+/* body/sm, fg-muted -- was fg-default with no weight set; Figma's own body
+   copy is muted, matching the description above it, not full-strength text. */
+.card__body { color: var(--color-fg-muted); font-size: 14px; line-height: 20px; font-weight: 500; }
 
-/* Actions row — right-aligned button group */
+/* Actions row -- hugs left (Figma: Default's single button, Two buttons'
+   pair both sit flush with the card's left edge, not pushed right). */
 .card__actions {
   display: flex;
+  align-items: center;
   gap: var(--space-8);
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
+/* Three buttons: a lone leadingAction (Figma's Ghost button) pushed to the
+   opposite end from the actions group, instead of every button hugging one
+   side. */
+.card__actions--split { justify-content: space-between; }
+.card__actionsGroup { display: flex; align-items: center; gap: var(--space-8); }
