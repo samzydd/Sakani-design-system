@@ -21,6 +21,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+/** autoFocus so the state renders without needing a click -- neutral
+ *  border + shadow-sm, matching Input's own departure from Figma's
+ *  raw brand-colored focus stroke. */
+export const Focus: Story = { args: { label: 'Message', autoFocus: true } };
 export const WithLabel: Story = { args: { label: 'Message', description: 'Max 500 characters.' } };
 export const Filled: Story = { args: { label: 'Message', defaultValue: 'Entered text goes here. It can span multiple lines.' } };
 export const Error: Story = { args: { label: 'Message', error: 'This field is required.' } };
