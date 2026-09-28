@@ -1,5 +1,6 @@
 /* Menu.module.css — mirrors Combobox Panel: radius 6, pad 4, gap 2, shadow/lg */
 .menu {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);

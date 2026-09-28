@@ -93,10 +93,8 @@
   font-size: 14px;
   color: var(--color-fg-default);
 }
-.suggestOption:hover,
-.suggestOptionActive {
-  background: var(--color-bg-subtle);
-}
+/* No hover/active fill of its own: the panel's shared highlight glides to
+   whichever option is active, by keyboard or pointer. */
 /* The part of each suggestion matching the typed text -- highlighted, not
    just bolded, so it's legible in both light and dark mode without
    needing separate overrides. */

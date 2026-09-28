@@ -43,6 +43,7 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
 }) => (
   <div
     role="button"
+    data-hover-item=""
     tabIndex={0}
     onClick={onClick}
     onKeyDown={(e) => {

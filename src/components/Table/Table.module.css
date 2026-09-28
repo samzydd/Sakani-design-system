@@ -4,6 +4,9 @@
  */
 
 .wrap {
+  /* Positioned so the flowing hover highlight (see useHoverHighlight) can
+     sit inside it and scroll along with the rows. */
+  position: relative;
   background: var(--color-bg-surface);
   /* overflow-x: auto (not hidden) so a table wider than its container can
      be scrolled horizontally instead of having every column crushed —
@@ -62,7 +65,10 @@
   background: transparent;
   transition: background-color var(--transition-base);
 }
-.bodyRow:hover { background: var(--color-bg-subtle); }
+/* --hover-fill is transparent inside the wrap's hover group, where one
+   highlight glides between rows instead; unset elsewhere, so this fallback
+   still applies wherever a row renders without the group. */
+.bodyRow:hover { background: var(--hover-fill, var(--color-bg-subtle)); }
 /* The whole row is the click target when rows are selectable, so it should
    say so -- otherwise the pointer only changes over the 18px checkbox. */
 .bodyRow--selectable { cursor: pointer; }

@@ -20,6 +20,7 @@ import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Calendar.module.css';
+import { useHoverHighlight } from '../../lib/useHoverHighlight';
 
 export interface DateRange { from?: Date; to?: Date; }
 
@@ -58,6 +59,7 @@ export const Calendar: React.FC<CalendarProps> = ({
   });
   // Uncontrolled range fallback
   const [internalRange, setInternalRange] = React.useState<DateRange>({});
+  const hover = useHoverHighlight<HTMLDivElement>();
   const activeRange = range !== undefined ? range : internalRange;
 
   const today = new Date();
@@ -144,13 +146,15 @@ export const Calendar: React.FC<CalendarProps> = ({
       </div>
 
       {/* Day grid */}
-      <div className={styles.grid}>
+      <div ref={hover.ref} {...hover.groupProps} className={styles.grid}>
+        {hover.highlight}
         {days.map((d, i) => {
           const state = dayState(d);
           return (
             <button
               key={i}
               type="button"
+              data-hover-item=""
               className={[styles.day, styles[`day--${state}`]].filter(Boolean).join(' ')}
               disabled={state === 'disabled'}
               aria-current={state === 'today' ? 'date' : undefined}

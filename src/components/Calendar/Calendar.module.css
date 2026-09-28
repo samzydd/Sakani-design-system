@@ -31,7 +31,7 @@
 }
 
 /* Day grid */
-.grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.grid { position: relative; display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
 .day {
   display: inline-flex; align-items: center; justify-content: center;
   width: 36px; height: 36px; margin: 0 auto;
@@ -40,7 +40,9 @@
   color: var(--color-fg-default);
   transition: background-color var(--transition-base);
 }
-.day--default:hover { background: var(--color-bg-subtle); }
+/* --hover-fill is transparent inside a hover group, where one highlight
+   glides between items instead; this is the fallback elsewhere. */
+.day--default:hover { background: var(--hover-fill, var(--color-bg-subtle)); }
 .day--hover { background: var(--color-bg-subtle); }
 .day--selected { background: var(--color-accent-default); color: var(--color-fg-on-accent); font-weight: 600; }
 .day--today { border: var(--border-width-150) solid var(--color-brand-default); color: var(--color-brand-fg); font-weight: 600; }

@@ -16,6 +16,7 @@ import React from 'react';
 import { PanelLeft, CircleHelp, Bell, ChevronDown, type LucideIcon } from 'lucide-react';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './TopBar.module.css';
+import { useHoverHighlight } from '../../lib/useHoverHighlight';
 
 export type TopBarType = 'search' | 'breadcrumb' | 'tabs' | 'minimal' | 'chat';
 export type TopBarDensity = 'md' | 'sm';
@@ -71,6 +72,9 @@ export const TopBar: React.FC<TopBarProps> = ({
   actions,
   className,
 }) => {
+  const hover = useHoverHighlight<HTMLSpanElement>();
+  // Chat-type action buttons passed in by the caller opt in with data-hover-item.
+  const chatHover = useHoverHighlight<HTMLDivElement>();
   const actionIconSize = density === 'md' ? 20 : 18;
   const actionIconStroke = iconStrokeWidth(actionIconSize);
   return (
@@ -83,7 +87,12 @@ export const TopBar: React.FC<TopBarProps> = ({
           {subtitle && <span className={styles.bar__chatSubtitle}>{subtitle}</span>}
         </span>
         <div className={styles.bar__spacer} />
-        {actions && <div className={styles.bar__chatActions}>{actions}</div>}
+        {actions && (
+          <div ref={chatHover.ref} {...chatHover.groupProps} className={styles.bar__chatActions}>
+            {chatHover.highlight}
+            {actions}
+          </div>
+        )}
       </>
     ) : (
     <>
@@ -100,17 +109,20 @@ export const TopBar: React.FC<TopBarProps> = ({
       {rightSlot}
       {showActions && (
         <>
-          {showHelp && (
-            <button type="button" className={styles.bar__icon} aria-label="Help">
-              <CircleHelp size={actionIconSize} strokeWidth={actionIconStroke} />
+          <span ref={hover.ref} {...hover.groupProps} className={styles.bar__iconGroup}>
+            {hover.highlight}
+            {showHelp && (
+              <button type="button" data-hover-item="" className={styles.bar__icon} aria-label="Help">
+                <CircleHelp size={actionIconSize} strokeWidth={actionIconStroke} />
+              </button>
+            )}
+            <button type="button" data-hover-item="" className={styles.bar__icon} aria-label="Notifications">
+              <span className={styles.bar__bell}>
+                <Bell size={actionIconSize} strokeWidth={actionIconStroke} />
+                {hasUnread && <span className={styles.bar__dot} aria-hidden="true" />}
+              </span>
             </button>
-          )}
-          <button type="button" className={styles.bar__icon} aria-label="Notifications">
-            <span className={styles.bar__bell}>
-              <Bell size={actionIconSize} strokeWidth={actionIconStroke} />
-              {hasUnread && <span className={styles.bar__dot} aria-hidden="true" />}
-            </span>
-          </button>
+          </span>
           <span className={styles.bar__divider} />
         </>
       )}

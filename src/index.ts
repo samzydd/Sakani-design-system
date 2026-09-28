@@ -136,3 +136,8 @@ export { iconStrokeWidth } from './lib/iconStrokeWidth';
 /** WCAG contrast helper -- public because any consumer overlaying an icon
  * or glyph on an arbitrary color (not just ColorSwatch) needs this same check. */
 export { getContrastColor } from './lib/getContrastColor';
+
+/** Flowing hover highlight -- public so a consumer composing ListItem,
+ * MenuItem or their own `data-hover-item` elements can wrap them in one. */
+export { HoverGroup, useHoverHighlight } from './lib/useHoverHighlight';
+export type { HoverGroupProps } from './lib/useHoverHighlight';

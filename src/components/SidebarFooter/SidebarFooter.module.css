@@ -20,7 +20,9 @@
   display: inline-flex; border: none; background: transparent; color: var(--color-fg-muted);
   cursor: pointer; padding: var(--space-4); border-radius: var(--radius-sm); flex-shrink: 0;
 }
-.footer__menu:hover { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+/* --hover-fill is transparent inside a hover group (Sidebar), where one
+   highlight glides between items instead; this is the fallback elsewhere. */
+.footer__menu:hover { background: var(--hover-fill, var(--color-bg-subtle)); color: var(--color-fg-default); }
 .footer__action {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
 
@@ -29,4 +31,4 @@
   border: none; background: transparent; border-radius: var(--radius-sm);
   color: var(--color-fg-muted); cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 500;
 }
-.footer__action:hover { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.footer__action:hover { background: var(--hover-fill, var(--color-bg-subtle)); color: var(--color-fg-default); }

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FileText, ChevronRight } from 'lucide-react';
 import { ListItem } from './ListItem';
+import { HoverGroup } from '../../lib/useHoverHighlight';
 import { Badge } from '../Badge/Badge';
 
 const meta = {
@@ -27,11 +28,11 @@ export const WithBadge: Story = { args: { trailing: <Badge variant="success" emp
 
 export const List: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <HoverGroup style={{ display: 'flex', flexDirection: 'column' }}>
       <ListItem title="Documents" description="12 files" leading={<FileText size={18} strokeWidth={1.5} />} trailing={<ChevronRight size={16} strokeWidth={1.5} />} />
       <ListItem title="Images" description="48 files" leading={<FileText size={18} strokeWidth={1.5} />} trailing={<ChevronRight size={16} strokeWidth={1.5} />} selected />
       <ListItem title="Archive" description="3 files" leading={<FileText size={18} strokeWidth={1.5} />} trailing={<ChevronRight size={16} strokeWidth={1.5} />} />
-    </div>
+    </HoverGroup>
   ),
 };
 

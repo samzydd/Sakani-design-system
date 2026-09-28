@@ -17,6 +17,7 @@
 import React from 'react';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Breadcrumb.module.css';
+import { useHoverHighlight } from '../../lib/useHoverHighlight';
 
 export interface BreadcrumbItem {
   label: string;
@@ -42,20 +43,29 @@ const Separator = ({ size }: { size: number }) => (
 
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, variant = 'text', className }) => {
   const isButton = variant === 'button';
+  // Only the button variant has a hover fill for the highlight to carry.
+  const hover = useHoverHighlight<HTMLOListElement>();
   return (
     <nav aria-label="Breadcrumb" className={[styles.breadcrumb, className ?? ''].filter(Boolean).join(' ')}>
-      <ol className={[styles.list, isButton ? styles['list--button'] : ''].filter(Boolean).join(' ')}>
+      <ol
+        ref={hover.ref}
+        {...(isButton ? hover.groupProps : {})}
+        className={[styles.list, isButton ? styles['list--button'] : ''].filter(Boolean).join(' ')}
+      >
+        {/* display: contents keeps this <li> box-less, so the highlight is
+            positioned against the <ol> while the list stays valid markup. */}
+        {isButton && <li aria-hidden="true" style={{ display: 'contents' }}>{hover.highlight}</li>}
         {items.map((item, i) => {
           const isLast = i === items.length - 1;
           const crumbClass = isButton ? styles.chip : (isLast ? styles.current : styles.crumb);
           return (
             <li key={i} className={styles.item}>
               {isLast || !item.href ? (
-                <span className={crumbClass} aria-current={isLast ? 'page' : undefined}>
+                <span className={crumbClass} data-hover-item={isButton ? 'off' : undefined} aria-current={isLast ? 'page' : undefined}>
                   {item.label}
                 </span>
               ) : (
-                <a href={item.href} className={crumbClass}>{item.label}</a>
+                <a href={item.href} data-hover-item="" className={crumbClass}>{item.label}</a>
               )}
               {!isLast && <Separator size={isButton ? 14 : 16} />}
             </li>

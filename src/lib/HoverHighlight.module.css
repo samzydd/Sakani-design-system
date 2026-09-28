@@ -1,0 +1,36 @@
+/* Shared flowing hover highlight -- see useHoverHighlight.tsx.
+ *
+ * Inside a group, items drop their own hover fill (they read --hover-fill)
+ * and a single highlight glides behind them instead. Outside a group the
+ * variable is unset, so the same items keep their normal per-item hover. */
+:where([data-hover-group]) { --hover-fill: transparent; }
+
+/* The highlight is the container's first child. Positioning everything
+   after it (with no z-index, so no new stacking context -- tooltips inside
+   items still escape) makes it all paint above the highlight, including
+   non-item content like group labels that it can slide past mid-glide. */
+:where([data-hover-group]) > *,
+:where([data-hover-item]) { position: relative; }
+
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: var(--color-bg-subtle);
+  transition: opacity 120ms var(--ease-out);
+}
+.visible { opacity: 1; }
+/* Only switched on a frame after the highlight first appears, so it fades
+   in where the pointer is instead of sliding over from wherever it was
+   last. 150ms keeps pace with a pointer sweeping across tight rows. */
+.glide {
+  transition:
+    opacity 120ms var(--ease-out),
+    transform 150ms var(--ease-in-out),
+    width 150ms var(--ease-in-out),
+    height 150ms var(--ease-in-out),
+    border-radius 150ms var(--ease-in-out),
+    background-color 150ms var(--ease-in-out);
+}

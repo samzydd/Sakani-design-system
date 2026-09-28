@@ -83,6 +83,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
 
   const common = {
     className: cls,
+    'data-hover-item': '',
     title: collapsed && nativeTooltip ? label : undefined,
     // Collapsed items have no visible text — keep an accessible name for
     // screen readers even when the native title tooltip is suppressed in

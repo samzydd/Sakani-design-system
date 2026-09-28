@@ -32,7 +32,9 @@
   transition: background-color var(--transition-base), color var(--transition-base),
     width var(--transition-base), padding var(--transition-base), gap var(--transition-base);
 }
-.item:hover:not(.item--disabled):not(.item--active):not(.item--active-flat) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+/* --hover-fill is transparent inside a hover group (Sidebar), where one
+   highlight glides between items instead; this is the fallback elsewhere. */
+.item:hover:not(.item--disabled):not(.item--active):not(.item--active-flat) { background: var(--hover-fill, var(--color-bg-subtle)); color: var(--color-fg-default); }
 .item:hover:not(.item--disabled):not(.item--active):not(.item--active-flat) .item__icon { color: var(--color-fg-default); }
 /* Focus (re-read 2026-08-10): a solid 2px brand border directly on the item,
  * not the old two-layer white-gap ring. */

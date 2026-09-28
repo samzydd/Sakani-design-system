@@ -39,7 +39,12 @@
   width: fit-content; height: fit-content; padding: 0; border: none; background: none;
   color: var(--color-fg-muted); border-radius: var(--radius-md); cursor: pointer; flex-shrink: 0;
 }
-.bar__icon:where(:hover) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+/* Help + Notifications: their own hover group, kept apart from the rest of
+   bar__right so the account menu's positioning is untouched. */
+.bar__iconGroup { position: relative; display: inline-flex; align-items: center; gap: var(--space-8); }
+/* --hover-fill is transparent inside a hover group, where one highlight
+   glides between items instead; this is the fallback elsewhere. */
+.bar__icon:where(:hover) { background: var(--hover-fill, var(--color-bg-subtle)); color: var(--color-fg-default); }
 .bar__bell { position: relative; display: inline-flex; }
 .bar__dot {
   position: absolute; top: -1px; right: -1px;
@@ -72,7 +77,7 @@
   font-family: var(--font-sans); font-size: 12px; line-height: 16px;
   color: var(--color-fg-muted);
 }
-.bar__chatActions { display: flex; align-items: center; gap: var(--space-8); flex-shrink: 0; padding-right: var(--space-12); }
+.bar__chatActions { position: relative; display: flex; align-items: center; gap: var(--space-8); flex-shrink: 0; padding-right: var(--space-12); }
 
 /* Search wrapper owns the chrome: pass the Input `unstyled` and this container
    carries the border and the focus highlight instead of the field itself. */

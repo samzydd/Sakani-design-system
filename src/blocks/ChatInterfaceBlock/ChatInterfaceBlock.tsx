@@ -45,6 +45,7 @@ import { MessageBubble } from '../../components/MessageBubble';
 import { ChatComposer } from '../../components/ChatComposer';
 import { EmptyState } from '../../components/EmptyState';
 import styles from './ChatInterfaceBlock.module.css';
+import { useHoverHighlight } from '../../lib/useHoverHighlight';
 
 export type ChatInterfaceBlockState = 'default' | 'collapsed' | 'empty';
 
@@ -115,6 +116,8 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({
   const collapsed = state !== 'default';
   const showThread = state !== 'empty';
   const [selectedConv, setSelectedConv] = React.useState(0);
+  const navHover = useHoverHighlight<HTMLElement>();
+  const listHover = useHoverHighlight<HTMLDivElement>();
   const [composerValue, setComposerValue] = React.useState('');
   const [messages, setMessages] = React.useState<ChatMessage[]>([]);
   const [attachedFiles, setAttachedFiles] = React.useState<Array<{ name: string; type: string; dataUrl: string }>>([]);
@@ -196,7 +199,8 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({
   return (
     <div className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
       {/* ============ App navigation sidebar ============ */}
-      <aside className={[styles.nav, collapsed ? styles['nav--collapsed'] : ''].filter(Boolean).join(' ')}>
+      <aside ref={navHover.ref} {...navHover.groupProps} className={[styles.nav, collapsed ? styles['nav--collapsed'] : ''].filter(Boolean).join(' ')}>
+        {navHover.highlight}
         <SidebarHeader
           type="brand-toggle"
           title="Sakani"
@@ -262,7 +266,8 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({
           {/* ---- panes ---- */}
           <div className={styles.panes}>
             {/* conversation list */}
-            <div className={styles.list}>
+            <div ref={listHover.ref} {...listHover.groupProps} className={styles.list}>
+              {listHover.highlight}
               <div className={styles.headerRow__filter}>
                 <SegmentedControl
                   fullWidth
@@ -314,9 +319,9 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({
                       subtitle={currentConv.state === 'typing' ? 'Typing...' : 'Active now'}
                       actions={
                         <>
-                          <button type="button" className={styles.chatAction} aria-label="Call"><Phone size={16} /></button>
-                          <button type="button" className={styles.chatAction} aria-label="Video call"><Video size={16} /></button>
-                          <button type="button" className={styles.chatAction} aria-label="Conversation details"><PanelRight size={16} /></button>
+                          <button type="button" data-hover-item="" className={styles.chatAction} aria-label="Call"><Phone size={16} /></button>
+                          <button type="button" data-hover-item="" className={styles.chatAction} aria-label="Video call"><Video size={16} /></button>
+                          <button type="button" data-hover-item="" className={styles.chatAction} aria-label="Conversation details"><PanelRight size={16} /></button>
                         </>
                       }
                     />

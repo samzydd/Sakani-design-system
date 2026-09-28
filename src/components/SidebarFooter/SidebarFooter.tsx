@@ -47,7 +47,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
   if (type === 'actions') {
     return (
       <div className={styles.footer}>
-        <button type="button" className={styles.footer__action} onClick={onSignOut}>
+        <button type="button" data-hover-item="" className={styles.footer__action} onClick={onSignOut}>
           <LogOut size={16} strokeWidth={iconStrokeWidth(16)} /> Sign out
         </button>
       </div>
@@ -62,7 +62,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
         {subtitle && <span className={styles.footer__subtitle}>{subtitle}</span>}
       </span>
       {type === 'user-menu' && (
-        <button type="button" className={styles.footer__menu} onClick={onMenu} aria-label="Open menu">
+        <button type="button" data-hover-item="" className={styles.footer__menu} onClick={onMenu} aria-label="Open menu">
           <EllipsisVertical size={16} strokeWidth={iconStrokeWidth(16)} />
         </button>
       )}

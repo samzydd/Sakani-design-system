@@ -47,7 +47,9 @@
  * Mirrors the Figma variants: Hover = bg/subtle, Active = accent/subtle.
  * Order matters — the active rule comes last so selection survives hover.
  */
-.item:where(:hover) { background: var(--color-bg-subtle); }
+/* --hover-fill is transparent inside a hover group, where one highlight
+   glides between items instead; this is the fallback elsewhere. */
+.item:where(:hover) { background: var(--hover-fill, var(--color-bg-subtle)); }
 .item--active:where(:hover) { background: var(--color-accent-subtle); }
 .item:where(:active) { background: var(--color-bg-muted); }
 .item--active:where(:active) { background: var(--color-accent-subtle); }

@@ -12,6 +12,7 @@
 
 import React from 'react';
 import styles from './Menu.module.css';
+import { useHoverHighlight } from '../../lib/useHoverHighlight';
 
 export interface MenuProps {
   children: React.ReactNode;
@@ -22,16 +23,22 @@ export interface MenuProps {
   className?: string;
 }
 
-export const Menu: React.FC<MenuProps> = ({ children, minWidth = 208, className, ...rest }) => (
-  <div
-    role="menu"
-    aria-label={rest['aria-label']}
-    style={{ minWidth }}
-    className={[styles.menu, className ?? ''].filter(Boolean).join(' ')}
-  >
-    {children}
-  </div>
-);
+export const Menu: React.FC<MenuProps> = ({ children, minWidth = 208, className, ...rest }) => {
+  const hover = useHoverHighlight<HTMLDivElement>();
+  return (
+    <div
+      ref={hover.ref}
+      {...hover.groupProps}
+      role="menu"
+      aria-label={rest['aria-label']}
+      style={{ minWidth }}
+      className={[styles.menu, className ?? ''].filter(Boolean).join(' ')}
+    >
+      {hover.highlight}
+      {children}
+    </div>
+  );
+};
 
 export const MenuDivider: React.FC = () => <div className={styles.divider} role="separator" />;
 

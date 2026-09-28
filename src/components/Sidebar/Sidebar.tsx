@@ -11,6 +11,7 @@
 
 import React from 'react';
 import styles from './Sidebar.module.css';
+import { useHoverHighlight } from '../../lib/useHoverHighlight';
 
 export interface SidebarProps {
   collapsed?: boolean;
@@ -18,13 +19,20 @@ export interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ collapsed = false, children, className }) => (
-  <nav
-    className={[styles.sidebar, collapsed ? styles['sidebar--collapsed'] : '', className ?? ''].filter(Boolean).join(' ')}
-    data-collapsed={collapsed}
-  >
-    {children}
-  </nav>
-);
+export const Sidebar: React.FC<SidebarProps> = ({ collapsed = false, children, className }) => {
+  // One highlight glides between every item, sub-item and footer action.
+  const hover = useHoverHighlight<HTMLElement>();
+  return (
+    <nav
+      ref={hover.ref}
+      {...hover.groupProps}
+      className={[styles.sidebar, collapsed ? styles['sidebar--collapsed'] : '', className ?? ''].filter(Boolean).join(' ')}
+      data-collapsed={collapsed}
+    >
+      {hover.highlight}
+      {children}
+    </nav>
+  );
+};
 
 export default Sidebar;

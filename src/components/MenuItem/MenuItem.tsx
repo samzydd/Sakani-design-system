@@ -42,6 +42,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   return (
     <div
       role="menuitem"
+      data-hover-item=""
       aria-disabled={disabled || undefined}
       aria-checked={state === 'checked' || undefined}
       tabIndex={disabled ? -1 : 0}

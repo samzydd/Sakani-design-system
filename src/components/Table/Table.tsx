@@ -14,6 +14,7 @@
 import React from 'react';
 import { GripVertical } from 'lucide-react';
 import styles from './Table.module.css';
+import { useHoverHighlight } from '../../lib/useHoverHighlight';
 
 export interface TableColumn<T> {
   key: keyof T & string;
@@ -110,6 +111,7 @@ export function Table<T>({
   const someSelected = selected.length > 0 && !allSelected;
   const [dragIndex, setDragIndex] = React.useState<number | null>(null);
   const [overIndex, setOverIndex] = React.useState<number | null>(null);
+  const hover = useHoverHighlight<HTMLDivElement>();
 
   const handleDrop = () => {
     if (dragIndex === null || overIndex === null || dragIndex === overIndex) {
@@ -184,7 +186,12 @@ export function Table<T>({
   }
 
   return (
-    <div className={[styles.wrap, bordered ? styles['wrap--bordered'] : '', className ?? ''].filter(Boolean).join(' ')}>
+    <div
+      ref={hover.ref}
+      {...hover.groupProps}
+      className={[styles.wrap, bordered ? styles['wrap--bordered'] : '', className ?? ''].filter(Boolean).join(' ')}
+    >
+      {hover.highlight}
       <table className={styles.table}>
         <thead>
           <tr className={styles.headerRow}>
@@ -207,6 +214,7 @@ export function Table<T>({
             return (
               <tr
                 key={rowKey ? rowKey(row, i) : i}
+                data-hover-item=""
                 onClick={selectable ? handleRowClick(i) : undefined}
                 onDragOver={reorderable ? (e) => { e.preventDefault(); setOverIndex(i); } : undefined}
                 onDrop={reorderable ? handleDrop : undefined}

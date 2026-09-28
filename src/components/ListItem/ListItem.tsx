@@ -26,6 +26,7 @@ export const ListItem: React.FC<ListItemProps> = ({
 }) => (
   <button
     type="button"
+    data-hover-item=""
     disabled={disabled}
     onClick={onClick}
     aria-current={selected ? 'true' : undefined}

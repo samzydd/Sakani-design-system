@@ -33,6 +33,7 @@ import { Button } from '../../components/Button';
 import { Divider } from '../../components/Divider';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './CheckoutFlowBlock.module.css';
+import { useHoverHighlight } from '../../lib/useHoverHighlight';
 
 export interface CheckoutFlowItem {
   id?: string;
@@ -173,6 +174,10 @@ const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
   const [open, setOpen] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const rootRef = React.useRef<HTMLDivElement>(null);
+  // Keyboard and pointer both move activeIndex, so the highlight follows it
+  // (like Combobox) rather than following the pointer alone.
+  const hover = useHoverHighlight<HTMLDivElement>();
+  const optionRefs = React.useRef<(HTMLDivElement | null)[]>([]);
 
   const query = value.trim();
   const filtered = query
@@ -188,6 +193,10 @@ const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
   }, []);
 
   React.useEffect(() => setActiveIndex(0), [value, open]);
+  const { showItem } = hover;
+  React.useLayoutEffect(() => {
+    if (open) showItem(optionRefs.current[activeIndex] ?? null);
+  }, [open, activeIndex, filtered.length, showItem]);
 
   const pick = (s: string) => { onChange(s); setOpen(false); };
 
@@ -212,13 +221,15 @@ const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
         className={styles.fullWidth}
       />
       {open && filtered.length > 0 && (
-        <div className={styles.suggestPanel} role="listbox">
+        <div ref={hover.ref} data-hover-group="" className={styles.suggestPanel} role="listbox">
+          {hover.highlight}
           {filtered.map((s, i) => (
             <div
               key={s}
+              ref={(el) => { optionRefs.current[i] = el; }}
               role="option"
               aria-selected={i === activeIndex}
-              className={[styles.suggestOption, i === activeIndex ? styles.suggestOptionActive : ''].filter(Boolean).join(' ')}
+              className={styles.suggestOption}
               onMouseDown={(e) => { e.preventDefault(); pick(s); }}
               onMouseEnter={() => setActiveIndex(i)}
             >
