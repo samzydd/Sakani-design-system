@@ -16,18 +16,18 @@ Figma spec (read from the component, expanded AND collapsed):
 - LEFT ACCENT BAR: 3x20px brand/default rounded pill — present in BOTH expanded
 and collapsed layouts, shown when active AND indicator-styled
 - Default/Hover: icon+label fg/muted->fg/default, badge bg/muted + fg/muted text
-- Active states (re-read 2026-08-27 — Figma split expanded "Active"/"Active Hover"
-into two flavors each; collapsed is unchanged and always indicator-styled):
-"- Indicator": bg/surface card + soft shadow (0 1px 1px rgba(16,15,12,.06),
-0 1px 1.5px rgba(16,15,12,.1)) + the left accent bar — this is the original
-Active look, now opt-in via \`activeIndicator\` (default true, so existing
-\`active\` usages render unchanged).
-"- Default": flat bg/subtle tint, no bar, no shadow — same background as Hover,
-but keeps Active's icon/label/badge/chevron treatment. Used by passing
-\`activeIndicator={false}\`.
+- Active states (re-read 2026-09-28 — Figma now gives collapsed the same
+Indicator/Default split as expanded, and gives each flavor its own hover look):
+"- Indicator": bg/surface card + the left accent bar, opt-in via
+\`activeIndicator\` (default true, so existing \`active\` usages render unchanged).
+Shadow is two-tier: shadow/xs at rest, strengthening to shadow/sm on hover —
+in BOTH collapsed and expanded.
+"- Default": flat bg/subtle tint, no bar, no shadow. Used by passing
+\`activeIndicator={false}\` — now available collapsed too, not just expanded.
+Expanded-only, hovering lightens the tint to bg/canvas (no collapsed hover
+variant exists in Figma for this flavor, so collapsed stays flat on hover).
 Both flavors: icon+label fg/default, badge bg accent/default + fg/on-accent
-text, chevron accent-tinted. Neither flavor gets a further hover change —
-an active item (either style) looks identical hovered or not, same as before.
+text, chevron accent-tinted.
 - Disabled: fg/subtle
 
 Dark mode: all colors are semantic tokens, so the .dark class re-themes automatically.` } } },
@@ -45,6 +45,7 @@ export const WithBadge: Story = { args: { badge: '12' } };
 export const WithSubmenu: Story = { args: { hasSubmenu: true } };
 export const Disabled: Story = { args: { disabled: true } };
 export const Collapsed: Story = { args: { collapsed: true }, decorators: [(S) => <div style={{ width: 64, padding: 12, background: 'var(--color-bg-surface)' }}><S /></div>] };
+export const CollapsedActiveDefault: Story = { args: { collapsed: true, active: true, activeIndicator: false }, decorators: [(S) => <div style={{ width: 64, padding: 12, background: 'var(--color-bg-surface)' }}><S /></div>] };
 
 export const AllStates: Story = {
   render: () => (

@@ -59,15 +59,14 @@
   transition: opacity var(--transition-base);
 }
 
-/* ─── Active states (re-read 2026-08-27) ───
- * Figma split expanded Active/Active Hover into two flavors each -- collapsed
- * is unchanged and always renders the "Indicator" look:
- *   "- Indicator" (.item--active): bg/surface card + soft shadow + left
- *     accent bar -- the original Active look, still the default.
- *   "- Default" (.item--active-flat): flat bg/subtle tint, no bar, no shadow
- *     -- same background as Hover, but keeps Active's icon/label/badge/chevron.
- * Neither flavor has a distinct hover treatment -- stays exactly as-is
- * whether hovered or not. */
+/* ─── Active states (re-read 2026-09-28) ───
+ * Figma now gives collapsed the same Indicator/Default split as expanded:
+ *   "- Indicator" (.item--active): bg/surface card + left accent bar -- the
+ *     original Active look, still the default. Shadow is two-tier: shadow/xs
+ *     at rest, strengthening to shadow/sm on hover -- in both layouts.
+ *   "- Default" (.item--active-flat): flat bg/subtle tint, no bar, no shadow.
+ *     Expanded-only, hover lightens the tint toward bg/canvas -- Figma has no
+ *     collapsed hover variant for this flavor, so collapsed stays flat. */
 .item--active,
 .item--active-flat {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
@@ -82,12 +81,22 @@
 
 .item--active {
   background: var(--color-bg-surface);
+  /* shadow/xs at rest -- shadow/sm (the old, stronger, always-on value) now
+     only applies on hover, matching Figma's separate Active/Active Hover
+     Indicator variants. */
+  box-shadow: 0 1px 1px rgba(16, 15, 12, 0.05);
+}
+.item--active:hover {
   box-shadow: 0 1px 1px rgba(16, 15, 12, 0.06), 0 1px 1.5px rgba(16, 15, 12, 0.1);
 }
 .item--active .item__bar { opacity: 1; }
 
 .item--active-flat {
   background: var(--color-bg-subtle);
+}
+/* Expanded only -- Figma has no Collapsed=Yes "Active Hover - Default" variant. */
+.item--active-flat:not(.item--collapsed):hover {
+  background: var(--color-bg-canvas);
 }
 
 .item--disabled { color: var(--color-fg-subtle); opacity: var(--opacity-60, 0.6); cursor: not-allowed; pointer-events: none; }
