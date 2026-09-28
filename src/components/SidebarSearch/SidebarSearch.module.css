@@ -46,11 +46,17 @@
   border: var(--border-width-100) solid var(--color-border-default);
   border-radius: var(--radius-sm);
 }
+/* 40px fixed width (re-read from Figma) -- was 100%, spanning the full 64px
+   rail edge to edge instead of sitting as its own box like the collapsed
+   SidebarItem does. margin: 0 auto centers it in the rail the same way
+   (see SidebarItem's .item--collapsed for the identical technique). */
 .collapsed {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
 
   display: flex; align-items: center; justify-content: center;
-  width: 100%; height: 36px; padding: var(--space-8);
+  width: 40px; height: 36px; padding: var(--space-8);
+  margin: 0 auto;
+  box-sizing: border-box;
   background: var(--color-bg-subtle);
   border: var(--border-width-100) solid var(--color-border-subtle);
   border-radius: var(--radius-sm); color: var(--color-fg-muted); cursor: pointer;
