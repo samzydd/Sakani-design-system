@@ -85,9 +85,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           loading ? styles['button--loading'] : '',
           // The icon glyph already reads as visual weight on its side, so an
           // icon-side padding equal to the label-side padding looks lopsided
-          // -- 2px tighter than the label-only padding is what makes a
-          // left/right-icon button look optically balanced against a
-          // plain-label one.
+          // -- 4px tighter on the icon side (Figma's Icon=Left/Right/Both
+          // variants) balances it optically. Loading swaps icons for the
+          // spinner and keeps the default padding.
           leftIcon && !loading ? styles['button--hasLeftIcon'] : '',
           rightIcon && !loading ? styles['button--hasRightIcon'] : '',
           className ?? '',
