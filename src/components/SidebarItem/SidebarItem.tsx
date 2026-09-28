@@ -11,18 +11,20 @@
  *   - LEFT ACCENT BAR: 3x20px brand/default rounded pill — present in BOTH expanded
  *     and collapsed layouts, shown when active AND indicator-styled
  *   - Default/Hover: icon+label fg/muted->fg/default, badge bg/muted + fg/muted text
- *   - Active states (re-read 2026-08-27 — Figma split expanded "Active"/"Active Hover"
- *     into two flavors each; collapsed is unchanged and always indicator-styled):
- *       "- Indicator": bg/surface card + soft shadow (0 1px 1px rgba(16,15,12,.06),
- *         0 1px 1.5px rgba(16,15,12,.1)) + the left accent bar — this is the original
- *         Active look, now opt-in via `activeIndicator` (default true, so existing
- *         `active` usages render unchanged).
- *       "- Default": flat bg/subtle tint, no bar, no shadow — same background as Hover,
- *         but keeps Active's icon/label/badge/chevron treatment. Used by passing
- *         `activeIndicator={false}`.
+ *   - Active states (re-read 2026-09-28 — Figma now gives collapsed the same
+ *     Indicator/Default split as expanded, and gives each flavor its own hover look):
+ *       "- Indicator": bg/surface card + the left accent bar, opt-in via
+ *         `activeIndicator` (default true, so existing `active` usages render
+ *         unchanged). Shadow is now two-tier: shadow/xs (0 1px 1px rgba(16,15,12,.05))
+ *         at rest, strengthening to shadow/sm (0 1px 1px rgba(16,15,12,.06),
+ *         0 1px 1.5px rgba(16,15,12,.1)) on hover — in BOTH collapsed and expanded.
+ *       "- Default": flat bg/subtle tint, no bar, no shadow. Used by passing
+ *         `activeIndicator={false}` — now available collapsed too (Figma added
+ *         Collapsed=Yes, State=Active - Default), not just expanded. Expanded-only,
+ *         hovering lightens the tint to bg/canvas (no collapsed hover variant exists
+ *         in Figma for this flavor, so collapsed stays flat on hover).
  *     Both flavors: icon+label fg/default, badge bg accent/default + fg/on-accent
- *     text, chevron accent-tinted. Neither flavor gets a further hover change —
- *     an active item (either style) looks identical hovered or not, same as before.
+ *     text, chevron accent-tinted.
  *   - Disabled: fg/subtle
  *
  * Dark mode: all colors are semantic tokens, so the .dark class re-themes automatically.
@@ -37,10 +39,10 @@ export interface SidebarItemProps {
   icon?: LucideIcon;
   label: string;
   active?: boolean;
-  /** Only matters when `active` and not `collapsed` (collapsed is always
-   * indicator-styled, matching Figma). true (default) = bg/surface card +
-   * shadow + left accent bar ("Active - Indicator"). false = flat bg/subtle
-   * tint, no bar, no shadow ("Active - Default"). */
+  /** Only matters when `active`. true (default) = bg/surface card + shadow +
+   * left accent bar ("Active - Indicator"). false = flat bg/subtle tint, no
+   * bar, no shadow ("Active - Default"). Works the same collapsed or not —
+   * Figma now defines both flavors in both layouts. */
   activeIndicator?: boolean;
   disabled?: boolean;
   badge?: string;
@@ -57,8 +59,8 @@ export interface SidebarItemProps {
 export const SidebarItem: React.FC<SidebarItemProps> = ({
   icon: Icon, label, active, activeIndicator = true, disabled, badge, hasSubmenu, collapsed, onClick, href, nativeTooltip = true,
 }) => {
-  const isActiveIndicator = active && (collapsed || activeIndicator);
-  const isActiveDefault = active && !collapsed && !activeIndicator;
+  const isActiveIndicator = active && activeIndicator;
+  const isActiveDefault = active && !activeIndicator;
   const cls = [
     styles.item,
     isActiveIndicator ? styles['item--active'] : '',
