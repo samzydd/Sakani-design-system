@@ -186,12 +186,3 @@
   background: transparent;
   border-bottom: none;
 }
-
-/* ---- brand mark inside SidebarHeader's 28×28 accent chip ---- */
-.logoMark {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 1;
-  color: var(--color-fg-on-accent);
-}

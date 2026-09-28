@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { House, ChartLine, FolderKanban, Settings, Users, Box } from 'lucide-react';
+import { House, ChartLine, FolderKanban, Settings, Users } from 'lucide-react';
+import { SakaniLogo } from '../../lib/SakaniLogo';
 import { Sidebar } from './Sidebar';
 import { SidebarHeader } from '../SidebarHeader/SidebarHeader';
 import { SidebarSearch } from '../SidebarSearch/SidebarSearch';
@@ -29,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 
 const FullSidebar = () => (
   <Sidebar>
-    <SidebarHeader type="workspace" title="Sakani" subtitle="Workspace" logo={<Box size={18} strokeWidth={1.5} />} />
+    <SidebarHeader type="workspace" title="Sakani" subtitle="Workspace" logo={<SakaniLogo />} />
     <SidebarSearch type="command" />
     <SidebarGroupLabel>Platform</SidebarGroupLabel>
     <SidebarItem icon={House} label="Dashboard" active />
@@ -47,7 +48,7 @@ const FullSidebar = () => (
 
 const CollapsedSidebar = () => (
   <Sidebar collapsed>
-    <SidebarHeader title="Sakani" collapsed logo={<Box size={18} strokeWidth={1.5} />} />
+    <SidebarHeader title="Sakani" collapsed logo={<SakaniLogo />} />
     <SidebarSearch collapsed />
     <SidebarItem icon={House} label="Dashboard" active collapsed />
     <SidebarItem icon={ChartLine} label="Analytics" collapsed />

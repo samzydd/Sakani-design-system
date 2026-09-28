@@ -46,6 +46,7 @@ import { ChatComposer } from '../../components/ChatComposer';
 import { EmptyState } from '../../components/EmptyState';
 import styles from './ChatInterfaceBlock.module.css';
 import { useHoverHighlight } from '../../lib/useHoverHighlight';
+import { SakaniLogo } from '../../lib/SakaniLogo';
 
 export type ChatInterfaceBlockState = 'default' | 'collapsed' | 'empty';
 
@@ -205,7 +206,7 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({
           type="brand-toggle"
           title="Sakani"
           subtitle="Workspace"
-          logo={<span className={styles.logoMark}>S</span>}
+          logo={<SakaniLogo />}
           collapsed={collapsed}
         />
 

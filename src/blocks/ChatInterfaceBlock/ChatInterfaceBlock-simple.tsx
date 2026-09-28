@@ -14,6 +14,7 @@ import { MessageBubble } from '../../components/MessageBubble';
 import { ChatComposer } from '../../components/ChatComposer';
 import { EmptyState } from '../../components/EmptyState';
 import styles from './ChatInterfaceBlock.module.css';
+import { SakaniLogo } from '../../lib/SakaniLogo';
 
 export type ChatInterfaceBlockState = 'default' | 'collapsed' | 'empty';
 
@@ -58,7 +59,7 @@ export const ChatInterfaceBlock: React.FC<ChatInterfaceBlockProps> = ({ state = 
   return (
     <div className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
       <aside className={[styles.nav, collapsed ? styles['nav--collapsed'] : ''].filter(Boolean).join(' ')}>
-        <SidebarHeader type="brand-toggle" title="Sakani" subtitle="Workspace" logo={<span className={styles.logoMark}>S</span>} collapsed={collapsed} />
+        <SidebarHeader type="brand-toggle" title="Sakani" subtitle="Workspace" logo={<SakaniLogo />} collapsed={collapsed} />
         <div className={styles.nav__body}>
           {!collapsed && <Input size="sm" leadingIcon={<Search size={16} />} placeholder="Search" />}
           {NAV_GROUPS

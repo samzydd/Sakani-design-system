@@ -77,6 +77,7 @@ import r8Owner from '../../assets/avatars/r8-owner-bogdan-norbert.jpg';
 import r9Company from '../../assets/avatars/r9-company-invision.jpg';
 import r9Contact from '../../assets/avatars/r9-contact-aprod-endre.jpg';
 import r9Owner from '../../assets/avatars/r9-owner-antal-andras.jpg';
+import { SakaniLogo } from '../../lib/SakaniLogo';
 
 /* ------------------------------------------------------------------ *
  * Sample data — replace with your own
@@ -398,7 +399,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className,
       {/* ---- Sidebar (icon rail) ---- */}
       <Sidebar collapsed>
         <Tooltip title="Sakani" pointer="center-right">
-          <SidebarHeader type="brand" title="Sakani" logo="S" collapsed />
+          <SidebarHeader type="brand" title="Sakani" logo={<SakaniLogo />} collapsed />
         </Tooltip>
         <SidebarDivider />
         <div className={styles.navScroll}>
