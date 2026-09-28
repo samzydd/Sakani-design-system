@@ -148,7 +148,15 @@
   to { opacity: 0; transform: translateY(-4px) scale(0.98); }
 }
 
+/* No background transition here anymore -- .optionHighlight (below) is what
+   shows hover/keyboard position now, and it needs to paint behind this
+   label/check content, not the other way round. position+z-index lifts the
+   option's own stacking context above the highlight's, the same technique
+   Combobox's .option (and originally SegmentedControl's .segment) use over
+   their own sliding element. */
 .option {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: var(--space-8);
@@ -160,11 +168,36 @@
   font-size: 13px;
   color: var(--color-fg-default);
   cursor: pointer;
-  transition: background-color var(--transition-base), color var(--transition-base);
+  transition: color var(--transition-base);
 }
-.option:hover:not(.option--disabled),
-.option--active { background: var(--color-bg-subtle); }
+/* Kept as the option's own static background -- unlike hover/keyboard
+   position, "this is the chosen value" doesn't move with the pointer, so it
+   has no reason to live on the shared sliding highlight. */
 .option--selected { background: var(--color-bg-subtle); }
 .option--disabled { opacity: var(--opacity-60); cursor: not-allowed; }
 .option__label { flex: 1 1 auto; min-width: 0; }
 .option__check { display: inline-flex; color: var(--color-accent-default); flex-shrink: 0; }
+
+/* One element gliding between options instead of each option's own
+   background fading in as another fades out -- identical to Combobox's
+   .optionHighlight. left/right match .panel's own padding so the highlight
+   lines up with an option's real horizontal extent instead of the panel's
+   full (padded) width. */
+.optionHighlight {
+  position: absolute;
+  left: var(--space-4);
+  right: var(--space-4);
+  top: 0;
+  z-index: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-subtle);
+  pointer-events: none;
+}
+/* Same "settle before animating" gate as Combobox's own version: applied a
+   frame after the highlight's first position is measured, so opening the
+   panel doesn't show it flying in from (0,0). --transition-fast (150ms),
+   not --transition-base (220ms) -- needs to keep pace with a pointer
+   gliding down a list of closely-stacked rows. */
+.optionHighlight--animated {
+  transition: transform 150ms var(--ease-in-out), height 150ms var(--ease-in-out);
+}

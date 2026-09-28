@@ -83,6 +83,47 @@ export const Select: React.FC<SelectProps> = ({
   const rootRef = React.useRef<HTMLDivElement>(null);
   const triggerRef = React.useRef<HTMLDivElement>(null);
   const panelRef = React.useRef<HTMLDivElement>(null);
+
+  // ---- flowing hover highlight -------------------------------------------
+  // One element glides between options instead of each option's own
+  // background fading in as another fades out -- identical to Combobox's
+  // own implementation. onMouseEnter below already drives activeIndex for
+  // keyboard purposes, so hovering and arrow-key navigation share this one
+  // highlight for free.
+  const optionRefs = React.useRef<Record<number, HTMLDivElement | null>>({});
+  const [highlight, setHighlight] = React.useState<{ top: number; height: number } | null>(null);
+  const [highlightReady, setHighlightReady] = React.useState(false);
+
+  // Measures the active option's position. Runs on every activeIndex change
+  // (each hover/arrow-key move) -- deliberately NOT what resets
+  // highlightReady below, or every move would replay the "settle first"
+  // step and never actually animate.
+  React.useLayoutEffect(() => {
+    const el = optionRefs.current[activeIndex];
+    if (!el) { setHighlight(null); return; }
+    setHighlight({ top: el.offsetTop, height: el.offsetHeight });
+  }, [activeIndex, options.length]);
+
+  // Resets on every fresh open (panelMounted flips false -> true) so the
+  // highlight appears already in place at whichever option starts active,
+  // rather than visibly gliding in from wherever it last was.
+  React.useLayoutEffect(() => {
+    if (!panelMounted) { setHighlightReady(false); return; }
+    setHighlightReady(false);
+    const id = window.requestAnimationFrame(() => setHighlightReady(true));
+    return () => window.cancelAnimationFrame(id);
+  }, [panelMounted]);
+
+  React.useEffect(() => {
+    if (!panelRef.current) return;
+    const ro = new ResizeObserver(() => {
+      const el = optionRefs.current[activeIndex];
+      if (el) setHighlight({ top: el.offsetTop, height: el.offsetHeight });
+    });
+    ro.observe(panelRef.current);
+    return () => ro.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [panelMounted]);
   // The panel portals to <body>, which takes it out from under any .dark /
   // .force-light container; re-apply whichever one encloses the trigger.
   const portalTheme = usePortalThemeClass(rootRef, panelMounted);
@@ -232,9 +273,17 @@ export const Select: React.FC<SelectProps> = ({
             style={{ position: 'fixed', top: panelRect.top, left: panelRect.left, width: panelRect.width }}
             onAnimationEnd={() => { if (!open) setPanelMounted(false); }}
           >
+            {highlight && (
+              <span
+                aria-hidden="true"
+                className={[styles.optionHighlight, highlightReady ? styles['optionHighlight--animated'] : ''].filter(Boolean).join(' ')}
+                style={{ transform: `translateY(${highlight.top}px)`, height: highlight.height }}
+              />
+            )}
             {options.map((o, i) => (
               <div
                 key={o.value}
+                ref={(el) => { optionRefs.current[i] = el; }}
                 id={`${panelId}-opt-${i}`}
                 role="option"
                 aria-selected={o.value === selected}
@@ -243,7 +292,6 @@ export const Select: React.FC<SelectProps> = ({
                 onClick={() => commit(o)}
                 className={[
                   styles.option,
-                  i === activeIndex ? styles['option--active'] : '',
                   o.value === selected ? styles['option--selected'] : '',
                   o.disabled ? styles['option--disabled'] : '',
                 ].filter(Boolean).join(' ')}
