@@ -93,12 +93,18 @@
 .item--disabled { color: var(--color-fg-subtle); opacity: var(--opacity-60, 0.6); cursor: not-allowed; pointer-events: none; }
 .item--disabled .item__icon { color: var(--color-fg-subtle); }
 
+/* margin: 0 auto centers this 32px box in the 64px collapsed rail -- the
+   item is a flex child of .sidebar (align-items: stretch by default, left
+   unchanged so SidebarDivider still spans full width), and auto margins on
+   a flex item's cross axis consume the leftover space evenly on both
+   sides instead of leaving it flush against the start edge. */
 .item--collapsed {
   justify-content: center;
   width: 32px;
   height: 32px;
   padding: var(--space-8);
   gap: 0;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
