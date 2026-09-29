@@ -2,7 +2,7 @@
 
 An open-source, token-driven React component library for SaaS products — **1,500+ accessible components and variants**, built 1:1 from a Figma design system and now spanning **1,500+ components and variants** across light and dark modes.
 
-**[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/design/Fd3uY263mEQKnaTEfrzQxh/)**
+**[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/community/file/1661001585975776295/sakani-design-system-v1-8)**
 
 ![npm](https://img.shields.io/npm/v/@sakaniui/react) ![License](https://img.shields.io/badge/license-MIT-blue) ![React](https://img.shields.io/badge/React-19-61dafb) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6) ![Storybook](https://img.shields.io/badge/Storybook-10-ff4785)
 
