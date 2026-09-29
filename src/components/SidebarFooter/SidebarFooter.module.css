@@ -19,6 +19,9 @@
 
   display: inline-flex; border: none; background: transparent; color: var(--color-fg-muted);
   cursor: pointer; padding: var(--space-4); border-radius: var(--radius-sm); flex-shrink: 0;
+  /* Figma places the bare 16px icon in the row; the negative margin keeps the
+     24px hit area without pushing the icon 4px inward. */
+  margin: calc(-1 * var(--space-4));
 }
 /* --hover-fill is transparent inside a hover group (Sidebar), where one
    highlight glides between items instead; this is the fallback elsewhere. */
