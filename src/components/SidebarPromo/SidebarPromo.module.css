@@ -5,6 +5,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  /* Without this, `width: 100%` sets only the content box and the 14px
+     padding + 1px border add on top, so the card renders ~30px wider than
+     its container and pokes past it -- invisible in a wide sidebar with
+     slack to spare, obvious in a narrow one (found at 240px). */
+  box-sizing: border-box;
   gap: var(--space-8);
   padding: var(--space-14);
   background: var(--color-brand-subtle);
