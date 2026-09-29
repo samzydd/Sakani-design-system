@@ -44,10 +44,29 @@
   inset: 0;
   margin: auto;
   opacity: 0;
-  transition: opacity var(--transition-base);
+  transform: scale(0);
+  transition: opacity var(--transition-base), transform var(--transition-fast);
 }
-.input:checked + .box .check { opacity: 1; }
-.input:indeterminate + .box .check { opacity: 0; }
+/* Same damped-spring landing as Radio's dot (see Radio.module.css for the
+   full reasoning): out to ~1.13x, settle just under 1x. A transition, not a
+   keyframe animation, so a checkbox that mounts already checked shows its
+   check still instead of bouncing on page load -- the spring plays only on
+   the way in, via the timing function on this :checked rule; unchecking
+   falls back to the plain opacity fade above.
+   The cubic-bezier is the fallback for browsers without linear(): they drop
+   that declaration and keep a single soft overshoot instead of the sampled
+   curve. */
+.input:checked + .box .check {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity var(--transition-base), transform 450ms cubic-bezier(0.34, 1.4, 0.64, 1);
+  transition: opacity var(--transition-base), transform 450ms linear(0, 0.069 4%, 0.232 8%, 0.435 12%, 0.638 16%, 0.815 20%, 0.953 24%, 1.047 28%, 1.102 32%, 1.125 36%, 1.126 37.6%, 1.123 40%, 1.106 44%, 1.082 48%, 1.056 52%, 1.032 56%, 1.012 60%, 0.998 64%, 0.989 68%, 0.985 72%, 0.984 75.2%, 0.986 80%, 0.988 84%, 0.992 88%, 0.995 92%, 0.998 96%, 1);
+}
+.input:indeterminate + .box .check { opacity: 0; transform: scale(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .input:checked + .box .check { transition: opacity var(--transition-base); }
+}
 
 /* Indeterminate dash */
 .dash {
