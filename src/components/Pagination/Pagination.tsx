@@ -3,8 +3,8 @@
  *
  * Page navigation. Matches Figma "Pagination": prev/next arrows + numbered page
  * buttons (32px, radius-sm, bg/surface, border/subtle), active page filled accent.
- * Collapses long ranges with ellipses around a window centred on the current
- * page (see buildRange).
+ * Collapses long ranges with ellipses; the numbers between them come in fixed
+ * blocks the highlight moves across (see buildRange).
  */
 
 import React from 'react';
@@ -18,7 +18,8 @@ export interface PaginationProps {
   /** Current page (1-based). */
   page: number;
   onPageChange: (page: number) => void;
-  /** How many page numbers to show around the current page. */
+  /** Sets how many page numbers show between the ellipses: blocks of
+   * siblings * 2 + 1 (3 by default). Total slots are siblings * 2 + 5. */
   siblings?: number;
   className?: string;
 }
@@ -27,42 +28,69 @@ type Token = number | 'start-ellipsis' | 'end-ellipsis';
 
 const span = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => from + i);
 
-/** Build the page tokens: first and last page always, the current page with
- * `siblings` pages on EACH side, ellipses for the gaps.
+/** Build the page tokens: first and last page always, ellipses for the gaps,
+ * and the numbers in between shown in FIXED BLOCKS that the highlight moves
+ * across -- the numbers don't re-centre on every click.
  *
- *   10 pages, siblings 1:
- *     page 1  → 1 2 3 4 5 … 10
- *     page 5  → 1 … 4 5 6 … 10
- *     page 10 → 1 … 6 7 8 9 10
+ *   50 pages, siblings 1 (7 slots, middle blocks of 3):
+ *     pages 1–5   → 1 2 3 4 5 … 50          (highlight moves, numbers still)
+ *     pages 6–8   → 1 … 6 7 8 … 50          (same block for all three)
+ *     pages 9–11  → 1 … 9 10 11 … 50
+ *     …
+ *     pages 46–50 → 1 … 46 47 48 49 50
  *
- * The number of slots is constant (siblings * 2 + 5, i.e. 7 by default), so
- * the control keeps the same width as you page through it instead of
- * shifting under the pointer. An ellipsis only ever stands for two or more
- * pages -- a single hidden page is shown as its number instead. With few
- * enough pages to fit the slots, every page is shown. */
+ * So the numbers change only when you step past the edge of the block on
+ * screen -- the same single turnover as going from 5 to 6 -- instead of
+ * sliding under a fixed highlight each time. The slot count is constant
+ * (siblings * 2 + 5), so the control never changes width. An ellipsis always
+ * stands for two or more pages. With few enough pages to fit, all are shown. */
 function buildRange(total: number, page: number, siblings: number): Token[] {
   const slots = siblings * 2 + 5;
   if (total <= slots) return span(1, total);
 
-  const left = Math.max(page - siblings, 1);
-  const right = Math.min(page + siblings, total);
-  const showStartEllipsis = left > 3;
-  const showEndEllipsis = right < total - 2;
+  const edgeRun = slots - 2;          // 1..edgeRun at the start, mirrored at the end
+  const block = siblings * 2 + 1;     // middle block size
 
-  // Near the start: pad the leading run so the slot count stays fixed.
-  if (!showStartEllipsis) return [...span(1, slots - 2), 'end-ellipsis', total];
-  // Near the end: same, mirrored.
-  if (!showEndEllipsis) return [1, 'start-ellipsis', ...span(total - (slots - 3), total)];
-  return [1, 'start-ellipsis', ...span(left, right), 'end-ellipsis', total];
+  if (page <= edgeRun) return [...span(1, edgeRun), 'end-ellipsis', total];
+
+  // Middle: consecutive blocks of `block` pages, starting right after the
+  // leading run. A block is used as long as the ellipsis after it still
+  // hides two or more pages; the first one that can't hand over to the
+  // trailing run. (Blocks are never pulled back to fit, which would shift
+  // the numbers by one -- the very jump this layout avoids.)
+  const start = edgeRun + 1 + Math.floor((page - edgeRun - 1) / block) * block;
+  const end = start + block - 1;
+  if (end <= total - 3) return [1, 'start-ellipsis', ...span(start, end), 'end-ellipsis', total];
+
+  return [1, 'start-ellipsis', ...span(total - edgeRun + 1, total)];
 }
 
 export const Pagination: React.FC<PaginationProps> = ({
   total, page: rawPage, onPageChange, siblings = 1, className,
 }) => {
+  // Numbers on screen last render. If the new page is one of them, keep them
+  // as they are and just move the highlight -- so neither stepping with the
+  // arrows (in either direction) nor clicking a visible number ever redraws
+  // the row. Only stepping off the edge, jumping to an anchor behind an
+  // ellipsis, or an outside change of `page` builds a fresh range.
+  const shown = React.useRef<{ total: number; siblings: number; tokens: Token[] } | null>(null);
   if (total < 1) return null;
   // Keep a stray out-of-range `page` from rendering nothing as current.
   const page = Math.min(Math.max(rawPage, 1), total);
-  const pages = buildRange(total, page, Math.max(0, siblings));
+  const sib = Math.max(0, siblings);
+
+  let pages = buildRange(total, page, sib);
+  const prev = shown.current;
+  if (prev && prev.total === total && prev.siblings === sib) {
+    const t = prev.tokens;
+    const visible = t.includes(page);
+    // 1 / total sitting alone behind an ellipsis are anchors, not part of the
+    // run on screen: going there should bring its own run into view.
+    const loneAnchor =
+      (page === 1 && t[1] === 'start-ellipsis') || (page === total && t[t.length - 2] === 'end-ellipsis');
+    if (visible && !loneAnchor) pages = t;
+  }
+  shown.current = { total, siblings: sib, tokens: pages };
 
   return (
     <nav className={[styles.pagination, className ?? ''].filter(Boolean).join(' ')} aria-label="Pagination">
