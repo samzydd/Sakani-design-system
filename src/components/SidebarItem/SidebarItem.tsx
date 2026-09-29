@@ -102,6 +102,8 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
     // favor of a caller-supplied Tooltip component.
     'aria-label': collapsed ? label : undefined,
     'aria-current': active ? ('page' as const) : undefined,
+    // A collapsible group header announces its open/closed state.
+    'aria-expanded': hasSubmenu && expanded !== undefined ? expanded : undefined,
   };
   if (href && !disabled) return <a href={href} {...common}>{content}</a>;
   return <button type="button" disabled={disabled} onClick={onClick} {...common}>{content}</button>;
