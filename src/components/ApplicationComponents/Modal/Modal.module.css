@@ -19,10 +19,12 @@
   max-height: calc(100vh - var(--space-32));
   overflow-y: auto;
   padding: var(--space-20);
-  background: var(--color-bg-surface);
-  border: var(--border-width-050) solid var(--color-border-subtle);
+  background: var(--surface-bg-overlay);
+  border: var(--border-width-050) solid var(--surface-border);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--surface-highlight), var(--shadow-lg);
+  -webkit-backdrop-filter: var(--surface-blur-overlay);
+  backdrop-filter: var(--surface-blur-overlay);
   font-family: var(--font-sans);
 }
 .card:focus-visible {

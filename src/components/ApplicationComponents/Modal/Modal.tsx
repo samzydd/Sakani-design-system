@@ -21,7 +21,7 @@
 
 import React from 'react';
 import { createPortal } from 'react-dom';
-import { usePortalThemeClass } from '../../../lib/usePortalThemeClass';
+import { usePortalThemeClass, usePortalSurface } from '../../../lib/usePortalThemeClass';
 import { X, TriangleAlert } from 'lucide-react';
 import { IconButton } from '../../IconButton';
 import { Button } from '../../Button';
@@ -95,6 +95,8 @@ export const Modal: React.FC<ModalProps> = ({
   // came out dark.
   const markerRef = React.useRef<HTMLSpanElement>(null);
   const portalTheme = usePortalThemeClass(markerRef, open);
+  // …and the Surface layer (solid/glass) the same way.
+  const portalSurface = usePortalSurface(markerRef, open);
 
   // Stays mounted past `open` so the exit animation has something to play
   // on. `open` remains the consumer's signal and every behavioural effect
@@ -163,6 +165,7 @@ export const Modal: React.FC<ModalProps> = ({
             portalTheme,
             open ? styles['backdrop--entering'] : styles['backdrop--exiting'],
           ].filter(Boolean).join(' ')}
+          data-surface={portalSurface}
           onMouseDown={(e) => { if (closeOnBackdropClick && e.target === e.currentTarget) onClose(); }}
         >
           <div

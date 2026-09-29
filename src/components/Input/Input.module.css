@@ -39,9 +39,11 @@
   display: flex;
   align-items: center;
   gap: var(--space-8);
-  background: var(--color-bg-surface);
-  border: var(--border-width-100) solid var(--color-border-subtle);
+  background: var(--surface-bg);
+  border: var(--border-width-100) solid var(--surface-border);
   border-radius: var(--radius-md);
+  -webkit-backdrop-filter: var(--surface-blur);
+  backdrop-filter: var(--surface-blur);
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
@@ -70,7 +72,7 @@
 
 /* Disabled — bg/subtle */
 .input--disabled {
-  background: var(--color-bg-subtle);
+  background: var(--surface-bg-subtle);
   cursor: not-allowed;
   opacity: var(--opacity-60);
 }

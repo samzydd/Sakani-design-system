@@ -9,7 +9,9 @@
   width: 248px;
   height: 100%;
   padding: var(--space-8) var(--space-12) 5px;
-  background: transparent;
+  background: var(--surface-bg-chrome);            /* transparent in Solid */
+  -webkit-backdrop-filter: var(--surface-blur);
+  backdrop-filter: var(--surface-blur);
   font-family: var(--font-sans);
   overflow: visible;
   box-sizing: border-box;
