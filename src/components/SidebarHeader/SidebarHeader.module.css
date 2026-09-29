@@ -11,6 +11,15 @@
    must be zeroed too or it pushes the logo off the true center. */
 .header--collapsed { justify-content: center; gap: 0; }
 
+/* Workspace switcher (Figma Type=Workspace): filled, padded card. */
+.header--workspace {
+  padding: var(--space-8);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-subtle);
+}
+.header--workspace .header__subtitle { font-size: 10px; line-height: 14px; }
+.header__switch { display: inline-flex; flex-shrink: 0; color: var(--color-fg-muted); }
+
 /* Fixed 28x28 frame — the actual size constraint. .header__logo fills it. */
 .header__logoWrap {
   position: relative;
