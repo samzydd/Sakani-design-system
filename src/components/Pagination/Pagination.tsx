@@ -3,7 +3,8 @@
  *
  * Page navigation. Matches Figma "Pagination": prev/next arrows + numbered page
  * buttons (32px, radius-sm, bg/surface, border/subtle), active page filled accent.
- * Collapses long ranges with ellipses.
+ * Collapses long ranges with ellipses around a window centred on the current
+ * page (see buildRange).
  */
 
 import React from 'react';
@@ -22,35 +23,46 @@ export interface PaginationProps {
   className?: string;
 }
 
-/** Build the list of page tokens with ellipses, e.g. [1, '...', 4, 5, '...', 20].
+type Token = number | 'start-ellipsis' | 'end-ellipsis';
+
+const span = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => from + i);
+
+/** Build the page tokens: first and last page always, the current page with
+ * `siblings` pages on EACH side, ellipses for the gaps.
  *
- * The visible window trails the current page forward -- {page, page+1, ...,
- * page+siblings} -- rather than sitting centered on it. So landing on page 2
- * reveals 3 (not 1 and 3): the set becomes {1, 2, 3, total}. Landing on 3
- * then drops 2 and reveals 4: {1, 3, 4, total}. 1 and total are always
- * present as fixed anchors; everything else only exists once it's adjacent
- * to (at or after) the current page. */
-function buildRange(total: number, page: number, siblings: number): (number | 'ellipsis')[] {
-  const windowStart = page;
-  const windowEnd = Math.min(page + siblings, total);
+ *   10 pages, siblings 1:
+ *     page 1  → 1 2 3 4 5 … 10
+ *     page 5  → 1 … 4 5 6 … 10
+ *     page 10 → 1 … 6 7 8 9 10
+ *
+ * The number of slots is constant (siblings * 2 + 5, i.e. 7 by default), so
+ * the control keeps the same width as you page through it instead of
+ * shifting under the pointer. An ellipsis only ever stands for two or more
+ * pages -- a single hidden page is shown as its number instead. With few
+ * enough pages to fit the slots, every page is shown. */
+function buildRange(total: number, page: number, siblings: number): Token[] {
+  const slots = siblings * 2 + 5;
+  if (total <= slots) return span(1, total);
 
-  const pages = new Set<number>([1, total]);
-  for (let i = windowStart; i <= windowEnd; i++) pages.add(i);
+  const left = Math.max(page - siblings, 1);
+  const right = Math.min(page + siblings, total);
+  const showStartEllipsis = left > 3;
+  const showEndEllipsis = right < total - 2;
 
-  const sorted = Array.from(pages).sort((a, b) => a - b);
-  const range: (number | 'ellipsis')[] = [];
-  sorted.forEach((n, i) => {
-    if (i > 0 && n - sorted[i - 1] > 1) range.push('ellipsis');
-    range.push(n);
-  });
-
-  return range;
+  // Near the start: pad the leading run so the slot count stays fixed.
+  if (!showStartEllipsis) return [...span(1, slots - 2), 'end-ellipsis', total];
+  // Near the end: same, mirrored.
+  if (!showEndEllipsis) return [1, 'start-ellipsis', ...span(total - (slots - 3), total)];
+  return [1, 'start-ellipsis', ...span(left, right), 'end-ellipsis', total];
 }
 
 export const Pagination: React.FC<PaginationProps> = ({
-  total, page, onPageChange, siblings = 1, className,
+  total, page: rawPage, onPageChange, siblings = 1, className,
 }) => {
-  const pages = buildRange(total, page, siblings);
+  if (total < 1) return null;
+  // Keep a stray out-of-range `page` from rendering nothing as current.
+  const page = Math.min(Math.max(rawPage, 1), total);
+  const pages = buildRange(total, page, Math.max(0, siblings));
 
   return (
     <nav className={[styles.pagination, className ?? ''].filter(Boolean).join(' ')} aria-label="Pagination">
@@ -64,16 +76,17 @@ export const Pagination: React.FC<PaginationProps> = ({
         <ChevronLeft size={16} strokeWidth={iconStrokeWidth(16)} />
       </button>
 
-      {pages.map((p, i) =>
-        p === 'ellipsis' ? (
-          <span key={`e${i}`} className={styles.ellipsis} aria-hidden="true">…</span>
+      {pages.map((p) =>
+        typeof p !== 'number' ? (
+          <span key={p} className={styles.ellipsis} aria-hidden="true">…</span>
         ) : (
           <button
             key={p}
             type="button"
             className={[styles.page, p === page ? styles['page--active'] : ''].filter(Boolean).join(' ')}
             aria-current={p === page ? 'page' : undefined}
-            onClick={() => onPageChange(p)}
+            aria-label={`Page ${p}`}
+            onClick={() => p !== page && onPageChange(p)}
           >
             {p}
           </button>
