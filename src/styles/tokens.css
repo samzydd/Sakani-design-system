@@ -396,3 +396,21 @@ html, body {
   --surface-blur-overlay: var(--glass-blur-overlay);
   --color-fg-muted: var(--glass-fg-muted);
 }
+
+/* Reduce transparency: a glass area renders exactly like Solid. The --surface-*
+   tokens point back at the opaque semantic values, so no component needs its
+   own fallback. */
+@media (prefers-reduced-transparency: reduce) {
+  [data-surface="glass"], [data-surface="glass"] .dark {
+    --surface-bg: var(--color-bg-surface);
+    --surface-bg-overlay: var(--color-bg-surface);
+    --surface-bg-chrome: transparent;
+    --surface-bg-subtle: var(--color-bg-subtle);
+    --surface-bg-subtle-hover: var(--color-bg-muted);
+    --surface-border: var(--color-border-subtle);
+    --surface-border-strong: var(--color-border-default);
+    --surface-highlight: 0 0 #0000;
+    --surface-blur: none;
+    --surface-blur-overlay: none;
+  }
+}
