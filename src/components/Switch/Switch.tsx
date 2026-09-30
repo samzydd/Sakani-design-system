@@ -12,10 +12,14 @@ export interface SwitchProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
   /** Optional label rendered to the right of the switch. */
   label?: string;
+  /** Help text under the label, left-aligned with it (not with the track),
+   *  e.g. the current state of a controlled switch. Same pattern as
+   *  Checkbox's description. */
+  description?: React.ReactNode;
 }
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  ({ label, disabled, id, className, ...rest }, ref) => {
+  ({ label, description, disabled, id, className, ...rest }, ref) => {
     const reactId = React.useId();
     const switchId = id ?? reactId;
 
@@ -24,6 +28,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
         htmlFor={switchId}
         className={[
           styles.wrapper,
+          description ? styles['wrapper--withDescription'] : '',
           disabled ? styles['wrapper--disabled'] : '',
           className ?? '',
         ].filter(Boolean).join(' ')}
@@ -43,7 +48,14 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
           <span className={styles.thumb} />
         </span>
 
-        {label && <span className={styles.label}>{label}</span>}
+        {description ? (
+          <span className={styles.text}>
+            {label && <span className={styles.label}>{label}</span>}
+            <span className={styles.description}>{description}</span>
+          </span>
+        ) : (
+          label && <span className={styles.label}>{label}</span>
+        )}
       </label>
     );
   }
