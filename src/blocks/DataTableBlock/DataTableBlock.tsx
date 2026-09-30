@@ -116,6 +116,9 @@ export const DataTableBlock: React.FC<DataTableBlockProps> = ({
   const [page, setPage] = React.useState(1);
   const [selected, setSelected] = React.useState<number[]>(state === 'bulk' ? [0, 1, 2] : []);
   const [orderedRows, setOrderedRows] = React.useState<Member[]>(MEMBERS);
+  // Applied filter chips really go away when removed (a no-op onRemove
+  // faded them out and then put them straight back).
+  const [activeFilters, setActiveFilters] = React.useState(['Status: Active', 'Role: Admin']);
 
   // Keep the demo selection in sync when the `state` prop changes (e.g. the
   // Storybook control). In your own copy you'd drive this from real state.
@@ -154,8 +157,15 @@ export const DataTableBlock: React.FC<DataTableBlockProps> = ({
             </div>
             {state === 'filtered' || state === 'empty' ? (
               <>
-                <FilterChip type="active" onRemove={() => {}}>Status: Active</FilterChip>
-                <FilterChip type="active" onRemove={() => {}}>Role: Admin</FilterChip>
+                {activeFilters.map((label) => (
+                  <FilterChip
+                    key={label}
+                    type="active"
+                    onRemove={() => setActiveFilters((f) => f.filter((x) => x !== label))}
+                  >
+                    {label}
+                  </FilterChip>
+                ))}
                 <FilterChip type="add">Add filter</FilterChip>
               </>
             ) : (
