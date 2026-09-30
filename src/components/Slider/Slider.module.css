@@ -63,3 +63,22 @@
 .slider::-moz-range-thumb {
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
+
+/* Fling into an end: the thumb overshoots a few px past it and springs back
+   (see Slider.tsx). `translate` is separate from `transform`, so it layers on
+   the hover/active scale instead of replacing it mid-drag. */
+.slider[data-bounce]::-webkit-slider-thumb { animation: sakani-slider-bounce 460ms linear; }
+.slider[data-bounce]::-moz-range-thumb { animation: sakani-slider-bounce 460ms linear; }
+@keyframes sakani-slider-bounce {
+  0%   { translate: 0 0; animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1); }
+  28%  { translate: calc(var(--bounce-dir, 1) * 2px) 0; animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1); }
+  56%  { translate: calc(var(--bounce-dir, 1) * -0.6px) 0; animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1); }
+  78%  { translate: calc(var(--bounce-dir, 1) * 0.2px) 0; }
+  100% { translate: 0 0; }
+}
+/* Separate rules: a browser drops a whole rule if any selector in it is a
+   vendor pseudo it doesn't know. */
+@media (prefers-reduced-motion: reduce) {
+  .slider[data-bounce]::-webkit-slider-thumb { animation: none; }
+  .slider[data-bounce]::-moz-range-thumb { animation: none; }
+}

@@ -1,4 +1,4 @@
-/* Menu.module.css — mirrors Combobox Panel: radius 6, pad 4, gap 2, shadow/lg */
+/* Menu.module.css — radius 8 (items 6), pad 4, gap 2, shadow/lg */
 .menu {
   position: relative;
   display: flex;
@@ -7,7 +7,7 @@
   padding: var(--space-4);
   background: var(--color-bg-surface);
   border: 1px solid var(--color-border-default);
-  border-radius: 6px;
+  border-radius: var(--radius-md); /* 8px */
   box-shadow: var(--shadow-lg);
 }
 .divider {

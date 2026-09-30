@@ -16,3 +16,7 @@
   cursor: pointer;
   line-height: 0;
 }
+
+.tag { transition: opacity 160ms var(--ease-out, ease-out), transform 160ms var(--ease-out, ease-out); }
+/* Removing: a quick fade and slight shrink before the parent drops it. */
+.tag--leaving { opacity: 0; transform: scale(0.92); pointer-events: none; }

@@ -34,9 +34,19 @@
   background: var(--color-bg-surface);
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-xs);
-  transition: transform var(--transition-fast);
+  /* The thumb lands with a small spring -- overshoots ~1px (6%) and
+     settles -- in both directions. A sampled damped-spring curve like
+     Radio's dot, but more damped (see Radio.module.css for why linear()
+     and why the cubic-bezier fallback line above it). A transition, so a switch that mounts
+     already on doesn't bounce on page load. */
+  transition: transform 400ms cubic-bezier(0.34, 1.15, 0.64, 1);
+  transition: transform 400ms linear(0, 0.067 4%, 0.220 8%, 0.405 12%, 0.585 16%, 0.742 20%, 0.865 24%, 0.954 28%, 1.011 32%, 1.043 36%, 1.057 40%, 1.058 44%, 1.051 48%, 1.041 52%, 1.030 56%, 1.020 60%, 1.012 64%, 1.005 68%, 1.001 72%, 0.998 76%, 0.997 80%, 0.997 84%, 0.997 88%, 0.997 92%, 0.998 96%, 1);
 }
 .input:checked + .track .thumb { transform: translateX(16px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .thumb { transition: transform var(--transition-fast); }
+}
 
 .input:focus-visible + .track {
   box-shadow: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-border-focus);
