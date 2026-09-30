@@ -48,6 +48,14 @@ export interface SidebarItemProps {
   badge?: string;
   hasSubmenu?: boolean;
   collapsed?: boolean;
+  /** Only matters when `hasSubmenu`. Rotates the chevron 90° (pointing down)
+   * to show the section is open; the resting state points right, toward a
+   * closed section — matches Figma's collapsible "Navigation group" /
+   * "Project group" headers (node 2307:42338, e.g. 2308:18305 "Projects"
+   * expanded vs 2308:18387 "Website refresh" collapsed). Not a navigation
+   * disclosure like `active` — the caller owns the open/closed state and
+   * toggles this alongside conditionally rendering the children. */
+  expanded?: boolean;
   onClick?: () => void;
   href?: string;
   /** Native title-attribute tooltip on collapse. Defaults to true; set
@@ -57,7 +65,7 @@ export interface SidebarItemProps {
 }
 
 export const SidebarItem: React.FC<SidebarItemProps> = ({
-  icon: Icon, label, active, activeIndicator = true, disabled, badge, hasSubmenu, collapsed, onClick, href, nativeTooltip = true,
+  icon: Icon, label, active, activeIndicator = true, disabled, badge, hasSubmenu, collapsed, expanded, onClick, href, nativeTooltip = true,
 }) => {
   const isActiveIndicator = active && activeIndicator;
   const isActiveDefault = active && !activeIndicator;
@@ -78,7 +86,9 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
       <span className={[styles.item__label, collapsed ? styles['item__label--collapsed'] : ''].filter(Boolean).join(' ')}>{label}</span>
       {!collapsed && badge && <span className={styles.item__badge}>{badge}</span>}
       {!collapsed && hasSubmenu && (
-        <span className={styles.item__chevron} aria-hidden="true"><ChevronRight size={16} strokeWidth={iconStrokeWidth(16)} /></span>
+        <span className={[styles.item__chevron, expanded ? styles['item__chevron--expanded'] : ''].filter(Boolean).join(' ')} aria-hidden="true">
+          <ChevronRight size={16} strokeWidth={iconStrokeWidth(16)} />
+        </span>
       )}
     </>
   );
@@ -92,6 +102,8 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
     // favor of a caller-supplied Tooltip component.
     'aria-label': collapsed ? label : undefined,
     'aria-current': active ? ('page' as const) : undefined,
+    // A collapsible group header announces its open/closed state.
+    'aria-expanded': hasSubmenu && expanded !== undefined ? expanded : undefined,
   };
   if (href && !disabled) return <a href={href} {...common}>{content}</a>;
   return <button type="button" disabled={disabled} onClick={onClick} {...common}>{content}</button>;

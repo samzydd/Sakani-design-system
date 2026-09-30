@@ -13,12 +13,15 @@
 
 .footer__text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .footer__title { font-size: 13px; font-weight: 600; line-height: 18px; color: var(--color-fg-default); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.footer__subtitle { font-size: 12px; line-height: 16px; color: var(--color-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.footer__subtitle { font-size: 10px; line-height: 14px; color: var(--color-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .footer__menu {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
 
   display: inline-flex; border: none; background: transparent; color: var(--color-fg-muted);
   cursor: pointer; padding: var(--space-4); border-radius: var(--radius-sm); flex-shrink: 0;
+  /* Figma places the bare 16px icon in the row; the negative margin keeps the
+     24px hit area without pushing the icon 4px inward. */
+  margin: calc(-1 * var(--space-4));
 }
 /* --hover-fill is transparent inside a hover group (Sidebar), where one
    highlight glides between items instead; this is the fallback elsewhere. */

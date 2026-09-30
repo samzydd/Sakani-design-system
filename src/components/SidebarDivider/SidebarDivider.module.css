@@ -1,5 +1,6 @@
 .divider {
   height: var(--border-width-100);
   background: var(--color-border-subtle);
-  margin: var(--space-6) 0;
+  /* Figma main component: 8px top/bottom padding around the 1px rule (17 tall). */
+  margin: var(--space-8) 0;
 }
