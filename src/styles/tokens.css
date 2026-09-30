@@ -396,3 +396,70 @@ html, body {
   --surface-blur-overlay: var(--glass-blur-overlay);
   --color-fg-muted: var(--glass-fg-muted);
 }
+
+/* ==========================================================================
+ * Liquid glass — the third Surface mode (Solid | Glass | Liquid)
+ *
+ * Glass = frosted: translucency + heavy blur, cheap, works everywhere.
+ * Liquid = Apple-style: a much lighter frost, plus REFRACTION (the backdrop
+ * bends near the edges like a lens), DISPERSION (a faint color fringe at the
+ * rim), a specular RIM LIGHT, and DEPTH. Refraction needs an SVG filter
+ * behind the element, which only Chromium supports in backdrop-filter;
+ * Safari and Firefox get the frosted fallback with the same rim and depth.
+ * The material lives on a LiquidGlass container (src/lib/LiquidGlass.tsx);
+ * data-surface="liquid" inside it makes nested components transparent so
+ * they sit on the container's material instead of stacking a second tint.
+ *
+ * Two variants, like Apple's:
+ *   regular — tint high enough for body AND muted text (≥4.5:1 over vivid
+ *             backdrops: 4.6 light / 6.5 dark). Panels, sidebars, modals.
+ *   clear   — mostly see-through; icons and large labels only (small text
+ *             drops to ~3:1 in dark). Floating toolbars, docks, controls.
+ * ========================================================================== */
+:root {
+  --liquid-tint-regular: rgba(255, 255, 255, 0.66);
+  --liquid-tint-clear: rgba(255, 255, 255, 0.28);
+  --liquid-refraction: 30;               /* px the rim bends the backdrop (scaled down on small elements) */
+  --liquid-bezel: 22;                    /* px — width of the lensing rim */
+  --liquid-dispersion: 3;                /* px extra shift per color channel */
+  --liquid-frost: 1.5;                   /* px blur on top of the refraction */
+  --liquid-fallback-blur: blur(14px) saturate(180%);
+  --liquid-rim: rgba(255, 255, 255, 0.95);
+  --liquid-rim-soft: rgba(255, 255, 255, 0.35);
+  --liquid-light-angle: 135deg;          /* where the rim light comes from */
+  --liquid-depth:
+    inset 0 1px 1px rgba(255, 255, 255, 0.75),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.25),
+    inset 0 -10px 20px -12px rgba(16, 15, 12, 0.12);
+  --liquid-shadow: 0 12px 32px -8px rgba(16, 15, 12, 0.22), 0 2px 6px rgba(16, 15, 12, 0.08);
+  --liquid-glare: rgba(255, 255, 255, 0.35); /* pointer-following highlight */
+}
+.dark {
+  --liquid-tint-regular: rgba(20, 20, 20, 0.66);
+  --liquid-tint-clear: rgba(20, 20, 20, 0.3);
+  --liquid-rim: rgba(255, 255, 255, 0.55);
+  --liquid-rim-soft: rgba(255, 255, 255, 0.12);
+  --liquid-depth:
+    inset 0 1px 1px rgba(255, 255, 255, 0.22),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.06),
+    inset 0 -10px 20px -12px rgba(0, 0, 0, 0.5);
+  --liquid-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.35);
+  --liquid-glare: rgba(255, 255, 255, 0.14);
+}
+
+/* Liquid scope: the container IS the material, so nested surfaces go clear
+   (a faint tint for nested cards) and don't blur again. Everything else —
+   control fills, edges, the fg/muted contrast nudge — behaves like Glass. */
+[data-surface="liquid"], [data-surface="liquid"] .dark {
+  --surface-bg: var(--glass-bg-subtle);
+  --surface-bg-overlay: var(--glass-bg-subtle);
+  --surface-bg-chrome: transparent;
+  --surface-bg-subtle: var(--glass-bg-subtle);
+  --surface-bg-subtle-hover: var(--glass-bg-subtle-hover);
+  --surface-border: var(--glass-border);
+  --surface-border-strong: var(--glass-border-strong);
+  --surface-highlight: 0 0 #0000;
+  --surface-blur: none;
+  --surface-blur-overlay: none;
+  --color-fg-muted: var(--glass-fg-muted);
+}
