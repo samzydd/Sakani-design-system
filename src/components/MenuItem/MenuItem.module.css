@@ -1,4 +1,4 @@
-/* MenuItem.module.css — mirrors Combobox Option: h32, pad 6/12, gap 8, radius 4 */
+/* MenuItem.module.css — h32, pad 6/12, gap 8, radius 6 (inside the Menu's 8) */
 .item {
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
   display: flex;
@@ -7,7 +7,7 @@
   box-sizing: border-box;
   min-height: 32px;
   padding: var(--space-6) var(--space-12);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm); /* 6px */
   font-family: var(--font-sans);
   font-size: 13px;
   line-height: 18px;

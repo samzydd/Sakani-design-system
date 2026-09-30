@@ -27,17 +27,35 @@ export interface FilterChipProps {
   className?: string;
 }
 
+/** Length of the fade-out before onRemove fires (matches FilterChip.module.css). */
+const LEAVE_MS = 160;
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
 export const FilterChip: React.FC<FilterChipProps> = ({
   type = 'default',
   children,
   onClick,
   onRemove,
   className,
-}) => (
+}) => {
+  // Removing fades the chip out first, then asks the parent to drop it. If
+  // the parent keeps it (declines the removal), it simply fades back in.
+  const [leaving, setLeaving] = React.useState(false);
+  const timer = React.useRef<number | undefined>(undefined);
+  React.useEffect(() => () => window.clearTimeout(timer.current), []);
+  const remove = () => {
+    if (leaving) return;
+    if (prefersReducedMotion()) { onRemove?.(); return; }
+    setLeaving(true);
+    timer.current = window.setTimeout(() => { onRemove?.(); setLeaving(false); }, LEAVE_MS);
+  };
+
+  return (
   <button
     type="button"
     onClick={onClick}
-    className={[styles.chip, styles[`chip--${type}`], className ?? ''].filter(Boolean).join(' ')}
+    className={[styles.chip, styles[`chip--${type}`], leaving ? styles['chip--leaving'] : '', className ?? ''].filter(Boolean).join(' ')}
   >
     {type === 'add' && <Plus size={14} strokeWidth={iconStrokeWidth(14)} className={styles.chip__lead} aria-hidden="true" />}
     <span className={styles.chip__label}>{children}</span>
@@ -47,12 +65,13 @@ export const FilterChip: React.FC<FilterChipProps> = ({
         role="button"
         aria-label="Remove filter"
         className={styles.chip__remove}
-        onClick={(e) => { e.stopPropagation(); onRemove?.(); }}
+        onClick={(e) => { e.stopPropagation(); remove(); }}
       >
         <X size={14} strokeWidth={iconStrokeWidth(14)} aria-hidden="true" />
       </span>
     )}
   </button>
-);
+  );
+};
 
 export default FilterChip;
