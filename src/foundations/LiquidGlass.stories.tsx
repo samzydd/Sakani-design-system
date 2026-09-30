@@ -115,3 +115,44 @@ export const Dark: Story = { render: () => <Prototype dark /> };
 /** What Safari and Firefox show: no refraction, frosted fallback with the same rim and depth. */
 export const SafariFallbackLight: Story = { name: 'Safari fallback (light)', render: () => <Prototype dark={false} refraction="off" /> };
 export const SafariFallbackDark: Story = { name: 'Safari fallback (dark)', render: () => <Prototype dark refraction="off" /> };
+
+/**
+ * Calibration — pixel-for-pixel twin of the Figma frame
+ * "🎯 Calibration (code ↔ Figma)" (Liquid glass prototype page): same
+ * 1000×600 canvas, same 2px/16px black grid, same panel sizes, positions
+ * and radii. Screenshot both at 1x and compare how far the grid bends near
+ * each edge; tune the --liquid-* tokens until the two match.
+ */
+type CalibrationArgs = {
+  refraction: number; bezel: number; dispersion: number;
+  frostRegular: number; frostClear: number;
+};
+
+export const Calibration: StoryObj<CalibrationArgs> = {
+  parameters: { layout: 'fullscreen' },
+  // Token overrides, so a fitting script can drive the scene from the URL
+  // (&args=frostClear:1;dispersion:1). Defaults = the shipped tokens.
+  args: { refraction: 30, bezel: 22, dispersion: 3, frostRegular: 1.5, frostClear: 1.5 },
+  render: (a) => {
+    const panel = (left: number, top: number, width: number, height: number, frost: number) =>
+      ({
+        position: 'absolute', left, top, width, height,
+        '--liquid-refraction': a.refraction, '--liquid-bezel': a.bezel,
+        '--liquid-dispersion': a.dispersion, '--liquid-frost': frost,
+      } as React.CSSProperties);
+    return (
+      <div
+        style={{
+          position: 'relative', width: 1000, height: 600, overflow: 'hidden', background: '#fff',
+          backgroundImage: 'linear-gradient(to right, #000 2px, transparent 2px), linear-gradient(#000 2px, transparent 2px)',
+          backgroundSize: '16px 16px',
+        }}
+      >
+        <LiquidGlass variant="regular" radius={28} style={panel(100, 100, 400, 200, a.frostRegular)} />
+        <LiquidGlass variant="clear" radius={28} style={panel(100, 340, 400, 200, a.frostClear)} />
+        <LiquidGlass variant="regular" radius={28} style={panel(600, 172, 200, 56, a.frostRegular)} />
+        <LiquidGlass variant="clear" radius={28} style={panel(600, 412, 200, 56, a.frostClear)} />
+      </div>
+    );
+  },
+};
