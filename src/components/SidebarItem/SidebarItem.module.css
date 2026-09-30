@@ -163,4 +163,7 @@
   font-size: 11px;
   font-weight: 500;
 }
-.item__chevron { display: inline-flex; color: var(--color-fg-muted); flex-shrink: 0; }
+/* Rest = closed, pointing right; `expanded` rotates it to point down --
+   Figma's collapsible group headers (Navigation group / Project group). */
+.item__chevron { display: inline-flex; color: var(--color-fg-muted); flex-shrink: 0; transition: transform var(--transition-base); }
+.item__chevron--expanded { transform: rotate(90deg); }

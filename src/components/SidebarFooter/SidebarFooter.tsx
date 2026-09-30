@@ -5,10 +5,14 @@
  * Type (User | User + Menu | Actions) x Collapsed.
  * Figma spec: padding 10/6, gap 10, title label/sm-strong (fg/default), subtitle caption (fg/muted),
  * log-out icon (Lucide). The user avatar uses the system Avatar component.
+ *
+ * Re-read 2026-09-29 from the main components: User / User + Menu use an md
+ * (32) avatar and a 10/14 subtitle, and the menu affordance is
+ * chevrons-up-down (an account switcher), not a vertical ellipsis.
  */
 
 import React from 'react';
-import { LogOut, EllipsisVertical } from 'lucide-react';
+import { LogOut, ChevronsUpDown } from 'lucide-react';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import { Avatar } from '../Avatar/Avatar';
 import styles from './SidebarFooter.module.css';
@@ -33,7 +37,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
 }) => {
   // The system Avatar — Image if src given, else Initials, else the default Icon avatar.
   const avatar = (
-    <Avatar size="sm" src={avatarSrc} initials={avatarInitials} alt={title ?? 'User'} />
+    <Avatar size={collapsed ? 'sm' : 'md'} src={avatarSrc} initials={avatarInitials} alt={title ?? 'User'} />
   );
 
   if (collapsed) {
@@ -63,7 +67,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
       </span>
       {type === 'user-menu' && (
         <button type="button" data-hover-item="" className={styles.footer__menu} onClick={onMenu} aria-label="Open menu">
-          <EllipsisVertical size={16} strokeWidth={iconStrokeWidth(16)} />
+          <ChevronsUpDown size={16} strokeWidth={iconStrokeWidth(16)} />
         </button>
       )}
     </div>

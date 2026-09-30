@@ -43,6 +43,10 @@ export const Active: Story = { args: { active: true } };
 export const ActiveDefault: Story = { args: { active: true, activeIndicator: false } };
 export const WithBadge: Story = { args: { badge: '12' } };
 export const WithSubmenu: Story = { args: { hasSubmenu: true } };
+/** Collapsible group header: `expanded` rotates the chevron down (open) vs
+ * the resting right-pointing state (closed). The caller owns the toggle. */
+export const CollapsibleGroupExpanded: Story = { args: { hasSubmenu: true, expanded: true, label: 'Projects' } };
+export const CollapsibleGroupCollapsed: Story = { args: { hasSubmenu: true, expanded: false, label: 'Website refresh' } };
 export const Disabled: Story = { args: { disabled: true } };
 export const Collapsed: Story = { args: { collapsed: true }, decorators: [(S) => <div style={{ width: 64, padding: 12, background: 'var(--color-bg-surface)' }}><S /></div>] };
 export const CollapsedActiveDefault: Story = { args: { collapsed: true, active: true, activeIndicator: false }, decorators: [(S) => <div style={{ width: 64, padding: 12, background: 'var(--color-bg-surface)' }}><S /></div>] };
