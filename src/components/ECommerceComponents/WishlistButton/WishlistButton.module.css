@@ -13,7 +13,7 @@
   transition: background-color var(--transition-base), box-shadow var(--transition-base);
 }
 .button:hover {
-  background: var(--color-bg-subtle);
+  background: var(--color-bg-canvas);
   box-shadow: var(--shadow-sm);
 }
 .button:focus-visible {

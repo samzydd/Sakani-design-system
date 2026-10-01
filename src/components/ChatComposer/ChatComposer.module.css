@@ -40,7 +40,7 @@
   width: 32px; height: 32px; border: none; background: none;
   color: var(--color-fg-muted); border-radius: var(--radius-md); cursor: pointer; flex-shrink: 0;
 }
-.icon:where(:hover):not(:disabled) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.icon:where(:hover):not(:disabled) { background: var(--color-bg-canvas); color: var(--color-fg-default); }
 .icon:disabled { cursor: not-allowed; opacity: 0.5; }
 .input {
   flex: 1 1 auto; border: none; background: none; outline: none;

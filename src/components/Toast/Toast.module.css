@@ -34,4 +34,4 @@
   border-radius: var(--radius-sm);
   transition: color var(--transition-base), background-color var(--transition-base);
 }
-.toast__dismiss:hover { color: var(--color-fg-default); background: var(--color-bg-subtle); }
+.toast__dismiss:hover { color: var(--color-fg-default); background: var(--color-bg-canvas); }

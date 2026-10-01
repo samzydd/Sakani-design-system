@@ -50,5 +50,5 @@
   border: 1px solid var(--color-border-default);
   cursor: pointer;
 }
-.empty__action:where(:hover) { background: var(--color-bg-subtle); }
+.empty__action:where(:hover) { background: var(--color-bg-canvas); }
 .empty__action:where(:focus-visible) { outline: none; box-shadow: 0 0 0 2px var(--color-border-focus); }
