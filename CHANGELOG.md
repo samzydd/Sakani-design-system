@@ -45,6 +45,12 @@ All notable changes to `@sakaniui/react` are documented here.
   not a blur of the lens below. `veil` lays a color over the image for every lens
   (Figma's 5% overlay fill; a scrim in dark mode). `source={false}` on a lens
   bends the UI below instead (slider knobs, selection droplets).
+- **Fast at full-screen sizes.** A live SVG filter over a full-screen lens is
+  re-evaluated whenever anything near it repaints (the dashboard ran at ~15fps
+  while hovering the sidebar). Inside a `LiquidBackdrop`, lenses bigger than
+  300×300 now run the same filter once into a canvas and re-bake only when their
+  size, position, theme or properties change: 60fps, pixel-identical. Small
+  lenses that move stay live; `bake={false}` keeps a big moving lens live.
 - **`LiquidDashboardBlock`** sits on a `LiquidBackdrop`: the promo card and the
   sidebar lenses refract the sharp photo like the Figma frame; the active lens
   springs and stretches as it glides; item labels are fg/default as in Figma.
