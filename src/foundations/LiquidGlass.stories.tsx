@@ -125,23 +125,27 @@ export const SafariFallbackDark: Story = { name: 'Safari fallback (dark)', rende
  * and radii. Screenshot both at 1x and compare how far the grid bends near
  * each edge; tune the --liquid-* tokens until the two match.
  */
-type CalibrationArgs = {
-  refraction: number; bezel: number; dispersion: number;
-  frostRegular: number; frostClear: number;
-};
+type Lens = { refraction: number; bezel: number; dispersion: number; frost: number; saturate: number; shift: number; profile: number; rimFar: number; shade: number };
+type CalibrationArgs = { reg: Lens; clr: Lens };
+
+/** One lens as inline custom properties, so a fitting script can drive it from the URL
+ *  (&args=reg.frost:2;clr.shift:6). Defaults = the shipped tokens. */
+const lensVars = (l: Lens) => ({
+  '--liquid-refraction': l.refraction, '--liquid-bezel': l.bezel, '--liquid-dispersion': l.dispersion,
+  '--liquid-frost': l.frost, '--liquid-saturate': l.saturate, '--liquid-shift': l.shift, '--liquid-profile': l.profile,
+  '--liquid-rim-far': `rgba(255, 255, 255, ${l.rimFar})`,
+  '--liquid-depth': `inset calc(var(--liquid-lx) * -1.5px) calc(var(--liquid-ly) * -1.5px) 1px rgba(255, 255, 255, 0.75), inset calc(var(--liquid-lx) * 1.5px) calc(var(--liquid-ly) * 1.5px) 1px rgba(255, 255, 255, 0.25), inset calc(var(--liquid-lx) * 10px) calc(var(--liquid-ly) * 10px) 20px -12px rgba(16, 15, 12, ${l.shade})`,
+});
 
 export const Calibration: StoryObj<CalibrationArgs> = {
   parameters: { layout: 'fullscreen' },
-  // Token overrides, so a fitting script can drive the scene from the URL
-  // (&args=frostClear:1;dispersion:1). Defaults = the shipped tokens.
-  args: { refraction: 30, bezel: 22, dispersion: 3, frostRegular: 1.5, frostClear: 1.5 },
+  args: {
+    reg: { refraction: 8, bezel: 16, dispersion: 0.2, frost: 2, saturate: 1, shift: -3, profile: 0, rimFar: 0.6, shade: 0.12 },
+    clr: { refraction: 9.5, bezel: 24, dispersion: 0.75, frost: 0.75, saturate: 0.6, shift: 1.5, profile: 0, rimFar: 0.6, shade: 0.12 },
+  },
   render: (a) => {
-    const panel = (left: number, top: number, width: number, height: number, frost: number) =>
-      ({
-        position: 'absolute', left, top, width, height,
-        '--liquid-refraction': a.refraction, '--liquid-bezel': a.bezel,
-        '--liquid-dispersion': a.dispersion, '--liquid-frost': frost,
-      } as React.CSSProperties);
+    const panel = (left: number, top: number, width: number, height: number, l: Lens) =>
+      ({ position: 'absolute', left, top, width, height, ...lensVars(l) } as React.CSSProperties);
     return (
       <div
         style={{
@@ -150,10 +154,10 @@ export const Calibration: StoryObj<CalibrationArgs> = {
           backgroundSize: '16px 16px',
         }}
       >
-        <LiquidGlass variant="regular" radius={28} style={panel(100, 100, 400, 200, a.frostRegular)} />
-        <LiquidGlass variant="clear" radius={28} style={panel(100, 340, 400, 200, a.frostClear)} />
-        <LiquidGlass variant="regular" radius={28} style={panel(600, 172, 200, 56, a.frostRegular)} />
-        <LiquidGlass variant="clear" radius={28} style={panel(600, 412, 200, 56, a.frostClear)} />
+        <LiquidGlass variant="regular" radius={28} style={panel(100, 100, 400, 200, a.reg)} />
+        <LiquidGlass variant="clear" radius={28} style={panel(100, 340, 400, 200, a.clr)} />
+        <LiquidGlass variant="regular" radius={28} style={panel(600, 172, 200, 56, a.reg)} />
+        <LiquidGlass variant="clear" radius={28} style={panel(600, 412, 200, 56, a.clr)} />
       </div>
     );
   },

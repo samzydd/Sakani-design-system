@@ -72,6 +72,11 @@
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
   color: var(--color-fg-default);
 }
+/* On glass the active item floats; it casts no shadow of its own (a lens or the
+   5% fill is its indicator, and the accent bar still draws). */
+:global([data-surface="liquid"]) .item--active:not(:focus-visible) { box-shadow: none; }
+:global([data-surface="liquid"]) .item--active:hover:not(:focus-visible) { box-shadow: none; }
+
 .item--active .item__icon,
 .item--active-flat .item__icon { color: var(--color-fg-default); }
 .item--active .item__chevron,

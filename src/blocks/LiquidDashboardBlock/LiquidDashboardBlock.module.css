@@ -1,6 +1,4 @@
 .root {
-  /* The design's glass doesn't boost color; the library defaults to 1.5. */
-  --liquid-saturate: 1;
   position: relative;
   width: 100%;
   height: 100%;
@@ -10,12 +8,10 @@
   background-position: center;
 }
 
-/* Figma's overlay and promo are filled with glass/bg-subtle -- a 5% ink tint.
-   The library's lightest liquid tint is clear at 28% white, which washes the
-   photo out, so the block uses its own tokens (--liquid-overlay-tint: 5% ink
-   in light; a real 72% scrim in dark, because light text has to read over the
-   bright parts of the photo). They flip with the theme like every token. */
-.inkTint { --liquid-tint-clear: var(--liquid-overlay-tint); }
+/* The overlay and the promo use tint="subtle": Figma's glass/bg-subtle, a 5% ink tint
+   (8% white in dark). In dark the overlay swaps in --liquid-overlay-tint, a real
+   scrim: light labels have to read over the bright parts of the photo. */
+.overlay { --liquid-tint-subtle: var(--liquid-overlay-tint); }
 
 /* The header's logo is the dark (fg/default) mark in the design. */
 .logoDark { display: block; width: 100%; height: 100%; }
@@ -54,15 +50,14 @@
 }
 .navGroup { display: flex; flex-direction: column; gap: 2px; }
 
-/* Nav: items sit flat on the lens — no surface fill, hover fill or shadow of
-   their own (the active bar, label weight and icon color still draw). */
+/* Nav: items sit flat on the lens, with no fill or hover fill of their own (the
+   active bar, label weight and icon color still draw). The library already drops
+   the active item's shadow on liquid glass. */
 .navScroll {
   position: relative;
-  --surface-bg: transparent;       /* active item's fill on this branch */
-  --color-bg-surface: transparent; /* …and in the published build */
+  --surface-bg: transparent;
   --hover-fill: transparent;
 }
-.navScroll [aria-current="page"]:not(:focus-visible) { box-shadow: none; }
 .navItem { position: relative; z-index: 1; }
 
 /* The one liquid lens. Position and size come from the target item; only the
@@ -88,7 +83,7 @@
 .lensHover { opacity: 0; transition: opacity 160ms ease; }
 .lensHoverOn { opacity: 1; }
 .lensHover.lensGlide { transition: transform 420ms cubic-bezier(0.34, 1.3, 0.64, 1), opacity 160ms ease; }
-.lensGlassHover { --liquid-shadow: 0 2px 6px -2px rgba(16, 15, 12, 0.14); }
+.lensGlassHover { --liquid-shadow: 0 1px 3px rgba(16, 15, 12, 0.08); }
 .lensGlass {
   width: 100%;
   height: 100%;
@@ -103,31 +98,11 @@
   .lensHover { transition: none; }
 }
 
-/* Over the photo the design uses fg/on-inverse text: header, top bar, promo. */
-.onPhoto {
-  /* Light text because it sits on a photograph, in either theme. */
-  --color-fg-default: var(--color-neutral-50);
-  --color-fg-muted: var(--color-neutral-50);
-  --color-fg-subtle: var(--color-neutral-50);
-}
-
 /* Group labels are fg/default (dark) in the design, not the fg/subtle the
    component uses. */
 .groupLabel { --color-fg-subtle: var(--color-fg-default); }
 
 .promoWrap { padding: 0 4px 19px; } /* 208px wide, 24px off the bottom edge, as in the frame */
-/* The promo is clear glass: no card fill or border, and an outlined,
-   see-through button (the design fills it with surface/bg-subtle at 5%). */
-.promoWrap {
-  --color-brand-subtle: transparent;
-  --color-accent-default: transparent;
-  --color-accent-hover: rgb(255 255 255 / 0.18);
-}
-.promoWrap button { border: 1px solid rgb(255 255 255 / 0.7); color: #fff; }
-/* White body text. The lens inside re-applies the liquid scope's muted color
-   (#57534e), which beat the wrapper-level override and left the description
-   dark grey on a dark photo. */
-.promoWrap p { color: #fff; }
 
 .main {
   display: flex;

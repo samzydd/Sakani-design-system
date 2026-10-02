@@ -344,9 +344,9 @@ html, body {
  * would freeze the light values into dark subtrees.
  * ========================================================================== */
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.72);
-  --glass-bg-overlay: rgba(255, 255, 255, 0.82);
-  --glass-bg-chrome: rgba(255, 255, 255, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.64);
+  --glass-bg-overlay: rgba(255, 255, 255, 0.76);
+  --glass-bg-chrome: rgba(255, 255, 255, 0.52);
   --glass-bg-subtle: rgba(16, 15, 12, 0.05);
   --glass-bg-subtle-hover: rgba(16, 15, 12, 0.09);
   --glass-border: rgba(255, 255, 255, 0.55);
@@ -357,9 +357,9 @@ html, body {
   --glass-blur-overlay: blur(24px) saturate(180%);
 }
 .dark {
-  --glass-bg: rgba(20, 20, 20, 0.72);
-  --glass-bg-overlay: rgba(20, 20, 20, 0.82);
-  --glass-bg-chrome: rgba(20, 20, 20, 0.6);
+  --glass-bg: rgba(20, 20, 20, 0.64);
+  --glass-bg-overlay: rgba(20, 20, 20, 0.76);
+  --glass-bg-chrome: rgba(20, 20, 20, 0.52);
   --glass-bg-subtle: rgba(255, 255, 255, 0.08);
   --glass-bg-subtle-hover: rgba(255, 255, 255, 0.14);
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -380,6 +380,7 @@ html, body {
   --surface-highlight: 0 0 #0000;                       /* none */
   --surface-blur: none;
   --surface-blur-overlay: none;
+  --surface-fg-muted: var(--color-fg-muted);            /* secondary text */
 }
 
 /* Glass */
@@ -394,6 +395,7 @@ html, body {
   --surface-highlight: var(--glass-highlight);
   --surface-blur: var(--glass-blur);
   --surface-blur-overlay: var(--glass-blur-overlay);
+  --surface-fg-muted: var(--glass-fg-muted);
   --color-fg-muted: var(--glass-fg-muted);
 }
 
@@ -435,36 +437,54 @@ html, body {
  *             drops to ~3:1 in dark). Floating toolbars, docks, controls.
  * ========================================================================== */
 :root {
+  /* Tints: how much of the backdrop shows through. */
   --liquid-tint-regular: rgba(255, 255, 255, 0.66);
   --liquid-tint-clear: rgba(255, 255, 255, 0.28);
-  --liquid-refraction: 30;               /* px the rim bends the backdrop (scaled down on small elements) */
-  --liquid-bezel: 22;                    /* px — width of the lensing rim */
-  --liquid-dispersion: 3;                /* px extra shift per color channel */
-  --liquid-frost: 1.5;                   /* px blur on top of the refraction */
-  --liquid-saturate: 1.5;                /* color boost on the refracted backdrop (1 = none) */
-  --liquid-overlay-tint: rgba(16, 15, 12, 0.05);   /* full-bleed photo overlay (Liquid Glass Dashboard) */
-  --liquid-panel-tint: rgba(255, 255, 255, 0.76);  /* a panel of glass that holds solid cards */
+  --liquid-tint-subtle: rgba(16, 15, 12, 0.05);     /* Figma glass/bg-subtle: a full-bleed overlay over a photo */
+  --liquid-overlay-tint: var(--liquid-tint-subtle); /* the dashboard's overlay (a scrim in dark) */
+  --liquid-panel-tint: rgba(255, 255, 255, 0.76);   /* a panel of glass that holds solid cards (glass/bg-overlay) */
+
+  /* The lens, one set per variant (Figma's liquid/regular and liquid/clear
+     effect styles). Tune globally here; to override one element, set the
+     unprefixed name (--liquid-frost, --liquid-refraction, ...) on it. */
+  --liquid-refraction-regular: 8;   --liquid-refraction-clear: 9.5;    /* px the rim samples further in, along the edge normal */
+  --liquid-shift-regular: -3;       --liquid-shift-clear: 1.5;        /* px the rim samples toward the light, on every edge (negative = away) */
+  --liquid-bezel-regular: 16;       --liquid-bezel-clear: 24;        /* px of lens width */
+  --liquid-profile-regular: 0;      --liquid-profile-clear: 0;       /* edge shape: 0 = circular glass edge; above 0 a power curve (small = bend packed into the rim) */
+  --liquid-dispersion-regular: 0.2; --liquid-dispersion-clear: 0.75; /* extra px per color channel (the fringe) */
+  --liquid-frost-regular: 2;        --liquid-frost-clear: 0.75;     /* px blur on top of the refraction */
+  --liquid-saturate-regular: 1;     --liquid-saturate-clear: 0.6;     /* color boost on the refracted backdrop (1 = none) */
+
   --liquid-fallback-blur: blur(14px) saturate(180%);
-  --liquid-rim: rgba(255, 255, 255, 0.95);
+  --liquid-light-angle: 135deg;          /* a gradient angle: the light sits at the top-left */
+  --liquid-lx: calc(-1 * sin(var(--liquid-light-angle)));  /* unit vector toward the light */
+  --liquid-ly: cos(var(--liquid-light-angle));
+  --liquid-rim: rgba(255, 255, 255, 0.95);        /* rim light, the edge facing the light */
   --liquid-rim-soft: rgba(255, 255, 255, 0.35);
-  --liquid-light-angle: 135deg;          /* where the rim light comes from */
+  --liquid-rim-far: rgba(255, 255, 255, 0.6);     /* the thin bounce on the far edge */
+  --liquid-rim-far-soft: rgba(255, 255, 255, 0.2);
+  /* Depth follows the light: a highlight on the lit edges, a shade on the far ones. */
   --liquid-depth:
-    inset 0 1px 1px rgba(255, 255, 255, 0.75),
-    inset 0 -1px 1px rgba(255, 255, 255, 0.25),
-    inset 0 -10px 20px -12px rgba(16, 15, 12, 0.12);
-  --liquid-shadow: 0 12px 32px -8px rgba(16, 15, 12, 0.22), 0 2px 6px rgba(16, 15, 12, 0.08);
+    inset calc(var(--liquid-lx) * -1.5px) calc(var(--liquid-ly) * -1.5px) 1px rgba(255, 255, 255, 0.75),
+    inset calc(var(--liquid-lx) * 1.5px) calc(var(--liquid-ly) * 1.5px) 1px rgba(255, 255, 255, 0.25),
+    inset calc(var(--liquid-lx) * 10px) calc(var(--liquid-ly) * 10px) 20px -12px rgba(16, 15, 12, 0.12);
+  /* Figma effect styles: regular = 0 6 12 -6 @16% + 0 2 4 @8%; clear = 0 3 8 -4 @16% + 0 1 3 @8%. */
+  --liquid-shadow-regular: 0 6px 12px -6px rgba(16, 15, 12, 0.16), 0 2px 4px rgba(16, 15, 12, 0.08);
+  --liquid-shadow-clear: 0 3px 8px -4px rgba(16, 15, 12, 0.16), 0 1px 3px rgba(16, 15, 12, 0.08);
   --liquid-glare: rgba(255, 255, 255, 0.35); /* pointer-following highlight */
 }
 .dark {
   --liquid-tint-regular: rgba(20, 20, 20, 0.66);
   --liquid-tint-clear: rgba(20, 20, 20, 0.3);
+  --liquid-tint-subtle: rgba(255, 255, 255, 0.08);
   --liquid-rim: rgba(255, 255, 255, 0.55);
   --liquid-rim-soft: rgba(255, 255, 255, 0.12);
+  --liquid-rim-far: rgba(255, 255, 255, 0.3);
+  --liquid-rim-far-soft: rgba(255, 255, 255, 0.08);
   --liquid-depth:
-    inset 0 1px 1px rgba(255, 255, 255, 0.22),
-    inset 0 -1px 1px rgba(255, 255, 255, 0.06),
-    inset 0 -10px 20px -12px rgba(0, 0, 0, 0.5);
-  --liquid-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.35);
+    inset calc(var(--liquid-lx) * -1.5px) calc(var(--liquid-ly) * -1.5px) 1px rgba(255, 255, 255, 0.22),
+    inset calc(var(--liquid-lx) * 1.5px) calc(var(--liquid-ly) * 1.5px) 1px rgba(255, 255, 255, 0.06),
+    inset calc(var(--liquid-lx) * 10px) calc(var(--liquid-ly) * 10px) 20px -12px rgba(0, 0, 0, 0.5);
   --liquid-glare: rgba(255, 255, 255, 0.14);
   --liquid-overlay-tint: rgba(20, 20, 20, 0.72);  /* a real scrim: light text must read over bright photo areas */
   --liquid-panel-tint: rgba(20, 20, 20, 0.76);
@@ -484,5 +504,17 @@ html, body {
   --surface-highlight: 0 0 #0000;
   --surface-blur: none;
   --surface-blur-overlay: none;
+  --surface-fg-muted: var(--glass-fg-muted);
   --color-fg-muted: var(--glass-fg-muted);
+}
+
+/* Over a photograph: light text, in either theme. Put data-on-photo on the part
+   of the UI that sits straight on the image (a header, a top bar, a promo).
+   It also covers nested surfaces: a LiquidGlass inside re-applies the liquid
+   scope's own muted color, which would otherwise win. */
+[data-on-photo], [data-on-photo] [data-surface] {
+  --color-fg-default: var(--color-base-white);
+  --color-fg-muted: var(--color-base-white);
+  --color-fg-subtle: var(--color-base-white);
+  --surface-fg-muted: var(--color-base-white);
 }
