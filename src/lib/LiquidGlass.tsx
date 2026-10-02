@@ -212,6 +212,14 @@ function follow(update: () => boolean) {
   return () => { followers.delete(update); };
 }
 
+/** Re-align every lens's backdrop copy right now. Call it after moving lenses
+ *  from JavaScript (a spring, a drag) in the same frame, so the photo inside a
+ *  lens never trails the lens by a frame. */
+export function syncLiquidBackdrop() {
+  followers.forEach((f) => f());
+  wakeFollowers();
+}
+
 const num = (el: Element, name: string, fallback: number) => {
   const v = parseFloat(getComputedStyle(el).getPropertyValue(name));
   return Number.isFinite(v) ? v : fallback;

@@ -28,7 +28,7 @@ import {
   LayoutPanelTop, ChartColumnBig, CircleUser, Boxes, Megaphone, ChartPie, Settings2,
   UsersRound, PlugZap, Settings, PanelRightClose,
 } from 'lucide-react';
-import { LiquidGlass, LiquidBackdrop } from '../../lib/LiquidGlass';
+import { LiquidGlass, LiquidBackdrop, syncLiquidBackdrop } from '../../lib/LiquidGlass';
 import { SakaniLogo } from '../../lib/SakaniLogo';
 import { Sidebar } from '../../components/Sidebar';
 import { SidebarHeader } from '../../components/SidebarHeader';
@@ -62,6 +62,73 @@ const NAV = [
 ];
 
 type LensBox = { x: number; y: number; w: number; h: number };
+
+/**
+ * A lens moved by a spring in JavaScript, not a CSS transition: the lens and the
+ * photo it refracts (re-aligned with syncLiquidBackdrop in the same frame) move
+ * together, so the photo never swims inside a gliding lens. The spring's speed
+ * also stretches the lens along its path, like a droplet, and a press squishes it.
+ */
+const SpringLens: React.FC<{ box: LensBox; glide: boolean; pressed: boolean; className: string; children: React.ReactNode }> = ({ box, glide, pressed, className, children }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const st = useRef({ y: box.y, v: 0, sx: 1, vsx: 0, sy: 1, vsy: 0, raf: 0, last: 0 });
+  const target = useRef({ y: box.y, sx: 1, sy: 1 });
+  const reduce = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+  const write = () => {
+    const el = ref.current, a = st.current;
+    if (!el) return;
+    // Stretch along the motion (vertical), up to +26% at full speed.
+    const stretch = Math.min(0.26, Math.abs(a.v) / 3200);
+    el.style.transform = `translate3d(${box.x}px, ${a.y}px, 0) scale(${a.sx * (1 - stretch * 0.22)}, ${a.sy * (1 + stretch)})`;
+    syncLiquidBackdrop();
+  };
+
+  const step = (now: number) => {
+    const a = st.current, t = target.current;
+    const dt = Math.min(1 / 30, (now - (a.last || now)) / 1000) || 1 / 60;
+    a.last = now;
+    // Slightly under-damped: a small overshoot, then it settles (~0.5s).
+    const k = 380, c = 2 * Math.sqrt(k) * 0.68;
+    a.v += (k * (t.y - a.y) - c * a.v) * dt; a.y += a.v * dt;
+    const kp = 700, cp = 2 * Math.sqrt(kp) * 0.55;
+    a.vsx += (kp * (t.sx - a.sx) - cp * a.vsx) * dt; a.sx += a.vsx * dt;
+    a.vsy += (kp * (t.sy - a.sy) - cp * a.vsy) * dt; a.sy += a.vsy * dt;
+    write();
+    const settled = Math.abs(t.y - a.y) < 0.05 && Math.abs(a.v) < 1 && Math.abs(t.sx - a.sx) < 0.001 && Math.abs(t.sy - a.sy) < 0.001 && Math.abs(a.vsx) + Math.abs(a.vsy) < 0.01;
+    if (settled) {
+      a.y = t.y; a.v = 0; a.sx = t.sx; a.sy = t.sy; a.vsx = a.vsy = 0; a.raf = 0; a.last = 0;
+      write();
+    } else a.raf = requestAnimationFrame(step);
+  };
+
+  useLayoutEffect(() => {
+    const a = st.current;
+    target.current = { y: box.y, sx: pressed ? 0.975 : 1, sy: pressed ? 0.88 : 1 };
+    if (!glide || reduce) {
+      // Appear in place: no glide (first placement, a fresh hover, reduced motion).
+      a.y = box.y; a.v = 0;
+      if (reduce) { a.sx = target.current.sx; a.sy = target.current.sy; }
+    }
+    write();
+    if (!a.raf) { a.last = 0; a.raf = requestAnimationFrame(step); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [box.x, box.y, box.w, box.h, glide, pressed]);
+
+  useLayoutEffect(() => () => {
+    // Clear the id too: StrictMode unmounts and remounts effects, and a stale id
+    // would stop the spring from ever starting again.
+    cancelAnimationFrame(st.current.raf);
+    st.current.raf = 0;
+    st.current.last = 0;
+  }, []);
+
+  return (
+    <div ref={ref} aria-hidden="true" className={className} style={{ width: box.w, height: box.h }}>
+      {children}
+    </div>
+  );
+};
 type LensState = { active: LensBox | null; hover: LensBox | null; hoverGlide: boolean };
 
 export interface LiquidDashboardBlockProps {
@@ -88,8 +155,6 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
   const [pressed, setPressed] = useState(false);
   const [lens, setLens] = useState<LensState>({ active: null, hover: null, hoverGlide: false });
   const [lensReady, setLensReady] = useState(false);
-  // Every glide restarts a droplet stretch (two identical keyframes, alternated).
-  const [stretch, setStretch] = useState({ active: 0, hover: 0 });
   const navRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef(new Map<string, HTMLDivElement>());
 
@@ -112,13 +177,10 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
     const next = { active: box(active), hover: box(hoverTarget) };
     // The hover lens glides item to item, but appears in place on a fresh hover.
     const hoverGlide = prevHoverKey.current !== null && hoverKey !== null;
-    setLens((prev) => {
-      if (same(prev.active, next.active) && same(prev.hover, next.hover) && prev.hoverGlide === hoverGlide) return prev;
-      const movedActive = !!prev.active && !!next.active && prev.active.y !== next.active.y;
-      const movedHover = hoverGlide && !!prev.hover && !!next.hover && prev.hover.y !== next.hover.y;
-      if (movedActive || movedHover) setStretch((st) => ({ active: st.active + (movedActive ? 1 : 0), hover: st.hover + (movedHover ? 1 : 0) }));
-      return { ...next, hoverGlide };
-    });
+    setLens((prev) =>
+      same(prev.active, next.active) && same(prev.hover, next.hover) && prev.hoverGlide === hoverGlide
+        ? prev
+        : { ...next, hoverGlide });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active, hoverTarget, hoverKey]);
 
@@ -173,27 +235,19 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
             >
               {/* both lenses sit behind the items (first children, z-index 0) */}
               {lens.active && (
-                <div
-                  aria-hidden="true"
-                  className={`${styles.lens} ${lensReady ? styles.lensGlide : ''} ${pressed && hoverKey === null ? styles.lensPressed : ''}`}
-                  style={{ width: lens.active.w, height: lens.active.h, ['--lx' as string]: `${lens.active.x}px`, ['--ly' as string]: `${lens.active.y}px` }}
-                >
-                  <LiquidGlass variant="clear" radius={6} className={`${styles.lensGlass} ${stretch.active ? styles[`stretch${stretch.active % 2}`] : ''}`} />
-                </div>
+                <SpringLens box={lens.active} glide={lensReady} pressed={pressed && hoverKey === null} className={styles.lens}>
+                  <LiquidGlass variant="clear" radius={6} className={styles.lensGlass} />
+                </SpringLens>
               )}
               {lens.hover && (
-                <div
-                  aria-hidden="true"
-                  className={[
-                    styles.lens, styles.lensHover,
-                    hoverKey ? styles.lensHoverOn : '',
-                    lens.hoverGlide ? styles.lensGlide : '',
-                    pressed && hoverKey ? styles.lensPressed : '',
-                  ].filter(Boolean).join(' ')}
-                  style={{ width: lens.hover.w, height: lens.hover.h, ['--lx' as string]: `${lens.hover.x}px`, ['--ly' as string]: `${lens.hover.y}px` }}
+                <SpringLens
+                  box={lens.hover}
+                  glide={lens.hoverGlide}
+                  pressed={pressed && !!hoverKey}
+                  className={[styles.lens, styles.lensHover, hoverKey ? styles.lensHoverOn : ''].filter(Boolean).join(' ')}
                 >
-                  <LiquidGlass variant="clear" radius={6} className={`${styles.lensGlass} ${styles.lensGlassHover} ${stretch.hover ? styles[`stretch${stretch.hover % 2}`] : ''}`} />
-                </div>
+                  <LiquidGlass variant="clear" radius={6} className={`${styles.lensGlass} ${styles.lensGlassHover}`} />
+                </SpringLens>
               )}
               {NAV.map((group) => (
                 <div key={group.label} className={styles.navGroup}>
