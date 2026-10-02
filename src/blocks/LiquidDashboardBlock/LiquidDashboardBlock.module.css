@@ -10,14 +10,12 @@
   background-position: center;
 }
 
-/* Figma's overlay and promo are filled with glass/bg-subtle — a 5% ink tint
-   (8% white in dark). The library's lightest liquid tint today is clear at
-   28% white, which washes the photo out, so the token is set here. */
-.inkTint { --liquid-tint-clear: rgba(16, 15, 12, 0.05); }
-/* Dark: Figma has no dark version of this frame. An 8% white tint leaves the
-   bright parts of the photo (sky, balloon) untouched, and the light sidebar
-   labels disappeared on them, so the dark overlay carries a real scrim. */
-:global(.dark) .inkTint { --liquid-tint-clear: rgba(20, 20, 20, 0.72); }
+/* Figma's overlay and promo are filled with glass/bg-subtle -- a 5% ink tint.
+   The library's lightest liquid tint is clear at 28% white, which washes the
+   photo out, so the block uses its own tokens (--liquid-overlay-tint: 5% ink
+   in light; a real 72% scrim in dark, because light text has to read over the
+   bright parts of the photo). They flip with the theme like every token. */
+.inkTint { --liquid-tint-clear: var(--liquid-overlay-tint); }
 
 /* The header's logo is the dark (fg/default) mark in the design. */
 .logoDark { display: block; width: 100%; height: 100%; }
@@ -156,9 +154,8 @@
   position: absolute;
   inset: 0 12px -24px 0;
   /* Figma: glass/bg-overlay at 76% (white in light, near-black in dark). */
-  --liquid-tint-regular: rgba(255, 255, 255, 0.76);
+  --liquid-tint-regular: var(--liquid-panel-tint);
 }
-:global(.dark) .panel { --liquid-tint-regular: rgba(20, 20, 20, 0.76); }
 
 .panelScroll {
   height: 100%;

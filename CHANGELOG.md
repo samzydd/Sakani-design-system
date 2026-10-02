@@ -17,7 +17,7 @@ All notable changes to `@sakaniui/react` are documented here.
   per-channel color fringe), plus tint, rim light, depth and a pointer-
   following glare. Chromium renders the refraction; Safari and Firefox get
   a frosted fallback with the same rim. Tunable through `--liquid-*` tokens
-  (tint, refraction, bezel, dispersion, frost, saturate).
+  (tint, refraction, bezel, dispersion, frost, saturate, overlay and panel tints).
 - **New block: `LiquidDashboardBlock`** (`@sakaniui/react/blocks`, Storybook
   *Blocks / Application / Liquid Glass Dashboard*). A full dashboard on a
   photo: one glass overlay, transparent chrome, solid data cards, an active
