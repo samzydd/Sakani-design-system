@@ -141,5 +141,5 @@ export { getContrastColor } from './lib/getContrastColor';
  * MenuItem or their own `data-hover-item` elements can wrap them in one. */
 export { HoverGroup, useHoverHighlight } from './lib/useHoverHighlight';
 export type { HoverGroupProps } from './lib/useHoverHighlight';
-export { LiquidGlass, useLiquidGlass } from './lib/LiquidGlass';
-export type { LiquidGlassProps, LiquidGlassVariant, LiquidGlassTint, LiquidGlassEffect } from './lib/LiquidGlass';
+export { LiquidGlass, LiquidBackdrop, useLiquidGlass } from './lib/LiquidGlass';
+export type { LiquidGlassProps, LiquidGlassVariant, LiquidGlassTint, LiquidGlassEffect, LiquidBackdropProps } from './lib/LiquidGlass';

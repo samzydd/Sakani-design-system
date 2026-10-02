@@ -37,11 +37,22 @@ All notable changes to `@sakaniui/react` are documented here.
   old inset-shadow token is `--liquid-edge-shade` (Safari/Firefox fallback
   only). `--liquid-light-angle` is Figma's angle in degrees (-45), not a CSS
   gradient angle.
-- `LiquidDashboardBlock`: the active sidebar lens uses the library's clear lens
-  as is.
-- Known difference: Figma's glass reads the original photo below it, so a lens
-  stacked over another lens (the dashboard's promo card over the overlay) is
-  sharp in Figma; in a browser it sees the lower lens's frost.
+- **New: `LiquidBackdrop`.** Wrap a liquid-glass UI in
+  `<LiquidBackdrop src={photo}>` and every lens inside refracts the photo itself
+  (an aligned copy, kept aligned while lenses glide, scroll or squish) instead of
+  whatever the browser painted below it. Like Figma, glass stacked on glass now
+  bends the sharp original: real refraction and color fringing on nested lenses,
+  not a blur of the lens below. `veil` lays a color over the image for every lens
+  (Figma's 5% overlay fill; a scrim in dark mode). `source={false}` on a lens
+  bends the UI below instead (slider knobs, selection droplets).
+- **`LiquidDashboardBlock`** sits on a `LiquidBackdrop`: the promo card and the
+  sidebar lenses refract the sharp photo like the Figma frame; the active lens
+  springs and stretches as it glides; item labels are fg/default as in Figma.
+- **Storybook:** *Foundations / Liquid Glass* is now a showcase (sidebar, tab bar
+  with a sliding droplet, Now Playing card whose slider knobs turn into lenses,
+  a lens you can drag over the photo), a dark version, and a Playground with
+  Figma's six Glass properties as controls. The calibration and measurement
+  tools moved to *Foundations / Liquid Glass / Lab*.
 
 ## 0.4.1
 

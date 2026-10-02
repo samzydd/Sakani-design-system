@@ -17,11 +17,17 @@
  * pixel by pixel, where the effect samples from, and a flat grey one shows what
  * the light adds. Each property was swept on its own.
  *
- * How it is built: an SVG filter used as backdrop-filter: url(#…). It blurs the
- * backdrop (frost), bends it through a displacement map made for the element's
- * exact size and corner radius (refraction, depth), once per color channel
- * (dispersion), then adds a light map (light). Chromium only — Safari and Firefox
- * ignore url() in backdrop-filter and get the frosted fallback
+ * How it is built: an SVG filter that blurs the backdrop (frost), bends it
+ * through a displacement map made for the element's exact size and corner radius
+ * (refraction, depth), once per color channel (dispersion), then adds a light
+ * map (light). Two ways to feed it:
+ *   - Inside a <LiquidBackdrop src=…> (the photo behind the UI is known): each
+ *     lens filters its own copy of that image, aligned to the pixel and kept
+ *     aligned while it moves. Like Figma, every lens sees the sharp original —
+ *     glass stacked on glass still refracts real detail.
+ *   - Anywhere else: backdrop-filter: url(#…), which bends whatever is painted
+ *     below (so a lens over another lens sees that lens's frost).
+ * Chromium only — Safari and Firefox get the frosted fallback
  * (--liquid-fallback-blur) with a CSS rim. Plus: tint (the fill), the outer
  * shadow, and a pointer-following glare (off with reduced motion). With
  * prefers-reduced-transparency it becomes a plain opaque surface.
@@ -134,6 +140,78 @@ function buildMaps(p: Params): { map: string; light: string } {
   return out;
 }
 
+/* ---------------------------------------------------------------------------
+ * LiquidBackdrop: the image behind the glass, shared with every lens inside.
+ * ------------------------------------------------------------------------- */
+
+interface Backdrop { image: string; size: string; position: string; rootRef: React.RefObject<HTMLElement | null> }
+const BackdropContext = React.createContext<Backdrop | null>(null);
+
+export interface LiquidBackdropProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** The image behind the glass, cover-fitted. */
+  src: string;
+  /** background-position of the image. Default 'center'. */
+  position?: string;
+  /** A color laid over the image, in the backdrop every lens sees too (a scrim in
+   *  dark mode, Figma's 5% overlay fill in light). Any CSS color, var() included. */
+  veil?: string;
+}
+
+/** The photo (or any image) a liquid-glass UI sits on. Lenses inside refract the
+ *  image itself instead of what the browser painted below them. */
+export const LiquidBackdrop = React.forwardRef<HTMLDivElement, LiquidBackdropProps>(
+  ({ src, position = 'center', veil, style, children, ...rest }, forwarded) => {
+    const rootRef = React.useRef<HTMLDivElement | null>(null);
+    const setRef = (el: HTMLDivElement | null) => {
+      rootRef.current = el;
+      if (typeof forwarded === 'function') forwarded(el); else if (forwarded) forwarded.current = el;
+    };
+    const image = veil ? `linear-gradient(${veil}, ${veil}), url("${src}")` : `url("${src}")`;
+    const size = veil ? '100% 100%, cover' : 'cover';
+    const value = React.useMemo<Backdrop>(() => ({ image, size, position, rootRef }), [image, size, position]);
+    return (
+      <div ref={setRef} {...rest} style={{ backgroundImage: image, backgroundSize: size, backgroundPosition: position, backgroundRepeat: 'no-repeat', ...style }}>
+        <BackdropContext.Provider value={value}>{children}</BackdropContext.Provider>
+      </div>
+    );
+  },
+);
+LiquidBackdrop.displayName = 'LiquidBackdrop';
+
+/* Keeps every lens's copy of the backdrop aligned with the real one. One shared
+ * animation-frame loop, woken by anything that can move a lens (scroll, resize,
+ * transitions and animations starting or ending, presses) and asleep again once
+ * nothing has moved for a few frames. Only transforms are written: no React
+ * render per frame. */
+const followers = new Set<() => boolean>();
+let followFrame = 0;
+let stillFrames = 0;
+const followTick = () => {
+  let moved = false;
+  followers.forEach((f) => { if (f()) moved = true; });
+  stillFrames = moved ? 0 : stillFrames + 1;
+  followFrame = followers.size && stillFrames < 24 ? requestAnimationFrame(followTick) : 0;
+};
+const wakeFollowers = () => {
+  stillFrames = 0;
+  if (!followFrame && followers.size) followFrame = requestAnimationFrame(followTick);
+};
+let followListening = false;
+function follow(update: () => boolean) {
+  if (!followListening && typeof window !== 'undefined') {
+    followListening = true;
+    window.addEventListener('scroll', wakeFollowers, { capture: true, passive: true });
+    window.addEventListener('resize', wakeFollowers);
+    for (const type of ['transitionrun', 'transitionend', 'animationstart', 'animationend', 'pointerdown', 'pointerup']) {
+      document.addEventListener(type, wakeFollowers, true);
+    }
+  }
+  followers.add(update);
+  update();
+  wakeFollowers();
+  return () => { followers.delete(update); };
+}
+
 const num = (el: Element, name: string, fallback: number) => {
   const v = parseFloat(getComputedStyle(el).getPropertyValue(name));
   return Number.isFinite(v) ? v : fallback;
@@ -145,17 +223,23 @@ export interface UseLiquidGlassOptions {
   refraction?: 'auto' | 'off';
   /** Re-read the --liquid-* properties when this changes (e.g. an inline effect override). */
   watch?: string;
+  /** Inside a <LiquidBackdrop>, refract its image (default). Pass false for an
+   *  element that floats over other UI (Modal's card sits over a scrim). */
+  source?: boolean;
 }
 
 /**
  * The material as a hook, for components that own their element (Modal's
  * card). Spread `props` onto the element and render `filter` inside it.
  */
-export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabled = true, refraction = 'auto', watch = '' }: UseLiquidGlassOptions = {}) {
+export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabled = true, refraction = 'auto', watch = '', source = true }: UseLiquidGlassOptions = {}) {
   const rawId = React.useId();
   const id = `liquid-${rawId.replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const [params, setParams] = React.useState<Params | null>(null);
   const refracting = enabled && refraction !== 'off' && canRefract();
+  const backdrop = React.useContext(BackdropContext);
+  const sourced = refracting && source && !!backdrop;
+  const copyRef = React.useRef<HTMLSpanElement | null>(null);
 
   React.useEffect(() => {
     const el = ref.current;
@@ -192,7 +276,7 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
       setParams((prev) => (prev && (Object.keys(next) as (keyof Params)[]).every((p) => prev[p] === next[p]) ? prev : next));
     };
     measure(); // now, not only on the observer's first report (which waits for a rendering update)
-    const ro = new ResizeObserver(measure);
+    const ro = new ResizeObserver(() => { measure(); wakeFollowers(); });
     ro.observe(el);
     return () => ro.disconnect();
   }, [ref, refracting, watch]);
@@ -207,6 +291,32 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
   }, []);
 
   const on = refracting && !!params && !!maps?.map;
+
+  // Source mode: place this lens's copy of the backdrop exactly over the real one
+  // (in the lens's own coordinates, so a lens squished by a transform still lines up).
+  React.useLayoutEffect(() => {
+    const el = ref.current;
+    if (!sourced || !on || !el || !backdrop) return undefined;
+    let last = '';
+    let waits = 0;
+    return follow(() => {
+      // The backdrop's ref attaches after its children's layout effects, so on the
+      // first frames it may not be there yet: keep the loop awake until it is.
+      const copy = copyRef.current, root = backdrop.rootRef.current;
+      if (!copy || !root) return ++waits < 120;
+      const r = el.getBoundingClientRect(), b = root.getBoundingClientRect();
+      const sx = el.offsetWidth ? r.width / el.offsetWidth : 1;
+      const sy = el.offsetHeight ? r.height / el.offsetHeight : 1;
+      const x = (b.left - r.left) / sx, y = (b.top - r.top) / sy, w = b.width / sx, h = b.height / sy;
+      const key = `${x.toFixed(2)},${y.toFixed(2)},${w.toFixed(2)},${h.toFixed(2)}`;
+      if (key === last) return false;
+      last = key;
+      copy.style.width = `${w}px`;
+      copy.style.height = `${h}px`;
+      copy.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      return true;
+    });
+  }, [sourced, on, backdrop, ref]);
   const channel = (row: number) => {
     const m = Array(20).fill(0);
     m[row * 5 + row] = 1; m[18] = 1; // keep one channel + alpha
@@ -237,13 +347,28 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
     </svg>
   ) : null;
 
+  // Source mode draws the glass itself: the backdrop copy through the filter (the
+  // copy fills the square box, the clip rounds the result, so the bend never pulls
+  // in empty corners), then the tint over it.
+  const layers = on && sourced && backdrop ? (
+    <>
+      {filter}
+      <span className={styles.sourceClip} aria-hidden="true">
+        <span className={styles.source} style={{ filter: `url(#${id})` }}>
+          <span ref={copyRef} className={styles.sourceImage} style={{ backgroundImage: backdrop.image, backgroundSize: backdrop.size, backgroundPosition: backdrop.position }} />
+        </span>
+      </span>
+      <span className={styles.fill} aria-hidden="true" />
+    </>
+  ) : filter;
+
   return {
-    filter,
+    filter: layers,
     refracting: on,
     props: {
       'data-surface': 'liquid',
-      'data-refraction': on ? 'on' : 'off',
-      style: on ? { backdropFilter: `url(#${id})` } : undefined,
+      'data-refraction': on ? (sourced ? 'source' : 'on') : 'off',
+      style: on && !sourced ? { backdropFilter: `url(#${id})` } : undefined,
       onPointerMove,
     } as const,
   };
@@ -262,6 +387,9 @@ export interface LiquidGlassProps extends React.HTMLAttributes<HTMLDivElement> {
    *  (e.g. { refraction: 0.8, depth: 20, dispersion: 0.4, frost: 1 }). Defaults
    *  come from the variant's --liquid-* tokens. */
   effect?: Partial<LiquidGlassEffect>;
+  /** Inside a <LiquidBackdrop>: true (default) refracts the backdrop image;
+   *  false bends whatever is painted below instead (UI under a slider knob). */
+  source?: boolean;
   /** Squish slightly when pressed (buttons, toolbar pills). */
   interactive?: boolean;
 }
@@ -280,13 +408,13 @@ const effectVars = (e?: Partial<LiquidGlassEffect>): React.CSSProperties => {
 };
 
 export const LiquidGlass = React.forwardRef<HTMLDivElement, LiquidGlassProps>(
-  ({ variant = 'regular', tint = 'auto', radius = 20, refraction = 'auto', effect, interactive, className, style, children, onPointerMove, ...rest }, forwarded) => {
+  ({ variant = 'regular', tint = 'auto', radius = 20, refraction = 'auto', effect, source = true, interactive, className, style, children, onPointerMove, ...rest }, forwarded) => {
     const ref = React.useRef<HTMLDivElement | null>(null);
     const setRef = (el: HTMLDivElement | null) => {
       ref.current = el;
       if (typeof forwarded === 'function') forwarded(el); else if (forwarded) forwarded.current = el;
     };
-    const glass = useLiquidGlass(ref, { refraction, watch: effect ? JSON.stringify(effect) : '' });
+    const glass = useLiquidGlass(ref, { refraction, source, watch: effect ? JSON.stringify(effect) : '' });
     return (
       <div
         ref={setRef}

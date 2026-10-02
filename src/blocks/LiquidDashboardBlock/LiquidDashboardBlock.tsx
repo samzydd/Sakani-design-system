@@ -3,8 +3,11 @@
  *
  * A full dashboard on a photograph, built the way the Sakani glass docs
  * describe it:
- *   1. Background  the photo (a CSS background on the root).
- *   2. Overlay     one full-size <LiquidGlass variant="clear" radius={0}> sheet.
+ *   1. Background  the photo, as a <LiquidBackdrop>: every lens inside refracts
+ *                  the photo itself, so glass on glass still bends real detail
+ *                  (as in Figma). Its veil is Figma's 5% overlay fill (a scrim
+ *                  in dark mode), seen by every lens.
+ *   2. Overlay     one full-size <LiquidGlass variant="regular" radius={0}> sheet.
  *   3. Product UI  Sidebar and TopBar sit on it with no fills of their own
  *                  (data-surface="liquid"); the main panel is a second sheet
  *                  of glass at 76% tint; the cards on it stay solid so data
@@ -17,7 +20,7 @@
  * A COMPOSITION EXAMPLE, not a configurable component. Copy this folder into
  * your project and edit it directly: swap the sample data, nav and charts.
  * Refraction renders in Chromium (Chrome, Edge); Safari and Firefox get the
- * frosted fallback with the same rim and depth.
+ * frosted fallback with the same rim.
  */
 
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
@@ -25,7 +28,7 @@ import {
   LayoutPanelTop, ChartColumnBig, CircleUser, Boxes, Megaphone, ChartPie, Settings2,
   UsersRound, PlugZap, Settings, PanelRightClose,
 } from 'lucide-react';
-import { LiquidGlass } from '../../lib/LiquidGlass';
+import { LiquidGlass, LiquidBackdrop } from '../../lib/LiquidGlass';
 import { SakaniLogo } from '../../lib/SakaniLogo';
 import { Sidebar } from '../../components/Sidebar';
 import { SidebarHeader } from '../../components/SidebarHeader';
@@ -85,6 +88,8 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
   const [pressed, setPressed] = useState(false);
   const [lens, setLens] = useState<LensState>({ active: null, hover: null, hoverGlide: false });
   const [lensReady, setLensReady] = useState(false);
+  // Every glide restarts a droplet stretch (two identical keyframes, alternated).
+  const [stretch, setStretch] = useState({ active: 0, hover: 0 });
   const navRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef(new Map<string, HTMLDivElement>());
 
@@ -107,10 +112,13 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
     const next = { active: box(active), hover: box(hoverTarget) };
     // The hover lens glides item to item, but appears in place on a fresh hover.
     const hoverGlide = prevHoverKey.current !== null && hoverKey !== null;
-    setLens((prev) =>
-      same(prev.active, next.active) && same(prev.hover, next.hover) && prev.hoverGlide === hoverGlide
-        ? prev
-        : { ...next, hoverGlide });
+    setLens((prev) => {
+      if (same(prev.active, next.active) && same(prev.hover, next.hover) && prev.hoverGlide === hoverGlide) return prev;
+      const movedActive = !!prev.active && !!next.active && prev.active.y !== next.active.y;
+      const movedHover = hoverGlide && !!prev.hover && !!next.hover && prev.hover.y !== next.hover.y;
+      if (movedActive || movedHover) setStretch((st) => ({ active: st.active + (movedActive ? 1 : 0), hover: st.hover + (movedHover ? 1 : 0) }));
+      return { ...next, hoverGlide };
+    });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active, hoverTarget, hoverKey]);
 
@@ -134,9 +142,9 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
   }, [lens.active, lensReady]);
 
   return (
-    <div className={[styles.root, className ?? ''].filter(Boolean).join(' ')} style={{ backgroundImage: `url(${backgroundImage})` }}>
-      {/* 2 · the one glass sheet over the photo */}
-      <LiquidGlass variant="regular" tint="subtle" radius={0} className={styles.overlay} />
+    <LiquidBackdrop src={backgroundImage} veil="var(--liquid-overlay-tint)" className={[styles.root, className ?? ''].filter(Boolean).join(' ')}>
+      {/* 2 · the one glass sheet over the photo (its 5% fill is the backdrop's veil) */}
+      <LiquidGlass variant="regular" tint="none" radius={0} className={styles.overlay} />
 
       <div className={styles.shell}>
         {/* 3 · chrome: transparent, borrows the overlay's glass */}
@@ -170,7 +178,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
                   className={`${styles.lens} ${lensReady ? styles.lensGlide : ''} ${pressed && hoverKey === null ? styles.lensPressed : ''}`}
                   style={{ width: lens.active.w, height: lens.active.h, ['--lx' as string]: `${lens.active.x}px`, ['--ly' as string]: `${lens.active.y}px` }}
                 >
-                  <LiquidGlass variant="clear" radius={6} className={styles.lensGlass} />
+                  <LiquidGlass variant="clear" radius={6} className={`${styles.lensGlass} ${stretch.active ? styles[`stretch${stretch.active % 2}`] : ''}`} />
                 </div>
               )}
               {lens.hover && (
@@ -184,7 +192,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
                   ].filter(Boolean).join(' ')}
                   style={{ width: lens.hover.w, height: lens.hover.h, ['--lx' as string]: `${lens.hover.x}px`, ['--ly' as string]: `${lens.hover.y}px` }}
                 >
-                  <LiquidGlass variant="clear" radius={6} className={`${styles.lensGlass} ${styles.lensGlassHover}`} />
+                  <LiquidGlass variant="clear" radius={6} className={`${styles.lensGlass} ${styles.lensGlassHover} ${stretch.hover ? styles[`stretch${stretch.hover % 2}`] : ''}`} />
                 </div>
               )}
               {NAV.map((group) => (
@@ -261,7 +269,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
           </div>
         </div>
       </div>
-    </div>
+    </LiquidBackdrop>
   );
 };
 

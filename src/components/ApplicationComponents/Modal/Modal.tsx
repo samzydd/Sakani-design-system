@@ -100,7 +100,8 @@ export const Modal: React.FC<ModalProps> = ({
   const portalSurface = usePortalSurface(markerRef, open);
   // Opened from inside a Liquid area: the card itself becomes the material.
   const isLiquid = portalSurface === 'liquid';
-  const liquid = useLiquidGlass(cardRef, { enabled: isLiquid });
+  // source: false -- the card floats over a scrim, not straight on a backdrop image.
+  const liquid = useLiquidGlass(cardRef, { enabled: isLiquid, source: false });
 
   // Stays mounted past `open` so the exit animation has something to play
   // on. `open` remains the consumer's signal and every behavioural effect

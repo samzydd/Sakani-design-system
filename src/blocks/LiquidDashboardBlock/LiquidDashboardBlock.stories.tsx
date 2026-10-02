@@ -20,15 +20,17 @@ const meta = {
 
 Matches Figma "Dashboard • Liquid" (node 2409:26078). Three layers, in this order:
 
-1. **Background** — the photo, a CSS background on the root (the \`backgroundImage\` prop).
-2. **Overlay** — one full-size \`<LiquidGlass variant="clear" radius={0}>\` over it. It is the only layer that
-   bends the photo, so the whole canvas reads as one consistent sheet of glass.
+1. **Background** — the photo, as a \`<LiquidBackdrop>\` (the \`backgroundImage\` prop). Every lens inside refracts
+   the photo itself, aligned to the pixel, so glass on glass still bends real detail, as in Figma. Its veil is
+   Figma's 5% overlay fill (a scrim in dark mode), seen by every lens.
+2. **Overlay** — one full-size \`<LiquidGlass variant="regular" radius={0}>\`: the frosted sheet the chrome sits on.
 3. **Product UI** — the sidebar and top bar sit on the overlay with no fills of their own
    (\`data-surface="liquid"\`); the main panel is a second sheet of glass at 76% tint; the cards on it stay
    solid so the data stays crisp.
 
-The **active** sidebar item has its own clear-glass lens and only moves when another item is clicked. A
-second, softer lens (smaller shadow) follows hover and keyboard focus without changing what is active.
+The **active** sidebar item has its own clear-glass lens and only moves when another item is clicked; it
+springs to the new item and stretches along the way, like a droplet. A second, softer lens follows hover and
+keyboard focus without changing what is active.
 
 Refraction renders in Chromium (Chrome, Edge). Safari and Firefox get the frosted fallback with the same
 rim and depth. With reduced transparency it becomes opaque; with reduced motion the glide and squish stop.

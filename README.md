@@ -87,15 +87,15 @@ Glass is built into the theme system, not added component by component. Next to 
 </div>
 
 // Liquid glass: a lens-refracting sheet over a photo, UI on top
-import { LiquidGlass } from '@sakaniui/react';
+import { LiquidBackdrop, LiquidGlass } from '@sakaniui/react';
 
-<div style={{ position: 'relative', backgroundImage: 'url(photo.jpg)', backgroundSize: 'cover' }}>
+<LiquidBackdrop src="photo.jpg" style={{ position: 'relative' }}>   {/* every lens refracts this photo */}
   <LiquidGlass variant="regular" tint="subtle" radius={0} style={{ position: 'absolute', inset: 0 }} />
   <div data-surface="liquid" style={{ position: 'relative' }}>
     <Sidebar />                                  {/* transparent: sits on the glass */}
     <div data-surface="solid"><Card>…</Card></div> {/* data stays solid and crisp */}
   </div>
-</div>
+</LiquidBackdrop>
 ```
 
 The recipe is always the same three layers: **photo → one glass overlay → components**. See the full **Liquid Glass Dashboard** block (`@sakaniui/react/blocks`) for a complete example: a hovering lens that glides between sidebar items while the active item keeps its own, frosted menus, and solid data cards on a glass panel.
