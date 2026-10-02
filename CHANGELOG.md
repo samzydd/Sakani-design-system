@@ -61,6 +61,9 @@ All notable changes to `@sakaniui/react` are documented here.
   The collapsed rail is fixed: lenses hug the 32px buttons, items are centered,
   groups are separated by a hairline, and the lens lands exactly where the
   rail's width animation ends. Search closes on Esc and shows a focus ring.
+  Collapsed tooltips are portaled to the page (the rail clipped them and the main
+  panel covered them), and hovering a nav item changes nothing but the glass: the
+  library's own icon darkening, which fired before the lens faded in, is off.
 - **Storybook:** *Foundations / Liquid Glass* is now a showcase (sidebar, tab bar
   with a sliding droplet, Now Playing card whose slider knobs turn into lenses,
   a lens you can drag over the photo), a dark version, and a Playground with

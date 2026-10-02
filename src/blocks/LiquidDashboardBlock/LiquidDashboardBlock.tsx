@@ -37,7 +37,7 @@ import { SidebarItem } from '../../components/SidebarItem';
 import { SidebarPromo } from '../../components/SidebarPromo';
 import { TopBar } from '../../components/TopBar';
 import { Avatar } from '../../components/Avatar';
-import { Tooltip } from '../../components/Tooltip';
+import { RailTooltip } from './parts/RailTooltip';
 import { SearchExpand } from './parts/SearchExpand';
 import { DashboardContent, type DashboardContentProps } from './DashboardContent';
 import styles from './LiquidDashboardBlock.module.css';
@@ -303,7 +303,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
                         onFocus={() => setHovered(item.label)}
                       >
                         {collapsed
-                          ? <Tooltip title={item.label} pointer="center-right">{el}</Tooltip>
+                          ? <RailTooltip title={item.label}>{el}</RailTooltip>
                           : el}
                       </div>
                     );
