@@ -61,6 +61,9 @@ const NAV = [
   ] },
 ];
 
+/** Below this width the sidebar collapses to its rail on its own. */
+const AUTO_COLLAPSE_BELOW = 900;
+
 type LensBox = { x: number; y: number; w: number; h: number };
 
 /**
@@ -73,6 +76,10 @@ const SpringLens: React.FC<{ box: LensBox; glide: boolean; pressed: boolean; cla
   const ref = useRef<HTMLDivElement>(null);
   const st = useRef({ y: box.y, v: 0, sx: 1, vsx: 0, sy: 1, vsy: 0, raf: 0, last: 0 });
   const target = useRef({ y: box.y, sx: 1, sy: 1 });
+  // The animation loop outlives renders, so it reads the latest box from a ref
+  // (a closure over `box` would keep writing the old x after the lens moved).
+  const boxRef = useRef(box);
+  boxRef.current = box;
   const reduce = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
   const write = () => {
@@ -80,7 +87,7 @@ const SpringLens: React.FC<{ box: LensBox; glide: boolean; pressed: boolean; cla
     if (!el) return;
     // Stretch along the motion (vertical), up to +26% at full speed.
     const stretch = Math.min(0.26, Math.abs(a.v) / 3200);
-    el.style.transform = `translate3d(${box.x}px, ${a.y}px, 0) scale(${a.sx * (1 - stretch * 0.22)}, ${a.sy * (1 + stretch)})`;
+    el.style.transform = `translate3d(${boxRef.current.x}px, ${a.y}px, 0) scale(${a.sx * (1 - stretch * 0.22)}, ${a.sy * (1 + stretch)})`;
     syncLiquidBackdrop();
   };
 
@@ -144,6 +151,19 @@ export interface LiquidDashboardBlockProps {
 
 export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ backgroundImage, accountAvatar, people, className }) => {
   const [collapsed, setCollapsed] = useState(false);
+  // Narrow windows collapse the sidebar to its rail by themselves, until the user
+  // toggles it: after that their choice sticks.
+  const rootRef = useRef<HTMLDivElement>(null);
+  const userToggled = useRef(false);
+  useLayoutEffect(() => {
+    const el = rootRef.current;
+    if (!el) return undefined;
+    const apply = () => { if (!userToggled.current) setCollapsed(el.clientWidth < AUTO_COLLAPSE_BELOW); };
+    apply();
+    const ro = new ResizeObserver(apply);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   // Two lenses, two jobs:
   //  - the ACTIVE lens rests on the active item and only moves when another
   //    item is clicked;
@@ -168,7 +188,17 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
 
   const box = (key: string | null): LensBox | null => {
     const el = key ? itemRefs.current.get(key) : null;
-    return el ? { x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight } : null;
+    if (!el) return null;
+    // Collapsed, the item is a 32px button centered in the 64px rail: the lens
+    // hugs the button, not the full-width row around it.
+    const btn = collapsed ? el.querySelector<HTMLElement>('button, a, [role="button"]') : null;
+    const nav = navRef.current;
+    if (btn && nav) {
+      // Rect math, not offsetLeft: the button's offset parent can be the tooltip wrapper.
+      const r = btn.getBoundingClientRect(), n = nav.getBoundingClientRect();
+      return { x: r.left - n.left - nav.clientLeft + nav.scrollLeft, y: r.top - n.top - nav.clientTop + nav.scrollTop, w: r.width, h: r.height };
+    }
+    return { x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight };
   };
   const same = (a: LensBox | null, b: LensBox | null) =>
     a === b || (!!a && !!b && a.x === b.x && a.y === b.y && a.w === b.w && a.h === b.h);
@@ -182,7 +212,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
         ? prev
         : { ...next, hoverGlide });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active, hoverTarget, hoverKey]);
+  }, [active, hoverTarget, hoverKey, collapsed]);
 
   useLayoutEffect(() => {
     measure();
@@ -204,13 +234,14 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
   }, [lens.active, lensReady]);
 
   return (
-    <LiquidBackdrop src={backgroundImage} veil="var(--liquid-overlay-tint)" className={[styles.root, className ?? ''].filter(Boolean).join(' ')}>
+    <LiquidBackdrop ref={rootRef} src={backgroundImage} veil="var(--liquid-overlay-tint)" className={[styles.root, className ?? ''].filter(Boolean).join(' ')}>
       {/* 2 · the one glass sheet over the photo (its 5% fill is the backdrop's veil) */}
       <LiquidGlass variant="regular" tint="none" radius={0} className={styles.overlay} />
 
       <div className={styles.shell}>
         {/* 3 · chrome: transparent, borrows the overlay's glass */}
-        <div data-surface="liquid" className={`${styles.sidebarWrap} ${collapsed ? "" : styles.expanded}`}>
+        {/* The rail animates its width; the lenses re-measure while it moves and once it lands. */}
+        <div data-surface="liquid" className={`${styles.sidebarWrap} ${collapsed ? "" : styles.expanded}`} onTransitionEnd={measure}>
           <Sidebar collapsed={collapsed}>
             {/* The design sets the header's text to fg/on-inverse: it sits over the sky. */}
             <div data-on-photo>
@@ -220,7 +251,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
                 subtitle="Workspace"
                 logo={<span className={styles.logoDark}><SakaniLogo /></span>}
                 collapsed={collapsed}
-                onToggle={() => setCollapsed((c) => !c)}
+                onToggle={() => { userToggled.current = true; setCollapsed((c) => !c); }}
                 toggleIcon={PanelRightClose}
               />
             </div>
@@ -250,7 +281,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
                 </SpringLens>
               )}
               {NAV.map((group) => (
-                <div key={group.label} className={styles.navGroup}>
+                <div key={group.label} className={`${styles.navGroup} ${collapsed ? styles.navGroupCollapsed : ''}`}>
                   {!collapsed && <div className={styles.groupLabel}><SidebarGroupLabel>{group.label}</SidebarGroupLabel></div>}
                   {group.items.map((item) => {
                     const el = (
@@ -267,7 +298,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
                       <div
                         key={item.label}
                         ref={(node) => { if (node) itemRefs.current.set(item.label, node); else itemRefs.current.delete(item.label); }}
-                        className={styles.navItem}
+                        className={`${styles.navItem} ${collapsed ? styles.navItemCollapsed : ''}`}
                         onPointerEnter={() => setHovered(item.label)}
                         onFocus={() => setHovered(item.label)}
                       >

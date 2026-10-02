@@ -46,3 +46,6 @@
 }
 .root--open .input { opacity: 1; }
 .input::placeholder { color: var(--color-fg-subtle); }
+
+/* Keyboard focus: a visible ring on the whole field, not just the hidden input. */
+.root:focus-within { outline: 2px solid var(--color-border-focus); outline-offset: 2px; }

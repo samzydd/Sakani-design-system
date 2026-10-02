@@ -25,6 +25,7 @@ export function SearchExpand() {
         onFocus={() => setOpen(true)}
         onBlur={() => { if (!value) setOpen(false); }}
         aria-label="Search"
+        onKeyDown={(e) => { if (e.key === 'Escape') { setValue(''); e.currentTarget.blur(); } }}
       />
     </div>
   );

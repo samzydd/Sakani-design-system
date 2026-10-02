@@ -56,6 +56,10 @@
   --hover-fill: transparent;
 }
 .navItem { position: relative; z-index: 1; }
+/* Collapsed: a 64px rail. Items are centered 32px buttons, groups have no labels
+   so a hairline stands in for the gap, and the rail doesn't scroll sideways. */
+.navItemCollapsed { display: flex; justify-content: center; }
+.navGroupCollapsed + .navGroupCollapsed { padding-top: 8px; border-top: 1px solid var(--surface-border, rgba(16, 15, 12, 0.08)); margin-top: -4px; }
 
 /* The lenses. Size comes from the target item; position, stretch and squish are
    written every frame by SpringLens (JavaScript, so the photo inside the lens is
@@ -121,6 +125,7 @@
 }
 
 .panelScroll {
+  container: dash / inline-size; /* DashboardContent reflows to the panel's width, not the window's */
   height: 100%;
   overflow-y: auto;
   padding: 20px 20px 44px;

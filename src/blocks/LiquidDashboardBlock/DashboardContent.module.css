@@ -330,3 +330,23 @@
 }
 
 
+
+
+/* Responsive: the dashboard reflows to the width of the panel it sits in (a
+   container query on .panelScroll), so collapsing the sidebar or resizing the
+   window both re-lay it out. */
+@container dash (max-width: 1040px) {
+  .kpiRow { flex-wrap: wrap; }
+  .kpiRow > * { flex: 1 1 calc(50% - 6px); }
+  .threeCol { grid-template-columns: 1fr 1fr; height: auto; }
+  .threeCol > :last-child { grid-column: span 2; }
+  .ordersActivityRow { grid-template-columns: 1fr; height: auto; }
+  .spanTwo { grid-column: auto; }
+  .ordersActivityRow > * { min-height: 360px; }
+}
+@container dash (max-width: 700px) {
+  .kpiRow > * { flex: 1 1 100%; }
+  .threeCol { grid-template-columns: 1fr; }
+  .threeCol > :last-child { grid-column: auto; }
+  .chartLegendRow { flex-wrap: wrap; }
+}
