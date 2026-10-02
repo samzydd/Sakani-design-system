@@ -29,7 +29,7 @@ import styles from './LiquidGlass.module.css';
 
 export type LiquidGlassVariant = 'regular' | 'clear';
 
-interface Params { w: number; h: number; radius: number; bezel: number; refraction: number; dispersion: number; frost: number }
+interface Params { w: number; h: number; radius: number; bezel: number; refraction: number; dispersion: number; frost: number; saturate: number }
 
 /** Chromium is the only engine that renders SVG filters in backdrop-filter. */
 function canRefract(): boolean {
@@ -128,6 +128,7 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
         refraction: Math.round(num(el, '--liquid-refraction', 30) * k),
         dispersion: num(el, '--liquid-dispersion', 3) * k,
         frost: num(el, '--liquid-frost', 1.5),
+        saturate: num(el, '--liquid-saturate', 1.5),
       };
       setParams((prev) => (prev && (Object.keys(next) as (keyof Params)[]).every((k) => prev[k] === next[k]) ? prev : next));
     };
@@ -166,7 +167,7 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
         <feBlend in="c0" in2="c1" mode="screen" result="c01" />
         <feBlend in="c01" in2="c2" mode="screen" result="rgb" />
         <feGaussianBlur in="rgb" stdDeviation={params.frost} result="soft" />
-        <feColorMatrix in="soft" type="saturate" values="1.5" />
+        <feColorMatrix in="soft" type="saturate" values={params.saturate} />
       </filter>
     </svg>
   ) : null;

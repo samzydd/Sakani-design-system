@@ -441,6 +441,7 @@ html, body {
   --liquid-bezel: 22;                    /* px — width of the lensing rim */
   --liquid-dispersion: 3;                /* px extra shift per color channel */
   --liquid-frost: 1.5;                   /* px blur on top of the refraction */
+  --liquid-saturate: 1.5;                /* color boost on the refracted backdrop (1 = none) */
   --liquid-fallback-blur: blur(14px) saturate(180%);
   --liquid-rim: rgba(255, 255, 255, 0.95);
   --liquid-rim-soft: rgba(255, 255, 255, 0.35);
