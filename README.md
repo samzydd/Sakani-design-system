@@ -100,6 +100,44 @@ import { LiquidBackdrop, LiquidGlass } from '@sakaniui/react';
 
 The recipe is always the same three layers: **photo → one glass overlay → components**. Inside a `LiquidBackdrop`, every lens refracts the sharp photo itself (as Figma's glass does), so glass on glass still bends real detail with visible color fringing. See the full **Liquid Glass Dashboard** block (`@sakaniui/react/blocks`) for a complete example: lenses that spring between sidebar items and stretch like a droplet, a collapsible rail with tooltips, frosted menus, solid data cards on a glass panel, and a layout that reflows to its container.
 
+### Liquid Glass in 5 minutes
+
+**1. Install and import the styles once** (see [Install](#install)): `@sakaniui/react/tokens.css` and `@sakaniui/react/style.css`.
+
+**2. Put your photo in a `LiquidBackdrop`.** Give it a size; the photo is cover-fitted. Pick imagery with color and detail, since glass has nothing to bend over a flat color.
+
+**3. Add glass on top.** Anything inside the backdrop can be a lens:
+
+```tsx
+import { LiquidBackdrop, LiquidGlass, Button } from '@sakaniui/react';
+
+export function Hero() {
+  return (
+    <LiquidBackdrop src="/photo.jpg" style={{ position: 'relative', height: 480 }}>
+      {/* a card of glass: clear = see-through, regular = carries text */}
+      <LiquidGlass variant="regular" radius={28} style={{ position: 'absolute', left: 48, top: 48, width: 340, padding: 24 }}>
+        <h2>Glass that bends light</h2>
+        <p>Components inside sit on the glass with no fills of their own.</p>
+        <Button>Get started</Button>
+      </LiquidGlass>
+
+      {/* a floating pill that squishes when pressed */}
+      <LiquidGlass variant="clear" radius={999} interactive style={{ position: 'absolute', right: 48, bottom: 48, padding: '12px 20px', color: '#fff' }}>
+        Explore
+      </LiquidGlass>
+    </LiquidBackdrop>
+  );
+}
+```
+
+**4. Tune it with Figma's own properties.** The defaults are Figma's `liquid/regular` and `liquid/clear` effect styles. Change any of them for one element:
+
+```tsx
+<LiquidGlass variant="clear" effect={{ refraction: 1, depth: 40, dispersion: 0.7, frost: 0 }} radius={999} />
+```
+
+**5. Check it in dark mode and Safari.** Wrap a container in `.dark` to see the dark tint. In Safari and Firefox you'll see the frosted fallback; add `refraction="off"` to preview it in Chrome. Browse every property live in Storybook: *Foundations → Liquid Glass → Playground*.
+
 - **Browsers** — refraction renders in Chromium (Chrome, Edge, Arc); Safari and Firefox get a frosted fallback with the same rim.
 - **Fast** — big static lenses (overlays, panels) render their glass once into a canvas and stay at 60fps; small moving lenses stay live (`bake={false}` keeps a big moving lens live).
 - **Accessible** — `prefers-reduced-transparency` turns glass into an opaque surface, `prefers-reduced-motion` stops the glare and glide; secondary text has its own stronger color token on glass, and the docs list measured contrast for every tint.
