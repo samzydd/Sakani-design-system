@@ -54,6 +54,13 @@ All notable changes to `@sakaniui/react` are documented here.
 - **`LiquidDashboardBlock`** sits on a `LiquidBackdrop`: the promo card and the
   sidebar lenses refract the sharp photo like the Figma frame; the active lens
   springs and stretches as it glides; item labels are fg/default as in Figma.
+- **`LiquidDashboardBlock` is responsive.** It reflows to the width of its panel
+  (container queries): four stat cards become 2×2, then a column; the charts go
+  from three across to two, then one; Recent orders and Recent activity stack.
+  Below 900px the sidebar collapses to its rail by itself (until you toggle it).
+  The collapsed rail is fixed: lenses hug the 32px buttons, items are centered,
+  groups are separated by a hairline, and the lens lands exactly where the
+  rail's width animation ends. Search closes on Esc and shows a focus ring.
 - **Storybook:** *Foundations / Liquid Glass* is now a showcase (sidebar, tab bar
   with a sliding droplet, Now Playing card whose slider knobs turn into lenses,
   a lens you can drag over the photo), a dark version, and a Playground with
