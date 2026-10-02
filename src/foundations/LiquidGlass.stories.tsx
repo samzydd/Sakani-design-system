@@ -8,6 +8,8 @@ import { Sidebar } from '../components/Sidebar';
 import { SidebarSearch } from '../components/SidebarSearch';
 import { SidebarItem } from '../components/SidebarItem';
 import { Modal } from '../components/ApplicationComponents/Modal';
+import { Card } from '../components/Card';
+import balloons from '../assets/marketing/blog-image-balloons.jpg';
 
 /**
  * Liquid glass prototype — Apple-style material on three hero surfaces:
@@ -155,4 +157,45 @@ export const Calibration: StoryObj<CalibrationArgs> = {
       </div>
     );
   },
+};
+
+/**
+ * Photo backdrop — the three-layer recipe the Figma documentation describes:
+ *   1. Background: the photo.
+ *   2. Overlay: one full-size <LiquidGlass variant="clear" radius={0}> sheet
+ *      above it (closest tint to Figma's 5% overlay; the library has no
+ *      lighter one yet, and `regular` washes the photo out). It is
+ *      the only layer that blurs/refracts the photo, so the whole canvas
+ *      reads as one consistent glass surface.
+ *   3. Components: placed above the overlay inside data-surface="liquid" so
+ *      they drop their own fills and sit on that sheet. Content that has to
+ *      be read (here a data card) keeps its solid surface.
+ */
+export const PhotoBackdrop: StoryObj = {
+  parameters: { layout: 'fullscreen' },
+  render: () => (
+    <div
+      style={{
+        position: 'relative', width: 1000, height: 620, overflow: 'hidden',
+        backgroundImage: `url(${balloons})`, backgroundSize: 'cover', backgroundPosition: 'center',
+      }}
+    >
+      <LiquidGlass variant="clear" radius={0} style={{ position: 'absolute', inset: 0 }} />
+      <div data-surface="liquid" style={{ position: 'relative', display: 'flex', gap: 24, padding: 32, height: '100%', boxSizing: 'border-box' }}>
+        <div style={{ width: 220 }}>
+          <Sidebar>
+            <SidebarItem icon={House} label="Dashboard" active />
+            <SidebarItem icon={Inbox} label="Inbox" badge="4" />
+            <SidebarItem icon={ListChecks} label="Tasks" />
+            <SidebarItem icon={Settings} label="Settings" />
+          </Sidebar>
+        </div>
+        <div style={{ display: 'grid', gap: 16, alignContent: 'start', width: 360 }}>
+          {/* Solid on purpose: this is content to be read, not chrome. */}
+          <div data-surface="solid"><Card title="Revenue" description="Solid surface for data"><Button size="sm">View report</Button></Card></div>
+          <div style={{ display: 'flex', gap: 8 }}><Button variant="secondary" size="sm">Export</Button><Button size="sm">Share</Button></div>
+        </div>
+      </div>
+    </div>
+  ),
 };
