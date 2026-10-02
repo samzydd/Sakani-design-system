@@ -1,0 +1,23 @@
+.root {
+  position: relative;
+  display: inline-flex;
+}
+
+.trigger {
+  background: var(--color-bg-surface);
+}
+
+/* Frosted. Inside the glass panel the Menu would inherit the liquid scope's
+   see-through tokens (a 5% fill, no blur) and the chart behind it would show
+   straight through the options. The glass overlay tokens give it the frosted
+   look instead: 82% fill plus a 24px blur. */
+.menu {
+  --surface-bg-overlay: var(--glass-bg-overlay);
+  --surface-blur-overlay: var(--glass-blur-overlay);
+  --surface-border-strong: var(--glass-border-strong);
+  --surface-highlight: var(--glass-highlight);
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 20;
+}

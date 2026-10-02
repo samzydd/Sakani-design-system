@@ -1,6 +1,6 @@
 # Sakani Design System
 
-An open-source, token-driven React component library for SaaS products — **1,500+ accessible components and variants**, built 1:1 from a Figma design system and now spanning **1,500+ components and variants** across light and dark modes.
+An open-source, token-driven React component library for SaaS products — **1,500+ accessible components and variants**, built 1:1 from a Figma design system, across light and dark modes, with **built-in glass and Apple-style liquid glass surfaces**.
 
 **[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/community/file/1661001585975776295/sakani-design-system-v1-8)**
 
@@ -14,6 +14,7 @@ Most component libraries start in code and retrofit the design. Sakani was built
 
 - **Token-driven** — components bind only to semantic tokens (`bg/surface`, `fg/muted`, `accent/default`…), so the entire library re-themes from one place
 - **Light & dark mode** — add the `.dark` class to any container; every component re-themes automatically, no per-component dark styles
+- **Glass & liquid glass** — a third theme axis, *Surface* (Solid · Glass · Liquid): frosted glassmorphism and Apple-style liquid glass with real lens refraction, switched per area with one attribute — see [Glass & liquid glass](#glass--liquid-glass)
 - **Accessible by default** — WCAG AA contrast audited, global focus-ring system, `prefers-reduced-motion` support, full ARIA semantics (combobox active-descendant, calendar date labels, live-region toasts, focus-return popovers)
 - **Typed & composable** — strict TypeScript, generic `Table<T>`, slot-based composition, controlled + uncontrolled patterns
 - **Geist typography** and **Lucide icons** throughout, matching the Figma source exactly
@@ -74,6 +75,37 @@ export const Dashboard = () => (
 </div>
 ```
 
+## Glass & liquid glass
+
+Glass is built into the theme system, not added component by component. Next to light/dark, Sakani has a second axis — **Surface** — with three modes: **Solid** (the default), **Glass** (frosted translucency) and **Liquid** (Apple-style liquid glass: the backdrop *bends* at the edges like a lens, with a faint color fringe, rim light and depth). Components read a small set of `--surface-*` tokens, so switching an area from Solid to Glass or Liquid re-themes everything inside it at once — in the Figma file (variable modes and effect styles) and in code. Solid stays pixel-identical to before.
+
+```tsx
+// Frosted glass: one attribute on any ancestor (works in light and dark)
+<div data-surface="glass">
+  <Sidebar />
+  <Card>…</Card>
+</div>
+
+// Liquid glass: a lens-refracting sheet over a photo, UI on top
+import { LiquidGlass } from '@sakaniui/react';
+
+<div style={{ position: 'relative', backgroundImage: 'url(photo.jpg)', backgroundSize: 'cover' }}>
+  <LiquidGlass variant="clear" radius={0} style={{ position: 'absolute', inset: 0 }} />
+  <div data-surface="liquid" style={{ position: 'relative' }}>
+    <Sidebar />                                  {/* transparent: sits on the glass */}
+    <div data-surface="solid"><Card>…</Card></div> {/* data stays solid and crisp */}
+  </div>
+</div>
+```
+
+The recipe is always the same three layers: **photo → one glass overlay → components**. See the full **Liquid Glass Dashboard** block (`@sakaniui/react/blocks`) for a complete example: a hovering lens that glides between sidebar items while the active item keeps its own, frosted menus, and solid data cards on a glass panel.
+
+- **Browsers** — refraction renders in Chromium (Chrome, Edge); Safari and Firefox get a frosted fallback with the same rim and depth.
+- **Accessible** — `prefers-reduced-transparency` turns glass into an opaque surface, `prefers-reduced-motion` stops the glare and glide; secondary text has its own stronger color token on glass, and the docs list measured contrast for every tint.
+- **Tunable** — strength, bend, frost, tint and color boost are `--liquid-*` tokens.
+
+Docs: **[sakaniui.com/docs/glass](https://www.sakaniui.com/docs/glass)** · Storybook: *Foundations → Glass* and *Foundations → Liquid glass*.
+
 ## Token architecture
 
 Three layers, defined in Figma and exported to `tokens.css`:
@@ -98,6 +130,8 @@ Change a semantic token and every component follows — in both the design file 
 
 **Overlays** — Menu · Menu Item
 
+**Glass** — Liquid Glass (`LiquidGlass`, `useLiquidGlass`) · Surface modes (`data-surface="glass" | "liquid" | "solid"`)
+
 **Data** — Empty State · Filter Chip
 
 **Charts** — Area · Bar · Donut · Funnel · Heatmap · Line · Pie · Radar · Radial — Recharts wrappers styled entirely with the `chart/1–6` tokens
@@ -110,7 +144,7 @@ Change a semantic token and every component follows — in both the design file 
 
 **Marketing** — Blog Blockquote · Blog Feature Text · Blog Image · Blog Listing Card · Blog Listing Featured Card · Featured Icon · First Page Heading · Job Listing · List · Location Dot · Marquee · Metric · Mobile Navigation Menu · Placeholder Logo · Profile Card · Rich Text Heading · Rich Text Paragraph · Section Heading · Sub Feature · Team Card
 
-## Blocks (41)
+## Blocks (42)
 
 Blocks are full sections assembled from Sakani components — **composition examples**, not fully-configurable components like the ones above. Most ship with realistic sample data and manage their own demo state internally (a `state` prop just switches between the states each one ships with — loading, empty, error, and so on). They're meant as a working starting point you customize, not a drop-in you configure entirely through props.
 
@@ -136,7 +170,7 @@ import { DataTableBlock } from './DataTableBlock';
 <DataTableBlock />
 ```
 
-**Application (13)** — Account Overview · Activity Log · App Header · CRM Dashboard · Data Table + Toolbar · File Upload Panel · Form Modal · Inline CTA · Multistep Modal · Notification Panel · Onboarding Progress · Profile Settings · Section Footer
+**Application (14)** — Account Overview · Activity Log · App Header · CRM Dashboard · Liquid Glass Dashboard · Data Table + Toolbar · File Upload Panel · Form Modal · Inline CTA · Multistep Modal · Notification Panel · Onboarding Progress · Profile Settings · Section Footer
 
 **Authentication (6)** — Email Verification · Forgot Password · Login · Reset Password · Sign Up · Two-Factor Authentication
 

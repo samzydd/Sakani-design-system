@@ -1,0 +1,171 @@
+.root {
+  /* The design's glass doesn't boost color; the library defaults to 1.5. */
+  --liquid-saturate: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 640px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Figma's overlay and promo are filled with glass/bg-subtle — a 5% ink tint
+   (8% white in dark). The library's lightest liquid tint today is clear at
+   28% white, which washes the photo out, so the token is set here. */
+.inkTint { --liquid-tint-clear: rgba(16, 15, 12, 0.05); }
+/* Dark: Figma has no dark version of this frame. An 8% white tint leaves the
+   bright parts of the photo (sky, balloon) untouched, and the light sidebar
+   labels disappeared on them, so the dark overlay carries a real scrim. */
+:global(.dark) .inkTint { --liquid-tint-clear: rgba(20, 20, 20, 0.72); }
+
+/* The header's logo is the dark (fg/default) mark in the design. */
+.logoDark { display: block; width: 100%; height: 100%; }
+.logoDark svg > path:first-of-type { fill: var(--color-neutral-950); }
+
+/* 2 · the overlay: one sheet over the photo, under everything else */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+}
+
+.sidebarWrap { display: flex; flex-shrink: 0; }
+/* The library's Sidebar is 248px (its own Figma spec); this frame lays out a
+   240px sidebar, so the expanded sidebar is narrowed to match. */
+.expanded > :first-child { width: 240px; }
+/* Expanded: the nav spans the sidebar's full width (inner padding keeps the
+   items where they were) so the lens's shadow isn't clipped by its scroller. */
+.expanded .navScroll { margin: 0 -12px; padding-left: 12px; padding-right: 12px; }
+
+.navScroll {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 18px; /* the frame's header block is 58px tall plus a 16px gap */
+  padding-left: 1px; /* room for the active bar's -1px offset */
+}
+.navGroup { display: flex; flex-direction: column; gap: 2px; }
+
+/* Nav: items sit flat on the lens — no surface fill, hover fill or shadow of
+   their own (the active bar, label weight and icon color still draw). */
+.navScroll {
+  position: relative;
+  --surface-bg: transparent;       /* active item's fill on this branch */
+  --color-bg-surface: transparent; /* …and in the published build */
+  --hover-fill: transparent;
+}
+.navScroll [aria-current="page"]:not(:focus-visible) { box-shadow: none; }
+.navItem { position: relative; z-index: 1; }
+
+/* The one liquid lens. Position and size come from the target item; only the
+   transform animates, so the displacement map is never rebuilt mid-glide. */
+.lens {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+  transform: translate(var(--lx), var(--ly)) scale(var(--sx, 1), var(--sy, 1));
+  transform-origin: center;
+}
+.lensGlide {
+  /* a touch of overshoot, like a droplet settling */
+  transition: transform 420ms cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+.lensPressed { --sx: 0.975; --sy: 0.88; }
+
+/* The hover lens: the same glass as the active one with a much smaller
+   shadow, and only present while an item that isn't active is hovered. It
+   appears in place (fade) and glides when the pointer moves item to item. */
+.lensHover { opacity: 0; transition: opacity 160ms ease; }
+.lensHoverOn { opacity: 1; }
+.lensHover.lensGlide { transition: transform 420ms cubic-bezier(0.34, 1.3, 0.64, 1), opacity 160ms ease; }
+.lensGlassHover { --liquid-shadow: 0 2px 6px -2px rgba(16, 15, 12, 0.14); }
+.lensGlass {
+  width: 100%;
+  height: 100%;
+  /* Fitted to Figma's active item (pixel error 36 -> 10.5): the design's lens
+     is greyer and less frosted than the library's defaults. */
+  --liquid-saturate: 0.6;
+  --liquid-tint-clear: rgba(255, 255, 255, 0.255);
+  --liquid-frost: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lensGlide, .lensHover.lensGlide { transition: none; }
+  .lensHover { transition: none; }
+}
+
+/* Over the photo the design uses fg/on-inverse text: header, top bar, promo. */
+.onPhoto {
+  /* Light text because it sits on a photograph, in either theme. */
+  --color-fg-default: var(--color-neutral-50);
+  --color-fg-muted: var(--color-neutral-50);
+  --color-fg-subtle: var(--color-neutral-50);
+}
+
+/* Group labels are fg/default (dark) in the design, not the fg/subtle the
+   component uses. */
+.groupLabel { --color-fg-subtle: var(--color-fg-default); }
+
+.promoWrap { padding: 0 4px 19px; } /* 208px wide, 24px off the bottom edge, as in the frame */
+/* The promo is clear glass: no card fill or border, and an outlined,
+   see-through button (the design fills it with surface/bg-subtle at 5%). */
+.promoWrap {
+  --color-brand-subtle: transparent;
+  --color-accent-default: transparent;
+  --color-accent-hover: rgb(255 255 255 / 0.18);
+}
+.promoWrap button { border: 1px solid rgb(255 255 255 / 0.7); color: #fff; }
+/* White body text. The lens inside re-applies the liquid scope's muted color
+   (#57534e), which beat the wrapper-level override and left the description
+   dark grey on a dark photo. */
+.promoWrap p { color: #fff; }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+
+.topbarLeft { display: flex; align-items: center; gap: 10px; color: var(--color-fg-default); }
+.topbarTitle { font-family: var(--font-sans); font-size: 18px; font-weight: 500; line-height: 26px; white-space: nowrap; }
+
+/* The panel is taller than the space it sits in, so its rounded bottom
+   corners fall below the window and only the top corners show — the design's
+   24/24/0/0 radius. */
+.panelWrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding-right: 12px;
+}
+.panel {
+  position: absolute;
+  inset: 0 12px -24px 0;
+  /* Figma: glass/bg-overlay at 76% (white in light, near-black in dark). */
+  --liquid-tint-regular: rgba(255, 255, 255, 0.76);
+}
+:global(.dark) .panel { --liquid-tint-regular: rgba(20, 20, 20, 0.76); }
+
+.panelScroll {
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px 20px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.panelScroll > * { flex-shrink: 0; }

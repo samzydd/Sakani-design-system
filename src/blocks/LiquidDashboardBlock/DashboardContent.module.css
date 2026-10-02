@@ -1,0 +1,332 @@
+/* Panel is a column flex with default align-items:stretch, so any direct
+ * child (e.g. a Badge) stretches full width unless opted out. */
+.hugContent {
+  align-self: flex-start;
+}
+
+/* Figma's funnel-conversion badge uses label/md (14px/20px), not Badge's
+ * default 12px label text. */
+.conversionBadge {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Figma "Page Header" (description + actions only, no title -- the page
+ * title itself lives in the app's TopBar, not repeated here). */
+.pageHeaderRow {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.pageHeaderDesc {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: var(--color-fg-subtle);
+}
+
+.pageHeaderActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.kpiRow {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.kpiRow > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.chartsRow2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* .chartsRow2 is shared with Customers page's own charts row, which wasn't
+ * asked to change height -- scoped override for Sales' Acquisition vs
+ * retention / Channel breakdown pair only. */
+.chartsRow2--fixed {
+  height: 340px;
+  gap: 16px;
+}
+
+/* Customers' Customer growth / Customer segments pair is an asymmetric
+   684:452 split in Figma (~60/40), not the equal halves .chartsRow2
+   defaults to -- and its gap is 12px there, not 20px. */
+.chartsRow2--customers {
+  grid-template-columns: 684fr 452fr;
+  gap: 12px;
+}
+
+.threeCol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  height: 334px;
+}
+
+/* Sales' Conversion funnel / Device breakdown / Top countries and Payment
+   methods / Top products / Refund reasons rows are 328px tall in Figma,
+   not .threeCol's default 334px. */
+.threeCol--sales {
+  gap: 16px;
+  height: 328px;
+}
+
+/* Customers' Customer acquisition / Customer Satisfaction / Top Customers
+   row is 312px tall in Figma, not .threeCol's default 334px. */
+.threeCol--customers {
+  gap: 16px;
+  height: 312px;
+}
+
+.spanTwo {
+  grid-column: span 2;
+}
+
+.ordersActivityRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  height: 412px;
+}
+
+/* Recent orders/Recent activity are fixed at 412px -- their own content
+   (table rows, activity list) scrolls internally instead of overflowing or
+   being clipped by Panel's own overflow:hidden. */
+.panelScroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.legendRowInline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.legendRowLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-fg-default);
+}
+
+.legendItem .dot,
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.legendList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Centers the [donut, legend] pair as a group -- no artificial spacer
+   column, which fought legend content wider than an equal-share track and
+   caused it to overflow the panel in narrower layouts. */
+.chartLegendRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* DonutChart's own CSS is width:100%, which fights flex's auto-basis sizing
+   and collapses siblings to 0 — give it a fixed basis instead. */
+.chartFixed {
+  flex: 0 0 auto;
+}
+
+.chartLegendRow .legendList {
+  flex: 0 0 auto;
+  width: fit-content;
+}
+
+/* Sales' Device breakdown: donut on top, legend wrapped/centered below it
+   (Figma), unlike the side-by-side [donut, legend] pair .chartLegendRow
+   gives every other donut panel. */
+/* Figma: flex-1 + justify-content:center + 12px vertical padding, so the
+   [donut, legend] group centers within whatever height the panel actually
+   has, instead of sitting top-aligned with all the slack stranded below it. */
+.chartColumnCentered {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.legendWrapRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.activityRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md, 8px);
+  background: transparent;
+  transition: background-color var(--transition-base);
+}
+.activityRow:hover { background: var(--color-bg-subtle); }
+
+.activityText {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--color-fg-default);
+}
+
+.activityMuted {
+  color: var(--color-fg-muted);
+}
+
+.activityIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full, 9999px);
+  background: var(--color-bg-subtle);
+  color: var(--color-fg-muted);
+}
+
+.activityChevron {
+  color: var(--color-fg-muted);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+.activityRow:hover .activityChevron { opacity: 1; }
+
+.miniStatsRow {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 0;
+}
+
+.miniStat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.miniStatLabel {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-fg-muted);
+}
+
+.miniStatValue {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+}
+
+.metricPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.customerCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.customerName {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-fg-default);
+}
+
+.customerEmail {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-fg-muted);
+}
+
+.productCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.productName {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Override Panel's default bg/surface fill — !important since Panel.module.css
+   and Page.module.css load in an unpredictable order, both single-class rules. */
+.panelCanvas {
+  background: var(--color-bg-canvas) !important;
+}
+
+/* Force Recharts' own inline-styled height (set via a JS `height` prop, not
+   CSS) down to an exact 176px — !important is required to beat an inline
+   style at all. */
+.chartH176 :global(.recharts-responsive-container) {
+  height: 176px !important;
+}
+
+

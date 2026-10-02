@@ -58,6 +58,8 @@ export { ChatInterfaceBlock } from './ChatInterfaceBlock';
 export type { ChatInterfaceBlockProps, ChatInterfaceBlockState } from './ChatInterfaceBlock';
 export { CRMDashboardBlock } from './CRMDashboardBlock';
 export type { CRMDashboardBlockProps } from './CRMDashboardBlock';
+export { LiquidDashboardBlock } from './LiquidDashboardBlock';
+export type { LiquidDashboardBlockProps } from './LiquidDashboardBlock';
 export { BlogListingBlock } from './BlogListingBlock';
 export type { BlogListingBlockProps, BlogListingFeaturedPost, BlogListingPost } from './BlogListingBlock';
 export { CareersBlock } from './CareersBlock';
