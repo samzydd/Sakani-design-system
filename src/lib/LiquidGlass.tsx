@@ -167,7 +167,7 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
         <feBlend in="c0" in2="c1" mode="screen" result="c01" />
         <feBlend in="c01" in2="c2" mode="screen" result="rgb" />
         <feGaussianBlur in="rgb" stdDeviation={params.frost} result="soft" />
-        <feColorMatrix in="soft" type="saturate" values={params.saturate} />
+        <feColorMatrix in="soft" type="saturate" values={String(params.saturate)} />
       </filter>
     </svg>
   ) : null;
