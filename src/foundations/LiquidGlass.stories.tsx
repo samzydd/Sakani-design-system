@@ -124,36 +124,60 @@ export const SafariFallbackDark: Story = { name: 'Safari fallback (dark)', rende
  * 1000×600 canvas, same 2px/16px black grid, same panel sizes, positions
  * and radii. Screenshot both at 1x and compare how far the grid bends near
  * each edge; tune the --liquid-* tokens until the two match.
+ *
+ * Probes (&args=probe:y or probe:x): the grid becomes black-to-white ramps
+ * across each edge and the tint, rim and depth are hidden, so a pixel's
+ * brightness says exactly where the lens sampled it from. Render the same
+ * ramps behind the Figma panels (Glass light intensity 0) to read Figma's
+ * bend profile the same way; probeLight:!true keeps the rim and depth, to
+ * compare the lighting against Figma's at its real light intensity.
  */
-type Lens = { refraction: number; bezel: number; dispersion: number; frost: number; saturate: number; shift: number; profile: number; rimFar: number; shade: number };
-type CalibrationArgs = { reg: Lens; clr: Lens };
+type Lens = { refraction: number; bezel: number; dispersion: number; frost: number; saturate: number; shift: number; profile: number; tint: number };
+type CalibrationArgs = { reg: Lens; clr: Lens; probe?: 'grid' | 'y' | 'x'; probeLight?: boolean };
+
+/** Probe backdrops: black-to-white ramps across each edge, as in the Figma probe frames,
+ *  so the colour of every pixel in a lens says where the lens sampled it from. */
+const ramp = (dir: 'y' | 'x', bands: number[][]) =>
+  bands.map(([a, len]) => (dir === 'y'
+    ? `linear-gradient(to bottom, #000, #fff) 0 ${a}px / 100% ${len}px no-repeat`
+    : `linear-gradient(to right, #000, #fff) ${a}px 0 / ${len}px 100% no-repeat`)).join(', ') + ', #808080';
+const PROBE = {
+  y: ramp('y', [[40, 120], [250, 70], [320, 80], [480, 120]]),
+  x: ramp('x', [[40, 120], [440, 120]]),
+};
 
 /** One lens as inline custom properties, so a fitting script can drive it from the URL
  *  (&args=reg.frost:2;clr.shift:6). Defaults = the shipped tokens. */
 const lensVars = (l: Lens) => ({
   '--liquid-refraction': l.refraction, '--liquid-bezel': l.bezel, '--liquid-dispersion': l.dispersion,
   '--liquid-frost': l.frost, '--liquid-saturate': l.saturate, '--liquid-shift': l.shift, '--liquid-profile': l.profile,
-  '--liquid-rim-far': `rgba(255, 255, 255, ${l.rimFar})`,
-  '--liquid-depth': `inset calc(var(--liquid-lx) * -1.5px) calc(var(--liquid-ly) * -1.5px) 1px rgba(255, 255, 255, 0.75), inset calc(var(--liquid-lx) * 1.5px) calc(var(--liquid-ly) * 1.5px) 1px rgba(255, 255, 255, 0.25), inset calc(var(--liquid-lx) * 10px) calc(var(--liquid-ly) * 10px) 20px -12px rgba(16, 15, 12, ${l.shade})`,
+  background: `rgba(255, 255, 255, ${l.tint})`,
 });
 
 export const Calibration: StoryObj<CalibrationArgs> = {
   parameters: { layout: 'fullscreen' },
   args: {
-    reg: { refraction: 8, bezel: 16, dispersion: 0.2, frost: 2, saturate: 1, shift: -3, profile: 0, rimFar: 0.6, shade: 0.12 },
-    clr: { refraction: 9.5, bezel: 24, dispersion: 0.75, frost: 0.75, saturate: 0.6, shift: 1.5, profile: 0, rimFar: 0.6, shade: 0.12 },
+    reg: { refraction: 12.6, bezel: 14, dispersion: 0.25, frost: 1.8, saturate: 1, shift: 1.6, profile: 0, tint: 0.66 },
+    clr: { refraction: 26.2, bezel: 16, dispersion: 0.9, frost: 0.65, saturate: 1, shift: 2.26, profile: 0, tint: 0.28 },
+    probe: 'grid',
+    probeLight: false,
   },
   render: (a) => {
     const panel = (left: number, top: number, width: number, height: number, l: Lens) =>
       ({ position: 'absolute', left, top, width, height, ...lensVars(l) } as React.CSSProperties);
     return (
       <div
-        style={{
+        data-probe={a.probe && a.probe !== 'grid' ? a.probe : undefined}
+        style={a.probe === 'y' || a.probe === 'x' ? { position: 'relative', width: 1000, height: 600, overflow: 'hidden', background: PROBE[a.probe] } : {
           position: 'relative', width: 1000, height: 600, overflow: 'hidden', background: '#fff',
           backgroundImage: 'linear-gradient(to right, #000 2px, transparent 2px), linear-gradient(#000 2px, transparent 2px)',
           backgroundSize: '16px 16px',
         }}
       >
+        {/* In a probe, only the bend shows: no tint, rim, depth, shadow or glare. */}
+        <style>{a.probeLight
+          ? '[data-probe] [data-surface="liquid"] { background: transparent !important; box-shadow: var(--liquid-depth) !important; } [data-probe] [data-surface="liquid"]::after { display: none; }'
+          : '[data-probe] [data-surface="liquid"] { background: transparent !important; box-shadow: none !important; } [data-probe] [data-surface="liquid"]::before, [data-probe] [data-surface="liquid"]::after { display: none; }'}</style>
         <LiquidGlass variant="regular" radius={28} style={panel(100, 100, 400, 200, a.reg)} />
         <LiquidGlass variant="clear" radius={28} style={panel(100, 340, 400, 200, a.clr)} />
         <LiquidGlass variant="regular" radius={28} style={panel(600, 172, 200, 56, a.reg)} />

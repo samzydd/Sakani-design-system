@@ -445,29 +445,37 @@ html, body {
   --liquid-panel-tint: rgba(255, 255, 255, 0.76);   /* a panel of glass that holds solid cards (glass/bg-overlay) */
 
   /* The lens, one set per variant (Figma's liquid/regular and liquid/clear
-     effect styles). Tune globally here; to override one element, set the
-     unprefixed name (--liquid-frost, --liquid-refraction, ...) on it. */
-  --liquid-refraction-regular: 8;   --liquid-refraction-clear: 9.5;    /* px the rim samples further in, along the edge normal */
-  --liquid-shift-regular: -3;       --liquid-shift-clear: 1.5;        /* px the rim samples toward the light, on every edge (negative = away) */
-  --liquid-bezel-regular: 16;       --liquid-bezel-clear: 24;        /* px of lens width */
-  --liquid-profile-regular: 0;      --liquid-profile-clear: 0;       /* edge shape: 0 = circular glass edge; above 0 a power curve (small = bend packed into the rim) */
-  --liquid-dispersion-regular: 0.2; --liquid-dispersion-clear: 0.75; /* extra px per color channel (the fringe) */
-  --liquid-frost-regular: 2;        --liquid-frost-clear: 0.75;     /* px blur on top of the refraction */
-  --liquid-saturate-regular: 1;     --liquid-saturate-clear: 0.6;     /* color boost on the refracted backdrop (1 = none) */
+     effect styles), measured from Figma's own render: a gradient backdrop
+     shows, pixel by pixel, where the Glass effect samples from, and these
+     values reproduce that field to about half a pixel. Tune globally here; to
+     override one element, set the unprefixed name (--liquid-frost,
+     --liquid-refraction, ...) on it. */
+  --liquid-refraction-regular: 12.6; --liquid-refraction-clear: 26.2; /* px the rim samples further in, along the edge normal */
+  --liquid-shift-regular: 1.6;       --liquid-shift-clear: 2.26;      /* px less bend on the edges facing the light, more on the far ones */
+  --liquid-bezel-regular: 14;        --liquid-bezel-clear: 16;        /* px of lens width */
+  --liquid-profile-regular: 0;       --liquid-profile-clear: 0;       /* edge shape: 0 = circular glass edge; above 0 a power curve */
+  --liquid-dispersion-regular: 0.25; --liquid-dispersion-clear: 0.9;  /* extra px per color channel (the fringe; red bends most) */
+  --liquid-frost-regular: 1.8;       --liquid-frost-clear: 0.65;      /* px blur of the backdrop before it is bent */
+  --liquid-saturate-regular: 1;      --liquid-saturate-clear: 1;      /* color boost on the refracted backdrop (1 = none, as in Figma) */
 
   --liquid-fallback-blur: blur(14px) saturate(180%);
   --liquid-light-angle: 135deg;          /* a gradient angle: the light sits at the top-left */
   --liquid-lx: calc(-1 * sin(var(--liquid-light-angle)));  /* unit vector toward the light */
   --liquid-ly: cos(var(--liquid-light-angle));
-  --liquid-rim: rgba(255, 255, 255, 0.95);        /* rim light, the edge facing the light */
-  --liquid-rim-soft: rgba(255, 255, 255, 0.35);
-  --liquid-rim-far: rgba(255, 255, 255, 0.6);     /* the thin bounce on the far edge */
-  --liquid-rim-far-soft: rgba(255, 255, 255, 0.2);
-  /* Depth follows the light: a highlight on the lit edges, a shade on the far ones. */
+  /* Rim light: a 1px ring all the way round, as Figma's Glass effect draws it
+     (measured: about +63 of 255 on the edges facing the light and +50 on the
+     far ones). Figma adds the light; CSS can only lay white over the bent
+     backdrop, so these alphas match it over mid-tones and allow for the depth
+     shade and glow under the ring. */
+  --liquid-rim: rgba(255, 255, 255, 0.5);        /* the edges facing the light */
+  --liquid-rim-soft: rgba(255, 255, 255, 0.47);
+  --liquid-rim-far-soft: rgba(255, 255, 255, 0.27);
+  --liquid-rim-far: rgba(255, 255, 255, 0.25);   /* the far edges */
+  /* Depth follows the light, as measured on Figma's effect: a faint shade just
+     inside the lit edges, a faint glow just inside the far ones (~10px each). */
   --liquid-depth:
-    inset calc(var(--liquid-lx) * -1.5px) calc(var(--liquid-ly) * -1.5px) 1px rgba(255, 255, 255, 0.75),
-    inset calc(var(--liquid-lx) * 1.5px) calc(var(--liquid-ly) * 1.5px) 1px rgba(255, 255, 255, 0.25),
-    inset calc(var(--liquid-lx) * 10px) calc(var(--liquid-ly) * 10px) 20px -12px rgba(16, 15, 12, 0.12);
+    inset calc(var(--liquid-lx) * -4px) calc(var(--liquid-ly) * -4px) 8px 1px rgba(0, 0, 0, 0.1),
+    inset calc(var(--liquid-lx) * 4px) calc(var(--liquid-ly) * 4px) 8px 1px rgba(255, 255, 255, 0.07);
   /* Figma effect styles: regular = 0 6 12 -6 @16% + 0 2 4 @8%; clear = 0 3 8 -4 @16% + 0 1 3 @8%. */
   --liquid-shadow-regular: 0 6px 12px -6px rgba(16, 15, 12, 0.16), 0 2px 4px rgba(16, 15, 12, 0.08);
   --liquid-shadow-clear: 0 3px 8px -4px rgba(16, 15, 12, 0.16), 0 1px 3px rgba(16, 15, 12, 0.08);
@@ -477,14 +485,7 @@ html, body {
   --liquid-tint-regular: rgba(20, 20, 20, 0.66);
   --liquid-tint-clear: rgba(20, 20, 20, 0.3);
   --liquid-tint-subtle: rgba(255, 255, 255, 0.08);
-  --liquid-rim: rgba(255, 255, 255, 0.55);
-  --liquid-rim-soft: rgba(255, 255, 255, 0.12);
-  --liquid-rim-far: rgba(255, 255, 255, 0.3);
-  --liquid-rim-far-soft: rgba(255, 255, 255, 0.08);
-  --liquid-depth:
-    inset calc(var(--liquid-lx) * -1.5px) calc(var(--liquid-ly) * -1.5px) 1px rgba(255, 255, 255, 0.22),
-    inset calc(var(--liquid-lx) * 1.5px) calc(var(--liquid-ly) * 1.5px) 1px rgba(255, 255, 255, 0.06),
-    inset calc(var(--liquid-lx) * 10px) calc(var(--liquid-ly) * 10px) 20px -12px rgba(0, 0, 0, 0.5);
+  /* Rim and depth stay as in light: Figma's effect styles are the same in both themes. */
   --liquid-glare: rgba(255, 255, 255, 0.14);
   --liquid-overlay-tint: rgba(20, 20, 20, 0.72);  /* a real scrim: light text must read over bright photo areas */
   --liquid-panel-tint: rgba(20, 20, 20, 0.76);

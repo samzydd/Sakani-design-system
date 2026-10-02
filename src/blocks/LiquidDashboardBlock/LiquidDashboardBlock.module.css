@@ -87,11 +87,6 @@
 .lensGlass {
   width: 100%;
   height: 100%;
-  /* Fitted to Figma's active item (pixel error 36 -> 10.5): the design's lens
-     is greyer and less frosted than the library's defaults. */
-  --liquid-saturate: 0.6;
-  --liquid-tint-clear: rgba(255, 255, 255, 0.255);
-  --liquid-frost: 0;
 }
 @media (prefers-reduced-motion: reduce) {
   .lensGlide, .lensHover.lensGlide { transition: none; }

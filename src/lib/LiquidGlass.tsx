@@ -7,7 +7,8 @@
  *      element's exact size and corner radius pushes pixels inward near the
  *      edge, so the rim behaves like a lens; the center stays undistorted.
  *      Three displacement passes at slightly different strengths, one per
- *      color channel, give the faint color fringe at the rim.
+ *      color channel, give the faint color fringe at the rim (red bends most
+ *      and blue least, as measured on Figma's Glass effect).
  *      Chromium only — Safari and Firefox ignore url() in backdrop-filter,
  *      so they get the frosted fallback (--liquid-fallback-blur) instead.
  *   2. Tint — regular (text-safe) or clear (icons/large labels only).
@@ -48,12 +49,14 @@ const mapCache = new Map<string, string>();
  *  `max` px (128 = none). Two terms, both weighted by the rim profile w(t):
  *   - refraction: the backdrop is sampled from `refraction` px further in, along
  *     the edge normal (a classic lens rim);
- *   - shift: the light's component along the edge normal, times `shift` px.
- *     Figma's Glass effect pulls content in from OUTSIDE the panel on the edges
- *     facing the light and from inside on the far ones. A CSS backdrop-filter
- *     only sees inside its own box, so a negative net displacement there just
- *     samples the edge pixel; keep refraction + shift positive on every edge
- *     (refraction >= |shift|) to stay inside. */
+ *   - shift: the light's component along the edge normal, times `shift` px:
+ *     the edges facing the light bend a little less, the far ones a little more.
+ *  Measured on Figma's Glass effect (a gradient backdrop shows where each pixel
+ *  samples from): every edge samples inward, strongest about a pixel in from
+ *  the rim and gone ~bezel px in. That steep fall folds the content just inside
+ *  the rim into a magnified band, which profile 0 (a circular edge) reproduces.
+ *  Keep refraction >= |shift| so no edge samples outside the box, which a
+ *  backdrop-filter cannot see. */
 function buildMap(w: number, h: number, radius: number, bezel: number, refraction: number, shift: number, profile: number, lx: number, ly: number): string {
   const key = `${w}x${h}:${radius}:${bezel}:${refraction}:${shift}:${profile}:${lx.toFixed(3)}:${ly.toFixed(3)}`;
   const hit = mapCache.get(key);
@@ -192,16 +195,17 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
     <svg className={styles.defs} width="0" height="0" aria-hidden="true" focusable="false">
       <filter id={id} x="0" y="0" width={params.w} height={params.h} filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
         <feImage href={map} x="0" y="0" width={params.w} height={params.h} preserveAspectRatio="none" result="map" />
+        {/* Frost first, then bend: the bend keeps its sharp rim, as in Figma. */}
+        <feGaussianBlur in="SourceGraphic" stdDeviation={params.frost} edgeMode="duplicate" result="frost" />
         {[0, 1, 2].map((c) => (
           <React.Fragment key={c}>
-            <feDisplacementMap in="SourceGraphic" in2="map" scale={2 * (params.refraction + Math.abs(params.shift) + c * params.dispersion)} xChannelSelector="R" yChannelSelector="G" result={`d${c}`} />
+            <feDisplacementMap in="frost" in2="map" scale={2 * (params.refraction + Math.abs(params.shift) + (2 - c) * params.dispersion)} xChannelSelector="R" yChannelSelector="G" result={`d${c}`} />
             <feColorMatrix in={`d${c}`} type="matrix" values={channel(c)} result={`c${c}`} />
           </React.Fragment>
         ))}
         <feBlend in="c0" in2="c1" mode="screen" result="c01" />
         <feBlend in="c01" in2="c2" mode="screen" result="rgb" />
-        <feGaussianBlur in="rgb" stdDeviation={params.frost} result="soft" />
-        <feColorMatrix in="soft" type="saturate" values={String(params.saturate)} />
+        <feColorMatrix in="rgb" type="saturate" values={String(params.saturate)} />
       </filter>
     </svg>
   ) : null;

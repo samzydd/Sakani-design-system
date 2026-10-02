@@ -45,8 +45,8 @@
   backdrop-filter: var(--liquid-fallback-blur);
 }
 
-/* Rim light: a 1px ring (masked to the border area) that follows the light
-   angle — brightest on the edges facing the light, a thinner bounce on the far ones. */
+/* Rim light: a 1px ring (masked to the border area) all the way round, a little
+   brighter on the edges facing the light. */
 .liquid::before {
   content: '';
   position: absolute;
@@ -57,10 +57,8 @@
   background: linear-gradient(
     var(--liquid-light-angle),
     var(--liquid-rim) 0%,
-    var(--liquid-rim-soft) 22%,
-    transparent 42%,
-    transparent 62%,
-    var(--liquid-rim-far-soft) 88%,
+    var(--liquid-rim-soft) 35%,
+    var(--liquid-rim-far-soft) 65%,
     var(--liquid-rim-far) 100%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
