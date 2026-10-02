@@ -5,9 +5,12 @@
   flex-direction: column;
   gap: var(--space-16);
   padding: var(--space-20);
-  background: var(--color-bg-surface);
-  border: var(--border-width-100) solid var(--color-border-default);
+  background: var(--surface-bg);
+  border: var(--border-width-100) solid var(--surface-border-strong);
   border-radius: var(--radius-xl);
+  box-shadow: var(--surface-highlight);
+  -webkit-backdrop-filter: var(--surface-blur);
+  backdrop-filter: var(--surface-blur);
   font-family: var(--font-sans);
   transition: box-shadow var(--transition-base), border-color var(--transition-base);
 }
@@ -21,7 +24,7 @@
  cursor: pointer; }
 .card--interactive:hover {
   border-color: transparent;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--surface-highlight), var(--shadow-md);
 }
 
 .card__header { display: flex; flex-direction: column; gap: var(--space-4); }

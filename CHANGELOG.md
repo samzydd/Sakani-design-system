@@ -2,6 +2,32 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.0
+
+**Glass and liquid glass.**
+
+- **New theme axis: Surface (Solid · Glass · Liquid).** Components read
+  `--surface-*` tokens; `data-surface="glass" | "liquid" | "solid"` on any
+  ancestor re-themes everything inside it. Solid is pixel-identical to
+  before (checked story by story). Menus, modals and selects carry the
+  setting through their portals. `prefers-reduced-transparency` falls back
+  to opaque surfaces.
+- **New: `LiquidGlass` and `useLiquidGlass`.** Apple-style liquid glass: an
+  SVG displacement filter bends the backdrop at the element's edge (with a
+  per-channel color fringe), plus tint, rim light, depth and a pointer-
+  following glare. Chromium renders the refraction; Safari and Firefox get
+  a frosted fallback with the same rim. Tunable through `--liquid-*` tokens
+  (tint, refraction, bezel, dispersion, frost, saturate).
+- **New block: `LiquidDashboardBlock`** (`@sakaniui/react/blocks`, Storybook
+  *Blocks / Application / Liquid Glass Dashboard*). A full dashboard on a
+  photo: one glass overlay, transparent chrome, solid data cards, an active
+  sidebar lens that only moves on click and a softer hover lens.
+- Interaction polish: Switch spring, Slider fling bounce, chip/tag fade-out,
+  ListItem hover glide, ghost Button without shadow, Menu radius 8px,
+  `Switch` `description` prop, `bg/canvas` hover fill on surface components.
+- Fix: the swatch checkmark could render invisible on light swatches in
+  server-rendered pages.
+
 ## 0.3.5
 
 - Replaces the Sakani mark (`PlaceholderLogo`'s default fill) with the new

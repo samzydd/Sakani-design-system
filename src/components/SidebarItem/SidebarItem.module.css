@@ -34,7 +34,7 @@
 }
 /* --hover-fill is transparent inside a hover group (Sidebar), where one
    highlight glides between items instead; this is the fallback elsewhere. */
-.item:hover:not(.item--disabled):not(.item--active):not(.item--active-flat) { background: var(--hover-fill, var(--color-bg-subtle)); color: var(--color-fg-default); }
+.item:hover:not(.item--disabled):not(.item--active):not(.item--active-flat) { background: var(--hover-fill, var(--surface-bg-subtle)); color: var(--color-fg-default); }
 .item:hover:not(.item--disabled):not(.item--active):not(.item--active-flat) .item__icon { color: var(--color-fg-default); }
 /* Focus (re-read 2026-08-10): a solid 2px brand border directly on the item,
  * not the old two-layer white-gap ring. */
@@ -80,7 +80,7 @@
 .item--active-flat .item__badge { background: var(--color-accent-default); color: var(--color-fg-on-accent); }
 
 .item--active {
-  background: var(--color-bg-surface);
+  background: var(--surface-bg);
   /* shadow/xs at rest -- shadow/sm (the old, stronger, always-on value) now
      only applies on hover, matching Figma's separate Active/Active Hover
      Indicator variants. */
@@ -92,7 +92,7 @@
 .item--active .item__bar { opacity: 1; }
 
 .item--active-flat {
-  background: var(--color-bg-subtle);
+  background: var(--surface-bg-subtle);
 }
 /* Expanded only -- Figma has no Collapsed=Yes "Active Hover - Default" variant. */
 .item--active-flat:not(.item--collapsed):hover {

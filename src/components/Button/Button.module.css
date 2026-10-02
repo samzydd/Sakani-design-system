@@ -133,20 +133,20 @@
 .button--secondary {
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base), transform var(--transition-hover);
 
-  background-color: var(--color-bg-subtle);
+  background-color: var(--surface-bg-subtle);
   color: var(--color-fg-default);
-  border-color: var(--color-bg-subtle);
+  border-color: transparent;
 }
 
 .button--secondary:hover:not(:disabled) {
-  background-color: var(--color-bg-muted);
-  border-color: var(--color-bg-muted);
+  background-color: var(--surface-bg-subtle-hover);
+  border-color: transparent;
   box-shadow: var(--shadow-sm);
 }
 
 .button--secondary:active:not(:disabled) {
-  background-color: var(--color-bg-muted);
-  border-color: var(--color-bg-muted);
+  background-color: var(--surface-bg-subtle-hover);
+  border-color: transparent;
 }
 
 /**
@@ -158,17 +158,17 @@
 
   background-color: transparent;
   color: var(--color-fg-default);
-  border-color: var(--color-border-default);
+  border-color: var(--surface-border-strong);
 }
 
 .button--outline:hover:not(:disabled) {
-  background-color: var(--color-bg-subtle);
+  background-color: var(--surface-bg-subtle);
   border-color: var(--color-border-strong);
   box-shadow: var(--shadow-sm);
 }
 
 .button--outline:active:not(:disabled) {
-  background-color: var(--color-bg-muted);
+  background-color: var(--surface-bg-subtle-hover);
 }
 
 /**
@@ -188,11 +188,11 @@
 }
 
 .button--ghost:hover:not(:disabled) {
-  background-color: var(--color-bg-subtle);
+  background-color: var(--surface-bg-subtle);
 }
 
 .button--ghost:active:not(:disabled) {
-  background-color: var(--color-bg-muted);
+  background-color: var(--surface-bg-subtle-hover);
 }
 
 /**

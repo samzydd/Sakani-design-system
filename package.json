@@ -1,7 +1,7 @@
 {
   "name": "@sakaniui/react",
   "version": "0.3.29",
-  "description": "Sakani Design System — 1500+ token-driven React components and blocks, with light & dark modes.",
+  "description": "Sakani Design System \u2014 token-driven React components and blocks with light & dark modes, plus built-in glass and Apple-style liquid glass surfaces.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,7 +13,18 @@
     "design-system",
     "component-library",
     "ui",
-    "sakani"
+    "sakani",
+    "glassmorphism",
+    "glass-effect",
+    "liquid-glass",
+    "apple-liquid-glass",
+    "frosted-glass",
+    "refraction",
+    "dark-mode",
+    "design-tokens",
+    "figma",
+    "typescript",
+    "dashboard"
   ],
   "type": "module",
   "main": "./dist/index.cjs",

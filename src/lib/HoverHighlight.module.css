@@ -18,7 +18,7 @@
   left: 0;
   pointer-events: none;
   opacity: 0;
-  background: var(--color-bg-subtle);
+  background: var(--surface-bg-subtle);
   transition: opacity 120ms var(--ease-out);
 }
 .visible { opacity: 1; }

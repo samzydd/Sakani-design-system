@@ -318,3 +318,167 @@ html, body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================================
+ * Surface layer — Solid | Glass
+ *
+ * How a surface is BUILT (opaque, or frosted and translucent), kept separate
+ * from which COLOR THEME is on (light / .dark), so the two combine freely:
+ * light solid, dark solid, light glass, dark glass. Mirrors the Figma
+ * "Surface" variable collection (modes: Solid, Glass).
+ *
+ *   --surface-*  what components read. In Solid (the default everywhere)
+ *                every one resolves to today's semantic token, so nothing
+ *                changes unless an area opts in with data-surface="glass".
+ *   --glass-*    the glass values, with light and dark variants below.
+ *
+ * Only surface-level things live here: fills, outer edges, the top-edge
+ * highlight and the backdrop blur. Internal dividers and all text/accent
+ * colors stay on the semantic tokens -- with one exception, fg/muted, which
+ * glass nudges one step for contrast: at the translucency glass needs, the
+ * regular muted text measures ~3:1 over a vivid backdrop (WCAG AA is 4.5:1);
+ * one step darker (light) / lighter (dark) gets it back to ~5:1 / ~7:1.
+ *
+ * Re-declared on .dark (and on a .dark inside a glass area) because custom
+ * properties resolve where they're declared -- declaring them once on :root
+ * would freeze the light values into dark subtrees.
+ * ========================================================================== */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-bg-overlay: rgba(255, 255, 255, 0.82);
+  --glass-bg-chrome: rgba(255, 255, 255, 0.6);
+  --glass-bg-subtle: rgba(16, 15, 12, 0.05);
+  --glass-bg-subtle-hover: rgba(16, 15, 12, 0.09);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-border-strong: rgba(255, 255, 255, 0.75);
+  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.7);
+  --glass-fg-muted: var(--color-neutral-600);
+  --glass-blur: blur(16px) saturate(160%);
+  --glass-blur-overlay: blur(24px) saturate(180%);
+}
+.dark {
+  --glass-bg: rgba(20, 20, 20, 0.72);
+  --glass-bg-overlay: rgba(20, 20, 20, 0.82);
+  --glass-bg-chrome: rgba(20, 20, 20, 0.6);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.08);
+  --glass-bg-subtle-hover: rgba(255, 255, 255, 0.14);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-strong: rgba(255, 255, 255, 0.16);
+  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  --glass-fg-muted: var(--color-neutral-300);
+}
+
+/* Solid (default) */
+:root, .dark, [data-surface="solid"] {
+  --surface-bg: var(--color-bg-surface);                /* cards, inputs */
+  --surface-bg-overlay: var(--color-bg-surface);        /* menus, modals, popovers */
+  --surface-bg-chrome: transparent;                     /* sidebar, top bar */
+  --surface-bg-subtle: var(--color-bg-subtle);          /* control fills, hover */
+  --surface-bg-subtle-hover: var(--color-bg-muted);
+  --surface-border: var(--color-border-subtle);         /* outer edges */
+  --surface-border-strong: var(--color-border-default);
+  --surface-highlight: 0 0 #0000;                       /* none */
+  --surface-blur: none;
+  --surface-blur-overlay: none;
+}
+
+/* Glass */
+[data-surface="glass"], [data-surface="glass"] .dark {
+  --surface-bg: var(--glass-bg);
+  --surface-bg-overlay: var(--glass-bg-overlay);
+  --surface-bg-chrome: var(--glass-bg-chrome);
+  --surface-bg-subtle: var(--glass-bg-subtle);
+  --surface-bg-subtle-hover: var(--glass-bg-subtle-hover);
+  --surface-border: var(--glass-border);
+  --surface-border-strong: var(--glass-border-strong);
+  --surface-highlight: var(--glass-highlight);
+  --surface-blur: var(--glass-blur);
+  --surface-blur-overlay: var(--glass-blur-overlay);
+  --color-fg-muted: var(--glass-fg-muted);
+}
+
+/* Reduce transparency: a glass area renders exactly like Solid. The --surface-*
+   tokens point back at the opaque semantic values, so no component needs its
+   own fallback. */
+@media (prefers-reduced-transparency: reduce) {
+  [data-surface="glass"], [data-surface="glass"] .dark {
+    --surface-bg: var(--color-bg-surface);
+    --surface-bg-overlay: var(--color-bg-surface);
+    --surface-bg-chrome: transparent;
+    --surface-bg-subtle: var(--color-bg-subtle);
+    --surface-bg-subtle-hover: var(--color-bg-muted);
+    --surface-border: var(--color-border-subtle);
+    --surface-border-strong: var(--color-border-default);
+    --surface-highlight: 0 0 #0000;
+    --surface-blur: none;
+    --surface-blur-overlay: none;
+  }
+}
+
+/* ==========================================================================
+ * Liquid glass — the third Surface mode (Solid | Glass | Liquid)
+ *
+ * Glass = frosted: translucency + heavy blur, cheap, works everywhere.
+ * Liquid = Apple-style: a much lighter frost, plus REFRACTION (the backdrop
+ * bends near the edges like a lens), DISPERSION (a faint color fringe at the
+ * rim), a specular RIM LIGHT, and DEPTH. Refraction needs an SVG filter
+ * behind the element, which only Chromium supports in backdrop-filter;
+ * Safari and Firefox get the frosted fallback with the same rim and depth.
+ * The material lives on a LiquidGlass container (src/lib/LiquidGlass.tsx);
+ * data-surface="liquid" inside it makes nested components transparent so
+ * they sit on the container's material instead of stacking a second tint.
+ *
+ * Two variants, like Apple's:
+ *   regular — tint high enough for body AND muted text (≥4.5:1 over vivid
+ *             backdrops: 4.6 light / 6.5 dark). Panels, sidebars, modals.
+ *   clear   — mostly see-through; icons and large labels only (small text
+ *             drops to ~3:1 in dark). Floating toolbars, docks, controls.
+ * ========================================================================== */
+:root {
+  --liquid-tint-regular: rgba(255, 255, 255, 0.66);
+  --liquid-tint-clear: rgba(255, 255, 255, 0.28);
+  --liquid-refraction: 30;               /* px the rim bends the backdrop (scaled down on small elements) */
+  --liquid-bezel: 22;                    /* px — width of the lensing rim */
+  --liquid-dispersion: 3;                /* px extra shift per color channel */
+  --liquid-frost: 1.5;                   /* px blur on top of the refraction */
+  --liquid-saturate: 1.5;                /* color boost on the refracted backdrop (1 = none) */
+  --liquid-fallback-blur: blur(14px) saturate(180%);
+  --liquid-rim: rgba(255, 255, 255, 0.95);
+  --liquid-rim-soft: rgba(255, 255, 255, 0.35);
+  --liquid-light-angle: 135deg;          /* where the rim light comes from */
+  --liquid-depth:
+    inset 0 1px 1px rgba(255, 255, 255, 0.75),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.25),
+    inset 0 -10px 20px -12px rgba(16, 15, 12, 0.12);
+  --liquid-shadow: 0 12px 32px -8px rgba(16, 15, 12, 0.22), 0 2px 6px rgba(16, 15, 12, 0.08);
+  --liquid-glare: rgba(255, 255, 255, 0.35); /* pointer-following highlight */
+}
+.dark {
+  --liquid-tint-regular: rgba(20, 20, 20, 0.66);
+  --liquid-tint-clear: rgba(20, 20, 20, 0.3);
+  --liquid-rim: rgba(255, 255, 255, 0.55);
+  --liquid-rim-soft: rgba(255, 255, 255, 0.12);
+  --liquid-depth:
+    inset 0 1px 1px rgba(255, 255, 255, 0.22),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.06),
+    inset 0 -10px 20px -12px rgba(0, 0, 0, 0.5);
+  --liquid-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.35);
+  --liquid-glare: rgba(255, 255, 255, 0.14);
+}
+
+/* Liquid scope: the container IS the material, so nested surfaces go clear
+   (a faint tint for nested cards) and don't blur again. Everything else —
+   control fills, edges, the fg/muted contrast nudge — behaves like Glass. */
+[data-surface="liquid"], [data-surface="liquid"] .dark {
+  --surface-bg: var(--glass-bg-subtle);
+  --surface-bg-overlay: var(--glass-bg-subtle);
+  --surface-bg-chrome: transparent;
+  --surface-bg-subtle: var(--glass-bg-subtle);
+  --surface-bg-subtle-hover: var(--glass-bg-subtle-hover);
+  --surface-border: var(--glass-border);
+  --surface-border-strong: var(--glass-border-strong);
+  --surface-highlight: 0 0 #0000;
+  --surface-blur: none;
+  --surface-blur-overlay: none;
+  --color-fg-muted: var(--glass-fg-muted);
+}

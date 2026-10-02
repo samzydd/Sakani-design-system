@@ -48,3 +48,23 @@ export function usePortalThemeClass(anchor: { current: HTMLElement | null }, act
 
   return themeClass;
 }
+
+/**
+ * Same idea for the Surface layer: returns the `data-surface` value
+ * ("solid" | "glass") in effect where `anchor` lives, so a portaled surface
+ * can re-apply it. Without it, a Modal opened from inside a glass area would
+ * portal out of it and render solid. Returns undefined (no attribute) when
+ * no surface scope encloses the anchor -- i.e. the Solid default.
+ */
+export function usePortalSurface(anchor: { current: HTMLElement | null }, active: boolean): string | undefined {
+  const [surface, setSurface] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (!active || typeof document === 'undefined') return;
+    const el = anchor.current;
+    if (!el) return;
+    setSurface(el.closest('[data-surface]')?.getAttribute('data-surface') ?? undefined);
+  }, [anchor, active]);
+
+  return surface;
+}

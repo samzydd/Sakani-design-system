@@ -21,7 +21,8 @@
 
 import React from 'react';
 import { createPortal } from 'react-dom';
-import { usePortalThemeClass } from '../../../lib/usePortalThemeClass';
+import { usePortalThemeClass, usePortalSurface } from '../../../lib/usePortalThemeClass';
+import { useLiquidGlass, liquidGlassClass } from '../../../lib/LiquidGlass';
 import { X, TriangleAlert } from 'lucide-react';
 import { IconButton } from '../../IconButton';
 import { Button } from '../../Button';
@@ -95,6 +96,11 @@ export const Modal: React.FC<ModalProps> = ({
   // came out dark.
   const markerRef = React.useRef<HTMLSpanElement>(null);
   const portalTheme = usePortalThemeClass(markerRef, open);
+  // …and the Surface layer (solid/glass) the same way.
+  const portalSurface = usePortalSurface(markerRef, open);
+  // Opened from inside a Liquid area: the card itself becomes the material.
+  const isLiquid = portalSurface === 'liquid';
+  const liquid = useLiquidGlass(cardRef, { enabled: isLiquid });
 
   // Stays mounted past `open` so the exit animation has something to play
   // on. `open` remains the consumer's signal and every behavioural effect
@@ -163,6 +169,7 @@ export const Modal: React.FC<ModalProps> = ({
             portalTheme,
             open ? styles['backdrop--entering'] : styles['backdrop--exiting'],
           ].filter(Boolean).join(' ')}
+          data-surface={portalSurface}
           onMouseDown={(e) => { if (closeOnBackdropClick && e.target === e.currentTarget) onClose(); }}
         >
           <div
@@ -174,12 +181,15 @@ export const Modal: React.FC<ModalProps> = ({
             tabIndex={-1}
             className={[
               styles.card,
+              isLiquid ? liquidGlassClass('regular') : '',
               open ? styles['card--entering'] : styles['card--exiting'],
               className ?? '',
             ].filter(Boolean).join(' ')}
+            {...(isLiquid ? liquid.props : {})}
             /* animationend bubbles; only the card's own should unmount. */
             onAnimationEnd={(e) => { if (e.target === e.currentTarget && !open) setMounted(false); }}
           >
+            {isLiquid && liquid.filter}
             {!hideHeader && (
               <div className={styles.header}>
                 <div className={styles.titleGroup}>
