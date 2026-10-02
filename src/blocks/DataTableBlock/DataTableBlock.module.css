@@ -100,7 +100,7 @@
   color: var(--color-fg-muted); border-radius: var(--radius-sm);
   transition: background-color var(--transition-base), color var(--transition-base);
 }
-.rowAction:where(:hover) { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.rowAction:where(:hover) { background: var(--color-bg-canvas); color: var(--color-fg-default); }
 .rowAction:where(:focus-visible) { outline: none; box-shadow: 0 0 0 2px var(--color-border-focus); }
 
 /* ---- footer ---- */

@@ -24,7 +24,7 @@
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
 }
 .page:hover:not(.page--active), .arrow:hover:not(:disabled) {
-  background: var(--color-bg-subtle);
+  background: var(--color-bg-canvas);
   border-color: var(--color-border-default);
 }
 

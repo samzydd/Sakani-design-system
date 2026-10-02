@@ -82,9 +82,13 @@
   color: var(--color-fg-muted); border-radius: var(--radius-md);
   transition: background-color var(--transition-base), color var(--transition-base);
 }
+/* Hover fill on surfaces is bg/canvas -- also tints the shared gliding
+   highlight while it sits on this item (see useHoverHighlight). */
+.chatAction { --hover-tone: var(--color-bg-canvas); }
+
 /* --hover-fill is transparent inside a hover group, where one highlight
    glides between items instead; this is the fallback elsewhere. */
-.chatAction:where(:hover) { background: var(--hover-fill, var(--color-bg-subtle)); color: var(--color-fg-default); }
+.chatAction:where(:hover) { background: var(--hover-fill, var(--color-bg-canvas)); color: var(--color-fg-default); }
 .chatAction:where(:focus-visible) { outline: none; box-shadow: 0 0 0 2px var(--color-border-focus); }
 
 /* ---- panes ---- */

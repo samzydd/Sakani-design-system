@@ -1,4 +1,4 @@
-/* MenuItem.module.css — mirrors Combobox Option: h32, pad 6/12, gap 8, radius 4 */
+/* MenuItem.module.css — h32, pad 6/12, gap 8, radius 6 (inside the Menu's 8) */
 .item {
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base), transform var(--transition-base);
   display: flex;
@@ -7,7 +7,7 @@
   box-sizing: border-box;
   min-height: 32px;
   padding: var(--space-6) var(--space-12);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm); /* 6px */
   font-family: var(--font-sans);
   font-size: 13px;
   line-height: 18px;
@@ -16,9 +16,13 @@
   user-select: none;
   outline: none;
 }
+/* Hover fill on surfaces is bg/canvas -- also tints the shared gliding
+   highlight while it sits on this item (see useHoverHighlight). */
+.item { --hover-tone: var(--color-bg-canvas); }
+
 /* --hover-fill is transparent inside a hover group (Menu), where one
    highlight glides between items instead; this is the fallback elsewhere. */
-.item:where(:hover) { background: var(--hover-fill, var(--color-bg-subtle)); }
+.item:where(:hover) { background: var(--hover-fill, var(--color-bg-canvas)); }
 .item:where(:focus-visible) { box-shadow: 0 0 0 2px var(--color-border-focus); }
 .item__icon { display: inline-flex; color: var(--color-fg-muted); flex-shrink: 0; }
 .item__label { flex: 1 1 auto; }

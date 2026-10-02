@@ -21,7 +21,7 @@
   border: var(--border-width-100) solid var(--color-border-default);
   background: var(--color-bg-surface); color: var(--color-fg-muted); cursor: pointer;
 }
-.navBtn:hover { background: var(--color-bg-subtle); color: var(--color-fg-default); }
+.navBtn:hover { background: var(--color-bg-canvas); color: var(--color-fg-default); }
 
 /* Weekdays */
 .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); margin-bottom: var(--space-2); }
@@ -40,10 +40,14 @@
   color: var(--color-fg-default);
   transition: background-color var(--transition-base);
 }
+/* Hover fill on surfaces is bg/canvas -- also tints the shared gliding
+   highlight while it sits on this item (see useHoverHighlight). */
+.day { --hover-tone: var(--color-bg-canvas); }
+
 /* --hover-fill is transparent inside a hover group, where one highlight
    glides between items instead; this is the fallback elsewhere. */
-.day--default:hover { background: var(--hover-fill, var(--color-bg-subtle)); }
-.day--hover { background: var(--color-bg-subtle); }
+.day--default:hover { background: var(--hover-fill, var(--color-bg-canvas)); }
+.day--hover { background: var(--color-bg-canvas); }
 .day--selected { background: var(--color-accent-default); color: var(--color-fg-on-accent); font-weight: 600; }
 .day--today { border: var(--border-width-150) solid var(--color-brand-default); color: var(--color-brand-fg); font-weight: 600; }
 .day--in-range { background: var(--color-accent-subtle); border-radius: 0; }
@@ -66,4 +70,4 @@
   border-radius: var(--radius-sm);
   cursor: pointer;
 }
-.dropdown:hover { background: var(--color-bg-subtle); }
+.dropdown:hover { background: var(--color-bg-canvas); }

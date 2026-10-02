@@ -179,7 +179,7 @@
   cursor: pointer;
   transition: background-color var(--transition-base), box-shadow var(--transition-base);
 }
-.socialButton:hover:not(:disabled) { background: var(--color-bg-subtle); box-shadow: var(--shadow-sm); }
+.socialButton:hover:not(:disabled) { background: var(--color-bg-canvas); box-shadow: var(--shadow-sm); }
 .socialButton:disabled { opacity: var(--opacity-60); cursor: not-allowed; }
 
 /* ─── Skeleton ── */

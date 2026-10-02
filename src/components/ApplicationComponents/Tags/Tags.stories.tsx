@@ -46,6 +46,7 @@ export const Removable: Story = {
 };
 
 export const DarkMode: Story = {
-  args: { tags: initialTags, onRemove: () => {} },
+  args: { tags: initialTags },
+  render: () => <RemovableDemo />,
   decorators: [(S) => <div className="dark" style={{ width: 400, padding: 24, background: 'var(--color-bg-canvas)' }}><S /></div>],
 };

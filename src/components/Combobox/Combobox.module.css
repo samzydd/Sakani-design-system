@@ -183,9 +183,9 @@
 }
 /* Kept as the option's own static background -- unlike hover/keyboard
    position, "this is the chosen value" doesn't move with the pointer, so it
-   has no reason to live on the shared sliding highlight. Same color as that
-   highlight on purpose: hovering the selected option should look like one
-   surface, not two overlapping tints. */
+   has no reason to live on the shared sliding highlight. bg/subtle, one step
+   stronger than the bg/canvas hover, so the chosen option still reads as
+   selected while the pointer moves over the others. */
 .option--selected { background: var(--color-bg-subtle); }
 .option--disabled { opacity: var(--opacity-60); cursor: not-allowed; }
 
@@ -207,7 +207,7 @@
   top: 0;
   z-index: 0;
   border-radius: var(--radius-sm);
-  background: var(--color-bg-subtle);
+  background: var(--color-bg-canvas); /* hover fill on surfaces */
   pointer-events: none;
 }
 /* Same "settle before animating" gate as SegmentedControl's .thumb-

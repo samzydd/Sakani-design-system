@@ -26,17 +26,34 @@ export interface TagsProps {
   className?: string;
 }
 
-export const Tags: React.FC<TagsProps> = ({ tags, onRemove, className }) => (
+/** Length of the fade-out before onRemove fires (matches Tags.module.css). */
+const LEAVE_MS = 160;
+
+export const Tags: React.FC<TagsProps> = ({ tags, onRemove, className }) => {
+  // The removed tag fades out first, then onRemove fires. If the parent
+  // keeps it, it fades back in.
+  const [leaving, setLeaving] = React.useState<string | null>(null);
+  const timer = React.useRef<number | undefined>(undefined);
+  React.useEffect(() => () => window.clearTimeout(timer.current), []);
+  const remove = (tag: string, index: number) => {
+    if (!onRemove || leaving) return;
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) { onRemove(tag, index); return; }
+    setLeaving(tag);
+    timer.current = window.setTimeout(() => { onRemove(tag, index); setLeaving(null); }, LEAVE_MS);
+  };
+
+  return (
   <div className={[styles.tags, className ?? ''].filter(Boolean).join(' ')}>
     {tags.map((tag, index) => (
       <Badge
         key={tag}
+        className={[styles.tag, leaving === tag ? styles['tag--leaving'] : ''].filter(Boolean).join(' ')}
         rightIcon={
           onRemove && (
             <button
               type="button"
               className={styles.remove}
-              onClick={() => onRemove(tag, index)}
+              onClick={() => remove(tag, index)}
               aria-label={`Remove ${tag}`}
             >
               <X size={12} strokeWidth={iconStrokeWidth(12)} />
@@ -48,6 +65,7 @@ export const Tags: React.FC<TagsProps> = ({ tags, onRemove, className }) => (
       </Badge>
     ))}
   </div>
-);
+  );
+};
 
 export default Tags;

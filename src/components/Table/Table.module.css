@@ -65,10 +65,14 @@
   background: transparent;
   transition: background-color var(--transition-base);
 }
+/* Hover fill on surfaces is bg/canvas -- also tints the shared gliding
+   highlight while it sits on this item (see useHoverHighlight). */
+.bodyRow { --hover-tone: var(--color-bg-canvas); }
+
 /* --hover-fill is transparent inside the wrap's hover group, where one
    highlight glides between rows instead; unset elsewhere, so this fallback
    still applies wherever a row renders without the group. */
-.bodyRow:hover { background: var(--hover-fill, var(--color-bg-subtle)); }
+.bodyRow:hover { background: var(--hover-fill, var(--color-bg-canvas)); }
 /* The whole row is the click target when rows are selectable, so it should
    say so -- otherwise the pointer only changes over the 18px checkbox. */
 .bodyRow--selectable { cursor: pointer; }

@@ -181,11 +181,14 @@
   background-color: transparent;
   color: var(--color-fg-default);
   border-color: transparent;
+  /* No drop shadow, at rest or on hover -- a ghost button has no surface to
+     cast one. The base .button shadow-xs is cleared here; :focus-visible
+     (higher specificity) still draws the focus ring. */
+  box-shadow: none;
 }
 
 .button--ghost:hover:not(:disabled) {
   background-color: var(--surface-bg-subtle);
-  box-shadow: var(--shadow-sm);
 }
 
 .button--ghost:active:not(:disabled) {
