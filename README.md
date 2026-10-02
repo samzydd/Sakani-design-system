@@ -87,22 +87,22 @@ Glass is built into the theme system, not added component by component. Next to 
 </div>
 
 // Liquid glass: a lens-refracting sheet over a photo, UI on top
-import { LiquidGlass } from '@sakaniui/react';
+import { LiquidBackdrop, LiquidGlass } from '@sakaniui/react';
 
-<div style={{ position: 'relative', backgroundImage: 'url(photo.jpg)', backgroundSize: 'cover' }}>
+<LiquidBackdrop src="photo.jpg" style={{ position: 'relative' }}>   {/* every lens refracts this photo */}
   <LiquidGlass variant="regular" tint="subtle" radius={0} style={{ position: 'absolute', inset: 0 }} />
   <div data-surface="liquid" style={{ position: 'relative' }}>
     <Sidebar />                                  {/* transparent: sits on the glass */}
     <div data-surface="solid"><Card>…</Card></div> {/* data stays solid and crisp */}
   </div>
-</div>
+</LiquidBackdrop>
 ```
 
 The recipe is always the same three layers: **photo → one glass overlay → components**. See the full **Liquid Glass Dashboard** block (`@sakaniui/react/blocks`) for a complete example: a hovering lens that glides between sidebar items while the active item keeps its own, frosted menus, and solid data cards on a glass panel.
 
 - **Browsers** — refraction renders in Chromium (Chrome, Edge); Safari and Firefox get a frosted fallback with the same rim and depth.
 - **Accessible** — `prefers-reduced-transparency` turns glass into an opaque surface, `prefers-reduced-motion` stops the glare and glide; secondary text has its own stronger color token on glass, and the docs list measured contrast for every tint.
-- **Tunable** — bend, frost, tint and color boost are `--liquid-*` tokens, one set per variant (`--liquid-frost-regular`, `--liquid-frost-clear`, …); `tint="subtle"` is Figma's 5% overlay fill, and `data-on-photo` switches a subtree to light text.
+- **Figma's Glass properties, 1:1** — refraction, depth, dispersion, frost and light are tokens in Figma's own units (`--liquid-refraction-clear: 0.8`, `--liquid-depth-clear: 20`, …), matching the liquid/regular and liquid/clear effect styles, or per element: `<LiquidGlass effect={{ refraction: 0.8, depth: 20 }}>`. `tint="subtle"` is Figma's 5% overlay fill, and `data-on-photo` switches a subtree to light text.
 
 Docs: **[sakaniui.com/docs/glass](https://www.sakaniui.com/docs/glass)** · Storybook: *Foundations → Glass* and *Foundations → Liquid glass*.
 

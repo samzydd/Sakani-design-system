@@ -2,6 +2,64 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.2
+
+**Liquid glass speaks Figma: the same Glass properties, the same values, the same result.**
+
+- **`LiquidGlass` now takes Figma's Glass effect properties directly**, in
+  Figma's units: refraction, depth, dispersion, frost, light intensity and
+  light angle. The tokens are the liquid/regular and liquid/clear effect
+  styles as they are in Figma:
+  `--liquid-refraction-regular|clear` (0.55 | 0.8), `--liquid-depth-*`
+  (16 | 20), `--liquid-dispersion-*` (0.3 | 0.4), `--liquid-frost-*` (4 | 1),
+  `--liquid-light-intensity-*` (0.7 | 0.8) and `--liquid-light-angle` (-45).
+  Per element: `<LiquidGlass effect={{ refraction: 0.8, depth: 20, dispersion: 0.4, frost: 1 }}>`.
+- **Measured, property by property.** Each Figma property was swept on its
+  own over gradient, step and flat-grey backdrops, and the code reproduces
+  every probe: the bend within 0.3px on average (all refraction, depth and
+  dispersion values), the frost blur within 0.3px, the light within half a
+  brightness level. How each property behaves:
+  - Refraction × depth sets the bend; depth also sets how far in it reaches
+    (0.8 × depth px). The steep fall near the rim folds the content just
+    inside into the magnified band along the edges and round the corners.
+  - Dispersion splits the color: red bends more, blue less.
+  - Frost blurs the backdrop before it is bent.
+  - Light is added on top: a 1px rim, strongest on edges that face the
+    light (none on edges side-on to it), plus a shade inside the lit edges
+    and a glow inside the far ones. It is drawn in the filter now, so it adds
+    light like Figma instead of laying white over the backdrop.
+- **Correction to 0.4.1:** Figma's lens never samples outside the element, and
+  every edge bends the same way (with the light off). The 0.4.1 note about an
+  approximate clear rim no longer applies.
+- **Breaking (tokens published in 0.4.1):** `--liquid-bezel-*`,
+  `--liquid-shift-*`, `--liquid-profile-*` and `--liquid-saturate-*` are gone
+  (Figma has no such properties); `--liquid-depth` is now Figma's Depth, and the
+  old inset-shadow token is `--liquid-edge-shade` (Safari/Firefox fallback
+  only). `--liquid-light-angle` is Figma's angle in degrees (-45), not a CSS
+  gradient angle.
+- **New: `LiquidBackdrop`.** Wrap a liquid-glass UI in
+  `<LiquidBackdrop src={photo}>` and every lens inside refracts the photo itself
+  (an aligned copy, kept aligned while lenses glide, scroll or squish) instead of
+  whatever the browser painted below it. Like Figma, glass stacked on glass now
+  bends the sharp original: real refraction and color fringing on nested lenses,
+  not a blur of the lens below. `veil` lays a color over the image for every lens
+  (Figma's 5% overlay fill; a scrim in dark mode). `source={false}` on a lens
+  bends the UI below instead (slider knobs, selection droplets).
+- **Fast at full-screen sizes.** A live SVG filter over a full-screen lens is
+  re-evaluated whenever anything near it repaints (the dashboard ran at ~15fps
+  while hovering the sidebar). Inside a `LiquidBackdrop`, lenses bigger than
+  300×300 now run the same filter once into a canvas and re-bake only when their
+  size, position, theme or properties change: 60fps, pixel-identical. Small
+  lenses that move stay live; `bake={false}` keeps a big moving lens live.
+- **`LiquidDashboardBlock`** sits on a `LiquidBackdrop`: the promo card and the
+  sidebar lenses refract the sharp photo like the Figma frame; the active lens
+  springs and stretches as it glides; item labels are fg/default as in Figma.
+- **Storybook:** *Foundations / Liquid Glass* is now a showcase (sidebar, tab bar
+  with a sliding droplet, Now Playing card whose slider knobs turn into lenses,
+  a lens you can drag over the photo), a dark version, and a Playground with
+  Figma's six Glass properties as controls. The calibration and measurement
+  tools moved to *Foundations / Liquid Glass / Lab*.
+
 ## 0.4.1
 
 **Liquid glass matches the Figma file.**

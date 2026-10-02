@@ -1,205 +1,88 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { House, Inbox, ListChecks, Settings, Bold, Italic, Underline, Link2, Image as ImageIcon, Sparkles } from 'lucide-react';
-import { LiquidGlass } from '../lib/LiquidGlass';
-import { Button } from '../components/Button';
-import { IconButton } from '../components/IconButton';
-import { Sidebar } from '../components/Sidebar';
-import { SidebarSearch } from '../components/SidebarSearch';
-import { SidebarItem } from '../components/SidebarItem';
-import { Modal } from '../components/ApplicationComponents/Modal';
-import { Card } from '../components/Card';
+import { Move } from 'lucide-react';
+import { LiquidGlass, LiquidBackdrop, type LiquidGlassTint } from '../lib/LiquidGlass';
+import { LiquidShowcase } from './liquid/LiquidShowcase';
 import balloons from '../assets/marketing/blog-image-balloons.jpg';
 
 /**
- * Liquid glass prototype — Apple-style material on three hero surfaces:
- * a floating toolbar (clear), a sidebar (regular) and a modal (regular).
+ * Liquid Glass — Sakani's glass material, matched to Figma's native Glass effect
+ * property by property (refraction, depth, dispersion, frost, light).
  *
- * Refraction (the edge bending the backdrop like a lens) and dispersion (a
- * faint color fringe) render in Chrome/Edge only; Safari and Firefox show the
- * frosted fallback with the same rim light and depth. "Safari fallback"
- * forces that fallback so both can be compared in one browser.
+ * Showcase: a sidebar, tab bar, Now Playing card and toolbar on one photo. Click
+ * the nav and tabs (the selection lens springs and stretches), drag the slider
+ * knobs (they turn into lenses), and drag the round lens over the balloons to see
+ * the rim bend and split the color.
  *
- * Refraction only reads over detailed content — text, stripes, hard edges —
- * so the scene is deliberately busy. Drag the toolbar over the headline.
+ * Refraction renders in Chromium (Chrome, Edge, Arc); Safari and Firefox get a
+ * frosted fallback with the same rim.
  */
 const meta = {
-  title: 'Foundations/Liquid glass (prototype)',
+  title: 'Foundations/Liquid Glass',
   parameters: { layout: 'fullscreen' },
 } satisfies Meta;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const Scene = ({ dark, children }: { dark: boolean; children: React.ReactNode }) => (
-  <div
-    className={dark ? 'dark' : undefined}
-    style={{
-      position: 'relative', minHeight: '100vh', overflow: 'hidden', fontFamily: 'var(--font-sans)',
-      background: dark
-        ? `radial-gradient(35% 45% at 20% 25%, #FF4700 0%, transparent 70%),
-           radial-gradient(40% 50% at 80% 20%, #7B4BD9 0%, transparent 70%),
-           radial-gradient(45% 55% at 60% 90%, #2E90FA 0%, transparent 70%), #0F0E0C`
-        : `radial-gradient(35% 45% at 20% 25%, #FF8A57 0%, transparent 70%),
-           radial-gradient(40% 50% at 80% 20%, #B49AF0 0%, transparent 70%),
-           radial-gradient(45% 55% at 60% 90%, #7CC0FF 0%, transparent 70%), #FFF4EC`,
-    }}
-  >
-    {/* Detail for the lens to bend: stripes, a headline, hard-edged shapes. */}
-    <div style={{ position: 'absolute', inset: 0, background: `repeating-linear-gradient(90deg, transparent 0 38px, ${dark ? 'rgba(255,255,255,0.07)' : 'rgba(16,15,12,0.06)'} 38px 40px)` }} />
-    <h1 style={{ position: 'absolute', top: 70, left: 330, margin: 0, font: '800 88px/0.95 var(--font-sans)', letterSpacing: '-0.03em', color: dark ? '#FAFAF9' : '#141414' }}>
-      Liquid<br />glass.
-    </h1>
-    <div style={{ position: 'absolute', top: 300, left: 360, width: 120, height: 120, borderRadius: 999, background: '#FF4700' }} />
-    <div style={{ position: 'absolute', top: 360, left: 560, width: 200, height: 56, borderRadius: 14, background: '#12B76A', transform: 'rotate(-10deg)' }} />
-    <div style={{ position: 'absolute', top: 470, left: 720, width: 90, height: 90, background: '#141414', transform: 'rotate(18deg)' }} />
-    {children}
-  </div>
-);
+export const Showcase: Story = { render: () => <LiquidShowcase /> };
+export const Dark: Story = { render: () => <LiquidShowcase dark /> };
 
-/** A toolbar you can drag across the scene. */
-const DraggableToolbar = ({ refraction }: { refraction: 'auto' | 'off' }) => {
-  const [pos, setPos] = React.useState({ x: 340, y: 250 });
-  const drag = React.useRef<{ dx: number; dy: number } | null>(null);
+/* ------------------------------------------------------------------------- */
+
+type PlaygroundArgs = {
+  refraction: number; depth: number; dispersion: number; frost: number;
+  lightIntensity: number; lightAngle: number;
+  tint: LiquidGlassTint; shape: 'card' | 'pill' | 'circle';
+};
+
+const SHAPES = { card: { w: 420, h: 260, r: 36 }, pill: { w: 360, h: 88, r: 999 }, circle: { w: 200, h: 200, r: 999 } };
+
+const PlaygroundLens = (a: PlaygroundArgs) => {
+  const [pos, setPos] = React.useState({ x: 0.36, y: 0.38 });
+  const drag = React.useRef<{ dx: number; dy: number; l: number; t: number; w: number; h: number } | null>(null);
+  const sh = SHAPES[a.shape];
   return (
-    <LiquidGlass
-      variant="clear"
-      radius={28}
-      refraction={refraction}
-      style={{ position: 'absolute', left: pos.x, top: pos.y, display: 'flex', gap: 4, padding: 8, cursor: 'grab', touchAction: 'none', zIndex: 5 }}
+    <div
+      style={{ position: 'absolute', left: `${pos.x * 100}%`, top: `${pos.y * 100}%`, transform: 'translate(-50%, -50%)', cursor: 'grab', touchAction: 'none' }}
       onPointerDown={(e) => {
-        if ((e.target as HTMLElement).closest('button')) return;
-        drag.current = { dx: e.clientX - pos.x, dy: e.clientY - pos.y };
-        (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+        const st = (e.currentTarget.parentElement as HTMLElement).getBoundingClientRect();
+        const me = e.currentTarget.getBoundingClientRect();
+        drag.current = { dx: e.clientX - (me.left + me.width / 2), dy: e.clientY - (me.top + me.height / 2), l: st.left, t: st.top, w: st.width, h: st.height };
+        e.currentTarget.setPointerCapture(e.pointerId);
       }}
-      onPointerMove={(e) => { if (drag.current) setPos({ x: e.clientX - drag.current.dx, y: e.clientY - drag.current.dy }); }}
+      onPointerMove={(e) => { const d = drag.current; if (d) setPos({ x: (e.clientX - d.dx - d.l) / d.w, y: (e.clientY - d.dy - d.t) / d.h }); }}
       onPointerUp={() => { drag.current = null; }}
     >
-      {[Bold, Italic, Underline, Link2, ImageIcon, Sparkles].map((Icon, i) => (
-        <IconButton key={i} icon={Icon} aria-label={['Bold', 'Italic', 'Underline', 'Link', 'Image', 'Ask AI'][i]} variant="ghost" size="md" />
-      ))}
-    </LiquidGlass>
-  );
-};
-
-const Prototype = ({ dark, refraction = 'auto' }: { dark: boolean; refraction?: 'auto' | 'off' }) => {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <Scene dark={dark}>
-      <LiquidGlass variant="regular" radius={24} refraction={refraction} style={{ position: 'absolute', top: 24, left: 24, bottom: 24, width: 264, zIndex: 4 }}>
-        <Sidebar>
-          <SidebarSearch type="command" placeholder="Search…" />
-          <SidebarItem icon={House} label="Home" />
-          <SidebarItem icon={Inbox} label="Inbox" badge="12" active activeIndicator={false} />
-          <SidebarItem icon={ListChecks} label="Tasks" />
-          <SidebarItem icon={Settings} label="Settings" />
-        </Sidebar>
-      </LiquidGlass>
-
-      <DraggableToolbar refraction={refraction} />
-
-      <div data-surface="liquid" style={{ position: 'absolute', left: 340, top: 340 + 240, zIndex: 4 }}>
-        <Button onClick={() => setOpen(true)}>Open liquid modal</Button>
-        <Modal
-          open={open}
-          onClose={() => setOpen(false)}
-          title="Archive this project?"
-          description="It will move to Archive. You can restore it any time."
-          confirmLabel="Archive"
-          onConfirm={() => setOpen(false)}
-        />
-      </div>
-    </Scene>
-  );
-};
-
-export const Light: Story = { render: () => <Prototype dark={false} /> };
-export const Dark: Story = { render: () => <Prototype dark /> };
-/** What Safari and Firefox show: no refraction, frosted fallback with the same rim and depth. */
-export const SafariFallbackLight: Story = { name: 'Safari fallback (light)', render: () => <Prototype dark={false} refraction="off" /> };
-export const SafariFallbackDark: Story = { name: 'Safari fallback (dark)', render: () => <Prototype dark refraction="off" /> };
-
-/**
- * Calibration — pixel-for-pixel twin of the Figma frame
- * "🎯 Calibration (code ↔ Figma)" (Liquid glass prototype page): same
- * 1000×600 canvas, same 2px/16px black grid, same panel sizes, positions
- * and radii. Screenshot both at 1x and compare how far the grid bends near
- * each edge; tune the --liquid-* tokens until the two match.
- */
-type Lens = { refraction: number; bezel: number; dispersion: number; frost: number; saturate: number; shift: number; profile: number; rimFar: number; shade: number };
-type CalibrationArgs = { reg: Lens; clr: Lens };
-
-/** One lens as inline custom properties, so a fitting script can drive it from the URL
- *  (&args=reg.frost:2;clr.shift:6). Defaults = the shipped tokens. */
-const lensVars = (l: Lens) => ({
-  '--liquid-refraction': l.refraction, '--liquid-bezel': l.bezel, '--liquid-dispersion': l.dispersion,
-  '--liquid-frost': l.frost, '--liquid-saturate': l.saturate, '--liquid-shift': l.shift, '--liquid-profile': l.profile,
-  '--liquid-rim-far': `rgba(255, 255, 255, ${l.rimFar})`,
-  '--liquid-depth': `inset calc(var(--liquid-lx) * -1.5px) calc(var(--liquid-ly) * -1.5px) 1px rgba(255, 255, 255, 0.75), inset calc(var(--liquid-lx) * 1.5px) calc(var(--liquid-ly) * 1.5px) 1px rgba(255, 255, 255, 0.25), inset calc(var(--liquid-lx) * 10px) calc(var(--liquid-ly) * 10px) 20px -12px rgba(16, 15, 12, ${l.shade})`,
-});
-
-export const Calibration: StoryObj<CalibrationArgs> = {
-  parameters: { layout: 'fullscreen' },
-  args: {
-    reg: { refraction: 8, bezel: 16, dispersion: 0.2, frost: 2, saturate: 1, shift: -3, profile: 0, rimFar: 0.6, shade: 0.12 },
-    clr: { refraction: 9.5, bezel: 24, dispersion: 0.75, frost: 0.75, saturate: 0.6, shift: 1.5, profile: 0, rimFar: 0.6, shade: 0.12 },
-  },
-  render: (a) => {
-    const panel = (left: number, top: number, width: number, height: number, l: Lens) =>
-      ({ position: 'absolute', left, top, width, height, ...lensVars(l) } as React.CSSProperties);
-    return (
-      <div
-        style={{
-          position: 'relative', width: 1000, height: 600, overflow: 'hidden', background: '#fff',
-          backgroundImage: 'linear-gradient(to right, #000 2px, transparent 2px), linear-gradient(#000 2px, transparent 2px)',
-          backgroundSize: '16px 16px',
-        }}
+      <LiquidGlass
+        variant="clear"
+        tint={a.tint}
+        radius={sh.r}
+        effect={{ refraction: a.refraction, depth: a.depth, dispersion: a.dispersion, frost: a.frost, lightIntensity: a.lightIntensity, lightAngle: a.lightAngle }}
+        style={{ width: sh.w, height: sh.h, display: 'grid', placeItems: 'center', color: '#fff' }}
       >
-        <LiquidGlass variant="regular" radius={28} style={panel(100, 100, 400, 200, a.reg)} />
-        <LiquidGlass variant="clear" radius={28} style={panel(100, 340, 400, 200, a.clr)} />
-        <LiquidGlass variant="regular" radius={28} style={panel(600, 172, 200, 56, a.reg)} />
-        <LiquidGlass variant="clear" radius={28} style={panel(600, 412, 200, 56, a.clr)} />
-      </div>
-    );
-  },
+        <Move size={20} strokeWidth={1.75} style={{ opacity: 0.7, filter: 'drop-shadow(0 1px 2px rgba(0,0,0,.3))' }} aria-hidden="true" />
+      </LiquidGlass>
+    </div>
+  );
 };
 
-/**
- * Photo backdrop — the three-layer recipe the Figma documentation describes:
- *   1. Background: the photo.
- *   2. Overlay: one full-size <LiquidGlass variant="clear" radius={0}> sheet
- *      above it (closest tint to Figma's 5% overlay; the library has no
- *      lighter one yet, and `regular` washes the photo out). It is
- *      the only layer that blurs/refracts the photo, so the whole canvas
- *      reads as one consistent glass surface.
- *   3. Components: placed above the overlay inside data-surface="liquid" so
- *      they drop their own fills and sit on that sheet. Content that has to
- *      be read (here a data card) keeps its solid surface.
- */
-export const PhotoBackdrop: StoryObj = {
-  parameters: { layout: 'fullscreen' },
-  render: () => (
-    <div
-      style={{
-        position: 'relative', width: 1000, height: 620, overflow: 'hidden',
-        backgroundImage: `url(${balloons})`, backgroundSize: 'cover', backgroundPosition: 'center',
-      }}
-    >
-      <LiquidGlass variant="clear" radius={0} style={{ position: 'absolute', inset: 0 }} />
-      <div data-surface="liquid" style={{ position: 'relative', display: 'flex', gap: 24, padding: 32, height: '100%', boxSizing: 'border-box' }}>
-        <div style={{ width: 220 }}>
-          <Sidebar>
-            <SidebarItem icon={House} label="Dashboard" active />
-            <SidebarItem icon={Inbox} label="Inbox" badge="4" />
-            <SidebarItem icon={ListChecks} label="Tasks" />
-            <SidebarItem icon={Settings} label="Settings" />
-          </Sidebar>
-        </div>
-        <div style={{ display: 'grid', gap: 16, alignContent: 'start', width: 360 }}>
-          {/* Solid on purpose: this is content to be read, not chrome. */}
-          <div data-surface="solid"><Card title="Revenue" description="Solid surface for data"><Button size="sm">View report</Button></Card></div>
-          <div style={{ display: 'flex', gap: 8 }}><Button variant="secondary" size="sm">Export</Button><Button size="sm">Share</Button></div>
-        </div>
-      </div>
-    </div>
+/** Figma's Glass properties as controls, on a lens you can drag over the photo.
+ *  Defaults = the liquid/clear effect style. */
+export const Playground: StoryObj<PlaygroundArgs> = {
+  args: { refraction: 0.8, depth: 20, dispersion: 0.4, frost: 1, lightIntensity: 0.8, lightAngle: -45, tint: 'clear', shape: 'card' },
+  argTypes: {
+    refraction: { control: { type: 'range', min: 0, max: 1, step: 0.01 }, description: 'Figma Glass · Refraction' },
+    depth: { control: { type: 'range', min: 1, max: 60, step: 1 }, description: 'Figma Glass · Depth (px)' },
+    dispersion: { control: { type: 'range', min: 0, max: 1, step: 0.01 }, description: 'Figma Glass · Dispersion' },
+    frost: { control: { type: 'range', min: 0, max: 20, step: 0.5 }, description: 'Figma Glass · Frost' },
+    lightIntensity: { control: { type: 'range', min: 0, max: 1, step: 0.01 }, description: 'Figma Glass · Light intensity' },
+    lightAngle: { control: { type: 'range', min: -180, max: 180, step: 1 }, description: 'Figma Glass · Light angle (degrees clockwise from the top)' },
+    tint: { control: 'inline-radio', options: ['clear', 'regular', 'subtle', 'none'] },
+    shape: { control: 'inline-radio', options: ['card', 'pill', 'circle'] },
+  },
+  render: (a) => (
+    <LiquidBackdrop src={balloons} position="center 35%" style={{ position: 'relative', width: '100%', height: '100vh', minHeight: 640, overflow: 'hidden' }}>
+      <PlaygroundLens {...a} />
+    </LiquidBackdrop>
   ),
 };

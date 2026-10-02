@@ -1,43 +1,75 @@
 /* LiquidGlass — see LiquidGlass.tsx for the layer model. */
 
-/* Per-variant lens settings. :where() keeps the specificity at zero, so an
-   element (or a class on it) can still override --liquid-frost & co. */
+/* Per-variant Glass properties (Figma's liquid/regular and liquid/clear effect
+   styles). :where() keeps the specificity at zero, so an element (or a class on
+   it, or the `effect` prop) can still override --liquid-refraction & co. */
 :where(.liquid.regular) {
   --liquid-refraction: var(--liquid-refraction-regular);
-  --liquid-bezel: var(--liquid-bezel-regular);
+  --liquid-depth: var(--liquid-depth-regular);
   --liquid-dispersion: var(--liquid-dispersion-regular);
   --liquid-frost: var(--liquid-frost-regular);
-  --liquid-saturate: var(--liquid-saturate-regular);
-  --liquid-shift: var(--liquid-shift-regular);
-  --liquid-profile: var(--liquid-profile-regular);
+  --liquid-light-intensity: var(--liquid-light-intensity-regular);
   --liquid-shadow: var(--liquid-shadow-regular);
 }
 :where(.liquid.clear) {
   --liquid-refraction: var(--liquid-refraction-clear);
-  --liquid-bezel: var(--liquid-bezel-clear);
+  --liquid-depth: var(--liquid-depth-clear);
   --liquid-dispersion: var(--liquid-dispersion-clear);
   --liquid-frost: var(--liquid-frost-clear);
-  --liquid-saturate: var(--liquid-saturate-clear);
-  --liquid-shift: var(--liquid-shift-clear);
-  --liquid-profile: var(--liquid-profile-clear);
+  --liquid-light-intensity: var(--liquid-light-intensity-clear);
   --liquid-shadow: var(--liquid-shadow-clear);
 }
 
 .liquid {
   position: relative;
   isolation: isolate;
-  box-shadow: var(--liquid-depth), var(--liquid-shadow);
+  box-shadow: var(--liquid-edge-shade), var(--liquid-shadow);
   transition: transform 450ms cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow var(--transition-base);
 }
 /* Two-class specificity so it wins over a host component's own surface
    rules (e.g. Modal's .card background/shadow) when applied via the hook. */
-.liquid.regular { background: var(--liquid-tint-regular); }
-.liquid.clear { background: var(--liquid-tint-clear); }
+.liquid.regular { --liquid-fill: var(--liquid-tint-regular); background: var(--liquid-fill); }
+.liquid.clear { --liquid-fill: var(--liquid-tint-clear); background: var(--liquid-fill); }
 /* An explicit `tint` overrides the variant's own (declared after, same specificity). */
-.liquid.tint-regular { background: var(--liquid-tint-regular); }
-.liquid.tint-clear { background: var(--liquid-tint-clear); }
-.liquid.tint-subtle { background: var(--liquid-tint-subtle); }
-.liquid.tint-none { background: transparent; }
+.liquid.tint-regular { --liquid-fill: var(--liquid-tint-regular); background: var(--liquid-fill); }
+.liquid.tint-clear { --liquid-fill: var(--liquid-tint-clear); background: var(--liquid-fill); }
+.liquid.tint-subtle { --liquid-fill: var(--liquid-tint-subtle); background: var(--liquid-fill); }
+.liquid.tint-none { --liquid-fill: transparent; background: transparent; }
+
+/* Refracting: the filter draws the light (rim, shade, glow), so the CSS rim and
+   edge shade are for the fallback only. */
+.liquid:is([data-refraction='on'], [data-refraction='source']) { box-shadow: var(--liquid-shadow); }
+.liquid:is([data-refraction='on'], [data-refraction='source'])::before { display: none; }
+
+/* Source mode (inside a LiquidBackdrop): the element draws its own glass — a copy
+   of the backdrop through the filter, clipped to its shape, then the tint. */
+.liquid[data-refraction='source'] { background: transparent; }
+.sourceClip {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.source { position: absolute; inset: 0; overflow: hidden; }
+.sourceImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+.sourceCanvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.probe { position: absolute; width: 0; height: 0; overflow: hidden; }
+.fill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--liquid-fill);
+  pointer-events: none;
+}
 
 /* Frosted fallback: Safari/Firefox (no SVG backdrop filters) or refraction off. */
 .liquid[data-refraction='off'] {
@@ -45,8 +77,8 @@
   backdrop-filter: var(--liquid-fallback-blur);
 }
 
-/* Rim light: a 1px ring (masked to the border area) that follows the light
-   angle — brightest on the edges facing the light, a thinner bounce on the far ones. */
+/* Fallback rim light: a 1px ring (masked to the border area) all the way round,
+   brighter on the edges facing the light. */
 .liquid::before {
   content: '';
   position: absolute;
@@ -55,12 +87,10 @@
   padding: 1px;
   border-radius: inherit;
   background: linear-gradient(
-    var(--liquid-light-angle),
+    calc((var(--liquid-light-angle) + 180) * 1deg),
     var(--liquid-rim) 0%,
-    var(--liquid-rim-soft) 22%,
-    transparent 42%,
-    transparent 62%,
-    var(--liquid-rim-far-soft) 88%,
+    var(--liquid-rim-soft) 35%,
+    var(--liquid-rim-far-soft) 65%,
     var(--liquid-rim-far) 100%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -110,4 +140,5 @@
     backdrop-filter: none !important;
   }
   .liquid::after { display: none; }
+  .sourceClip, .fill { display: none; }
 }
