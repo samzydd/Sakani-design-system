@@ -98,13 +98,14 @@ import { LiquidBackdrop, LiquidGlass } from '@sakaniui/react';
 </LiquidBackdrop>
 ```
 
-The recipe is always the same three layers: **photo → one glass overlay → components**. See the full **Liquid Glass Dashboard** block (`@sakaniui/react/blocks`) for a complete example: a hovering lens that glides between sidebar items while the active item keeps its own, frosted menus, and solid data cards on a glass panel.
+The recipe is always the same three layers: **photo → one glass overlay → components**. Inside a `LiquidBackdrop`, every lens refracts the sharp photo itself (as Figma's glass does), so glass on glass still bends real detail with visible color fringing. See the full **Liquid Glass Dashboard** block (`@sakaniui/react/blocks`) for a complete example: lenses that spring between sidebar items and stretch like a droplet, a collapsible rail with tooltips, frosted menus, solid data cards on a glass panel, and a layout that reflows to its container.
 
-- **Browsers** — refraction renders in Chromium (Chrome, Edge); Safari and Firefox get a frosted fallback with the same rim and depth.
+- **Browsers** — refraction renders in Chromium (Chrome, Edge, Arc); Safari and Firefox get a frosted fallback with the same rim.
+- **Fast** — big static lenses (overlays, panels) render their glass once into a canvas and stay at 60fps; small moving lenses stay live (`bake={false}` keeps a big moving lens live).
 - **Accessible** — `prefers-reduced-transparency` turns glass into an opaque surface, `prefers-reduced-motion` stops the glare and glide; secondary text has its own stronger color token on glass, and the docs list measured contrast for every tint.
 - **Figma's Glass properties, 1:1** — refraction, depth, dispersion, frost and light are tokens in Figma's own units (`--liquid-refraction-clear: 0.8`, `--liquid-depth-clear: 20`, …), matching the liquid/regular and liquid/clear effect styles, or per element: `<LiquidGlass effect={{ refraction: 0.8, depth: 20 }}>`. `tint="subtle"` is Figma's 5% overlay fill, and `data-on-photo` switches a subtree to light text.
 
-Docs: **[sakaniui.com/docs/glass](https://www.sakaniui.com/docs/glass)** · Storybook: *Foundations → Glass* and *Foundations → Liquid glass*.
+Docs: **[sakaniui.com/docs/glass](https://www.sakaniui.com/docs/glass)** · Storybook: *Foundations → Liquid Glass* (Showcase, Dark, Playground with Figma's Glass properties as controls) and *Foundations → Glass*.
 
 ## Token architecture
 
@@ -130,7 +131,7 @@ Change a semantic token and every component follows — in both the design file 
 
 **Overlays** — Menu · Menu Item
 
-**Glass** — Liquid Glass (`LiquidGlass`, `useLiquidGlass`) · Surface modes (`data-surface="glass" | "liquid" | "solid"`)
+**Glass** — Liquid Glass (`LiquidGlass`, `LiquidBackdrop`, `useLiquidGlass`) · Surface modes (`data-surface="glass" | "liquid" | "solid"`)
 
 **Data** — Empty State · Filter Chip
 
