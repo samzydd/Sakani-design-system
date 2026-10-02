@@ -142,4 +142,4 @@ export { getContrastColor } from './lib/getContrastColor';
 export { HoverGroup, useHoverHighlight } from './lib/useHoverHighlight';
 export type { HoverGroupProps } from './lib/useHoverHighlight';
 export { LiquidGlass, useLiquidGlass } from './lib/LiquidGlass';
-export type { LiquidGlassProps, LiquidGlassVariant } from './lib/LiquidGlass';
+export type { LiquidGlassProps, LiquidGlassVariant, LiquidGlassTint } from './lib/LiquidGlass';

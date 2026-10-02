@@ -28,8 +28,12 @@ import React from 'react';
 import styles from './LiquidGlass.module.css';
 
 export type LiquidGlassVariant = 'regular' | 'clear';
+/** How much of the backdrop shows through. 'auto' follows the variant
+ *  (regular 66%, clear 28%); 'subtle' is Figma's glass/bg-subtle (5%), the
+ *  fill of a full-bleed overlay; 'none' is the lens alone. */
+export type LiquidGlassTint = 'auto' | 'regular' | 'clear' | 'subtle' | 'none';
 
-interface Params { w: number; h: number; radius: number; bezel: number; refraction: number; dispersion: number; frost: number; saturate: number }
+interface Params { w: number; h: number; radius: number; bezel: number; refraction: number; dispersion: number; frost: number; saturate: number; shift: number; profile: number; lx: number; ly: number }
 
 /** Chromium is the only engine that renders SVG filters in backdrop-filter. */
 function canRefract(): boolean {
@@ -40,13 +44,21 @@ function canRefract(): boolean {
 
 const mapCache = new Map<string, string>();
 
-/** Displacement map for a rounded rectangle: R/G = x/y shift (128 = none).
- *  Inside the bezel the backdrop is sampled from further in, strongest at
- *  the rim (eased), zero in the middle. */
-function buildMap(w: number, h: number, radius: number, bezel: number): string {
-  const key = `${w}x${h}:${radius}:${bezel}`;
+/** Displacement map for a rounded rectangle: R/G = x/y sampling offset, normalised by
+ *  `max` px (128 = none). Two terms, both weighted by the rim profile w(t):
+ *   - refraction: the backdrop is sampled from `refraction` px further in, along
+ *     the edge normal (a classic lens rim);
+ *   - shift: the light's component along the edge normal, times `shift` px.
+ *     Figma's Glass effect pulls content in from OUTSIDE the panel on the edges
+ *     facing the light and from inside on the far ones. A CSS backdrop-filter
+ *     only sees inside its own box, so a negative net displacement there just
+ *     samples the edge pixel; keep refraction + shift positive on every edge
+ *     (refraction >= |shift|) to stay inside. */
+function buildMap(w: number, h: number, radius: number, bezel: number, refraction: number, shift: number, profile: number, lx: number, ly: number): string {
+  const key = `${w}x${h}:${radius}:${bezel}:${refraction}:${shift}:${profile}:${lx.toFixed(3)}:${ly.toFixed(3)}`;
   const hit = mapCache.get(key);
   if (hit) return hit;
+  const max = refraction + Math.abs(shift);
   const canvas = document.createElement('canvas');
   canvas.width = w; canvas.height = h;
   const ctx = canvas.getContext('2d');
@@ -63,20 +75,29 @@ function buildMap(w: number, h: number, radius: number, bezel: number): string {
       const ox = Math.max(qx, 0), oy = Math.max(qy, 0);
       const outside = Math.hypot(ox, oy);
       const inside = -(outside + Math.min(Math.max(qx, qy), 0) - r); // distance to the edge, inward
-      let nx = 0, ny = 0, m = 0;
-      if (inside < bezel) {
+      let ex = 0, ey = 0;
+      if (inside < bezel && max > 0) {
+        let nx = 0, ny = 0;
         if (qx > 0 && qy > 0 && outside > 0) { nx = ox / outside; ny = oy / outside; }
         else if (qx > qy) nx = 1; else ny = 1;
         nx *= Math.sign(px - cx) || 1;
         ny *= Math.sign(py - cy) || 1;
-        // Circular profile (like a rounded glass edge): nearly flat through
-        // most of the bezel, steep right at the rim -- the middle stays clear.
-        const t = 1 - Math.max(inside, 0) / bezel;
-        m = 1 - Math.sqrt(1 - t * t);
+        // Rim weight. profile 0 = a circular glass edge (flat through most of the
+        // bezel, very steep at the rim); profile p > 0 = a power curve (1 - u)^p.
+        const u = Math.min(1, Math.max(inside, 0) / bezel);
+        let wgt: number;
+        if (profile > 0) wgt = Math.pow(1 - u, profile);
+        else { const t = 1 - u; wgt = 1 - Math.sqrt(1 - t * t); }
+        // The shift acts along the edge normal only, by the light's component on
+        // it: (n . L) n. The edges facing the light sample outward, the far ones
+        // inward, and content is never dragged sideways along an edge.
+        const nl = nx * lx + ny * ly;
+        ex = (-nx * refraction + nl * nx * shift) * wgt / max;
+        ey = (-ny * refraction + nl * ny * shift) * wgt / max;
       }
       const i = (y * w + x) * 4;
-      d[i] = 128 - nx * m * 127;
-      d[i + 1] = 128 - ny * m * 127;
+      d[i] = 128 + ex * 127;
+      d[i + 1] = 128 + ey * 127;
       d[i + 2] = 128;
       d[i + 3] = 255;
     }
@@ -85,6 +106,16 @@ function buildMap(w: number, h: number, radius: number, bezel: number): string {
   const url = canvas.toDataURL();
   mapCache.set(key, url);
   return url;
+}
+
+/** Unit vector pointing from the element toward its light, from the CSS angle in
+ *  --liquid-light-angle (a gradient angle: 135deg = the gradient runs to the
+ *  bottom-right, so the light sits at the top-left). */
+function lightVector(el: Element): { lx: number; ly: number } {
+  const raw = getComputedStyle(el).getPropertyValue('--liquid-light-angle').trim();
+  const deg = parseFloat(raw);
+  const a = ((Number.isFinite(deg) ? deg : 135) * Math.PI) / 180;
+  return { lx: -Math.sin(a), ly: Math.cos(a) };
 }
 
 const num = (el: Element, name: string, fallback: number) => {
@@ -125,10 +156,13 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
       const k = bezel / tokenBezel;
       const next: Params = {
         w, h, radius, bezel,
-        refraction: Math.round(num(el, '--liquid-refraction', 30) * k),
-        dispersion: num(el, '--liquid-dispersion', 3) * k,
+        refraction: num(el, '--liquid-refraction', 2) * k,
+        dispersion: num(el, '--liquid-dispersion', 1) * k,
         frost: num(el, '--liquid-frost', 1.5),
         saturate: num(el, '--liquid-saturate', 1.5),
+        shift: num(el, '--liquid-shift', 0) * k,
+        profile: num(el, '--liquid-profile', 0),
+        ...lightVector(el),
       };
       setParams((prev) => (prev && (Object.keys(next) as (keyof Params)[]).every((k) => prev[k] === next[k]) ? prev : next));
     };
@@ -138,7 +172,7 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
     return () => ro.disconnect();
   }, [ref, refracting]);
 
-  const map = params ? buildMap(params.w, params.h, params.radius, params.bezel) : '';
+  const map = params ? buildMap(params.w, params.h, params.radius, params.bezel, params.refraction, params.shift, params.profile, params.lx, params.ly) : '';
 
   const onPointerMove = React.useCallback((e: React.PointerEvent<HTMLElement>) => {
     const el = e.currentTarget;
@@ -160,7 +194,7 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
         <feImage href={map} x="0" y="0" width={params.w} height={params.h} preserveAspectRatio="none" result="map" />
         {[0, 1, 2].map((c) => (
           <React.Fragment key={c}>
-            <feDisplacementMap in="SourceGraphic" in2="map" scale={params.refraction + c * params.dispersion} xChannelSelector="R" yChannelSelector="G" result={`d${c}`} />
+            <feDisplacementMap in="SourceGraphic" in2="map" scale={2 * (params.refraction + Math.abs(params.shift) + c * params.dispersion)} xChannelSelector="R" yChannelSelector="G" result={`d${c}`} />
             <feColorMatrix in={`d${c}`} type="matrix" values={channel(c)} result={`c${c}`} />
           </React.Fragment>
         ))}
@@ -187,6 +221,8 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
 export interface LiquidGlassProps extends React.HTMLAttributes<HTMLDivElement> {
   /** regular: text-safe tint (panels, sidebars, modals). clear: icons and large labels only. */
   variant?: LiquidGlassVariant;
+  /** How much of the backdrop shows through. Default 'auto' (follows `variant`). */
+  tint?: LiquidGlassTint;
   /** Corner radius in px. Default 20. */
   radius?: number;
   /** 'off' forces the frosted fallback. */
@@ -196,7 +232,7 @@ export interface LiquidGlassProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const LiquidGlass = React.forwardRef<HTMLDivElement, LiquidGlassProps>(
-  ({ variant = 'regular', radius = 20, refraction = 'auto', interactive, className, style, children, onPointerMove, ...rest }, forwarded) => {
+  ({ variant = 'regular', tint = 'auto', radius = 20, refraction = 'auto', interactive, className, style, children, onPointerMove, ...rest }, forwarded) => {
     const ref = React.useRef<HTMLDivElement | null>(null);
     const setRef = (el: HTMLDivElement | null) => {
       ref.current = el;
@@ -208,7 +244,7 @@ export const LiquidGlass = React.forwardRef<HTMLDivElement, LiquidGlassProps>(
         ref={setRef}
         {...rest}
         {...glass.props}
-        className={[styles.liquid, styles[variant], interactive ? styles.interactive : '', className ?? ''].filter(Boolean).join(' ')}
+        className={[styles.liquid, styles[variant], tint !== 'auto' ? styles[`tint-${tint}`] : '', interactive ? styles.interactive : '', className ?? ''].filter(Boolean).join(' ')}
         style={{ borderRadius: radius, ...glass.props.style, ...style }}
         onPointerMove={(e) => { glass.props.onPointerMove(e); onPointerMove?.(e); }}
       >
@@ -221,6 +257,7 @@ export const LiquidGlass = React.forwardRef<HTMLDivElement, LiquidGlassProps>(
 LiquidGlass.displayName = 'LiquidGlass';
 
 /** Class names for components that apply the material via the hook. */
-export const liquidGlassClass = (variant: LiquidGlassVariant = 'regular') => [styles.liquid, styles[variant]].join(' ');
+export const liquidGlassClass = (variant: LiquidGlassVariant = 'regular', tint: LiquidGlassTint = 'auto') =>
+  [styles.liquid, styles[variant], tint !== 'auto' ? styles[`tint-${tint}`] : ''].filter(Boolean).join(' ');
 
 export default LiquidGlass;

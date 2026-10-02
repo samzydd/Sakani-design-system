@@ -12,6 +12,17 @@
   -webkit-backdrop-filter: var(--surface-blur-overlay);
   backdrop-filter: var(--surface-blur-overlay);
 }
+
+/* Inside a liquid area the surface tokens are see-through (the container is
+   the material), so a menu would show whatever sits behind it straight through
+   its options. A menu is a text-first floating layer: it gets the frosted
+   glass overlay instead (82%-class fill plus a heavy blur). */
+:global([data-surface="liquid"]) .menu {
+  --surface-bg-overlay: var(--glass-bg-overlay);
+  --surface-blur-overlay: var(--glass-blur-overlay);
+  --surface-border-strong: var(--glass-border-strong);
+  --surface-highlight: var(--glass-highlight);
+}
 .divider {
   height: 1px;
   margin: var(--space-4) 0;

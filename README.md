@@ -90,7 +90,7 @@ Glass is built into the theme system, not added component by component. Next to 
 import { LiquidGlass } from '@sakaniui/react';
 
 <div style={{ position: 'relative', backgroundImage: 'url(photo.jpg)', backgroundSize: 'cover' }}>
-  <LiquidGlass variant="clear" radius={0} style={{ position: 'absolute', inset: 0 }} />
+  <LiquidGlass variant="regular" tint="subtle" radius={0} style={{ position: 'absolute', inset: 0 }} />
   <div data-surface="liquid" style={{ position: 'relative' }}>
     <Sidebar />                                  {/* transparent: sits on the glass */}
     <div data-surface="solid"><Card>…</Card></div> {/* data stays solid and crisp */}
@@ -102,7 +102,7 @@ The recipe is always the same three layers: **photo → one glass overlay → co
 
 - **Browsers** — refraction renders in Chromium (Chrome, Edge); Safari and Firefox get a frosted fallback with the same rim and depth.
 - **Accessible** — `prefers-reduced-transparency` turns glass into an opaque surface, `prefers-reduced-motion` stops the glare and glide; secondary text has its own stronger color token on glass, and the docs list measured contrast for every tint.
-- **Tunable** — strength, bend, frost, tint and color boost are `--liquid-*` tokens.
+- **Tunable** — bend, frost, tint and color boost are `--liquid-*` tokens, one set per variant (`--liquid-frost-regular`, `--liquid-frost-clear`, …); `tint="subtle"` is Figma's 5% overlay fill, and `data-on-photo` switches a subtree to light text.
 
 Docs: **[sakaniui.com/docs/glass](https://www.sakaniui.com/docs/glass)** · Storybook: *Foundations → Glass* and *Foundations → Liquid glass*.
 

@@ -47,3 +47,13 @@
   transition: background-color var(--transition-base);
 }
 .promo__cta:hover { background: var(--color-accent-hover); }
+
+/* On liquid glass the promo is clear glass: no card fill or border of its own,
+   and an outlined, see-through button (the lens or overlay behind is its card). */
+:global([data-surface="liquid"]) .promo { background: transparent; border-color: transparent; }
+:global([data-surface="liquid"]) .promo__cta {
+  background: transparent;
+  color: var(--color-fg-default);
+  border: 1px solid color-mix(in srgb, currentColor 70%, transparent);
+}
+:global([data-surface="liquid"]) .promo__cta:hover { background: color-mix(in srgb, currentColor 18%, transparent); }

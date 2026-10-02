@@ -2,6 +2,32 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.1
+
+**Liquid glass matches the Figma file.**
+
+- **`tint` prop on `LiquidGlass`** — `"regular" | "clear" | "subtle" | "none"`.
+  `subtle` is Figma's `glass/bg-subtle` (5% ink; 8% white in dark), the fill of
+  a full-bleed overlay over a photo. Defaults to the variant's own tint.
+- **One lens per variant.** `--liquid-refraction`, `-shift`, `-bezel`, `-profile`,
+  `-dispersion`, `-frost` and `-saturate` now have `-regular` and `-clear`
+  versions (Figma's two `liquid/*` effect styles), fitted against Figma's own
+  render. Set the unprefixed name on one element to override just that one.
+- **Directional lens, rim and depth.** The bend, the rim light and the inner
+  shading follow `--liquid-light-angle` (Figma's light, -45 degrees), so the lit
+  edges differ from the far edges as in Figma. New `--liquid-shift-*`
+  and `--liquid-profile-*` tokens.
+- **Figma's shadows** for both variants (`--liquid-shadow-regular|clear`) and
+  Figma's glass tint values (`.64 / .76 / .52`).
+- **New `--surface-fg-muted` token** (solid, glass and liquid), and
+  `data-on-photo`: light text for any subtree that sits straight on a photo.
+- Liquid scope defaults: the `Menu` is frosted, the active `SidebarItem` is flat
+  and `SidebarPromo` is transparent with an outlined button, so the dashboard
+  block no longer needs overrides for them.
+- Known difference: Figma's clear lens samples *outside* the element at its lit
+  edges. CSS `backdrop-filter` cannot read outside its own box, so the clear
+  variant's rim is an approximation.
+
 ## 0.4.0
 
 **Glass and liquid glass.**

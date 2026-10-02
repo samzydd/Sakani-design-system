@@ -1,5 +1,28 @@
 /* LiquidGlass — see LiquidGlass.tsx for the layer model. */
 
+/* Per-variant lens settings. :where() keeps the specificity at zero, so an
+   element (or a class on it) can still override --liquid-frost & co. */
+:where(.liquid.regular) {
+  --liquid-refraction: var(--liquid-refraction-regular);
+  --liquid-bezel: var(--liquid-bezel-regular);
+  --liquid-dispersion: var(--liquid-dispersion-regular);
+  --liquid-frost: var(--liquid-frost-regular);
+  --liquid-saturate: var(--liquid-saturate-regular);
+  --liquid-shift: var(--liquid-shift-regular);
+  --liquid-profile: var(--liquid-profile-regular);
+  --liquid-shadow: var(--liquid-shadow-regular);
+}
+:where(.liquid.clear) {
+  --liquid-refraction: var(--liquid-refraction-clear);
+  --liquid-bezel: var(--liquid-bezel-clear);
+  --liquid-dispersion: var(--liquid-dispersion-clear);
+  --liquid-frost: var(--liquid-frost-clear);
+  --liquid-saturate: var(--liquid-saturate-clear);
+  --liquid-shift: var(--liquid-shift-clear);
+  --liquid-profile: var(--liquid-profile-clear);
+  --liquid-shadow: var(--liquid-shadow-clear);
+}
+
 .liquid {
   position: relative;
   isolation: isolate;
@@ -10,6 +33,11 @@
    rules (e.g. Modal's .card background/shadow) when applied via the hook. */
 .liquid.regular { background: var(--liquid-tint-regular); }
 .liquid.clear { background: var(--liquid-tint-clear); }
+/* An explicit `tint` overrides the variant's own (declared after, same specificity). */
+.liquid.tint-regular { background: var(--liquid-tint-regular); }
+.liquid.tint-clear { background: var(--liquid-tint-clear); }
+.liquid.tint-subtle { background: var(--liquid-tint-subtle); }
+.liquid.tint-none { background: transparent; }
 
 /* Frosted fallback: Safari/Firefox (no SVG backdrop filters) or refraction off. */
 .liquid[data-refraction='off'] {
@@ -17,8 +45,8 @@
   backdrop-filter: var(--liquid-fallback-blur);
 }
 
-/* Rim light: a 1px ring (masked to the border area) whose brightness follows
-   the light angle — brightest where the light hits, a softer bounce opposite. */
+/* Rim light: a 1px ring (masked to the border area) that follows the light
+   angle — brightest on the edges facing the light, a thinner bounce on the far ones. */
 .liquid::before {
   content: '';
   position: absolute;
@@ -32,8 +60,8 @@
     var(--liquid-rim-soft) 22%,
     transparent 42%,
     transparent 62%,
-    var(--liquid-rim-soft) 88%,
-    var(--liquid-rim) 100%
+    var(--liquid-rim-far-soft) 88%,
+    var(--liquid-rim-far) 100%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -72,7 +100,11 @@
 /* Reduce transparency: a plain, opaque surface — no tint, blur or refraction. */
 @media (prefers-reduced-transparency: reduce) {
   .liquid.regular,
-  .liquid.clear {
+  .liquid.clear,
+  .liquid.tint-regular,
+  .liquid.tint-clear,
+  .liquid.tint-subtle,
+  .liquid.tint-none {
     background: var(--color-bg-surface);
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;

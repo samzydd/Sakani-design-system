@@ -136,14 +136,14 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
   return (
     <div className={[styles.root, className ?? ''].filter(Boolean).join(' ')} style={{ backgroundImage: `url(${backgroundImage})` }}>
       {/* 2 · the one glass sheet over the photo */}
-      <LiquidGlass variant="clear" radius={0} className={`${styles.overlay} ${styles.inkTint}`} />
+      <LiquidGlass variant="regular" tint="subtle" radius={0} className={styles.overlay} />
 
       <div className={styles.shell}>
         {/* 3 · chrome: transparent, borrows the overlay's glass */}
         <div data-surface="liquid" className={`${styles.sidebarWrap} ${collapsed ? "" : styles.expanded}`}>
           <Sidebar collapsed={collapsed}>
             {/* The design sets the header's text to fg/on-inverse: it sits over the sky. */}
-            <div className={styles.onPhoto}>
+            <div data-on-photo>
               <SidebarHeader
                 type="brand-toggle"
                 title="csakani"
@@ -219,8 +219,8 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
               ))}
             </div>
             {!collapsed && (
-              <div className={`${styles.promoWrap} ${styles.onPhoto}`}>
-                <LiquidGlass variant="clear" radius={16} className={styles.inkTint}>
+              <div className={styles.promoWrap} data-on-photo>
+                <LiquidGlass variant="clear" tint="subtle" radius={16}>
                   <SidebarPromo
                     title="Upgrade to Pro"
                     description="Unlock unlimited projects and advanced analytics."
@@ -233,7 +233,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
         </div>
 
         <div className={styles.main}>
-          <div data-surface="liquid" className={styles.onPhoto}>
+          <div data-surface="liquid" data-on-photo>
             <TopBar
               type="minimal"
               showToggle={false}
