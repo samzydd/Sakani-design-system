@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { House, Inbox, ListChecks, Settings, Bold, Italic, Underline, Link2, Image as ImageIcon, Sparkles } from 'lucide-react';
-import { LiquidGlass } from '../lib/LiquidGlass';
+import { type LiquidGlassEffect, LiquidGlass } from '../lib/LiquidGlass';
 import { Button } from '../components/Button';
 import { IconButton } from '../components/IconButton';
 import { Sidebar } from '../components/Sidebar';
@@ -127,13 +127,13 @@ export const SafariFallbackDark: Story = { name: 'Safari fallback (dark)', rende
  *
  * Probes (&args=probe:y or probe:x): the grid becomes black-to-white ramps
  * across each edge and the tint, rim and depth are hidden, so a pixel's
- * brightness says exactly where the lens sampled it from. Render the same
- * ramps behind the Figma panels (Glass light intensity 0) to read Figma's
- * bend profile the same way; probeLight:!true keeps the rim and depth, to
- * compare the lighting against Figma's at its real light intensity.
+ * brightness says exactly where the lens sampled it from (set reg.light:0;
+ * clr.light:0). Render the same ramps behind the Figma panels (light 0) to read
+ * Figma's bend the same way. probe:flat is plain grey, to compare what the
+ * light adds.
  */
-type Lens = { refraction: number; bezel: number; dispersion: number; frost: number; saturate: number; shift: number; profile: number; tint: number };
-type CalibrationArgs = { reg: Lens; clr: Lens; probe?: 'grid' | 'y' | 'x'; probeLight?: boolean };
+type Lens = { refraction: number; depth: number; dispersion: number; frost: number; light: number; tint: number };
+type CalibrationArgs = { reg: Lens; clr: Lens; probe?: 'grid' | 'y' | 'x' | 'flat' };
 
 /** Probe backdrops: black-to-white ramps across each edge, as in the Figma probe frames,
  *  so the colour of every pixel in a lens says where the lens sampled it from. */
@@ -147,20 +147,20 @@ const PROBE = {
 };
 
 /** One lens as inline custom properties, so a fitting script can drive it from the URL
- *  (&args=reg.frost:2;clr.shift:6). Defaults = the shipped tokens. */
+ *  (&args=clr.depth:30;reg.light:0). Values are Figma's Glass properties; defaults =
+ *  the shipped tokens (the liquid/regular and liquid/clear effect styles). */
 const lensVars = (l: Lens) => ({
-  '--liquid-refraction': l.refraction, '--liquid-bezel': l.bezel, '--liquid-dispersion': l.dispersion,
-  '--liquid-frost': l.frost, '--liquid-saturate': l.saturate, '--liquid-shift': l.shift, '--liquid-profile': l.profile,
+  '--liquid-refraction': l.refraction, '--liquid-depth': l.depth, '--liquid-dispersion': l.dispersion,
+  '--liquid-frost': l.frost, '--liquid-light-intensity': l.light,
   background: `rgba(255, 255, 255, ${l.tint})`,
 });
 
 export const Calibration: StoryObj<CalibrationArgs> = {
   parameters: { layout: 'fullscreen' },
   args: {
-    reg: { refraction: 12.6, bezel: 14, dispersion: 0.25, frost: 1.8, saturate: 1, shift: 1.6, profile: 0, tint: 0.66 },
-    clr: { refraction: 26.2, bezel: 16, dispersion: 0.9, frost: 0.65, saturate: 1, shift: 2.26, profile: 0, tint: 0.28 },
+    reg: { refraction: 0.55, depth: 16, dispersion: 0.3, frost: 4, light: 0.7, tint: 0.66 },
+    clr: { refraction: 0.8, depth: 20, dispersion: 0.4, frost: 1, light: 0.8, tint: 0.28 },
     probe: 'grid',
-    probeLight: false,
   },
   render: (a) => {
     const panel = (left: number, top: number, width: number, height: number, l: Lens) =>
@@ -168,16 +168,14 @@ export const Calibration: StoryObj<CalibrationArgs> = {
     return (
       <div
         data-probe={a.probe && a.probe !== 'grid' ? a.probe : undefined}
-        style={a.probe === 'y' || a.probe === 'x' ? { position: 'relative', width: 1000, height: 600, overflow: 'hidden', background: PROBE[a.probe] } : {
+        style={a.probe === 'y' || a.probe === 'x' || a.probe === 'flat' ? { position: 'relative', width: 1000, height: 600, overflow: 'hidden', background: a.probe === 'flat' ? '#808080' : PROBE[a.probe] } : {
           position: 'relative', width: 1000, height: 600, overflow: 'hidden', background: '#fff',
           backgroundImage: 'linear-gradient(to right, #000 2px, transparent 2px), linear-gradient(#000 2px, transparent 2px)',
           backgroundSize: '16px 16px',
         }}
       >
-        {/* In a probe, only the bend shows: no tint, rim, depth, shadow or glare. */}
-        <style>{a.probeLight
-          ? '[data-probe] [data-surface="liquid"] { background: transparent !important; box-shadow: var(--liquid-depth) !important; } [data-probe] [data-surface="liquid"]::after { display: none; }'
-          : '[data-probe] [data-surface="liquid"] { background: transparent !important; box-shadow: none !important; } [data-probe] [data-surface="liquid"]::before, [data-probe] [data-surface="liquid"]::after { display: none; }'}</style>
+        {/* In a probe, only the Glass effect shows: no tint, shadow or glare. */}
+        <style>{'[data-probe] [data-surface="liquid"] { background: transparent !important; box-shadow: none !important; } [data-probe] [data-surface="liquid"]::before, [data-probe] [data-surface="liquid"]::after { display: none; }'}</style>
         <LiquidGlass variant="regular" radius={28} style={panel(100, 100, 400, 200, a.reg)} />
         <LiquidGlass variant="clear" radius={28} style={panel(100, 340, 400, 200, a.clr)} />
         <LiquidGlass variant="regular" radius={28} style={panel(600, 172, 200, 56, a.reg)} />
@@ -226,4 +224,53 @@ export const PhotoBackdrop: StoryObj = {
       </div>
     </div>
   ),
+};
+
+/**
+ * Glass sweep — the code twin of the Figma probe frames used to measure the
+ * Glass effect: each panel sets ONE Figma property (via `effect`), over a
+ * gradient (displacement), a black/white step (frost) or flat grey (light).
+ * Screenshot at 1x and measure both the same way (&args=sheet:frost).
+ */
+type SweepPanel = { k: string; x: number; y: number; w: number; h: number; radius?: number; e: Partial<LiquidGlassEffect> };
+const base: LiquidGlassEffect = { refraction: 0.8, depth: 20, dispersion: 0, frost: 0, lightIntensity: 0, lightAngle: -45 };
+const sweepSheets = (() => {
+  const disp: SweepPanel[] = [
+    ...[0.2, 0.4, 0.6, 0.8, 1].map((v) => ({ k: `refraction=${v}`, e: { refraction: v } })),
+    ...[5, 10, 15, 30, 40].map((v) => ({ k: `depth=${v}`, e: { depth: v } })),
+    ...[0.2, 0.4, 0.8, 1].map((v) => ({ k: `dispersion=${v}`, e: { dispersion: v } })),
+    { k: 'pill', e: {}, h: 56 },
+    { k: 'reg', e: { refraction: 0.55, depth: 16 } },
+  ].map((o, i) => ({ k: o.k, x: 40 + (i % 4) * 290, y: 40 + Math.floor(i / 4) * 170, w: 240, h: (o as { h?: number }).h ?? 100, e: o.e }));
+  const frost: SweepPanel[] = [0, 1, 2, 4, 8].map((v, i) => ({ k: `frost=${v}`, x: 40 + i * 230, y: 40, w: 200, h: 120, e: { frost: v, refraction: 0, depth: 1 } }));
+  const light: SweepPanel[] = [
+    ...[0, 0.2, 0.4, 0.8, 1].map((v) => ({ k: `light=${v}`, e: { lightIntensity: v } })),
+    ...[45, 135, -135, 0, 90].map((a) => ({ k: `angle=${a}`, e: { lightIntensity: 0.8, lightAngle: a } })),
+  ].map((o, i) => ({ k: o.k, x: 40 + (i % 5) * 230, y: 40 + Math.floor(i / 5) * 240, w: 200, h: 160, e: o.e }));
+  const light2: SweepPanel[] = [
+    { k: 'd10', e: { depth: 10 } }, { k: 'd40', e: { depth: 40 } }, { k: 'r0.2', e: { refraction: 0.2 } }, { k: 'r1', e: { refraction: 1 } }, { k: 'r16', e: {}, radius: 16 },
+  ].map((o, i) => ({ k: o.k, x: 40 + i * 230, y: 40, w: 200, h: 200, radius: (o as { radius?: number }).radius, e: { lightIntensity: 0.8, lightAngle: 0, ...o.e } }));
+  return { disp, frost, light, light2 };
+})();
+
+export const GlassSweep: StoryObj<{ sheet: keyof typeof sweepSheets }> = {
+  name: 'Glass sweep (measurement)',
+  parameters: { layout: 'fullscreen' },
+  args: { sheet: 'disp' },
+  render: ({ sheet }) => {
+    const panels = sweepSheets[sheet];
+    const size = { disp: [1200, 900], frost: [1200, 200], light: [1200, 520], light2: [1200, 280] }[sheet];
+    const ramps = sheet === 'disp'
+      ? [0, 1, 2, 3].map((r) => `linear-gradient(to bottom, #000, #fff) 0 ${10 + r * 170}px / 100% 160px no-repeat`).join(', ') + ', #808080'
+      : sheet === 'frost' ? 'linear-gradient(#fff 0 100px, #000 100px 200px)' : '#808080';
+    return (
+      <div data-probe="sweep" style={{ position: 'relative', width: size[0], height: size[1], overflow: 'hidden', background: ramps }}>
+        <style>{'[data-probe] [data-surface="liquid"] { background: transparent !important; box-shadow: none !important; } [data-probe] [data-surface="liquid"]::before, [data-probe] [data-surface="liquid"]::after { display: none; }'}</style>
+        {panels.map((p) => (
+          <LiquidGlass key={p.k} variant="clear" tint="none" radius={p.radius ?? 28} effect={{ ...base, ...p.e }}
+            style={{ position: 'absolute', left: p.x, top: p.y, width: p.w, height: p.h }} />
+        ))}
+      </div>
+    );
+  },
 };

@@ -4,29 +4,44 @@ All notable changes to `@sakaniui/react` are documented here.
 
 ## 0.4.2
 
-**Liquid glass, measured from Figma.**
+**Liquid glass speaks Figma: the same Glass properties, the same values, the same result.**
 
-- **The lens is measured, not eyeballed.** A gradient backdrop behind Figma's
-  Glass effect shows, pixel by pixel, where it samples from; the `--liquid-*`
-  lens tokens now reproduce that field to about half a pixel on every edge.
-  The clear lens is much stronger near the rim (refraction 26.2, bezel 16),
-  which draws Figma's magnified band along the edges and round the corners.
-- **Correction to 0.4.1:** Figma's lens does not sample outside the element.
-  Every edge bends inward; the lit edges just a little less. The 0.4.1 note
-  about an approximate clear rim no longer applies.
-- **Frost before the bend**, as in Figma, so the rim stays sharp; frost is
-  now 1.8 (regular) and 0.65 (clear). No color boost (`--liquid-saturate` 1).
-- **Color fringe in Figma's order:** red bends most, blue least.
-- **Rim light all the way round:** a 1px ring at about Figma's brightness
-  (lit edges a little brighter), instead of a diagonal gradient that faded
-  out along the sides. Depth is a faint shade inside the lit edges and a
-  faint glow inside the far ones. Rim and depth are the same in dark mode,
-  like Figma's effect styles.
-- `LiquidDashboardBlock`: the active sidebar lens uses the library's clear
-  lens as is (its own overrides are gone, and it matches Figma better).
-- Known difference: Figma's glass reads the original photo below it, so a
-  lens stacked over another lens (the dashboard's promo card over the
-  overlay) is sharp in Figma; in a browser it sees the overlay's frost.
+- **`LiquidGlass` now takes Figma's Glass effect properties directly**, in
+  Figma's units: refraction, depth, dispersion, frost, light intensity and
+  light angle. The tokens are the liquid/regular and liquid/clear effect
+  styles as they are in Figma:
+  `--liquid-refraction-regular|clear` (0.55 | 0.8), `--liquid-depth-*`
+  (16 | 20), `--liquid-dispersion-*` (0.3 | 0.4), `--liquid-frost-*` (4 | 1),
+  `--liquid-light-intensity-*` (0.7 | 0.8) and `--liquid-light-angle` (-45).
+  Per element: `<LiquidGlass effect={{ refraction: 0.8, depth: 20, dispersion: 0.4, frost: 1 }}>`.
+- **Measured, property by property.** Each Figma property was swept on its
+  own over gradient, step and flat-grey backdrops, and the code reproduces
+  every probe: the bend within 0.3px on average (all refraction, depth and
+  dispersion values), the frost blur within 0.3px, the light within half a
+  brightness level. How each property behaves:
+  - Refraction × depth sets the bend; depth also sets how far in it reaches
+    (0.8 × depth px). The steep fall near the rim folds the content just
+    inside into the magnified band along the edges and round the corners.
+  - Dispersion splits the color: red bends more, blue less.
+  - Frost blurs the backdrop before it is bent.
+  - Light is added on top: a 1px rim, strongest on edges that face the
+    light (none on edges side-on to it), plus a shade inside the lit edges
+    and a glow inside the far ones. It is drawn in the filter now, so it adds
+    light like Figma instead of laying white over the backdrop.
+- **Correction to 0.4.1:** Figma's lens never samples outside the element, and
+  every edge bends the same way (with the light off). The 0.4.1 note about an
+  approximate clear rim no longer applies.
+- **Breaking (tokens published in 0.4.1):** `--liquid-bezel-*`,
+  `--liquid-shift-*`, `--liquid-profile-*` and `--liquid-saturate-*` are gone
+  (Figma has no such properties); `--liquid-depth` is now Figma's Depth, and the
+  old inset-shadow token is `--liquid-edge-shade` (Safari/Firefox fallback
+  only). `--liquid-light-angle` is Figma's angle in degrees (-45), not a CSS
+  gradient angle.
+- `LiquidDashboardBlock`: the active sidebar lens uses the library's clear lens
+  as is.
+- Known difference: Figma's glass reads the original photo below it, so a lens
+  stacked over another lens (the dashboard's promo card over the overlay) is
+  sharp in Figma; in a browser it sees the lower lens's frost.
 
 ## 0.4.1
 
