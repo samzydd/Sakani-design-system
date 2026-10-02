@@ -60,6 +60,8 @@
   background-repeat: no-repeat;
   will-change: transform;
 }
+.sourceCanvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.probe { position: absolute; width: 0; height: 0; overflow: hidden; }
 .fill {
   position: absolute;
   inset: 0;

@@ -144,7 +144,7 @@ function buildMaps(p: Params): { map: string; light: string } {
  * LiquidBackdrop: the image behind the glass, shared with every lens inside.
  * ------------------------------------------------------------------------- */
 
-interface Backdrop { image: string; size: string; position: string; rootRef: React.RefObject<HTMLElement | null> }
+interface Backdrop { src: string; veil?: string; image: string; size: string; position: string; rootRef: React.RefObject<HTMLElement | null> }
 const BackdropContext = React.createContext<Backdrop | null>(null);
 
 export interface LiquidBackdropProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -168,7 +168,7 @@ export const LiquidBackdrop = React.forwardRef<HTMLDivElement, LiquidBackdropPro
     };
     const image = veil ? `linear-gradient(${veil}, ${veil}), url("${src}")` : `url("${src}")`;
     const size = veil ? '100% 100%, cover' : 'cover';
-    const value = React.useMemo<Backdrop>(() => ({ image, size, position, rootRef }), [image, size, position]);
+    const value = React.useMemo<Backdrop>(() => ({ src, veil, image, size, position, rootRef }), [src, veil, image, size, position]);
     return (
       <div ref={setRef} {...rest} style={{ backgroundImage: image, backgroundSize: size, backgroundPosition: position, backgroundRepeat: 'no-repeat', ...style }}>
         <BackdropContext.Provider value={value}>{children}</BackdropContext.Provider>
@@ -205,6 +205,8 @@ function follow(update: () => boolean) {
     for (const type of ['transitionrun', 'transitionend', 'animationstart', 'animationend', 'pointerdown', 'pointerup']) {
       document.addEventListener(type, wakeFollowers, true);
     }
+    // A theme flip changes colors (the veil) without moving anything.
+    new MutationObserver(wakeFollowers).observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'data-theme'], subtree: true });
   }
   followers.add(update);
   update();
@@ -220,6 +222,34 @@ export function syncLiquidBackdrop() {
   wakeFollowers();
 }
 
+const images = new Map<string, Promise<HTMLImageElement>>();
+function loadImage(src: string) {
+  let p = images.get(src);
+  if (!p) {
+    p = new Promise((resolve, reject) => {
+      const img = new Image();
+      img.decoding = 'async';
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+      img.src = src;
+    });
+    images.set(src, p);
+  }
+  return p;
+}
+
+/** "center 35%" -> fractions [x, y] for a cover-fitted background. */
+function positionFractions(pos: string): [number, number] {
+  const word: Record<string, number> = { left: 0, top: 0, center: 0.5, right: 1, bottom: 1 };
+  const parts = pos.trim().split(/\s+/);
+  const f = (v: string | undefined) => (v === undefined ? 0.5 : v in word ? word[v] : v.endsWith('%') ? parseFloat(v) / 100 : 0.5);
+  if (parts.length === 1 && (parts[0] === 'top' || parts[0] === 'bottom')) return [0.5, f(parts[0])];
+  return [f(parts[0]), f(parts[1])];
+}
+
+/** Lenses bigger than this (in CSS px²) bake their glass into a canvas. */
+const BAKE_AREA = 300 * 300;
+
 const num = (el: Element, name: string, fallback: number) => {
   const v = parseFloat(getComputedStyle(el).getPropertyValue(name));
   return Number.isFinite(v) ? v : fallback;
@@ -234,13 +264,17 @@ export interface UseLiquidGlassOptions {
   /** Inside a <LiquidBackdrop>, refract its image (default). Pass false for an
    *  element that floats over other UI (Modal's card sits over a scrim). */
   source?: boolean;
+  /** Inside a <LiquidBackdrop>: 'auto' (default) bakes lenses bigger than 300×300
+   *  into a canvas once (they don't move); false keeps the filter live (a big lens
+   *  you animate or drag); true always bakes. */
+  bake?: boolean | 'auto';
 }
 
 /**
  * The material as a hook, for components that own their element (Modal's
  * card). Spread `props` onto the element and render `filter` inside it.
  */
-export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabled = true, refraction = 'auto', watch = '', source = true }: UseLiquidGlassOptions = {}) {
+export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabled = true, refraction = 'auto', watch = '', source = true, bake = 'auto' }: UseLiquidGlassOptions = {}) {
   const rawId = React.useId();
   const id = `liquid-${rawId.replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const [params, setParams] = React.useState<Params | null>(null);
@@ -300,31 +334,88 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
 
   const on = refracting && !!params && !!maps?.map;
 
-  // Source mode: place this lens's copy of the backdrop exactly over the real one
-  // (in the lens's own coordinates, so a lens squished by a transform still lines up).
+  // Big lenses (a full-screen overlay, a main panel) don't move, but a live SVG
+  // filter over a full-screen element is re-evaluated whenever anything near it
+  // repaints -- a hover in the sidebar drops the page to ~15fps. So a big lens
+  // runs the same filter ONCE, into a canvas, and shows that; it re-bakes only
+  // when its size, position, theme or glass properties change. Small lenses (the
+  // ones that glide) keep the live filter.
+  const baked = sourced && !!params && (bake === 'auto' ? params.w * params.h > BAKE_AREA : bake);
+  const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
+  const probeRef = React.useRef<HTMLSpanElement | null>(null);
+  const bakeGen = React.useRef(0);
+
+  // Source mode: keep this lens's copy of the backdrop exactly over the real one
+  // (in the lens's own coordinates, so a lens squished by a transform still lines
+  // up) -- or, for a baked lens, re-bake when that placement changes.
   React.useLayoutEffect(() => {
     const el = ref.current;
-    if (!sourced || !on || !el || !backdrop) return undefined;
+    if (!sourced || !on || !el || !backdrop || !params || !maps) return undefined;
     let last = '';
     let waits = 0;
+    let lastBake = 0;
+    let pending = 0;
+    const bake = (x: number, y: number, bw: number, bh: number, veil: string) => {
+      const gen = ++bakeGen.current;
+      loadImage(backdrop.src).then((img) => {
+        const canvas = canvasRef.current, filterEl = document.getElementById(`${id}-bake`);
+        if (gen !== bakeGen.current || !canvas || !filterEl) return;
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        const W = Math.round(params.w * dpr), H = Math.round(params.h * dpr);
+        const src = document.createElement('canvas');
+        src.width = W; src.height = H;
+        const sctx = src.getContext('2d');
+        const ctx = canvas.getContext('2d');
+        if (!sctx || !ctx) return;
+        // The backdrop as the page draws it: cover-fitted to the backdrop box, at
+        // its background-position, then the veil.
+        sctx.scale(dpr, dpr);
+        sctx.translate(x, y);
+        const k = Math.max(bw / img.naturalWidth, bh / img.naturalHeight);
+        const dw = img.naturalWidth * k, dh = img.naturalHeight * k;
+        const [fx, fy] = positionFractions(backdrop.position);
+        sctx.drawImage(img, (bw - dw) * fx, (bh - dh) * fy, dw, dh);
+        if (veil && veil !== 'rgba(0, 0, 0, 0)' && veil !== 'transparent') { sctx.fillStyle = veil; sctx.fillRect(0, 0, bw, bh); }
+        canvas.width = W; canvas.height = H;
+        ctx.filter = `url(#${id}-bake)`;
+        ctx.drawImage(src, 0, 0);
+        ctx.filter = 'none';
+      }).catch(() => { /* the image failed: the tint alone still shows */ });
+    };
     return follow(() => {
       // The backdrop's ref attaches after its children's layout effects, so on the
       // first frames it may not be there yet: keep the loop awake until it is.
-      const copy = copyRef.current, root = backdrop.rootRef.current;
-      if (!copy || !root) return ++waits < 120;
+      const root = backdrop.rootRef.current;
+      const copy = copyRef.current;
+      if (!root || (!baked && !copy) || (baked && !canvasRef.current)) return ++waits < 120;
       const r = el.getBoundingClientRect(), b = root.getBoundingClientRect();
       const sx = el.offsetWidth ? r.width / el.offsetWidth : 1;
       const sy = el.offsetHeight ? r.height / el.offsetHeight : 1;
       const x = (b.left - r.left) / sx, y = (b.top - r.top) / sy, w = b.width / sx, h = b.height / sy;
-      const key = `${x.toFixed(2)},${y.toFixed(2)},${w.toFixed(2)},${h.toFixed(2)}`;
+      let veil = '';
+      if (baked && backdrop.veil && probeRef.current) {
+        probeRef.current.style.backgroundColor = backdrop.veil;
+        veil = getComputedStyle(probeRef.current).backgroundColor;
+      }
+      const key = `${x.toFixed(2)},${y.toFixed(2)},${w.toFixed(2)},${h.toFixed(2)},${veil}`;
       if (key === last) return false;
       last = key;
-      copy.style.width = `${w}px`;
-      copy.style.height = `${h}px`;
-      copy.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      if (baked) {
+        // While it keeps changing (a window resize), bake at most every 120ms, and
+        // once more when it settles.
+        const now = performance.now();
+        clearTimeout(pending);
+        if (now - lastBake > 120) { lastBake = now; bake(x, y, w, h, veil); }
+        else pending = window.setTimeout(() => { lastBake = performance.now(); bake(x, y, w, h, veil); }, 130);
+      } else if (copy) {
+        copy.style.width = `${w}px`;
+        copy.style.height = `${h}px`;
+        copy.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      }
       return true;
     });
-  }, [sourced, on, backdrop, ref]);
+  }, [sourced, on, backdrop, ref, baked, params, maps, id]);
+
   const channel = (row: number) => {
     const m = Array(20).fill(0);
     m[row * 5 + row] = 1; m[18] = 1; // keep one channel + alpha
@@ -355,19 +446,56 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
     </svg>
   ) : null;
 
+  // The same filter at device-pixel scale, for baking into a canvas.
+  const dpr = typeof window !== 'undefined' ? Math.min(2, window.devicePixelRatio || 1) : 1;
+  const bakeFilter = baked && params && maps ? (() => {
+    const W = Math.round(params.w * dpr), H = Math.round(params.h * dpr);
+    return (
+      <svg className={styles.defs} width="0" height="0" aria-hidden="true" focusable="false">
+        <filter id={`${id}-bake`} x="0" y="0" width={W} height={H} filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feImage href={maps.map} x="0" y="0" width={W} height={H} preserveAspectRatio="none" result="map" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation={params.frost * dpr} edgeMode="duplicate" result="frost" />
+          {[0, 1, 2].map((c) => (
+            <React.Fragment key={c}>
+              <feDisplacementMap in="frost" in2="map" scale={2 * params.bend * dpr * (1 + (1 - c) * params.spread)} xChannelSelector="R" yChannelSelector="G" result={`d${c}`} />
+              <feColorMatrix in={`d${c}`} type="matrix" values={channel(c)} result={`c${c}`} />
+            </React.Fragment>
+          ))}
+          <feBlend in="c0" in2="c1" mode="screen" result="c01" />
+          <feBlend in="c01" in2="c2" mode="screen" result="bent" />
+          {params.intensity > 0 && <>
+            <feImage href={maps.light} x="0" y="0" width={W} height={H} preserveAspectRatio="none" result="light" />
+            <feComposite in="bent" in2="light" operator="arithmetic" k1={0} k2={1} k3={1} k4={-128 / 255} />
+          </>}
+        </filter>
+      </svg>
+    );
+  })() : null;
+
   // Source mode draws the glass itself: the backdrop copy through the filter (the
   // copy fills the square box, the clip rounds the result, so the bend never pulls
-  // in empty corners), then the tint over it.
+  // in empty corners), then the tint over it. A big lens shows its baked canvas.
   const layers = on && sourced && backdrop ? (
-    <>
-      {filter}
-      <span className={styles.sourceClip} aria-hidden="true">
-        <span className={styles.source} style={{ filter: `url(#${id})` }}>
-          <span ref={copyRef} className={styles.sourceImage} style={{ backgroundImage: backdrop.image, backgroundSize: backdrop.size, backgroundPosition: backdrop.position }} />
+    baked ? (
+      <>
+        {bakeFilter}
+        <span className={styles.sourceClip} aria-hidden="true">
+          <canvas ref={canvasRef} className={styles.sourceCanvas} />
+          <span ref={probeRef} className={styles.probe} />
         </span>
-      </span>
-      <span className={styles.fill} aria-hidden="true" />
-    </>
+        <span className={styles.fill} aria-hidden="true" />
+      </>
+    ) : (
+      <>
+        {filter}
+        <span className={styles.sourceClip} aria-hidden="true">
+          <span className={styles.source} style={{ filter: `url(#${id})` }}>
+            <span ref={copyRef} className={styles.sourceImage} style={{ backgroundImage: backdrop.image, backgroundSize: backdrop.size, backgroundPosition: backdrop.position }} />
+          </span>
+        </span>
+        <span className={styles.fill} aria-hidden="true" />
+      </>
+    )
   ) : filter;
 
   return {
@@ -398,6 +526,9 @@ export interface LiquidGlassProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Inside a <LiquidBackdrop>: true (default) refracts the backdrop image;
    *  false bends whatever is painted below instead (UI under a slider knob). */
   source?: boolean;
+  /** 'auto' (default): inside a LiquidBackdrop, lenses over 300×300 bake their glass
+   *  once (fast; for surfaces that stay put). false: always live (a big lens that moves). */
+  bake?: boolean | 'auto';
   /** Squish slightly when pressed (buttons, toolbar pills). */
   interactive?: boolean;
 }
@@ -416,13 +547,13 @@ const effectVars = (e?: Partial<LiquidGlassEffect>): React.CSSProperties => {
 };
 
 export const LiquidGlass = React.forwardRef<HTMLDivElement, LiquidGlassProps>(
-  ({ variant = 'regular', tint = 'auto', radius = 20, refraction = 'auto', effect, source = true, interactive, className, style, children, onPointerMove, ...rest }, forwarded) => {
+  ({ variant = 'regular', tint = 'auto', radius = 20, refraction = 'auto', effect, source = true, bake = 'auto', interactive, className, style, children, onPointerMove, ...rest }, forwarded) => {
     const ref = React.useRef<HTMLDivElement | null>(null);
     const setRef = (el: HTMLDivElement | null) => {
       ref.current = el;
       if (typeof forwarded === 'function') forwarded(el); else if (forwarded) forwarded.current = el;
     };
-    const glass = useLiquidGlass(ref, { refraction, source, watch: effect ? JSON.stringify(effect) : '' });
+    const glass = useLiquidGlass(ref, { refraction, source, bake, watch: effect ? JSON.stringify(effect) : '' });
     return (
       <div
         ref={setRef}
