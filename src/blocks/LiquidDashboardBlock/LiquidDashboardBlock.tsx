@@ -26,7 +26,7 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import {
   LayoutPanelTop, ChartColumnBig, CircleUser, Boxes, Megaphone, ChartPie, Settings2,
-  UsersRound, PlugZap, Settings, PanelRightClose,
+  UsersRound, PlugZap, Settings, PanelRightClose, PanelRightOpen,
 } from 'lucide-react';
 import { LiquidGlass, LiquidBackdrop, syncLiquidBackdrop } from '../../lib/LiquidGlass';
 import { SakaniLogo } from '../../lib/SakaniLogo';
@@ -252,7 +252,7 @@ export const LiquidDashboardBlock: React.FC<LiquidDashboardBlockProps> = ({ back
                 logo={<span className={styles.logoDark}><SakaniLogo /></span>}
                 collapsed={collapsed}
                 onToggle={() => { userToggled.current = true; setCollapsed((c) => !c); }}
-                toggleIcon={PanelRightClose}
+                toggleIcon={collapsed ? PanelRightOpen : PanelRightClose}
               />
             </div>
             <div

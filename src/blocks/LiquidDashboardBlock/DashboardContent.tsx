@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { Package, Warehouse, FileText, Megaphone, Building2, TrendingUp, ChevronRight } from 'lucide-react';
 import { StatCard } from '../../components/StatCard';
 import { BarChart } from '../../components/BarChart';
@@ -112,7 +112,7 @@ export interface DashboardContentProps {
   people?: Partial<Record<PersonKey, string>>;
 }
 
-export function DashboardContent({ people = {} }: DashboardContentProps) {
+function DashboardContentImpl({ people = {} }: DashboardContentProps) {
   const [revenue, setRevenue] = useState(INITIAL_REVENUE);
   const [growth, setGrowth] = useState(INITIAL_GROWTH);
   const [channels, setChannels] = useState(INITIAL_CHANNELS);
@@ -241,3 +241,7 @@ export function DashboardContent({ people = {} }: DashboardContentProps) {
     </>
   );
 }
+
+/** Memoized: the sidebar toggles, lens measurements and hover state re-render the block
+ *  many times a second, and none of it touches these charts and tables. */
+export const DashboardContent = memo(DashboardContentImpl);

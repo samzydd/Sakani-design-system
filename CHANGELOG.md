@@ -2,6 +2,17 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## Unreleased
+
+- **Faster sidebar toggle in the dashboard.** Collapsing or expanding the sidebar used
+  to drop frames (a 367ms frame and 200ms+ tasks on expand): the main glass panel
+  rebuilt its megapixel displacement map on every animation frame and the charts
+  re-rendered with it. Lens maps are now built only along the edges, big lenses settle
+  before re-measuring, and the dashboard content is memoized. Worst frame: 33ms, no
+  long tasks. Output is pixel-identical.
+- **Collapsed rail:** hovering anywhere on the rail turns the logo into the "open
+  sidebar" button (it cross-fades), not only hovering the logo itself.
+
 ## 0.4.2
 
 **Liquid glass speaks Figma: the same Glass properties, the same values, the same result.**

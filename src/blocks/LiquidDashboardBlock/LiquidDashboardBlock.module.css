@@ -29,6 +29,23 @@
 }
 
 .sidebarWrap { display: flex; flex-shrink: 0; }
+
+/* Collapsed rail: hovering (or focusing) anywhere on it turns the logo into the
+   "open sidebar" button, so you don't have to aim at the logo. The two glyphs sit in
+   one grid cell and cross-fade. (The library swaps them only under the logo itself.) */
+.sidebarWrap [class*='header__logo']:has(> [class*='header__logoContent']) { display: grid; place-items: center; }
+.sidebarWrap [class*='header__logoContent'],
+.sidebarWrap [class*='header__logoIcon'] {
+  grid-area: 1 / 1;
+  display: inline-flex !important;
+  transition: opacity 140ms ease, transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sidebarWrap [class*='header__logoIcon'] { opacity: 0; transform: scale(0.6); }
+.sidebarWrap:is(:hover, :focus-within) [class*='header__logoContent'] { opacity: 0; transform: scale(0.6); }
+.sidebarWrap:is(:hover, :focus-within) [class*='header__logoIcon'] { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .sidebarWrap [class*='header__logoContent'], .sidebarWrap [class*='header__logoIcon'] { transition: none; }
+}
 /* The library's Sidebar is 248px (its own Figma spec); this frame lays out a
    240px sidebar, so the expanded sidebar is narrowed to match. */
 .expanded > :first-child { width: 240px; }

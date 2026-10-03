@@ -96,8 +96,17 @@ function buildMaps(p: Params): { map: string; light: string } {
   const r = Math.min(radius, w / 2, h / 2);
   const cx = w / 2, cy = h / 2;
   const band = Math.max(bezel, intensity > 0 ? reach : 0, 1);
+  // Neutral everywhere (no bend, no light): only the strip along the edge can differ,
+  // so fill once and visit just that strip -- a full-screen lens is ~1M pixels, but
+  // only a few percent of them are near an edge. `reach` includes the corner radius,
+  // because a point near a rounded corner can be farther than `band` from the box.
+  new Uint32Array(md.buffer).fill(0xff808080);
+  new Uint32Array(ld.buffer).fill(0xff808080);
+  const margin = Math.ceil(band + r + 2);
   for (let y = 0; y < h; y++) {
+    const edgeRow = y < margin || y >= h - margin;
     for (let x = 0; x < w; x++) {
+      if (!edgeRow && x === margin) { x = Math.max(margin, w - margin); if (x >= w) break; } // jump over the neutral interior
       const px = x + 0.5, py = y + 0.5;
       const qx = Math.abs(px - cx) - (w / 2 - r);
       const qy = Math.abs(py - cy) - (h / 2 - r);
@@ -127,10 +136,11 @@ function buildMaps(p: Params): { map: string; light: string } {
           else if (reach > 0) add = (nl > 0 ? -14 : 11.6) * intensity * a * Math.max(0, 1 - (inside - 0.5) / reach);
         }
       }
+      if (ex === 0 && ey === 0 && add === 0) continue; // already neutral
       const i = (y * w + x) * 4;
-      md[i] = 128 + ex * 127; md[i + 1] = 128 + ey * 127; md[i + 2] = 128; md[i + 3] = 255;
+      md[i] = 128 + ex * 127; md[i + 1] = 128 + ey * 127;
       const v = Math.max(0, Math.min(255, Math.round(128 + add)));
-      ld[i] = v; ld[i + 1] = v; ld[i + 2] = v; ld[i + 3] = 255;
+      ld[i] = v; ld[i + 1] = v; ld[i + 2] = v;
     }
   }
   mctx.putImageData(mimg, 0, 0);
@@ -318,9 +328,18 @@ export function useLiquidGlass(ref: React.RefObject<HTMLElement | null>, { enabl
       setParams((prev) => (prev && (Object.keys(next) as (keyof Params)[]).every((p) => prev[p] === next[p]) ? prev : next));
     };
     measure(); // now, not only on the observer's first report (which waits for a rendering update)
-    const ro = new ResizeObserver(() => { measure(); wakeFollowers(); });
+    // A big lens (a panel that reflows while the sidebar animates) would rebuild its
+    // maps and re-bake every frame; it settles first, then measures once. Small lenses
+    // keep up frame by frame.
+    let settle = 0;
+    const ro = new ResizeObserver(() => {
+      if (el.offsetWidth * el.offsetHeight > BAKE_AREA) {
+        window.clearTimeout(settle);
+        settle = window.setTimeout(() => { measure(); wakeFollowers(); }, 90);
+      } else { measure(); wakeFollowers(); }
+    });
     ro.observe(el);
-    return () => ro.disconnect();
+    return () => { window.clearTimeout(settle); ro.disconnect(); };
   }, [ref, refracting, watch]);
 
   const maps = params ? buildMaps(params) : null;
