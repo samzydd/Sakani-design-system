@@ -2,7 +2,7 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
-## Unreleased
+## 0.4.3
 
 - **Faster sidebar toggle in the dashboard.** Collapsing or expanding the sidebar used
   to drop frames (a 367ms frame and 200ms+ tasks on expand): the main glass panel
