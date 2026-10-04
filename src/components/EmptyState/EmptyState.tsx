@@ -13,6 +13,7 @@
 import React from 'react';
 import { Inbox, Search, CircleAlert } from 'lucide-react';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
+import { Button } from '../Button/Button';
 import styles from './EmptyState.module.css';
 
 export type EmptyStateType = 'no-data' | 'no-results' | 'error';
@@ -53,9 +54,9 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
       <p className={styles.empty__title}>{title ?? d.title}</p>
       <p className={styles.empty__desc}>{description ?? d.description}</p>
       {actionLabel && (
-        <button type="button" className={styles.empty__action} onClick={onAction}>
+        <Button variant="outline" size="sm" className={styles.empty__action} onClick={onAction}>
           {actionLabel}
-        </button>
+        </Button>
       )}
     </div>
   );

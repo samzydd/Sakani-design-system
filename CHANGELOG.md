@@ -2,6 +2,12 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.6
+
+- **EmptyState uses the real Button.** The action was a hand-styled `<button>` that missed the
+  updated Button's hover, press and focus effects. It now renders `<Button variant="outline"
+  size="sm">`, so it stays in step with every Button change. No prop changes.
+
 ## 0.4.5
 
 - **BlogListingFeaturedCard is responsive.** The horizontal card (a fixed 400px image plus
