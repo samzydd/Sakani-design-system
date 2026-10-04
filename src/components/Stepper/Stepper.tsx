@@ -69,8 +69,9 @@ export const StepperStep: React.FC<{
   </div>
 );
 
-/** Length of one connector's fill, in ms. A long jump is sped up so it stays under ~1s. */
-const FILL_MS = 320;
+/** Length of one connector's fill, in ms (70% of the original 320ms pace). A long jump is
+ *  sped up so it stays under ~1.4s. */
+const FILL_MS = 457;
 
 export const Stepper: React.FC<StepperProps> = ({ steps, current, orientation = 'horizontal', className }) => {
   const stateFor = (i: number): StepState => (i < current ? 'completed' : i === current ? 'current' : 'upcoming');
@@ -90,14 +91,14 @@ export const Stepper: React.FC<StepperProps> = ({ steps, current, orientation = 
   const isFresh = (i: number) => ready && from !== current && stateAt(i, from) !== stateAt(i, current);
   const forward = current >= from;
   const distance = Math.max(1, Math.abs(current - from));
-  const step = Math.min(FILL_MS, Math.floor(1000 / distance));
+  const step = Math.min(FILL_MS, Math.floor(1430 / distance));
   // Circle j changes when the bar reaches it; connector i starts when the bar before it lands.
   const circleDelay = (j: number) =>
     forward ? (j >= from && j <= current ? (j - from) * step : 0)
             : (j >= current && j <= from ? (from - j) * step : 0);
   const connectorDelay = (i: number) =>
     forward ? (i >= from && i < current ? (i - from) * step : 0)
-            : (i >= current && i < from ? (from - 1 - i) * step + 40 : 0);
+            : (i >= current && i < from ? (from - 1 - i) * step + 57 : 0);
 
   return (
     <div

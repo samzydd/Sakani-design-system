@@ -26,19 +26,19 @@
 /* Motion. Circles change when the bar reaches them (--delay is set per step by the
    Stepper); only once the stepper has rendered (--animated), never on first paint. */
 .stepper--animated .circle {
-  transition: background-color 220ms ease var(--delay, 0ms), border-color 220ms ease var(--delay, 0ms), color 220ms ease var(--delay, 0ms);
+  transition: background-color 314ms ease var(--delay, 0ms), border-color 314ms ease var(--delay, 0ms), color 314ms ease var(--delay, 0ms);
 }
 /* The check draws itself in, after the bar has arrived. */
 .stepper--animated .circle--completed[data-fresh] svg { overflow: visible; }
 .stepper--animated .circle--completed[data-fresh] svg path {
   stroke-dasharray: 24;
-  animation: stepper-check 280ms cubic-bezier(0.65, 0, 0.35, 1) var(--delay, 0ms) both;
+  animation: stepper-check 400ms cubic-bezier(0.65, 0, 0.35, 1) var(--delay, 0ms) both;
 }
 @keyframes stepper-check { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
 /* The newly current step's ring ripples once as the bar lands. */
-.stepper--animated .circle--current[data-fresh] { animation: stepper-arrive 520ms ease-out var(--delay, 0ms) both; }
+.stepper--animated .circle--current[data-fresh] { animation: stepper-arrive 743ms ease-out var(--delay, 0ms) both; }
 @keyframes stepper-arrive {
-  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent-default) 45%, transparent); }
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent-default) 20%, transparent); }
   100% { box-shadow: 0 0 0 9px color-mix(in srgb, var(--color-accent-default) 0%, transparent); }
 }
 
@@ -81,7 +81,7 @@
 }
 .connector--vertical .connector__fill { transform: scaleY(0); transform-origin: center top; }
 .stepper--animated .connector__fill {
-  transition: transform var(--fill-ms, 320ms) cubic-bezier(0.65, 0, 0.35, 1) var(--delay, 0ms);
+  transition: transform var(--fill-ms, 457ms) cubic-bezier(0.65, 0, 0.35, 1) var(--delay, 0ms);
 }
 .connector--filled .connector__fill { transform: scaleX(1); }
 .connector--vertical.connector--filled .connector__fill { transform: scaleY(1); }
