@@ -2,6 +2,12 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.7
+
+- **SidebarPromo uses the real Button.** Its CTA was a hand-styled `<button>` too. It now renders
+  `<Button variant="primary" size="sm">` stretched full width, so it gets the updated hover,
+  press and focus effects. Liquid surfaces keep the outlined, see-through look. No prop changes.
+
 ## 0.4.6
 
 - **EmptyState uses the real Button.** The action was a hand-styled `<button>` that missed the

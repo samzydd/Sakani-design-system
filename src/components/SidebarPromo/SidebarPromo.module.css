@@ -29,31 +29,16 @@
 .promo__dismiss:hover { color: var(--color-fg-default); }
 .promo__desc { margin: 0; font-size: 12px; line-height: 16px; color: var(--color-fg-muted); }
 
-/* Full-width CTA — accent/default fill, fg/on-accent text, radius-sm */
-.promo__cta {
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-6) var(--space-12);
-  background: var(--color-accent-default);
-  color: var(--color-fg-on-accent);
-  border: none;
-  border-radius: var(--radius-sm);
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color var(--transition-base);
-}
-.promo__cta:hover { background: var(--color-accent-hover); }
+/* Full-width CTA — the shared Button (primary), stretched */
+.promo .promo__cta { width: 100%; }
 
-/* On liquid glass the promo is clear glass: no card fill or border of its own,
-   and an outlined, see-through button (the lens or overlay behind is its card). */
+/* On liquid glass the promo is clear glass: no card fill or border of its own;
+   an outlined, see-through Button (the lens or overlay behind is its card). */
 :global([data-surface="liquid"]) .promo { background: transparent; border-color: transparent; }
-:global([data-surface="liquid"]) .promo__cta {
+:global([data-surface="liquid"]) .promo .promo__cta {
   background: transparent;
   color: var(--color-fg-default);
   border: 1px solid color-mix(in srgb, currentColor 70%, transparent);
+  box-shadow: none;
 }
-:global([data-surface="liquid"]) .promo__cta:hover { background: color-mix(in srgb, currentColor 18%, transparent); }
+:global([data-surface="liquid"]) .promo .promo__cta:hover { background: color-mix(in srgb, currentColor 18%, transparent); }

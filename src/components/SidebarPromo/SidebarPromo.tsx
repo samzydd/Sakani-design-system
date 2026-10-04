@@ -13,6 +13,7 @@
 import React from 'react';
 import { Sparkles, X, type LucideIcon } from 'lucide-react';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
+import { Button } from '../Button/Button';
 import styles from './SidebarPromo.module.css';
 
 export interface SidebarPromoProps {
@@ -43,7 +44,7 @@ export const SidebarPromo: React.FC<SidebarPromoProps> = ({
     {description && <p className={styles.promo__desc}>{description}</p>}
 
     {ctaLabel && (
-      <button type="button" className={styles.promo__cta} onClick={onCta}>{ctaLabel}</button>
+      <Button variant="primary" size="sm" className={styles.promo__cta} onClick={onCta}>{ctaLabel}</Button>
     )}
   </div>
 );
