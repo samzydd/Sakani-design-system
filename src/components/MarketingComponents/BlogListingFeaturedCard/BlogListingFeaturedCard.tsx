@@ -13,6 +13,11 @@
  *   'vertical'  -- the same fixed 400x320 image on top, body below at a
  *     matching fixed 400px width, column layout.
  *
+ * Responsive: the horizontal layout needs room (400px image + a readable text
+ * column), so when the card's own container is narrower than ~640px it stacks the
+ * way the vertical orientation does (image on top, full width) instead of
+ * squeezing the text. It measures its container, not the viewport.
+ *
  * Category pill and author avatar/name/date follow BlogListingCard's own
  * precedent exactly (Badge accent/subtle; Avatar). "Read article" reuses
  * the shared Button (variant="secondary", size="sm" -- bg/subtle +
@@ -60,7 +65,8 @@ export const BlogListingFeaturedCard: React.FC<BlogListingFeaturedCardProps> = (
   const isVertical = orientation === 'vertical';
 
   return (
-    <div className={[styles.card, isVertical ? styles.cardVertical : styles.cardHorizontal, className ?? ''].filter(Boolean).join(' ')}>
+    <div className={[styles.frame, isVertical ? styles.frameVertical : styles.frameHorizontal, className ?? ''].filter(Boolean).join(' ')}>
+    <div className={[styles.card, isVertical ? styles.cardVertical : styles.cardHorizontal].join(' ')}>
       <img src={image} alt={imageAlt ?? ''} className={styles.image} />
 
       <div className={isVertical ? styles.bodyVertical : styles.bodyHorizontal}>
@@ -77,6 +83,7 @@ export const BlogListingFeaturedCard: React.FC<BlogListingFeaturedCardProps> = (
           <Button variant="secondary" size="sm" onClick={onCtaClick}>{ctaLabel}</Button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

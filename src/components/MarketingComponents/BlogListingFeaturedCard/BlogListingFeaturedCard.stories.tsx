@@ -42,3 +42,20 @@ export const DarkMode: Story = {
     </div>
   )],
 };
+
+/** The horizontal card reflows to the room it is given: side by side when its container is
+ *  wide, stacked (image on top) below ~640px. Same component, three containers. */
+export const Responsive: Story = {
+  args: { ...shared },
+  parameters: { layout: 'padded' },
+  render: (args) => (
+    <div style={{ display: 'grid', gap: 32 }}>
+      {[880, 560, 340].map((w) => (
+        <div key={w} style={{ width: w, maxWidth: '100%' }}>
+          <p style={{ margin: '0 0 8px', font: '500 12px var(--font-sans)', color: 'var(--color-fg-muted)' }}>{w}px container</p>
+          <BlogListingFeaturedCard {...args} orientation="horizontal" />
+        </div>
+      ))}
+    </div>
+  ),
+};

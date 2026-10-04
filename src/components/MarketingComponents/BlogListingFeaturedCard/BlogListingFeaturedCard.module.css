@@ -1,3 +1,10 @@
+/* The frame is the size container: the card inside reflows to the room it is given
+   (a container query can't style the container itself, hence the extra element).
+   It carries the max-width and the consumer's className; the card fills it. */
+.frame { container-type: inline-size; width: 100%; }
+:where(.frameHorizontal) { max-width: 874px; }
+:where(.frameVertical) { max-width: 400px; }
+
 .card {
   display: flex;
   box-sizing: border-box;
@@ -13,7 +20,6 @@
   flex-direction: row;
   align-items: stretch;
   width: 100%;
-  max-width: 874px;
 }
 
 /* ─── Vertical ── */
@@ -21,7 +27,6 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 400px;
 }
 
 /* Fixed 400x320 in both orientations -- safe to fix directly (unlike
@@ -108,4 +113,21 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Too narrow for image + text side by side: stack like the vertical orientation. */
+@container (max-width: 639px) {
+  .cardHorizontal { flex-direction: column; align-items: flex-start; }
+  .cardHorizontal .image { width: 100%; }
+  .cardHorizontal .bodyHorizontal {
+    flex: none;
+    align-self: auto;
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-12) var(--space-16) var(--space-16);
+  }
+}
+/* A very narrow card: the author line and the button wrap instead of colliding. */
+@container (max-width: 359px) {
+  .footer { flex-wrap: wrap; }
 }

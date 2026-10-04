@@ -2,6 +2,15 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.5
+
+- **BlogListingFeaturedCard is responsive.** The horizontal card (a fixed 400px image plus
+  text) squeezed its text column to a sliver whenever its container was narrower than ~640px.
+  It now measures its own container: side by side when there's room, stacked (image on top,
+  full width) below 640px, with the footer wrapping below 360px. Nothing changes at the
+  card's designed width (874px), and `BlogListingBlock` is unchanged. New story:
+  *Marketing → Blog Listing Featured Card → Responsive*.
+
 ## 0.4.4
 
 - **Stepper: the bar animates between steps.** Going forward, the connector fills from the
