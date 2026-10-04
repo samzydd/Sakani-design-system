@@ -2,7 +2,7 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
-## Unreleased
+## 0.4.4
 
 - **Stepper: the bar animates between steps.** Going forward, the connector fills from the
   step you leave toward the next one and that circle activates when the bar arrives (its ring
