@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Stepper } from './Stepper';
+import { Button } from '../Button';
 
 const steps = [
   { label: 'Account', description: 'Create your account' },
@@ -44,3 +46,23 @@ export const FiveSteps: Story = {
 export const DarkMode: Story = {
   decorators: [(S) => <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)', width: 560 }}><S /></div>],
 };
+
+/** Try the motion: Back / Next move one step (the bar fills or drains between them), and the
+ *  jump buttons move several at once (the fill hands off bar to bar). Respects reduced motion. */
+const Playground = ({ vertical }: { vertical?: boolean }) => {
+  const [current, setCurrent] = React.useState(0);
+  const last = 4;
+  return (
+    <div style={{ display: 'grid', gap: 24, width: vertical ? 280 : 640 }}>
+      <Stepper steps={['Cart', 'Shipping', 'Payment', 'Review', 'Done'].map((label) => ({ label }))} current={current} orientation={vertical ? 'vertical' : 'horizontal'} />
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+        <Button variant="secondary" size="sm" onClick={() => setCurrent((c) => Math.max(0, c - 1))}>Back</Button>
+        <Button size="sm" onClick={() => setCurrent((c) => Math.min(last, c + 1))}>Next</Button>
+        <Button variant="ghost" size="sm" onClick={() => setCurrent(0)}>Jump to 1</Button>
+        <Button variant="ghost" size="sm" onClick={() => setCurrent(last)}>Jump to 5</Button>
+      </div>
+    </div>
+  );
+};
+export const Animated: Story = { render: () => <Playground />, decorators: [] };
+export const AnimatedVertical: Story = { render: () => <Playground vertical />, decorators: [] };

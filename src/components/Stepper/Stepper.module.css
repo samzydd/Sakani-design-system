@@ -23,7 +23,32 @@
 }
 .circle__num { line-height: 1; }
 
-.circle--completed { background: var(--color-bg-inverse); color: var(--color-fg-on-inverse); }
+/* Motion. Circles change when the bar reaches them (--delay is set per step by the
+   Stepper); only once the stepper has rendered (--animated), never on first paint. */
+.stepper--animated .circle {
+  transition: background-color 314ms ease var(--delay, 0ms), border-color 314ms ease var(--delay, 0ms), color 314ms ease var(--delay, 0ms);
+}
+/* The check draws itself in, after the bar has arrived. */
+.stepper--animated .circle--completed[data-fresh] svg { overflow: visible; }
+.stepper--animated .circle--completed[data-fresh] svg path {
+  stroke-dasharray: 24;
+  animation: stepper-check 400ms cubic-bezier(0.65, 0, 0.35, 1) var(--delay, 0ms) both;
+}
+@keyframes stepper-check { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
+/* The newly current step's ring ripples once as the bar lands. */
+.stepper--animated .circle--current[data-fresh] { animation: stepper-arrive 743ms ease-out var(--delay, 0ms) both; }
+@keyframes stepper-arrive {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent-default) 20%, transparent); }
+  100% { box-shadow: 0 0 0 9px color-mix(in srgb, var(--color-accent-default) 0%, transparent); }
+}
+
+/* Same 2px border as the other states, in the fill's own color: nothing changes size or
+   disappears while the circle cross-fades from ringed to filled. */
+.circle--completed {
+  background: var(--color-bg-inverse);
+  border: var(--border-width-200) solid var(--color-bg-inverse);
+  color: var(--color-fg-on-inverse);
+}
 .circle--current {
   background: var(--color-bg-surface);
   border: var(--border-width-200) solid var(--color-accent-default);
@@ -43,7 +68,29 @@
 .step__desc { font-size: 12px; color: var(--color-fg-muted); }
 
 /* Connectors */
-.connector { background: var(--color-bg-muted); flex: 1; }
+.connector { position: relative; overflow: hidden; background: var(--color-bg-muted); flex: 1; }
+/* The accent fill: a full-size layer scaled from 0 to 1 along the bar, from the earlier
+   step toward the later one. Un-filling shrinks it back toward the earlier step, which is
+   the natural reverse. Transform only, so it runs on the compositor. */
+.connector__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent-default);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.connector--vertical .connector__fill { transform: scaleY(0); transform-origin: center top; }
+.stepper--animated .connector__fill {
+  transition: transform var(--fill-ms, 457ms) cubic-bezier(0.65, 0, 0.35, 1) var(--delay, 0ms);
+}
+.connector--filled .connector__fill { transform: scaleX(1); }
+.connector--vertical.connector--filled .connector__fill { transform: scaleY(1); }
 .connector--horizontal { height: 2px; margin-top: 15px; min-width: 24px; }
 .connector--vertical { width: 2px; margin-left: 15px; min-height: 24px; }
-.connector--filled { background: var(--color-accent-default); }
+
+@media (prefers-reduced-motion: reduce) {
+  .stepper--animated .circle,
+  .stepper--animated .connector__fill { transition: none; }
+  .stepper--animated .circle--completed[data-fresh] svg path,
+  .stepper--animated .circle--current[data-fresh] { animation: none; }
+}
