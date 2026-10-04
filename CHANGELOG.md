@@ -2,6 +2,15 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## Unreleased
+
+- **Stepper: the bar animates between steps.** Going forward, the connector fills from the
+  step you leave toward the next one and that circle activates when the bar arrives (its ring
+  ripples once and the previous circle's check draws in). Going back plays it in reverse,
+  draining the bar. Jumping several steps hands the fill from bar to bar. Horizontal and
+  vertical. No animation on first render; `prefers-reduced-motion` makes every change
+  instant. New stories: *Composite / Stepper → Animated* and *Animated vertical*.
+
 ## 0.4.3
 
 - **Faster sidebar toggle in the dashboard.** Collapsing or expanding the sidebar used
