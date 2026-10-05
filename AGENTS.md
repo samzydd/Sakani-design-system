@@ -53,6 +53,26 @@ import { Button, Card } from '@sakaniui/react';
    `assignees`, `icon`, `actions`). Fill a slot with other system components rather than copying a
    component's markup.
 
+## 2b. Token names — use exactly these (anything else does not exist)
+
+A CSS variable that isn't defined silently resolves to nothing: no error, just broken spacing or
+colour. Do not guess names (`--fg-muted`, `--bg-canvas`, `--spacing-4` and `--space-3` are all **wrong**).
+
+- **Space** — `--space-N` where **N is the pixel value**: `0, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 32, 40, 48, 64, 80, 96`. So `--space-6` is 6px (not 24px)
+  and `--space-24` is 24px. There is no `--space-3` or `--space-5`.
+- **Text** — `--color-fg-default`, `--color-fg-muted`, `--color-fg-subtle`, `--color-fg-on-accent`,
+  `--color-fg-on-inverse`.
+- **Backgrounds** — `--color-bg-canvas` (page), `--color-bg-surface` (cards, panels), `--color-bg-subtle`,
+  `--color-bg-muted`, `--color-bg-inverse`.
+- **Borders** — `--color-border-subtle`, `--color-border-default`, `--color-border-strong`,
+  `--color-border-focus`.
+- **Brand/status** — `--color-accent-{default,hover,active,subtle,fg}`; for `danger`, `success`,
+  `warning`, `info`: `--color-<status>-{bg,border,fg,solid}` plus a 50–950 scale.
+- **Radius** — `--radius-{none,2xs,xs,sm,md,lg,xl,2xl,3xl,full}` (`md` = 8px is the default control radius).
+- **Shadow** — `--shadow-{xs,sm,md,lg,xl,2xl}`. **Font** — `--font-sans`, `--font-mono`.
+  **Motion** — `--transition-{fast,base,hover,slow}`.
+- Full, resolved list for light and dark: https://www.sakaniui.com/docs/tokens
+
 ## 3. When nothing fits
 
 Work down this list and stop at the first that works:
