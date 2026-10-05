@@ -31,6 +31,8 @@ Then import the tokens once at your app's entry point, and any component from th
 import '@sakaniui/react/tokens.css';
 ```
 
+> **Building with AI?** `AGENTS.md` (shipped in this package) explains *why* components behave as they do and what to do when nothing fits. Index for agents: https://www.sakaniui.com/llms.txt
+
 ## Quick start (contributing / browsing the source)
 
 ```bash

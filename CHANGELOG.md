@@ -2,6 +2,15 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.8
+
+- **AI-readable design system.** The package now ships `AGENTS.md`: the *why* behind the system for
+  AI agents and new teammates — setup that must be right, eight principles, what to do when nothing
+  fits, when to use (and not use) each component and why it behaves as it does, glass/liquid usage rules,
+  the behaviour you must supply yourself, and recipes for AI-product moments (uncertain answers, sources,
+  declined requests, partial responses). The docs site serves an index at `/llms.txt` and the full
+  text at `/llms-full.txt`.
+
 ## 0.4.7
 
 - **SidebarPromo uses the real Button.** Its CTA was a hand-styled `<button>` too. It now renders
