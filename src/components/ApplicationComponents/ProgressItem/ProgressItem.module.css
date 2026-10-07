@@ -12,6 +12,18 @@
   flex-direction: row;
   align-items: flex-start;
 }
+/* The circle is 32px and the title's line is 20px, so a top-aligned title sits
+   6px above the circle's centre. Offset the text block so the title's first
+   line shares the circle's centre; the description follows below it. */
+.item--vertical .text {
+  padding-top: calc((32px - 20px) / 2);
+}
+/* Horizontal is deliberately left-aligned: the label starts at the circle's left
+   edge, the same side the connector runs away from. Stated so a wider label
+   doesn't inherit centring from a parent. */
+.item--horizontal .text {
+  text-align: left;
+}
 
 .value {
   display: flex;

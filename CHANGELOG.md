@@ -2,6 +2,13 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.9
+
+- **ProgressItem titles line up with their numbers.** In the vertical layout the title sat at the
+  top of the 32px circle, 6px above its centre. The title's first line now shares the circle's centre
+  (the description follows beneath). The horizontal layout is left-aligned on purpose, the label starts
+  at the circle's left edge, and that is now explicit in the CSS rather than implied.
+
 ## 0.4.8
 
 - **AI-readable design system.** The package now ships `AGENTS.md`: the *why* behind the system for
