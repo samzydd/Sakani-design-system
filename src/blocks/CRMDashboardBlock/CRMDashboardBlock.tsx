@@ -18,7 +18,7 @@ import React from 'react';
 import {
   LayoutGrid, Mail, Database, CalendarDays, Users, Workflow, Zap, Target,
   Plug, Settings, MessageCircle, Search, ChevronDown, ChevronUp, PanelLeftClose, Circle, Filter,
-  User, Phone, Building2, Coins,
+  User, Phone, Building2, Coins, Menu,
 } from 'lucide-react';
 
 import { Sidebar } from '../../components/Sidebar';
@@ -237,6 +237,28 @@ function NavItem(props: React.ComponentProps<typeof SidebarItem>) {
   );
 }
 
+/* The same destinations feed the icon rail (wide layouts) and the slide-in drawer
+ * (narrow ones), so the two can never drift apart. */
+const NAV_GROUPS = [
+  [
+    { icon: LayoutGrid, label: 'Dashboard' },
+    { icon: Mail, label: 'Inbox' },
+    { icon: Database, label: 'Database', active: true },
+    { icon: CalendarDays, label: 'Calendar' },
+  ],
+  [
+    { icon: Users, label: 'Contacts' },
+    { icon: Workflow, label: 'Pipelines' },
+    { icon: Zap, label: 'Automations' },
+    { icon: Target, label: 'Goals' },
+  ],
+  [
+    { icon: Plug, label: 'Integrations' },
+    { icon: Settings, label: 'Settings' },
+    { icon: MessageCircle, label: 'Support' },
+  ],
+];
+
 /** Formats a raw dollar amount as the deal-value range's display figure. */
 const formatDealValue = (n: number) => `$${Math.round(n).toLocaleString('en-US')}`;
 
@@ -273,6 +295,29 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className,
 
   const [dealValue, setDealValue] = React.useState(70000);
 
+  // Narrow layouts swap the icon rail for a slide-in drawer, opened from the
+  // top bar's toggle. Escape closes it; picking a destination does too.
+  const [navOpen, setNavOpen] = React.useState(false);
+  // Mirrors the stylesheet's phone breakpoint (container <= 640px) so the toggle
+  // reads as a menu button there, and as the Figma section icon everywhere else.
+  const rootRef = React.useRef<HTMLDivElement>(null);
+  const [narrow, setNarrow] = React.useState(false);
+  React.useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    const measure = () => setNarrow(el.clientWidth <= 640);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  React.useEffect(() => {
+    if (!navOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setNavOpen(false); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [navOpen]);
+
   // The whole filter panel can be tucked away to give the table more room;
   // a floating button takes its place so it can be reopened. The button
   // can be dragged up/down (only) along the sidebar edge to wherever's
@@ -281,6 +326,20 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className,
   const [filtersOpen, setFiltersOpen] = React.useState(true);
   const [reopenButtonTop, setReopenButtonTop] = React.useState(16);
   const tableRegionRef = React.useRef<HTMLElement>(null);
+  // Table's own 'auto' mode reads the window width, which is wrong inside a block
+  // that may sit in a narrow frame or split view. Drive it from the space the
+  // table actually has: below ~720px its eight columns collide, so it stacks
+  // into cards instead.
+  const [tableNarrow, setTableNarrow] = React.useState(false);
+  React.useEffect(() => {
+    const el = tableRegionRef.current;
+    if (!el) return;
+    const measure = () => setTableNarrow(el.clientWidth <= 720);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   // A click still fires on pointerup regardless of how far the pointer
   // travelled in between -- this is what keeps a real drag from also
   // reopening the panel the instant it's released.
@@ -395,36 +454,55 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className,
   }), [statuses, sources, query]);
 
   return (
-    <div className={[styles.root, className ?? ''].filter(Boolean).join(' ')}>
-      {/* ---- Sidebar (icon rail) ---- */}
-      <Sidebar collapsed>
-        <Tooltip title="Sakani" pointer="center-right">
-          <SidebarHeader type="brand" title="Sakani" logo={<SakaniLogo />} collapsed />
-        </Tooltip>
-        <SidebarDivider />
-        <div className={styles.navScroll}>
-          <div className={styles.navGroup}>
-            <NavItem collapsed icon={LayoutGrid} label="Dashboard" />
-            <NavItem collapsed icon={Mail} label="Inbox" />
-            <NavItem collapsed icon={Database} label="Database" active />
-            <NavItem collapsed icon={CalendarDays} label="Calendar" />
+    <div ref={rootRef} className={[styles.root, className ?? ''].filter(Boolean).join(' ')}>
+      {/* ---- Sidebar (icon rail) — wide layouts ---- */}
+      <div className={styles.rail}>
+        <Sidebar collapsed>
+          <Tooltip title="Sakani" pointer="center-right">
+            <SidebarHeader type="brand" title="Sakani" logo={<SakaniLogo />} collapsed />
+          </Tooltip>
+          <SidebarDivider />
+          <div className={styles.navScroll}>
+            {NAV_GROUPS.slice(0, 2).map((group, gi) => (
+              <React.Fragment key={gi}>
+                {gi > 0 && <SidebarDivider />}
+                <div className={styles.navGroup}>
+                  {group.map((it) => <NavItem key={it.label} collapsed icon={it.icon} label={it.label} active={it.active} />)}
+                </div>
+              </React.Fragment>
+            ))}
           </div>
           <SidebarDivider />
           <div className={styles.navGroup}>
-            <NavItem collapsed icon={Users} label="Contacts" />
-            <NavItem collapsed icon={Workflow} label="Pipelines" />
-            <NavItem collapsed icon={Zap} label="Automations" />
-            <NavItem collapsed icon={Target} label="Goals" />
+            {NAV_GROUPS[2].map((it) => <NavItem key={it.label} collapsed icon={it.icon} label={it.label} />)}
           </div>
+          <SidebarDivider />
+        </Sidebar>
+      </div>
+
+      {/* ---- Navigation drawer — narrow layouts ---- */}
+      <div className={styles.drawerLayer} data-open={navOpen}>
+        <div className={styles.scrim} onClick={() => setNavOpen(false)} aria-hidden="true" />
+        <div className={styles.drawer} role="dialog" aria-label="Navigation" aria-hidden={!navOpen}>
+          <Sidebar>
+            <SidebarHeader type="brand" title="Sakani" logo={<SakaniLogo />} />
+            <SidebarDivider />
+            <div className={styles.navScroll}>
+              {NAV_GROUPS.map((group, gi) => (
+                <React.Fragment key={gi}>
+                  {gi > 0 && <SidebarDivider />}
+                  <div className={styles.drawerGroup}>
+                    {group.map((it) => (
+                      <SidebarItem key={it.label} icon={it.icon} label={it.label} active={it.active}
+                        onClick={() => setNavOpen(false)} />
+                    ))}
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+          </Sidebar>
         </div>
-        <SidebarDivider />
-        <div className={styles.navGroup}>
-          <NavItem collapsed icon={Plug} label="Integrations" />
-          <NavItem collapsed icon={Settings} label="Settings" />
-          <NavItem collapsed icon={MessageCircle} label="Support" />
-        </div>
-        <SidebarDivider />
-      </Sidebar>
+      </div>
 
       {/* ---- Main column ---- */}
       <div className={styles.main}>
@@ -432,7 +510,8 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className,
           type="breadcrumb"
           density="sm"
           showToggle
-          toggleIcon={Database}
+          toggleIcon={narrow ? Menu : Database}
+          onToggle={() => setNavOpen((o) => !o)}
           showActions
           hasUnread
           left={<Breadcrumb items={[{ label: 'Database', href: '#' }, { label: 'CRM', href: '#' }, { label: 'Leads' }]} />}
@@ -645,6 +724,7 @@ export const CRMDashboardBlock: React.FC<CRMDashboardBlockProps> = ({ className,
                   selectedRows={selected}
                   onSelectionChange={setSelected}
                   rowKey={(row) => row.email}
+                  responsive={tableNarrow ? 'stacked' : 'default'}
                 />
               )
             ) : (

@@ -4,8 +4,15 @@
 
 .root {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  /* Fills its container. --crm-block-height lets an embedding frame size it;
+     standalone (Storybook, a full page) it is the viewport. The root is also a
+     size container, so the responsive rules below follow the block's own width,
+     not the window's: it stays correct inside a docs frame or a split view. */
+  position: relative;
+  width: 100%;
+  height: var(--crm-block-height, 100vh);
+  container-type: inline-size;
+  container-name: crm;
   background: var(--color-bg-canvas);
   font-family: var(--font-sans);
   overflow: hidden;
@@ -466,12 +473,79 @@
   text-overflow: ellipsis;
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 1100px) {
+/* ---- Rail / drawer ---- */
+.rail { display: flex; height: 100%; flex-shrink: 0; }
+
+/* Drawer: present in the DOM at every width, only shown on narrow ones. */
+.drawerLayer { display: none; }
+.drawerGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  padding: 0 var(--space-4);
+  box-sizing: border-box;
+}
+
+/* ---- Responsive (container-based) ---- */
+@container crm (max-width: 1100px) {
   .filters { width: 240px; }
   .searchField { width: 200px; }
 }
 
-@media (max-width: 880px) {
+/* Tablet: the rail stays, the filter panel is the first thing to give. */
+@container crm (max-width: 880px) {
   .filters { display: none; }
+  .toolbar { flex-wrap: wrap; }
+}
+
+/* Phone: no rail. Navigation moves into a drawer opened from the top bar, the
+   toolbar stacks, and the table region gives its padding back. */
+@container crm (max-width: 640px) {
+  .rail { display: none; }
+
+  .drawerLayer {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+  }
+  .drawerLayer[data-open='true'] { pointer-events: auto; }
+
+  .scrim {
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, var(--color-bg-inverse) 45%, transparent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+  .drawerLayer[data-open='true'] .scrim { opacity: 1; }
+
+  .drawer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: min(280px, 85%);
+    background: var(--color-bg-surface);
+    box-shadow: var(--shadow-xl);
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+  }
+  .drawerLayer[data-open='true'] .drawer { transform: translateX(0); }
+  .drawer > nav { height: 100%; width: 100%; box-sizing: border-box; }
+
+  .tabsBar { padding: var(--space-12) var(--space-12) 0; overflow-x: auto; }
+
+  .tableRegion { padding: var(--space-12); }
+  .toolbar { flex-direction: column; align-items: stretch; gap: var(--space-8); }
+  .toolbarLeft { width: 100%; }
+  .searchField { flex: 1 1 0; width: auto; min-width: 0; }
+  .toolbarRight { display: none; }
+  .footer { flex-direction: column; gap: var(--space-8); align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrim, .drawer { transition: none; }
 }

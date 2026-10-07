@@ -4,6 +4,14 @@ All notable changes to `@sakaniui/react` are documented here.
 
 ## 0.4.10
 
+- **CRMDashboardBlock is responsive.** It was hard-wired to the viewport (`100vw` x `100vh`) with
+  media queries, so inside a frame, a split view or a phone it overflowed and clipped. It now fills
+  its container (`--crm-block-height` sets the height; default `100vh`) and its breakpoints are
+  container queries. Tablet (<= 880px): the filter panel steps aside and the toolbar wraps. Phone
+  (<= 640px): the icon rail becomes a slide-in navigation drawer opened from the top bar's menu
+  button (Escape or the scrim closes it), the toolbar stacks, tabs scroll, and padding tightens. The
+  table now stacks into cards based on its own width (<= 720px) instead of the window's, so it never
+  crams eight columns into a narrow frame. No prop changes.
 - **TeamCard matches Figma's text width.** The card's 1px border was added on top of Figma's 12px
   padding (Figma's stroke sits inside the frame), leaving a 378px text column instead of 380px. That
   was enough to wrap the *Card details* bio onto a third line, making the card 20px taller than
