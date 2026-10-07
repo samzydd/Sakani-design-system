@@ -2,6 +2,16 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.11
+
+- **ProductCard matches Figma to the pixel.** Measured against the Figma set (320 x 536), the code
+  card was 546px tall and its text column 294px instead of 296px. Fixed: the title-to-description
+  gap is 8px (it was the body's 12px), the swatches are the 28px Figma uses (circle 21, check 10)
+  instead of 32px, the five stars are 91px wide (2.68px apart, not 4px), and the 1px border is taken
+  out of the padding and the image height so the stroke sits "inside" the frame as in Figma. The
+  standalone `ColorSwatch` is unchanged: it now sizes from `--swatch-size` (default 32px), which
+  the card sets to 28px.
+
 ## 0.4.10
 
 - **CRMDashboardBlock is responsive.** It was hard-wired to the viewport (`100vw` x `100vh`) with

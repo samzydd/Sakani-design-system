@@ -3,8 +3,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  /* Everything scales from --swatch-size (32px unless a parent sets it): the
+     Figma Product Card places this swatch at 28px, circle 21, check 10. */
+  width: var(--swatch-size, 32px);
+  height: var(--swatch-size, 32px);
   padding: 0;
   border: none;
   background: transparent;
@@ -24,8 +26,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 24px;
-  height: 24px;
+  width: calc(var(--swatch-size, 32px) * 0.75);
+  height: calc(var(--swatch-size, 32px) * 0.75);
   border-radius: var(--radius-full);
   background: var(--swatch-color);
 }
@@ -41,8 +43,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
+  width: calc(var(--swatch-size, 32px) * 0.9375);
+  height: calc(var(--swatch-size, 32px) * 0.9375);
   border-radius: var(--radius-full);
   border: var(--border-width-150) solid var(--color-border-subtle);
 }
@@ -53,6 +55,8 @@
    consumer-supplied swatch `color`, not this system's own inverse
    surface). See ColorSwatch.tsx. */
 .check {
+  width: var(--swatch-check, 14px);
+  height: var(--swatch-check, 14px);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -67,7 +71,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 24px;
+  width: calc(var(--swatch-size, 32px) * 0.75);
   height: var(--border-width-150);
   transform: translate(-50%, -50%) rotate(-30deg);
   pointer-events: none;
