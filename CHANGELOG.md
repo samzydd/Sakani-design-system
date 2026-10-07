@@ -17,6 +17,10 @@ All notable changes to `@sakaniui/react` are documented here.
   was enough to wrap the *Card details* bio onto a third line, making the card 20px taller than
   Figma's. The border is now taken out of the padding, so the column is 380px and the bio wraps
   exactly as in Figma.
+- **KanbanBoardBlock works on phones.** The toolbar was one non-wrapping row, so the search field,
+  filter chips and buttons overlapped below ~700px. The block is now a size container: below 760px
+  the toolbar stacks (search, filters, then the actions sharing the row), and the board scrolls edge to
+  edge with columns snapping into place as you swipe. Wider layouts are unchanged.
 
 ## 0.4.9
 

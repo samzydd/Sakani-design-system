@@ -7,6 +7,10 @@
   padding: var(--space-24);
   background: var(--color-bg-canvas);
   overflow: visible;
+  /* A size container, so the rules at the bottom follow the block's own width
+     rather than the window's: right inside a narrow frame or split view too. */
+  container-type: inline-size;
+  container-name: kanban;
 }
 .spacer { flex: 1 1 auto; }
 
@@ -137,4 +141,28 @@
   outline: 1.5px dashed var(--color-accent-default);
   outline-offset: 2px;
   transition: outline-color var(--transition-base);
+}
+
+/* ---- responsive (container-based) ---- */
+@container kanban (max-width: 760px) {
+  /* The toolbar was a single non-wrapping row, so on a phone the search, chips
+     and buttons collided. It now stacks: search on its own line, then the
+     filter chips, then the actions sharing the width. */
+  .toolbar { flex-wrap: wrap; row-gap: var(--space-8); }
+  .spacer { display: none; }
+  .toolbar__left { flex: 1 1 100%; flex-wrap: wrap; row-gap: var(--space-8); }
+  .search { width: 100%; flex: 1 1 100%; }
+  .toolbar__right { flex: 1 1 100%; flex-shrink: 1; }
+  .toolbar__right > * { flex: 1 1 0; }
+
+  /* Cards need ~296px, so columns keep their full 320px rather than shrinking
+     (they would overflow their own column). Instead the board scrolls: it bleeds
+     to the block's edges so a swipe feels native, and columns snap into place. */
+  .columns {
+    margin-inline: calc(-1 * var(--space-24));
+    padding-inline: var(--space-24);
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: var(--space-24);
+  }
+  .column { scroll-snap-align: start; }
 }
