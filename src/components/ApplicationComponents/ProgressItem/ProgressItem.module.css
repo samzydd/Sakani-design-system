@@ -12,10 +12,10 @@
   flex-direction: row;
   align-items: flex-start;
 }
-/* The circle is 32px and the title's line is 20px, so a top-aligned title sits
-   6px above the circle's centre. Offset the text block so the title's first
-   line shares the circle's centre; the description follows below it. */
-.item--vertical .text {
+/* A title with no description is centred on the 32px circle (its 20px line sits
+   6px lower than top-aligned). With a description the block stays top-aligned,
+   so the title and its help text read as one unit beside the circle. */
+.item--vertical .text--single {
   padding-top: calc((32px - 20px) / 2);
 }
 /* Horizontal is deliberately left-aligned: the label starts at the circle's left

@@ -50,7 +50,7 @@ export const ProgressItem: React.FC<ProgressItemProps> = ({
   );
 
   const text = (
-    <div className={styles.text}>
+    <div className={[styles.text, description ? '' : styles['text--single']].filter(Boolean).join(' ')}>
       <p className={styles.title}>{title}</p>
       {description && <p className={styles.description}>{description}</p>}
     </div>
