@@ -5,7 +5,10 @@
   width: 100%;
   max-width: 404px;
   box-sizing: border-box;
-  padding: 0 0 var(--space-12);
+  /* Figma's 12px padding is measured from the card's outer edge and its stroke sits
+     inside it, so the 1px CSS border is taken out of the padding. Otherwise the text
+     column is 378px instead of 380px, enough to wrap a bio onto an extra line. */
+  padding: 0 0 calc(var(--space-12) - var(--border-width-100));
   background: var(--color-bg-surface);
   border: var(--border-width-100) solid var(--color-border-subtle);
   border-radius: var(--radius-xl);
@@ -67,7 +70,7 @@
   gap: var(--space-8);
   width: 100%;
   box-sizing: border-box;
-  padding: var(--space-12) var(--space-12) 0;
+  padding: var(--space-12) calc(var(--space-12) - var(--border-width-100)) 0;
   overflow: hidden;
 }
 

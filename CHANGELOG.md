@@ -2,6 +2,14 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.4.10
+
+- **TeamCard matches Figma's text width.** The card's 1px border was added on top of Figma's 12px
+  padding (Figma's stroke sits inside the frame), leaving a 378px text column instead of 380px. That
+  was enough to wrap the *Card details* bio onto a third line, making the card 20px taller than
+  Figma's. The border is now taken out of the padding, so the column is 380px and the bio wraps
+  exactly as in Figma.
+
 ## 0.4.9
 
 - **ProgressItem titles line up with their numbers.** In the vertical layout a title with no
