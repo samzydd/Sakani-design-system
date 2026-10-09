@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-pin-x-inside"
 import { createSicon } from '../createSicon';
 
-export const SiconMapPinXInside = /*#__PURE__*/ createSicon("map-pin-x-inside", [["M20 10C20 14.993 14.461 20.193 12.601 21.799A1 1 0 0 1 11.399 21.799C9.539 20.193 4 14.993 4 10A8 8 0 0 1 20 10","M14.5 7.5L9.5 12.5","M9.5 7.5L14.5 12.5"],"bnn"]);
+export const SiconMapPinXInside = /*#__PURE__*/ createSicon("map-pin-x-inside", ["M20 10C20 14.993 14.461 20.193 12.601 21.799A1 1 0 0 1 11.399 21.799C9.539 20.193 4 14.993 4 10A8 8 0 0 1 20 10","M14.5 7.5L9.5 12.5","M9.5 7.5L14.5 12.5"]);
 export default SiconMapPinXInside;

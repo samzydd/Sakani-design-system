@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "crosshair"
 import { createSicon } from '../createSicon';
 
-export const SiconCrosshair = /*#__PURE__*/ createSicon("crosshair", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M22 12L18 12","M6 12L2 12","M12 6L12 2","M12 22L12 18"],"bnnnn"]);
+export const SiconCrosshair = /*#__PURE__*/ createSicon("crosshair", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M22 12L18 12","M6 12L2 12","M12 6L12 2","M12 22L12 18"]);
 export default SiconCrosshair;

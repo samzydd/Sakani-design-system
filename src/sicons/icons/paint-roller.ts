@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "paint-roller"
 import { createSicon } from '../createSicon';
 
-export const SiconPaintRoller = /*#__PURE__*/ createSicon("paint-roller", [["M4 2L16 2A2 2 0 0 1 18 4L18 6A2 2 0 0 1 16 8L4 8A2 2 0 0 1 2 6L2 4A2 2 0 0 1 4 2Z","M10 16L10 14A2 2 0 0 1 12 12L20 12A2 2 0 0 0 22 10L22 7A2 2 0 0 0 20 5L18 5","M9 16L11 16A1 1 0 0 1 12 17L12 21A1 1 0 0 1 11 22L9 22A1 1 0 0 1 8 21L8 17A1 1 0 0 1 9 16Z"],"bbf"]);
+export const SiconPaintRoller = /*#__PURE__*/ createSicon("paint-roller", ["M4 2L16 2A2 2 0 0 1 18 4L18 6A2 2 0 0 1 16 8L4 8A2 2 0 0 1 2 6L2 4A2 2 0 0 1 4 2Z","M10 16L10 14A2 2 0 0 1 12 12L20 12A2 2 0 0 0 22 10L22 7A2 2 0 0 0 20 5L18 5","M9 16L11 16A1 1 0 0 1 12 17L12 21A1 1 0 0 1 11 22L9 22A1 1 0 0 1 8 21L8 17A1 1 0 0 1 9 16Z"]);
 export default SiconPaintRoller;

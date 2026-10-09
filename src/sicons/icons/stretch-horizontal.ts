@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "stretch-horizontal"
 import { createSicon } from '../createSicon';
 
-export const SiconStretchHorizontal = /*#__PURE__*/ createSicon("stretch-horizontal", [["M4 4L20 4A2 2 0 0 1 22 6L22 8A2 2 0 0 1 20 10L4 10A2 2 0 0 1 2 8L2 6A2 2 0 0 1 4 4Z","M4 14L20 14A2 2 0 0 1 22 16L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 16A2 2 0 0 1 4 14Z"],"bb"]);
+export const SiconStretchHorizontal = /*#__PURE__*/ createSicon("stretch-horizontal", ["M4 4L20 4A2 2 0 0 1 22 6L22 8A2 2 0 0 1 20 10L4 10A2 2 0 0 1 2 8L2 6A2 2 0 0 1 4 4Z","M4 14L20 14A2 2 0 0 1 22 16L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 16A2 2 0 0 1 4 14Z"]);
 export default SiconStretchHorizontal;

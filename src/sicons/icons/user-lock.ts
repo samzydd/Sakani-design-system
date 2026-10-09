@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "user-lock"
 import { createSicon } from '../createSicon';
 
-export const SiconUserLock = /*#__PURE__*/ createSicon("user-lock", [["M19 16L19 14A2 2 0 0 0 15 14L15 16","M9.5 15L7 15A4 4 0 0 0 3 19L3 21","M6 7A4 4 0 1 0 14 7A4 4 0 1 0 6 7Z","M13.899 16L20.101 16A0.899 0.899 0 0 1 21 16.899L21 20.101A0.899 0.899 0 0 1 20.101 21L13.899 21A0.899 0.899 0 0 1 13 20.101L13 16.899A0.899 0.899 0 0 1 13.899 16Z"],"ffbb"]);
+export const SiconUserLock = /*#__PURE__*/ createSicon("user-lock", ["M19 16L19 14A2 2 0 0 0 15 14L15 16","M9.5 15L7 15A4 4 0 0 0 3 19L3 21","M6 7A4 4 0 1 0 14 7A4 4 0 1 0 6 7Z","M13.899 16L20.101 16A0.899 0.899 0 0 1 21 16.899L21 20.101A0.899 0.899 0 0 1 20.101 21L13.899 21A0.899 0.899 0 0 1 13 20.101L13 16.899A0.899 0.899 0 0 1 13.899 16Z"]);
 export default SiconUserLock;

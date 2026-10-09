@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-up-right"
 import { createSicon } from '../createSicon';
 
-export const SiconArrowUpRight = /*#__PURE__*/ createSicon("arrow-up-right", [["M7 7L17 7L17 17","M7 17L17 7"],"pp"]);
+export const SiconArrowUpRight = /*#__PURE__*/ createSicon("arrow-up-right", ["M7 7L17 7L17 17","M7 17L17 7"]);
 export default SiconArrowUpRight;

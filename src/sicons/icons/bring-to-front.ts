@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bring-to-front"
 import { createSicon } from '../createSicon';
 
-export const SiconBringToFront = /*#__PURE__*/ createSicon("bring-to-front", [["M10 8L14 8A2 2 0 0 1 16 10L16 14A2 2 0 0 1 14 16L10 16A2 2 0 0 1 8 14L8 10A2 2 0 0 1 10 8Z","M4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2L8 2A2 2 0 0 1 10 4","M14 20A2 2 0 0 0 16 22L20 22A2 2 0 0 0 22 20L22 16A2 2 0 0 0 20 14"],"bbb"]);
+export const SiconBringToFront = /*#__PURE__*/ createSicon("bring-to-front", ["M10 8L14 8A2 2 0 0 1 16 10L16 14A2 2 0 0 1 14 16L10 16A2 2 0 0 1 8 14L8 10A2 2 0 0 1 10 8Z","M4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2L8 2A2 2 0 0 1 10 4","M14 20A2 2 0 0 0 16 22L20 22A2 2 0 0 0 22 20L22 16A2 2 0 0 0 20 14"]);
 export default SiconBringToFront;

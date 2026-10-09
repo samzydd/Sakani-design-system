@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-square-quote"
 import { createSicon } from '../createSicon';
 
-export const SiconMessageSquareQuote = /*#__PURE__*/ createSicon("message-square-quote", [["M14 14A2 2 0 0 0 16 12L16 9A1 1 0 0 0 15 8L14 8","M22 17A2 2 0 0 1 20 19L6.828 19A2 2 0 0 0 5.414 19.586L3.212 21.788A0.71 0.71 0 0 1 2 21.286L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5L22 17Z","M8 14A2 2 0 0 0 10 12L10 9A1 1 0 0 0 9 8L8 8"],"nbn"]);
+export const SiconMessageSquareQuote = /*#__PURE__*/ createSicon("message-square-quote", ["M14 14A2 2 0 0 0 16 12L16 9A1 1 0 0 0 15 8L14 8","M22 17A2 2 0 0 1 20 19L6.828 19A2 2 0 0 0 5.414 19.586L3.212 21.788A0.71 0.71 0 0 1 2 21.286L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5L22 17Z","M8 14A2 2 0 0 0 10 12L10 9A1 1 0 0 0 9 8L8 8"]);
 export default SiconMessageSquareQuote;

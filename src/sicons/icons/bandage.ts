@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bandage"
 import { createSicon } from '../createSicon';
 
-export const SiconBandage = /*#__PURE__*/ createSicon("bandage", [["M10 10.01L10.01 10.01","M10 14.01L10.01 14.01","M14 10.01L14.01 10.01","M14 14.01L14.01 14.01","M18 6L18 18","M6 6L6 18","M4 6L20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z"],"nnnnnnb"]);
+export const SiconBandage = /*#__PURE__*/ createSicon("bandage", ["M10 10.01L10.01 10.01","M10 14.01L10.01 14.01","M14 10.01L14.01 10.01","M14 14.01L14.01 14.01","M18 6L18 18","M6 6L6 18","M4 6L20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z"]);
 export default SiconBandage;

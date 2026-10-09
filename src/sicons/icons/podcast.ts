@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mic-signal" (alias of "podcast")
 import { createSicon } from '../createSicon';
 
-export const SiconPodcast = /*#__PURE__*/ createSicon("podcast", [["M12 17L12 21","M18 11A6 6 0 0 0 15 5.803","M2 11A10 10 0 0 1 7 2.338","M22 11A10 10 0 0 0 17 2.338","M6 11A6 6 0 0 1 9 5.803","M9 21L15 21","M12 9L12 9A2 2 0 0 1 14 11L14 15A2 2 0 0 1 12 17L12 17A2 2 0 0 1 10 15L10 11A2 2 0 0 1 12 9Z"],"ffffffb"]);
+export const SiconPodcast = /*#__PURE__*/ createSicon("podcast", ["M12 17L12 21","M18 11A6 6 0 0 0 15 5.803","M2 11A10 10 0 0 1 7 2.338","M22 11A10 10 0 0 0 17 2.338","M6 11A6 6 0 0 1 9 5.803","M9 21L15 21","M12 9L12 9A2 2 0 0 1 14 11L14 15A2 2 0 0 1 12 17L12 17A2 2 0 0 1 10 15L10 11A2 2 0 0 1 12 9Z"]);
 export default SiconPodcast;

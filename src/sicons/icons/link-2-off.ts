@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "link-2-off"
 import { createSicon } from '../createSicon';
 
-export const SiconLink2Off = /*#__PURE__*/ createSicon("link-2-off", [["M9 17L7 17A5 5 0 0 1 7 7","M15 7L17 7A5 5 0 0 1 21 15","M8 12L12 12","M2 2L22 22"],"bfff"]);
+export const SiconLink2Off = /*#__PURE__*/ createSicon("link-2-off", ["M9 17L7 17A5 5 0 0 1 7 7","M15 7L17 7A5 5 0 0 1 21 15","M8 12L12 12","M2 2L22 22"]);
 export default SiconLink2Off;

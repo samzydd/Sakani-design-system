@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fullscreen"
 import { createSicon } from '../createSicon';
 
-export const SiconFullscreen = /*#__PURE__*/ createSicon("fullscreen", [["M3 7L3 5A2 2 0 0 1 5 3L7 3","M17 3L19 3A2 2 0 0 1 21 5L21 7","M21 17L21 19A2 2 0 0 1 19 21L17 21","M7 21L5 21A2 2 0 0 1 3 19L3 17","M8 8L16 8A1 1 0 0 1 17 9L17 15A1 1 0 0 1 16 16L8 16A1 1 0 0 1 7 15L7 9A1 1 0 0 1 8 8Z"],"ffffb"]);
+export const SiconFullscreen = /*#__PURE__*/ createSicon("fullscreen", ["M3 7L3 5A2 2 0 0 1 5 3L7 3","M17 3L19 3A2 2 0 0 1 21 5L21 7","M21 17L21 19A2 2 0 0 1 19 21L17 21","M7 21L5 21A2 2 0 0 1 3 19L3 17","M8 8L16 8A1 1 0 0 1 17 9L17 15A1 1 0 0 1 16 16L8 16A1 1 0 0 1 7 15L7 9A1 1 0 0 1 8 8Z"]);
 export default SiconFullscreen;

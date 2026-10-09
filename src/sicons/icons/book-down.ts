@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-down"
 import { createSicon } from '../createSicon';
 
-export const SiconBookDown = /*#__PURE__*/ createSicon("book-down", [["M12 13L12 7","M4 19.5L4 4.5A2.5 2.5 0 0 1 6.5 2L19 2A1 1 0 0 1 20 3L20 21A1 1 0 0 1 19 22L6.5 22A1 1 0 0 1 6.5 17L20 17","M9 10L12 13L15 10"],"ppp"]);
+export const SiconBookDown = /*#__PURE__*/ createSicon("book-down", ["M12 13L12 7","M4 19.5L4 4.5A2.5 2.5 0 0 1 6.5 2L19 2A1 1 0 0 1 20 3L20 21A1 1 0 0 1 19 22L6.5 22A1 1 0 0 1 6.5 17L20 17","M9 10L12 13L15 10"]);
 export default SiconBookDown;

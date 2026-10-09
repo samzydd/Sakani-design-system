@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "train-track"
 import { createSicon } from '../createSicon';
 
-export const SiconTrainTrack = /*#__PURE__*/ createSicon("train-track", [["M2 17L17 2","M2 14L10 22","M5 11L13 19","M8 8L16 16","M11 5L19 13","M14 2L22 10","M7 22L22 7"],"ppppppp"]);
+export const SiconTrainTrack = /*#__PURE__*/ createSicon("train-track", ["M2 17L17 2","M2 14L10 22","M5 11L13 19","M8 8L16 16","M11 5L19 13","M14 2L22 10","M7 22L22 7"]);
 export default SiconTrainTrack;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "send"
 import { createSicon } from '../createSicon';
 
-export const SiconSend = /*#__PURE__*/ createSicon("send", [["M14.536 21.686A0.5 0.5 0 0 0 15.473 21.662L21.973 2.662A0.496 0.496 0 0 0 21.338 2.027L2.338 8.527A0.5 0.5 0 0 0 2.314 9.464L10.244 12.644A2 2 0 0 1 11.356 13.754L14.536 21.686Z","M21.854 2.147L10.914 13.086"],"bn"]);
+export const SiconSend = /*#__PURE__*/ createSicon("send", ["M14.536 21.686A0.5 0.5 0 0 0 15.473 21.662L21.973 2.662A0.496 0.496 0 0 0 21.338 2.027L2.338 8.527A0.5 0.5 0 0 0 2.314 9.464L10.244 12.644A2 2 0 0 1 11.356 13.754L14.536 21.686Z","M21.854 2.147L10.914 13.086"]);
 export default SiconSend;

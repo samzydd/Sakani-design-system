@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "eye-closed"
 import { createSicon } from '../createSicon';
 
-export const SiconEyeClosed = /*#__PURE__*/ createSicon("eye-closed", [["M15 18L14.278 14.75","M2 8A10.645 10.645 0 0 0 22 8","M20 15L18.274 12.95","M4 15L5.726 12.95","M9 18L9.722 14.75"],"ppppp"]);
+export const SiconEyeClosed = /*#__PURE__*/ createSicon("eye-closed", ["M15 18L14.278 14.75","M2 8A10.645 10.645 0 0 0 22 8","M20 15L18.274 12.95","M4 15L5.726 12.95","M9 18L9.722 14.75"]);
 export default SiconEyeClosed;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-up-wide-narrow"
 import { createSicon } from '../createSicon';
 
-export const SiconArrowUpWideNarrow = /*#__PURE__*/ createSicon("arrow-up-wide-narrow", [["M3 8L7 4L11 8","M7 4L7 20","M11 12L21 12","M11 16L18 16","M11 20L15 20"],"ppppp"]);
+export const SiconArrowUpWideNarrow = /*#__PURE__*/ createSicon("arrow-up-wide-narrow", ["M3 8L7 4L11 8","M7 4L7 20","M11 12L21 12","M11 16L18 16","M11 20L15 20"]);
 export default SiconArrowUpWideNarrow;

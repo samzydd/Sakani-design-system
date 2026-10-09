@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "dot"
 import { createSicon } from '../createSicon';
 
-export const SiconDot = /*#__PURE__*/ createSicon("dot", [["M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12Z"],"p"]);
+export const SiconDot = /*#__PURE__*/ createSicon("dot", ["M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12Z"]);
 export default SiconDot;

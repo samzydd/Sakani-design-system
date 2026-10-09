@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "reply"
 import { createSicon } from '../createSicon';
 
-export const SiconReply = /*#__PURE__*/ createSicon("reply", [["M20 18L20 16A4 4 0 0 0 16 12L4 12","M9 17L4 12L9 7"],"pp"]);
+export const SiconReply = /*#__PURE__*/ createSicon("reply", ["M20 18L20 16A4 4 0 0 0 16 12L4 12","M9 17L4 12L9 7"]);
 export default SiconReply;

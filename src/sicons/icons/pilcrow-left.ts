@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pilcrow-left"
 import { createSicon } from '../createSicon';
 
-export const SiconPilcrowLeft = /*#__PURE__*/ createSicon("pilcrow-left", [["M14 3L14 14","M14 9L11 9A3 3 0 0 1 11 3L20 3","M18 3L18 14","M22 18L2 18L6 14","M6 22L2 18"],"nbfbf"]);
+export const SiconPilcrowLeft = /*#__PURE__*/ createSicon("pilcrow-left", ["M14 3L14 14","M14 9L11 9A3 3 0 0 1 11 3L20 3","M18 3L18 14","M22 18L2 18L6 14","M6 22L2 18"]);
 export default SiconPilcrowLeft;

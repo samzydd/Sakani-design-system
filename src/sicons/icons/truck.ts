@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "truck"
 import { createSicon } from '../createSicon';
 
-export const SiconTruck = /*#__PURE__*/ createSicon("truck", [["M14 18L14 6A2 2 0 0 0 12 4L4 4A2 2 0 0 0 2 6L2 17A1 1 0 0 0 3 18L5 18","M15 18L9 18","M19 18L21 18A1 1 0 0 0 22 17L22 13.35A1 1 0 0 0 21.78 12.726L18.3 8.376A1 1 0 0 0 17.52 8L14 8","M15 18A2 2 0 1 0 19 18A2 2 0 1 0 15 18Z","M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18Z"],"beffn"]);
+export const SiconTruck = /*#__PURE__*/ createSicon("truck", ["M14 18L14 6A2 2 0 0 0 12 4L4 4A2 2 0 0 0 2 6L2 17A1 1 0 0 0 3 18L5 18","M15 18L9 18","M19 18L21 18A1 1 0 0 0 22 17L22 13.35A1 1 0 0 0 21.78 12.726L18.3 8.376A1 1 0 0 0 17.52 8L14 8","M15 18A2 2 0 1 0 19 18A2 2 0 1 0 15 18Z","M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18Z"]);
 export default SiconTruck;

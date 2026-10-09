@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "radical"
 import { createSicon } from '../createSicon';
 
-export const SiconRadical = /*#__PURE__*/ createSicon("radical", [["M3 12L6.28 12A1 1 0 0 1 7.228 12.684L9.526 20.618A0.5 0.5 0 0 0 10.486 20.574L13.82 4.771A1 1 0 0 1 14.792 4L21 4"],"p"]);
+export const SiconRadical = /*#__PURE__*/ createSicon("radical", ["M3 12L6.28 12A1 1 0 0 1 7.228 12.684L9.526 20.618A0.5 0.5 0 0 0 10.486 20.574L13.82 4.771A1 1 0 0 1 14.792 4L21 4"]);
 export default SiconRadical;

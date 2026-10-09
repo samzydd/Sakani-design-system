@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "banknote"
 import { createSicon } from '../createSicon';
 
-export const SiconBanknote = /*#__PURE__*/ createSicon("banknote", [["M4 6L20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z","M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z","M6 12L6.01 12","M18 12L18.01 12"],"bnnn"]);
+export const SiconBanknote = /*#__PURE__*/ createSicon("banknote", ["M4 6L20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z","M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z","M6 12L6.01 12","M18 12L18.01 12"]);
 export default SiconBanknote;

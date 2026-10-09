@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-down-1-0"
 import { createSicon } from '../createSicon';
 
-export const SiconArrowDown10 = /*#__PURE__*/ createSicon("arrow-down-1-0", [["M3 16L7 20L11 16","M7 20L7 4","M17 10L17 5A1 1 0 0 0 16 4L15 4","M15 10L19 10","M17 14L17 14A2 2 0 0 1 19 16L19 18A2 2 0 0 1 17 20L17 20A2 2 0 0 1 15 18L15 16A2 2 0 0 1 17 14Z"],"ffffb"]);
+export const SiconArrowDown10 = /*#__PURE__*/ createSicon("arrow-down-1-0", ["M3 16L7 20L11 16","M7 20L7 4","M17 10L17 5A1 1 0 0 0 16 4L15 4","M15 10L19 10","M17 14L17 14A2 2 0 0 1 19 16L19 18A2 2 0 0 1 17 20L17 20A2 2 0 0 1 15 18L15 16A2 2 0 0 1 17 14Z"]);
 export default SiconArrowDown10;

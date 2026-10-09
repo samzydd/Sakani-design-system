@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tv-minimal"
 import { createSicon } from '../createSicon';
 
-export const SiconTvMinimal = /*#__PURE__*/ createSicon("tv-minimal", [["M7 21L17 21","M4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3Z"],"fb"]);
+export const SiconTvMinimal = /*#__PURE__*/ createSicon("tv-minimal", ["M7 21L17 21","M4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3Z"]);
 export default SiconTvMinimal;

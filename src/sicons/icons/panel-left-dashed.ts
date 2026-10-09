@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "panel-left-dashed"
 import { createSicon } from '../createSicon';
 
-export const SiconPanelLeftDashed = /*#__PURE__*/ createSicon("panel-left-dashed", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M9 14L9 15","M9 19L9 21","M9 3L9 5","M9 9L9 10"],"bnnnn"]);
+export const SiconPanelLeftDashed = /*#__PURE__*/ createSicon("panel-left-dashed", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M9 14L9 15","M9 19L9 21","M9 3L9 5","M9 9L9 10"]);
 export default SiconPanelLeftDashed;

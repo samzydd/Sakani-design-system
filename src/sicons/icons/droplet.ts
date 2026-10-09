@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "droplet"
 import { createSicon } from '../createSicon';
 
-export const SiconDroplet = /*#__PURE__*/ createSicon("droplet", [["M12 22A7 7 0 0 0 19 15C19 13 18 11.1 16 9.5C14 7.9 12.5 5.5 12 3C11.5 5.5 10 7.9 8 9.5C6 11.1 5 13 5 15A7 7 0 0 0 12 22Z"],"b"]);
+export const SiconDroplet = /*#__PURE__*/ createSicon("droplet", ["M12 22A7 7 0 0 0 19 15C19 13 18 11.1 16 9.5C14 7.9 12.5 5.5 12 3C11.5 5.5 10 7.9 8 9.5C6 11.1 5 13 5 15A7 7 0 0 0 12 22Z"]);
 export default SiconDroplet;

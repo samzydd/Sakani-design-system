@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "test-tube"
 import { createSicon } from '../createSicon';
 
-export const SiconTestTube = /*#__PURE__*/ createSicon("test-tube", [["M14.5 2L14.5 19.5C14.5 20.9 13.4 22 12 22C10.6 22 9.5 20.9 9.5 19.5L9.5 2","M8.5 2L15.5 2","M14.5 16L9.5 16"],"ben"]);
+export const SiconTestTube = /*#__PURE__*/ createSicon("test-tube", ["M14.5 2L14.5 19.5C14.5 20.9 13.4 22 12 22C10.6 22 9.5 20.9 9.5 19.5L9.5 2","M8.5 2L15.5 2","M14.5 16L9.5 16"]);
 export default SiconTestTube;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-minus-corner" (alias of "file-minus-2")
 import { createSicon } from '../createSicon';
 
-export const SiconFileMinus2 = /*#__PURE__*/ createSicon("file-minus-2", [["M20 14L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 20A2 2 0 0 0 6 22L18 22","M14 2L14 7A1 1 0 0 0 15 8L20 8","M14 18L20 18"],"bnn"]);
+export const SiconFileMinus2 = /*#__PURE__*/ createSicon("file-minus-2", ["M20 14L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 20A2 2 0 0 0 6 22L18 22","M14 2L14 7A1 1 0 0 0 15 8L20 8","M14 18L20 18"]);
 export default SiconFileMinus2;

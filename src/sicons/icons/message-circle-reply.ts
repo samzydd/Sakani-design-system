@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-circle-reply"
 import { createSicon } from '../createSicon';
 
-export const SiconMessageCircleReply = /*#__PURE__*/ createSicon("message-circle-reply", [["M2.992 16.342A2 2 0 0 1 3.086 17.509L2.021 20.799A1 1 0 0 0 3.257 21.967L6.67 20.969A2 2 0 0 1 7.769 21.061A10 10 0 1 0 2.992 16.342","M10 15L7 12L10 9","M7 12L15 12A2 2 0 0 1 17 14L17 15"],"bnn"]);
+export const SiconMessageCircleReply = /*#__PURE__*/ createSicon("message-circle-reply", ["M2.992 16.342A2 2 0 0 1 3.086 17.509L2.021 20.799A1 1 0 0 0 3.257 21.967L6.67 20.969A2 2 0 0 1 7.769 21.061A10 10 0 1 0 2.992 16.342","M10 15L7 12L10 9","M7 12L15 12A2 2 0 0 1 17 14L17 15"]);
 export default SiconMessageCircleReply;

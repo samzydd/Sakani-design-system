@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "corner-right-up"
 import { createSicon } from '../createSicon';
 
-export const SiconCornerRightUp = /*#__PURE__*/ createSicon("corner-right-up", [["M10 9L15 4L20 9","M4 20L11 20A4 4 0 0 0 15 16L15 4"],"pp"]);
+export const SiconCornerRightUp = /*#__PURE__*/ createSicon("corner-right-up", ["M10 9L15 4L20 9","M4 20L11 20A4 4 0 0 0 15 16L15 4"]);
 export default SiconCornerRightUp;

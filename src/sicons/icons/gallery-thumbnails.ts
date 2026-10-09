@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gallery-thumbnails"
 import { createSicon } from '../createSicon';
 
-export const SiconGalleryThumbnails = /*#__PURE__*/ createSicon("gallery-thumbnails", [["M5 3L19 3A2 2 0 0 1 21 5L21 15A2 2 0 0 1 19 17L5 17A2 2 0 0 1 3 15L3 5A2 2 0 0 1 5 3Z","M4 21L5 21","M9 21L10 21","M14 21L15 21","M19 21L20 21"],"bffff"]);
+export const SiconGalleryThumbnails = /*#__PURE__*/ createSicon("gallery-thumbnails", ["M5 3L19 3A2 2 0 0 1 21 5L21 15A2 2 0 0 1 19 17L5 17A2 2 0 0 1 3 15L3 5A2 2 0 0 1 5 3Z","M4 21L5 21","M9 21L10 21","M14 21L15 21","M19 21L20 21"]);
 export default SiconGalleryThumbnails;

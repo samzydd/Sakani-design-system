@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cloud-snow"
 import { createSicon } from '../createSicon';
 
-export const SiconCloudSnow = /*#__PURE__*/ createSicon("cloud-snow", [["M4 14.899A7 7 0 1 1 15.71 8L17.5 8A4.5 4.5 0 0 1 20 16.242","M8 15L8.01 15","M8 19L8.01 19","M12 17L12.01 17","M12 21L12.01 21","M16 15L16.01 15","M16 19L16.01 19"],"befefef"]);
+export const SiconCloudSnow = /*#__PURE__*/ createSicon("cloud-snow", ["M4 14.899A7 7 0 1 1 15.71 8L17.5 8A4.5 4.5 0 0 1 20 16.242","M8 15L8.01 15","M8 19L8.01 19","M12 17L12.01 17","M12 21L12.01 21","M16 15L16.01 15","M16 19L16.01 19"]);
 export default SiconCloudSnow;

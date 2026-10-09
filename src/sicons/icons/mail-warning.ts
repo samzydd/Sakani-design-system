@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mail-warning"
 import { createSicon } from '../createSicon';
 
-export const SiconMailWarning = /*#__PURE__*/ createSicon("mail-warning", [["M22 10.5L22 6A2 2 0 0 0 20 4L4 4A2 2 0 0 0 2 6L2 18C2 19.1 2.9 20 4 20L16.5 20","M22 7L13.03 12.7A1.94 1.94 0 0 1 10.97 12.7L2 7","M20 14L20 18","M20 22L20 22.01"],"bnef"]);
+export const SiconMailWarning = /*#__PURE__*/ createSicon("mail-warning", ["M22 10.5L22 6A2 2 0 0 0 20 4L4 4A2 2 0 0 0 2 6L2 18C2 19.1 2.9 20 4 20L16.5 20","M22 7L13.03 12.7A1.94 1.94 0 0 1 10.97 12.7L2 7","M20 14L20 18","M20 22L20 22.01"]);
 export default SiconMailWarning;

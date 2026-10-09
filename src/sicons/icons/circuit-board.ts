@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circuit-board"
 import { createSicon } from '../createSicon';
 
-export const SiconCircuitBoard = /*#__PURE__*/ createSicon("circuit-board", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M11 9L15 9A2 2 0 0 0 17 7L17 3","M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9Z","M7 21L7 17A2 2 0 0 1 9 15L13 15","M13 15A2 2 0 1 0 17 15A2 2 0 1 0 13 15Z"],"bnnnn"]);
+export const SiconCircuitBoard = /*#__PURE__*/ createSicon("circuit-board", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M11 9L15 9A2 2 0 0 0 17 7L17 3","M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9Z","M7 21L7 17A2 2 0 0 1 9 15L13 15","M13 15A2 2 0 1 0 17 15A2 2 0 1 0 13 15Z"]);
 export default SiconCircuitBoard;

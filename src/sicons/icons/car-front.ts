@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "car-front"
 import { createSicon } from '../createSicon';
 
-export const SiconCarFront = /*#__PURE__*/ createSicon("car-front", [["M21 8L19 10L17.5 6.3A2 2 0 0 0 15.646 5L8.4 5A2 2 0 0 0 6.497 6.257L5 10L3 8","M7 14L7.01 14","M17 14L17.01 14","M5 10L19 10A2 2 0 0 1 21 12L21 16A2 2 0 0 1 19 18L5 18A2 2 0 0 1 3 16L3 12A2 2 0 0 1 5 10Z","M5 18L5 20","M19 18L19 20"],"fnnbnn"]);
+export const SiconCarFront = /*#__PURE__*/ createSicon("car-front", ["M21 8L19 10L17.5 6.3A2 2 0 0 0 15.646 5L8.4 5A2 2 0 0 0 6.497 6.257L5 10L3 8","M7 14L7.01 14","M17 14L17.01 14","M5 10L19 10A2 2 0 0 1 21 12L21 16A2 2 0 0 1 19 18L5 18A2 2 0 0 1 3 16L3 12A2 2 0 0 1 5 10Z","M5 18L5 20","M19 18L19 20"]);
 export default SiconCarFront;

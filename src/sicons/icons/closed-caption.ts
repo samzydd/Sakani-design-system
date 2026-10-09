@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "closed-caption"
 import { createSicon } from '../createSicon';
 
-export const SiconClosedCaption = /*#__PURE__*/ createSicon("closed-caption", [["M10 9.17A3 3 0 1 0 10 14.83","M17 9.17A3 3 0 1 0 17 14.83","M4 5L20 5A2 2 0 0 1 22 7L22 17A2 2 0 0 1 20 19L4 19A2 2 0 0 1 2 17L2 7A2 2 0 0 1 4 5Z"],"nnb"]);
+export const SiconClosedCaption = /*#__PURE__*/ createSicon("closed-caption", ["M10 9.17A3 3 0 1 0 10 14.83","M17 9.17A3 3 0 1 0 17 14.83","M4 5L20 5A2 2 0 0 1 22 7L22 17A2 2 0 0 1 20 19L4 19A2 2 0 0 1 2 17L2 7A2 2 0 0 1 4 5Z"]);
 export default SiconClosedCaption;

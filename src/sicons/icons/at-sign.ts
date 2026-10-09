@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "at-sign"
 import { createSicon } from '../createSicon';
 
-export const SiconAtSign = /*#__PURE__*/ createSicon("at-sign", [["M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z","M16 8L16 13A3 3 0 0 0 22 13L22 12A10 10 0 1 0 18 20"],"nb"]);
+export const SiconAtSign = /*#__PURE__*/ createSicon("at-sign", ["M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z","M16 8L16 13A3 3 0 0 0 22 13L22 12A10 10 0 1 0 18 20"]);
 export default SiconAtSign;

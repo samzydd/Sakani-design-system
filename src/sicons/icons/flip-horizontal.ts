@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-centerline-dashed-horizontal" (alias of "flip-horizontal")
 import { createSicon } from '../createSicon';
 
-export const SiconFlipHorizontal = /*#__PURE__*/ createSicon("flip-horizontal", [["M8 3L5 3A2 2 0 0 0 3 5L3 19C3 20.1 3.9 21 5 21L8 21","M16 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L16 21","M12 20L12 22","M12 14L12 16","M12 8L12 10","M12 2L12 4"],"pppppp"]);
+export const SiconFlipHorizontal = /*#__PURE__*/ createSicon("flip-horizontal", ["M8 3L5 3A2 2 0 0 0 3 5L3 19C3 20.1 3.9 21 5 21L8 21","M16 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L16 21","M12 20L12 22","M12 14L12 16","M12 8L12 10","M12 2L12 4"]);
 export default SiconFlipHorizontal;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cable"
 import { createSicon } from '../createSicon';
 
-export const SiconCable = /*#__PURE__*/ createSicon("cable", [["M17 19A1 1 0 0 1 16 18L16 16A2 2 0 0 1 18 14L20 14A2 2 0 0 1 22 16L22 18A1 1 0 0 1 21 19L17 19Z","M17 21L17 19","M19 14L19 6.5A1 1 0 0 0 12 6.5L12 17.5A1 1 0 0 1 5 17.5L5 10","M21 21L21 19","M3 5L3 3","M4 10A2 2 0 0 1 2 8L2 6A1 1 0 0 1 3 5L7 5A1 1 0 0 1 8 6L8 8A2 2 0 0 1 6 10L4 10Z","M7 5L7 3"],"bnfnnbn"]);
+export const SiconCable = /*#__PURE__*/ createSicon("cable", ["M17 19A1 1 0 0 1 16 18L16 16A2 2 0 0 1 18 14L20 14A2 2 0 0 1 22 16L22 18A1 1 0 0 1 21 19L17 19Z","M17 21L17 19","M19 14L19 6.5A1 1 0 0 0 12 6.5L12 17.5A1 1 0 0 1 5 17.5L5 10","M21 21L21 19","M3 5L3 3","M4 10A2 2 0 0 1 2 8L2 6A1 1 0 0 1 3 5L7 5A1 1 0 0 1 8 6L8 8A2 2 0 0 1 6 10L4 10Z","M7 5L7 3"]);
 export default SiconCable;

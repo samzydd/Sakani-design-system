@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-parking"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleParking = /*#__PURE__*/ createSicon("circle-parking", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M9 17L9 9A2 2 0 0 1 11 7L13 7A3 3 0 0 1 13 13L9 13"],"bn"]);
+export const SiconCircleParking = /*#__PURE__*/ createSicon("circle-parking", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M9 17L9 9A2 2 0 0 1 11 7L13 7A3 3 0 0 1 13 13L9 13"]);
 export default SiconCircleParking;

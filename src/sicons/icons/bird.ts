@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bird"
 import { createSicon } from '../createSicon';
 
-export const SiconBird = /*#__PURE__*/ createSicon("bird", [["M16 7L16.01 7","M3.4 18L12 18A8 8 0 0 0 20 10L20 7A4 4 0 0 0 12.72 4.7L2 20","M20 7L21 7.25A0.258 0.258 0 0 1 21 7.75L20 8","M10 18L10 21","M14 17.75L14 21","M7 18A6 6 0 0 0 10.84 7.39"],"nbeffn"]);
+export const SiconBird = /*#__PURE__*/ createSicon("bird", ["M16 7L16.01 7","M3.4 18L12 18A8 8 0 0 0 20 10L20 7A4 4 0 0 0 12.72 4.7L2 20","M20 7L21 7.25A0.258 0.258 0 0 1 21 7.75L20 8","M10 18L10 21","M14 17.75L14 21","M7 18A6 6 0 0 0 10.84 7.39"]);
 export default SiconBird;

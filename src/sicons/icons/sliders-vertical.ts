@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sliders-vertical"
 import { createSicon } from '../createSicon';
 
-export const SiconSlidersVertical = /*#__PURE__*/ createSicon("sliders-vertical", [["M10 8L14 8","M12 21L12 12","M12 8L12 3","M17 16L21 16","M19 12L19 3","M19 21L19 16","M3 14L7 14","M5 10L5 3","M5 21L5 14"],"ppppppppp"]);
+export const SiconSlidersVertical = /*#__PURE__*/ createSicon("sliders-vertical", ["M10 8L14 8","M12 21L12 12","M12 8L12 3","M17 16L21 16","M19 12L19 3","M19 21L19 16","M3 14L7 14","M5 10L5 3","M5 21L5 14"]);
 export default SiconSlidersVertical;

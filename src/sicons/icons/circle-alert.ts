@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-alert"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleAlert = /*#__PURE__*/ createSicon("circle-alert", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M12 8L12 12","M12 16L12.01 16"],"bnn"]);
+export const SiconCircleAlert = /*#__PURE__*/ createSicon("circle-alert", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M12 8L12 12","M12 16L12.01 16"]);
 export default SiconCircleAlert;

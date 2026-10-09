@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-root"
 import { createSicon } from '../createSicon';
 
-export const SiconFolderRoot = /*#__PURE__*/ createSicon("folder-root", [["M4 20L20 20A2 2 0 0 0 22 18L22 8A2 2 0 0 0 20 6L12.07 6A2 2 0 0 1 10.41 5.1L9.59 3.9A2 2 0 0 0 7.93 3L4 3A2 2 0 0 0 2 5L2 18C2 19.1 2.9 20 4 20Z","M10 13A2 2 0 1 0 14 13A2 2 0 1 0 10 13Z","M12 15L12 20"],"bnn"]);
+export const SiconFolderRoot = /*#__PURE__*/ createSicon("folder-root", ["M4 20L20 20A2 2 0 0 0 22 18L22 8A2 2 0 0 0 20 6L12.07 6A2 2 0 0 1 10.41 5.1L9.59 3.9A2 2 0 0 0 7.93 3L4 3A2 2 0 0 0 2 5L2 18C2 19.1 2.9 20 4 20Z","M10 13A2 2 0 1 0 14 13A2 2 0 1 0 10 13Z","M12 15L12 20"]);
 export default SiconFolderRoot;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "thumbs-up"
 import { createSicon } from '../createSicon';
 
-export const SiconThumbsUp = /*#__PURE__*/ createSicon("thumbs-up", [["M15 5.88L14.5 7.94A1.667 1.667 0 0 0 16.12 10L19.83 10A2 2 0 0 1 21.75 12.56L19.42 20.56A2 2 0 0 1 17.5 22L4 22A2 2 0 0 1 2 20L2 12A2 2 0 0 1 4 10L6.76 10A2 2 0 0 0 8.55 8.89L12 2A3.13 3.13 0 0 1 15 5.88Z","M7 10L7 22"],"bn"]);
+export const SiconThumbsUp = /*#__PURE__*/ createSicon("thumbs-up", ["M15 5.88L14.5 7.94A1.667 1.667 0 0 0 16.12 10L19.83 10A2 2 0 0 1 21.75 12.56L19.42 20.56A2 2 0 0 1 17.5 22L4 22A2 2 0 0 1 2 20L2 12A2 2 0 0 1 4 10L6.76 10A2 2 0 0 0 8.55 8.89L12 2A3.13 3.13 0 0 1 15 5.88Z","M7 10L7 22"]);
 export default SiconThumbsUp;

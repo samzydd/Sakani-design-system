@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "binoculars"
 import { createSicon } from '../createSicon';
 
-export const SiconBinoculars = /*#__PURE__*/ createSicon("binoculars", [["M10 10L14 10","M19 7L19 4A1 1 0 0 0 18 3L16 3A1 1 0 0 0 15 4L15 7","M20 21A2 2 0 0 0 22 19L22 15.149C22 13.759 20 12.187 20 10.32L20 8A1 1 0 0 0 19 7L15 7A1 1 0 0 0 14 8L14 19A2 2 0 0 0 16 21L20 21Z","M22 16L2 16","M4 21A2 2 0 0 1 2 19L2 15.149C2 13.759 4 12.187 4 10.32L4 8A1 1 0 0 1 5 7L9 7A1 1 0 0 1 10 8L10 19A2 2 0 0 1 8 21L4 21Z","M9 7L9 4A1 1 0 0 0 8 3L6 3A1 1 0 0 0 5 4L5 7"],"efbnbf"]);
+export const SiconBinoculars = /*#__PURE__*/ createSicon("binoculars", ["M10 10L14 10","M19 7L19 4A1 1 0 0 0 18 3L16 3A1 1 0 0 0 15 4L15 7","M20 21A2 2 0 0 0 22 19L22 15.149C22 13.759 20 12.187 20 10.32L20 8A1 1 0 0 0 19 7L15 7A1 1 0 0 0 14 8L14 19A2 2 0 0 0 16 21L20 21Z","M22 16L2 16","M4 21A2 2 0 0 1 2 19L2 15.149C2 13.759 4 12.187 4 10.32L4 8A1 1 0 0 1 5 7L9 7A1 1 0 0 1 10 8L10 19A2 2 0 0 1 8 21L4 21Z","M9 7L9 4A1 1 0 0 0 8 3L6 3A1 1 0 0 0 5 4L5 7"]);
 export default SiconBinoculars;

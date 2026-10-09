@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bell-minus"
 import { createSicon } from '../createSicon';
 
-export const SiconBellMinus = /*#__PURE__*/ createSicon("bell-minus", [["M10.268 21A2 2 0 0 0 13.732 21","M15 8L21 8","M16.243 3.757A6 6 0 0 0 6 8C6 12.499 4.589 13.956 3.262 15.326A1 1 0 0 0 4 17L20 17A1 1 0 0 0 20.74 15.327A9.4 9.4 0 0 1 18.667 12"],"fnb"]);
+export const SiconBellMinus = /*#__PURE__*/ createSicon("bell-minus", ["M10.268 21A2 2 0 0 0 13.732 21","M15 8L21 8","M16.243 3.757A6 6 0 0 0 6 8C6 12.499 4.589 13.956 3.262 15.326A1 1 0 0 0 4 17L20 17A1 1 0 0 0 20.74 15.327A9.4 9.4 0 0 1 18.667 12"]);
 export default SiconBellMinus;

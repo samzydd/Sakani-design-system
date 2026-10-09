@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-circle-question-mark"
 import { createSicon } from '../createSicon';
 
-export const SiconMessageCircleQuestionMark = /*#__PURE__*/ createSicon("message-circle-question-mark", [["M2.992 16.342A2 2 0 0 1 3.086 17.509L2.021 20.799A1 1 0 0 0 3.257 21.967L6.67 20.969A2 2 0 0 1 7.769 21.061A10 10 0 1 0 2.992 16.342","M9.09 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13","M12 17L12.01 17"],"bnn"]);
+export const SiconMessageCircleQuestionMark = /*#__PURE__*/ createSicon("message-circle-question-mark", ["M2.992 16.342A2 2 0 0 1 3.086 17.509L2.021 20.799A1 1 0 0 0 3.257 21.967L6.67 20.969A2 2 0 0 1 7.769 21.061A10 10 0 1 0 2.992 16.342","M9.09 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13","M12 17L12.01 17"]);
 export default SiconMessageCircleQuestionMark;

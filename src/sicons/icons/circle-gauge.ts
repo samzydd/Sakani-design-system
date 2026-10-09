@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-gauge"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleGauge = /*#__PURE__*/ createSicon("circle-gauge", [["M15.6 2.7A10 10 0 1 0 21.3 8.4","M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z","M13.4 10.6L19 5"],"bnn"]);
+export const SiconCircleGauge = /*#__PURE__*/ createSicon("circle-gauge", ["M15.6 2.7A10 10 0 1 0 21.3 8.4","M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z","M13.4 10.6L19 5"]);
 export default SiconCircleGauge;

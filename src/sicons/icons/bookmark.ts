@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bookmark"
 import { createSicon } from '../createSicon';
 
-export const SiconBookmark = /*#__PURE__*/ createSicon("bookmark", [["M17 3A2 2 0 0 1 19 5L19 20A1 1 0 0 1 17.504 20.868L12.992 18.29A2 2 0 0 0 11.008 18.29L6.496 20.868A1 1 0 0 1 5 20L5 5A2 2 0 0 1 7 3L17 3Z"],"b"]);
+export const SiconBookmark = /*#__PURE__*/ createSicon("bookmark", ["M17 3A2 2 0 0 1 19 5L19 20A1 1 0 0 1 17.504 20.868L12.992 18.29A2 2 0 0 0 11.008 18.29L6.496 20.868A1 1 0 0 1 5 20L5 5A2 2 0 0 1 7 3L17 3Z"]);
 export default SiconBookmark;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "screen-share"
 import { createSicon } from '../createSicon';
 
-export const SiconScreenShare = /*#__PURE__*/ createSicon("screen-share", [["M13 3L4 3A2 2 0 0 0 2 5L2 15A2 2 0 0 0 4 17L20 17A2 2 0 0 0 22 15L22 12","M8 21L16 21","M12 17L12 21","M17 8L22 3","M17 3L22 3L22 8"],"bffff"]);
+export const SiconScreenShare = /*#__PURE__*/ createSicon("screen-share", ["M13 3L4 3A2 2 0 0 0 2 5L2 15A2 2 0 0 0 4 17L20 17A2 2 0 0 0 22 15L22 12","M8 21L16 21","M12 17L12 21","M17 8L22 3","M17 3L22 3L22 8"]);
 export default SiconScreenShare;

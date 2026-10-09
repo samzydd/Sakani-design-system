@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "infinity"
 import { createSicon } from '../createSicon';
 
-export const SiconInfinity = /*#__PURE__*/ createSicon("infinity", [["M6 16C11 16 13 8 18 8A4 4 0 0 1 18 16C13 16 11 8 6 8A4 4 0 1 0 6 16"],"p"]);
+export const SiconInfinity = /*#__PURE__*/ createSicon("infinity", ["M6 16C11 16 13 8 18 8A4 4 0 0 1 18 16C13 16 11 8 6 8A4 4 0 1 0 6 16"]);
 export default SiconInfinity;

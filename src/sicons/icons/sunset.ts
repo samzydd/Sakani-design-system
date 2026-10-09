@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sunset"
 import { createSicon } from '../createSicon';
 
-export const SiconSunset = /*#__PURE__*/ createSicon("sunset", [["M12 10L12 2","M4.93 10.93L6.34 12.34","M2 18L4 18","M20 18L22 18","M19.07 10.93L17.66 12.34","M22 22L2 22","M16 6L12 10L8 6","M16 18A4 4 0 0 0 8 18"],"fffffffb"]);
+export const SiconSunset = /*#__PURE__*/ createSicon("sunset", ["M12 10L12 2","M4.93 10.93L6.34 12.34","M2 18L4 18","M20 18L22 18","M19.07 10.93L17.66 12.34","M22 22L2 22","M16 6L12 10L8 6","M16 18A4 4 0 0 0 8 18"]);
 export default SiconSunset;

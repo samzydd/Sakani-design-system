@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "library-big"
 import { createSicon } from '../createSicon';
 
-export const SiconLibraryBig = /*#__PURE__*/ createSicon("library-big", [["M4 3L10 3A1 1 0 0 1 11 4L11 20A1 1 0 0 1 10 21L4 21A1 1 0 0 1 3 20L3 4A1 1 0 0 1 4 3Z","M7 3L7 21","M20.4 18.9C20.6 19.4 20.3 20 19.8 20.2L17.9 20.9C17.4 21.1 16.8 20.8 16.6 20.3L11.1 5.1C10.9 4.6 11.2 4 11.7 3.8L13.6 3.1C14.1 2.9 14.7 3.2 14.9 3.7L20.4 18.9Z"],"bnb"]);
+export const SiconLibraryBig = /*#__PURE__*/ createSicon("library-big", ["M4 3L10 3A1 1 0 0 1 11 4L11 20A1 1 0 0 1 10 21L4 21A1 1 0 0 1 3 20L3 4A1 1 0 0 1 4 3Z","M7 3L7 21","M20.4 18.9C20.6 19.4 20.3 20 19.8 20.2L17.9 20.9C17.4 21.1 16.8 20.8 16.6 20.3L11.1 5.1C10.9 4.6 11.2 4 11.7 3.8L13.6 3.1C14.1 2.9 14.7 3.2 14.9 3.7L20.4 18.9Z"]);
 export default SiconLibraryBig;

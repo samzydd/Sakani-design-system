@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "moon-star"
 import { createSicon } from '../createSicon';
 
-export const SiconMoonStar = /*#__PURE__*/ createSicon("moon-star", [["M18 5L22 5","M20 3L20 7","M20.985 12.486A9 9 0 1 1 11.512 3.014C11.917 2.992 12.129 3.474 11.914 3.817A6 6 0 0 0 20.182 12.085C20.526 11.87 21.007 12.081 20.985 12.486"],"ffb"]);
+export const SiconMoonStar = /*#__PURE__*/ createSicon("moon-star", ["M18 5L22 5","M20 3L20 7","M20.985 12.486A9 9 0 1 1 11.512 3.014C11.917 2.992 12.129 3.474 11.914 3.817A6 6 0 0 0 20.182 12.085C20.526 11.87 21.007 12.081 20.985 12.486"]);
 export default SiconMoonStar;

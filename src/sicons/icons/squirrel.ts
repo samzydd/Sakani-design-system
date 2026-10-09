@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "squirrel"
 import { createSicon } from '../createSicon';
 
-export const SiconSquirrel = /*#__PURE__*/ createSicon("squirrel", [["M15.236 22A3 3 0 0 0 13.036 17","M16 20A3 3 0 0 1 19 17L20 17A2 2 0 0 0 22 15L22 13A4 4 0 0 0 18 9L18 4","M18 13L18.01 13","M18 6A4 4 0 0 0 14 10A7 7 0 0 0 7 17C7 12 11 12 11 6.5A4.5 4.5 0 1 0 2 6.5A2.5 2.5 0 0 0 7 6.5C7 10 3 11 3 17C3 19.8 5.2 22 8 22L18 22"],"pppp"]);
+export const SiconSquirrel = /*#__PURE__*/ createSicon("squirrel", ["M15.236 22A3 3 0 0 0 13.036 17","M16 20A3 3 0 0 1 19 17L20 17A2 2 0 0 0 22 15L22 13A4 4 0 0 0 18 9L18 4","M18 13L18.01 13","M18 6A4 4 0 0 0 14 10A7 7 0 0 0 7 17C7 12 11 12 11 6.5A4.5 4.5 0 1 0 2 6.5A2.5 2.5 0 0 0 7 6.5C7 10 3 11 3 17C3 19.8 5.2 22 8 22L18 22"]);
 export default SiconSquirrel;

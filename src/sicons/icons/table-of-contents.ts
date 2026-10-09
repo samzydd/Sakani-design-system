@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "table-of-contents"
 import { createSicon } from '../createSicon';
 
-export const SiconTableOfContents = /*#__PURE__*/ createSicon("table-of-contents", [["M16 5L3 5","M16 12L3 12","M16 19L3 19","M21 5L21.01 5","M21 12L21.01 12","M21 19L21.01 19"],"pppppp"]);
+export const SiconTableOfContents = /*#__PURE__*/ createSicon("table-of-contents", ["M16 5L3 5","M16 12L3 12","M16 19L3 19","M21 5L21.01 5","M21 12L21.01 12","M21 19L21.01 19"]);
 export default SiconTableOfContents;

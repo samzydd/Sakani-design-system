@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "heading-2"
 import { createSicon } from '../createSicon';
 
-export const SiconHeading2 = /*#__PURE__*/ createSicon("heading-2", [["M4 12L12 12","M4 18L4 6","M12 18L12 6","M21 18L17 18C17 14 21 15 21 12C21 10.5 19 9.5 17 11"],"pppp"]);
+export const SiconHeading2 = /*#__PURE__*/ createSicon("heading-2", ["M4 12L12 12","M4 18L4 6","M12 18L12 6","M21 18L17 18C17 14 21 15 21 12C21 10.5 19 9.5 17 11"]);
 export default SiconHeading2;

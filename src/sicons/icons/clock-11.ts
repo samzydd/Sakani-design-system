@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clock-11"
 import { createSicon } from '../createSicon';
 
-export const SiconClock11 = /*#__PURE__*/ createSicon("clock-11", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M12 6L12 9.764A0.528 0.528 0 0 1 11 10L10 8"],"bn"]);
+export const SiconClock11 = /*#__PURE__*/ createSicon("clock-11", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M12 6L12 9.764A0.528 0.528 0 0 1 11 10L10 8"]);
 export default SiconClock11;

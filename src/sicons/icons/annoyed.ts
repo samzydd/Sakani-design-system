@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "face-expressionless" (alias of "annoyed")
 import { createSicon } from '../createSicon';
 
-export const SiconAnnoyed = /*#__PURE__*/ createSicon("annoyed", [["M14 10L16 10","M8 10L10 10","M8 16L16 16","M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z"],"nnnb"]);
+export const SiconAnnoyed = /*#__PURE__*/ createSicon("annoyed", ["M14 10L16 10","M8 10L10 10","M8 16L16 16","M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z"]);
 export default SiconAnnoyed;

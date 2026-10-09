@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "share-2"
 import { createSicon } from '../createSicon';
 
-export const SiconShare2 = /*#__PURE__*/ createSicon("share-2", [["M15 5A3 3 0 1 0 21 5A3 3 0 1 0 15 5Z","M3 12A3 3 0 1 0 9 12A3 3 0 1 0 3 12Z","M15 19A3 3 0 1 0 21 19A3 3 0 1 0 15 19Z","M8.59 13.51L15.42 17.49","M15.41 6.51L8.59 10.49"],"bbbff"]);
+export const SiconShare2 = /*#__PURE__*/ createSicon("share-2", ["M15 5A3 3 0 1 0 21 5A3 3 0 1 0 15 5Z","M3 12A3 3 0 1 0 9 12A3 3 0 1 0 3 12Z","M15 19A3 3 0 1 0 21 19A3 3 0 1 0 15 19Z","M8.59 13.51L15.42 17.49","M15.41 6.51L8.59 10.49"]);
 export default SiconShare2;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-down-to-dot"
 import { createSicon } from '../createSicon';
 
-export const SiconArrowDownToDot = /*#__PURE__*/ createSicon("arrow-down-to-dot", [["M12 2L12 16","M19 9L12 16L5 9","M11 21A1 1 0 1 0 13 21A1 1 0 1 0 11 21Z"],"ppp"]);
+export const SiconArrowDownToDot = /*#__PURE__*/ createSicon("arrow-down-to-dot", ["M12 2L12 16","M19 9L12 16L5 9","M11 21A1 1 0 1 0 13 21A1 1 0 1 0 11 21Z"]);
 export default SiconArrowDownToDot;

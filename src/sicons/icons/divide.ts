@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "divide"
 import { createSicon } from '../createSicon';
 
-export const SiconDivide = /*#__PURE__*/ createSicon("divide", [["M11 6A1 1 0 1 0 13 6A1 1 0 1 0 11 6Z","M5 12L19 12","M11 18A1 1 0 1 0 13 18A1 1 0 1 0 11 18Z"],"ppp"]);
+export const SiconDivide = /*#__PURE__*/ createSicon("divide", ["M11 6A1 1 0 1 0 13 6A1 1 0 1 0 11 6Z","M5 12L19 12","M11 18A1 1 0 1 0 13 18A1 1 0 1 0 11 18Z"]);
 export default SiconDivide;

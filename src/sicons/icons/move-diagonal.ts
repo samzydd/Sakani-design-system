@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "move-diagonal"
 import { createSicon } from '../createSicon';
 
-export const SiconMoveDiagonal = /*#__PURE__*/ createSicon("move-diagonal", [["M11 19L5 19L5 13","M13 5L19 5L19 11","M19 5L5 19"],"ppp"]);
+export const SiconMoveDiagonal = /*#__PURE__*/ createSicon("move-diagonal", ["M11 19L5 19L5 13","M13 5L19 5L19 11","M19 5L5 19"]);
 export default SiconMoveDiagonal;

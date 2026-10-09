@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wine"
 import { createSicon } from '../createSicon';
 
-export const SiconWine = /*#__PURE__*/ createSicon("wine", [["M8 22L16 22","M7 10L17 10","M12 15L12 22","M12 15A5 5 0 0 0 17 10C17 8 16.5 6 15 2L9 2C7.5 6 7 8 7 10A5 5 0 0 0 12 15Z"],"fnfb"]);
+export const SiconWine = /*#__PURE__*/ createSicon("wine", ["M8 22L16 22","M7 10L17 10","M12 15L12 22","M12 15A5 5 0 0 0 17 10C17 8 16.5 6 15 2L9 2C7.5 6 7 8 7 10A5 5 0 0 0 12 15Z"]);
 export default SiconWine;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rotate-cw-square"
 import { createSicon } from '../createSicon';
 
-export const SiconRotateCwSquare = /*#__PURE__*/ createSicon("rotate-cw-square", [["M12 5L6 5A2 2 0 0 0 4 7L4 10","M9 8L12 5L9 2","M4 14L4 18A2 2 0 0 0 6 20L18 20A2 2 0 0 0 20 18L20 7A2 2 0 0 0 18 5L16 5"],"ffb"]);
+export const SiconRotateCwSquare = /*#__PURE__*/ createSicon("rotate-cw-square", ["M12 5L6 5A2 2 0 0 0 4 7L4 10","M9 8L12 5L9 2","M4 14L4 18A2 2 0 0 0 6 20L18 20A2 2 0 0 0 20 18L20 7A2 2 0 0 0 18 5L16 5"]);
 export default SiconRotateCwSquare;

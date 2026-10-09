@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "webhook-off"
 import { createSicon } from '../createSicon';
 
-export const SiconWebhookOff = /*#__PURE__*/ createSicon("webhook-off", [["M17 17L12 17C10.91 16.98 10.06 17.92 9.5 18.9A3 3 0 1 1 2.57 15","M9 3.4A4 4 0 0 1 15.52 4.06","M6 17L9.1 11.2A2.5 2.5 0 0 0 9.157 9.15","M20.3 20.3A4 4 0 0 1 18 21","M18.6 13A4 4 0 0 1 21.957 16.414","M12 6L12.6 7","M2 2L22 22"],"ppppppp"]);
+export const SiconWebhookOff = /*#__PURE__*/ createSicon("webhook-off", ["M17 17L12 17C10.91 16.98 10.06 17.92 9.5 18.9A3 3 0 1 1 2.57 15","M9 3.4A4 4 0 0 1 15.52 4.06","M6 17L9.1 11.2A2.5 2.5 0 0 0 9.157 9.15","M20.3 20.3A4 4 0 0 1 18 21","M18.6 13A4 4 0 0 1 21.957 16.414","M12 6L12.6 7","M2 2L22 22"]);
 export default SiconWebhookOff;

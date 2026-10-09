@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bluetooth-searching"
 import { createSicon } from '../createSicon';
 
-export const SiconBluetoothSearching = /*#__PURE__*/ createSicon("bluetooth-searching", [["M7 7L14.5 14.5A3.536 3.536 0 0 1 14.5 19.5L14.5 19.5A1.464 1.464 0 0 1 12 18.464L12 5.536A1.464 1.464 0 0 1 14.5 4.5L14.5 4.5A3.536 3.536 0 0 1 14.5 9.5L7 17","M20.83 14.83A4 4 0 0 0 20.83 9.17","M18 12L18.01 12"],"ppp"]);
+export const SiconBluetoothSearching = /*#__PURE__*/ createSicon("bluetooth-searching", ["M7 7L14.5 14.5A3.536 3.536 0 0 1 14.5 19.5L14.5 19.5A1.464 1.464 0 0 1 12 18.464L12 5.536A1.464 1.464 0 0 1 14.5 4.5L14.5 4.5A3.536 3.536 0 0 1 14.5 9.5L7 17","M20.83 14.83A4 4 0 0 0 20.83 9.17","M18 12L18.01 12"]);
 export default SiconBluetoothSearching;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "film"
 import { createSicon } from '../createSicon';
 
-export const SiconFilm = /*#__PURE__*/ createSicon("film", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M7 3L7 21","M3 7.5L7 7.5","M3 12L21 12","M3 16.5L7 16.5","M17 3L17 21","M17 7.5L21 7.5","M17 16.5L21 16.5"],"bnnnnnnn"]);
+export const SiconFilm = /*#__PURE__*/ createSicon("film", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M7 3L7 21","M3 7.5L7 7.5","M3 12L21 12","M3 16.5L7 16.5","M17 3L17 21","M17 7.5L21 7.5","M17 16.5L21 16.5"]);
 export default SiconFilm;

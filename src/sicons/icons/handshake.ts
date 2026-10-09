@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "handshake"
 import { createSicon } from '../createSicon';
 
-export const SiconHandshake = /*#__PURE__*/ createSicon("handshake", [["M11 17L13 19A1 1 0 1 0 16 16","M14 14L16.5 16.5A1 1 0 1 0 19.5 13.5L15.62 9.62A3 3 0 0 0 11.38 9.62L10.5 10.5A1 1 0 1 1 7.5 7.5L10.31 4.69A5.79 5.79 0 0 1 17.37 3.82L17.84 4.1A2 2 0 0 0 19.26 4.35L21 4","M21 3L21.909 13.004A0.913 0.913 0 0 1 21 14L20 14","M3 3L2.157 12.274A3.7 3.7 0 0 0 3.225 15.225L8.5 20.5A1 1 0 1 0 11.5 17.5","M3 4L11 4"],"fffbf"]);
+export const SiconHandshake = /*#__PURE__*/ createSicon("handshake", ["M11 17L13 19A1 1 0 1 0 16 16","M14 14L16.5 16.5A1 1 0 1 0 19.5 13.5L15.62 9.62A3 3 0 0 0 11.38 9.62L10.5 10.5A1 1 0 1 1 7.5 7.5L10.31 4.69A5.79 5.79 0 0 1 17.37 3.82L17.84 4.1A2 2 0 0 0 19.26 4.35L21 4","M21 3L21.909 13.004A0.913 0.913 0 0 1 21 14L20 14","M3 3L2.157 12.274A3.7 3.7 0 0 0 3.225 15.225L8.5 20.5A1 1 0 1 0 11.5 17.5","M3 4L11 4"]);
 export default SiconHandshake;

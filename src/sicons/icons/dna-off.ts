@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "dna-off"
 import { createSicon } from '../createSicon';
 
-export const SiconDnaOff = /*#__PURE__*/ createSicon("dna-off", [["M15 2C13.65 3.5 12.908 5 12.5 6.5L14 8","M17 6L14.109 3.109","M2 15C5.333 12 8.667 12 12 12","M2 2L22 22","M20 9L20.891 9.891","M22 9C20.5 10.35 19 11.092 17.5 11.5L16.5 10.5","M3.109 14.109L4 15","M6.5 12.5L7.5 13.5","M7 18L9.891 20.891","M9 22C10.35 20.5 11.092 19 11.5 17.5L10 16"],"pppppppppp"]);
+export const SiconDnaOff = /*#__PURE__*/ createSicon("dna-off", ["M15 2C13.65 3.5 12.908 5 12.5 6.5L14 8","M17 6L14.109 3.109","M2 15C5.333 12 8.667 12 12 12","M2 2L22 22","M20 9L20.891 9.891","M22 9C20.5 10.35 19 11.092 17.5 11.5L16.5 10.5","M3.109 14.109L4 15","M6.5 12.5L7.5 13.5","M7 18L9.891 20.891","M9 22C10.35 20.5 11.092 19 11.5 17.5L10 16"]);
 export default SiconDnaOff;

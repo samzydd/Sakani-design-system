@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "scan-face"
 import { createSicon } from '../createSicon';
 
-export const SiconScanFace = /*#__PURE__*/ createSicon("scan-face", [["M3 7L3 5A2 2 0 0 1 5 3L7 3","M17 3L19 3A2 2 0 0 1 21 5L21 7","M21 17L21 19A2 2 0 0 1 19 21L17 21","M7 21L5 21A2 2 0 0 1 3 19L3 17","M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14","M9 9L9.01 9","M15 9L15.01 9"],"ppppppp"]);
+export const SiconScanFace = /*#__PURE__*/ createSicon("scan-face", ["M3 7L3 5A2 2 0 0 1 5 3L7 3","M17 3L19 3A2 2 0 0 1 21 5L21 7","M21 17L21 19A2 2 0 0 1 19 21L17 21","M7 21L5 21A2 2 0 0 1 3 19L3 17","M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14","M9 9L9.01 9","M15 9L15.01 9"]);
 export default SiconScanFace;

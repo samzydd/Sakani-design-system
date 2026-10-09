@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "heart"
 import { createSicon } from '../createSicon';
 
-export const SiconHeart = /*#__PURE__*/ createSicon("heart", [["M2 9.5A5.5 5.5 0 0 1 11.591 5.824A0.56 0.56 0 0 0 12.409 5.824A5.49 5.49 0 0 1 22 9.5C22 11.79 20.5 13.5 19 15L13.508 20.313A2 2 0 0 1 10.508 20.332L5 15C3.5 13.5 2 11.8 2 9.5"],"b"]);
+export const SiconHeart = /*#__PURE__*/ createSicon("heart", ["M2 9.5A5.5 5.5 0 0 1 11.591 5.824A0.56 0.56 0 0 0 12.409 5.824A5.49 5.49 0 0 1 22 9.5C22 11.79 20.5 13.5 19 15L13.508 20.313A2 2 0 0 1 10.508 20.332L5 15C3.5 13.5 2 11.8 2 9.5"]);
 export default SiconHeart;

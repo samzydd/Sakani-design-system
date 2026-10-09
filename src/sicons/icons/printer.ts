@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "printer"
 import { createSicon } from '../createSicon';
 
-export const SiconPrinter = /*#__PURE__*/ createSicon("printer", [["M6 18L4 18A2 2 0 0 1 2 16L2 11A2 2 0 0 1 4 9L20 9A2 2 0 0 1 22 11L22 16A2 2 0 0 1 20 18L18 18","M6 9L6 3A1 1 0 0 1 7 2L17 2A1 1 0 0 1 18 3L18 9","M7 14L17 14A1 1 0 0 1 18 15L18 21A1 1 0 0 1 17 22L7 22A1 1 0 0 1 6 21L6 15A1 1 0 0 1 7 14Z"],"bbb"]);
+export const SiconPrinter = /*#__PURE__*/ createSicon("printer", ["M6 18L4 18A2 2 0 0 1 2 16L2 11A2 2 0 0 1 4 9L20 9A2 2 0 0 1 22 11L22 16A2 2 0 0 1 20 18L18 18","M6 9L6 3A1 1 0 0 1 7 2L17 2A1 1 0 0 1 18 3L18 9","M7 14L17 14A1 1 0 0 1 18 15L18 21A1 1 0 0 1 17 22L7 22A1 1 0 0 1 6 21L6 15A1 1 0 0 1 7 14Z"]);
 export default SiconPrinter;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bug-play"
 import { createSicon } from '../createSicon';
 
-export const SiconBugPlay = /*#__PURE__*/ createSicon("bug-play", [["M10 19.655A6 6 0 0 1 6 14L6 11A4 4 0 0 1 10 7L14 7A4 4 0 0 1 18 10.97","M14 15.003A1 1 0 0 1 15.517 14.144L20.514 17.141A1 1 0 0 1 20.514 18.859L15.517 21.856A1 1 0 0 1 14 20.996L14 15.003Z","M14.12 3.88L16 2","M21 5A4 4 0 0 1 17.45 8.97","M3 21A4 4 0 0 1 6.81 17","M3 5A4 4 0 0 0 6.55 8.97","M6 13L2 13","M8 2L9.88 3.88","M9 7.13L9 6A3 3 0 1 1 15 6L15 7.13"],"bbfffffff"]);
+export const SiconBugPlay = /*#__PURE__*/ createSicon("bug-play", ["M10 19.655A6 6 0 0 1 6 14L6 11A4 4 0 0 1 10 7L14 7A4 4 0 0 1 18 10.97","M14 15.003A1 1 0 0 1 15.517 14.144L20.514 17.141A1 1 0 0 1 20.514 18.859L15.517 21.856A1 1 0 0 1 14 20.996L14 15.003Z","M14.12 3.88L16 2","M21 5A4 4 0 0 1 17.45 8.97","M3 21A4 4 0 0 1 6.81 17","M3 5A4 4 0 0 0 6.55 8.97","M6 13L2 13","M8 2L9.88 3.88","M9 7.13L9 6A3 3 0 1 1 15 6L15 7.13"]);
 export default SiconBugPlay;

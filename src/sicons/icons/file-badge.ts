@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-badge"
 import { createSicon } from '../createSicon';
 
-export const SiconFileBadge = /*#__PURE__*/ createSicon("file-badge", [["M13 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 7.3","M14 2L14 7A1 1 0 0 0 15 8L20 8","M7.69 16.479L8.98 21.359A0.5 0.5 0 0 1 8.282 21.95L6.439 21.101A1 1 0 0 0 5.56 21.102L3.714 21.952A0.5 0.5 0 0 1 3.022 21.359L4.312 16.479","M3 14A3 3 0 1 0 9 14A3 3 0 1 0 3 14Z"],"bnff"]);
+export const SiconFileBadge = /*#__PURE__*/ createSicon("file-badge", ["M13 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 7.3","M14 2L14 7A1 1 0 0 0 15 8L20 8","M7.69 16.479L8.98 21.359A0.5 0.5 0 0 1 8.282 21.95L6.439 21.101A1 1 0 0 0 5.56 21.102L3.714 21.952A0.5 0.5 0 0 1 3.022 21.359L4.312 16.479","M3 14A3 3 0 1 0 9 14A3 3 0 1 0 3 14Z"]);
 export default SiconFileBadge;

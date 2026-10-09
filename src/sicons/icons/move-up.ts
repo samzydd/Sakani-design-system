@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "move-up"
 import { createSicon } from '../createSicon';
 
-export const SiconMoveUp = /*#__PURE__*/ createSicon("move-up", [["M8 6L12 2L16 6","M12 2L12 22"],"pp"]);
+export const SiconMoveUp = /*#__PURE__*/ createSicon("move-up", ["M8 6L12 2L16 6","M12 2L12 22"]);
 export default SiconMoveUp;

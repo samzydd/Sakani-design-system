@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "footprints"
 import { createSicon } from '../createSicon';
 
-export const SiconFootprints = /*#__PURE__*/ createSicon("footprints", [["M4 16L4 13.62C4 11.5 2.97 10.5 3 8C3.03 5.28 4.49 2 7.5 2C9.37 2 10 3.8 10 5.5C10 8.61 8 11.16 8 14.18L8 16A2 2 0 1 1 4 16Z","M20 20L20 17.62C20 15.5 21.03 14.5 21 12C20.97 9.28 19.51 6 16.5 6C14.63 6 14 7.8 14 9.5C14 12.61 16 15.16 16 18.18L16 20A2 2 0 1 0 20 20Z","M16 17L20 17","M4 13L8 13"],"bbee"]);
+export const SiconFootprints = /*#__PURE__*/ createSicon("footprints", ["M4 16L4 13.62C4 11.5 2.97 10.5 3 8C3.03 5.28 4.49 2 7.5 2C9.37 2 10 3.8 10 5.5C10 8.61 8 11.16 8 14.18L8 16A2 2 0 1 1 4 16Z","M20 20L20 17.62C20 15.5 21.03 14.5 21 12C20.97 9.28 19.51 6 16.5 6C14.63 6 14 7.8 14 9.5C14 12.61 16 15.16 16 18.18L16 20A2 2 0 1 0 20 20Z","M16 17L20 17","M4 13L8 13"]);
 export default SiconFootprints;

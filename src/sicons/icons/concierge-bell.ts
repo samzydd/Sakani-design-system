@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "concierge-bell"
 import { createSicon } from '../createSicon';
 
-export const SiconConciergeBell = /*#__PURE__*/ createSicon("concierge-bell", [["M3 20A1 1 0 0 1 2 19L2 18A2 2 0 0 1 4 16L20 16A2 2 0 0 1 22 18L22 19A1 1 0 0 1 21 20L3 20Z","M20 16A8 8 0 1 0 4 16","M12 4L12 8","M10 4L14 4"],"bbff"]);
+export const SiconConciergeBell = /*#__PURE__*/ createSicon("concierge-bell", ["M3 20A1 1 0 0 1 2 19L2 18A2 2 0 0 1 4 16L20 16A2 2 0 0 1 22 18L22 19A1 1 0 0 1 21 20L3 20Z","M20 16A8 8 0 1 0 4 16","M12 4L12 8","M10 4L14 4"]);
 export default SiconConciergeBell;

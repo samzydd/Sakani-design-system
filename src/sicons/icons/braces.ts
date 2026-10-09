@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "braces"
 import { createSicon } from '../createSicon';
 
-export const SiconBraces = /*#__PURE__*/ createSicon("braces", [["M8 3L7 3A2 2 0 0 0 5 5L5 10A2 2 0 0 1 3 12A2 2 0 0 1 5 14L5 19C5 20.1 5.9 21 7 21L8 21","M16 21L17 21A2 2 0 0 0 19 19L19 14C19 12.9 19.9 12 21 12A2 2 0 0 1 19 10L19 5A2 2 0 0 0 17 3L16 3"],"pp"]);
+export const SiconBraces = /*#__PURE__*/ createSicon("braces", ["M8 3L7 3A2 2 0 0 0 5 5L5 10A2 2 0 0 1 3 12A2 2 0 0 1 5 14L5 19C5 20.1 5.9 21 7 21L8 21","M16 21L17 21A2 2 0 0 0 19 19L19 14C19 12.9 19.9 12 21 12A2 2 0 0 1 19 10L19 5A2 2 0 0 0 17 3L16 3"]);
 export default SiconBraces;

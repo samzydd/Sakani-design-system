@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clipboard-pen-line"
 import { createSicon } from '../createSicon';
 
-export const SiconClipboardPenLine = /*#__PURE__*/ createSicon("clipboard-pen-line", [["M9 2L15 2A1 1 0 0 1 16 3L16 5A1 1 0 0 1 15 6L9 6A1 1 0 0 1 8 5L8 3A1 1 0 0 1 9 2Z","M8 4L6 4A2 2 0 0 0 4 6L4 20A2 2 0 0 0 6 22L18 22A2 2 0 0 0 20 20L20 19.5","M16 4L18 4A2 2 0 0 1 19.73 5","M8 18L9 18","M21.378 12.626A1 1 0 0 0 18.374 9.622L14.364 13.634A2 2 0 0 0 13.858 14.488L13.021 17.358A0.5 0.5 0 0 0 13.641 17.978L16.511 17.141A2 2 0 0 0 17.365 16.635L21.378 12.626Z"],"fbfnf"]);
+export const SiconClipboardPenLine = /*#__PURE__*/ createSicon("clipboard-pen-line", ["M9 2L15 2A1 1 0 0 1 16 3L16 5A1 1 0 0 1 15 6L9 6A1 1 0 0 1 8 5L8 3A1 1 0 0 1 9 2Z","M8 4L6 4A2 2 0 0 0 4 6L4 20A2 2 0 0 0 6 22L18 22A2 2 0 0 0 20 20L20 19.5","M16 4L18 4A2 2 0 0 1 19.73 5","M8 18L9 18","M21.378 12.626A1 1 0 0 0 18.374 9.622L14.364 13.634A2 2 0 0 0 13.858 14.488L13.021 17.358A0.5 0.5 0 0 0 13.641 17.978L16.511 17.141A2 2 0 0 0 17.365 16.635L21.378 12.626Z"]);
 export default SiconClipboardPenLine;

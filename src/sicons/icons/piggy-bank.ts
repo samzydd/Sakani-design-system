@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "piggy-bank"
 import { createSicon } from '../createSicon';
 
-export const SiconPiggyBank = /*#__PURE__*/ createSicon("piggy-bank", [["M12 17L13 17A1 1 0 0 1 14 18L14 19A1 1 0 0 0 15 20L17 20A1 1 0 0 0 18 19L18 16A3.16 3.16 0 0 0 20 14L21 14A1 1 0 0 0 22 13L22 11A1 1 0 0 0 21 10L20 10A5 5 0 0 0 18 6L18 3A4 4 0 0 0 14.8 4.6L14.65 4.8A0.5 0.5 0 0 1 14.25 5L11 5A6 6 0 0 0 5 11L5 12A5 5 0 0 0 7 16L7 19A1 1 0 0 0 8 20L10 20A1 1 0 0 0 11 19L11 18A1 1 0 0 1 12 17Z","M16 10L16.01 10","M2 8L2 9A2 2 0 0 0 4 11L5 11"],"bnf"]);
+export const SiconPiggyBank = /*#__PURE__*/ createSicon("piggy-bank", ["M12 17L13 17A1 1 0 0 1 14 18L14 19A1 1 0 0 0 15 20L17 20A1 1 0 0 0 18 19L18 16A3.16 3.16 0 0 0 20 14L21 14A1 1 0 0 0 22 13L22 11A1 1 0 0 0 21 10L20 10A5 5 0 0 0 18 6L18 3A4 4 0 0 0 14.8 4.6L14.65 4.8A0.5 0.5 0 0 1 14.25 5L11 5A6 6 0 0 0 5 11L5 12A5 5 0 0 0 7 16L7 19A1 1 0 0 0 8 20L10 20A1 1 0 0 0 11 19L11 18A1 1 0 0 1 12 17Z","M16 10L16.01 10","M2 8L2 9A2 2 0 0 0 4 11L5 11"]);
 export default SiconPiggyBank;

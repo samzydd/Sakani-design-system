@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-open-text"
 import { createSicon } from '../createSicon';
 
-export const SiconBookOpenText = /*#__PURE__*/ createSicon("book-open-text", [["M12 5L12 21","M16 13L18 13","M16 9L18 9","M20.001 19A2 2 0 0 0 22 17L22 5A2 2 0 0 0 20.001 3L16 3.002A5 5 0 0 0 12 5A5 5 0 0 0 8 3L4 3A2 2 0 0 0 2 5L2 17A2 2 0 0 0 3.999 19L8 19A5 5 0 0 1 12 21A5 5 0 0 1 16 19L20.001 19Z","M6 13L8 13","M6 9L8 9"],"nnnbnn"]);
+export const SiconBookOpenText = /*#__PURE__*/ createSicon("book-open-text", ["M12 5L12 21","M16 13L18 13","M16 9L18 9","M20.001 19A2 2 0 0 0 22 17L22 5A2 2 0 0 0 20.001 3L16 3.002A5 5 0 0 0 12 5A5 5 0 0 0 8 3L4 3A2 2 0 0 0 2 5L2 17A2 2 0 0 0 3.999 19L8 19A5 5 0 0 1 12 21A5 5 0 0 1 16 19L20.001 19Z","M6 13L8 13","M6 9L8 9"]);
 export default SiconBookOpenText;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-arrow-out-up-right"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleArrowOutUpRight = /*#__PURE__*/ createSicon("circle-arrow-out-up-right", [["M22 12A10 10 0 1 1 12 2","M22 2L12 12","M16 2L22 2L22 8"],"bff"]);
+export const SiconCircleArrowOutUpRight = /*#__PURE__*/ createSicon("circle-arrow-out-up-right", ["M22 12A10 10 0 1 1 12 2","M22 2L12 12","M16 2L22 2L22 8"]);
 export default SiconCircleArrowOutUpRight;

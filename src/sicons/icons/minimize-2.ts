@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "minimize-2"
 import { createSicon } from '../createSicon';
 
-export const SiconMinimize2 = /*#__PURE__*/ createSicon("minimize-2", [["M14 10L21 3","M20 10L14 10L14 4","M3 21L10 14","M4 14L10 14L10 20"],"pppp"]);
+export const SiconMinimize2 = /*#__PURE__*/ createSicon("minimize-2", ["M14 10L21 3","M20 10L14 10L14 4","M3 21L10 14","M4 14L10 14L10 20"]);
 export default SiconMinimize2;

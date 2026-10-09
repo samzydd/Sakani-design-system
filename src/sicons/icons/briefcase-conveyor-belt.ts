@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "briefcase-conveyor-belt"
 import { createSicon } from '../createSicon';
 
-export const SiconBriefcaseConveyorBelt = /*#__PURE__*/ createSicon("briefcase-conveyor-belt", [["M10 20L10 22","M14 20L14 22","M18 20L18 22","M21 20L3 20","M6 20L6 22","M8 16L8 4A2 2 0 0 1 10 2L14 2A2 2 0 0 1 16 4L16 16","M6 6L18 6A2 2 0 0 1 20 8L20 14A2 2 0 0 1 18 16L6 16A2 2 0 0 1 4 14L4 8A2 2 0 0 1 6 6Z"],"fffffbb"]);
+export const SiconBriefcaseConveyorBelt = /*#__PURE__*/ createSicon("briefcase-conveyor-belt", ["M10 20L10 22","M14 20L14 22","M18 20L18 22","M21 20L3 20","M6 20L6 22","M8 16L8 4A2 2 0 0 1 10 2L14 2A2 2 0 0 1 16 4L16 16","M6 6L18 6A2 2 0 0 1 20 8L20 14A2 2 0 0 1 18 16L6 16A2 2 0 0 1 4 14L4 8A2 2 0 0 1 6 6Z"]);
 export default SiconBriefcaseConveyorBelt;

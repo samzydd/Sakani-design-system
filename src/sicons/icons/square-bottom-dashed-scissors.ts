@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-bottom-dashed-scissors"
 import { createSicon } from '../createSicon';
 
-export const SiconSquareBottomDashedScissors = /*#__PURE__*/ createSicon("square-bottom-dashed-scissors", [["M14 21L15 21","M17 17L14.82 14.82","M5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21","M9 21L10 21","M9.56 14.44L17 7","M9.56 9.56L12 12","M7 15.5A1.5 1.5 0 1 0 10 15.5A1.5 1.5 0 1 0 7 15.5Z","M7 8.5A1.5 1.5 0 1 0 10 8.5A1.5 1.5 0 1 0 7 8.5Z"],"enbennnn"]);
+export const SiconSquareBottomDashedScissors = /*#__PURE__*/ createSicon("square-bottom-dashed-scissors", ["M14 21L15 21","M17 17L14.82 14.82","M5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21","M9 21L10 21","M9.56 14.44L17 7","M9.56 9.56L12 12","M7 15.5A1.5 1.5 0 1 0 10 15.5A1.5 1.5 0 1 0 7 15.5Z","M7 8.5A1.5 1.5 0 1 0 10 8.5A1.5 1.5 0 1 0 7 8.5Z"]);
 export default SiconSquareBottomDashedScissors;

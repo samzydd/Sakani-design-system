@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-dashed"
 import { createSicon } from '../createSicon';
 
-export const SiconSquareDashed = /*#__PURE__*/ createSicon("square-dashed", [["M5 3A2 2 0 0 0 3 5","M19 3A2 2 0 0 1 21 5","M21 19A2 2 0 0 1 19 21","M5 21A2 2 0 0 1 3 19","M9 3L10 3","M9 21L10 21","M14 3L15 3","M14 21L15 21","M3 9L3 10","M21 9L21 10","M3 14L3 15","M21 14L21 15"],"pppppppppppp"]);
+export const SiconSquareDashed = /*#__PURE__*/ createSicon("square-dashed", ["M5 3A2 2 0 0 0 3 5","M19 3A2 2 0 0 1 21 5","M21 19A2 2 0 0 1 19 21","M5 21A2 2 0 0 1 3 19","M9 3L10 3","M9 21L10 21","M14 3L15 3","M14 21L15 21","M3 9L3 10","M21 9L21 10","M3 14L3 15","M21 14L21 15"]);
 export default SiconSquareDashed;

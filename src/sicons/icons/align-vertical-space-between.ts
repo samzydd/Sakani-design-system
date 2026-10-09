@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-vertical-space-between"
 import { createSicon } from '../createSicon';
 
-export const SiconAlignVerticalSpaceBetween = /*#__PURE__*/ createSicon("align-vertical-space-between", [["M7 15L17 15A2 2 0 0 1 19 17L19 19A2 2 0 0 1 17 21L7 21A2 2 0 0 1 5 19L5 17A2 2 0 0 1 7 15Z","M9 3L15 3A2 2 0 0 1 17 5L17 7A2 2 0 0 1 15 9L9 9A2 2 0 0 1 7 7L7 5A2 2 0 0 1 9 3Z","M2 21L22 21","M2 3L22 3"],"bbef"]);
+export const SiconAlignVerticalSpaceBetween = /*#__PURE__*/ createSicon("align-vertical-space-between", ["M7 15L17 15A2 2 0 0 1 19 17L19 19A2 2 0 0 1 17 21L7 21A2 2 0 0 1 5 19L5 17A2 2 0 0 1 7 15Z","M9 3L15 3A2 2 0 0 1 17 5L17 7A2 2 0 0 1 15 9L9 9A2 2 0 0 1 7 7L7 5A2 2 0 0 1 9 3Z","M2 21L22 21","M2 3L22 3"]);
 export default SiconAlignVerticalSpaceBetween;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-cursor"
 import { createSicon } from '../createSicon';
 
-export const SiconTextCursor = /*#__PURE__*/ createSicon("text-cursor", [["M17 22L16 22A4 4 0 0 1 12 18L12 6A4 4 0 0 1 16 2L17 2","M7 22L8 22A4 4 0 0 0 12 18","M7 2L8 2A4 4 0 0 1 12 6"],"ppp"]);
+export const SiconTextCursor = /*#__PURE__*/ createSicon("text-cursor", ["M17 22L16 22A4 4 0 0 1 12 18L12 6A4 4 0 0 1 16 2L17 2","M7 22L8 22A4 4 0 0 0 12 18","M7 2L8 2A4 4 0 0 1 12 6"]);
 export default SiconTextCursor;

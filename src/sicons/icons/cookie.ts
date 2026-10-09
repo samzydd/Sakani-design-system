@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cookie"
 import { createSicon } from '../createSicon';
 
-export const SiconCookie = /*#__PURE__*/ createSicon("cookie", [["M12 2A10 10 0 1 0 22 12A4 4 0 0 1 17 7A4 4 0 0 1 12 2","M8.5 8.5L8.5 8.51","M16 15.5L16 15.51","M12 12L12 12.01","M11 17L11 17.01","M7 14L7 14.01"],"bnnnnn"]);
+export const SiconCookie = /*#__PURE__*/ createSicon("cookie", ["M12 2A10 10 0 1 0 22 12A4 4 0 0 1 17 7A4 4 0 0 1 12 2","M8.5 8.5L8.5 8.51","M16 15.5L16 15.51","M12 12L12 12.01","M11 17L11 17.01","M7 14L7 14.01"]);
 export default SiconCookie;

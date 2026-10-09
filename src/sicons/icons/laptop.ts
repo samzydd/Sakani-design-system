@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "laptop"
 import { createSicon } from '../createSicon';
 
-export const SiconLaptop = /*#__PURE__*/ createSicon("laptop", [["M18 5A2 2 0 0 1 20 7L20 15.526A2 2 0 0 0 20.212 16.423L21.28 18.55A1 1 0 0 1 20.38 20L3.62 20A1 1 0 0 1 2.72 18.55L3.788 16.423A2 2 0 0 0 4 15.526L4 7A2 2 0 0 1 6 5L18 5Z","M20.054 15.987L3.946 15.987"],"bn"]);
+export const SiconLaptop = /*#__PURE__*/ createSicon("laptop", ["M18 5A2 2 0 0 1 20 7L20 15.526A2 2 0 0 0 20.212 16.423L21.28 18.55A1 1 0 0 1 20.38 20L3.62 20A1 1 0 0 1 2.72 18.55L3.788 16.423A2 2 0 0 0 4 15.526L4 7A2 2 0 0 1 6 5L18 5Z","M20.054 15.987L3.946 15.987"]);
 export default SiconLaptop;

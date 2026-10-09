@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-square-diff"
 import { createSicon } from '../createSicon';
 
-export const SiconMessageSquareDiff = /*#__PURE__*/ createSicon("message-square-diff", [["M22 17A2 2 0 0 1 20 19L6.828 19A2 2 0 0 0 5.414 19.586L3.212 21.788A0.71 0.71 0 0 1 2 21.286L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5L22 17Z","M10 15L14 15","M10 9L14 9","M12 7L12 11"],"bnnn"]);
+export const SiconMessageSquareDiff = /*#__PURE__*/ createSicon("message-square-diff", ["M22 17A2 2 0 0 1 20 19L6.828 19A2 2 0 0 0 5.414 19.586L3.212 21.788A0.71 0.71 0 0 1 2 21.286L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5L22 17Z","M10 15L14 15","M10 9L14 9","M12 7L12 11"]);
 export default SiconMessageSquareDiff;

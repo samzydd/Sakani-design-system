@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "squares-unite"
 import { createSicon } from '../createSicon';
 
-export const SiconSquaresUnite = /*#__PURE__*/ createSicon("squares-unite", [["M4 16A2 2 0 0 1 2 14L2 4A2 2 0 0 1 4 2L14 2A2 2 0 0 1 16 4L16 7A1 1 0 0 0 17 8L20 8A2 2 0 0 1 22 10L22 20A2 2 0 0 1 20 22L10 22A2 2 0 0 1 8 20L8 17A1 1 0 0 0 7 16L4 16Z"],"b"]);
+export const SiconSquaresUnite = /*#__PURE__*/ createSicon("squares-unite", ["M4 16A2 2 0 0 1 2 14L2 4A2 2 0 0 1 4 2L14 2A2 2 0 0 1 16 4L16 7A1 1 0 0 0 17 8L20 8A2 2 0 0 1 22 10L22 20A2 2 0 0 1 20 22L10 22A2 2 0 0 1 8 20L8 17A1 1 0 0 0 7 16L4 16Z"]);
 export default SiconSquaresUnite;

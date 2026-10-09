@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rows-4"
 import { createSicon } from '../createSicon';
 
-export const SiconRows4 = /*#__PURE__*/ createSicon("rows-4", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M21 7.5L3 7.5","M21 12L3 12","M21 16.5L3 16.5"],"bnnn"]);
+export const SiconRows4 = /*#__PURE__*/ createSicon("rows-4", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M21 7.5L3 7.5","M21 12L3 12","M21 16.5L3 16.5"]);
 export default SiconRows4;

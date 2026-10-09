@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-fading-arrow-up"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleFadingArrowUp = /*#__PURE__*/ createSicon("circle-fading-arrow-up", [["M12 2A10 10 0 0 1 19.38 18.75","M16 12L12 8L8 12","M12 16L12 8","M2.5 8.875A10 10 0 0 0 2 11.875","M2.83 16A10 10 0 0 0 5.26 19.4","M4.636 5.235A10 10 0 0 1 5.527 4.378","M8.644 21.42A10 10 0 0 0 16.275 21.04"],"ppppppp"]);
+export const SiconCircleFadingArrowUp = /*#__PURE__*/ createSicon("circle-fading-arrow-up", ["M12 2A10 10 0 0 1 19.38 18.75","M16 12L12 8L8 12","M12 16L12 8","M2.5 8.875A10 10 0 0 0 2 11.875","M2.83 16A10 10 0 0 0 5.26 19.4","M4.636 5.235A10 10 0 0 1 5.527 4.378","M8.644 21.42A10 10 0 0 0 16.275 21.04"]);
 export default SiconCircleFadingArrowUp;

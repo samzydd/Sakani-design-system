@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "face-slightly-frowning" (alias of "frown")
 import { createSicon } from '../createSicon';
 
-export const SiconFrown = /*#__PURE__*/ createSicon("frown", [["M15 10L15 9","M9 10L9 9","M9 16A5 5 0 0 1 15 16","M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z"],"nnnb"]);
+export const SiconFrown = /*#__PURE__*/ createSicon("frown", ["M15 10L15 9","M9 10L9 9","M9 16A5 5 0 0 1 15 16","M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z"]);
 export default SiconFrown;

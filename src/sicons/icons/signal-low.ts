@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "signal-low"
 import { createSicon } from '../createSicon';
 
-export const SiconSignalLow = /*#__PURE__*/ createSicon("signal-low", [["M2 20L2.01 20","M7 20L7 16"],"pp"]);
+export const SiconSignalLow = /*#__PURE__*/ createSicon("signal-low", ["M2 20L2.01 20","M7 20L7 16"]);
 export default SiconSignalLow;

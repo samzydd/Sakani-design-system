@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chef-hat"
 import { createSicon } from '../createSicon';
 
-export const SiconChefHat = /*#__PURE__*/ createSicon("chef-hat", [["M17 21A1 1 0 0 0 18 20L18 14.65C18 14.193 18.316 13.806 18.727 13.609A4 4 0 0 0 16.593 6.02A5 5 0 0 0 7.407 6.02A4 4 0 0 0 5.273 13.608C5.684 13.806 6 14.193 6 14.649L6 20A1 1 0 0 0 7 21L17 21Z","M6 17L18 17"],"bn"]);
+export const SiconChefHat = /*#__PURE__*/ createSicon("chef-hat", ["M17 21A1 1 0 0 0 18 20L18 14.65C18 14.193 18.316 13.806 18.727 13.609A4 4 0 0 0 16.593 6.02A5 5 0 0 0 7.407 6.02A4 4 0 0 0 5.273 13.608C5.684 13.806 6 14.193 6 14.649L6 20A1 1 0 0 0 7 21L17 21Z","M6 17L18 17"]);
 export default SiconChefHat;

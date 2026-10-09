@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wallpaper"
 import { createSicon } from '../createSicon';
 
-export const SiconWallpaper = /*#__PURE__*/ createSicon("wallpaper", [["M12 17L12 21","M8 21L16 21","M9 17L15.1 10.9A2 2 0 0 1 17.91 10.91L22 15","M6 9A2 2 0 1 0 10 9A2 2 0 1 0 6 9Z","M4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3Z"],"ffnnb"]);
+export const SiconWallpaper = /*#__PURE__*/ createSicon("wallpaper", ["M12 17L12 21","M8 21L16 21","M9 17L15.1 10.9A2 2 0 0 1 17.91 10.91L22 15","M6 9A2 2 0 1 0 10 9A2 2 0 1 0 6 9Z","M4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3Z"]);
 export default SiconWallpaper;

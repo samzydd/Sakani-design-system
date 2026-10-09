@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "timer-off"
 import { createSicon } from '../createSicon';
 
-export const SiconTimerOff = /*#__PURE__*/ createSicon("timer-off", [["M10 2L14 2","M4.6 11A8 8 0 0 0 6.3 19.7A8 8 0 0 0 15 21.4","M7.4 7.4A8 8 0 0 1 17.7 8.4A8 8 0 0 1 18.6 18.6","M2 2L22 22","M12 12L12 10"],"ppppp"]);
+export const SiconTimerOff = /*#__PURE__*/ createSicon("timer-off", ["M10 2L14 2","M4.6 11A8 8 0 0 0 6.3 19.7A8 8 0 0 0 15 21.4","M7.4 7.4A8 8 0 0 1 17.7 8.4A8 8 0 0 1 18.6 18.6","M2 2L22 22","M12 12L12 10"]);
 export default SiconTimerOff;

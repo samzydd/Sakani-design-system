@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "glass-water"
 import { createSicon } from '../createSicon';
 
-export const SiconGlassWater = /*#__PURE__*/ createSicon("glass-water", [["M5.116 4.104A1 1 0 0 1 6.11 3L17.89 3A1 1 0 0 1 18.884 4.105L17.19 20.21A2 2 0 0 1 15.2 22L8.8 22A2 2 0 0 1 6.8 20.21L5.116 4.104Z","M6 12A5 5 0 0 1 12 12A5 5 0 0 0 18 12"],"bn"]);
+export const SiconGlassWater = /*#__PURE__*/ createSicon("glass-water", ["M5.116 4.104A1 1 0 0 1 6.11 3L17.89 3A1 1 0 0 1 18.884 4.105L17.19 20.21A2 2 0 0 1 15.2 22L8.8 22A2 2 0 0 1 6.8 20.21L5.116 4.104Z","M6 12A5 5 0 0 1 12 12A5 5 0 0 0 18 12"]);
 export default SiconGlassWater;

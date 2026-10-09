@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "copyright"
 import { createSicon } from '../createSicon';
 
-export const SiconCopyright = /*#__PURE__*/ createSicon("copyright", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M14.83 14.83A4 4 0 1 1 14.83 9.17"],"bn"]);
+export const SiconCopyright = /*#__PURE__*/ createSicon("copyright", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M14.83 14.83A4 4 0 1 1 14.83 9.17"]);
 export default SiconCopyright;

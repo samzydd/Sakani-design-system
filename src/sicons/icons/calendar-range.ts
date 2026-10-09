@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calendar-range"
 import { createSicon } from '../createSicon';
 
-export const SiconCalendarRange = /*#__PURE__*/ createSicon("calendar-range", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M16 2L16 5","M3 9L21 9","M8 2L8 5","M17 13L11 13","M13 17L7 17","M7 13L7.01 13","M17 17L17.01 17"],"benennnn"]);
+export const SiconCalendarRange = /*#__PURE__*/ createSicon("calendar-range", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M16 2L16 5","M3 9L21 9","M8 2L8 5","M17 13L11 13","M13 17L7 17","M7 13L7.01 13","M17 17L17.01 17"]);
 export default SiconCalendarRange;

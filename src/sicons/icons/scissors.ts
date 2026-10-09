@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "scissors"
 import { createSicon } from '../createSicon';
 
-export const SiconScissors = /*#__PURE__*/ createSicon("scissors", [["M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z","M8.12 8.12L12 12","M20 4L8.12 15.88","M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18Z","M14.8 14.8L20 20"],"bffbf"]);
+export const SiconScissors = /*#__PURE__*/ createSicon("scissors", ["M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z","M8.12 8.12L12 12","M20 4L8.12 15.88","M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18Z","M14.8 14.8L20 20"]);
 export default SiconScissors;

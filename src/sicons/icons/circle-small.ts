@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-small"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleSmall = /*#__PURE__*/ createSicon("circle-small", [["M6 12A6 6 0 1 0 18 12A6 6 0 1 0 6 12Z"],"b"]);
+export const SiconCircleSmall = /*#__PURE__*/ createSicon("circle-small", ["M6 12A6 6 0 1 0 18 12A6 6 0 1 0 6 12Z"]);
 export default SiconCircleSmall;

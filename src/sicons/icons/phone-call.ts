@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "phone-call"
 import { createSicon } from '../createSicon';
 
-export const SiconPhoneCall = /*#__PURE__*/ createSicon("phone-call", [["M13 2A9 9 0 0 1 22 11","M13 6A5 5 0 0 1 18 11","M13.832 16.568A1 1 0 0 0 15.045 16.265L15.4 15.8A2 2 0 0 1 17 15L20 15A2 2 0 0 1 22 17L22 20A2 2 0 0 1 20 22A18 18 0 0 1 2 4A2 2 0 0 1 4 2L7 2A2 2 0 0 1 9 4L9 7A2 2 0 0 1 8.2 8.6L7.732 8.951A1 1 0 0 0 7.44 10.184A14 14 0 0 0 13.832 16.568"],"ffb"]);
+export const SiconPhoneCall = /*#__PURE__*/ createSicon("phone-call", ["M13 2A9 9 0 0 1 22 11","M13 6A5 5 0 0 1 18 11","M13.832 16.568A1 1 0 0 0 15.045 16.265L15.4 15.8A2 2 0 0 1 17 15L20 15A2 2 0 0 1 22 17L22 20A2 2 0 0 1 20 22A18 18 0 0 1 2 4A2 2 0 0 1 4 2L7 2A2 2 0 0 1 9 4L9 7A2 2 0 0 1 8.2 8.6L7.732 8.951A1 1 0 0 0 7.44 10.184A14 14 0 0 0 13.832 16.568"]);
 export default SiconPhoneCall;

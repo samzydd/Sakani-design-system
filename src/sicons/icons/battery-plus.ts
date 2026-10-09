@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "battery-plus"
 import { createSicon } from '../createSicon';
 
-export const SiconBatteryPlus = /*#__PURE__*/ createSicon("battery-plus", [["M10 9L10 15","M12.543 6L16 6A2 2 0 0 1 18 8L18 16A2 2 0 0 1 16 18L12.395 18","M22 14L22 10","M7 12L13 12","M7.606 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6L7.606 6"],"fbfeb"]);
+export const SiconBatteryPlus = /*#__PURE__*/ createSicon("battery-plus", ["M10 9L10 15","M12.543 6L16 6A2 2 0 0 1 18 8L18 16A2 2 0 0 1 16 18L12.395 18","M22 14L22 10","M7 12L13 12","M7.606 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6L7.606 6"]);
 export default SiconBatteryPlus;

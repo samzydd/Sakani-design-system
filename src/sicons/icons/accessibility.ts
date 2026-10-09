@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "accessibility"
 import { createSicon } from '../createSicon';
 
-export const SiconAccessibility = /*#__PURE__*/ createSicon("accessibility", [["M15 4A1 1 0 1 0 17 4A1 1 0 1 0 15 4Z","M18 19L18.57 15.011A2.226 2.226 0 0 0 16 12.5L13 13","M5 8L6.5 6.5A2.835 2.835 0 0 1 9.862 6.016L11.647 6.989A1.921 1.921 0 0 1 12.32 9.75L11.14 11.5","M4.24 14.5A5 5 0 0 0 11.12 20.5","M13.76 17.5A5 5 0 0 0 6.88 11.5"],"fbbfe"]);
+export const SiconAccessibility = /*#__PURE__*/ createSicon("accessibility", ["M15 4A1 1 0 1 0 17 4A1 1 0 1 0 15 4Z","M18 19L18.57 15.011A2.226 2.226 0 0 0 16 12.5L13 13","M5 8L6.5 6.5A2.835 2.835 0 0 1 9.862 6.016L11.647 6.989A1.921 1.921 0 0 1 12.32 9.75L11.14 11.5","M4.24 14.5A5 5 0 0 0 11.12 20.5","M13.76 17.5A5 5 0 0 0 6.88 11.5"]);
 export default SiconAccessibility;

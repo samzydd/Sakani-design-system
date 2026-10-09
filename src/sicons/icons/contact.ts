@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "contact"
 import { createSicon } from '../createSicon';
 
-export const SiconContact = /*#__PURE__*/ createSicon("contact", [["M16 2L16 4","M7 21L7 19A2 2 0 0 1 9 17L15 17A2 2 0 0 1 17 19L17 21","M8 2L8 4","M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z","M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z"],"enenb"]);
+export const SiconContact = /*#__PURE__*/ createSicon("contact", ["M16 2L16 4","M7 21L7 19A2 2 0 0 1 9 17L15 17A2 2 0 0 1 17 19L17 21","M8 2L8 4","M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z","M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z"]);
 export default SiconContact;

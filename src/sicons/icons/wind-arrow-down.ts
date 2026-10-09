@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wind-arrow-down"
 import { createSicon } from '../createSicon';
 
-export const SiconWindArrowDown = /*#__PURE__*/ createSicon("wind-arrow-down", [["M10 2L10 10","M12.8 21.6A2 2 0 1 0 14 18L2 18","M17.5 10A2.5 2.5 0 1 1 19.5 14L2 14","M6 6L10 10L14 6"],"fbbf"]);
+export const SiconWindArrowDown = /*#__PURE__*/ createSicon("wind-arrow-down", ["M10 2L10 10","M12.8 21.6A2 2 0 1 0 14 18L2 18","M17.5 10A2.5 2.5 0 1 1 19.5 14L2 14","M6 6L10 10L14 6"]);
 export default SiconWindArrowDown;

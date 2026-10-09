@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "equal-not"
 import { createSicon } from '../createSicon';
 
-export const SiconEqualNot = /*#__PURE__*/ createSicon("equal-not", [["M5 9L19 9","M5 15L19 15","M19 5L5 19"],"ppp"]);
+export const SiconEqualNot = /*#__PURE__*/ createSicon("equal-not", ["M5 9L19 9","M5 15L19 15","M19 5L5 19"]);
 export default SiconEqualNot;

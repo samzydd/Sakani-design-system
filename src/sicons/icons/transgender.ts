@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "transgender"
 import { createSicon } from '../createSicon';
 
-export const SiconTransgender = /*#__PURE__*/ createSicon("transgender", [["M12 16L12 22","M14 20L10 20","M18 2L22 2L22 6","M2 2L9.17 9.17","M2 5.355L2 2L5.357 2","M22 2L14.83 9.17","M8 5L5 8","M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z"],"fffffffb"]);
+export const SiconTransgender = /*#__PURE__*/ createSicon("transgender", ["M12 16L12 22","M14 20L10 20","M18 2L22 2L22 6","M2 2L9.17 9.17","M2 5.355L2 2L5.357 2","M22 2L14.83 9.17","M8 5L5 8","M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z"]);
 export default SiconTransgender;

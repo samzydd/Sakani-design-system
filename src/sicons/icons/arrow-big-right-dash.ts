@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-big-right-dash"
 import { createSicon } from '../createSicon';
 
-export const SiconArrowBigRightDash = /*#__PURE__*/ createSicon("arrow-big-right-dash", [["M11 9A1 1 0 0 0 12 8L12 4.707A0.707 0.707 0 0 1 13.207 4.207L20.147 11.147A1.207 1.207 0 0 1 20.147 12.854L13.207 19.794A0.707 0.707 0 0 1 12 19.294L12 16A1 1 0 0 0 11 15L9 15A1 1 0 0 1 8 14L8 10A1 1 0 0 1 9 9L11 9Z","M4 9L4 15"],"bf"]);
+export const SiconArrowBigRightDash = /*#__PURE__*/ createSicon("arrow-big-right-dash", ["M11 9A1 1 0 0 0 12 8L12 4.707A0.707 0.707 0 0 1 13.207 4.207L20.147 11.147A1.207 1.207 0 0 1 20.147 12.854L13.207 19.794A0.707 0.707 0 0 1 12 19.294L12 16A1 1 0 0 0 11 15L9 15A1 1 0 0 1 8 14L8 10A1 1 0 0 1 9 9L11 9Z","M4 9L4 15"]);
 export default SiconArrowBigRightDash;

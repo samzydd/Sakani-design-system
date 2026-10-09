@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fire-extinguisher"
 import { createSicon } from '../createSicon';
 
-export const SiconFireExtinguisher = /*#__PURE__*/ createSicon("fire-extinguisher", [["M15 6.5L15 3A1 1 0 0 0 14 2L12 2A1 1 0 0 0 11 3L11 6.5","M9 18L17 18","M18 3L15 3","M11 3A6 6 0 0 0 5 9L5 20","M5 13L9 13","M17 10A4 4 0 0 0 9 10L9 20A2 2 0 0 0 11 22L15 22A2 2 0 0 0 17 20L17 10Z"],"fnfffb"]);
+export const SiconFireExtinguisher = /*#__PURE__*/ createSicon("fire-extinguisher", ["M15 6.5L15 3A1 1 0 0 0 14 2L12 2A1 1 0 0 0 11 3L11 6.5","M9 18L17 18","M18 3L15 3","M11 3A6 6 0 0 0 5 9L5 20","M5 13L9 13","M17 10A4 4 0 0 0 9 10L9 20A2 2 0 0 0 11 22L15 22A2 2 0 0 0 17 20L17 10Z"]);
 export default SiconFireExtinguisher;

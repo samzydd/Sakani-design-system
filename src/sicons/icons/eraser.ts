@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "eraser"
 import { createSicon } from '../createSicon';
 
-export const SiconEraser = /*#__PURE__*/ createSicon("eraser", [["M21 21L8 21A2 2 0 0 1 6.58 20.413L2.586 16.414A2 2 0 0 1 2.586 13.586L12.586 3.586A2 2 0 0 1 15.415 3.586L21.414 9.586A2 2 0 0 1 21.414 12.414L12.834 21","M5.082 11.09L13.91 19.918"],"bn"]);
+export const SiconEraser = /*#__PURE__*/ createSicon("eraser", ["M21 21L8 21A2 2 0 0 1 6.58 20.413L2.586 16.414A2 2 0 0 1 2.586 13.586L12.586 3.586A2 2 0 0 1 15.415 3.586L21.414 9.586A2 2 0 0 1 21.414 12.414L12.834 21","M5.082 11.09L13.91 19.918"]);
 export default SiconEraser;

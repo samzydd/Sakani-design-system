@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wallet-minimal"
 import { createSicon } from '../createSicon';
 
-export const SiconWalletMinimal = /*#__PURE__*/ createSicon("wallet-minimal", [["M17 14L17.01 14","M7 7L19 7A2 2 0 0 1 21 9L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3"],"pp"]);
+export const SiconWalletMinimal = /*#__PURE__*/ createSicon("wallet-minimal", ["M17 14L17.01 14","M7 7L19 7A2 2 0 0 1 21 9L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3"]);
 export default SiconWalletMinimal;

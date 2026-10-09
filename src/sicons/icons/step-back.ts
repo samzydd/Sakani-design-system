@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "step-back"
 import { createSicon } from '../createSicon';
 
-export const SiconStepBack = /*#__PURE__*/ createSicon("step-back", [["M13.971 4.285A2 2 0 0 1 17 6L17 18A2 2 0 0 1 13.971 19.715L3.974 13.717A2 2 0 0 1 3.971 10.285L13.971 4.285Z","M21 20L21 4"],"bf"]);
+export const SiconStepBack = /*#__PURE__*/ createSicon("step-back", ["M13.971 4.285A2 2 0 0 1 17 6L17 18A2 2 0 0 1 13.971 19.715L3.974 13.717A2 2 0 0 1 3.971 10.285L13.971 4.285Z","M21 20L21 4"]);
 export default SiconStepBack;

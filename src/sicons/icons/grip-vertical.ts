@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "grip-vertical"
 import { createSicon } from '../createSicon';
 
-export const SiconGripVertical = /*#__PURE__*/ createSicon("grip-vertical", [["M8 12A1 1 0 1 0 10 12A1 1 0 1 0 8 12Z","M8 5A1 1 0 1 0 10 5A1 1 0 1 0 8 5Z","M8 19A1 1 0 1 0 10 19A1 1 0 1 0 8 19Z","M14 12A1 1 0 1 0 16 12A1 1 0 1 0 14 12Z","M14 5A1 1 0 1 0 16 5A1 1 0 1 0 14 5Z","M14 19A1 1 0 1 0 16 19A1 1 0 1 0 14 19Z"],"pppppp"]);
+export const SiconGripVertical = /*#__PURE__*/ createSicon("grip-vertical", ["M8 12A1 1 0 1 0 10 12A1 1 0 1 0 8 12Z","M8 5A1 1 0 1 0 10 5A1 1 0 1 0 8 5Z","M8 19A1 1 0 1 0 10 19A1 1 0 1 0 8 19Z","M14 12A1 1 0 1 0 16 12A1 1 0 1 0 14 12Z","M14 5A1 1 0 1 0 16 5A1 1 0 1 0 14 5Z","M14 19A1 1 0 1 0 16 19A1 1 0 1 0 14 19Z"]);
 export default SiconGripVertical;

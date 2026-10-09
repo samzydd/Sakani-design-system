@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-play"
 import { createSicon } from '../createSicon';
 
-export const SiconCirclePlay = /*#__PURE__*/ createSicon("circle-play", [["M9 9.003A1 1 0 0 1 10.517 8.144L15.514 11.141A1 1 0 0 1 15.514 12.859L10.517 15.856A1 1 0 0 1 9 14.996L9 9.003Z","M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z"],"nb"]);
+export const SiconCirclePlay = /*#__PURE__*/ createSicon("circle-play", ["M9 9.003A1 1 0 0 1 10.517 8.144L15.514 11.141A1 1 0 0 1 15.514 12.859L10.517 15.856A1 1 0 0 1 9 14.996L9 9.003Z","M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z"]);
 export default SiconCirclePlay;

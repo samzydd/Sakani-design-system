@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "timer"
 import { createSicon } from '../createSicon';
 
-export const SiconTimer = /*#__PURE__*/ createSicon("timer", [["M10 2L14 2","M12 14L15 11","M4 14A8 8 0 1 0 20 14A8 8 0 1 0 4 14Z"],"fnb"]);
+export const SiconTimer = /*#__PURE__*/ createSicon("timer", ["M10 2L14 2","M12 14L15 11","M4 14A8 8 0 1 0 20 14A8 8 0 1 0 4 14Z"]);
 export default SiconTimer;

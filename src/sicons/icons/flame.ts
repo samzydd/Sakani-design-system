@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flame"
 import { createSicon } from '../createSicon';
 
-export const SiconFlame = /*#__PURE__*/ createSicon("flame", [["M12 3Q13 7 16 9.5Q19 12 19 15A1 1 0 0 1 5 15A5 5 0 0 1 6 12A1 1 0 0 0 11 12C11 10 9.5 9 9.5 7Q9.5 5 12 3"],"b"]);
+export const SiconFlame = /*#__PURE__*/ createSicon("flame", ["M12 3Q13 7 16 9.5Q19 12 19 15A1 1 0 0 1 5 15A5 5 0 0 1 6 12A1 1 0 0 0 11 12C11 10 9.5 9 9.5 7Q9.5 5 12 3"]);
 export default SiconFlame;

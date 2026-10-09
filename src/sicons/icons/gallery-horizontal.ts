@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gallery-horizontal"
 import { createSicon } from '../createSicon';
 
-export const SiconGalleryHorizontal = /*#__PURE__*/ createSicon("gallery-horizontal", [["M2 3L2 21","M8 3L16 3A2 2 0 0 1 18 5L18 19A2 2 0 0 1 16 21L8 21A2 2 0 0 1 6 19L6 5A2 2 0 0 1 8 3Z","M22 3L22 21"],"fbf"]);
+export const SiconGalleryHorizontal = /*#__PURE__*/ createSicon("gallery-horizontal", ["M2 3L2 21","M8 3L16 3A2 2 0 0 1 18 5L18 19A2 2 0 0 1 16 21L8 21A2 2 0 0 1 6 19L6 5A2 2 0 0 1 8 3Z","M22 3L22 21"]);
 export default SiconGalleryHorizontal;

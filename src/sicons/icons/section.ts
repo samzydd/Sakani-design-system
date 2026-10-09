@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "section"
 import { createSicon } from '../createSicon';
 
-export const SiconSection = /*#__PURE__*/ createSicon("section", [["M16 5A4 3 0 0 0 8 5C8 9 16 8 16 12A4 3 0 0 1 8 12","M8 19A4 3 0 0 0 16 19C16 15 8 16 8 12A4 3 0 0 1 16 12"],"pp"]);
+export const SiconSection = /*#__PURE__*/ createSicon("section", ["M16 5A4 3 0 0 0 8 5C8 9 16 8 16 12A4 3 0 0 1 8 12","M8 19A4 3 0 0 0 16 19C16 15 8 16 8 12A4 3 0 0 1 16 12"]);
 export default SiconSection;

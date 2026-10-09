@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "funnel-x"
 import { createSicon } from '../createSicon';
 
-export const SiconFunnelX = /*#__PURE__*/ createSicon("funnel-x", [["M12.531 3L3 3A1 1 0 0 0 2.258 4.67L9.483 12.659A2 2 0 0 1 10 14L10 20A1 1 0 0 0 10.553 20.895L12.553 21.895A1 1 0 0 0 14 21L14 14A2 2 0 0 1 14.517 12.659L14.944 12.186","M16.5 3.5L21.5 8.5","M21.5 3.5L16.5 8.5"],"bff"]);
+export const SiconFunnelX = /*#__PURE__*/ createSicon("funnel-x", ["M12.531 3L3 3A1 1 0 0 0 2.258 4.67L9.483 12.659A2 2 0 0 1 10 14L10 20A1 1 0 0 0 10.553 20.895L12.553 21.895A1 1 0 0 0 14 21L14 14A2 2 0 0 1 14.517 12.659L14.944 12.186","M16.5 3.5L21.5 8.5","M21.5 3.5L16.5 8.5"]);
 export default SiconFunnelX;

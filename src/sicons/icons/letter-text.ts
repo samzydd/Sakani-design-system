@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-initial" (alias of "letter-text")
 import { createSicon } from '../createSicon';
 
-export const SiconLetterText = /*#__PURE__*/ createSicon("letter-text", [["M15 5L21 5","M15 12L21 12","M3 19L21 19","M3 12L6.553 4.276A0.5 0.5 0 0 1 7.447 4.276L11 12","M3.92 10L10.08 10"],"fffbn"]);
+export const SiconLetterText = /*#__PURE__*/ createSicon("letter-text", ["M15 5L21 5","M15 12L21 12","M3 19L21 19","M3 12L6.553 4.276A0.5 0.5 0 0 1 7.447 4.276L11 12","M3.92 10L10.08 10"]);
 export default SiconLetterText;

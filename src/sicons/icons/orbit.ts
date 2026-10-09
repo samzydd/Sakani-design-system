@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "orbit"
 import { createSicon } from '../createSicon';
 
-export const SiconOrbit = /*#__PURE__*/ createSicon("orbit", [["M20.341 6.484A10 10 0 0 1 10.266 21.85","M3.659 17.516A10 10 0 0 1 13.74 2.152","M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z","M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5Z","M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z"],"ffbbb"]);
+export const SiconOrbit = /*#__PURE__*/ createSicon("orbit", ["M20.341 6.484A10 10 0 0 1 10.266 21.85","M3.659 17.516A10 10 0 0 1 13.74 2.152","M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z","M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5Z","M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z"]);
 export default SiconOrbit;

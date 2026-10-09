@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "axis-3d"
 import { createSicon } from '../createSicon';
 
-export const SiconAxis3d = /*#__PURE__*/ createSicon("axis-3d", [["M13.5 10.5L15 9","M4 4L4 19A1 1 0 0 0 5 20L20 20","M4.293 19.707L6 18","M9 15L10.5 13.5"],"pppp"]);
+export const SiconAxis3d = /*#__PURE__*/ createSicon("axis-3d", ["M13.5 10.5L15 9","M4 4L4 19A1 1 0 0 0 5 20L20 20","M4.293 19.707L6 18","M9 15L10.5 13.5"]);
 export default SiconAxis3d;

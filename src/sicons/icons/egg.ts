@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "egg"
 import { createSicon } from '../createSicon';
 
-export const SiconEgg = /*#__PURE__*/ createSicon("egg", [["M12 2C8 2 4 8 4 14A8 8 0 0 0 20 14C20 8 16 2 12 2"],"b"]);
+export const SiconEgg = /*#__PURE__*/ createSicon("egg", ["M12 2C8 2 4 8 4 14A8 8 0 0 0 20 14C20 8 16 2 12 2"]);
 export default SiconEgg;

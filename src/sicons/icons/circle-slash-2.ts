@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-slash-2"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleSlash2 = /*#__PURE__*/ createSicon("circle-slash-2", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M22 2L2 22"],"bn"]);
+export const SiconCircleSlash2 = /*#__PURE__*/ createSicon("circle-slash-2", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M22 2L2 22"]);
 export default SiconCircleSlash2;

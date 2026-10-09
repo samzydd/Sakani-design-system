@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "undo"
 import { createSicon } from '../createSicon';
 
-export const SiconUndo = /*#__PURE__*/ createSicon("undo", [["M3 7L3 13L9 13","M21 17A9 9 0 0 0 12 8A9 9 0 0 0 6 10.3L3 13"],"pp"]);
+export const SiconUndo = /*#__PURE__*/ createSicon("undo", ["M3 7L3 13L9 13","M21 17A9 9 0 0 0 12 8A9 9 0 0 0 6 10.3L3 13"]);
 export default SiconUndo;

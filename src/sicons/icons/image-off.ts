@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "image-off"
 import { createSicon } from '../createSicon';
 
-export const SiconImageOff = /*#__PURE__*/ createSicon("image-off", [["M2 2L22 22","M10.41 10.41A2 2 0 1 1 7.58 7.58","M13.5 13.5L6 21","M18 12L21 15","M3.59 3.59A1.99 1.99 0 0 0 3 5L3 19A2 2 0 0 0 5 21L19 21C19.55 21 20.052 20.78 20.41 20.41","M21 15L21 5A2 2 0 0 0 19 3L9 3"],"pppppp"]);
+export const SiconImageOff = /*#__PURE__*/ createSicon("image-off", ["M2 2L22 22","M10.41 10.41A2 2 0 1 1 7.58 7.58","M13.5 13.5L6 21","M18 12L21 15","M3.59 3.59A1.99 1.99 0 0 0 3 5L3 19A2 2 0 0 0 5 21L19 21C19.55 21 20.052 20.78 20.41 20.41","M21 15L21 5A2 2 0 0 0 19 3L9 3"]);
 export default SiconImageOff;

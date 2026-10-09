@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "drum"
 import { createSicon } from '../createSicon';
 
-export const SiconDrum = /*#__PURE__*/ createSicon("drum", [["M2 2L10 10","M22 2L14 10","M2 9A10 5 0 1 0 22 9A10 5 0 1 0 2 9Z","M7 13.4L7 21.3","M12 14L12 22","M17 13.4L17 21.3","M2 9L2 17A10 5 0 0 0 22 17L22 9"],"nnbnnnb"]);
+export const SiconDrum = /*#__PURE__*/ createSicon("drum", ["M2 2L10 10","M22 2L14 10","M2 9A10 5 0 1 0 22 9A10 5 0 1 0 2 9Z","M7 13.4L7 21.3","M12 14L12 22","M17 13.4L17 21.3","M2 9L2 17A10 5 0 0 0 22 17L22 9"]);
 export default SiconDrum;

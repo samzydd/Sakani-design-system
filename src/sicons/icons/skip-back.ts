@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "skip-back"
 import { createSicon } from '../createSicon';
 
-export const SiconSkipBack = /*#__PURE__*/ createSicon("skip-back", [["M17.971 4.285A2 2 0 0 1 21 6L21 18A2 2 0 0 1 17.971 19.715L7.974 13.717A2 2 0 0 1 7.971 10.285L17.971 4.285Z","M3 20L3 4"],"bf"]);
+export const SiconSkipBack = /*#__PURE__*/ createSicon("skip-back", ["M17.971 4.285A2 2 0 0 1 21 6L21 18A2 2 0 0 1 17.971 19.715L7.974 13.717A2 2 0 0 1 7.971 10.285L17.971 4.285Z","M3 20L3 4"]);
 export default SiconSkipBack;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-up-to-line"
 import { createSicon } from '../createSicon';
 
-export const SiconArrowUpToLine = /*#__PURE__*/ createSicon("arrow-up-to-line", [["M5 3L19 3","M18 13L12 7L6 13","M12 7L12 21"],"ppp"]);
+export const SiconArrowUpToLine = /*#__PURE__*/ createSicon("arrow-up-to-line", ["M5 3L19 3","M18 13L12 7L6 13","M12 7L12 21"]);
 export default SiconArrowUpToLine;

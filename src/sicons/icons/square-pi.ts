@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-pi"
 import { createSicon } from '../createSicon';
 
-export const SiconSquarePi = /*#__PURE__*/ createSicon("square-pi", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M7 7L17 7","M10 7L10 17","M16 17A2 2 0 0 1 14 15L14 7"],"bnnn"]);
+export const SiconSquarePi = /*#__PURE__*/ createSicon("square-pi", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M7 7L17 7","M10 7L10 17","M16 17A2 2 0 0 1 14 15L14 7"]);
 export default SiconSquarePi;

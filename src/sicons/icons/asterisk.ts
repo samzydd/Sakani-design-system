@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "asterisk"
 import { createSicon } from '../createSicon';
 
-export const SiconAsterisk = /*#__PURE__*/ createSicon("asterisk", [["M12 5L12 19","M18.065 8.496L5.94 15.496","M5.94 8.504L18.065 15.504"],"ppp"]);
+export const SiconAsterisk = /*#__PURE__*/ createSicon("asterisk", ["M12 5L12 19","M18.065 8.496L5.94 15.496","M5.94 8.504L18.065 15.504"]);
 export default SiconAsterisk;

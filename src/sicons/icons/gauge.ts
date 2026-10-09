@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gauge"
 import { createSicon } from '../createSicon';
 
-export const SiconGauge = /*#__PURE__*/ createSicon("gauge", [["M12 14L16 10","M3.34 19A10 10 0 1 1 20.66 19"],"nb"]);
+export const SiconGauge = /*#__PURE__*/ createSicon("gauge", ["M12 14L16 10","M3.34 19A10 10 0 1 1 20.66 19"]);
 export default SiconGauge;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pencil-off"
 import { createSicon } from '../createSicon';
 
-export const SiconPencilOff = /*#__PURE__*/ createSicon("pencil-off", [["M10 10L3.843 16.162A2 2 0 0 0 3.343 16.995L2.021 21.355A0.5 0.5 0 0 0 2.643 21.979L7.001 20.656A2 2 0 0 0 7.831 20.156L14 13.982","M12.829 7.172L17.188 2.826A1 1 0 1 1 21.174 6.812L16.821 11.165","M15 5L19 9","M2 2L22 22"],"bbnf"]);
+export const SiconPencilOff = /*#__PURE__*/ createSicon("pencil-off", ["M10 10L3.843 16.162A2 2 0 0 0 3.343 16.995L2.021 21.355A0.5 0.5 0 0 0 2.643 21.979L7.001 20.656A2 2 0 0 0 7.831 20.156L14 13.982","M12.829 7.172L17.188 2.826A1 1 0 1 1 21.174 6.812L16.821 11.165","M15 5L19 9","M2 2L22 22"]);
 export default SiconPencilOff;

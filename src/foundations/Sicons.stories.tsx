@@ -6,13 +6,12 @@ import {
   SiconHouse, SiconSearch, SiconBell, SiconSettings, SiconUser, SiconMail, SiconCalendar, SiconFolder,
   SiconHeart, SiconStar, SiconBookmark, SiconCamera, SiconLock, SiconShieldCheck, SiconShoppingCart,
   SiconTrash2, SiconDownload, SiconChartColumn, SiconPlus, SiconCheck, SiconArrowRight, SiconX,
-  type SiconFC, type SiconVariant,
+  type SiconFC,
 } from '../sicons';
 
 /**
  * Sicons -- Sakani's own icon set: the same 1,626 icons as the Figma "Icons"
- * component set, with softened corners and two styles (`variant="line"` and
- * `variant="solid"`, the Figma `style` property).
+ * component set, at a 1.5 stroke with softened corners.
  *
  * Import from `@sakaniui/react/sicons`, one component per icon
  * (`SiconHeart`, `SiconCalendar` ...). Each is tree-shaken individually.
@@ -35,20 +34,18 @@ const page: React.CSSProperties = { padding: 32, fontFamily: 'var(--font-sans)',
 const label: React.CSSProperties = { fontSize: 12, color: 'var(--color-fg-muted)', width: 48 };
 const row: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 20, marginBottom: 16 };
 
-/** Line and Solid in light and dark, at 24, 32 and 48px. Colour is currentColor. */
+/** Light and dark, at 24, 32 and 48px. Colour is currentColor. */
 export const Overview: Story = {
   render: () => (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
       {[false, true].map((dark) => (
         <div key={String(dark)} className={dark ? 'dark' : undefined} style={{ ...page, background: dark ? '#13151a' : '#fff' }}>
-          {(['line', 'solid'] as SiconVariant[]).flatMap((variant) =>
-            [24, 32, 48].map((s) => (
-              <div key={variant + s} style={row}>
-                <span style={label}>{variant} {s}</span>
-                {SAMPLE.slice(0, s === 48 ? 12 : 22).map((Icon) => <Icon key={Icon.iconName} size={s} variant={variant} />)}
-              </div>
-            )),
-          )}
+          {[24, 32, 48].map((s) => (
+            <div key={s} style={row}>
+              <span style={label}>{s}px</span>
+              {SAMPLE.slice(0, s === 48 ? 12 : 22).map((Icon) => <Icon key={Icon.iconName} size={s} />)}
+            </div>
+          ))}
         </div>
       ))}
     </div>
@@ -62,7 +59,6 @@ export const CloseUp: Story = {
       {[SiconCheck, SiconArrowRight, SiconStar, SiconHouse, SiconShieldCheck, SiconBookmark].map((Icon) => (
         <div key={Icon.iconName} style={{ display: 'grid', gap: 16, justifyItems: 'center' }}>
           <Icon size={96} />
-          <Icon size={96} variant="solid" />
         </div>
       ))}
     </div>
@@ -77,22 +73,20 @@ export const Props: Story = {
       <SiconHeart size={48} />
       <SiconHeart size={48} strokeWidth={2} />
       <SiconHeart size={48} color="#e11d48" />
-      <SiconHeart size={48} color="#e11d48" variant="solid" />
       <p style={{ fontSize: 20, margin: 0 }}>Inline <SiconHeart size="1em" /> text</p>
     </div>
   ),
 };
 
-type GalleryArgs = { size: number; variant: SiconVariant; dark: boolean };
+type GalleryArgs = { size: number; dark: boolean };
 
-/** All 1,626 icons. Search by name; change style, size and theme in the controls. */
+/** All 1,626 icons. Search by name; change size and theme in the controls. */
 export const Gallery: StoryObj<GalleryArgs> = {
-  args: { size: 24, variant: 'line', dark: false },
+  args: { size: 24, dark: false },
   argTypes: {
-    variant: { control: 'inline-radio', options: ['line', 'solid'] },
     size: { control: { type: 'range', min: 16, max: 96, step: 4 } },
   },
-  render: function Render({ size, variant, dark }) {
+  render: function Render({ size, dark }) {
     const [q, setQ] = React.useState('');
     const all = Sicons as unknown as Record<string, SiconFC>;
     const shown = siconNames.filter((n) => n.includes(q.trim().toLowerCase()));
@@ -110,7 +104,7 @@ export const Gallery: StoryObj<GalleryArgs> = {
             const Icon = comp(n);
             return (
               <div key={n} style={{ display: 'grid', justifyItems: 'center', gap: 8, padding: 8, contentVisibility: 'auto', containIntrinsicSize: `${size + 40}px` } as React.CSSProperties}>
-                {Icon && <Icon size={size} variant={variant} />}
+                {Icon && <Icon size={size} />}
                 <div style={{ fontSize: 11, color: 'var(--color-fg-muted)', maxWidth: size + 56, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{n}</div>
               </div>
             );

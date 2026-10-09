@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-pause"
 import { createSicon } from '../createSicon';
 
-export const SiconCirclePause = /*#__PURE__*/ createSicon("circle-pause", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M10 15L10 9","M14 15L14 9"],"bnn"]);
+export const SiconCirclePause = /*#__PURE__*/ createSicon("circle-pause", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M10 15L10 9","M14 15L14 9"]);
 export default SiconCirclePause;

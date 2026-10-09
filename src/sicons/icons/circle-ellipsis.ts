@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-ellipsis"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleEllipsis = /*#__PURE__*/ createSicon("circle-ellipsis", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M17 12L17.01 12","M12 12L12.01 12","M7 12L7.01 12"],"bnnn"]);
+export const SiconCircleEllipsis = /*#__PURE__*/ createSicon("circle-ellipsis", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M17 12L17.01 12","M12 12L12.01 12","M7 12L7.01 12"]);
 export default SiconCircleEllipsis;

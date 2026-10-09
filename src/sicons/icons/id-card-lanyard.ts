@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "id-card-lanyard"
 import { createSicon } from '../createSicon';
 
-export const SiconIdCardLanyard = /*#__PURE__*/ createSicon("id-card-lanyard", [["M13.5 8L10.5 8","M15 2L14.5 3A0.691 0.691 0 0 0 15.118 4L17 4A2 2 0 0 1 19 6L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 6A2 2 0 0 1 7 4L10 4","M16.899 22A5 5 0 0 0 7.1 22","M9 2L12 8","M9 15A3 3 0 1 0 15 15A3 3 0 1 0 9 15Z"],"nbnnn"]);
+export const SiconIdCardLanyard = /*#__PURE__*/ createSicon("id-card-lanyard", ["M13.5 8L10.5 8","M15 2L14.5 3A0.691 0.691 0 0 0 15.118 4L17 4A2 2 0 0 1 19 6L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 6A2 2 0 0 1 7 4L10 4","M16.899 22A5 5 0 0 0 7.1 22","M9 2L12 8","M9 15A3 3 0 1 0 15 15A3 3 0 1 0 9 15Z"]);
 export default SiconIdCardLanyard;

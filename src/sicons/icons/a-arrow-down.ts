@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "a-arrow-down"
 import { createSicon } from '../createSicon';
 
-export const SiconAArrowDown = /*#__PURE__*/ createSicon("a-arrow-down", [["M14 12L18 16L22 12","M18 16L18 7","M2 16L6.039 6.31A0.5 0.5 0 0 1 6.962 6.31L11 16","M3.304 13L9.696 13"],"ffbn"]);
+export const SiconAArrowDown = /*#__PURE__*/ createSicon("a-arrow-down", ["M14 12L18 16L22 12","M18 16L18 7","M2 16L6.039 6.31A0.5 0.5 0 0 1 6.962 6.31L11 16","M3.304 13L9.696 13"]);
 export default SiconAArrowDown;

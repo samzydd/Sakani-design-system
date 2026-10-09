@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "globe-lock"
 import { createSicon } from '../createSicon';
 
-export const SiconGlobeLock = /*#__PURE__*/ createSicon("globe-lock", [["M15.686 15A14.5 14.5 0 0 1 12 22A14.5 14.5 0 0 1 12 2A10 10 0 1 0 21.542 15","M2 12L10.5 12","M20 6L20 4A2 2 0 1 0 16 4L16 6","M15 6L21 6A1 1 0 0 1 22 7L22 10A1 1 0 0 1 21 11L15 11A1 1 0 0 1 14 10L14 7A1 1 0 0 1 15 6Z"],"ffbb"]);
+export const SiconGlobeLock = /*#__PURE__*/ createSicon("globe-lock", ["M15.686 15A14.5 14.5 0 0 1 12 22A14.5 14.5 0 0 1 12 2A10 10 0 1 0 21.542 15","M2 12L10.5 12","M20 6L20 4A2 2 0 1 0 16 4L16 6","M15 6L21 6A1 1 0 0 1 22 7L22 10A1 1 0 0 1 21 11L15 11A1 1 0 0 1 14 10L14 7A1 1 0 0 1 15 6Z"]);
 export default SiconGlobeLock;

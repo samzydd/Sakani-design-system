@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "speech"
 import { createSicon } from '../createSicon';
 
-export const SiconSpeech = /*#__PURE__*/ createSicon("speech", [["M8.8 20L8.8 16.855A0.86 0.86 0 0 1 9.75 16L10.7 16.1A2.3 2.3 0 0 0 12.864 14L12.864 8.3A5.37 5.37 0 0 0 2 8.25C2 11.05 2.656 11.304 3 12.8A5.77 5.77 0 0 1 3.029 15.558L2 20","M19.8 17.8A7.5 7.5 0 0 0 19.803 7.197","M17 15A3.5 3.5 0 0 0 16.975 10.025"],"bff"]);
+export const SiconSpeech = /*#__PURE__*/ createSicon("speech", ["M8.8 20L8.8 16.855A0.86 0.86 0 0 1 9.75 16L10.7 16.1A2.3 2.3 0 0 0 12.864 14L12.864 8.3A5.37 5.37 0 0 0 2 8.25C2 11.05 2.656 11.304 3 12.8A5.77 5.77 0 0 1 3.029 15.558L2 20","M19.8 17.8A7.5 7.5 0 0 0 19.803 7.197","M17 15A3.5 3.5 0 0 0 16.975 10.025"]);
 export default SiconSpeech;

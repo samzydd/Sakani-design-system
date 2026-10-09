@@ -125,8 +125,6 @@ CSS of a component into your own file.
 - Import from `@sakaniui/react/sicons`: `SiconHeart`, `SiconCalendar` ... one per icon in the set (1,626;
   names follow Lucide, kebab-case to `Sicon` + PascalCase). They are the same icons as the Figma *Icons*
   set, with softened corners. Each is tree-shaken on its own.
-- `variant="line"` (default) for normal UI; `variant="solid"` for active/selected states (a selected nav
-  item, a liked heart). Don't mix the two styles in one row without a reason: solid means "on".
 - Props follow lucide-react: `size` (default 24), `color` (default currentColor), `strokeWidth` (default
   1.5), `absoluteStrokeWidth`. Add `title` when the icon carries meaning alone; without it the icon is
   decorative (aria-hidden).

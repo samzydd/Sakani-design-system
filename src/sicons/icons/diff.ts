@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "diff"
 import { createSicon } from '../createSicon';
 
-export const SiconDiff = /*#__PURE__*/ createSicon("diff", [["M12 3L12 17","M5 10L19 10","M5 21L19 21"],"ppp"]);
+export const SiconDiff = /*#__PURE__*/ createSicon("diff", ["M12 3L12 17","M5 10L19 10","M5 21L19 21"]);
 export default SiconDiff;

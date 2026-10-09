@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bell-off"
 import { createSicon } from '../createSicon';
 
-export const SiconBellOff = /*#__PURE__*/ createSicon("bell-off", [["M10.268 21A2 2 0 0 0 13.732 21","M17 17L4 17A1 1 0 0 1 3.26 15.327C4.59 13.956 6 12.499 6 8A6 6 0 0 1 6.258 6.258","M2 2L22 22","M8.668 3.01A6 6 0 0 1 18 8C18 10.687 18.77 12.653 19.707 14.05"],"fbnf"]);
+export const SiconBellOff = /*#__PURE__*/ createSicon("bell-off", ["M10.268 21A2 2 0 0 0 13.732 21","M17 17L4 17A1 1 0 0 1 3.26 15.327C4.59 13.956 6 12.499 6 8A6 6 0 0 1 6.258 6.258","M2 2L22 22","M8.668 3.01A6 6 0 0 1 18 8C18 10.687 18.77 12.653 19.707 14.05"]);
 export default SiconBellOff;

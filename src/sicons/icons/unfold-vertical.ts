@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "unfold-vertical"
 import { createSicon } from '../createSicon';
 
-export const SiconUnfoldVertical = /*#__PURE__*/ createSicon("unfold-vertical", [["M12 22L12 16","M12 8L12 2","M4 12L2 12","M10 12L8 12","M16 12L14 12","M22 12L20 12","M15 19L12 22L9 19","M15 5L12 2L9 5"],"pppppppp"]);
+export const SiconUnfoldVertical = /*#__PURE__*/ createSicon("unfold-vertical", ["M12 22L12 16","M12 8L12 2","M4 12L2 12","M10 12L8 12","M16 12L14 12","M22 12L20 12","M15 19L12 22L9 19","M15 5L12 2L9 5"]);
 export default SiconUnfoldVertical;

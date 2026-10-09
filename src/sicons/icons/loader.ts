@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "loader"
 import { createSicon } from '../createSicon';
 
-export const SiconLoader = /*#__PURE__*/ createSicon("loader", [["M12 2L12 6","M16.2 7.8L19.1 4.9","M18 12L22 12","M16.2 16.2L19.1 19.1","M12 18L12 22","M4.9 19.1L7.8 16.2","M2 12L6 12","M4.9 4.9L7.8 7.8"],"pppppppp"]);
+export const SiconLoader = /*#__PURE__*/ createSicon("loader", ["M12 2L12 6","M16.2 7.8L19.1 4.9","M18 12L22 12","M16.2 16.2L19.1 19.1","M12 18L12 22","M4.9 19.1L7.8 16.2","M2 12L6 12","M4.9 4.9L7.8 7.8"]);
 export default SiconLoader;

@@ -36,14 +36,14 @@ matching *Glass Icons* component set.
 Browse them all in Storybook under *Foundations -> Glass Icons* or at https://www.sakaniui.com/docs/glass-icons.
 ## Sicons
 
-Sakani's own icon set: the same 1,626 icons as the Figma *Icons* set, with softened corners and a
-`line` and a `solid` style.
+Sakani's own icon set: the same 1,626 icons as the Figma *Icons* set, at a 1.5 stroke with softened
+corners.
 
 ```tsx
 import { SiconHeart, SiconBell } from '@sakaniui/react/sicons';
 
-<SiconHeart />                       {/* line, 24px, currentColor */}
-<SiconBell variant="solid" size={20} />
+<SiconHeart />              {/* 24px, currentColor */}
+<SiconBell size={20} />
 ```
 
 Props follow lucide-react (`size`, `color`, `strokeWidth`), so a Lucide icon is a find-and-replace.

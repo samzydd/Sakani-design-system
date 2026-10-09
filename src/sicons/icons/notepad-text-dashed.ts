@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "notepad-text-dashed"
 import { createSicon } from '../createSicon';
 
-export const SiconNotepadTextDashed = /*#__PURE__*/ createSicon("notepad-text-dashed", [["M8 2L8 6","M12 2L12 6","M16 2L16 6","M16 4L18 4A2 2 0 0 1 20 6L20 8","M20 12L20 14","M20 18L20 20A2 2 0 0 1 18 22L17 22","M13 22L11 22","M7 22L6 22A2 2 0 0 1 4 20L4 18","M4 14L4 12","M4 8L4 6A2 2 0 0 1 6 4L8 4","M8 10L14 10","M8 14L16 14","M8 18L13 18"],"ppppppppppppp"]);
+export const SiconNotepadTextDashed = /*#__PURE__*/ createSicon("notepad-text-dashed", ["M8 2L8 6","M12 2L12 6","M16 2L16 6","M16 4L18 4A2 2 0 0 1 20 6L20 8","M20 12L20 14","M20 18L20 20A2 2 0 0 1 18 22L17 22","M13 22L11 22","M7 22L6 22A2 2 0 0 1 4 20L4 18","M4 14L4 12","M4 8L4 6A2 2 0 0 1 6 4L8 4","M8 10L14 10","M8 14L16 14","M8 18L13 18"]);
 export default SiconNotepadTextDashed;

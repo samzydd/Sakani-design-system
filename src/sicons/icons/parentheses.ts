@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "parentheses"
 import { createSicon } from '../createSicon';
 
-export const SiconParentheses = /*#__PURE__*/ createSicon("parentheses", [["M8 21C8 21 4 18 4 12C4 6 8 3 8 3","M16 3C16 3 20 6 20 12C20 18 16 21 16 21"],"pp"]);
+export const SiconParentheses = /*#__PURE__*/ createSicon("parentheses", ["M8 21C8 21 4 18 4 12C4 6 8 3 8 3","M16 3C16 3 20 6 20 12C20 18 16 21 16 21"]);
 export default SiconParentheses;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "japanese-yen"
 import { createSicon } from '../createSicon';
 
-export const SiconJapaneseYen = /*#__PURE__*/ createSicon("japanese-yen", [["M12 9.5L12 21","M12 9.5L6 3","M12 9.5L18 3","M6 15L18 15","M6 11L18 11"],"ppppp"]);
+export const SiconJapaneseYen = /*#__PURE__*/ createSicon("japanese-yen", ["M12 9.5L12 21","M12 9.5L6 3","M12 9.5L18 3","M6 15L18 15","M6 11L18 11"]);
 export default SiconJapaneseYen;

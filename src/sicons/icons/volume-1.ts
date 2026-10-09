@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "volume-1"
 import { createSicon } from '../createSicon';
 
-export const SiconVolume1 = /*#__PURE__*/ createSicon("volume-1", [["M11 4.702A0.705 0.705 0 0 0 9.797 4.204L6.413 7.587A1.4 1.4 0 0 1 5.416 8L3 8A1 1 0 0 0 2 9L2 15A1 1 0 0 0 3 16L5.416 16A1.4 1.4 0 0 1 6.413 16.413L9.796 19.797A0.705 0.705 0 0 0 11 19.298L11 4.702Z","M16 9A5 5 0 0 1 16 15"],"bf"]);
+export const SiconVolume1 = /*#__PURE__*/ createSicon("volume-1", ["M11 4.702A0.705 0.705 0 0 0 9.797 4.204L6.413 7.587A1.4 1.4 0 0 1 5.416 8L3 8A1 1 0 0 0 2 9L2 15A1 1 0 0 0 3 16L5.416 16A1.4 1.4 0 0 1 6.413 16.413L9.796 19.797A0.705 0.705 0 0 0 11 19.298L11 4.702Z","M16 9A5 5 0 0 1 16 15"]);
 export default SiconVolume1;

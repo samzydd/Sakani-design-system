@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "indian-rupee"
 import { createSicon } from '../createSicon';
 
-export const SiconIndianRupee = /*#__PURE__*/ createSicon("indian-rupee", [["M6 3L18 3","M6 8L18 8","M6 13L14.5 21","M6 13L9 13","M9 13C15.667 13 15.667 3 9 3"],"fnffb"]);
+export const SiconIndianRupee = /*#__PURE__*/ createSicon("indian-rupee", ["M6 3L18 3","M6 8L18 8","M6 13L14.5 21","M6 13L9 13","M9 13C15.667 13 15.667 3 9 3"]);
 export default SiconIndianRupee;

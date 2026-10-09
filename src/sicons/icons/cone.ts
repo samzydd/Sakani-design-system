@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cone"
 import { createSicon } from '../createSicon';
 
-export const SiconCone = /*#__PURE__*/ createSicon("cone", [["M20.9 18.55L12.9 2.57A1 1 0 0 0 11.1 2.57L3.1 18.55","M3 19A9 3 0 1 0 21 19A9 3 0 1 0 3 19Z"],"bb"]);
+export const SiconCone = /*#__PURE__*/ createSicon("cone", ["M20.9 18.55L12.9 2.57A1 1 0 0 0 11.1 2.57L3.1 18.55","M3 19A9 3 0 1 0 21 19A9 3 0 1 0 3 19Z"]);
 export default SiconCone;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "notebook-pen"
 import { createSicon } from '../createSicon';
 
-export const SiconNotebookPen = /*#__PURE__*/ createSicon("notebook-pen", [["M13.4 2L6 2A2 2 0 0 0 4 4L4 20A2 2 0 0 0 6 22L18 22A2 2 0 0 0 20 20L20 12.6","M2 6L6 6","M2 10L6 10","M2 14L6 14","M2 18L6 18","M21.378 5.626A1 1 0 1 0 18.374 2.622L13.364 7.634A2 2 0 0 0 12.858 8.488L12.021 11.358A0.5 0.5 0 0 0 12.641 11.978L15.511 11.141A2 2 0 0 0 16.365 10.635L21.378 5.626Z"],"bnnnnf"]);
+export const SiconNotebookPen = /*#__PURE__*/ createSicon("notebook-pen", ["M13.4 2L6 2A2 2 0 0 0 4 4L4 20A2 2 0 0 0 6 22L18 22A2 2 0 0 0 20 20L20 12.6","M2 6L6 6","M2 10L6 10","M2 14L6 14","M2 18L6 18","M21.378 5.626A1 1 0 1 0 18.374 2.622L13.364 7.634A2 2 0 0 0 12.858 8.488L12.021 11.358A0.5 0.5 0 0 0 12.641 11.978L15.511 11.141A2 2 0 0 0 16.365 10.635L21.378 5.626Z"]);
 export default SiconNotebookPen;

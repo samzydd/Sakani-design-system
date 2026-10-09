@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "headphone-off"
 import { createSicon } from '../createSicon';
 
-export const SiconHeadphoneOff = /*#__PURE__*/ createSicon("headphone-off", [["M21 14L19.657 14","M9.128 3.47A9 9 0 0 1 21 12L21 15.343","M2 2L22 22","M20.414 20.414A2 2 0 0 1 19 21L18 21A2 2 0 0 1 16 19L16 16","M3 14L6 14A2 2 0 0 1 8 16L8 19A2 2 0 0 1 6 21L5 21A2 2 0 0 1 3 19L3 12A9 9 0 0 1 5.636 5.636"],"ppppp"]);
+export const SiconHeadphoneOff = /*#__PURE__*/ createSicon("headphone-off", ["M21 14L19.657 14","M9.128 3.47A9 9 0 0 1 21 12L21 15.343","M2 2L22 22","M20.414 20.414A2 2 0 0 1 19 21L18 21A2 2 0 0 1 16 19L16 16","M3 14L6 14A2 2 0 0 1 8 16L8 19A2 2 0 0 1 6 21L5 21A2 2 0 0 1 3 19L3 12A9 9 0 0 1 5.636 5.636"]);
 export default SiconHeadphoneOff;

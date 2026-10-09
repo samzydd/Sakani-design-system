@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shield-question-mark"
 import { createSicon } from '../createSicon';
 
-export const SiconShieldQuestionMark = /*#__PURE__*/ createSicon("shield-question-mark", [["M20 13C20 18 16.5 20.5 12.34 21.95A1 1 0 0 1 11.67 21.94C7.5 20.5 4 18 4 13L4 6A1 1 0 0 1 5 5C7 5 9.5 3.8 11.24 2.28A1.17 1.17 0 0 1 12.76 2.28C14.51 3.81 17 5 19 5A1 1 0 0 1 20 6L20 13Z","M9.1 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13","M12 17L12.01 17"],"bnn"]);
+export const SiconShieldQuestionMark = /*#__PURE__*/ createSicon("shield-question-mark", ["M20 13C20 18 16.5 20.5 12.34 21.95A1 1 0 0 1 11.67 21.94C7.5 20.5 4 18 4 13L4 6A1 1 0 0 1 5 5C7 5 9.5 3.8 11.24 2.28A1.17 1.17 0 0 1 12.76 2.28C14.51 3.81 17 5 19 5A1 1 0 0 1 20 6L20 13Z","M9.1 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13","M12 17L12.01 17"]);
 export default SiconShieldQuestionMark;

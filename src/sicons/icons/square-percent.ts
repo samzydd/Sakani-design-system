@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-percent"
 import { createSicon } from '../createSicon';
 
-export const SiconSquarePercent = /*#__PURE__*/ createSicon("square-percent", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M15 9L9 15","M9 9L9.01 9","M15 15L15.01 15"],"bnnn"]);
+export const SiconSquarePercent = /*#__PURE__*/ createSicon("square-percent", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M15 9L9 15","M9 9L9.01 9","M15 15L15.01 15"]);
 export default SiconSquarePercent;

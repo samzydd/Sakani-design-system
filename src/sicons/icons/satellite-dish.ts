@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "satellite-dish"
 import { createSicon } from '../createSicon';
 
-export const SiconSatelliteDish = /*#__PURE__*/ createSicon("satellite-dish", [["M4 10A7.31 7.31 0 0 0 14 20L4 10Z","M9 15L12 12","M17 13A6 6 0 0 0 11 7","M21 13A10 10 0 0 0 11 3"],"bfff"]);
+export const SiconSatelliteDish = /*#__PURE__*/ createSicon("satellite-dish", ["M4 10A7.31 7.31 0 0 0 14 20L4 10Z","M9 15L12 12","M17 13A6 6 0 0 0 11 7","M21 13A10 10 0 0 0 11 3"]);
 export default SiconSatelliteDish;

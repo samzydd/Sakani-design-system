@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mail-plus"
 import { createSicon } from '../createSicon';
 
-export const SiconMailPlus = /*#__PURE__*/ createSicon("mail-plus", [["M22 13L22 6A2 2 0 0 0 20 4L4 4A2 2 0 0 0 2 6L2 18C2 19.1 2.9 20 4 20L12 20","M22 7L13.03 12.7A1.94 1.94 0 0 1 10.97 12.7L2 7","M19 16L19 22","M16 19L22 19"],"bnff"]);
+export const SiconMailPlus = /*#__PURE__*/ createSicon("mail-plus", ["M22 13L22 6A2 2 0 0 0 20 4L4 4A2 2 0 0 0 2 6L2 18C2 19.1 2.9 20 4 20L12 20","M22 7L13.03 12.7A1.94 1.94 0 0 1 10.97 12.7L2 7","M19 16L19 22","M16 19L22 19"]);
 export default SiconMailPlus;

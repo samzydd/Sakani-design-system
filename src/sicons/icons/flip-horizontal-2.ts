@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flip-horizontal-2"
 import { createSicon } from '../createSicon';
 
-export const SiconFlipHorizontal2 = /*#__PURE__*/ createSicon("flip-horizontal-2", [["M5.5 9.5L5.5 9.5A3.536 3.536 0 0 1 5.5 14.5L5.5 14.5A1.464 1.464 0 0 1 3 13.464L3 10.536A1.464 1.464 0 0 1 5.5 9.5Z","M18.5 9.5L18.5 9.5A3.536 3.536 0 0 0 18.5 14.5L18.5 14.5A1.464 1.464 0 0 0 21 13.464L21 10.536A1.464 1.464 0 0 0 18.5 9.5Z","M12 20L12 22","M12 14L12 16","M12 8L12 10","M12 2L12 4"],"bbffff"]);
+export const SiconFlipHorizontal2 = /*#__PURE__*/ createSicon("flip-horizontal-2", ["M5.5 9.5L5.5 9.5A3.536 3.536 0 0 1 5.5 14.5L5.5 14.5A1.464 1.464 0 0 1 3 13.464L3 10.536A1.464 1.464 0 0 1 5.5 9.5Z","M18.5 9.5L18.5 9.5A3.536 3.536 0 0 0 18.5 14.5L18.5 14.5A1.464 1.464 0 0 0 21 13.464L21 10.536A1.464 1.464 0 0 0 18.5 9.5Z","M12 20L12 22","M12 14L12 16","M12 8L12 10","M12 2L12 4"]);
 export default SiconFlipHorizontal2;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "layout-grid"
 import { createSicon } from '../createSicon';
 
-export const SiconLayoutGrid = /*#__PURE__*/ createSicon("layout-grid", [["M4 3L9 3A1 1 0 0 1 10 4L10 9A1 1 0 0 1 9 10L4 10A1 1 0 0 1 3 9L3 4A1 1 0 0 1 4 3Z","M15 3L20 3A1 1 0 0 1 21 4L21 9A1 1 0 0 1 20 10L15 10A1 1 0 0 1 14 9L14 4A1 1 0 0 1 15 3Z","M15 14L20 14A1 1 0 0 1 21 15L21 20A1 1 0 0 1 20 21L15 21A1 1 0 0 1 14 20L14 15A1 1 0 0 1 15 14Z","M4 14L9 14A1 1 0 0 1 10 15L10 20A1 1 0 0 1 9 21L4 21A1 1 0 0 1 3 20L3 15A1 1 0 0 1 4 14Z"],"bbbb"]);
+export const SiconLayoutGrid = /*#__PURE__*/ createSicon("layout-grid", ["M4 3L9 3A1 1 0 0 1 10 4L10 9A1 1 0 0 1 9 10L4 10A1 1 0 0 1 3 9L3 4A1 1 0 0 1 4 3Z","M15 3L20 3A1 1 0 0 1 21 4L21 9A1 1 0 0 1 20 10L15 10A1 1 0 0 1 14 9L14 4A1 1 0 0 1 15 3Z","M15 14L20 14A1 1 0 0 1 21 15L21 20A1 1 0 0 1 20 21L15 21A1 1 0 0 1 14 20L14 15A1 1 0 0 1 15 14Z","M4 14L9 14A1 1 0 0 1 10 15L10 20A1 1 0 0 1 9 21L4 21A1 1 0 0 1 3 20L3 15A1 1 0 0 1 4 14Z"]);
 export default SiconLayoutGrid;

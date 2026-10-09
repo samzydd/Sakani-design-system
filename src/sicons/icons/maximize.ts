@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "maximize"
 import { createSicon } from '../createSicon';
 
-export const SiconMaximize = /*#__PURE__*/ createSicon("maximize", [["M8 3L5 3A2 2 0 0 0 3 5L3 8","M21 8L21 5A2 2 0 0 0 19 3L16 3","M3 16L3 19A2 2 0 0 0 5 21L8 21","M16 21L19 21A2 2 0 0 0 21 19L21 16"],"pppp"]);
+export const SiconMaximize = /*#__PURE__*/ createSicon("maximize", ["M8 3L5 3A2 2 0 0 0 3 5L3 8","M21 8L21 5A2 2 0 0 0 19 3L16 3","M3 16L3 19A2 2 0 0 0 5 21L8 21","M16 21L19 21A2 2 0 0 0 21 19L21 16"]);
 export default SiconMaximize;

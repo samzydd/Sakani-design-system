@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-square-off"
 import { createSicon } from '../createSicon';
 
-export const SiconMessageSquareOff = /*#__PURE__*/ createSicon("message-square-off", [["M19 19L6.828 19A2 2 0 0 0 5.414 19.586L3.212 21.788A0.7 0.7 0 0 1 2 21.286L2 5A2 2 0 0 1 3.184 3.174","M2 2L22 22","M8.656 3L20 3A2 2 0 0 1 22 5L22 16.344"],"bef"]);
+export const SiconMessageSquareOff = /*#__PURE__*/ createSicon("message-square-off", ["M19 19L6.828 19A2 2 0 0 0 5.414 19.586L3.212 21.788A0.7 0.7 0 0 1 2 21.286L2 5A2 2 0 0 1 3.184 3.174","M2 2L22 22","M8.656 3L20 3A2 2 0 0 1 22 5L22 16.344"]);
 export default SiconMessageSquareOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "thermometer-snowflake"
 import { createSicon } from '../createSicon';
 
-export const SiconThermometerSnowflake = /*#__PURE__*/ createSicon("thermometer-snowflake", [["M10 20L9.375 18.75A1.863 1.863 0 0 0 7.375 17.75L6 18","M10 4L9.375 5.25A1.863 1.863 0 0 1 7.375 6.25L6 6","M10.585 15L10 15","M2 12L8.5 12L10 9","M20 14.54A4 4 0 1 1 16 14.54L16 4A2 2 0 0 1 20 4L20 14.54Z","M4 10L4.75 11A1.667 1.667 0 0 1 4.75 13L4 14","M7 21L10 15L8.5 12","M7 3L10 9L12 9"],"ffffbfff"]);
+export const SiconThermometerSnowflake = /*#__PURE__*/ createSicon("thermometer-snowflake", ["M10 20L9.375 18.75A1.863 1.863 0 0 0 7.375 17.75L6 18","M10 4L9.375 5.25A1.863 1.863 0 0 1 7.375 6.25L6 6","M10.585 15L10 15","M2 12L8.5 12L10 9","M20 14.54A4 4 0 1 1 16 14.54L16 4A2 2 0 0 1 20 4L20 14.54Z","M4 10L4.75 11A1.667 1.667 0 0 1 4.75 13L4 14","M7 21L10 15L8.5 12","M7 3L10 9L12 9"]);
 export default SiconThermometerSnowflake;

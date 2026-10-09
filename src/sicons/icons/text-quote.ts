@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-quote"
 import { createSicon } from '../createSicon';
 
-export const SiconTextQuote = /*#__PURE__*/ createSicon("text-quote", [["M17 5L3 5","M21 12L8 12","M21 19L8 19","M3 12L3 19"],"pppp"]);
+export const SiconTextQuote = /*#__PURE__*/ createSicon("text-quote", ["M17 5L3 5","M21 12L8 12","M21 19L8 19","M3 12L3 19"]);
 export default SiconTextQuote;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cross"
 import { createSicon } from '../createSicon';
 
-export const SiconCross = /*#__PURE__*/ createSicon("cross", [["M4 9A2 2 0 0 0 2 11L2 13A2 2 0 0 0 4 15L8 15A1 1 0 0 1 9 16L9 20A2 2 0 0 0 11 22L13 22A2 2 0 0 0 15 20L15 16A1 1 0 0 1 16 15L20 15A2 2 0 0 0 22 13L22 11A2 2 0 0 0 20 9L16 9A1 1 0 0 1 15 8L15 4A2 2 0 0 0 13 2L11 2A2 2 0 0 0 9 4L9 8A1 1 0 0 1 8 9L4 9Z"],"b"]);
+export const SiconCross = /*#__PURE__*/ createSicon("cross", ["M4 9A2 2 0 0 0 2 11L2 13A2 2 0 0 0 4 15L8 15A1 1 0 0 1 9 16L9 20A2 2 0 0 0 11 22L13 22A2 2 0 0 0 15 20L15 16A1 1 0 0 1 16 15L20 15A2 2 0 0 0 22 13L22 11A2 2 0 0 0 20 9L16 9A1 1 0 0 1 15 8L15 4A2 2 0 0 0 13 2L11 2A2 2 0 0 0 9 4L9 8A1 1 0 0 1 8 9L4 9Z"]);
 export default SiconCross;

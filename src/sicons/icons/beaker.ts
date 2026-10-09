@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "beaker"
 import { createSicon } from '../createSicon';
 
-export const SiconBeaker = /*#__PURE__*/ createSicon("beaker", [["M4.5 3L19.5 3","M6 3L6 19A2 2 0 0 0 8 21L16 21A2 2 0 0 0 18 19L18 3","M6 14L18 14"],"ebn"]);
+export const SiconBeaker = /*#__PURE__*/ createSicon("beaker", ["M4.5 3L19.5 3","M6 3L6 19A2 2 0 0 0 8 21L16 21A2 2 0 0 0 18 19L18 3","M6 14L18 14"]);
 export default SiconBeaker;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tally-2"
 import { createSicon } from '../createSicon';
 
-export const SiconTally2 = /*#__PURE__*/ createSicon("tally-2", [["M4 4L4 20","M9 4L9 20"],"pp"]);
+export const SiconTally2 = /*#__PURE__*/ createSicon("tally-2", ["M4 4L4 20","M9 4L9 20"]);
 export default SiconTally2;

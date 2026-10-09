@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "copy-minus"
 import { createSicon } from '../createSicon';
 
-export const SiconCopyMinus = /*#__PURE__*/ createSicon("copy-minus", [["M12 15L18 15","M10 8L20 8A2 2 0 0 1 22 10L22 20A2 2 0 0 1 20 22L10 22A2 2 0 0 1 8 20L8 10A2 2 0 0 1 10 8Z","M4 16C2.9 16 2 15.1 2 14L2 4C2 2.9 2.9 2 4 2L14 2C15.1 2 16 2.9 16 4"],"nbb"]);
+export const SiconCopyMinus = /*#__PURE__*/ createSicon("copy-minus", ["M12 15L18 15","M10 8L20 8A2 2 0 0 1 22 10L22 20A2 2 0 0 1 20 22L10 22A2 2 0 0 1 8 20L8 10A2 2 0 0 1 10 8Z","M4 16C2.9 16 2 15.1 2 14L2 4C2 2.9 2.9 2 4 2L14 2C15.1 2 16 2.9 16 4"]);
 export default SiconCopyMinus;

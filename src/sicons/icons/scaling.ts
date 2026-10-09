@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "scaling"
 import { createSicon } from '../createSicon';
 
-export const SiconScaling = /*#__PURE__*/ createSicon("scaling", [["M12 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L19 21A2 2 0 0 0 21 19L21 12","M14 15L9 15L9 10","M16 3L21 3L21 8","M21 3L9 15"],"bnfn"]);
+export const SiconScaling = /*#__PURE__*/ createSicon("scaling", ["M12 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L19 21A2 2 0 0 0 21 19L21 12","M14 15L9 15L9 10","M16 3L21 3L21 8","M21 3L9 15"]);
 export default SiconScaling;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "radius"
 import { createSicon } from '../createSicon';
 
-export const SiconRadius = /*#__PURE__*/ createSicon("radius", [["M20.34 17.52A10 10 0 1 0 17.52 20.34","M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19Z","M13.41 13.41L17.59 17.59","M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z"],"bnnn"]);
+export const SiconRadius = /*#__PURE__*/ createSicon("radius", ["M20.34 17.52A10 10 0 1 0 17.52 20.34","M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19Z","M13.41 13.41L17.59 17.59","M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z"]);
 export default SiconRadius;

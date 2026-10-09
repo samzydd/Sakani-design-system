@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-big-up"
 import { createSicon } from '../createSicon';
 
-export const SiconArrowBigUp = /*#__PURE__*/ createSicon("arrow-big-up", [["M9 19A1 1 0 0 0 10 20L14 20A1 1 0 0 0 15 19L15 13A1 1 0 0 1 16 12L19.293 12A0.707 0.707 0 0 0 19.793 10.793L12.707 3.707A1 1 0 0 0 11.293 3.707L4.207 10.793A0.707 0.707 0 0 0 4.707 12L8 12A1 1 0 0 1 9 13L9 19Z"],"b"]);
+export const SiconArrowBigUp = /*#__PURE__*/ createSicon("arrow-big-up", ["M9 19A1 1 0 0 0 10 20L14 20A1 1 0 0 0 15 19L15 13A1 1 0 0 1 16 12L19.293 12A0.707 0.707 0 0 0 19.793 10.793L12.707 3.707A1 1 0 0 0 11.293 3.707L4.207 10.793A0.707 0.707 0 0 0 4.707 12L8 12A1 1 0 0 1 9 13L9 19Z"]);
 export default SiconArrowBigUp;

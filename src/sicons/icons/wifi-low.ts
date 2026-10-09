@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wifi-low"
 import { createSicon } from '../createSicon';
 
-export const SiconWifiLow = /*#__PURE__*/ createSicon("wifi-low", [["M12 20L12.01 20","M8.5 16.429A5 5 0 0 1 15.5 16.429"],"pp"]);
+export const SiconWifiLow = /*#__PURE__*/ createSicon("wifi-low", ["M12 20L12.01 20","M8.5 16.429A5 5 0 0 1 15.5 16.429"]);
 export default SiconWifiLow;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-indent-increase" (alias of "indent-increase")
 import { createSicon } from '../createSicon';
 
-export const SiconIndentIncrease = /*#__PURE__*/ createSicon("indent-increase", [["M21 5L11 5","M21 12L11 12","M21 19L11 19","M3 8L5 10A2.828 2.828 0 0 1 5 14L3 16"],"pppp"]);
+export const SiconIndentIncrease = /*#__PURE__*/ createSicon("indent-increase", ["M21 5L11 5","M21 12L11 12","M21 19L11 19","M3 8L5 10A2.828 2.828 0 0 1 5 14L3 16"]);
 export default SiconIndentIncrease;

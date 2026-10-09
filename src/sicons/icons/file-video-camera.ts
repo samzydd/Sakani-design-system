@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-video-camera"
 import { createSicon } from '../createSicon';
 
-export const SiconFileVideoCamera = /*#__PURE__*/ createSicon("file-video-camera", [["M4 12L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22","M14 2L14 7A1 1 0 0 0 15 8L20 8","M10 17.843L13.033 16.088A0.64 0.64 0 0 1 14 16.648L14 21.352A0.65 0.65 0 0 1 13.033 21.912L10 20.157","M4 16L9 16A1 1 0 0 1 10 17L10 21A1 1 0 0 1 9 22L4 22A1 1 0 0 1 3 21L3 17A1 1 0 0 1 4 16Z"],"bnnf"]);
+export const SiconFileVideoCamera = /*#__PURE__*/ createSicon("file-video-camera", ["M4 12L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22","M14 2L14 7A1 1 0 0 0 15 8L20 8","M10 17.843L13.033 16.088A0.64 0.64 0 0 1 14 16.648L14 21.352A0.65 0.65 0 0 1 13.033 21.912L10 20.157","M4 16L9 16A1 1 0 0 1 10 17L10 21A1 1 0 0 1 9 22L4 22A1 1 0 0 1 3 21L3 17A1 1 0 0 1 4 16Z"]);
 export default SiconFileVideoCamera;

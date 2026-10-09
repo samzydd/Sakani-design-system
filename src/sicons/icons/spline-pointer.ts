@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "spline-pointer"
 import { createSicon } from '../createSicon';
 
-export const SiconSplinePointer = /*#__PURE__*/ createSicon("spline-pointer", [["M12.034 12.681A0.498 0.498 0 0 1 12.681 12.034L21.681 15.534A0.5 0.5 0 0 1 21.648 16.477L18.204 17.545A1 1 0 0 0 17.544 18.205L16.477 21.648A0.5 0.5 0 0 1 15.534 21.681L12.034 12.681Z","M5 17A12 12 0 0 1 17 5","M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5Z","M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z"],"bfbb"]);
+export const SiconSplinePointer = /*#__PURE__*/ createSicon("spline-pointer", ["M12.034 12.681A0.498 0.498 0 0 1 12.681 12.034L21.681 15.534A0.5 0.5 0 0 1 21.648 16.477L18.204 17.545A1 1 0 0 0 17.544 18.205L16.477 21.648A0.5 0.5 0 0 1 15.534 21.681L12.034 12.681Z","M5 17A12 12 0 0 1 17 5","M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5Z","M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z"]);
 export default SiconSplinePointer;

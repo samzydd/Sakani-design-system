@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calendar-plus"
 import { createSicon } from '../createSicon';
 
-export const SiconCalendarPlus = /*#__PURE__*/ createSicon("calendar-plus", [["M16 18L22 18","M16 2L16 5","M19 15L19 21","M21 11.5L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L13.3 21","M3 9L21 9","M8 2L8 5"],"fefbne"]);
+export const SiconCalendarPlus = /*#__PURE__*/ createSicon("calendar-plus", ["M16 18L22 18","M16 2L16 5","M19 15L19 21","M21 11.5L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L13.3 21","M3 9L21 9","M8 2L8 5"]);
 export default SiconCalendarPlus;

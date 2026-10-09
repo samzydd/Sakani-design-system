@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bell-electric"
 import { createSicon } from '../createSicon';
 
-export const SiconBellElectric = /*#__PURE__*/ createSicon("bell-electric", [["M18.518 17.347A7 7 0 0 1 14 19","M18.8 4A11 11 0 0 1 20 9","M9 9L9.01 9","M18 16A2 2 0 1 0 22 16A2 2 0 1 0 18 16Z","M2 9A7 7 0 1 0 16 9A7 7 0 1 0 2 9Z","M6 16L12 16A2 2 0 0 1 14 18L14 20A2 2 0 0 1 12 22L6 22A2 2 0 0 1 4 20L4 18A2 2 0 0 1 6 16Z"],"ffnfbb"]);
+export const SiconBellElectric = /*#__PURE__*/ createSicon("bell-electric", ["M18.518 17.347A7 7 0 0 1 14 19","M18.8 4A11 11 0 0 1 20 9","M9 9L9.01 9","M18 16A2 2 0 1 0 22 16A2 2 0 1 0 18 16Z","M2 9A7 7 0 1 0 16 9A7 7 0 1 0 2 9Z","M6 16L12 16A2 2 0 0 1 14 18L14 20A2 2 0 0 1 12 22L6 22A2 2 0 0 1 4 20L4 18A2 2 0 0 1 6 16Z"]);
 export default SiconBellElectric;

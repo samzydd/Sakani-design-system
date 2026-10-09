@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "vector-square"
 import { createSicon } from '../createSicon';
 
-export const SiconVectorSquare = /*#__PURE__*/ createSicon("vector-square", [["M17.055 4.533A24 24 0 0 0 6.945 4.533","M19.467 17.055A24 24 0 0 0 19.467 6.945","M4.533 6.945A24 24 0 0 0 4.533 17.055","M6.945 19.467A24 24 0 0 0 17.055 19.467","M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19Z","M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5Z","M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z","M3 5A2 2 0 1 0 7 5A2 2 0 1 0 3 5Z"],"ffffbbbb"]);
+export const SiconVectorSquare = /*#__PURE__*/ createSicon("vector-square", ["M17.055 4.533A24 24 0 0 0 6.945 4.533","M19.467 17.055A24 24 0 0 0 19.467 6.945","M4.533 6.945A24 24 0 0 0 4.533 17.055","M6.945 19.467A24 24 0 0 0 17.055 19.467","M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19Z","M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5Z","M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z","M3 5A2 2 0 1 0 7 5A2 2 0 1 0 3 5Z"]);
 export default SiconVectorSquare;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-stop"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleStop = /*#__PURE__*/ createSicon("circle-stop", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M10 9L14 9A1 1 0 0 1 15 10L15 14A1 1 0 0 1 14 15L10 15A1 1 0 0 1 9 14L9 10A1 1 0 0 1 10 9Z"],"bn"]);
+export const SiconCircleStop = /*#__PURE__*/ createSicon("circle-stop", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M10 9L14 9A1 1 0 0 1 15 10L15 14A1 1 0 0 1 14 15L10 15A1 1 0 0 1 9 14L9 10A1 1 0 0 1 10 9Z"]);
 export default SiconCircleStop;

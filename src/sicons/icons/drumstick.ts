@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "drumstick"
 import { createSicon } from '../createSicon';
 
-export const SiconDrumstick = /*#__PURE__*/ createSicon("drumstick", [["M15.4 15.63A7.875 6 135 1 1 21.63 9.4A4.5 3.43 135 0 0 15.4 15.63","M8.29 12.71L5.69 15.31A2.5 2.5 0 1 0 4.04 19.96A2.5 2.5 0 1 0 8.7 18.3L11.29 15.71"],"bb"]);
+export const SiconDrumstick = /*#__PURE__*/ createSicon("drumstick", ["M15.4 15.63A7.875 6 135 1 1 21.63 9.4A4.5 3.43 135 0 0 15.4 15.63","M8.29 12.71L5.69 15.31A2.5 2.5 0 1 0 4.04 19.96A2.5 2.5 0 1 0 8.7 18.3L11.29 15.71"]);
 export default SiconDrumstick;

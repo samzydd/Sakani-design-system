@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "audio-lines"
 import { createSicon } from '../createSicon';
 
-export const SiconAudioLines = /*#__PURE__*/ createSicon("audio-lines", [["M2 10L2 13","M6 6L6 17","M10 3L10 21","M14 8L14 15","M18 5L18 18","M22 10L22 13"],"pppppp"]);
+export const SiconAudioLines = /*#__PURE__*/ createSicon("audio-lines", ["M2 10L2 13","M6 6L6 17","M10 3L10 21","M14 8L14 15","M18 5L18 18","M22 10L22 13"]);
 export default SiconAudioLines;

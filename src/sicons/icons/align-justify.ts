@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-align-justify" (alias of "align-justify")
 import { createSicon } from '../createSicon';
 
-export const SiconAlignJustify = /*#__PURE__*/ createSicon("align-justify", [["M3 5L21 5","M3 12L21 12","M3 19L21 19"],"ppp"]);
+export const SiconAlignJustify = /*#__PURE__*/ createSicon("align-justify", ["M3 5L21 5","M3 12L21 12","M3 19L21 19"]);
 export default SiconAlignJustify;

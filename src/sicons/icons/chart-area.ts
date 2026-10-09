@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-area"
 import { createSicon } from '../createSicon';
 
-export const SiconChartArea = /*#__PURE__*/ createSicon("chart-area", [["M3 3L3 19A2 2 0 0 0 5 21L21 21","M7 11.207A0.5 0.5 0 0 1 7.146 10.854L9.146 8.854A0.5 0.5 0 0 1 9.854 8.854L13.146 12.146A0.5 0.5 0 0 0 13.854 12.146L18.146 7.854A0.5 0.5 0 0 1 19 8.207L19 16A1 1 0 0 1 18 17L8 17A1 1 0 0 1 7 16L7 11.207Z"],"fb"]);
+export const SiconChartArea = /*#__PURE__*/ createSicon("chart-area", ["M3 3L3 19A2 2 0 0 0 5 21L21 21","M7 11.207A0.5 0.5 0 0 1 7.146 10.854L9.146 8.854A0.5 0.5 0 0 1 9.854 8.854L13.146 12.146A0.5 0.5 0 0 0 13.854 12.146L18.146 7.854A0.5 0.5 0 0 1 19 8.207L19 16A1 1 0 0 1 18 17L8 17A1 1 0 0 1 7 16L7 11.207Z"]);
 export default SiconChartArea;

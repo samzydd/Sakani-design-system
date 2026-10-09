@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "panel-top"
 import { createSicon } from '../createSicon';
 
-export const SiconPanelTop = /*#__PURE__*/ createSicon("panel-top", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M3 9L21 9"],"bn"]);
+export const SiconPanelTop = /*#__PURE__*/ createSicon("panel-top", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M3 9L21 9"]);
 export default SiconPanelTop;

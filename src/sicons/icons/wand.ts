@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wand"
 import { createSicon } from '../createSicon';
 
-export const SiconWand = /*#__PURE__*/ createSicon("wand", [["M15 4L15 2","M15 16L15 14","M8 9L10 9","M20 9L22 9","M17.8 11.8L19 13","M15 9L15.01 9","M17.8 6.2L19 5","M3 21L12 12","M12.2 6.2L11 5"],"ppppppppp"]);
+export const SiconWand = /*#__PURE__*/ createSicon("wand", ["M15 4L15 2","M15 16L15 14","M8 9L10 9","M20 9L22 9","M17.8 11.8L19 13","M15 9L15.01 9","M17.8 6.2L19 5","M3 21L12 12","M12.2 6.2L11 5"]);
 export default SiconWand;

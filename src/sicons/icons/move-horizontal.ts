@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "move-horizontal"
 import { createSicon } from '../createSicon';
 
-export const SiconMoveHorizontal = /*#__PURE__*/ createSicon("move-horizontal", [["M18 8L22 12L18 16","M2 12L22 12","M6 8L2 12L6 16"],"ppp"]);
+export const SiconMoveHorizontal = /*#__PURE__*/ createSicon("move-horizontal", ["M18 8L22 12L18 16","M2 12L22 12","M6 8L2 12L6 16"]);
 export default SiconMoveHorizontal;

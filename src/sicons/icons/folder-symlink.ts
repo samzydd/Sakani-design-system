@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-symlink"
 import { createSicon } from '../createSicon';
 
-export const SiconFolderSymlink = /*#__PURE__*/ createSicon("folder-symlink", [["M2 9.35L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 15A2 2 0 0 1 4 13L11 13","M8 16L11 13L8 10"],"bn"]);
+export const SiconFolderSymlink = /*#__PURE__*/ createSicon("folder-symlink", ["M2 9.35L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 15A2 2 0 0 1 4 13L11 13","M8 16L11 13L8 10"]);
 export default SiconFolderSymlink;

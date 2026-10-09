@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "drill"
 import { createSicon } from '../createSicon';
 
-export const SiconDrill = /*#__PURE__*/ createSicon("drill", [["M10 18A1 1 0 0 1 11 19L11 21A1 1 0 0 1 10 22L5 22A3 3 0 0 1 2 19A1 1 0 0 1 3 18L10 18Z","M13 10L4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2L13 2A1 1 0 0 1 14 3L14 9A1 1 0 0 1 13 10L12.19 13.242A1 1 0 0 1 11.22 14L8 14","M14 4L17 4A1 1 0 0 1 18 5L18 7A1 1 0 0 1 17 8L14 8","M18 6L22 6","M5 10L3 18","M7 18L9 10"],"bfbfff"]);
+export const SiconDrill = /*#__PURE__*/ createSicon("drill", ["M10 18A1 1 0 0 1 11 19L11 21A1 1 0 0 1 10 22L5 22A3 3 0 0 1 2 19A1 1 0 0 1 3 18L10 18Z","M13 10L4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2L13 2A1 1 0 0 1 14 3L14 9A1 1 0 0 1 13 10L12.19 13.242A1 1 0 0 1 11.22 14L8 14","M14 4L17 4A1 1 0 0 1 18 5L18 7A1 1 0 0 1 17 8L14 8","M18 6L22 6","M5 10L3 18","M7 18L9 10"]);
 export default SiconDrill;

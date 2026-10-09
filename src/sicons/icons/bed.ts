@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bed"
 import { createSicon } from '../createSicon';
 
-export const SiconBed = /*#__PURE__*/ createSicon("bed", [["M2 4L2 20","M2 8L20 8A2 2 0 0 1 22 10L22 20","M2 17L22 17","M6 8L6 17"],"pppp"]);
+export const SiconBed = /*#__PURE__*/ createSicon("bed", ["M2 4L2 20","M2 8L20 8A2 2 0 0 1 22 10L22 20","M2 17L22 17","M6 8L6 17"]);
 export default SiconBed;

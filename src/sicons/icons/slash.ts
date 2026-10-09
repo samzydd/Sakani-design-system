@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "slash"
 import { createSicon } from '../createSicon';
 
-export const SiconSlash = /*#__PURE__*/ createSicon("slash", [["M22 2L2 22"],"p"]);
+export const SiconSlash = /*#__PURE__*/ createSicon("slash", ["M22 2L2 22"]);
 export default SiconSlash;

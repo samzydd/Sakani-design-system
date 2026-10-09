@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pen-line"
 import { createSicon } from '../createSicon';
 
-export const SiconPenLine = /*#__PURE__*/ createSicon("pen-line", [["M13 21L21 21","M21.174 6.812A1 1 0 0 0 17.188 2.825L3.842 16.174A2 2 0 0 0 3.342 17.004L2.021 21.356A0.5 0.5 0 0 0 2.644 21.978L6.997 20.658A2 2 0 0 0 7.827 20.161L21.174 6.812Z"],"fb"]);
+export const SiconPenLine = /*#__PURE__*/ createSicon("pen-line", ["M13 21L21 21","M21.174 6.812A1 1 0 0 0 17.188 2.825L3.842 16.174A2 2 0 0 0 3.342 17.004L2.021 21.356A0.5 0.5 0 0 0 2.644 21.978L6.997 20.658A2 2 0 0 0 7.827 20.161L21.174 6.812Z"]);
 export default SiconPenLine;

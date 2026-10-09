@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "backpack"
 import { createSicon } from '../createSicon';
 
-export const SiconBackpack = /*#__PURE__*/ createSicon("backpack", [["M4 10A4 4 0 0 1 8 6L16 6A4 4 0 0 1 20 10L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 10Z","M8 10L16 10","M8 18L16 18","M8 22L8 16A2 2 0 0 1 10 14L14 14A2 2 0 0 1 16 16L16 22","M9 6L9 4A2 2 0 0 1 11 2L13 2A2 2 0 0 1 15 4L15 6"],"bnnnf"]);
+export const SiconBackpack = /*#__PURE__*/ createSicon("backpack", ["M4 10A4 4 0 0 1 8 6L16 6A4 4 0 0 1 20 10L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 10Z","M8 10L16 10","M8 18L16 18","M8 22L8 16A2 2 0 0 1 10 14L14 14A2 2 0 0 1 16 16L16 22","M9 6L9 4A2 2 0 0 1 11 2L13 2A2 2 0 0 1 15 4L15 6"]);
 export default SiconBackpack;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "touchpad"
 import { createSicon } from '../createSicon';
 
-export const SiconTouchpad = /*#__PURE__*/ createSicon("touchpad", [["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z","M2 14L22 14","M12 20L12 14"],"bnn"]);
+export const SiconTouchpad = /*#__PURE__*/ createSicon("touchpad", ["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z","M2 14L22 14","M12 20L12 14"]);
 export default SiconTouchpad;

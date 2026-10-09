@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "barrel"
 import { createSicon } from '../createSicon';
 
-export const SiconBarrel = /*#__PURE__*/ createSicon("barrel", [["M10 3A41 41 0 0 0 10 21","M14 3A41 41 0 0 1 14 21","M16.997 21A2 2 0 0 0 18.677 20.08A15.25 15.25 0 0 0 18.677 3.92A2 2 0 0 0 16.997 3L6.997 3A2 2 0 0 0 5.316 3.92A15.25 15.25 0 0 0 5.316 20.08A2 2 0 0 0 6.997 21L16.997 21Z","M3.54 16L20.454 16","M3.54 8L20.454 8"],"nnbnn"]);
+export const SiconBarrel = /*#__PURE__*/ createSicon("barrel", ["M10 3A41 41 0 0 0 10 21","M14 3A41 41 0 0 1 14 21","M16.997 21A2 2 0 0 0 18.677 20.08A15.25 15.25 0 0 0 18.677 3.92A2 2 0 0 0 16.997 3L6.997 3A2 2 0 0 0 5.316 3.92A15.25 15.25 0 0 0 5.316 20.08A2 2 0 0 0 6.997 21L16.997 21Z","M3.54 16L20.454 16","M3.54 8L20.454 8"]);
 export default SiconBarrel;

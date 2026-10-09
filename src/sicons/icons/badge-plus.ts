@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "badge-plus"
 import { createSicon } from '../createSicon';
 
-export const SiconBadgePlus = /*#__PURE__*/ createSicon("badge-plus", [["M3.85 8.62A4 4 0 0 1 8.63 3.85A4 4 0 0 1 15.37 3.85A4 4 0 0 1 20.15 8.63A4 4 0 0 1 20.15 15.37A4 4 0 0 1 15.38 20.15A4 4 0 0 1 8.63 20.15A4 4 0 0 1 3.85 15.38A4 4 0 0 1 3.85 8.62Z","M12 8L12 16","M8 12L16 12"],"bnn"]);
+export const SiconBadgePlus = /*#__PURE__*/ createSicon("badge-plus", ["M3.85 8.62A4 4 0 0 1 8.63 3.85A4 4 0 0 1 15.37 3.85A4 4 0 0 1 20.15 8.63A4 4 0 0 1 20.15 15.37A4 4 0 0 1 15.38 20.15A4 4 0 0 1 8.63 20.15A4 4 0 0 1 3.85 15.38A4 4 0 0 1 3.85 8.62Z","M12 8L12 16","M8 12L16 12"]);
 export default SiconBadgePlus;

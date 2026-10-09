@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sprout"
 import { createSicon } from '../createSicon';
 
-export const SiconSprout = /*#__PURE__*/ createSicon("sprout", [["M14 9.536L14 7A4 4 0 0 1 18 3L19.5 3A0.5 0.5 0 0 1 20 3.5L20 5A4 4 0 0 1 16 9A4 4 0 0 0 12 13C12 15 13 16 13 18A5 5 0 0 1 12 21","M4 9A5 5 0 0 1 12 13A5 5 0 0 1 4 9","M5 21L19 21"],"fbf"]);
+export const SiconSprout = /*#__PURE__*/ createSicon("sprout", ["M14 9.536L14 7A4 4 0 0 1 18 3L19.5 3A0.5 0.5 0 0 1 20 3.5L20 5A4 4 0 0 1 16 9A4 4 0 0 0 12 13C12 15 13 16 13 18A5 5 0 0 1 12 21","M4 9A5 5 0 0 1 12 13A5 5 0 0 1 4 9","M5 21L19 21"]);
 export default SiconSprout;

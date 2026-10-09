@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lollipop"
 import { createSicon } from '../createSicon';
 
-export const SiconLollipop = /*#__PURE__*/ createSicon("lollipop", [["M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z","M21 21L16.7 16.7","M11 11A2 2 0 0 0 15 11A4 4 0 0 0 7 11A6 6 0 0 0 19 11"],"bfn"]);
+export const SiconLollipop = /*#__PURE__*/ createSicon("lollipop", ["M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z","M21 21L16.7 16.7","M11 11A2 2 0 0 0 15 11A4 4 0 0 0 7 11A6 6 0 0 0 19 11"]);
 export default SiconLollipop;

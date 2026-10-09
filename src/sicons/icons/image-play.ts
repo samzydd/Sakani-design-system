@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "image-play"
 import { createSicon } from '../createSicon';
 
-export const SiconImagePlay = /*#__PURE__*/ createSicon("image-play", [["M15 15.003A1 1 0 0 1 16.517 14.144L21.514 17.141A1 1 0 0 1 21.514 18.859L16.517 21.856A1 1 0 0 1 15 20.996L15 15.003Z","M21 12.17L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L11 21","M6 21L11 16","M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9Z"],"fbnn"]);
+export const SiconImagePlay = /*#__PURE__*/ createSicon("image-play", ["M15 15.003A1 1 0 0 1 16.517 14.144L21.514 17.141A1 1 0 0 1 21.514 18.859L16.517 21.856A1 1 0 0 1 15 20.996L15 15.003Z","M21 12.17L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L11 21","M6 21L11 16","M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9Z"]);
 export default SiconImagePlay;

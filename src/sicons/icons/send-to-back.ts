@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "send-to-back"
 import { createSicon } from '../createSicon';
 
-export const SiconSendToBack = /*#__PURE__*/ createSicon("send-to-back", [["M16 14L20 14A2 2 0 0 1 22 16L22 20A2 2 0 0 1 20 22L16 22A2 2 0 0 1 14 20L14 16A2 2 0 0 1 16 14Z","M4 2L8 2A2 2 0 0 1 10 4L10 8A2 2 0 0 1 8 10L4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2Z","M7 14L7 15A2 2 0 0 0 9 17L10 17","M14 7L15 7A2 2 0 0 1 17 9L17 10"],"bbff"]);
+export const SiconSendToBack = /*#__PURE__*/ createSicon("send-to-back", ["M16 14L20 14A2 2 0 0 1 22 16L22 20A2 2 0 0 1 20 22L16 22A2 2 0 0 1 14 20L14 16A2 2 0 0 1 16 14Z","M4 2L8 2A2 2 0 0 1 10 4L10 8A2 2 0 0 1 8 10L4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2Z","M7 14L7 15A2 2 0 0 0 9 17L10 17","M14 7L15 7A2 2 0 0 1 17 9L17 10"]);
 export default SiconSendToBack;

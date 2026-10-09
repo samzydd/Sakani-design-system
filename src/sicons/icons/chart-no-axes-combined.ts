@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-no-axes-combined"
 import { createSicon } from '../createSicon';
 
-export const SiconChartNoAxesCombined = /*#__PURE__*/ createSicon("chart-no-axes-combined", [["M12 16L12 21","M16 14.639L16 21","M20 10.656L20 21","M22 3L13.354 11.646A0.5 0.5 0 0 1 12.646 11.646L9.354 8.354A0.5 0.5 0 0 0 8.647 8.354L2 15","M4 18.463L4 21","M8 14.656L8 21"],"pppppp"]);
+export const SiconChartNoAxesCombined = /*#__PURE__*/ createSicon("chart-no-axes-combined", ["M12 16L12 21","M16 14.639L16 21","M20 10.656L20 21","M22 3L13.354 11.646A0.5 0.5 0 0 1 12.646 11.646L9.354 8.354A0.5 0.5 0 0 0 8.647 8.354L2 15","M4 18.463L4 21","M8 14.656L8 21"]);
 export default SiconChartNoAxesCombined;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-off"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleOff = /*#__PURE__*/ createSicon("circle-off", [["M2 2L22 22","M8.35 2.69A10 10 0 0 1 21.3 15.65","M19.08 19.08A10 10 0 1 1 4.92 4.92"],"efb"]);
+export const SiconCircleOff = /*#__PURE__*/ createSicon("circle-off", ["M2 2L22 22","M8.35 2.69A10 10 0 0 1 21.3 15.65","M19.08 19.08A10 10 0 1 1 4.92 4.92"]);
 export default SiconCircleOff;

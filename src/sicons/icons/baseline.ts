@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "baseline"
 import { createSicon } from '../createSicon';
 
-export const SiconBaseline = /*#__PURE__*/ createSicon("baseline", [["M4 20L20 20","M6 16L9 10A3.354 3.354 0 0 1 15 10L18 16","M8 12L16 12"],"fbn"]);
+export const SiconBaseline = /*#__PURE__*/ createSicon("baseline", ["M4 20L20 20","M6 16L9 10A3.354 3.354 0 0 1 15 10L18 16","M8 12L16 12"]);
 export default SiconBaseline;

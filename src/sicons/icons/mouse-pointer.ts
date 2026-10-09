@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mouse-pointer"
 import { createSicon } from '../createSicon';
 
-export const SiconMousePointer = /*#__PURE__*/ createSicon("mouse-pointer", [["M12.586 12.586L19 19","M3.688 3.037A0.497 0.497 0 0 0 3.037 3.688L9.537 19.687A0.501 0.501 0 0 0 10.484 19.625L12.053 13.542A2 2 0 0 1 13.501 12.063L19.625 10.484A0.5 0.5 0 0 0 19.688 9.537L3.688 3.037Z"],"fb"]);
+export const SiconMousePointer = /*#__PURE__*/ createSicon("mouse-pointer", ["M12.586 12.586L19 19","M3.688 3.037A0.497 0.497 0 0 0 3.037 3.688L9.537 19.687A0.501 0.501 0 0 0 10.484 19.625L12.053 13.542A2 2 0 0 1 13.501 12.063L19.625 10.484A0.5 0.5 0 0 0 19.688 9.537L3.688 3.037Z"]);
 export default SiconMousePointer;

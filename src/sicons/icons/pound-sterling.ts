@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pound-sterling"
 import { createSicon } from '../createSicon';
 
-export const SiconPoundSterling = /*#__PURE__*/ createSicon("pound-sterling", [["M18 7C18 1.667 10 1.667 10 7","M10 7L10 21","M6 21L18 21","M6 13L16 13"],"bfff"]);
+export const SiconPoundSterling = /*#__PURE__*/ createSicon("pound-sterling", ["M18 7C18 1.667 10 1.667 10 7","M10 7L10 21","M6 21L18 21","M6 13L16 13"]);
 export default SiconPoundSterling;

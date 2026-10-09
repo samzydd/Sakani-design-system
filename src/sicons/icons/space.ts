@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "space"
 import { createSicon } from '../createSicon';
 
-export const SiconSpace = /*#__PURE__*/ createSicon("space", [["M22 17L22 18C22 18.5 21.5 19 21 19L3 19C2.5 19 2 18.5 2 18L2 17"],"p"]);
+export const SiconSpace = /*#__PURE__*/ createSicon("space", ["M22 17L22 18C22 18.5 21.5 19 21 19L3 19C2.5 19 2 18.5 2 18L2 17"]);
 export default SiconSpace;

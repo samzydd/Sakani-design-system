@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "creative-commons"
 import { createSicon } from '../createSicon';
 
-export const SiconCreativeCommons = /*#__PURE__*/ createSicon("creative-commons", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M10 9.3A2.8 2.8 0 0 0 6.5 10.3A3.1 3.1 0 0 0 6.5 13.7A2.7 2.7 0 0 0 10 14.7","M17 9.3A2.8 2.8 0 0 0 13.5 10.3A3.1 3.1 0 0 0 13.5 13.7A2.7 2.7 0 0 0 17 14.7"],"bnn"]);
+export const SiconCreativeCommons = /*#__PURE__*/ createSicon("creative-commons", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M10 9.3A2.8 2.8 0 0 0 6.5 10.3A3.1 3.1 0 0 0 6.5 13.7A2.7 2.7 0 0 0 10 14.7","M17 9.3A2.8 2.8 0 0 0 13.5 10.3A3.1 3.1 0 0 0 13.5 13.7A2.7 2.7 0 0 0 17 14.7"]);
 export default SiconCreativeCommons;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-question-mark"
 import { createSicon } from '../createSicon';
 
-export const SiconFileQuestionMark = /*#__PURE__*/ createSicon("file-question-mark", [["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L6 22Z","M12 17L12.01 17","M9.1 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13"],"bnn"]);
+export const SiconFileQuestionMark = /*#__PURE__*/ createSicon("file-question-mark", ["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L6 22Z","M12 17L12.01 17","M9.1 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13"]);
 export default SiconFileQuestionMark;

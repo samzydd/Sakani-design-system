@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-user"
 import { createSicon } from '../createSicon';
 
-export const SiconFileUser = /*#__PURE__*/ createSicon("file-user", [["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L6 22Z","M14 2L14 7A1 1 0 0 0 15 8L20 8","M16 22A4 4 0 0 0 8 22","M9 15A3 3 0 1 0 15 15A3 3 0 1 0 9 15Z"],"bnnn"]);
+export const SiconFileUser = /*#__PURE__*/ createSicon("file-user", ["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L6 22Z","M14 2L14 7A1 1 0 0 0 15 8L20 8","M16 22A4 4 0 0 0 8 22","M9 15A3 3 0 1 0 15 15A3 3 0 1 0 9 15Z"]);
 export default SiconFileUser;

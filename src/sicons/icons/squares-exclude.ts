@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "squares-exclude"
 import { createSicon } from '../createSicon';
 
-export const SiconSquaresExclude = /*#__PURE__*/ createSicon("squares-exclude", [["M16 12L16 14A2 2 0 0 1 14 16L9 16A1 1 0 0 0 8 17L8 20A2 2 0 0 0 10 22L20 22A2 2 0 0 0 22 20L22 10A2 2 0 0 0 20 8L20 8","M4 16A2 2 0 0 1 2 14L2 4A2 2 0 0 1 4 2L14 2A2 2 0 0 1 16 4L16 7A1 1 0 0 1 15 8L10 8A2 2 0 0 0 8 10L8 12"],"bb"]);
+export const SiconSquaresExclude = /*#__PURE__*/ createSicon("squares-exclude", ["M16 12L16 14A2 2 0 0 1 14 16L9 16A1 1 0 0 0 8 17L8 20A2 2 0 0 0 10 22L20 22A2 2 0 0 0 22 20L22 10A2 2 0 0 0 20 8L20 8","M4 16A2 2 0 0 1 2 14L2 4A2 2 0 0 1 4 2L14 2A2 2 0 0 1 16 4L16 7A1 1 0 0 1 15 8L10 8A2 2 0 0 0 8 10L8 12"]);
 export default SiconSquaresExclude;

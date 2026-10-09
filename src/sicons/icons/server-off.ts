@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "server-off"
 import { createSicon } from '../createSicon';
 
-export const SiconServerOff = /*#__PURE__*/ createSicon("server-off", [["M7 2L20 2A2 2 0 0 1 22 4L22 8A2 2 0 0 1 20 10L15 10","M7.879 7.879L2.5 2.5C2 2 2 2.5 2 5L2 8A2 2 0 0 0 4 10L7 10A1.243 1.243 0 0 0 7.879 7.879Z","M22 17L22 16A2 2 0 0 0 20 14L19 14","M4 14A2 2 0 0 0 2 16L2 20A2 2 0 0 0 4 22L19.941 22A2.368 2.368 0 0 0 21 21.75L21.184 21.658A0.491 0.491 0 0 1 21.75 21.75L22 22L15.084 15.084A3.7 3.7 0 0 0 12.467 14L4 14Z","M6 18L6.01 18","M2 2L22 22"],"bffbnf"]);
+export const SiconServerOff = /*#__PURE__*/ createSicon("server-off", ["M7 2L20 2A2 2 0 0 1 22 4L22 8A2 2 0 0 1 20 10L15 10","M7.879 7.879L2.5 2.5C2 2 2 2.5 2 5L2 8A2 2 0 0 0 4 10L7 10A1.243 1.243 0 0 0 7.879 7.879Z","M22 17L22 16A2 2 0 0 0 20 14L19 14","M4 14A2 2 0 0 0 2 16L2 20A2 2 0 0 0 4 22L19.941 22A2.368 2.368 0 0 0 21 21.75L21.184 21.658A0.491 0.491 0 0 1 21.75 21.75L22 22L15.084 15.084A3.7 3.7 0 0 0 12.467 14L4 14Z","M6 18L6.01 18","M2 2L22 22"]);
 export default SiconServerOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "search-slash"
 import { createSicon } from '../createSicon';
 
-export const SiconSearchSlash = /*#__PURE__*/ createSicon("search-slash", [["M13.5 8.5L8.5 13.5","M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z","M21 21L16.7 16.7"],"nbf"]);
+export const SiconSearchSlash = /*#__PURE__*/ createSicon("search-slash", ["M13.5 8.5L8.5 13.5","M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z","M21 21L16.7 16.7"]);
 export default SiconSearchSlash;

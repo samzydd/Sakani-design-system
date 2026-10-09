@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ear"
 import { createSicon } from '../createSicon';
 
-export const SiconEar = /*#__PURE__*/ createSicon("ear", [["M6 8.5A6.5 6.5 0 1 1 19 8.5C19 14.5 13 14.5 13 18.5A3.5 3.5 0 1 1 6 18.5","M15 8.5A2.5 2.5 0 0 0 10 8.5L10 9.5A2 2 0 1 1 10 13.5"],"bn"]);
+export const SiconEar = /*#__PURE__*/ createSicon("ear", ["M6 8.5A6.5 6.5 0 1 1 19 8.5C19 14.5 13 14.5 13 18.5A3.5 3.5 0 1 1 6 18.5","M15 8.5A2.5 2.5 0 0 0 10 8.5L10 9.5A2 2 0 1 1 10 13.5"]);
 export default SiconEar;

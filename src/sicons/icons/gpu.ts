@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gpu"
 import { createSicon } from '../createSicon';
 
-export const SiconGpu = /*#__PURE__*/ createSicon("gpu", [["M2 17L20 17A2 2 0 0 0 22 15L22 7A2 2 0 0 0 20 5L2 5","M2 21L2 3","M7 17L7 20A1 1 0 0 0 8 21L13 21A1 1 0 0 0 14 20L14 17","M14 11A2 2 0 1 0 18 11A2 2 0 1 0 14 11Z","M6 11A2 2 0 1 0 10 11A2 2 0 1 0 6 11Z"],"befnn"]);
+export const SiconGpu = /*#__PURE__*/ createSicon("gpu", ["M2 17L20 17A2 2 0 0 0 22 15L22 7A2 2 0 0 0 20 5L2 5","M2 21L2 3","M7 17L7 20A1 1 0 0 0 8 21L13 21A1 1 0 0 0 14 20L14 17","M14 11A2 2 0 1 0 18 11A2 2 0 1 0 14 11Z","M6 11A2 2 0 1 0 10 11A2 2 0 1 0 6 11Z"]);
 export default SiconGpu;

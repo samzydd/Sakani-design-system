@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cloud-moon-rain"
 import { createSicon } from '../createSicon';
 
-export const SiconCloudMoonRain = /*#__PURE__*/ createSicon("cloud-moon-rain", [["M11 20L11 22","M18.376 14.512A6 6 0 0 0 21.837 10.385C21.985 9.76 21.178 9.415 20.589 9.671A4 4 0 0 1 15.33 4.411C15.585 3.822 15.24 3.016 14.614 3.163A6 6 0 0 0 10.02 8.523","M3 20A5 5 0 1 1 11.9 16L13 16A3 3 0 0 1 15 21.24","M7 19L7 21"],"ebbe"]);
+export const SiconCloudMoonRain = /*#__PURE__*/ createSicon("cloud-moon-rain", ["M11 20L11 22","M18.376 14.512A6 6 0 0 0 21.837 10.385C21.985 9.76 21.178 9.415 20.589 9.671A4 4 0 0 1 15.33 4.411C15.585 3.822 15.24 3.016 14.614 3.163A6 6 0 0 0 10.02 8.523","M3 20A5 5 0 1 1 11.9 16L13 16A3 3 0 0 1 15 21.24","M7 19L7 21"]);
 export default SiconCloudMoonRain;

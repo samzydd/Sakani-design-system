@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "merge"
 import { createSicon } from '../createSicon';
 
-export const SiconMerge = /*#__PURE__*/ createSicon("merge", [["M8 6L12 2L16 6","M12 2L12 12.3A4 4 0 0 1 10.828 15.172L4 22","M20 22L15 17"],"ppp"]);
+export const SiconMerge = /*#__PURE__*/ createSicon("merge", ["M8 6L12 2L16 6","M12 2L12 12.3A4 4 0 0 1 10.828 15.172L4 22","M20 22L15 17"]);
 export default SiconMerge;

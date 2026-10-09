@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mars-stroke"
 import { createSicon } from '../createSicon';
 
-export const SiconMarsStroke = /*#__PURE__*/ createSicon("mars-stroke", [["M14 6L18 10","M17 3L21 3L21 7","M21 3L13.25 10.75","M3 15A6 6 0 1 0 15 15A6 6 0 1 0 3 15Z"],"fffb"]);
+export const SiconMarsStroke = /*#__PURE__*/ createSicon("mars-stroke", ["M14 6L18 10","M17 3L21 3L21 7","M21 3L13.25 10.75","M3 15A6 6 0 1 0 15 15A6 6 0 1 0 3 15Z"]);
 export default SiconMarsStroke;

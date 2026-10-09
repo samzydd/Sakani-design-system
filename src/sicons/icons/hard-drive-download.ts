@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hard-drive-download"
 import { createSicon } from '../createSicon';
 
-export const SiconHardDriveDownload = /*#__PURE__*/ createSicon("hard-drive-download", [["M12 2L12 10","M16 6L12 10L8 6","M4 14L20 14A2 2 0 0 1 22 16L22 20A2 2 0 0 1 20 22L4 22A2 2 0 0 1 2 20L2 16A2 2 0 0 1 4 14Z","M6 18L6.01 18","M10 18L10.01 18"],"ffbnn"]);
+export const SiconHardDriveDownload = /*#__PURE__*/ createSicon("hard-drive-download", ["M12 2L12 10","M16 6L12 10L8 6","M4 14L20 14A2 2 0 0 1 22 16L22 20A2 2 0 0 1 20 22L4 22A2 2 0 0 1 2 20L2 16A2 2 0 0 1 4 14Z","M6 18L6.01 18","M10 18L10.01 18"]);
 export default SiconHardDriveDownload;

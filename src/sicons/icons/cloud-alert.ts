@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cloud-alert"
 import { createSicon } from '../createSicon';
 
-export const SiconCloudAlert = /*#__PURE__*/ createSicon("cloud-alert", [["M12 12L12 16","M12 20L12.01 20","M8.128 16.949A7 7 0 1 1 15.71 8L17.5 8A1 1 0 0 1 17.5 17L15.858 17"],"nfb"]);
+export const SiconCloudAlert = /*#__PURE__*/ createSicon("cloud-alert", ["M12 12L12 16","M12 20L12.01 20","M8.128 16.949A7 7 0 1 1 15.71 8L17.5 8A1 1 0 0 1 17.5 17L15.858 17"]);
 export default SiconCloudAlert;

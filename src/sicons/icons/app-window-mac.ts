@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "app-window-mac"
 import { createSicon } from '../createSicon';
 
-export const SiconAppWindowMac = /*#__PURE__*/ createSicon("app-window-mac", [["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z","M6 8L6.01 8","M10 8L10.01 8","M14 8L14.01 8"],"bnnn"]);
+export const SiconAppWindowMac = /*#__PURE__*/ createSicon("app-window-mac", ["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z","M6 8L6.01 8","M10 8L10.01 8","M14 8L14.01 8"]);
 export default SiconAppWindowMac;

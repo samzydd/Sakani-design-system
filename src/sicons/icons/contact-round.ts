@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "contact-round"
 import { createSicon } from '../createSicon';
 
-export const SiconContactRound = /*#__PURE__*/ createSicon("contact-round", [["M16 2L16 4","M17.915 21A6 6 0 1 0 5.915 21","M8 2L8 4","M8 11A4 4 0 1 0 16 11A4 4 0 1 0 8 11Z","M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z"],"enenb"]);
+export const SiconContactRound = /*#__PURE__*/ createSicon("contact-round", ["M16 2L16 4","M17.915 21A6 6 0 1 0 5.915 21","M8 2L8 4","M8 11A4 4 0 1 0 16 11A4 4 0 1 0 8 11Z","M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z"]);
 export default SiconContactRound;

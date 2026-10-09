@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-pin-off"
 import { createSicon } from '../createSicon';
 
-export const SiconMapPinOff = /*#__PURE__*/ createSicon("map-pin-off", [["M12.75 7.09A3 3 0 0 1 14.91 9.25","M17.072 17.072C15.438 19.242 13.545 20.984 12.601 21.799A1 1 0 0 1 11.399 21.799C9.539 20.193 4 14.993 4 10A8 8 0 0 1 5.432 5.432","M2 2L22 22","M8.475 2.818A8 8 0 0 1 20 10C20 11.183 19.69 12.377 19.19 13.533","M9.13 9.13A3 3 0 0 0 12.87 12.87"],"fbnfe"]);
+export const SiconMapPinOff = /*#__PURE__*/ createSicon("map-pin-off", ["M12.75 7.09A3 3 0 0 1 14.91 9.25","M17.072 17.072C15.438 19.242 13.545 20.984 12.601 21.799A1 1 0 0 1 11.399 21.799C9.539 20.193 4 14.993 4 10A8 8 0 0 1 5.432 5.432","M2 2L22 22","M8.475 2.818A8 8 0 0 1 20 10C20 11.183 19.69 12.377 19.19 13.533","M9.13 9.13A3 3 0 0 0 12.87 12.87"]);
 export default SiconMapPinOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-kanban"
 import { createSicon } from '../createSicon';
 
-export const SiconSquareKanban = /*#__PURE__*/ createSicon("square-kanban", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M8 7L8 14","M12 7L12 11","M16 7L16 16"],"bnnn"]);
+export const SiconSquareKanban = /*#__PURE__*/ createSicon("square-kanban", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M8 7L8 14","M12 7L12 11","M16 7L16 16"]);
 export default SiconSquareKanban;

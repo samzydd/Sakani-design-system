@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-tree"
 import { createSicon } from '../createSicon';
 
-export const SiconListTree = /*#__PURE__*/ createSicon("list-tree", [["M8 5L21 5","M13 12L21 12","M13 19L21 19","M3 10A2 2 0 0 0 5 12L8 12","M3 5L3 17A2 2 0 0 0 5 19L8 19"],"ppppp"]);
+export const SiconListTree = /*#__PURE__*/ createSicon("list-tree", ["M8 5L21 5","M13 12L21 12","M13 19L21 19","M3 10A2 2 0 0 0 5 12L8 12","M3 5L3 17A2 2 0 0 0 5 19L8 19"]);
 export default SiconListTree;

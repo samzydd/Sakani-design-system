@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-start-horizontal"
 import { createSicon } from '../createSicon';
 
-export const SiconAlignStartHorizontal = /*#__PURE__*/ createSicon("align-start-horizontal", [["M6 6L8 6A2 2 0 0 1 10 8L10 20A2 2 0 0 1 8 22L6 22A2 2 0 0 1 4 20L4 8A2 2 0 0 1 6 6Z","M16 6L18 6A2 2 0 0 1 20 8L20 13A2 2 0 0 1 18 15L16 15A2 2 0 0 1 14 13L14 8A2 2 0 0 1 16 6Z","M22 2L2 2"],"bbf"]);
+export const SiconAlignStartHorizontal = /*#__PURE__*/ createSicon("align-start-horizontal", ["M6 6L8 6A2 2 0 0 1 10 8L10 20A2 2 0 0 1 8 22L6 22A2 2 0 0 1 4 20L4 8A2 2 0 0 1 6 6Z","M16 6L18 6A2 2 0 0 1 20 8L20 13A2 2 0 0 1 18 15L16 15A2 2 0 0 1 14 13L14 8A2 2 0 0 1 16 6Z","M22 2L2 2"]);
 export default SiconAlignStartHorizontal;

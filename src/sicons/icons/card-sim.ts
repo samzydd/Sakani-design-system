@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "card-sim"
 import { createSicon } from '../createSicon';
 
-export const SiconCardSim = /*#__PURE__*/ createSicon("card-sim", [["M12 14L12 18","M14.172 2A2 2 0 0 1 15.586 2.586L19.414 6.414A2 2 0 0 1 20 7.828L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14.172 2Z","M8 14L16 14","M9 10L15 10A1 1 0 0 1 16 11L16 17A1 1 0 0 1 15 18L9 18A1 1 0 0 1 8 17L8 11A1 1 0 0 1 9 10Z"],"nbnn"]);
+export const SiconCardSim = /*#__PURE__*/ createSicon("card-sim", ["M12 14L12 18","M14.172 2A2 2 0 0 1 15.586 2.586L19.414 6.414A2 2 0 0 1 20 7.828L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14.172 2Z","M8 14L16 14","M9 10L15 10A1 1 0 0 1 16 11L16 17A1 1 0 0 1 15 18L9 18A1 1 0 0 1 8 17L8 11A1 1 0 0 1 9 10Z"]);
 export default SiconCardSim;

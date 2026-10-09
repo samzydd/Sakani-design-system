@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-pin-check"
 import { createSicon } from '../createSicon';
 
-export const SiconMapPinCheck = /*#__PURE__*/ createSicon("map-pin-check", [["M19.43 12.935C19.787 11.968 20 10.98 20 10A8 8 0 0 0 4 10C4 14.993 9.539 20.193 11.399 21.799A1 1 0 0 0 12.601 21.799A32.197 32.197 0 0 0 13.414 21.071","M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z","M16 18L17 19A1.414 1.414 0 0 0 19 19L22 16"],"bnf"]);
+export const SiconMapPinCheck = /*#__PURE__*/ createSicon("map-pin-check", ["M19.43 12.935C19.787 11.968 20 10.98 20 10A8 8 0 0 0 4 10C4 14.993 9.539 20.193 11.399 21.799A1 1 0 0 0 12.601 21.799A32.197 32.197 0 0 0 13.414 21.071","M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z","M16 18L17 19A1.414 1.414 0 0 0 19 19L22 16"]);
 export default SiconMapPinCheck;

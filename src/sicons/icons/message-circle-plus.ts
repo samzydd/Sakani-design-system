@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-circle-plus"
 import { createSicon } from '../createSicon';
 
-export const SiconMessageCirclePlus = /*#__PURE__*/ createSicon("message-circle-plus", [["M2.992 16.342A2 2 0 0 1 3.086 17.509L2.021 20.799A1 1 0 0 0 3.257 21.967L6.67 20.969A2 2 0 0 1 7.769 21.061A10 10 0 1 0 2.992 16.342","M8 12L16 12","M12 8L12 16"],"bnn"]);
+export const SiconMessageCirclePlus = /*#__PURE__*/ createSicon("message-circle-plus", ["M2.992 16.342A2 2 0 0 1 3.086 17.509L2.021 20.799A1 1 0 0 0 3.257 21.967L6.67 20.969A2 2 0 0 1 7.769 21.061A10 10 0 1 0 2.992 16.342","M8 12L16 12","M12 8L12 16"]);
 export default SiconMessageCirclePlus;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wallet-cards"
 import { createSicon } from '../createSicon';
 
-export const SiconWalletCards = /*#__PURE__*/ createSicon("wallet-cards", [["M3 11L6.75 11A2 2 0 0 1 8.35 11.8L8.8 12.4A4 4 0 0 0 15.2 12.4L15.65 11.8A2 2 0 0 1 17.25 11L21 11","M3 7L21 7","M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z"],"nnb"]);
+export const SiconWalletCards = /*#__PURE__*/ createSicon("wallet-cards", ["M3 11L6.75 11A2 2 0 0 1 8.35 11.8L8.8 12.4A4 4 0 0 0 15.2 12.4L15.65 11.8A2 2 0 0 1 17.25 11L21 11","M3 7L21 7","M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z"]);
 export default SiconWalletCards;

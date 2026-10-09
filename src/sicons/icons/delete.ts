@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "delete"
 import { createSicon } from '../createSicon';
 
-export const SiconDelete = /*#__PURE__*/ createSicon("delete", [["M10 5A2 2 0 0 0 8.656 5.519L2.328 11.259A1 1 0 0 0 2.328 12.74L8.656 18.481A2 2 0 0 0 10 19L20 19A2 2 0 0 0 22 17L22 7A2 2 0 0 0 20 5L10 5Z","M12 9L18 15","M18 9L12 15"],"bnn"]);
+export const SiconDelete = /*#__PURE__*/ createSicon("delete", ["M10 5A2 2 0 0 0 8.656 5.519L2.328 11.259A1 1 0 0 0 2.328 12.74L8.656 18.481A2 2 0 0 0 10 19L20 19A2 2 0 0 0 22 17L22 7A2 2 0 0 0 20 5L10 5Z","M12 9L18 15","M18 9L12 15"]);
 export default SiconDelete;

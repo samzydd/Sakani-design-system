@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "table-columns-split"
 import { createSicon } from '../createSicon';
 
-export const SiconTableColumnsSplit = /*#__PURE__*/ createSicon("table-columns-split", [["M14 14L14 16","M14 20L14 22","M14 2L14 4","M14 8L14 10","M2 15L10 15","M2 3L8 3A2 2 0 0 1 10 5L10 19A2 2 0 0 1 8 21L2 21","M2 9L10 9","M22 15L18 15","M22 3L20 3A2 2 0 0 0 18 5L18 19A2 2 0 0 0 20 21L22 21","M22 9L18 9","M5 3L5 21"],"ffffnbnfffn"]);
+export const SiconTableColumnsSplit = /*#__PURE__*/ createSicon("table-columns-split", ["M14 14L14 16","M14 20L14 22","M14 2L14 4","M14 8L14 10","M2 15L10 15","M2 3L8 3A2 2 0 0 1 10 5L10 19A2 2 0 0 1 8 21L2 21","M2 9L10 9","M22 15L18 15","M22 3L20 3A2 2 0 0 0 18 5L18 19A2 2 0 0 0 20 21L22 21","M22 9L18 9","M5 3L5 21"]);
 export default SiconTableColumnsSplit;

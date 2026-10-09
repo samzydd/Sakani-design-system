@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "alarm-clock-minus"
 import { createSicon } from '../createSicon';
 
-export const SiconAlarmClockMinus = /*#__PURE__*/ createSicon("alarm-clock-minus", [["M4 13A8 8 0 1 0 20 13A8 8 0 1 0 4 13Z","M5 3L2 6","M22 6L19 3","M6.38 18.7L4 21","M17.64 18.67L20 21","M9 13L15 13"],"bffffn"]);
+export const SiconAlarmClockMinus = /*#__PURE__*/ createSicon("alarm-clock-minus", ["M4 13A8 8 0 1 0 20 13A8 8 0 1 0 4 13Z","M5 3L2 6","M22 6L19 3","M6.38 18.7L4 21","M17.64 18.67L20 21","M9 13L15 13"]);
 export default SiconAlarmClockMinus;

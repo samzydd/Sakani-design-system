@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lasso"
 import { createSicon } from '../createSicon';
 
-export const SiconLasso = /*#__PURE__*/ createSicon("lasso", [["M3.704 14.467A10 8 0 1 1 6.819 16.842","M7 22A5 5 0 0 1 5 18.006","M3 16A2 2 0 1 0 7 16A2 2 0 1 0 3 16Z"],"bfn"]);
+export const SiconLasso = /*#__PURE__*/ createSicon("lasso", ["M3.704 14.467A10 8 0 1 1 6.819 16.842","M7 22A5 5 0 0 1 5 18.006","M3 16A2 2 0 1 0 7 16A2 2 0 1 0 3 16Z"]);
 export default SiconLasso;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "venus"
 import { createSicon } from '../createSicon';
 
-export const SiconVenus = /*#__PURE__*/ createSicon("venus", [["M12 15L12 22","M9 19L15 19","M6 9A6 6 0 1 0 18 9A6 6 0 1 0 6 9Z"],"ffb"]);
+export const SiconVenus = /*#__PURE__*/ createSicon("venus", ["M12 15L12 22","M9 19L15 19","M6 9A6 6 0 1 0 18 9A6 6 0 1 0 6 9Z"]);
 export default SiconVenus;

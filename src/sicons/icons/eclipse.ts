@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "eclipse"
 import { createSicon } from '../createSicon';
 
-export const SiconEclipse = /*#__PURE__*/ createSicon("eclipse", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M12 2A7 7 0 1 0 22 12"],"bn"]);
+export const SiconEclipse = /*#__PURE__*/ createSicon("eclipse", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M12 2A7 7 0 1 0 22 12"]);
 export default SiconEclipse;

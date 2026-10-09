@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "power-off"
 import { createSicon } from '../createSicon';
 
-export const SiconPowerOff = /*#__PURE__*/ createSicon("power-off", [["M18.36 6.64A9 9 0 0 1 20.77 15","M6.16 6.16A9 9 0 1 0 18.84 18.84","M12 2L12 6","M2 2L22 22"],"fbfe"]);
+export const SiconPowerOff = /*#__PURE__*/ createSicon("power-off", ["M18.36 6.64A9 9 0 0 1 20.77 15","M6.16 6.16A9 9 0 1 0 18.84 18.84","M12 2L12 6","M2 2L22 22"]);
 export default SiconPowerOff;

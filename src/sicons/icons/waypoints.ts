@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "waypoints"
 import { createSicon } from '../createSicon';
 
-export const SiconWaypoints = /*#__PURE__*/ createSicon("waypoints", [["M10.586 5.414L5.414 10.586","M18.586 13.414L13.414 18.586","M6 12L18 12","M10 20A2 2 0 1 0 14 20A2 2 0 1 0 10 20Z","M10 4A2 2 0 1 0 14 4A2 2 0 1 0 10 4Z","M18 12A2 2 0 1 0 22 12A2 2 0 1 0 18 12Z","M2 12A2 2 0 1 0 6 12A2 2 0 1 0 2 12Z"],"fffbbbb"]);
+export const SiconWaypoints = /*#__PURE__*/ createSicon("waypoints", ["M10.586 5.414L5.414 10.586","M18.586 13.414L13.414 18.586","M6 12L18 12","M10 20A2 2 0 1 0 14 20A2 2 0 1 0 10 20Z","M10 4A2 2 0 1 0 14 4A2 2 0 1 0 10 4Z","M18 12A2 2 0 1 0 22 12A2 2 0 1 0 18 12Z","M2 12A2 2 0 1 0 6 12A2 2 0 1 0 2 12Z"]);
 export default SiconWaypoints;

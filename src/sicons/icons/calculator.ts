@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calculator"
 import { createSicon } from '../createSicon';
 
-export const SiconCalculator = /*#__PURE__*/ createSicon("calculator", [["M6 2L18 2A2 2 0 0 1 20 4L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2Z","M8 6L16 6","M16 14L16 18","M16 10L16.01 10","M12 10L12.01 10","M8 10L8.01 10","M12 14L12.01 14","M8 14L8.01 14","M12 18L12.01 18","M8 18L8.01 18"],"bnnnnnnnnn"]);
+export const SiconCalculator = /*#__PURE__*/ createSicon("calculator", ["M6 2L18 2A2 2 0 0 1 20 4L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2Z","M8 6L16 6","M16 14L16 18","M16 10L16.01 10","M12 10L12.01 10","M8 10L8.01 10","M12 14L12.01 14","M8 14L8.01 14","M12 18L12.01 18","M8 18L8.01 18"]);
 export default SiconCalculator;

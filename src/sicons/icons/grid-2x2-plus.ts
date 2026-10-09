@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "grid-2x2-plus"
 import { createSicon } from '../createSicon';
 
-export const SiconGrid2x2Plus = /*#__PURE__*/ createSicon("grid-2x2-plus", [["M12 3L12 20A1 1 0 0 1 11 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 11A1 1 0 0 1 20 12L3 12","M16 19L22 19","M19 22L19 16"],"ppp"]);
+export const SiconGrid2x2Plus = /*#__PURE__*/ createSicon("grid-2x2-plus", ["M12 3L12 20A1 1 0 0 1 11 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 11A1 1 0 0 1 20 12L3 12","M16 19L22 19","M19 22L19 16"]);
 export default SiconGrid2x2Plus;

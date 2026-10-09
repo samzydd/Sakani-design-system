@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "candy-cane"
 import { createSicon } from '../createSicon';
 
-export const SiconCandyCane = /*#__PURE__*/ createSicon("candy-cane", [["M10.8 5L12.911 9.223","M17.75 7L15 2.1","M4.874 14.647L6.994 18.887","M5.7 21A2 2 0 0 1 2.2 19L10.8 5A6 6 0 0 1 21.2 11A2 2 0 1 1 17.736 9A2 2 0 1 0 14.272 7L5.7 21Z","M7.906 9.712L9.911 14.123"],"eeebe"]);
+export const SiconCandyCane = /*#__PURE__*/ createSicon("candy-cane", ["M10.8 5L12.911 9.223","M17.75 7L15 2.1","M4.874 14.647L6.994 18.887","M5.7 21A2 2 0 0 1 2.2 19L10.8 5A6 6 0 0 1 21.2 11A2 2 0 1 1 17.736 9A2 2 0 1 0 14.272 7L5.7 21Z","M7.906 9.712L9.911 14.123"]);
 export default SiconCandyCane;

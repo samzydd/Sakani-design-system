@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "redo-dot"
 import { createSicon } from '../createSicon';
 
-export const SiconRedoDot = /*#__PURE__*/ createSicon("redo-dot", [["M11 17A1 1 0 1 0 13 17A1 1 0 1 0 11 17Z","M21 7L21 13L15 13","M3 17A9 9 0 0 1 12 8A9 9 0 0 1 18 10.3L21 13"],"ppp"]);
+export const SiconRedoDot = /*#__PURE__*/ createSicon("redo-dot", ["M11 17A1 1 0 1 0 13 17A1 1 0 1 0 11 17Z","M21 7L21 13L15 13","M3 17A9 9 0 0 1 12 8A9 9 0 0 1 18 10.3L21 13"]);
 export default SiconRedoDot;

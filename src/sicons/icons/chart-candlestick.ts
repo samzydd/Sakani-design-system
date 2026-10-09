@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-candlestick"
 import { createSicon } from '../createSicon';
 
-export const SiconChartCandlestick = /*#__PURE__*/ createSicon("chart-candlestick", [["M9 5L9 9","M8 9L10 9A1 1 0 0 1 11 10L11 14A1 1 0 0 1 10 15L8 15A1 1 0 0 1 7 14L7 10A1 1 0 0 1 8 9Z","M9 15L9 17","M17 3L17 5","M16 5L18 5A1 1 0 0 1 19 6L19 12A1 1 0 0 1 18 13L16 13A1 1 0 0 1 15 12L15 6A1 1 0 0 1 16 5Z","M17 13L17 16","M3 3L3 19A2 2 0 0 0 5 21L21 21"],"fbnnbff"]);
+export const SiconChartCandlestick = /*#__PURE__*/ createSicon("chart-candlestick", ["M9 5L9 9","M8 9L10 9A1 1 0 0 1 11 10L11 14A1 1 0 0 1 10 15L8 15A1 1 0 0 1 7 14L7 10A1 1 0 0 1 8 9Z","M9 15L9 17","M17 3L17 5","M16 5L18 5A1 1 0 0 1 19 6L19 12A1 1 0 0 1 18 13L16 13A1 1 0 0 1 15 12L15 6A1 1 0 0 1 16 5Z","M17 13L17 16","M3 3L3 19A2 2 0 0 0 5 21L21 21"]);
 export default SiconChartCandlestick;

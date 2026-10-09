@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "school"
 import { createSicon } from '../createSicon';
 
-export const SiconSchool = /*#__PURE__*/ createSicon("school", [["M14 21L14 18A2 2 0 0 0 10 18L10 21","M18 4.933L18 21","M4 6L11.106 2.21A2 2 0 0 1 12.894 2.21L20 6","M6 11L2.48 13.147A1 1 0 0 0 2 14.001L2 19A2 2 0 0 0 4 21L20 21A2 2 0 0 0 22 19L22 14A1 1 0 0 0 21.52 13.147L18 11","M6 4.933L6 21","M10 9A2 2 0 1 0 14 9A2 2 0 1 0 10 9Z"],"nnfbnf"]);
+export const SiconSchool = /*#__PURE__*/ createSicon("school", ["M14 21L14 18A2 2 0 0 0 10 18L10 21","M18 4.933L18 21","M4 6L11.106 2.21A2 2 0 0 1 12.894 2.21L20 6","M6 11L2.48 13.147A1 1 0 0 0 2 14.001L2 19A2 2 0 0 0 4 21L20 21A2 2 0 0 0 22 19L22 14A1 1 0 0 0 21.52 13.147L18 11","M6 4.933L6 21","M10 9A2 2 0 1 0 14 9A2 2 0 1 0 10 9Z"]);
 export default SiconSchool;

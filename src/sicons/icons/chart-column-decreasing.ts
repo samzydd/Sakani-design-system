@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-column-decreasing"
 import { createSicon } from '../createSicon';
 
-export const SiconChartColumnDecreasing = /*#__PURE__*/ createSicon("chart-column-decreasing", [["M13 17L13 9","M18 17L18 14","M3 3L3 19A2 2 0 0 0 5 21L21 21","M8 17L8 5"],"pppp"]);
+export const SiconChartColumnDecreasing = /*#__PURE__*/ createSicon("chart-column-decreasing", ["M13 17L13 9","M18 17L18 14","M3 3L3 19A2 2 0 0 0 5 21L21 21","M8 17L8 5"]);
 export default SiconChartColumnDecreasing;

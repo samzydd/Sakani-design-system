@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-align-start" (alias of "align-left")
 import { createSicon } from '../createSicon';
 
-export const SiconAlignLeft = /*#__PURE__*/ createSicon("align-left", [["M21 5L3 5","M15 12L3 12","M17 19L3 19"],"ppp"]);
+export const SiconAlignLeft = /*#__PURE__*/ createSicon("align-left", ["M21 5L3 5","M15 12L3 12","M17 19L3 19"]);
 export default SiconAlignLeft;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "save-off"
 import { createSicon } from '../createSicon';
 
-export const SiconSaveOff = /*#__PURE__*/ createSicon("save-off", [["M13 13L8 13A1 1 0 0 0 7 14L7 21","M14 8L15 8","M17 21L17 17","M2 2L22 22","M20.41 20.41A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 3.59 3.59","M29.5 11.5C29.5 11.5 34.5 16.5 33.5 16.5","M9 3L15.2 3A2 2 0 0 1 16.6 3.6L20.4 7.4A2 2 0 0 1 21 8.8L21 15"],"ppppppp"]);
+export const SiconSaveOff = /*#__PURE__*/ createSicon("save-off", ["M13 13L8 13A1 1 0 0 0 7 14L7 21","M14 8L15 8","M17 21L17 17","M2 2L22 22","M20.41 20.41A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 3.59 3.59","M29.5 11.5C29.5 11.5 34.5 16.5 33.5 16.5","M9 3L15.2 3A2 2 0 0 1 16.6 3.6L20.4 7.4A2 2 0 0 1 21 8.8L21 15"]);
 export default SiconSaveOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-clock"
 import { createSicon } from '../createSicon';
 
-export const SiconFolderClock = /*#__PURE__*/ createSicon("folder-clock", [["M16 14L16 15.257A1.702 1.702 0 0 0 16.8 16.7L17.6 17.2","M7 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8","M10 16A6 6 0 1 0 22 16A6 6 0 1 0 10 16Z"],"nbb"]);
+export const SiconFolderClock = /*#__PURE__*/ createSicon("folder-clock", ["M16 14L16 15.257A1.702 1.702 0 0 0 16.8 16.7L17.6 17.2","M7 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8","M10 16A6 6 0 1 0 22 16A6 6 0 1 0 10 16Z"]);
 export default SiconFolderClock;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pi"
 import { createSicon } from '../createSicon';
 
-export const SiconPi = /*#__PURE__*/ createSicon("pi", [["M9 4L9 20","M4 7C4 5.3 5.3 4 7 4L20 4","M18 20C16.3 20 15 18.7 15 17L15 4"],"ppp"]);
+export const SiconPi = /*#__PURE__*/ createSicon("pi", ["M9 4L9 20","M4 7C4 5.3 5.3 4 7 4L20 4","M18 20C16.3 20 15 18.7 15 17L15 4"]);
 export default SiconPi;

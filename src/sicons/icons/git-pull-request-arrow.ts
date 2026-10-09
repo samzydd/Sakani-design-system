@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-pull-request-arrow"
 import { createSicon } from '../createSicon';
 
-export const SiconGitPullRequestArrow = /*#__PURE__*/ createSicon("git-pull-request-arrow", [["M2 6A3 3 0 1 0 8 6A3 3 0 1 0 2 6Z","M5 9L5 21","M16 18A3 3 0 1 0 22 18A3 3 0 1 0 16 18Z","M15 9L12 6L15 3","M12 6L17 6A2 2 0 0 1 19 8L19 15"],"bfbff"]);
+export const SiconGitPullRequestArrow = /*#__PURE__*/ createSicon("git-pull-request-arrow", ["M2 6A3 3 0 1 0 8 6A3 3 0 1 0 2 6Z","M5 9L5 21","M16 18A3 3 0 1 0 22 18A3 3 0 1 0 16 18Z","M15 9L12 6L15 3","M12 6L17 6A2 2 0 0 1 19 8L19 15"]);
 export default SiconGitPullRequestArrow;

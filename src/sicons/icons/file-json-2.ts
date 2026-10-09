@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-braces-corner" (alias of "file-json-2")
 import { createSicon } from '../createSicon';
 
-export const SiconFileJson2 = /*#__PURE__*/ createSicon("file-json-2", [["M14 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 10","M14 2L14 7A1 1 0 0 0 15 8L20 8","M5 14A1 1 0 0 0 4 15L4 17A1 1 0 0 1 3 18A1 1 0 0 1 4 19L4 21A1 1 0 0 0 5 22","M9 22A1 1 0 0 0 10 21L10 19A1 1 0 0 1 11 18A1 1 0 0 1 10 17L10 15A1 1 0 0 0 9 14"],"bnfn"]);
+export const SiconFileJson2 = /*#__PURE__*/ createSicon("file-json-2", ["M14 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 10","M14 2L14 7A1 1 0 0 0 15 8L20 8","M5 14A1 1 0 0 0 4 15L4 17A1 1 0 0 1 3 18A1 1 0 0 1 4 19L4 21A1 1 0 0 0 5 22","M9 22A1 1 0 0 0 10 21L10 19A1 1 0 0 1 11 18A1 1 0 0 1 10 17L10 15A1 1 0 0 0 9 14"]);
 export default SiconFileJson2;

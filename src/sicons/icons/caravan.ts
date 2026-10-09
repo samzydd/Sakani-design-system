@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "caravan"
 import { createSicon } from '../createSicon';
 
-export const SiconCaravan = /*#__PURE__*/ createSicon("caravan", [["M18 19L18 9A4 4 0 0 0 14 5L6 5A4 4 0 0 0 2 9L2 17A2 2 0 0 0 4 19L6 19","M2 9L5 9A1 1 0 0 1 6 10L6 12A1 1 0 0 1 5 13L2 13","M22 17L22 18A1 1 0 0 1 21 19L10 19L10 10A1 1 0 0 1 11 9L13 9A1 1 0 0 1 14 10L14 19","M6 19A2 2 0 1 0 10 19A2 2 0 1 0 6 19Z"],"bnnn"]);
+export const SiconCaravan = /*#__PURE__*/ createSicon("caravan", ["M18 19L18 9A4 4 0 0 0 14 5L6 5A4 4 0 0 0 2 9L2 17A2 2 0 0 0 4 19L6 19","M2 9L5 9A1 1 0 0 1 6 10L6 12A1 1 0 0 1 5 13L2 13","M22 17L22 18A1 1 0 0 1 21 19L10 19L10 10A1 1 0 0 1 11 9L13 9A1 1 0 0 1 14 10L14 19","M6 19A2 2 0 1 0 10 19A2 2 0 1 0 6 19Z"]);
 export default SiconCaravan;

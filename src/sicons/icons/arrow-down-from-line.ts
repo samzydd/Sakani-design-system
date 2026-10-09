@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-down-from-line"
 import { createSicon } from '../createSicon';
 
-export const SiconArrowDownFromLine = /*#__PURE__*/ createSicon("arrow-down-from-line", [["M19 3L5 3","M12 21L12 7","M6 15L12 21L18 15"],"ppp"]);
+export const SiconArrowDownFromLine = /*#__PURE__*/ createSicon("arrow-down-from-line", ["M19 3L5 3","M12 21L12 7","M6 15L12 21L18 15"]);
 export default SiconArrowDownFromLine;

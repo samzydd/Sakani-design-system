@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flask-round"
 import { createSicon } from '../createSicon';
 
-export const SiconFlaskRound = /*#__PURE__*/ createSicon("flask-round", [["M10 2L10 8.292A7 7 0 1 0 14 8.292L14 2","M5 15L19 15","M8.5 2L15.5 2"],"bne"]);
+export const SiconFlaskRound = /*#__PURE__*/ createSicon("flask-round", ["M10 2L10 8.292A7 7 0 1 0 14 8.292L14 2","M5 15L19 15","M8.5 2L15.5 2"]);
 export default SiconFlaskRound;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ghost"
 import { createSicon } from '../createSicon';
 
-export const SiconGhost = /*#__PURE__*/ createSicon("ghost", [["M15 10L15 11","M7.528 20.472A1.6 1.6 0 0 1 9.805 20.472L10.862 21.528A1.6 1.6 0 0 0 13.138 21.528L14.195 20.472A1.6 1.6 0 0 1 16.472 20.472L17.586 21.586A1.4 1.4 0 0 0 20 20.586L20 10A8 8 0 0 0 4 10L4 20.586A1.4 1.4 0 0 0 6.414 21.586L7.528 20.472Z","M9 10L9 11"],"nbn"]);
+export const SiconGhost = /*#__PURE__*/ createSicon("ghost", ["M15 10L15 11","M7.528 20.472A1.6 1.6 0 0 1 9.805 20.472L10.862 21.528A1.6 1.6 0 0 0 13.138 21.528L14.195 20.472A1.6 1.6 0 0 1 16.472 20.472L17.586 21.586A1.4 1.4 0 0 0 20 20.586L20 10A8 8 0 0 0 4 10L4 20.586A1.4 1.4 0 0 0 6.414 21.586L7.528 20.472Z","M9 10L9 11"]);
 export default SiconGhost;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "undo-dot"
 import { createSicon } from '../createSicon';
 
-export const SiconUndoDot = /*#__PURE__*/ createSicon("undo-dot", [["M21 17A9 9 0 0 0 6 10.3L3 13","M3 7L3 13L9 13","M11 17A1 1 0 1 0 13 17A1 1 0 1 0 11 17Z"],"ppp"]);
+export const SiconUndoDot = /*#__PURE__*/ createSicon("undo-dot", ["M21 17A9 9 0 0 0 6 10.3L3 13","M3 7L3 13L9 13","M11 17A1 1 0 1 0 13 17A1 1 0 1 0 11 17Z"]);
 export default SiconUndoDot;

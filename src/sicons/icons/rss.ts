@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rss"
 import { createSicon } from '../createSicon';
 
-export const SiconRss = /*#__PURE__*/ createSicon("rss", [["M4 11A9 9 0 0 1 13 20","M4 4A16 16 0 0 1 20 20","M4 19A1 1 0 1 0 6 19A1 1 0 1 0 4 19Z"],"ppp"]);
+export const SiconRss = /*#__PURE__*/ createSicon("rss", ["M4 11A9 9 0 0 1 13 20","M4 4A16 16 0 0 1 20 20","M4 19A1 1 0 1 0 6 19A1 1 0 1 0 4 19Z"]);
 export default SiconRss;

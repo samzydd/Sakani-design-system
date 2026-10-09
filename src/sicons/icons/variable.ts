@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "variable"
 import { createSicon } from '../createSicon';
 
-export const SiconVariable = /*#__PURE__*/ createSicon("variable", [["M8 21C8 21 4 18 4 12C4 6 8 3 8 3","M16 3C16 3 20 6 20 12C20 18 16 21 16 21","M15 9L9 15","M9 9L15 15"],"pppp"]);
+export const SiconVariable = /*#__PURE__*/ createSicon("variable", ["M8 21C8 21 4 18 4 12C4 6 8 3 8 3","M16 3C16 3 20 6 20 12C20 18 16 21 16 21","M15 9L9 15","M9 9L15 15"]);
 export default SiconVariable;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "coins"
 import { createSicon } from '../createSicon';
 
-export const SiconCoins = /*#__PURE__*/ createSicon("coins", [["M13.744 17.736A6 6 0 1 1 6.264 10.256","M15 6L15.5 6A0.5 0.5 0 0 1 16 6.5L16 10","M6.134 14.768L6.567 14.518A0.5 0.5 0 0 1 7.25 14.701L9 17.732","M10 8A6 6 0 1 0 22 8A6 6 0 1 0 10 8Z"],"bnnb"]);
+export const SiconCoins = /*#__PURE__*/ createSicon("coins", ["M13.744 17.736A6 6 0 1 1 6.264 10.256","M15 6L15.5 6A0.5 0.5 0 0 1 16 6.5L16 10","M6.134 14.768L6.567 14.518A0.5 0.5 0 0 1 7.25 14.701L9 17.732","M10 8A6 6 0 1 0 22 8A6 6 0 1 0 10 8Z"]);
 export default SiconCoins;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "megaphone"
 import { createSicon } from '../createSicon';
 
-export const SiconMegaphone = /*#__PURE__*/ createSicon("megaphone", [["M11 6A13 13 0 0 0 19.4 3.2A1 1 0 0 1 21 4L21 16A1 1 0 0 1 19.4 16.8A13 13 0 0 0 11 14L5 14A2 2 0 0 1 3 12L3 8A2 2 0 0 1 5 6L11 6Z","M6 14A12 12 0 0 0 8.4 21.2A2 2 0 0 0 11.6 18.8A8 8 0 0 1 10 14","M8 6L8 14"],"bfn"]);
+export const SiconMegaphone = /*#__PURE__*/ createSicon("megaphone", ["M11 6A13 13 0 0 0 19.4 3.2A1 1 0 0 1 21 4L21 16A1 1 0 0 1 19.4 16.8A13 13 0 0 0 11 14L5 14A2 2 0 0 1 3 12L3 8A2 2 0 0 1 5 6L11 6Z","M6 14A12 12 0 0 0 8.4 21.2A2 2 0 0 0 11.6 18.8A8 8 0 0 1 10 14","M8 6L8 14"]);
 export default SiconMegaphone;

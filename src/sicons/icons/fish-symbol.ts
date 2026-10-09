@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fish-symbol"
 import { createSicon } from '../createSicon';
 
-export const SiconFishSymbol = /*#__PURE__*/ createSicon("fish-symbol", [["M2 16C2 16 11 1 22 12C11 23 2 8 2 8"],"p"]);
+export const SiconFishSymbol = /*#__PURE__*/ createSicon("fish-symbol", ["M2 16C2 16 11 1 22 12C11 23 2 8 2 8"]);
 export default SiconFishSymbol;

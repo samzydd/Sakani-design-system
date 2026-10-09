@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hat-glasses"
 import { createSicon } from '../createSicon';
 
-export const SiconHatGlasses = /*#__PURE__*/ createSicon("hat-glasses", [["M14 18A2 2 0 0 0 10 18","M19 11L16.89 4.343A2 2 0 0 0 14.138 3.195L12.862 3.805A2 2 0 0 1 12 4L8.5 4A2 2 0 0 0 6.575 5.456L5 11","M2 11L22 11","M14 18A3 3 0 1 0 20 18A3 3 0 1 0 14 18Z","M4 18A3 3 0 1 0 10 18A3 3 0 1 0 4 18Z"],"ebebb"]);
+export const SiconHatGlasses = /*#__PURE__*/ createSicon("hat-glasses", ["M14 18A2 2 0 0 0 10 18","M19 11L16.89 4.343A2 2 0 0 0 14.138 3.195L12.862 3.805A2 2 0 0 1 12 4L8.5 4A2 2 0 0 0 6.575 5.456L5 11","M2 11L22 11","M14 18A3 3 0 1 0 20 18A3 3 0 1 0 14 18Z","M4 18A3 3 0 1 0 10 18A3 3 0 1 0 4 18Z"]);
 export default SiconHatGlasses;

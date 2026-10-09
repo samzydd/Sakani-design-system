@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pointer"
 import { createSicon } from '../createSicon';
 
-export const SiconPointer = /*#__PURE__*/ createSicon("pointer", [["M22 14A8 8 0 0 1 14 22","M18 11L18 10A2 2 0 0 0 16 8A2 2 0 0 0 14 10","M14 10L14 9A2 2 0 0 0 12 7A2 2 0 0 0 10 9L10 10","M10 9.5L10 4A2 2 0 0 0 8 2A2 2 0 0 0 6 4L6 14","M18 11A2 2 0 1 1 22 11L22 14A8 8 0 0 1 14 22L12 22C9.2 22 7.5 21.14 6.01 19.66L2.41 16.06A2 2 0 0 1 5.24 13.24L7 15"],"efffb"]);
+export const SiconPointer = /*#__PURE__*/ createSicon("pointer", ["M22 14A8 8 0 0 1 14 22","M18 11L18 10A2 2 0 0 0 16 8A2 2 0 0 0 14 10","M14 10L14 9A2 2 0 0 0 12 7A2 2 0 0 0 10 9L10 10","M10 9.5L10 4A2 2 0 0 0 8 2A2 2 0 0 0 6 4L6 14","M18 11A2 2 0 1 1 22 11L22 14A8 8 0 0 1 14 22L12 22C9.2 22 7.5 21.14 6.01 19.66L2.41 16.06A2 2 0 0 1 5.24 13.24L7 15"]);
 export default SiconPointer;

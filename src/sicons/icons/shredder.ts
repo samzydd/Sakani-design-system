@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shredder"
 import { createSicon } from '../createSicon';
 
-export const SiconShredder = /*#__PURE__*/ createSicon("shredder", [["M4 13L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 13","M14 2L14 7A1 1 0 0 0 15 8L20 8","M10 22L10 17","M14 19L14 17","M18 20L18 17","M2 13L22 13","M6 20L6 17"],"bnfffef"]);
+export const SiconShredder = /*#__PURE__*/ createSicon("shredder", ["M4 13L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 13","M14 2L14 7A1 1 0 0 0 15 8L20 8","M10 22L10 17","M14 19L14 17","M18 20L18 17","M2 13L22 13","M6 20L6 17"]);
 export default SiconShredder;

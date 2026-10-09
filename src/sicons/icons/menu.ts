@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "menu"
 import { createSicon } from '../createSicon';
 
-export const SiconMenu = /*#__PURE__*/ createSicon("menu", [["M4 5L20 5","M4 12L20 12","M4 19L20 19"],"ppp"]);
+export const SiconMenu = /*#__PURE__*/ createSicon("menu", ["M4 5L20 5","M4 12L20 12","M4 19L20 19"]);
 export default SiconMenu;

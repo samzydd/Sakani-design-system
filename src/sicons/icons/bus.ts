@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bus"
 import { createSicon } from '../createSicon';
 
-export const SiconBus = /*#__PURE__*/ createSicon("bus", [["M8 6L8 12","M15 6L15 12","M2 12L21.6 12","M18 18L21 18C21 18 21.5 16.3 21.8 15.2C21.9 14.8 22 14.4 22 14C22 13.6 21.9 13.2 21.8 12.8L20.4 7.8C20.1 6.8 19.1 6 18 6L4 6A2 2 0 0 0 2 8L2 16.5A1.5 1.5 0 0 0 3.5 18L5 18","M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18Z","M9 18L14 18","M14 18A2 2 0 1 0 18 18A2 2 0 1 0 14 18Z"],"nnnbnen"]);
+export const SiconBus = /*#__PURE__*/ createSicon("bus", ["M8 6L8 12","M15 6L15 12","M2 12L21.6 12","M18 18L21 18C21 18 21.5 16.3 21.8 15.2C21.9 14.8 22 14.4 22 14C22 13.6 21.9 13.2 21.8 12.8L20.4 7.8C20.1 6.8 19.1 6 18 6L4 6A2 2 0 0 0 2 8L2 16.5A1.5 1.5 0 0 0 3.5 18L5 18","M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18Z","M9 18L14 18","M14 18A2 2 0 1 0 18 18A2 2 0 1 0 14 18Z"]);
 export default SiconBus;

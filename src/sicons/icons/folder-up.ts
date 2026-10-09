@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-up"
 import { createSicon } from '../createSicon';
 
-export const SiconFolderUp = /*#__PURE__*/ createSicon("folder-up", [["M20 20A2 2 0 0 0 22 18L22 8A2 2 0 0 0 20 6L12.1 6A2 2 0 0 1 10.41 5.1L9.6 3.9A2 2 0 0 0 7.93 3L4 3A2 2 0 0 0 2 5L2 18A2 2 0 0 0 4 20L20 20Z","M12 10L12 16","M9 13L12 10L15 13"],"bnn"]);
+export const SiconFolderUp = /*#__PURE__*/ createSicon("folder-up", ["M20 20A2 2 0 0 0 22 18L22 8A2 2 0 0 0 20 6L12.1 6A2 2 0 0 1 10.41 5.1L9.6 3.9A2 2 0 0 0 7.93 3L4 3A2 2 0 0 0 2 5L2 18A2 2 0 0 0 4 20L20 20Z","M12 10L12 16","M9 13L12 10L15 13"]);
 export default SiconFolderUp;

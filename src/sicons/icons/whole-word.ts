@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "whole-word"
 import { createSicon } from '../createSicon';
 
-export const SiconWholeWord = /*#__PURE__*/ createSicon("whole-word", [["M4 12A3 3 0 1 0 10 12A3 3 0 1 0 4 12Z","M10 9L10 15","M14 12A3 3 0 1 0 20 12A3 3 0 1 0 14 12Z","M14 7L14 15","M22 17L22 18C22 18.5 21.5 19 21 19L3 19C2.5 19 2 18.5 2 18L2 17"],"bebef"]);
+export const SiconWholeWord = /*#__PURE__*/ createSicon("whole-word", ["M4 12A3 3 0 1 0 10 12A3 3 0 1 0 4 12Z","M10 9L10 15","M14 12A3 3 0 1 0 20 12A3 3 0 1 0 14 12Z","M14 7L14 15","M22 17L22 18C22 18.5 21.5 19 21 19L3 19C2.5 19 2 18.5 2 18L2 17"]);
 export default SiconWholeWord;

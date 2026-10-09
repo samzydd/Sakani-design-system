@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "database-backup"
 import { createSicon } from '../createSicon';
 
-export const SiconDatabaseBackup = /*#__PURE__*/ createSicon("database-backup", [["M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5Z","M3 12A9 3 0 0 0 8 14.69","M21 9.3L21 5","M3 5L3 19A9 3 0 0 0 9.47 21.88","M12 12L12 16L16 16","M13 20A5 5 0 0 0 22 17A4.5 4.5 0 0 0 17.5 12.5C16.17 12.5 14.96 13.04 14.09 13.91L12 16"],"bfffnb"]);
+export const SiconDatabaseBackup = /*#__PURE__*/ createSicon("database-backup", ["M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5Z","M3 12A9 3 0 0 0 8 14.69","M21 9.3L21 5","M3 5L3 19A9 3 0 0 0 9.47 21.88","M12 12L12 16L16 16","M13 20A5 5 0 0 0 22 17A4.5 4.5 0 0 0 17.5 12.5C16.17 12.5 14.96 13.04 14.09 13.91L12 16"]);
 export default SiconDatabaseBackup;

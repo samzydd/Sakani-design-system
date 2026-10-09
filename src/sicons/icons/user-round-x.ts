@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "user-round-x"
 import { createSicon } from '../createSicon';
 
-export const SiconUserRoundX = /*#__PURE__*/ createSicon("user-round-x", [["M16.5 16.5L21.5 21.5","M2 21A8 8 0 0 1 13.531 13.82","M21.5 16.5L16.5 21.5","M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8Z"],"fffb"]);
+export const SiconUserRoundX = /*#__PURE__*/ createSicon("user-round-x", ["M16.5 16.5L21.5 21.5","M2 21A8 8 0 0 1 13.531 13.82","M21.5 16.5L16.5 21.5","M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8Z"]);
 export default SiconUserRoundX;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "trash"
 import { createSicon } from '../createSicon';
 
-export const SiconTrash = /*#__PURE__*/ createSicon("trash", [["M10 11L10 17","M14 11L14 17","M19 6L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 6","M3 6L21 6","M8 6L8 4A2 2 0 0 1 10 2L14 2A2 2 0 0 1 16 4L16 6"],"nnbef"]);
+export const SiconTrash = /*#__PURE__*/ createSicon("trash", ["M10 11L10 17","M14 11L14 17","M19 6L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 6","M3 6L21 6","M8 6L8 4A2 2 0 0 1 10 2L14 2A2 2 0 0 1 16 4L16 6"]);
 export default SiconTrash;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ice-cream-bowl"
 import { createSicon } from '../createSicon';
 
-export const SiconIceCreamBowl = /*#__PURE__*/ createSicon("ice-cream-bowl", [["M12 17C17 17 20 14.31 20 11L4 11C4 14.31 7 17 12 17","M8 21L16 21","M12 18L12 21","M5.14 11A3.5 3.5 0 1 1 11.85 11","M12.14 11A3.5 3.5 0 1 1 18.85 11","M15.5 6.5A3.5 3.5 0 1 0 8.5 6.5"],"bffbbf"]);
+export const SiconIceCreamBowl = /*#__PURE__*/ createSicon("ice-cream-bowl", ["M12 17C17 17 20 14.31 20 11L4 11C4 14.31 7 17 12 17","M8 21L16 21","M12 18L12 21","M5.14 11A3.5 3.5 0 1 1 11.85 11","M12.14 11A3.5 3.5 0 1 1 18.85 11","M15.5 6.5A3.5 3.5 0 1 0 8.5 6.5"]);
 export default SiconIceCreamBowl;

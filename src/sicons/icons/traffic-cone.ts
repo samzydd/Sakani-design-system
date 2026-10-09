@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "traffic-cone"
 import { createSicon } from '../createSicon';
 
-export const SiconTrafficCone = /*#__PURE__*/ createSicon("traffic-cone", [["M16.05 10.966A5 2.5 0 0 1 7.95 10.966","M16.923 14.049L21.403 16.089A1 1 0 0 1 21.404 17.92L12.83 21.82A2 2 0 0 1 11.17 21.82L2.596 17.91A1 1 0 0 1 2.596 16.08L7.08 14.04","M16.949 14.14A5 2.5 0 1 1 7.049 14.14L10.063 3.5A2 2 0 0 1 13.937 3.5L16.949 14.14Z","M9.194 6.57A5 2.5 0 0 0 14.804 6.57"],"nbbn"]);
+export const SiconTrafficCone = /*#__PURE__*/ createSicon("traffic-cone", ["M16.05 10.966A5 2.5 0 0 1 7.95 10.966","M16.923 14.049L21.403 16.089A1 1 0 0 1 21.404 17.92L12.83 21.82A2 2 0 0 1 11.17 21.82L2.596 17.91A1 1 0 0 1 2.596 16.08L7.08 14.04","M16.949 14.14A5 2.5 0 1 1 7.049 14.14L10.063 3.5A2 2 0 0 1 13.937 3.5L16.949 14.14Z","M9.194 6.57A5 2.5 0 0 0 14.804 6.57"]);
 export default SiconTrafficCone;

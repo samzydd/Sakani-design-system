@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-open"
 import { createSicon } from '../createSicon';
 
-export const SiconFolderOpen = /*#__PURE__*/ createSicon("folder-open", [["M6 14L7.5 11.1A2 2 0 0 1 9.24 10L20 10A2 2 0 0 1 21.94 12.5L20.4 18.5A2 2 0 0 1 18.45 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L18 6A2 2 0 0 1 20 8L20 10"],"p"]);
+export const SiconFolderOpen = /*#__PURE__*/ createSicon("folder-open", ["M6 14L7.5 11.1A2 2 0 0 1 9.24 10L20 10A2 2 0 0 1 21.94 12.5L20.4 18.5A2 2 0 0 1 18.45 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L18 6A2 2 0 0 1 20 8L20 10"]);
 export default SiconFolderOpen;

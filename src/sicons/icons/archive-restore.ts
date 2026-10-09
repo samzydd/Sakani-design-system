@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "archive-restore"
 import { createSicon } from '../createSicon';
 
-export const SiconArchiveRestore = /*#__PURE__*/ createSicon("archive-restore", [["M3 3L21 3A1 1 0 0 1 22 4L22 7A1 1 0 0 1 21 8L3 8A1 1 0 0 1 2 7L2 4A1 1 0 0 1 3 3Z","M4 8L4 19A2 2 0 0 0 6 21L8 21","M20 8L20 19A2 2 0 0 1 18 21L16 21","M9 15L12 12L15 15","M12 12L12 21"],"bffff"]);
+export const SiconArchiveRestore = /*#__PURE__*/ createSicon("archive-restore", ["M3 3L21 3A1 1 0 0 1 22 4L22 7A1 1 0 0 1 21 8L3 8A1 1 0 0 1 2 7L2 4A1 1 0 0 1 3 3Z","M4 8L4 19A2 2 0 0 0 6 21L8 21","M20 8L20 19A2 2 0 0 1 18 21L16 21","M9 15L12 12L15 15","M12 12L12 21"]);
 export default SiconArchiveRestore;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "database-zap"
 import { createSicon } from '../createSicon';
 
-export const SiconDatabaseZap = /*#__PURE__*/ createSicon("database-zap", [["M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5Z","M3 5L3 19A9 3 0 0 0 15 21.84","M21 5L21 8","M21 12L19.029 15.285A1.132 1.132 0 0 0 20 17L20 17A1.132 1.132 0 0 1 20.971 18.715L19 22","M3 12A9 3 0 0 0 14.59 14.87"],"bfeff"]);
+export const SiconDatabaseZap = /*#__PURE__*/ createSicon("database-zap", ["M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5Z","M3 5L3 19A9 3 0 0 0 15 21.84","M21 5L21 8","M21 12L19.029 15.285A1.132 1.132 0 0 0 20 17L20 17A1.132 1.132 0 0 1 20.971 18.715L19 22","M3 12A9 3 0 0 0 14.59 14.87"]);
 export default SiconDatabaseZap;

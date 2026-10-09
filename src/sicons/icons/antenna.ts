@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "antenna"
 import { createSicon } from '../createSicon';
 
-export const SiconAntenna = /*#__PURE__*/ createSicon("antenna", [["M2 12L7 2","M7 12L12 2","M12 12L17 2","M17 12L22 2","M4.5 7L19.5 7","M12 16L12 22"],"pppppp"]);
+export const SiconAntenna = /*#__PURE__*/ createSicon("antenna", ["M2 12L7 2","M7 12L12 2","M12 12L17 2","M17 12L22 2","M4.5 7L19.5 7","M12 16L12 22"]);
 export default SiconAntenna;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shopping-bag"
 import { createSicon } from '../createSicon';
 
-export const SiconShoppingBag = /*#__PURE__*/ createSicon("shopping-bag", [["M16 10A4 4 0 0 1 8 10","M3.103 6.034L20.897 6.034","M3.4 5.467A2 2 0 0 0 3 6.667L3 20A2 2 0 0 0 5 22L19 22A2 2 0 0 0 21 20L21 6.667A2 2 0 0 0 20.6 5.467L18.6 2.8A2 2 0 0 0 17 2L7 2A2 2 0 0 0 5.4 2.8L3.4 5.467Z"],"nnb"]);
+export const SiconShoppingBag = /*#__PURE__*/ createSicon("shopping-bag", ["M16 10A4 4 0 0 1 8 10","M3.103 6.034L20.897 6.034","M3.4 5.467A2 2 0 0 0 3 6.667L3 20A2 2 0 0 0 5 22L19 22A2 2 0 0 0 21 20L21 6.667A2 2 0 0 0 20.6 5.467L18.6 2.8A2 2 0 0 0 17 2L7 2A2 2 0 0 0 5.4 2.8L3.4 5.467Z"]);
 export default SiconShoppingBag;

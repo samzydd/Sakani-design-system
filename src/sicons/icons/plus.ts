@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "plus"
 import { createSicon } from '../createSicon';
 
-export const SiconPlus = /*#__PURE__*/ createSicon("plus", [["M5 12L19 12","M12 5L12 19"],"pp"]);
+export const SiconPlus = /*#__PURE__*/ createSicon("plus", ["M5 12L19 12","M12 5L12 19"]);
 export default SiconPlus;

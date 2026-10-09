@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "monitor-smartphone"
 import { createSicon } from '../createSicon';
 
-export const SiconMonitorSmartphone = /*#__PURE__*/ createSicon("monitor-smartphone", [["M18 8L18 6A2 2 0 0 0 16 4L4 4A2 2 0 0 0 2 6L2 13A2 2 0 0 0 4 15L12 15","M10 19L10 15.04L10 18.19","M7 19L12 19","M18 12L20 12A2 2 0 0 1 22 14L22 20A2 2 0 0 1 20 22L18 22A2 2 0 0 1 16 20L16 14A2 2 0 0 1 18 12Z"],"bffb"]);
+export const SiconMonitorSmartphone = /*#__PURE__*/ createSicon("monitor-smartphone", ["M18 8L18 6A2 2 0 0 0 16 4L4 4A2 2 0 0 0 2 6L2 13A2 2 0 0 0 4 15L12 15","M10 19L10 15.04L10 18.19","M7 19L12 19","M18 12L20 12A2 2 0 0 1 22 14L22 20A2 2 0 0 1 20 22L18 22A2 2 0 0 1 16 20L16 14A2 2 0 0 1 18 12Z"]);
 export default SiconMonitorSmartphone;

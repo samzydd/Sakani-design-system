@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-library"
 import { createSicon } from '../createSicon';
 
-export const SiconSquareLibrary = /*#__PURE__*/ createSicon("square-library", [["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M7 7L7 17","M11 7L11 17","M15 7L17 17"],"bnnn"]);
+export const SiconSquareLibrary = /*#__PURE__*/ createSicon("square-library", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M7 7L7 17","M11 7L11 17","M15 7L17 17"]);
 export default SiconSquareLibrary;

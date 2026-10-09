@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-column-stacked"
 import { createSicon } from '../createSicon';
 
-export const SiconChartColumnStacked = /*#__PURE__*/ createSicon("chart-column-stacked", [["M11 13L7 13","M19 9L15 9","M3 3L3 19A2 2 0 0 0 5 21L21 21","M16 5L18 5A1 1 0 0 1 19 6L19 16A1 1 0 0 1 18 17L16 17A1 1 0 0 1 15 16L15 6A1 1 0 0 1 16 5Z","M8 8L10 8A1 1 0 0 1 11 9L11 16A1 1 0 0 1 10 17L8 17A1 1 0 0 1 7 16L7 9A1 1 0 0 1 8 8Z"],"eefbb"]);
+export const SiconChartColumnStacked = /*#__PURE__*/ createSicon("chart-column-stacked", ["M11 13L7 13","M19 9L15 9","M3 3L3 19A2 2 0 0 0 5 21L21 21","M16 5L18 5A1 1 0 0 1 19 6L19 16A1 1 0 0 1 18 17L16 17A1 1 0 0 1 15 16L15 6A1 1 0 0 1 16 5Z","M8 8L10 8A1 1 0 0 1 11 9L11 16A1 1 0 0 1 10 17L8 17A1 1 0 0 1 7 16L7 9A1 1 0 0 1 8 8Z"]);
 export default SiconChartColumnStacked;

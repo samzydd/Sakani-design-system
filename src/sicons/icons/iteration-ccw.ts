@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "iteration-ccw"
 import { createSicon } from '../createSicon';
 
-export const SiconIterationCcw = /*#__PURE__*/ createSicon("iteration-ccw", [["M16 14L20 18L16 22","M20 10A8 8 0 1 0 12 18L20 18"],"nb"]);
+export const SiconIterationCcw = /*#__PURE__*/ createSicon("iteration-ccw", ["M16 14L20 18L16 22","M20 10A8 8 0 1 0 12 18L20 18"]);
 export default SiconIterationCcw;

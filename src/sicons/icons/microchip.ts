@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "microchip"
 import { createSicon } from '../createSicon';
 
-export const SiconMicrochip = /*#__PURE__*/ createSicon("microchip", [["M10 12L14 12","M10 17L14 17","M10 7L14 7","M18 12L20 12","M18 18L20 18","M18 6L20 6","M4 12L6 12","M4 18L6 18","M4 6L6 6","M8 2L16 2A2 2 0 0 1 18 4L18 20A2 2 0 0 1 16 22L8 22A2 2 0 0 1 6 20L6 4A2 2 0 0 1 8 2Z"],"nnnnnnnnnb"]);
+export const SiconMicrochip = /*#__PURE__*/ createSicon("microchip", ["M10 12L14 12","M10 17L14 17","M10 7L14 7","M18 12L20 12","M18 18L20 18","M18 6L20 6","M4 12L6 12","M4 18L6 18","M4 6L6 6","M8 2L16 2A2 2 0 0 1 18 4L18 20A2 2 0 0 1 16 22L8 22A2 2 0 0 1 6 20L6 4A2 2 0 0 1 8 2Z"]);
 export default SiconMicrochip;

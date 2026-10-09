@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wifi-pen"
 import { createSicon } from '../createSicon';
 
-export const SiconWifiPen = /*#__PURE__*/ createSicon("wifi-pen", [["M2 8.82A15 15 0 0 1 22 8.82","M21.378 16.626A1 1 0 0 0 18.374 13.622L14.364 17.634A2 2 0 0 0 13.858 18.488L13.021 21.358A0.5 0.5 0 0 0 13.641 21.978L16.511 21.141A2 2 0 0 0 17.365 20.635L21.378 16.626Z","M5 12.859A10 10 0 0 1 15.5 10.637","M8.5 16.429A5 5 0 0 1 11.5 15.023"],"fbff"]);
+export const SiconWifiPen = /*#__PURE__*/ createSicon("wifi-pen", ["M2 8.82A15 15 0 0 1 22 8.82","M21.378 16.626A1 1 0 0 0 18.374 13.622L14.364 17.634A2 2 0 0 0 13.858 18.488L13.021 21.358A0.5 0.5 0 0 0 13.641 21.978L16.511 21.141A2 2 0 0 0 17.365 20.635L21.378 16.626Z","M5 12.859A10 10 0 0 1 15.5 10.637","M8.5 16.429A5 5 0 0 1 11.5 15.023"]);
 export default SiconWifiPen;

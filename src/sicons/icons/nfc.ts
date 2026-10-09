@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "nfc"
 import { createSicon } from '../createSicon';
 
-export const SiconNfc = /*#__PURE__*/ createSicon("nfc", [["M6 8.32A7.43 7.43 0 0 1 6 15.68","M9.46 6.21A11.76 11.76 0 0 1 9.46 17.79","M12.91 4.1A15.91 15.91 0 0 1 12.92 19.9","M16.37 2A20.16 20.16 0 0 1 16.37 22"],"pppp"]);
+export const SiconNfc = /*#__PURE__*/ createSicon("nfc", ["M6 8.32A7.43 7.43 0 0 1 6 15.68","M9.46 6.21A11.76 11.76 0 0 1 9.46 17.79","M12.91 4.1A15.91 15.91 0 0 1 12.92 19.9","M16.37 2A20.16 20.16 0 0 1 16.37 22"]);
 export default SiconNfc;

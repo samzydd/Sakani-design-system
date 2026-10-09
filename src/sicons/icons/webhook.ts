@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "webhook"
 import { createSicon } from '../createSicon';
 
-export const SiconWebhook = /*#__PURE__*/ createSicon("webhook", [["M18 16.98L12.01 16.98C10.91 16.98 10.06 17.92 9.53 18.88A4 4 0 0 1 2 17C2.01 16.3 2.2 15.6 2.57 15","M6 17L9.13 11.22C9.66 10.25 9.23 9.04 8.63 8.12A4 4 0 1 1 15.52 4.06","M12 6L15.13 11.73C15.66 12.7 16.9 13 18 13A4 4 0 0 1 18 21"],"ppp"]);
+export const SiconWebhook = /*#__PURE__*/ createSicon("webhook", ["M18 16.98L12.01 16.98C10.91 16.98 10.06 17.92 9.53 18.88A4 4 0 0 1 2 17C2.01 16.3 2.2 15.6 2.57 15","M6 17L9.13 11.22C9.66 10.25 9.23 9.04 8.63 8.12A4 4 0 1 1 15.52 4.06","M12 6L15.13 11.73C15.66 12.7 16.9 13 18 13A4 4 0 0 1 18 21"]);
 export default SiconWebhook;

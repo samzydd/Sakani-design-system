@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-align-start" (alias of "text")
 import { createSicon } from '../createSicon';
 
-export const SiconText = /*#__PURE__*/ createSicon("text", [["M21 5L3 5","M15 12L3 12","M17 19L3 19"],"ppp"]);
+export const SiconText = /*#__PURE__*/ createSicon("text", ["M21 5L3 5","M15 12L3 12","M17 19L3 19"]);
 export default SiconText;

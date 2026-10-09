@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fast-forward"
 import { createSicon } from '../createSicon';
 
-export const SiconFastForward = /*#__PURE__*/ createSicon("fast-forward", [["M12 6A2 2 0 0 1 15.414 4.586L21.414 10.586A2 2 0 0 1 21.414 13.414L15.414 19.414A2 2 0 0 1 12 18L12 6Z","M2 6A2 2 0 0 1 5.414 4.586L11.414 10.586A2 2 0 0 1 11.414 13.414L5.414 19.414A2 2 0 0 1 2 18L2 6Z"],"bb"]);
+export const SiconFastForward = /*#__PURE__*/ createSicon("fast-forward", ["M12 6A2 2 0 0 1 15.414 4.586L21.414 10.586A2 2 0 0 1 21.414 13.414L15.414 19.414A2 2 0 0 1 12 18L12 6Z","M2 6A2 2 0 0 1 5.414 4.586L11.414 10.586A2 2 0 0 1 11.414 13.414L5.414 19.414A2 2 0 0 1 2 18L2 6Z"]);
 export default SiconFastForward;

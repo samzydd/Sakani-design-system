@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "switch-camera"
 import { createSicon } from '../createSicon';
 
-export const SiconSwitchCamera = /*#__PURE__*/ createSicon("switch-camera", [["M11 19L4 19A2 2 0 0 1 2 17L2 7A2 2 0 0 1 4 5L9 5","M13 5L20 5A2 2 0 0 1 22 7L22 17A2 2 0 0 1 20 19L15 19","M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z","M18 22L15 19L18 16","M6 2L9 5L6 8"],"bbenn"]);
+export const SiconSwitchCamera = /*#__PURE__*/ createSicon("switch-camera", ["M11 19L4 19A2 2 0 0 1 2 17L2 7A2 2 0 0 1 4 5L9 5","M13 5L20 5A2 2 0 0 1 22 7L22 17A2 2 0 0 1 20 19L15 19","M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z","M18 22L15 19L18 16","M6 2L9 5L6 8"]);
 export default SiconSwitchCamera;

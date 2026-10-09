@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "line-squiggle"
 import { createSicon } from '../createSicon';
 
-export const SiconLineSquiggle = /*#__PURE__*/ createSicon("line-squiggle", [["M7 3.5C12 1.5 14 6 10 7.5C1.5 10 2 15 5 16C10 18 14 6 19 9C24 12 19.5 22.5 15 21C10 18.5 15.5 10 21 19"],"p"]);
+export const SiconLineSquiggle = /*#__PURE__*/ createSicon("line-squiggle", ["M7 3.5C12 1.5 14 6 10 7.5C1.5 10 2 15 5 16C10 18 14 6 19 9C24 12 19.5 22.5 15 21C10 18.5 15.5 10 21 19"]);
 export default SiconLineSquiggle;

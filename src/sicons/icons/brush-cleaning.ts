@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "brush-cleaning"
 import { createSicon } from '../createSicon';
 
-export const SiconBrushCleaning = /*#__PURE__*/ createSicon("brush-cleaning", [["M16 22L15 18","M19 14A1 1 0 0 0 20 13L20 12A2 2 0 0 0 18 10L15 10A1 1 0 0 1 14 9L14 4A2 2 0 0 0 10 4L10 9A1 1 0 0 1 9 10L6 10A2 2 0 0 0 4 12L4 13A1 1 0 0 0 5 14","M19 14L5 14L3.027 20.767A1 1 0 0 0 4 22L20 22A1 1 0 0 0 20.973 20.767L19 14Z","M8 22L9 18"],"nbbn"]);
+export const SiconBrushCleaning = /*#__PURE__*/ createSicon("brush-cleaning", ["M16 22L15 18","M19 14A1 1 0 0 0 20 13L20 12A2 2 0 0 0 18 10L15 10A1 1 0 0 1 14 9L14 4A2 2 0 0 0 10 4L10 9A1 1 0 0 1 9 10L6 10A2 2 0 0 0 4 12L4 13A1 1 0 0 0 5 14","M19 14L5 14L3.027 20.767A1 1 0 0 0 4 22L20 22A1 1 0 0 0 20.973 20.767L19 14Z","M8 22L9 18"]);
 export default SiconBrushCleaning;

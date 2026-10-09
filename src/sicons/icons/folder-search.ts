@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-search"
 import { createSicon } from '../createSicon';
 
-export const SiconFolderSearch = /*#__PURE__*/ createSicon("folder-search", [["M10.7 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 12.1","M21 21L19.1 19.1","M14 17A3 3 0 1 0 20 17A3 3 0 1 0 14 17Z"],"bff"]);
+export const SiconFolderSearch = /*#__PURE__*/ createSicon("folder-search", ["M10.7 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 12.1","M21 21L19.1 19.1","M14 17A3 3 0 1 0 20 17A3 3 0 1 0 14 17Z"]);
 export default SiconFolderSearch;

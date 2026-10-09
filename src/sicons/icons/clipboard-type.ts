@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clipboard-type"
 import { createSicon } from '../createSicon';
 
-export const SiconClipboardType = /*#__PURE__*/ createSicon("clipboard-type", [["M9 2L15 2A1 1 0 0 1 16 3L16 5A1 1 0 0 1 15 6L9 6A1 1 0 0 1 8 5L8 3A1 1 0 0 1 9 2Z","M16 4L18 4A2 2 0 0 1 20 6L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 6A2 2 0 0 1 6 4L8 4","M9 12L9 11.5A0.5 0.5 0 0 1 9.5 11L14.5 11A0.5 0.5 0 0 1 15 11.5L15 12","M11 17L13 17","M12 11L12 17"],"nbnnn"]);
+export const SiconClipboardType = /*#__PURE__*/ createSicon("clipboard-type", ["M9 2L15 2A1 1 0 0 1 16 3L16 5A1 1 0 0 1 15 6L9 6A1 1 0 0 1 8 5L8 3A1 1 0 0 1 9 2Z","M16 4L18 4A2 2 0 0 1 20 6L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 6A2 2 0 0 1 6 4L8 4","M9 12L9 11.5A0.5 0.5 0 0 1 9.5 11L14.5 11A0.5 0.5 0 0 1 15 11.5L15 12","M11 17L13 17","M12 11L12 17"]);
 export default SiconClipboardType;

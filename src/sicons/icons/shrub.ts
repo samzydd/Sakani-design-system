@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shrub"
 import { createSicon } from '../createSicon';
 
-export const SiconShrub = /*#__PURE__*/ createSicon("shrub", [["M12 22L12 16.828A2 2 0 0 0 11.414 15.414L9.5 13.5","M14.5 14.5L12 17","M17 8.8A6 6 0 0 1 13.8 20L10 20A6.5 6.5 0 0 1 7 8A5 5 0 0 1 17 8L17 8.8Z"],"nnb"]);
+export const SiconShrub = /*#__PURE__*/ createSicon("shrub", ["M12 22L12 16.828A2 2 0 0 0 11.414 15.414L9.5 13.5","M14.5 14.5L12 17","M17 8.8A6 6 0 0 1 13.8 20L10 20A6.5 6.5 0 0 1 7 8A5 5 0 0 1 17 8L17 8.8Z"]);
 export default SiconShrub;

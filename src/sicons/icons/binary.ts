@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "binary"
 import { createSicon } from '../createSicon';
 
-export const SiconBinary = /*#__PURE__*/ createSicon("binary", [["M16 14L16 14A2 2 0 0 1 18 16L18 18A2 2 0 0 1 16 20L16 20A2 2 0 0 1 14 18L14 16A2 2 0 0 1 16 14Z","M8 4L8 4A2 2 0 0 1 10 6L10 8A2 2 0 0 1 8 10L8 10A2 2 0 0 1 6 8L6 6A2 2 0 0 1 8 4Z","M6 20L10 20","M14 10L18 10","M6 14L7 14A1 1 0 0 1 8 15L8 20","M14 4L15 4A1 1 0 0 1 16 5L16 10"],"bbffff"]);
+export const SiconBinary = /*#__PURE__*/ createSicon("binary", ["M16 14L16 14A2 2 0 0 1 18 16L18 18A2 2 0 0 1 16 20L16 20A2 2 0 0 1 14 18L14 16A2 2 0 0 1 16 14Z","M8 4L8 4A2 2 0 0 1 10 6L10 8A2 2 0 0 1 8 10L8 10A2 2 0 0 1 6 8L6 6A2 2 0 0 1 8 4Z","M6 20L10 20","M14 10L18 10","M6 14L7 14A1 1 0 0 1 8 15L8 20","M14 4L15 4A1 1 0 0 1 16 5L16 10"]);
 export default SiconBinary;

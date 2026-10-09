@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "case-upper"
 import { createSicon } from '../createSicon';
 
-export const SiconCaseUpper = /*#__PURE__*/ createSicon("case-upper", [["M15 11L19.5 11A1 1 0 0 1 19.5 16L15.5 16A0.5 0.5 0 0 1 15 15.5L15 6.5A0.5 0.5 0 0 1 15.5 6L18.5 6A1 1 0 0 1 18.5 11","M2 16L6.039 6.31A0.5 0.5 0 0 1 6.962 6.31L11 16","M3.304 13L9.696 13"],"fbn"]);
+export const SiconCaseUpper = /*#__PURE__*/ createSicon("case-upper", ["M15 11L19.5 11A1 1 0 0 1 19.5 16L15.5 16A0.5 0.5 0 0 1 15 15.5L15 6.5A0.5 0.5 0 0 1 15.5 6L18.5 6A1 1 0 0 1 18.5 11","M2 16L6.039 6.31A0.5 0.5 0 0 1 6.962 6.31L11 16","M3.304 13L9.696 13"]);
 export default SiconCaseUpper;

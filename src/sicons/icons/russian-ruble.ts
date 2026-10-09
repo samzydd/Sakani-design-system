@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "russian-ruble"
 import { createSicon } from '../createSicon';
 
-export const SiconRussianRuble = /*#__PURE__*/ createSicon("russian-ruble", [["M6 11L14 11A4 4 0 0 0 14 3L11.5 3A2.5 2.5 0 0 0 9 5.5L9 21","M6 15L14 15"],"pp"]);
+export const SiconRussianRuble = /*#__PURE__*/ createSicon("russian-ruble", ["M6 11L14 11A4 4 0 0 0 14 3L11.5 3A2.5 2.5 0 0 0 9 5.5L9 21","M6 15L14 15"]);
 export default SiconRussianRuble;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "decimals-arrow-right"
 import { createSicon } from '../createSicon';
 
-export const SiconDecimalsArrowRight = /*#__PURE__*/ createSicon("decimals-arrow-right", [["M10 18L20 18","M17 21L20 18L17 15","M3 11L3.01 11","M17.5 3L17.5 3A2.5 2.5 0 0 1 20 5.5L20 8.5A2.5 2.5 0 0 1 17.5 11L17.5 11A2.5 2.5 0 0 1 15 8.5L15 5.5A2.5 2.5 0 0 1 17.5 3Z","M8.5 3L8.5 3A2.5 2.5 0 0 1 11 5.5L11 8.5A2.5 2.5 0 0 1 8.5 11L8.5 11A2.5 2.5 0 0 1 6 8.5L6 5.5A2.5 2.5 0 0 1 8.5 3Z"],"fffbb"]);
+export const SiconDecimalsArrowRight = /*#__PURE__*/ createSicon("decimals-arrow-right", ["M10 18L20 18","M17 21L20 18L17 15","M3 11L3.01 11","M17.5 3L17.5 3A2.5 2.5 0 0 1 20 5.5L20 8.5A2.5 2.5 0 0 1 17.5 11L17.5 11A2.5 2.5 0 0 1 15 8.5L15 5.5A2.5 2.5 0 0 1 17.5 3Z","M8.5 3L8.5 3A2.5 2.5 0 0 1 11 5.5L11 8.5A2.5 2.5 0 0 1 8.5 11L8.5 11A2.5 2.5 0 0 1 6 8.5L6 5.5A2.5 2.5 0 0 1 8.5 3Z"]);
 export default SiconDecimalsArrowRight;

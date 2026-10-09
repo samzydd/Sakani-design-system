@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-check-big"
 import { createSicon } from '../createSicon';
 
-export const SiconSquareCheckBig = /*#__PURE__*/ createSicon("square-check-big", [["M21 10.656L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L17.344 3","M9 11L10.5 12.5A2.121 2.121 0 0 0 13.5 12.5L22 4"],"bn"]);
+export const SiconSquareCheckBig = /*#__PURE__*/ createSicon("square-check-big", ["M21 10.656L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L17.344 3","M9 11L10.5 12.5A2.121 2.121 0 0 0 13.5 12.5L22 4"]);
 export default SiconSquareCheckBig;

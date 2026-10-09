@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-check"
 import { createSicon } from '../createSicon';
 
-export const SiconListCheck = /*#__PURE__*/ createSicon("list-check", [["M16 5L3 5","M16 12L3 12","M11 19L3 19","M15 18L16 19A1.414 1.414 0 0 0 18 19L21 16"],"pppp"]);
+export const SiconListCheck = /*#__PURE__*/ createSicon("list-check", ["M16 5L3 5","M16 12L3 12","M11 19L3 19","M15 18L16 19A1.414 1.414 0 0 0 18 19L21 16"]);
 export default SiconListCheck;

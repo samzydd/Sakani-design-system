@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bug-off"
 import { createSicon } from '../createSicon';
 
-export const SiconBugOff = /*#__PURE__*/ createSicon("bug-off", [["M12 20L12 12","M12.656 7L14 7A4 4 0 0 1 18 11L18 12.344","M14.12 3.88L16 2","M17.123 17.123A6 6 0 0 1 6 14L6 11A4 4 0 0 1 7.72 7.713","M2 2L22 22","M21 5A4 4 0 0 1 17.45 8.97","M22 13L18.656 13","M3 21A4 4 0 0 1 6.81 17","M3 5A4 4 0 0 0 6.55 8.97","M6 13L2 13","M8 2L9.88 3.88","M9.712 4.06A3 3 0 0 1 15 6L15 7.13"],"nffbffffffff"]);
+export const SiconBugOff = /*#__PURE__*/ createSicon("bug-off", ["M12 20L12 12","M12.656 7L14 7A4 4 0 0 1 18 11L18 12.344","M14.12 3.88L16 2","M17.123 17.123A6 6 0 0 1 6 14L6 11A4 4 0 0 1 7.72 7.713","M2 2L22 22","M21 5A4 4 0 0 1 17.45 8.97","M22 13L18.656 13","M3 21A4 4 0 0 1 6.81 17","M3 5A4 4 0 0 0 6.55 8.97","M6 13L2 13","M8 2L9.88 3.88","M9.712 4.06A3 3 0 0 1 15 6L15 7.13"]);
 export default SiconBugOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-no-axes-gantt"
 import { createSicon } from '../createSicon';
 
-export const SiconChartNoAxesGantt = /*#__PURE__*/ createSicon("chart-no-axes-gantt", [["M6 5L18 5","M4 12L14 12","M12 19L20 19"],"ppp"]);
+export const SiconChartNoAxesGantt = /*#__PURE__*/ createSicon("chart-no-axes-gantt", ["M6 5L18 5","M4 12L14 12","M12 19L20 19"]);
 export default SiconChartNoAxesGantt;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-circle-dashed"
 import { createSicon } from '../createSicon';
 
-export const SiconMessageCircleDashed = /*#__PURE__*/ createSicon("message-circle-dashed", [["M10.1 2.182A10 10 0 0 1 13.9 2.182","M13.9 21.818A10 10 0 0 1 10.1 21.818","M17.609 3.72A10 10 0 0 1 20.299 6.42","M2.182 13.9A10 10 0 0 1 2.182 10.1","M20.28 17.61A10 10 0 0 1 17.58 20.3","M21.818 10.1A10 10 0 0 1 21.818 13.9","M3.721 6.391A10 10 0 0 1 6.421 3.701","M6.163 21.117L3.257 21.967A1 1 0 0 1 2.021 20.798L2.986 17.818"],"fffffffb"]);
+export const SiconMessageCircleDashed = /*#__PURE__*/ createSicon("message-circle-dashed", ["M10.1 2.182A10 10 0 0 1 13.9 2.182","M13.9 21.818A10 10 0 0 1 10.1 21.818","M17.609 3.72A10 10 0 0 1 20.299 6.42","M2.182 13.9A10 10 0 0 1 2.182 10.1","M20.28 17.61A10 10 0 0 1 17.58 20.3","M21.818 10.1A10 10 0 0 1 21.818 13.9","M3.721 6.391A10 10 0 0 1 6.421 3.701","M6.163 21.117L3.257 21.967A1 1 0 0 1 2.021 20.798L2.986 17.818"]);
 export default SiconMessageCircleDashed;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rotate-ccw-key"
 import { createSicon } from '../createSicon';
 
-export const SiconRotateCcwKey = /*#__PURE__*/ createSicon("rotate-ccw-key", [["M12 7L12 13","M12 9L14 9","M3 12A9 9 0 1 0 12 3A9.74 9.74 0 0 0 5.26 5.74L3 8","M3 3L3 8L8 8","M10 15A2 2 0 1 0 14 15A2 2 0 1 0 10 15Z"],"nnbnn"]);
+export const SiconRotateCcwKey = /*#__PURE__*/ createSicon("rotate-ccw-key", ["M12 7L12 13","M12 9L14 9","M3 12A9 9 0 1 0 12 3A9.74 9.74 0 0 0 5.26 5.74L3 8","M3 3L3 8L8 8","M10 15A2 2 0 1 0 14 15A2 2 0 1 0 10 15Z"]);
 export default SiconRotateCcwKey;

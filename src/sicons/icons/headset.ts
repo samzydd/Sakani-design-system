@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "headset"
 import { createSicon } from '../createSicon';
 
-export const SiconHeadset = /*#__PURE__*/ createSicon("headset", [["M3 11L6 11A2 2 0 0 1 8 13L8 16A2 2 0 0 1 6 18L5 18A2 2 0 0 1 3 16L3 11Z","M3 11A9 9 0 1 1 21 11","M21 11L21 16A2 2 0 0 1 19 18L18 18A2 2 0 0 1 16 16L16 13A2 2 0 0 1 18 11L21 11Z","M21 16L21 18A4 4 0 0 1 17 22L12 22"],"fbff"]);
+export const SiconHeadset = /*#__PURE__*/ createSicon("headset", ["M3 11L6 11A2 2 0 0 1 8 13L8 16A2 2 0 0 1 6 18L5 18A2 2 0 0 1 3 16L3 11Z","M3 11A9 9 0 1 1 21 11","M21 11L21 16A2 2 0 0 1 19 18L18 18A2 2 0 0 1 16 16L16 13A2 2 0 0 1 18 11L21 11Z","M21 16L21 18A4 4 0 0 1 17 22L12 22"]);
 export default SiconHeadset;

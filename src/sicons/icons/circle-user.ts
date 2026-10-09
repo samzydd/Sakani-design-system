@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-user"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleUser = /*#__PURE__*/ createSicon("circle-user", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z","M7 20.662L7 19A2 2 0 0 1 9 17L15 17A2 2 0 0 1 17 19L17 20.662"],"bnn"]);
+export const SiconCircleUser = /*#__PURE__*/ createSicon("circle-user", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z","M7 20.662L7 19A2 2 0 0 1 9 17L15 17A2 2 0 0 1 17 19L17 20.662"]);
 export default SiconCircleUser;

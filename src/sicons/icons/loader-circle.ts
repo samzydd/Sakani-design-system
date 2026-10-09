@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "loader-circle"
 import { createSicon } from '../createSicon';
 
-export const SiconLoaderCircle = /*#__PURE__*/ createSicon("loader-circle", [["M21 12A9 9 0 1 1 14.781 3.44"],"b"]);
+export const SiconLoaderCircle = /*#__PURE__*/ createSicon("loader-circle", ["M21 12A9 9 0 1 1 14.781 3.44"]);
 export default SiconLoaderCircle;

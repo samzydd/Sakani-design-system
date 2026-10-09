@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wifi-sync"
 import { createSicon } from '../createSicon';
 
-export const SiconWifiSync = /*#__PURE__*/ createSicon("wifi-sync", [["M11.965 10.105L11.965 14.105L13.5 12.5A5 5 0 0 1 21.5 14","M11.965 14.105L15.965 14.105","M17.965 18.105L21.965 18.105L20.43 19.71A5 5 0 0 1 12.43 18.21","M2 8.82A15 15 0 0 1 22 8.82","M21.965 22.105L21.965 18.105","M5 12.86A10 10 0 0 1 8 10.828","M8.5 16.429L8.51 16.429"],"ffbffff"]);
+export const SiconWifiSync = /*#__PURE__*/ createSicon("wifi-sync", ["M11.965 10.105L11.965 14.105L13.5 12.5A5 5 0 0 1 21.5 14","M11.965 14.105L15.965 14.105","M17.965 18.105L21.965 18.105L20.43 19.71A5 5 0 0 1 12.43 18.21","M2 8.82A15 15 0 0 1 22 8.82","M21.965 22.105L21.965 18.105","M5 12.86A10 10 0 0 1 8 10.828","M8.5 16.429L8.51 16.429"]);
 export default SiconWifiSync;

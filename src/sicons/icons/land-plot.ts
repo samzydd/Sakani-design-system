@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "land-plot"
 import { createSicon } from '../createSicon';
 
-export const SiconLandPlot = /*#__PURE__*/ createSicon("land-plot", [["M12 8L15 6.5A1.677 1.677 0 0 0 15 3.5L15 3.5A2.073 2.073 0 0 0 12 5.354L12 12","M8 11.99L2.5 15.13A1 1 0 0 0 2.5 16.87L11 21.73A2 2 0 0 0 13 21.73L21.5 16.87A1 1 0 0 0 21.5 15.13L16 12","M6.49 12.85L17.51 19.15","M17.51 12.85L6.5 19.15"],"fbnn"]);
+export const SiconLandPlot = /*#__PURE__*/ createSicon("land-plot", ["M12 8L15 6.5A1.677 1.677 0 0 0 15 3.5L15 3.5A2.073 2.073 0 0 0 12 5.354L12 12","M8 11.99L2.5 15.13A1 1 0 0 0 2.5 16.87L11 21.73A2 2 0 0 0 13 21.73L21.5 16.87A1 1 0 0 0 21.5 15.13L16 12","M6.49 12.85L17.51 19.15","M17.51 12.85L6.5 19.15"]);
 export default SiconLandPlot;

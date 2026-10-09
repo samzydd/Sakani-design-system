@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "power"
 import { createSicon } from '../createSicon';
 
-export const SiconPower = /*#__PURE__*/ createSicon("power", [["M12 2L12 12","M18.4 6.6A9 9 0 1 1 5.63 6.64"],"nb"]);
+export const SiconPower = /*#__PURE__*/ createSicon("power", ["M12 2L12 12","M18.4 6.6A9 9 0 1 1 5.63 6.64"]);
 export default SiconPower;

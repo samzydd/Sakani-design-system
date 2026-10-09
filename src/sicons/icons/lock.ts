@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lock"
 import { createSicon } from '../createSicon';
 
-export const SiconLock = /*#__PURE__*/ createSicon("lock", [["M5 11L19 11A2 2 0 0 1 21 13L21 20A2 2 0 0 1 19 22L5 22A2 2 0 0 1 3 20L3 13A2 2 0 0 1 5 11Z","M7 11L7 7A5 5 0 0 1 17 7L17 11"],"bb"]);
+export const SiconLock = /*#__PURE__*/ createSicon("lock", ["M5 11L19 11A2 2 0 0 1 21 13L21 20A2 2 0 0 1 19 22L5 22A2 2 0 0 1 3 20L3 13A2 2 0 0 1 5 11Z","M7 11L7 7A5 5 0 0 1 17 7L17 11"]);
 export default SiconLock;

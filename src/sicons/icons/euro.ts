@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "euro"
 import { createSicon } from '../createSicon';
 
-export const SiconEuro = /*#__PURE__*/ createSicon("euro", [["M4 10L16 10","M4 14L13 14","M19 6A7.7 7.7 0 0 0 13.8 4A7.9 7.9 0 0 0 6 12C6 16.4 9.5 20 13.8 20C15.8 20 17.6 19.2 19 18"],"nnb"]);
+export const SiconEuro = /*#__PURE__*/ createSicon("euro", ["M4 10L16 10","M4 14L13 14","M19 6A7.7 7.7 0 0 0 13.8 4A7.9 7.9 0 0 0 6 12C6 16.4 9.5 20 13.8 20C15.8 20 17.6 19.2 19 18"]);
 export default SiconEuro;

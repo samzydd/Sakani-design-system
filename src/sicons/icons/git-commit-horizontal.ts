@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-commit-horizontal"
 import { createSicon } from '../createSicon';
 
-export const SiconGitCommitHorizontal = /*#__PURE__*/ createSicon("git-commit-horizontal", [["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z","M3 12L9 12","M15 12L21 12"],"bff"]);
+export const SiconGitCommitHorizontal = /*#__PURE__*/ createSicon("git-commit-horizontal", ["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z","M3 12L9 12","M15 12L21 12"]);
 export default SiconGitCommitHorizontal;

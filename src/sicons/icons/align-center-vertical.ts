@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-center-vertical"
 import { createSicon } from '../createSicon';
 
-export const SiconAlignCenterVertical = /*#__PURE__*/ createSicon("align-center-vertical", [["M12 2L12 22","M8 10L4 10A2 2 0 0 1 2 8L2 6C2 4.9 2.9 4 4 4L8 4","M16 10L20 10A2 2 0 0 0 22 8L22 6A2 2 0 0 0 20 4L16 4","M8 20L7 20A2 2 0 0 1 5 18L5 16C5 14.9 5.9 14 7 14L8 14","M16 14L17 14A2 2 0 0 1 19 16L19 18A2 2 0 0 1 17 20L16 20"],"fbbbb"]);
+export const SiconAlignCenterVertical = /*#__PURE__*/ createSicon("align-center-vertical", ["M12 2L12 22","M8 10L4 10A2 2 0 0 1 2 8L2 6C2 4.9 2.9 4 4 4L8 4","M16 10L20 10A2 2 0 0 0 22 8L22 6A2 2 0 0 0 20 4L16 4","M8 20L7 20A2 2 0 0 1 5 18L5 16C5 14.9 5.9 14 7 14L8 14","M16 14L17 14A2 2 0 0 1 19 16L19 18A2 2 0 0 1 17 20L16 20"]);
 export default SiconAlignCenterVertical;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "stethoscope"
 import { createSicon } from '../createSicon';
 
-export const SiconStethoscope = /*#__PURE__*/ createSicon("stethoscope", [["M11 2L11 4","M5 2L5 4","M5 3L4 3A2 2 0 0 0 2 5L2 9A6 6 0 0 0 14 9L14 5A2 2 0 0 0 12 3L11 3","M8 15A6 6 0 0 0 20 15L20 12","M18 10A2 2 0 1 0 22 10A2 2 0 1 0 18 10Z"],"eebbf"]);
+export const SiconStethoscope = /*#__PURE__*/ createSicon("stethoscope", ["M11 2L11 4","M5 2L5 4","M5 3L4 3A2 2 0 0 0 2 5L2 9A6 6 0 0 0 14 9L14 5A2 2 0 0 0 12 3L11 3","M8 15A6 6 0 0 0 20 15L20 12","M18 10A2 2 0 1 0 22 10A2 2 0 1 0 18 10Z"]);
 export default SiconStethoscope;

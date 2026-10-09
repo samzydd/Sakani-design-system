@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "house-plus"
 import { createSicon } from '../createSicon';
 
-export const SiconHousePlus = /*#__PURE__*/ createSicon("house-plus", [["M12.35 21L5 21A2 2 0 0 1 3 19L3 10A2 2 0 0 1 3.71 8.47L10.71 2.47A2 2 0 0 1 13.29 2.47L20.29 8.47A2 2 0 0 1 21 10L21 12.35","M14.8 12.4A1 1 0 0 0 14 12L10 12A1 1 0 0 0 9 13L9 21","M15 18L21 18","M18 15L18 21"],"bnff"]);
+export const SiconHousePlus = /*#__PURE__*/ createSicon("house-plus", ["M12.35 21L5 21A2 2 0 0 1 3 19L3 10A2 2 0 0 1 3.71 8.47L10.71 2.47A2 2 0 0 1 13.29 2.47L20.29 8.47A2 2 0 0 1 21 10L21 12.35","M14.8 12.4A1 1 0 0 0 14 12L10 12A1 1 0 0 0 9 13L9 21","M15 18L21 18","M18 15L18 21"]);
 export default SiconHousePlus;

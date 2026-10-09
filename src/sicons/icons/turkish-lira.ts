@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "turkish-lira"
 import { createSicon } from '../createSicon';
 
-export const SiconTurkishLira = /*#__PURE__*/ createSicon("turkish-lira", [["M15 4L5 9","M15 8.5L5 13.5","M18 12A9 9 0 0 1 9 21L9 3"],"fnb"]);
+export const SiconTurkishLira = /*#__PURE__*/ createSicon("turkish-lira", ["M15 4L5 9","M15 8.5L5 13.5","M18 12A9 9 0 0 1 9 21L9 3"]);
 export default SiconTurkishLira;

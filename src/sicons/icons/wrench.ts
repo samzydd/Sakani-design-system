@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wrench"
 import { createSicon } from '../createSicon';
 
-export const SiconWrench = /*#__PURE__*/ createSicon("wrench", [["M14.7 6.3A1 1 0 0 0 14.7 7.7L16.3 9.3A1 1 0 0 0 17.7 9.3L20.806 6.195C21.126 5.873 21.669 5.975 21.789 6.413A6 6 0 0 1 13.53 13.47L5.62 21.38A1 1 0 0 1 2.621 18.38L10.531 10.47A6 6 0 0 1 17.588 2.211C18.026 2.331 18.128 2.873 17.807 3.195L14.7 6.3Z"],"b"]);
+export const SiconWrench = /*#__PURE__*/ createSicon("wrench", ["M14.7 6.3A1 1 0 0 0 14.7 7.7L16.3 9.3A1 1 0 0 0 17.7 9.3L20.806 6.195C21.126 5.873 21.669 5.975 21.789 6.413A6 6 0 0 1 13.53 13.47L5.62 21.38A1 1 0 0 1 2.621 18.38L10.531 10.47A6 6 0 0 1 17.588 2.211C18.026 2.331 18.128 2.873 17.807 3.195L14.7 6.3Z"]);
 export default SiconWrench;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "key-round"
 import { createSicon } from '../createSicon';
 
-export const SiconKeyRound = /*#__PURE__*/ createSicon("key-round", [["M2.586 17.414A2 2 0 0 0 2 18.828L2 21A1 1 0 0 0 3 22L6 22A1 1 0 0 0 7 21L7 20A1 1 0 0 1 8 19L9 19A1 1 0 0 0 10 18L10 17A1 1 0 0 1 11 16L11.172 16A2 2 0 0 0 12.586 15.414L13.4 14.6A6.5 6.5 0 1 0 9.4 10.6L2.586 17.414Z","M16 7.5A0.5 0.5 0 1 0 17 7.5A0.5 0.5 0 1 0 16 7.5Z"],"bn"]);
+export const SiconKeyRound = /*#__PURE__*/ createSicon("key-round", ["M2.586 17.414A2 2 0 0 0 2 18.828L2 21A1 1 0 0 0 3 22L6 22A1 1 0 0 0 7 21L7 20A1 1 0 0 1 8 19L9 19A1 1 0 0 0 10 18L10 17A1 1 0 0 1 11 16L11.172 16A2 2 0 0 0 12.586 15.414L13.4 14.6A6.5 6.5 0 1 0 9.4 10.6L2.586 17.414Z","M16 7.5A0.5 0.5 0 1 0 17 7.5A0.5 0.5 0 1 0 16 7.5Z"]);
 export default SiconKeyRound;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "philippine-peso"
 import { createSicon } from '../createSicon';
 
-export const SiconPhilippinePeso = /*#__PURE__*/ createSicon("philippine-peso", [["M20 11L4 11","M20 7L4 7","M7 21L7 4A1 1 0 0 1 8 3L12 3A1 1 0 0 1 12 15L7 15"],"nnb"]);
+export const SiconPhilippinePeso = /*#__PURE__*/ createSicon("philippine-peso", ["M20 11L4 11","M20 7L4 7","M7 21L7 4A1 1 0 0 1 8 3L12 3A1 1 0 0 1 12 15L7 15"]);
 export default SiconPhilippinePeso;

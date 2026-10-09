@@ -79,12 +79,9 @@ export function decompose(node) {
   // Lines that run along the glass edge (a trash can's lid, a calendar's rings) become part of
   // the glass; lines across it are drawn white on top; lines away from it stay solid.
   const edge = [], detail = [];
-  const role = new Map();
-  for (const s of subs) role.set(s, pure ? 'p' : 'b');
   for (const s of rest) {
     const where = placement(s.points, body);
-    if (where === 'edge') { edge.push(s); role.set(s, 'e'); }
-    else { detail.push([s.d, where === 'on' ? 1 : 0]); role.set(s, where === 'on' ? 'n' : 'f'); }
+    if (where === 'edge') edge.push(s); else detail.push([s.d, where === 'on' ? 1 : 0]);
   }
 
   const h = BODY_SW / 2;
@@ -99,10 +96,8 @@ export function decompose(node) {
     ],
     // [d, onGlass]: each line is drawn whole, never split at the glass edge.
     detail,
-    // Every path in source order with its role: b body (filled), e edge line (part of the body),
-    // n detail on the body, f detail off the body, p line-only icon. Used by the Sicons build.
+    // Every path in source order (used by the Sicons build).
     all: subs.map((s) => s.d),
-    roles: subs.map((s) => role.get(s)).join(''),
     accent: [r3(box[2] - 0.6 * r), r3(box[1] + 0.6 * r), r3(r)],
     pure,
   };

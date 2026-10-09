@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-filter-plus"
 import { createSicon } from '../createSicon';
 
-export const SiconListFilterPlus = /*#__PURE__*/ createSicon("list-filter-plus", [["M12 5L2 5","M6 12L18 12","M9 19L15 19","M16 5L22 5","M19 8L19 2"],"ppppp"]);
+export const SiconListFilterPlus = /*#__PURE__*/ createSicon("list-filter-plus", ["M12 5L2 5","M6 12L18 12","M9 19L15 19","M16 5L22 5","M19 8L19 2"]);
 export default SiconListFilterPlus;

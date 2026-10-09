@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shield-user"
 import { createSicon } from '../createSicon';
 
-export const SiconShieldUser = /*#__PURE__*/ createSicon("shield-user", [["M20 13C20 18 16.5 20.5 12.34 21.95A1 1 0 0 1 11.67 21.94C7.5 20.5 4 18 4 13L4 6A1 1 0 0 1 5 5C7 5 9.5 3.8 11.24 2.28A1.17 1.17 0 0 1 12.76 2.28C14.51 3.81 17 5 19 5A1 1 0 0 1 20 6L20 13Z","M6.376 18.91A6 6 0 0 1 17.625 18.913","M8 11A4 4 0 1 0 16 11A4 4 0 1 0 8 11Z"],"bnn"]);
+export const SiconShieldUser = /*#__PURE__*/ createSicon("shield-user", ["M20 13C20 18 16.5 20.5 12.34 21.95A1 1 0 0 1 11.67 21.94C7.5 20.5 4 18 4 13L4 6A1 1 0 0 1 5 5C7 5 9.5 3.8 11.24 2.28A1.17 1.17 0 0 1 12.76 2.28C14.51 3.81 17 5 19 5A1 1 0 0 1 20 6L20 13Z","M6.376 18.91A6 6 0 0 1 17.625 18.913","M8 11A4 4 0 1 0 16 11A4 4 0 1 0 8 11Z"]);
 export default SiconShieldUser;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "credit-card"
 import { createSicon } from '../createSicon';
 
-export const SiconCreditCard = /*#__PURE__*/ createSicon("credit-card", [["M4 5L20 5A2 2 0 0 1 22 7L22 17A2 2 0 0 1 20 19L4 19A2 2 0 0 1 2 17L2 7A2 2 0 0 1 4 5Z","M2 10L22 10"],"bn"]);
+export const SiconCreditCard = /*#__PURE__*/ createSicon("credit-card", ["M4 5L20 5A2 2 0 0 1 22 7L22 17A2 2 0 0 1 20 19L4 19A2 2 0 0 1 2 17L2 7A2 2 0 0 1 4 5Z","M2 10L22 10"]);
 export default SiconCreditCard;

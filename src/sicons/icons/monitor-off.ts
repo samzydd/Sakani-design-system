@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "monitor-off"
 import { createSicon } from '../createSicon';
 
-export const SiconMonitorOff = /*#__PURE__*/ createSicon("monitor-off", [["M12 17L12 21","M17 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 3.184 3.174","M2 2L22 22","M8 21L16 21","M8.656 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 21.707 16.042"],"ppppp"]);
+export const SiconMonitorOff = /*#__PURE__*/ createSicon("monitor-off", ["M12 17L12 21","M17 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 3.184 3.174","M2 2L22 22","M8 21L16 21","M8.656 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 21.707 16.042"]);
 export default SiconMonitorOff;

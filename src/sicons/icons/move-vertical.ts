@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "move-vertical"
 import { createSicon } from '../createSicon';
 
-export const SiconMoveVertical = /*#__PURE__*/ createSicon("move-vertical", [["M12 2L12 22","M8 18L12 22L16 18","M8 6L12 2L16 6"],"ppp"]);
+export const SiconMoveVertical = /*#__PURE__*/ createSicon("move-vertical", ["M12 2L12 22","M8 18L12 22L16 18","M8 6L12 2L16 6"]);
 export default SiconMoveVertical;

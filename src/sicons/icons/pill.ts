@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pill"
 import { createSicon } from '../createSicon';
 
-export const SiconPill = /*#__PURE__*/ createSicon("pill", [["M10.5 20.5L20.5 10.5A4.95 4.95 0 1 0 13.5 3.5L3.5 13.5A4.95 4.95 0 1 0 10.5 20.5Z","M8.5 8.5L15.5 15.5"],"bn"]);
+export const SiconPill = /*#__PURE__*/ createSicon("pill", ["M10.5 20.5L20.5 10.5A4.95 4.95 0 1 0 13.5 3.5L3.5 13.5A4.95 4.95 0 1 0 10.5 20.5Z","M8.5 8.5L15.5 15.5"]);
 export default SiconPill;

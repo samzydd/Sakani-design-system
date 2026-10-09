@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chevron-right"
 import { createSicon } from '../createSicon';
 
-export const SiconChevronRight = /*#__PURE__*/ createSicon("chevron-right", [["M9 18L12.172 14.828A4 4 0 0 0 12.172 9.172L9 6"],"p"]);
+export const SiconChevronRight = /*#__PURE__*/ createSicon("chevron-right", ["M9 18L12.172 14.828A4 4 0 0 0 12.172 9.172L9 6"]);
 export default SiconChevronRight;

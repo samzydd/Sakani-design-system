@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ampersand"
 import { createSicon } from '../createSicon';
 
-export const SiconAmpersand = /*#__PURE__*/ createSicon("ampersand", [["M16 12L19 12","M17.5 12A8 8 0 0 1 9.5 20A4.5 4.5 0 0 1 5 15.5C5 9.5 13 11.5 13 7A3 3 0 1 0 7 7C7 10 9.5 15.5 19 20"],"pp"]);
+export const SiconAmpersand = /*#__PURE__*/ createSicon("ampersand", ["M16 12L19 12","M17.5 12A8 8 0 0 1 9.5 20A4.5 4.5 0 0 1 5 15.5C5 9.5 13 11.5 13 7A3 3 0 1 0 7 7C7 10 9.5 15.5 19 20"]);
 export default SiconAmpersand;

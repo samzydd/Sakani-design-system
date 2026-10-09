@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "between-horizontal-end"
 import { createSicon } from '../createSicon';
 
-export const SiconBetweenHorizontalEnd = /*#__PURE__*/ createSicon("between-horizontal-end", [["M4 3L15 3A1 1 0 0 1 16 4L16 9A1 1 0 0 1 15 10L4 10A1 1 0 0 1 3 9L3 4A1 1 0 0 1 4 3Z","M22 15L20.5 13.5A2.121 2.121 0 0 1 20.5 10.5L22 9","M4 14L15 14A1 1 0 0 1 16 15L16 20A1 1 0 0 1 15 21L4 21A1 1 0 0 1 3 20L3 15A1 1 0 0 1 4 14Z"],"bfb"]);
+export const SiconBetweenHorizontalEnd = /*#__PURE__*/ createSicon("between-horizontal-end", ["M4 3L15 3A1 1 0 0 1 16 4L16 9A1 1 0 0 1 15 10L4 10A1 1 0 0 1 3 9L3 4A1 1 0 0 1 4 3Z","M22 15L20.5 13.5A2.121 2.121 0 0 1 20.5 10.5L22 9","M4 14L15 14A1 1 0 0 1 16 15L16 20A1 1 0 0 1 15 21L4 21A1 1 0 0 1 3 20L3 15A1 1 0 0 1 4 14Z"]);
 export default SiconBetweenHorizontalEnd;

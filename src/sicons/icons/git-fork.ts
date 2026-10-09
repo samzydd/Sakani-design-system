@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-fork"
 import { createSicon } from '../createSicon';
 
-export const SiconGitFork = /*#__PURE__*/ createSicon("git-fork", [["M9 18A3 3 0 1 0 15 18A3 3 0 1 0 9 18Z","M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z","M15 6A3 3 0 1 0 21 6A3 3 0 1 0 15 6Z","M18 9L18 11C18 11.6 17.6 12 17 12L7 12C6.4 12 6 11.6 6 11L6 9","M12 12L12 15"],"bbbff"]);
+export const SiconGitFork = /*#__PURE__*/ createSicon("git-fork", ["M9 18A3 3 0 1 0 15 18A3 3 0 1 0 9 18Z","M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z","M15 6A3 3 0 1 0 21 6A3 3 0 1 0 15 6Z","M18 9L18 11C18 11.6 17.6 12 17 12L7 12C6.4 12 6 11.6 6 11L6 9","M12 12L12 15"]);
 export default SiconGitFork;

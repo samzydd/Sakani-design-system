@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calendar-arrow-down"
 import { createSicon } from '../createSicon';
 
-export const SiconCalendarArrowDown = /*#__PURE__*/ createSicon("calendar-arrow-down", [["M14 17L18 21L22 17","M16 2L16 5","M18 13L18 21","M21 10.354L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L12.343 21","M3 9L21 9","M8 2L8 5"],"fefbne"]);
+export const SiconCalendarArrowDown = /*#__PURE__*/ createSicon("calendar-arrow-down", ["M14 17L18 21L22 17","M16 2L16 5","M18 13L18 21","M21 10.354L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L12.343 21","M3 9L21 9","M8 2L8 5"]);
 export default SiconCalendarArrowDown;

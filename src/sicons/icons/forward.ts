@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "forward"
 import { createSicon } from '../createSicon';
 
-export const SiconForward = /*#__PURE__*/ createSicon("forward", [["M15 17L20 12L15 7","M4 18L4 16A4 4 0 0 1 8 12L20 12"],"pp"]);
+export const SiconForward = /*#__PURE__*/ createSicon("forward", ["M15 17L20 12L15 7","M4 18L4 16A4 4 0 0 1 8 12L20 12"]);
 export default SiconForward;

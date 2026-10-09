@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-pull-request-draft"
 import { createSicon } from '../createSicon';
 
-export const SiconGitPullRequestDraft = /*#__PURE__*/ createSicon("git-pull-request-draft", [["M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18Z","M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z","M18 6L18 5","M18 11L18 10","M6 9L6 21"],"bbfff"]);
+export const SiconGitPullRequestDraft = /*#__PURE__*/ createSicon("git-pull-request-draft", ["M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18Z","M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z","M18 6L18 5","M18 11L18 10","M6 9L6 21"]);
 export default SiconGitPullRequestDraft;

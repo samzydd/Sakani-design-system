@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "blend"
 import { createSicon } from '../createSicon';
 
-export const SiconBlend = /*#__PURE__*/ createSicon("blend", [["M8 9A7 7 0 1 0 22 9A7 7 0 1 0 8 9Z","M2 15A7 7 0 1 0 16 15A7 7 0 1 0 2 15Z"],"bb"]);
+export const SiconBlend = /*#__PURE__*/ createSicon("blend", ["M8 9A7 7 0 1 0 22 9A7 7 0 1 0 8 9Z","M2 15A7 7 0 1 0 16 15A7 7 0 1 0 2 15Z"]);
 export default SiconBlend;

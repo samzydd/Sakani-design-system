@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clock-arrow-down"
 import { createSicon } from '../createSicon';
 
-export const SiconClockArrowDown = /*#__PURE__*/ createSicon("clock-arrow-down", [["M12 6L12 10.882A1.809 1.809 0 0 0 13 12.5L14 13","M12.337 21.994A10 10 0 1 1 21.925 13.227","M14 18L18 22L22 18","M18 14L18 22"],"nbfn"]);
+export const SiconClockArrowDown = /*#__PURE__*/ createSicon("clock-arrow-down", ["M12 6L12 10.882A1.809 1.809 0 0 0 13 12.5L14 13","M12.337 21.994A10 10 0 1 1 21.925 13.227","M14 18L18 22L22 18","M18 14L18 22"]);
 export default SiconClockArrowDown;

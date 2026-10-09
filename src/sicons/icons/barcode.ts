@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "barcode"
 import { createSicon } from '../createSicon';
 
-export const SiconBarcode = /*#__PURE__*/ createSicon("barcode", [["M3 5L3 19","M8 5L8 19","M12 5L12 19","M17 5L17 19","M21 5L21 19"],"ppppp"]);
+export const SiconBarcode = /*#__PURE__*/ createSicon("barcode", ["M3 5L3 19","M8 5L8 19","M12 5L12 19","M17 5L17 19","M21 5L21 19"]);
 export default SiconBarcode;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ban"
 import { createSicon } from '../createSicon';
 
-export const SiconBan = /*#__PURE__*/ createSicon("ban", [["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M4.929 4.929L19.07 19.071"],"bn"]);
+export const SiconBan = /*#__PURE__*/ createSicon("ban", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M4.929 4.929L19.07 19.071"]);
 export default SiconBan;

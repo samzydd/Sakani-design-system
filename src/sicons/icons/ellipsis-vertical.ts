@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ellipsis-vertical"
 import { createSicon } from '../createSicon';
 
-export const SiconEllipsisVertical = /*#__PURE__*/ createSicon("ellipsis-vertical", [["M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12Z","M11 5A1 1 0 1 0 13 5A1 1 0 1 0 11 5Z","M11 19A1 1 0 1 0 13 19A1 1 0 1 0 11 19Z"],"ppp"]);
+export const SiconEllipsisVertical = /*#__PURE__*/ createSicon("ellipsis-vertical", ["M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12Z","M11 5A1 1 0 1 0 13 5A1 1 0 1 0 11 5Z","M11 19A1 1 0 1 0 13 19A1 1 0 1 0 11 19Z"]);
 export default SiconEllipsisVertical;

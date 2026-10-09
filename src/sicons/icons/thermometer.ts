@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "thermometer"
 import { createSicon } from '../createSicon';
 
-export const SiconThermometer = /*#__PURE__*/ createSicon("thermometer", [["M14 4L14 14.54A4 4 0 1 1 10 14.54L10 4A2 2 0 0 1 14 4Z"],"b"]);
+export const SiconThermometer = /*#__PURE__*/ createSicon("thermometer", ["M14 4L14 14.54A4 4 0 1 1 10 14.54L10 4A2 2 0 0 1 14 4Z"]);
 export default SiconThermometer;

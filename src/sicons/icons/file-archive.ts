@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-archive"
 import { createSicon } from '../createSicon';
 
-export const SiconFileArchive = /*#__PURE__*/ createSicon("file-archive", [["M13.659 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 15.5","M14 2L14 7A1 1 0 0 0 15 8L20 8","M8 12L8 11","M8 18L8 16","M8 7L8 6","M6 20A2 2 0 1 0 10 20A2 2 0 1 0 6 20Z"],"bnnenf"]);
+export const SiconFileArchive = /*#__PURE__*/ createSicon("file-archive", ["M13.659 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 15.5","M14 2L14 7A1 1 0 0 0 15 8L20 8","M8 12L8 11","M8 18L8 16","M8 7L8 6","M6 20A2 2 0 1 0 10 20A2 2 0 1 0 6 20Z"]);
 export default SiconFileArchive;

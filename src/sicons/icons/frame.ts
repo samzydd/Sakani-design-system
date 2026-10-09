@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "frame"
 import { createSicon } from '../createSicon';
 
-export const SiconFrame = /*#__PURE__*/ createSicon("frame", [["M22 6L2 6","M22 18L2 18","M6 2L6 22","M18 2L18 22"],"pppp"]);
+export const SiconFrame = /*#__PURE__*/ createSicon("frame", ["M22 6L2 6","M22 18L2 18","M6 2L6 22","M18 2L18 22"]);
 export default SiconFrame;

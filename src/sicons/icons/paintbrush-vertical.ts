@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "paintbrush-vertical"
 import { createSicon } from '../createSicon';
 
-export const SiconPaintbrushVertical = /*#__PURE__*/ createSicon("paintbrush-vertical", [["M10 2L10 4","M14 2L14 6","M17 2A1 1 0 0 1 18 3L18 12L6 12L6 3A1 1 0 0 1 7 2L17 2Z","M6 12A1 1 0 0 0 5 13L5 14A2 2 0 0 0 7 16L9 16A1 1 0 0 1 10 17L10 19.9A2 2 0 1 0 14 19.9L14 17A1 1 0 0 1 15 16L17 16A2 2 0 0 0 19 14L19 13A1 1 0 0 0 18 12"],"nnbb"]);
+export const SiconPaintbrushVertical = /*#__PURE__*/ createSicon("paintbrush-vertical", ["M10 2L10 4","M14 2L14 6","M17 2A1 1 0 0 1 18 3L18 12L6 12L6 3A1 1 0 0 1 7 2L17 2Z","M6 12A1 1 0 0 0 5 13L5 14A2 2 0 0 0 7 16L9 16A1 1 0 0 1 10 17L10 19.9A2 2 0 1 0 14 19.9L14 17A1 1 0 0 1 15 16L17 16A2 2 0 0 0 19 14L19 13A1 1 0 0 0 18 12"]);
 export default SiconPaintbrushVertical;

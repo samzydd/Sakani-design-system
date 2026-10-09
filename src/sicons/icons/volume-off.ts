@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "volume-off"
 import { createSicon } from '../createSicon';
 
-export const SiconVolumeOff = /*#__PURE__*/ createSicon("volume-off", [["M16 9A5 5 0 0 1 16.95 11.293","M19.364 5.636A9 9 0 0 1 21.253 15.596","M2 2L22 22","M7 7L6.413 7.587A1.4 1.4 0 0 1 5.416 8L3 8A1 1 0 0 0 2 9L2 15A1 1 0 0 0 3 16L5.416 16A1.4 1.4 0 0 1 6.413 16.413L9.796 19.797A0.705 0.705 0 0 0 11 19.298L11 11","M9.828 4.172A0.686 0.686 0 0 1 11 4.657L11 5.343"],"fffbf"]);
+export const SiconVolumeOff = /*#__PURE__*/ createSicon("volume-off", ["M16 9A5 5 0 0 1 16.95 11.293","M19.364 5.636A9 9 0 0 1 21.253 15.596","M2 2L22 22","M7 7L6.413 7.587A1.4 1.4 0 0 1 5.416 8L3 8A1 1 0 0 0 2 9L2 15A1 1 0 0 0 3 16L5.416 16A1.4 1.4 0 0 1 6.413 16.413L9.796 19.797A0.705 0.705 0 0 0 11 19.298L11 11","M9.828 4.172A0.686 0.686 0 0 1 11 4.657L11 5.343"]);
 export default SiconVolumeOff;

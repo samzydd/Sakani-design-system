@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-horizontal-space-between"
 import { createSicon } from '../createSicon';
 
-export const SiconAlignHorizontalSpaceBetween = /*#__PURE__*/ createSicon("align-horizontal-space-between", [["M5 5L7 5A2 2 0 0 1 9 7L9 17A2 2 0 0 1 7 19L5 19A2 2 0 0 1 3 17L3 7A2 2 0 0 1 5 5Z","M17 7L19 7A2 2 0 0 1 21 9L21 15A2 2 0 0 1 19 17L17 17A2 2 0 0 1 15 15L15 9A2 2 0 0 1 17 7Z","M3 2L3 22","M21 2L21 22"],"bbef"]);
+export const SiconAlignHorizontalSpaceBetween = /*#__PURE__*/ createSicon("align-horizontal-space-between", ["M5 5L7 5A2 2 0 0 1 9 7L9 17A2 2 0 0 1 7 19L5 19A2 2 0 0 1 3 17L3 7A2 2 0 0 1 5 5Z","M17 7L19 7A2 2 0 0 1 21 9L21 15A2 2 0 0 1 19 17L17 17A2 2 0 0 1 15 15L15 9A2 2 0 0 1 17 7Z","M3 2L3 22","M21 2L21 22"]);
 export default SiconAlignHorizontalSpaceBetween;

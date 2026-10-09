@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sun-dim"
 import { createSicon } from '../createSicon';
 
-export const SiconSunDim = /*#__PURE__*/ createSicon("sun-dim", [["M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z","M12 4L12.01 4","M20 12L20.01 12","M12 20L12.01 20","M4 12L4.01 12","M17.657 6.343L17.667 6.343","M17.657 17.657L17.667 17.657","M6.343 17.657L6.353 17.657","M6.343 6.343L6.353 6.343"],"bffffffff"]);
+export const SiconSunDim = /*#__PURE__*/ createSicon("sun-dim", ["M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z","M12 4L12.01 4","M20 12L20.01 12","M12 20L12.01 20","M4 12L4.01 12","M17.657 6.343L17.667 6.343","M17.657 17.657L17.667 17.657","M6.343 17.657L6.353 17.657","M6.343 6.343L6.353 6.343"]);
 export default SiconSunDim;

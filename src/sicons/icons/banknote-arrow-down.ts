@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "banknote-arrow-down"
 import { createSicon } from '../createSicon';
 
-export const SiconBanknoteArrowDown = /*#__PURE__*/ createSicon("banknote-arrow-down", [["M12 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6L20 6A2 2 0 0 1 22 8L22 13","M16 19L19 22L22 19","M18 12L18.01 12","M19 16L19 22","M6 12L6.01 12","M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z"],"bfnfnn"]);
+export const SiconBanknoteArrowDown = /*#__PURE__*/ createSicon("banknote-arrow-down", ["M12 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6L20 6A2 2 0 0 1 22 8L22 13","M16 19L19 22L22 19","M18 12L18.01 12","M19 16L19 22","M6 12L6.01 12","M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z"]);
 export default SiconBanknoteArrowDown;

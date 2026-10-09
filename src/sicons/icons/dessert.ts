@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "dessert"
 import { createSicon } from '../createSicon';
 
-export const SiconDessert = /*#__PURE__*/ createSicon("dessert", [["M10.162 3.167A10 10 0 0 0 2 13A2 2 0 0 0 6 13L6 12A2 2 0 0 1 10 12L10 16A2 2 0 0 0 14 16L14 12A2 2 0 0 1 18 12L18 13A2 2 0 0 0 22 12.994A10 10 0 0 0 13.839 3.168","M20.804 14.869A9 9 0 0 1 3.196 14.869","M10 4A2 2 0 1 0 14 4A2 2 0 1 0 10 4Z"],"ffb"]);
+export const SiconDessert = /*#__PURE__*/ createSicon("dessert", ["M10.162 3.167A10 10 0 0 0 2 13A2 2 0 0 0 6 13L6 12A2 2 0 0 1 10 12L10 16A2 2 0 0 0 14 16L14 12A2 2 0 0 1 18 12L18 13A2 2 0 0 0 22 12.994A10 10 0 0 0 13.839 3.168","M20.804 14.869A9 9 0 0 1 3.196 14.869","M10 4A2 2 0 1 0 14 4A2 2 0 1 0 10 4Z"]);
 export default SiconDessert;

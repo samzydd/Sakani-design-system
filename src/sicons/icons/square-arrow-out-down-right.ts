@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-arrow-out-down-right"
 import { createSicon } from '../createSicon';
 
-export const SiconSquareArrowOutDownRight = /*#__PURE__*/ createSicon("square-arrow-out-down-right", [["M21 11L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L11 21","M21 21L12 12","M21 15L21 21L15 21"],"bff"]);
+export const SiconSquareArrowOutDownRight = /*#__PURE__*/ createSicon("square-arrow-out-down-right", ["M21 11L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L11 21","M21 21L12 12","M21 15L21 21L15 21"]);
 export default SiconSquareArrowOutDownRight;

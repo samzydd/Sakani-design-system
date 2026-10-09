@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flashlight-off"
 import { createSicon } from '../createSicon';
 
-export const SiconFlashlightOff = /*#__PURE__*/ createSicon("flashlight-off", [["M11.652 6L18 6","M12 13L12 14","M16 16L16 20A2 2 0 0 1 14 22L10 22A2 2 0 0 1 8 20L8 12A4 4 0 0 0 7.2 9.6L6.6 8.8A3 3 0 0 1 6 7L6 6","M2 2L22 22","M7.649 2L17 2A1 1 0 0 1 18 3L18 7A3 3 0 0 1 17.4 8.8L16.8 9.6A4 4 0 0 0 16.25 10.607"],"nebnb"]);
+export const SiconFlashlightOff = /*#__PURE__*/ createSicon("flashlight-off", ["M11.652 6L18 6","M12 13L12 14","M16 16L16 20A2 2 0 0 1 14 22L10 22A2 2 0 0 1 8 20L8 12A4 4 0 0 0 7.2 9.6L6.6 8.8A3 3 0 0 1 6 7L6 6","M2 2L22 22","M7.649 2L17 2A1 1 0 0 1 18 3L18 7A3 3 0 0 1 17.4 8.8L16.8 9.6A4 4 0 0 0 16.25 10.607"]);
 export default SiconFlashlightOff;

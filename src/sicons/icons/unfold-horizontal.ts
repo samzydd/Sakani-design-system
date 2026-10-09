@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "unfold-horizontal"
 import { createSicon } from '../createSicon';
 
-export const SiconUnfoldHorizontal = /*#__PURE__*/ createSicon("unfold-horizontal", [["M16 12L22 12","M8 12L2 12","M12 2L12 4","M12 8L12 10","M12 14L12 16","M12 20L12 22","M19 15L22 12L19 9","M5 9L2 12L5 15"],"pppppppp"]);
+export const SiconUnfoldHorizontal = /*#__PURE__*/ createSicon("unfold-horizontal", ["M16 12L22 12","M8 12L2 12","M12 2L12 4","M12 8L12 10","M12 14L12 16","M12 20L12 22","M19 15L22 12L19 9","M5 9L2 12L5 15"]);
 export default SiconUnfoldHorizontal;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "crop"
 import { createSicon } from '../createSicon';
 
-export const SiconCrop = /*#__PURE__*/ createSicon("crop", [["M6 2L6 16A2 2 0 0 0 8 18L22 18","M18 22L18 8A2 2 0 0 0 16 6L2 6"],"pp"]);
+export const SiconCrop = /*#__PURE__*/ createSicon("crop", ["M6 2L6 16A2 2 0 0 0 8 18L22 18","M18 22L18 8A2 2 0 0 0 16 6L2 6"]);
 export default SiconCrop;
