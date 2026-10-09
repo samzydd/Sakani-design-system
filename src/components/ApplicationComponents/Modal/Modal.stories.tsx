@@ -26,10 +26,10 @@ focus-return-on-close idea already used by Popover.` } } },
 } satisfies Meta<typeof Modal>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
-  render: () => {
+  render: function Render() {
     const [open, setOpen] = React.useState(true);
     return (
       <>
@@ -47,7 +47,7 @@ export const Default: Story = {
 };
 
 export const Destructive: Story = {
-  render: () => {
+  render: function Render() {
     const [open, setOpen] = React.useState(true);
     return (
       <>
@@ -67,7 +67,7 @@ export const Destructive: Story = {
 };
 
 export const Closed: Story = {
-  render: () => {
+  render: function Render() {
     const [open, setOpen] = React.useState(false);
     return (
       <>
@@ -85,7 +85,7 @@ export const Closed: Story = {
 };
 
 export const DarkMode: Story = {
-  render: () => {
+  render: function Render() {
     const [open, setOpen] = React.useState(true);
     return (
       <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)', minHeight: 300 }}>

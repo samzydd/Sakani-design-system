@@ -32,10 +32,10 @@ intentional per-variant difference.` } } },
 } satisfies Meta<typeof CartItem>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof CartItem>;
 
 export const Default: Story = {
-  render: () => {
+  render: function Render() {
     const [quantity, setQuantity] = React.useState(1);
     return (
       <CartItem
@@ -51,7 +51,7 @@ export const Default: Story = {
 };
 
 export const Sale: Story = {
-  render: () => {
+  render: function Render() {
     const [quantity, setQuantity] = React.useState(1);
     return (
       <CartItem
@@ -68,7 +68,7 @@ export const Sale: Story = {
 };
 
 export const List: Story = {
-  render: () => {
+  render: function Render() {
     const [qty1, setQty1] = React.useState(1);
     const [qty2, setQty2] = React.useState(1);
     return (
@@ -91,7 +91,7 @@ export const AtMinQuantity: Story = {
 };
 
 export const DarkMode: Story = {
-  render: () => {
+  render: function Render() {
     const [quantity, setQuantity] = React.useState(1);
     return (
       <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)' }}>

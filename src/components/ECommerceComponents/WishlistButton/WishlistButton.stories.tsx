@@ -28,14 +28,14 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => {
+  render: function Render() {
     const [saved, setSaved] = React.useState(false);
     return <WishlistButton saved={saved} onToggle={setSaved} label="Ceramic Pour-Over Mug" />;
   },
 };
 
 export const Saved: Story = {
-  render: () => {
+  render: function Render() {
     const [saved, setSaved] = React.useState(true);
     return <WishlistButton saved={saved} onToggle={setSaved} label="Ceramic Pour-Over Mug" />;
   },

@@ -37,7 +37,7 @@ export const HorizontalFilled: Story = {
 
 /** A file picked here is previewed immediately, same as a real consumer wiring src to state. */
 export const Interactive: Story = {
-  render: (args) => {
+  render: function Render(args) {
     const [src, setSrc] = React.useState<string | undefined>(args.src);
     return (
       <AvatarUpload

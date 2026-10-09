@@ -39,7 +39,7 @@ Dark mode: all colors are semantic tokens, so .dark re-themes automatically.` } 
 } satisfies Meta<typeof Table>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Table>;
 
 export const Default: Story = { render: () => <Table columns={columns as any} rows={rows} /> };
 export const Selectable: Story = { render: () => <Table columns={columns as any} rows={rows} selectable /> };
@@ -72,7 +72,7 @@ export const AutoResponsive: Story = {
  * anywhere in the row), so selecting a status badge or its text doesn't
  * accidentally start a drag. */
 export const Reorderable: Story = {
-  render: () => {
+  render: function Render() {
     function ReorderableTable() {
       const [order, setOrder] = useState(rows);
       return <Table columns={columns as any} rows={order} rowKey={(r) => r.email} reorderable onReorder={setOrder} />;

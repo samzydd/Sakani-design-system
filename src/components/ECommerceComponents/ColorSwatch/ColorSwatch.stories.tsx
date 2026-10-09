@@ -32,20 +32,20 @@ passes in.` } } },
 } satisfies Meta<typeof ColorSwatch>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof ColorSwatch>;
 
 /** ColorSwatch is a controlled component -- `selected` is a prop, not
  * internal state, so clicking only fires `onSelect`; the story has to wire
  * that back to `selected` itself for the click to visibly do anything
  * (same pattern as the Group story below). */
 export const Unselected: Story = {
-  render: () => {
+  render: function Render() {
     const [selected, setSelected] = React.useState(false);
     return <ColorSwatch color="#1B284D" label="Navy" selected={selected} onSelect={() => setSelected(true)} />;
   },
 };
 export const Selected: Story = {
-  render: () => {
+  render: function Render() {
     const [selected, setSelected] = React.useState(true);
     return <ColorSwatch color="#1B284D" label="Navy" selected={selected} onSelect={() => setSelected(!selected)} />;
   },
@@ -53,7 +53,7 @@ export const Selected: Story = {
 export const Unavailable: Story = { args: { color: '#1B284D', label: 'Navy', available: false } };
 
 export const Group: Story = {
-  render: () => {
+  render: function Render() {
     const colors = [
       { color: '#1B284D', label: 'Navy' },
       { color: '#D01B26', label: 'Red' },

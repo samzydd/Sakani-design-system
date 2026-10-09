@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Calendar, MessageSquare, Flag, Building2, CircleAlert, File as FileIcon } from 'lucide-react';
+import { Calendar, MessageSquare, Flag, Building2, CircleAlert } from 'lucide-react';
 import { BoardCard } from './BoardCard';
 import { Badge } from '../Badge';
 import { Checkbox } from '../Checkbox';

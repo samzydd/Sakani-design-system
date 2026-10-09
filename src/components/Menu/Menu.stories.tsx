@@ -16,7 +16,7 @@ This is a presentational surface; positioning/anchoring is left to the
 caller (pair with Popover for click-to-open behavior).` } } },
 } satisfies Meta<typeof Menu>;
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Menu>;
 
 const Sample = () => (
   <Menu aria-label="Row actions">

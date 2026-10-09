@@ -13,15 +13,15 @@ Size axis → size prop (sm | md | lg)` } } },
 } satisfies Meta<typeof Spinner>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Spinner>;
 
 export const Small:  Story = { args: { size: 'sm' } };
 export const Medium: Story = { args: { size: 'md' } };
 export const Large:  Story = { args: { size: 'lg' } };
 export const OnAccent: Story = {
   render: () => (
-    <div style={{ display: 'inline-flex', padding: 16, borderRadius: 8, background: 'var(--color-accent-default)' }}>
-      <Spinner size="md" style={{ color: 'var(--color-fg-on-accent)' } as React.CSSProperties} />
+    <div style={{ display: 'inline-flex', padding: 16, borderRadius: 8, background: 'var(--color-accent-default)', color: 'var(--color-fg-on-accent)' }}>
+      <Spinner size="md" />
     </div>
   ),
 };

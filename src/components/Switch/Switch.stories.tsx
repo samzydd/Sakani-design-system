@@ -22,7 +22,7 @@ export const WithDescription: Story = {
 
 /** Help text reflects the live state, left-aligned with the label. */
 export const Controlled: Story = {
-  render: () => {
+  render: function Render() {
     const [on, setOn] = React.useState(true);
     return (
       <Switch

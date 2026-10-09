@@ -29,7 +29,7 @@ emphasis="solid") -- an exact match for Figma's own badge spec.` } } },
 } satisfies Meta<typeof PriceDisplay>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof PriceDisplay>;
 
 export const Default: Story = { args: { price: 28 } };
 export const Sale: Story = { args: { price: 34, compareAtPrice: 48 } };

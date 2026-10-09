@@ -29,10 +29,10 @@ bound to the same tokens.` } } },
 } satisfies Meta<typeof MultistepModalBlock>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof MultistepModalBlock>;
 
 export const Step1: Story = {
-  render: () => {
+  render: function Render() {
     const [open, setOpen] = React.useState(true);
     return (
       <>
@@ -44,7 +44,7 @@ export const Step1: Story = {
 };
 
 export const Step2: Story = {
-  render: () => {
+  render: function Render() {
     const [open, setOpen] = React.useState(true);
     return (
       <>
@@ -56,7 +56,7 @@ export const Step2: Story = {
 };
 
 export const Step3: Story = {
-  render: () => {
+  render: function Render() {
     const [open, setOpen] = React.useState(true);
     return (
       <>
@@ -68,7 +68,7 @@ export const Step3: Story = {
 };
 
 export const DarkMode: Story = {
-  render: () => {
+  render: function Render() {
     const [open, setOpen] = React.useState(true);
     return (
       <div className="dark" style={{ padding: 24, background: 'var(--color-bg-canvas)', minHeight: 300 }}>

@@ -22,16 +22,16 @@ of \`selected\`, same reasoning as ColorSwatch.` } } },
 } satisfies Meta<typeof SizeSelector>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof SizeSelector>;
 
 export const Unselected: Story = {
-  render: () => {
+  render: function Render() {
     const [selected, setSelected] = React.useState(false);
     return <SizeSelector size="M" selected={selected} onSelect={() => setSelected(true)} />;
   },
 };
 export const Selected: Story = {
-  render: () => {
+  render: function Render() {
     const [selected, setSelected] = React.useState(true);
     return <SizeSelector size="M" selected={selected} onSelect={() => setSelected(!selected)} />;
   },
@@ -39,7 +39,7 @@ export const Selected: Story = {
 export const Unavailable: Story = { args: { size: 'M', available: false } };
 
 export const Group: Story = {
-  render: () => {
+  render: function Render() {
     const sizes = ['XS', 'S', 'M', 'L', 'XL'];
     const [selected, setSelected] = React.useState('M');
     return (

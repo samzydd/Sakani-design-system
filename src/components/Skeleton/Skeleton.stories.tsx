@@ -9,23 +9,23 @@ const meta = {
 Use to represent content that is loading before data arrives.
 
 Variant → text (inline pill) | rect (block area) | circle (avatar)` } } },
-  argTypes: { variant: { control: 'select', options: ['line', 'circle', 'block'] } },
+  argTypes: { variant: { control: 'select', options: ['text', 'circle', 'rect'] } },
 } satisfies Meta<typeof Skeleton>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Skeleton>;
 
-export const Line:   Story = { args: { variant: 'line', width: 200 } };
+export const Line:   Story = { args: { variant: 'text', width: 200 } };
 export const Circle: Story = { args: { variant: 'circle', width: 40, height: 40 } };
-export const Block:  Story = { args: { variant: 'block', width: 320, height: 180 } };
+export const Block:  Story = { args: { variant: 'rect', width: 320, height: 180 } };
 
 export const CardPlaceholder: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 280, padding: 16, border: '1px solid var(--color-border-default)', borderRadius: 'var(--radius-lg)' }}>
-      <Skeleton variant="block" height={140} />
-      <Skeleton variant="line" width="60%" />
-      <Skeleton variant="line" width="90%" />
-      <Skeleton variant="line" width="75%" />
+      <Skeleton variant="rect" height={140} />
+      <Skeleton variant="text" width="60%" />
+      <Skeleton variant="text" width="90%" />
+      <Skeleton variant="text" width="75%" />
     </div>
   ),
 };

@@ -26,7 +26,7 @@ SidebarSubItem, SidebarGroupLabel, SidebarDivider, SidebarPromo, SidebarFooter.`
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Sidebar>;
 
 const FullSidebar = () => (
   <Sidebar>

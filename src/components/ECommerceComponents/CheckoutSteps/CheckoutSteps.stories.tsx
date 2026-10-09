@@ -29,7 +29,7 @@ either.` } } },
 } satisfies Meta<typeof CheckoutSteps>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof CheckoutSteps>;
 
 export const Step2Shipping: Story = { args: { currentStep: 1 } };
 export const Step3Payment: Story = { args: { currentStep: 2 } };

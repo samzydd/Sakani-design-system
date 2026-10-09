@@ -39,24 +39,24 @@ disables it via the stylesheet (the new value still swaps instantly).` } } },
 } satisfies Meta<typeof QuantitySelector>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof QuantitySelector>;
 
 export const Default: Story = {
-  render: () => {
+  render: function Render() {
     const [quantity, setQuantity] = React.useState(1);
     return <QuantitySelector quantity={quantity} onQuantityChange={setQuantity} />;
   },
 };
 
 export const Incremented: Story = {
-  render: () => {
+  render: function Render() {
     const [quantity, setQuantity] = React.useState(3);
     return <QuantitySelector quantity={quantity} onQuantityChange={setQuantity} />;
   },
 };
 
 export const WithMax: Story = {
-  render: () => {
+  render: function Render() {
     const [quantity, setQuantity] = React.useState(5);
     return <QuantitySelector quantity={quantity} onQuantityChange={setQuantity} max={5} />;
   },

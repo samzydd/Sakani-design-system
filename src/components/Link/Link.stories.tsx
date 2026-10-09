@@ -14,7 +14,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default:  Story = {};
-export const Disabled: Story = { args: { disabled: true, children: 'Unavailable link' } };
 export const External: Story = { args: { external: true, children: 'View on GitHub', href: 'https://github.com' } };
 
 /** Dark mode — the .dark class flips the semantic token layer; no component changes needed. */

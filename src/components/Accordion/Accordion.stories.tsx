@@ -17,7 +17,7 @@ header toggles the panel. Supports single or multiple open items.` } } },
 } satisfies Meta<typeof Accordion>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Accordion>;
 
 export const Default: Story = {
   render: () => (

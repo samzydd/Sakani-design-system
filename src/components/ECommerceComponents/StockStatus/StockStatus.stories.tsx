@@ -23,7 +23,7 @@ optional \`label\` override still exists for anything unusual.` } } },
 } satisfies Meta<typeof StockStatus>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof StockStatus>;
 
 export const InStock: Story = { args: { quantity: 24 } };
 export const LowStock: Story = { args: { quantity: 3 } };

@@ -41,7 +41,7 @@ directly -- exact match for the card's own save/unsave affordance.` } } },
 } satisfies Meta<typeof ProductCard>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof ProductCard>;
 
 const mugColors = [
   { label: 'Navy', color: '#1B284D' },
@@ -51,7 +51,7 @@ const mugColors = [
 ];
 
 export const Default: Story = {
-  render: () => {
+  render: function Render() {
     const [selected, setSelected] = React.useState('Bone');
     const [wishlisted, setWishlisted] = React.useState(false);
     return (
@@ -71,7 +71,7 @@ export const Default: Story = {
 };
 
 export const Sale: Story = {
-  render: () => {
+  render: function Render() {
     const [selected, setSelected] = React.useState('Bone');
     const [wishlisted, setWishlisted] = React.useState(false);
     return (
@@ -109,7 +109,7 @@ export const OutOfStock: Story = {
 };
 
 export const Grid: Story = {
-  render: () => {
+  render: function Render() {
     // Out of stock doesn't render a wishlist button at all, so no state
     // needed for the serving board card.
     const [mugWishlisted, setMugWishlisted] = React.useState(false);

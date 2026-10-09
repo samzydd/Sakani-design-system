@@ -16,7 +16,7 @@ the control doesn't change width as you page through.` } } },
 } satisfies Meta<typeof Pagination>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Pagination>;
 
 const Interactive = ({ total = 10, start = 1, siblings }: { total?: number; start?: number; siblings?: number }) => {
   const [page, setPage] = React.useState(start);
