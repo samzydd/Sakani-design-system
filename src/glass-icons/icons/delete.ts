@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "delete"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDelete = /*#__PURE__*/ createGlassIcon("delete", [["path",{"d":"M10 5a2 2 0 0 0 -1.344 0.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2z"},1],["path",{"d":"M12 9l6 6"},0],["path",{"d":"M18 9l-6 6"},0]]);
+export const GlassDelete = /*#__PURE__*/ createGlassIcon("delete", [[["M10 5A2 2 0 0 0 8.656 5.519L2.328 11.259A1 1 0 0 0 2.328 12.74L8.656 18.481A2 2 0 0 0 10 19L20 19A2 2 0 0 0 22 17L22 7A2 2 0 0 0 20 5Z",1]],[["M12 9L18 15",1],["M18 9L12 15",1]],[20.4,6.6,4.75],0]);
 export default GlassDelete;

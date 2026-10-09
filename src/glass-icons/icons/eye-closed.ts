@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "eye-closed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEyeClosed = /*#__PURE__*/ createGlassIcon("eye-closed", [["path",{"d":"M15 18l-0.722 -3.25"},0],["path",{"d":"M2 8a10.645 10.645 0 0 0 20 0"},0],["path",{"d":"M20 15l-1.726 -2.05"},0],["path",{"d":"M4 15l1.726 -2.05"},0],["path",{"d":"M9 18l0.722 -3.25"},0]]);
+export const GlassEyeClosed = /*#__PURE__*/ createGlassIcon("eye-closed", [[["M15 18L14.278 14.75",0],["M2 8A10.645 10.645 0 0 0 22 8",0],["M20 15L18.274 12.95",0],["M4 15L5.726 12.95",0],["M9 18L9.722 14.75",0]],[],[20.4,9.6,4.75],1]);
 export default GlassEyeClosed;

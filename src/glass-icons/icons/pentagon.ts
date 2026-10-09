@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pentagon"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPentagon = /*#__PURE__*/ createGlassIcon("pentagon", [["path",{"d":"M10.83 2.38a2 2 0 0 1 2.34 0l8 5.74a2 2 0 0 1 0.73 2.25l-3.04 9.26a2 2 0 0 1 -1.9 1.37H7.04a2 2 0 0 1 -1.9 -1.37L2.1 10.37a2 2 0 0 1 0.73 -2.25z"},1]]);
+export const GlassPentagon = /*#__PURE__*/ createGlassIcon("pentagon", [[["M10.83 2.38A2 2 0 0 1 13.17 2.38L21.17 8.12A2 2 0 0 1 21.9 10.37L18.86 19.63A2 2 0 0 1 16.96 21L7.04 21A2 2 0 0 1 5.14 19.63L2.1 10.37A2 2 0 0 1 2.83 8.12Z",1]],[],[20.399,3.61,4.75],0]);
 export default GlassPentagon;

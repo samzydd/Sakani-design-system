@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "expand"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassExpand = /*#__PURE__*/ createGlassIcon("expand", [["path",{"d":"M15 15l6 6"},0],["path",{"d":"M15 9l6 -6"},0],["path",{"d":"M21 16v5h-5"},0],["path",{"d":"M21 8V3h-5"},0],["path",{"d":"M3 16v5h5"},0],["path",{"d":"M3 21l6 -6"},0],["path",{"d":"M3 8V3h5"},0],["path",{"d":"M9 9L3 3"},0]]);
+export const GlassExpand = /*#__PURE__*/ createGlassIcon("expand", [[["M15 15L21 21",0],["M15 9L21 3",0],["M21 16L21 21L16 21",0],["M21 8L21 3L16 3",0],["M3 16L3 21L8 21",0],["M3 21L9 15",0],["M3 8L3 3L8 3",0],["M9 9L3 3",0]],[],[19.4,4.6,4.75],1]);
 export default GlassExpand;

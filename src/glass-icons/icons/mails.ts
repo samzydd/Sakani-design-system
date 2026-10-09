@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mails"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMails = /*#__PURE__*/ createGlassIcon("mails", [["path",{"d":"M17 19a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 1 -1.732"},0],["path",{"d":"M22 5.5l-6.419 4.179a2 2 0 0 1 -2.162 0L7 5.5"},0],["rect",{"x":"7","y":"3","width":"15","height":"12","rx":"2"},1]]);
+export const GlassMails = /*#__PURE__*/ createGlassIcon("mails", [[["M9 3L20 3A2 2 0 0 1 22 5L22 13A2 2 0 0 1 20 15L9 15A2 2 0 0 1 7 13L7 5A2 2 0 0 1 9 3Z",1],["M17 19A2 2 0 0 1 15 21L4 21A2 2 0 0 1 2 19L2 11A2 2 0 0 1 3 9.268Z",1]],[["M22 5.5L15.581 9.679A2 2 0 0 1 13.419 9.679L7 5.5",1]],[20.4,4.6,4.75],0]);
 export default GlassMails;

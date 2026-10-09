@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-align-end" (alias of "align-right")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignRight = /*#__PURE__*/ createGlassIcon("align-right", [["path",{"d":"M21 5H3"},0],["path",{"d":"M21 12H9"},0],["path",{"d":"M21 19H7"},0]]);
+export const GlassAlignRight = /*#__PURE__*/ createGlassIcon("align-right", [[["M21 5L3 5",0],["M21 12L9 12",0],["M21 19L7 19",0]],[],[19.4,6.6,4.75],1]);
 export default GlassAlignRight;

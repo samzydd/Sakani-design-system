@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "earth-lock"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEarthLock = /*#__PURE__*/ createGlassIcon("earth-lock", [["path",{"d":"M7 3.34V5a3 3 0 0 0 3 3"},0],["path",{"d":"M11 21.95V18a2 2 0 0 0 -2 -2a2 2 0 0 1 -2 -2v-1a2 2 0 0 0 -2 -2H2.05"},0],["path",{"d":"M21.54 15H17a2 2 0 0 0 -2 2v4.54"},0],["path",{"d":"M12 2a10 10 0 1 0 9.54 13"},0],["path",{"d":"M20 6V4a2 2 0 1 0 -4 0v2"},0],["rect",{"width":"8","height":"5","x":"14","y":"6","rx":"1"},1]]);
+export const GlassEarthLock = /*#__PURE__*/ createGlassIcon("earth-lock", [[["M12 2A10 10 0 1 0 21.54 15Z",1]],[["M7 3.34L7 5A3 3 0 0 0 10 8",1],["M11 21.95L11 18A2 2 0 0 0 9 16A2 2 0 0 1 7 14L7 13A2 2 0 0 0 5 11L2.05 11",1],["M21.54 15L17 15A2 2 0 0 0 15 17L15 21.54",1],["M20 6L20 4A2 2 0 1 0 16 4L16 6",0],["M15 6L21 6A1 1 0 0 1 22 7L22 10A1 1 0 0 1 21 11L15 11A1 1 0 0 1 14 10L14 7A1 1 0 0 1 15 6Z",0]],[19.94,3.6,4.75],0]);
 export default GlassEarthLock;

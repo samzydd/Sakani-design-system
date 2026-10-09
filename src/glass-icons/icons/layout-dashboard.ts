@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "layout-dashboard"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLayoutDashboard = /*#__PURE__*/ createGlassIcon("layout-dashboard", [["rect",{"width":"7","height":"9","x":"3","y":"3","rx":"1"},1],["rect",{"width":"7","height":"5","x":"14","y":"3","rx":"1"},1],["rect",{"width":"7","height":"9","x":"14","y":"12","rx":"1"},1],["rect",{"width":"7","height":"5","x":"3","y":"16","rx":"1"},1]]);
+export const GlassLayoutDashboard = /*#__PURE__*/ createGlassIcon("layout-dashboard", [[["M15 12L20 12A1 1 0 0 1 21 13L21 20A1 1 0 0 1 20 21L15 21A1 1 0 0 1 14 20L14 13A1 1 0 0 1 15 12Z",1],["M4 3L9 3A1 1 0 0 1 10 4L10 11A1 1 0 0 1 9 12L4 12A1 1 0 0 1 3 11L3 4A1 1 0 0 1 4 3Z",1],["M15 3L20 3A1 1 0 0 1 21 4L21 7A1 1 0 0 1 20 8L15 8A1 1 0 0 1 14 7L14 4A1 1 0 0 1 15 3Z",1],["M4 16L9 16A1 1 0 0 1 10 17L10 20A1 1 0 0 1 9 21L4 21A1 1 0 0 1 3 20L3 17A1 1 0 0 1 4 16Z",1]],[],[19.4,4.6,4.75],0]);
 export default GlassLayoutDashboard;

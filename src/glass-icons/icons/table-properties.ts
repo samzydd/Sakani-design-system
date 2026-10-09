@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "table-properties"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTableProperties = /*#__PURE__*/ createGlassIcon("table-properties", [["path",{"d":"M15 3v18"},0],["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M21 9H3"},0],["path",{"d":"M21 15H3"},0]]);
+export const GlassTableProperties = /*#__PURE__*/ createGlassIcon("table-properties", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M15 3L15 21",1],["M21 9L3 9",1],["M21 15L3 15",1]],[19.4,4.6,4.75],0]);
 export default GlassTableProperties;

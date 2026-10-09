@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hand"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHand = /*#__PURE__*/ createGlassIcon("hand", [["path",{"d":"M18 11V6a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2"},0],["path",{"d":"M14 10V4a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v2"},0],["path",{"d":"M10 10.5V6a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v8"},0],["path",{"d":"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1 -8 8h-2c-2.8 0 -4.5 -0.86 -5.99 -2.34l-3.6 -3.6a2 2 0 0 1 2.83 -2.82L7 15"},0]]);
+export const GlassHand = /*#__PURE__*/ createGlassIcon("hand", [[["M18 8A2 2 0 1 1 22 8L22 14A8 8 0 0 1 14 22L12 22C9.2 22 7.5 21.14 6.01 19.66L2.41 16.06A2 2 0 0 1 5.24 13.24L7 15Z",1]],[["M18 11L18 6A2 2 0 0 0 16 4A2 2 0 0 0 14 6",0],["M14 10L14 4A2 2 0 0 0 12 2A2 2 0 0 0 10 4L10 6",0],["M10 10.5L10 6A2 2 0 0 0 8 4A2 2 0 0 0 6 6L6 14",0]],[20.4,7.6,4.75],0]);
 export default GlassHand;

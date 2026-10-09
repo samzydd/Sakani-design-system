@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "minimize"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMinimize = /*#__PURE__*/ createGlassIcon("minimize", [["path",{"d":"M8 3v3a2 2 0 0 1 -2 2H3"},0],["path",{"d":"M21 8h-3a2 2 0 0 1 -2 -2V3"},0],["path",{"d":"M3 16h3a2 2 0 0 1 2 2v3"},0],["path",{"d":"M16 21v-3a2 2 0 0 1 2 -2h3"},0]]);
+export const GlassMinimize = /*#__PURE__*/ createGlassIcon("minimize", [[["M8 3L8 6A2 2 0 0 1 6 8L3 8",0],["M21 8L18 8A2 2 0 0 1 16 6L16 3",0],["M3 16L6 16A2 2 0 0 1 8 18L8 21",0],["M16 21L16 18A2 2 0 0 1 18 16L21 16",0]],[],[19.4,4.6,4.75],1]);
 export default GlassMinimize;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-down-from-line"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArrowDownFromLine = /*#__PURE__*/ createGlassIcon("arrow-down-from-line", [["path",{"d":"M19 3H5"},0],["path",{"d":"M12 21V7"},0],["path",{"d":"M6 15l6 6l6 -6"},0]]);
+export const GlassArrowDownFromLine = /*#__PURE__*/ createGlassIcon("arrow-down-from-line", [[["M19 3L5 3",0],["M12 21L12 7",0],["M6 15L12 21L18 15",0]],[],[17.4,4.6,4.75],1]);
 export default GlassArrowDownFromLine;

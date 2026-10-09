@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tornado"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTornado = /*#__PURE__*/ createGlassIcon("tornado", [["path",{"d":"M21 4H3"},0],["path",{"d":"M18 8H6"},0],["path",{"d":"M19 12H9"},0],["path",{"d":"M16 16h-6"},0],["path",{"d":"M11 20H9"},0]]);
+export const GlassTornado = /*#__PURE__*/ createGlassIcon("tornado", [[["M21 4L3 4",0],["M18 8L6 8",0],["M19 12L9 12",0],["M16 16L10 16",0],["M11 20L9 20",0]],[],[19.4,5.6,4.75],1]);
 export default GlassTornado;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-merge"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGitMerge = /*#__PURE__*/ createGlassIcon("git-merge", [["circle",{"cx":"18","cy":"18","r":"3"},1],["circle",{"cx":"6","cy":"6","r":"3"},1],["path",{"d":"M6 21V9a9 9 0 0 0 9 9"},0]]);
+export const GlassGitMerge = /*#__PURE__*/ createGlassIcon("git-merge", [[["M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z",1],["M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18Z",1]],[["M6 21L6 9A9 9 0 0 0 15 18",0]],[19.4,4.6,4.75],0]);
 export default GlassGitMerge;

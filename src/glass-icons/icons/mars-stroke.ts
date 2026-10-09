@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mars-stroke"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMarsStroke = /*#__PURE__*/ createGlassIcon("mars-stroke", [["path",{"d":"M14 6l4 4"},0],["path",{"d":"M17 3h4v4"},0],["path",{"d":"M21 3l-7.75 7.75"},0],["circle",{"cx":"9","cy":"15","r":"6"},1]]);
+export const GlassMarsStroke = /*#__PURE__*/ createGlassIcon("mars-stroke", [[["M3 15A6 6 0 1 0 15 15A6 6 0 1 0 3 15Z",1]],[["M14 6L18 10",0],["M17 3L21 3L21 7",0],["M21 3L13.25 10.75",0]],[13.988,10.012,3.77],0]);
 export default GlassMarsStroke;

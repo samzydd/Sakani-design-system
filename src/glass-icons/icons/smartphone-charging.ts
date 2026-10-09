@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "smartphone-charging"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSmartphoneCharging = /*#__PURE__*/ createGlassIcon("smartphone-charging", [["rect",{"width":"14","height":"20","x":"5","y":"2","rx":"2","ry":"2"},1],["path",{"d":"M12.667 8L10 12h4l-2.667 4"},0]]);
+export const GlassSmartphoneCharging = /*#__PURE__*/ createGlassIcon("smartphone-charging", [[["M7 2L17 2A2 2 0 0 1 19 4L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 4A2 2 0 0 1 7 2Z",1]],[["M12.667 8L10 12L14 12L11.333 16",1]],[17.4,3.6,4.75],0]);
 export default GlassSmartphoneCharging;

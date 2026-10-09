@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "saudi-riyal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSaudiRiyal = /*#__PURE__*/ createGlassIcon("saudi-riyal", [["path",{"d":"M20 19.5l-5.5 1.2"},0],["path",{"d":"M14.5 4v11.22a1 1 0 0 0 1.242 0.97L20 15.2"},0],["path",{"d":"M2.978 19.351l5.549 -1.363A2 2 0 0 0 10 16V2"},0],["path",{"d":"M20 10L4 13.5"},0]]);
+export const GlassSaudiRiyal = /*#__PURE__*/ createGlassIcon("saudi-riyal", [[["M20 19.5L14.5 20.7",0],["M14.5 4L14.5 15.22A1 1 0 0 0 15.742 16.19L20 15.2",0],["M2.978 19.351L8.527 17.988A2 2 0 0 0 10 16L10 2",0],["M20 10L4 13.5",0]],[],[18.4,3.6,4.75],1]);
 export default GlassSaudiRiyal;

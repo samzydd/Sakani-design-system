@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-scatter"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartScatter = /*#__PURE__*/ createGlassIcon("chart-scatter", [["circle",{"cx":"7.5","cy":"7.5","r":".5"},1],["circle",{"cx":"18.5","cy":"5.5","r":".5"},1],["circle",{"cx":"11.5","cy":"11.5","r":".5"},1],["circle",{"cx":"7.5","cy":"16.5","r":".5"},1],["circle",{"cx":"17.5","cy":"14.5","r":".5"},1],["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0]]);
+export const GlassChartScatter = /*#__PURE__*/ createGlassIcon("chart-scatter", [[["M7 7.5A0.5 0.5 0 1 0 8 7.5A0.5 0.5 0 1 0 7 7.5Z",0],["M18 5.5A0.5 0.5 0 1 0 19 5.5A0.5 0.5 0 1 0 18 5.5Z",0],["M11 11.5A0.5 0.5 0 1 0 12 11.5A0.5 0.5 0 1 0 11 11.5Z",0],["M7 16.5A0.5 0.5 0 1 0 8 16.5A0.5 0.5 0 1 0 7 16.5Z",0],["M17 14.5A0.5 0.5 0 1 0 18 14.5A0.5 0.5 0 1 0 17 14.5Z",0],["M3 3L3 19A2 2 0 0 0 5 21L21 21",0]],[],[19.4,4.6,4.75],1]);
 export default GlassChartScatter;

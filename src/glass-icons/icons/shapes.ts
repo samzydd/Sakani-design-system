@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shapes"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShapes = /*#__PURE__*/ createGlassIcon("shapes", [["path",{"d":"M8.3 10a0.7 0.7 0 0 1 -0.626 -1.079L11.4 3a0.7 0.7 0 0 1 1.198 -0.043L16.3 8.9a0.7 0.7 0 0 1 -0.572 1.1Z"},1],["rect",{"x":"3","y":"14","width":"7","height":"7","rx":"1"},1],["circle",{"cx":"17.5","cy":"17.5","r":"3.5"},1]]);
+export const GlassShapes = /*#__PURE__*/ createGlassIcon("shapes", [[["M4 14L9 14A1 1 0 0 1 10 15L10 20A1 1 0 0 1 9 21L4 21A1 1 0 0 1 3 20L3 15A1 1 0 0 1 4 14Z",1],["M8.3 10A0.7 0.7 0 0 1 7.674 8.921L11.4 3A0.7 0.7 0 0 1 12.598 2.957L16.3 8.9A0.7 0.7 0 0 1 15.728 10Z",1],["M14 17.5A3.5 3.5 0 1 0 21 17.5A3.5 3.5 0 1 0 14 17.5Z",1]],[],[19.4,4.241,4.75],0]);
 export default GlassShapes;

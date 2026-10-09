@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "leaf"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLeaf = /*#__PURE__*/ createGlassIcon("leaf", [["path",{"d":"M11 20a10 10 0 0 0 10 -10a25.9 25.9 0 0 0 -1.04 -7.281a1 1 0 0 0 -1.755 -0.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0 0 11 20"},1],["path",{"d":"M2 21a5 5 0 0 1 2.911 -4.544C7.613 15.212 8.351 15.24 11 13"},0]]);
+export const GlassLeaf = /*#__PURE__*/ createGlassIcon("leaf", [[["M11 20A10 10 0 0 0 21 10A25.9 25.9 0 0 0 19.96 2.719A1 1 0 0 0 18.205 2.394C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0 0 11 20",1]],[["M2 21A5 5 0 0 1 4.911 16.456C7.613 15.212 8.351 15.24 11 13",1]],[19.4,3.6,4.75],0]);
 export default GlassLeaf;

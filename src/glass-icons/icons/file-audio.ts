@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-headphone" (alias of "file-audio")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileAudio = /*#__PURE__*/ createGlassIcon("file-audio", [["path",{"d":"M4 6.835V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.706 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1 -2 2h-0.343"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M2 19a2 2 0 0 1 4 0v1a2 2 0 0 1 -4 0v-4a6 6 0 0 1 12 0v4a2 2 0 0 1 -4 0v-1a2 2 0 0 1 4 0"},0]]);
+export const GlassFileAudio = /*#__PURE__*/ createGlassIcon("file-audio", [[["M4 6.835L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L17.657 22Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M2 19A2 2 0 0 1 6 19L6 20A2 2 0 0 1 2 20L2 16A6 6 0 0 1 14 16L14 20A2 2 0 0 1 10 20L10 19A2 2 0 0 1 14 19",0]],[18.4,3.6,4.75],0]);
 export default GlassFileAudio;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "spade"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSpade = /*#__PURE__*/ createGlassIcon("spade", [["path",{"d":"M12 18v4"},0],["path",{"d":"M2 14.499a5.5 5.5 0 0 0 9.591 3.675a0.6 0.6 0 0 1 0.818 0.001A5.5 5.5 0 0 0 22 14.5c0 -2.29 -1.5 -4 -3 -5.5l-5.492 -5.312a2 2 0 0 0 -3 -0.02L5 8.999c-1.5 1.5 -3 3.2 -3 5.5"},1]]);
+export const GlassSpade = /*#__PURE__*/ createGlassIcon("spade", [[["M2 14.499A5.5 5.5 0 0 0 11.591 18.174A0.6 0.6 0 0 1 12.409 18.175A5.5 5.5 0 0 0 22 14.5C22 12.21 20.5 10.5 19 9L13.508 3.688A2 2 0 0 0 10.508 3.668L5 8.999C3.5 10.499 2 12.199 2 14.499",1]],[["M12 18L12 22",0]],[20.4,4.608,4.75],0]);
 export default GlassSpade;

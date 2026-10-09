@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "diameter"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDiameter = /*#__PURE__*/ createGlassIcon("diameter", [["circle",{"cx":"19","cy":"19","r":"2"},1],["circle",{"cx":"5","cy":"5","r":"2"},1],["path",{"d":"M6.48 3.66a10 10 0 0 1 13.86 13.86"},0],["path",{"d":"M6.41 6.41l11.18 11.18"},0],["path",{"d":"M3.66 6.48a10 10 0 0 0 13.86 13.86"},0]]);
+export const GlassDiameter = /*#__PURE__*/ createGlassIcon("diameter", [[["M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19Z",1],["M3 5A2 2 0 1 0 7 5A2 2 0 1 0 3 5Z",1]],[["M6.48 3.66A10 10 0 0 1 20.34 17.52",0],["M6.41 6.41L17.59 17.59",0],["M3.66 6.48A10 10 0 0 0 17.52 20.34",0]],[19.4,4.6,4.75],0]);
 export default GlassDiameter;

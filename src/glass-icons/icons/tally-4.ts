@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tally-4"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTally4 = /*#__PURE__*/ createGlassIcon("tally-4", [["path",{"d":"M4 4v16"},0],["path",{"d":"M9 4v16"},0],["path",{"d":"M14 4v16"},0],["path",{"d":"M19 4v16"},0]]);
+export const GlassTally4 = /*#__PURE__*/ createGlassIcon("tally-4", [[["M4 4L4 20",0],["M9 4L9 20",0],["M14 4L14 20",0],["M19 4L19 20",0]],[],[17.4,5.6,4.75],1]);
 export default GlassTally4;

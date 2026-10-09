@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-fork"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGitFork = /*#__PURE__*/ createGlassIcon("git-fork", [["circle",{"cx":"12","cy":"18","r":"3"},1],["circle",{"cx":"6","cy":"6","r":"3"},1],["circle",{"cx":"18","cy":"6","r":"3"},1],["path",{"d":"M18 9v2c0 0.6 -0.4 1 -1 1H7c-0.6 0 -1 -0.4 -1 -1V9"},0],["path",{"d":"M12 12v3"},0]]);
+export const GlassGitFork = /*#__PURE__*/ createGlassIcon("git-fork", [[["M9 18A3 3 0 1 0 15 18A3 3 0 1 0 9 18Z",1],["M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z",1],["M15 6A3 3 0 1 0 21 6A3 3 0 1 0 15 6Z",1]],[["M18 9L18 11C18 11.6 17.6 12 17 12L7 12C6.4 12 6 11.6 6 11L6 9",0],["M12 12L12 15",0]],[19.4,4.6,4.75],0]);
 export default GlassGitFork;

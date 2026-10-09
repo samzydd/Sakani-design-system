@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "squares-unite"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquaresUnite = /*#__PURE__*/ createGlassIcon("squares-unite", [["path",{"d":"M4 16a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v3a1 1 0 0 0 1 1h3a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2H10a2 2 0 0 1 -2 -2v-3a1 1 0 0 0 -1 -1z"},1]]);
+export const GlassSquaresUnite = /*#__PURE__*/ createGlassIcon("squares-unite", [[["M4 16A2 2 0 0 1 2 14L2 4A2 2 0 0 1 4 2L14 2A2 2 0 0 1 16 4L16 7A1 1 0 0 0 17 8L20 8A2 2 0 0 1 22 10L22 20A2 2 0 0 1 20 22L10 22A2 2 0 0 1 8 20L8 17A1 1 0 0 0 7 16Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassSquaresUnite;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "case-sensitive"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCaseSensitive = /*#__PURE__*/ createGlassIcon("case-sensitive", [["path",{"d":"M2 16l4.039 -9.69a0.5 0.5 0 0 1 0.923 0L11 16"},0],["path",{"d":"M22 9v7"},0],["path",{"d":"M3.304 13h6.392"},0],["circle",{"cx":"18.5","cy":"12.5","r":"3.5"},1]]);
+export const GlassCaseSensitive = /*#__PURE__*/ createGlassIcon("case-sensitive", [[["M2 16L6.039 6.31A0.5 0.5 0 0 1 6.962 6.31L11 16Z",1],["M15 12.5A3.5 3.5 0 1 0 22 12.5A3.5 3.5 0 1 0 15 12.5Z",1],["M22 9L22 16",0]],[["M3.304 13L9.696 13",1]],[20.4,7.602,4.75],0]);
 export default GlassCaseSensitive;

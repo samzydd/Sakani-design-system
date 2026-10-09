@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bold"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBold = /*#__PURE__*/ createGlassIcon("bold", [["path",{"d":"M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1 -1 -1V5a1 1 0 0 1 1 -1h7a4 4 0 0 1 0 8"},0]]);
+export const GlassBold = /*#__PURE__*/ createGlassIcon("bold", [[["M6 12L15 12A4 4 0 0 1 15 20L7 20A1 1 0 0 1 6 19L6 5A1 1 0 0 1 7 4L14 4A4 4 0 0 1 14 12",0]],[],[17.4,5.6,4.75],1]);
 export default GlassBold;

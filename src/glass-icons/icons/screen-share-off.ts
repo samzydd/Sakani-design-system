@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "screen-share-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassScreenShareOff = /*#__PURE__*/ createGlassIcon("screen-share-off", [["path",{"d":"M13 3H4a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2 -2v-3"},0],["path",{"d":"M8 21h8"},0],["path",{"d":"M12 17v4"},0],["path",{"d":"M22 3l-5 5"},0],["path",{"d":"M17 3l5 5"},0]]);
+export const GlassScreenShareOff = /*#__PURE__*/ createGlassIcon("screen-share-off", [[["M13 3L4 3A2 2 0 0 0 2 5L2 15A2 2 0 0 0 4 17L20 17A2 2 0 0 0 22 15L22 12Z",1]],[["M8 21L16 21",0],["M12 17L12 21",0],["M22 3L17 8",0],["M17 3L22 8",0]],[20.4,4.6,4.75],0]);
 export default GlassScreenShareOff;

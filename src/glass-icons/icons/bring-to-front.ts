@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bring-to-front"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBringToFront = /*#__PURE__*/ createGlassIcon("bring-to-front", [["rect",{"x":"8","y":"8","width":"8","height":"8","rx":"2"},1],["path",{"d":"M4 10a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2"},0],["path",{"d":"M14 20a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2"},0]]);
+export const GlassBringToFront = /*#__PURE__*/ createGlassIcon("bring-to-front", [[["M10 8L14 8A2 2 0 0 1 16 10L16 14A2 2 0 0 1 14 16L10 16A2 2 0 0 1 8 14L8 10A2 2 0 0 1 10 8Z",1],["M14 20A2 2 0 0 0 16 22L20 22A2 2 0 0 0 22 20L22 16A2 2 0 0 0 20 14Z",1],["M4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2L8 2A2 2 0 0 1 10 4Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassBringToFront;

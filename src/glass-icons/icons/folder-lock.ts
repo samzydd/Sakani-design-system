@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-lock"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderLock = /*#__PURE__*/ createGlassIcon("folder-lock", [["rect",{"width":"8","height":"5","x":"14","y":"17","rx":"1"},1],["path",{"d":"M10 20H4a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h3.9a2 2 0 0 1 1.69 0.9l0.81 1.2a2 2 0 0 0 1.67 0.9H20a2 2 0 0 1 2 2v2.5"},0],["path",{"d":"M20 17v-2a2 2 0 1 0 -4 0v2"},0]]);
+export const GlassFolderLock = /*#__PURE__*/ createGlassIcon("folder-lock", [[["M10 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 10.5Z",1],["M20 17L20 15A2 2 0 1 0 16 15L16 17",0]],[["M15 17L21 17A1 1 0 0 1 22 18L22 21A1 1 0 0 1 21 22L15 22A1 1 0 0 1 14 21L14 18A1 1 0 0 1 15 17Z",0]],[20.4,4.6,4.75],0]);
 export default GlassFolderLock;

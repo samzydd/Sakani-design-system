@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "globe-lock"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGlobeLock = /*#__PURE__*/ createGlassIcon("globe-lock", [["path",{"d":"M15.686 15A14.5 14.5 0 0 1 12 22a14.5 14.5 0 0 1 0 -20a10 10 0 1 0 9.542 13"},0],["path",{"d":"M2 12h8.5"},0],["path",{"d":"M20 6V4a2 2 0 1 0 -4 0v2"},0],["rect",{"width":"8","height":"5","x":"14","y":"6","rx":"1"},1]]);
+export const GlassGlobeLock = /*#__PURE__*/ createGlassIcon("globe-lock", [[["M15 6L21 6A1 1 0 0 1 22 7L22 10A1 1 0 0 1 21 11L15 11A1 1 0 0 1 14 10L14 7A1 1 0 0 1 15 6Z",1],["M20 6L20 4A2 2 0 1 0 16 4L16 6Z",1]],[["M15.686 15A14.5 14.5 0 0 1 12 22A14.5 14.5 0 0 1 12 2A10 10 0 1 0 21.542 15",0],["M2 12L10.5 12",0]],[21.45,2.55,3],0]);
 export default GlassGlobeLock;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-stop"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleStop = /*#__PURE__*/ createGlassIcon("circle-stop", [["circle",{"cx":"12","cy":"12","r":"10"},1],["rect",{"x":"9","y":"9","width":"6","height":"6","rx":"1"},1]]);
+export const GlassCircleStop = /*#__PURE__*/ createGlassIcon("circle-stop", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M10 9L14 9A1 1 0 0 1 15 10L15 14A1 1 0 0 1 14 15L10 15A1 1 0 0 1 9 14L9 10A1 1 0 0 1 10 9Z",1]],[20.4,3.6,4.75],0]);
 export default GlassCircleStop;

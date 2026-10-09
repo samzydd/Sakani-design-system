@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-horizontal-space-around"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignHorizontalSpaceAround = /*#__PURE__*/ createGlassIcon("align-horizontal-space-around", [["rect",{"width":"6","height":"10","x":"9","y":"7","rx":"2"},1],["path",{"d":"M4 22V2"},0],["path",{"d":"M20 22V2"},0]]);
+export const GlassAlignHorizontalSpaceAround = /*#__PURE__*/ createGlassIcon("align-horizontal-space-around", [[["M11 7L13 7A2 2 0 0 1 15 9L15 15A2 2 0 0 1 13 17L11 17A2 2 0 0 1 9 15L9 9A2 2 0 0 1 11 7Z",1]],[["M4 22L4 2",0],["M20 22L20 2",0]],[14.3,7.7,3.25],0]);
 export default GlassAlignHorizontalSpaceAround;

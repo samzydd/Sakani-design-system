@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "type-outline"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTypeOutline = /*#__PURE__*/ createGlassIcon("type-outline", [["path",{"d":"M14 16.5a0.5 0.5 0 0 0 0.5 0.5h0.5a2 2 0 0 1 0 4H9a2 2 0 0 1 0 -4h0.5a0.5 0.5 0 0 0 0.5 -0.5v-9a0.5 0.5 0 0 0 -0.5 -0.5h-3a0.5 0.5 0 0 0 -0.5 0.5V8a2 2 0 0 1 -4 0V5a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v3a2 2 0 0 1 -4 0v-0.5a0.5 0.5 0 0 0 -0.5 -0.5h-3a0.5 0.5 0 0 0 -0.5 0.5Z"},1]]);
+export const GlassTypeOutline = /*#__PURE__*/ createGlassIcon("type-outline", [[["M14 16.5A0.5 0.5 0 0 0 14.5 17L15 17A2 2 0 0 1 15 21L9 21A2 2 0 0 1 9 17L9.5 17A0.5 0.5 0 0 0 10 16.5L10 7.5A0.5 0.5 0 0 0 9.5 7L6.5 7A0.5 0.5 0 0 0 6 7.5L6 8A2 2 0 0 1 2 8L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5L22 8A2 2 0 0 1 18 8L18 7.5A0.5 0.5 0 0 0 17.5 7L14.5 7A0.5 0.5 0 0 0 14 7.5Z",1]],[],[20.4,4.6,4.75],0]);
 export default GlassTypeOutline;

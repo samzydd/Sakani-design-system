@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lamp-ceiling"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLampCeiling = /*#__PURE__*/ createGlassIcon("lamp-ceiling", [["path",{"d":"M12 2v5"},0],["path",{"d":"M14.829 15.998a3 3 0 1 1 -5.658 0"},0],["path",{"d":"M20.92 14.606A1 1 0 0 1 20 16H4a1 1 0 0 1 -0.92 -1.394l3 -7A1 1 0 0 1 7 7h10a1 1 0 0 1 0.92 0.606z"},1]]);
+export const GlassLampCeiling = /*#__PURE__*/ createGlassIcon("lamp-ceiling", [[["M20.92 14.606A1 1 0 0 1 20 16L4 16A1 1 0 0 1 3.08 14.606L6.08 7.606A1 1 0 0 1 7 7L17 7A1 1 0 0 1 17.92 7.606Z",1]],[["M12 2L12 7",0],["M14.829 15.998A3 3 0 1 1 9.171 15.998",0]],[19.4,8.6,4.75],0]);
 export default GlassLampCeiling;

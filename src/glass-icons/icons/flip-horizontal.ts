@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-centerline-dashed-horizontal" (alias of "flip-horizontal")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFlipHorizontal = /*#__PURE__*/ createGlassIcon("flip-horizontal", [["path",{"d":"M8 3H5a2 2 0 0 0 -2 2v14c0 1.1 0.9 2 2 2h3"},0],["path",{"d":"M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-3"},0],["path",{"d":"M12 20v2"},0],["path",{"d":"M12 14v2"},0],["path",{"d":"M12 8v2"},0],["path",{"d":"M12 2v2"},0]]);
+export const GlassFlipHorizontal = /*#__PURE__*/ createGlassIcon("flip-horizontal", [[["M8 3L5 3A2 2 0 0 0 3 5L3 19C3 20.1 3.9 21 5 21L8 21",0],["M16 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L16 21",0],["M12 20L12 22",0],["M12 14L12 16",0],["M12 8L12 10",0],["M12 2L12 4",0]],[],[19.4,3.6,4.75],1]);
 export default GlassFlipHorizontal;

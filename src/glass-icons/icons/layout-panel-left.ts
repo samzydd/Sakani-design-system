@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "layout-panel-left"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLayoutPanelLeft = /*#__PURE__*/ createGlassIcon("layout-panel-left", [["rect",{"width":"7","height":"18","x":"3","y":"3","rx":"1"},1],["rect",{"width":"7","height":"7","x":"14","y":"3","rx":"1"},1],["rect",{"width":"7","height":"7","x":"14","y":"14","rx":"1"},1]]);
+export const GlassLayoutPanelLeft = /*#__PURE__*/ createGlassIcon("layout-panel-left", [[["M4 3L9 3A1 1 0 0 1 10 4L10 20A1 1 0 0 1 9 21L4 21A1 1 0 0 1 3 20L3 4A1 1 0 0 1 4 3Z",1],["M15 14L20 14A1 1 0 0 1 21 15L21 20A1 1 0 0 1 20 21L15 21A1 1 0 0 1 14 20L14 15A1 1 0 0 1 15 14Z",1],["M15 3L20 3A1 1 0 0 1 21 4L21 9A1 1 0 0 1 20 10L15 10A1 1 0 0 1 14 9L14 4A1 1 0 0 1 15 3Z",1]],[],[19.4,4.6,4.75],0]);
 export default GlassLayoutPanelLeft;

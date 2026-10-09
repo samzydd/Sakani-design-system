@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "user-round-pen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUserRoundPen = /*#__PURE__*/ createGlassIcon("user-round-pen", [["path",{"d":"M2 21a8 8 0 0 1 10.821 -7.487"},0],["path",{"d":"M21.378 16.626a1 1 0 0 0 -3.004 -3.004l-4.01 4.012a2 2 0 0 0 -0.506 0.854l-0.837 2.87a0.5 0.5 0 0 0 0.62 0.62l2.87 -0.837a2 2 0 0 0 0.854 -0.506z"},1],["circle",{"cx":"10","cy":"8","r":"5"},1]]);
+export const GlassUserRoundPen = /*#__PURE__*/ createGlassIcon("user-round-pen", [[["M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8Z",1],["M21.378 16.626A1 1 0 0 0 18.374 13.622L14.364 17.634A2 2 0 0 0 13.858 18.488L13.021 21.358A0.5 0.5 0 0 0 13.641 21.978L16.511 21.141A2 2 0 0 0 17.365 20.635Z",1]],[["M2 21A8 8 0 0 1 12.821 13.513",0]],[20.4,4.6,4.75],0]);
 export default GlassUserRoundPen;

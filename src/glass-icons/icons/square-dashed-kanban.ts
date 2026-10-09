@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-dashed-kanban"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareDashedKanban = /*#__PURE__*/ createGlassIcon("square-dashed-kanban", [["path",{"d":"M8 7v7"},0],["path",{"d":"M12 7v4"},0],["path",{"d":"M16 7v9"},0],["path",{"d":"M5 3a2 2 0 0 0 -2 2"},0],["path",{"d":"M9 3h1"},0],["path",{"d":"M14 3h1"},0],["path",{"d":"M19 3a2 2 0 0 1 2 2"},0],["path",{"d":"M21 9v1"},0],["path",{"d":"M21 14v1"},0],["path",{"d":"M21 19a2 2 0 0 1 -2 2"},0],["path",{"d":"M14 21h1"},0],["path",{"d":"M9 21h1"},0],["path",{"d":"M5 21a2 2 0 0 1 -2 -2"},0],["path",{"d":"M3 14v1"},0],["path",{"d":"M3 9v1"},0]]);
+export const GlassSquareDashedKanban = /*#__PURE__*/ createGlassIcon("square-dashed-kanban", [[["M8 7L8 14",0],["M12 7L12 11",0],["M16 7L16 16",0],["M5 3A2 2 0 0 0 3 5",0],["M9 3L10 3",0],["M14 3L15 3",0],["M19 3A2 2 0 0 1 21 5",0],["M21 9L21 10",0],["M21 14L21 15",0],["M21 19A2 2 0 0 1 19 21",0],["M14 21L15 21",0],["M9 21L10 21",0],["M5 21A2 2 0 0 1 3 19",0],["M3 14L3 15",0],["M3 9L3 10",0]],[],[19.4,4.6,4.75],1]);
 export default GlassSquareDashedKanban;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sandwich"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSandwich = /*#__PURE__*/ createGlassIcon("sandwich", [["path",{"d":"M2.37 11.223l8.372 -6.777a2 2 0 0 1 2.516 0l8.371 6.777"},0],["path",{"d":"M21 15a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-5.25"},0],["path",{"d":"M3 15a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h9"},0],["path",{"d":"M6.67 15l6.13 4.6a2 2 0 0 0 2.8 -0.4l3.15 -4.2"},0],["rect",{"width":"20","height":"4","x":"2","y":"11","rx":"1"},1]]);
+export const GlassSandwich = /*#__PURE__*/ createGlassIcon("sandwich", [[["M3 11L21 11A1 1 0 0 1 22 12L22 14A1 1 0 0 1 21 15L3 15A1 1 0 0 1 2 14L2 12A1 1 0 0 1 3 11Z",1]],[["M2.37 11.223L10.742 4.446A2 2 0 0 1 13.258 4.446L21.629 11.223",0],["M21 15A1 1 0 0 1 22 16L22 18A1 1 0 0 1 21 19L15.75 19",0],["M3 15A1 1 0 0 0 2 16L2 18A1 1 0 0 0 3 19L12 19",0],["M6.67 15L12.8 19.6A2 2 0 0 0 15.6 19.2L18.75 15",0]],[20.4,12.6,4.75],0]);
 export default GlassSandwich;

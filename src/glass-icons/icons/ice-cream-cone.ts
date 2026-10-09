@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ice-cream-cone"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassIceCreamCone = /*#__PURE__*/ createGlassIcon("ice-cream-cone", [["path",{"d":"M7 11l4.08 10.35a1 1 0 0 0 1.84 0L17 11"},0],["path",{"d":"M17 7A5 5 0 0 0 7 7"},0],["path",{"d":"M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0 -4"},0]]);
+export const GlassIceCreamCone = /*#__PURE__*/ createGlassIcon("ice-cream-cone", [[["M7 11L11.08 21.35A1 1 0 0 0 12.92 21.35L17 11Z",1],["M17 7A2 2 0 0 1 17 11L7 11A2 2 0 0 1 7 7Z",1],["M17 7A5 5 0 0 0 7 7Z",1]],[],[17.4,3.6,4.75],0]);
 export default GlassIceCreamCone;

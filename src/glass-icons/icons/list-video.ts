@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-video"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassListVideo = /*#__PURE__*/ createGlassIcon("list-video", [["path",{"d":"M21 5H3"},0],["path",{"d":"M10 12H3"},0],["path",{"d":"M10 19H3"},0],["path",{"d":"M15 12.003a1 1 0 0 1 1.517 -0.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997a1 1 0 0 1 -1.517 -0.86z"},1]]);
+export const GlassListVideo = /*#__PURE__*/ createGlassIcon("list-video", [[["M15 12.003A1 1 0 0 1 16.517 11.144L21.514 14.141A1 1 0 0 1 21.514 15.859L16.517 18.856A1 1 0 0 1 15 17.996Z",1]],[["M21 5L3 5",0],["M10 12L3 12",0],["M10 19L3 19",0]],[21.448,11.551,3],0]);
 export default GlassListVideo;

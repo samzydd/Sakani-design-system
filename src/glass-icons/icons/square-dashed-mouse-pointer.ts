@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-dashed-mouse-pointer"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareDashedMousePointer = /*#__PURE__*/ createGlassIcon("square-dashed-mouse-pointer", [["path",{"d":"M12.034 12.681a0.498 0.498 0 0 1 0.647 -0.647l9 3.5a0.5 0.5 0 0 1 -0.033 0.943l-3.444 1.068a1 1 0 0 0 -0.66 0.66l-1.067 3.443a0.5 0.5 0 0 1 -0.943 0.033z"},1],["path",{"d":"M5 3a2 2 0 0 0 -2 2"},0],["path",{"d":"M19 3a2 2 0 0 1 2 2"},0],["path",{"d":"M5 21a2 2 0 0 1 -2 -2"},0],["path",{"d":"M9 3h1"},0],["path",{"d":"M9 21h2"},0],["path",{"d":"M14 3h1"},0],["path",{"d":"M3 9v1"},0],["path",{"d":"M21 9v2"},0],["path",{"d":"M3 14v1"},0]]);
+export const GlassSquareDashedMousePointer = /*#__PURE__*/ createGlassIcon("square-dashed-mouse-pointer", [[["M12.034 12.681A0.498 0.498 0 0 1 12.681 12.034L21.681 15.534A0.5 0.5 0 0 1 21.648 16.477L18.204 17.545A1 1 0 0 0 17.544 18.205L16.477 21.648A0.5 0.5 0 0 1 15.534 21.681Z",1]],[["M5 3A2 2 0 0 0 3 5",0],["M19 3A2 2 0 0 1 21 5",0],["M5 21A2 2 0 0 1 3 19",0],["M9 3L10 3",0],["M9 21L11 21",0],["M14 3L15 3",0],["M3 9L3 10",0],["M21 9L21 11",0],["M3 14L3 15",0]],[21.298,12.699,3.25],0]);
 export default GlassSquareDashedMousePointer;

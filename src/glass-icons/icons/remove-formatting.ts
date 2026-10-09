@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "remove-formatting"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRemoveFormatting = /*#__PURE__*/ createGlassIcon("remove-formatting", [["path",{"d":"M4 7V4h16v3"},0],["path",{"d":"M5 20h6"},0],["path",{"d":"M13 4L8 20"},0],["path",{"d":"M15 15l5 5"},0],["path",{"d":"M20 15l-5 5"},0]]);
+export const GlassRemoveFormatting = /*#__PURE__*/ createGlassIcon("remove-formatting", [[["M4 7L4 4L20 4L20 7",0],["M5 20L11 20",0],["M13 4L8 20",0],["M15 15L20 20",0],["M20 15L15 20",0]],[],[18.4,5.6,4.75],1]);
 export default GlassRemoveFormatting;

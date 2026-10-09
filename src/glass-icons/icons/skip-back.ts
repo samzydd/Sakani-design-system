@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "skip-back"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSkipBack = /*#__PURE__*/ createGlassIcon("skip-back", [["path",{"d":"M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1 -3.029 1.715l-9.997 -5.998a2 2 0 0 1 -0.003 -3.432z"},1],["path",{"d":"M3 20V4"},0]]);
+export const GlassSkipBack = /*#__PURE__*/ createGlassIcon("skip-back", [[["M17.971 4.285A2 2 0 0 1 21 6L21 18A2 2 0 0 1 17.971 19.715L7.974 13.717A2 2 0 0 1 7.971 10.285Z",1]],[["M3 20L3 4",0]],[19.4,5.601,4.75],0]);
 export default GlassSkipBack;

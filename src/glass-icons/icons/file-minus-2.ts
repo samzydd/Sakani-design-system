@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-minus-corner" (alias of "file-minus-2")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileMinus2 = /*#__PURE__*/ createGlassIcon("file-minus-2", [["path",{"d":"M20 14V8a2.4 2.4 0 0 0 -0.706 -1.706l-3.588 -3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0 -2 2v16a2 2 0 0 0 2 2h12"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M14 18h6"},0]]);
+export const GlassFileMinus2 = /*#__PURE__*/ createGlassIcon("file-minus-2", [[["M20 14L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 20A2 2 0 0 0 6 22L18 22Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M14 18L20 18",1]],[18.4,3.6,4.75],0]);
 export default GlassFileMinus2;

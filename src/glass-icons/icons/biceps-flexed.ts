@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "biceps-flexed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBicepsFlexed = /*#__PURE__*/ createGlassIcon("biceps-flexed", [["path",{"d":"M12.409 13.017A5 5 0 0 1 22 15c0 3.866 -4 7 -9 7c-4.077 0 -8.153 -0.82 -10.371 -2.462c-0.426 -0.316 -0.631 -0.832 -0.62 -1.362C2.118 12.723 2.627 2 10 2a3 3 0 0 1 3 3a2 2 0 0 1 -2 2c-1.105 0 -1.64 -0.444 -2 -1"},0],["path",{"d":"M15 14a5 5 0 0 0 -7.584 2"},0],["path",{"d":"M9.964 6.825C8.019 7.977 9.5 13 8 15"},0]]);
+export const GlassBicepsFlexed = /*#__PURE__*/ createGlassIcon("biceps-flexed", [[["M12.409 13.017A5 5 0 0 1 22 15C22 18.866 18 22 13 22C8.923 22 4.847 21.18 2.629 19.538C2.203 19.222 1.998 18.706 2.009 18.176C2.118 12.723 2.627 2 10 2A3 3 0 0 1 13 5A2 2 0 0 1 11 7C9.895 7 9.36 6.556 9 6Z",1]],[["M15 14A5 5 0 0 0 7.416 16",1],["M9.964 6.825C8.019 7.977 9.5 13 8 15",1]],[20.4,3.6,4.75],0]);
 export default GlassBicepsFlexed;

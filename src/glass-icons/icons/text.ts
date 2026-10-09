@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-align-start" (alias of "text")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassText = /*#__PURE__*/ createGlassIcon("text", [["path",{"d":"M21 5H3"},0],["path",{"d":"M15 12H3"},0],["path",{"d":"M17 19H3"},0]]);
+export const GlassText = /*#__PURE__*/ createGlassIcon("text", [[["M21 5L3 5",0],["M15 12L3 12",0],["M17 19L3 19",0]],[],[19.4,6.6,4.75],1]);
 export default GlassText;

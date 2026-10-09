@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "locate-fixed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLocateFixed = /*#__PURE__*/ createGlassIcon("locate-fixed", [["line",{"x1":"2","x2":"5","y1":"12","y2":"12"},0],["line",{"x1":"19","x2":"22","y1":"12","y2":"12"},0],["line",{"x1":"12","x2":"12","y1":"2","y2":"5"},0],["line",{"x1":"12","x2":"12","y1":"19","y2":"22"},0],["circle",{"cx":"12","cy":"12","r":"7"},1],["circle",{"cx":"12","cy":"12","r":"3"},1]]);
+export const GlassLocateFixed = /*#__PURE__*/ createGlassIcon("locate-fixed", [[["M5 12A7 7 0 1 0 19 12A7 7 0 1 0 5 12Z",1]],[["M2 12L5 12",0],["M19 12L22 12",0],["M12 2L12 5",0],["M12 19L12 22",0],["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z",1]],[17.676,6.324,4.29],0]);
 export default GlassLocateFixed;

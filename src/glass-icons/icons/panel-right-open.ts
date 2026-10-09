@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "panel-right-open"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPanelRightOpen = /*#__PURE__*/ createGlassIcon("panel-right-open", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M15 3v18"},0],["path",{"d":"M10 15l-3 -3l3 -3"},0]]);
+export const GlassPanelRightOpen = /*#__PURE__*/ createGlassIcon("panel-right-open", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M15 3L15 21",1],["M10 15L7 12L10 9",1]],[19.4,4.6,4.75],0]);
 export default GlassPanelRightOpen;

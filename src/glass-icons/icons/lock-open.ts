@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lock-open"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLockOpen = /*#__PURE__*/ createGlassIcon("lock-open", [["rect",{"width":"18","height":"11","x":"3","y":"11","rx":"2","ry":"2"},1],["path",{"d":"M7 11V7a5 5 0 0 1 9.9 -1"},0]]);
+export const GlassLockOpen = /*#__PURE__*/ createGlassIcon("lock-open", [[["M5 11L19 11A2 2 0 0 1 21 13L21 20A2 2 0 0 1 19 22L5 22A2 2 0 0 1 3 20L3 13A2 2 0 0 1 5 11Z",1]],[["M7 11L7 7A5 5 0 0 1 16.9 6",0]],[19.4,12.6,4.75],0]);
 export default GlassLockOpen;

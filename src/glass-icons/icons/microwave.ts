@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "microwave"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMicrowave = /*#__PURE__*/ createGlassIcon("microwave", [["rect",{"width":"20","height":"15","x":"2","y":"4","rx":"2"},1],["rect",{"width":"8","height":"7","x":"6","y":"8","rx":"1"},1],["path",{"d":"M18 8v7"},0],["path",{"d":"M6 19v2"},0],["path",{"d":"M18 19v2"},0]]);
+export const GlassMicrowave = /*#__PURE__*/ createGlassIcon("microwave", [[["M4 4L20 4A2 2 0 0 1 22 6L22 17A2 2 0 0 1 20 19L4 19A2 2 0 0 1 2 17L2 6A2 2 0 0 1 4 4Z",1]],[["M7 8L13 8A1 1 0 0 1 14 9L14 14A1 1 0 0 1 13 15L7 15A1 1 0 0 1 6 14L6 9A1 1 0 0 1 7 8Z",1],["M18 8L18 15",1],["M6 19L6 21",1],["M18 19L18 21",1]],[20.4,5.6,4.75],0]);
 export default GlassMicrowave;

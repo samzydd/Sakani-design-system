@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shopping-bag"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShoppingBag = /*#__PURE__*/ createGlassIcon("shopping-bag", [["path",{"d":"M16 10a4 4 0 0 1 -8 0"},0],["path",{"d":"M3.103 6.034h17.794"},0],["path",{"d":"M3.4 5.467a2 2 0 0 0 -0.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2V6.667a2 2 0 0 0 -0.4 -1.2l-2 -2.667A2 2 0 0 0 17 2H7a2 2 0 0 0 -1.6 0.8z"},1]]);
+export const GlassShoppingBag = /*#__PURE__*/ createGlassIcon("shopping-bag", [[["M3.4 5.467A2 2 0 0 0 3 6.667L3 20A2 2 0 0 0 5 22L19 22A2 2 0 0 0 21 20L21 6.667A2 2 0 0 0 20.6 5.467L18.6 2.8A2 2 0 0 0 17 2L7 2A2 2 0 0 0 5.4 2.8Z",1]],[["M16 10A4 4 0 0 1 8 10",1],["M3.103 6.034L20.897 6.034",1]],[19.4,3.6,4.75],0]);
 export default GlassShoppingBag;

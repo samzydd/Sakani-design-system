@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-horizontal-distribute-start"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignHorizontalDistributeStart = /*#__PURE__*/ createGlassIcon("align-horizontal-distribute-start", [["rect",{"width":"6","height":"14","x":"4","y":"5","rx":"2"},1],["rect",{"width":"6","height":"10","x":"14","y":"7","rx":"2"},1],["path",{"d":"M4 2v20"},0],["path",{"d":"M14 2v20"},0]]);
+export const GlassAlignHorizontalDistributeStart = /*#__PURE__*/ createGlassIcon("align-horizontal-distribute-start", [[["M6 5L8 5A2 2 0 0 1 10 7L10 17A2 2 0 0 1 8 19L6 19A2 2 0 0 1 4 17L4 7A2 2 0 0 1 6 5Z",1],["M16 7L18 7A2 2 0 0 1 20 9L20 15A2 2 0 0 1 18 17L16 17A2 2 0 0 1 14 15L14 9A2 2 0 0 1 16 7Z",1],["M4 2L4 22",0]],[["M14 2L14 22",0]],[18.4,3.6,4.75],0]);
 export default GlassAlignHorizontalDistributeStart;

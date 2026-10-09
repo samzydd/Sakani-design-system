@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fullscreen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFullscreen = /*#__PURE__*/ createGlassIcon("fullscreen", [["path",{"d":"M3 7V5a2 2 0 0 1 2 -2h2"},0],["path",{"d":"M17 3h2a2 2 0 0 1 2 2v2"},0],["path",{"d":"M21 17v2a2 2 0 0 1 -2 2h-2"},0],["path",{"d":"M7 21H5a2 2 0 0 1 -2 -2v-2"},0],["rect",{"width":"10","height":"8","x":"7","y":"8","rx":"1"},1]]);
+export const GlassFullscreen = /*#__PURE__*/ createGlassIcon("fullscreen", [[["M8 8L16 8A1 1 0 0 1 17 9L17 15A1 1 0 0 1 16 16L8 16A1 1 0 0 1 7 15L7 9A1 1 0 0 1 8 8Z",1]],[["M3 7L3 5A2 2 0 0 1 5 3L7 3",0],["M17 3L19 3A2 2 0 0 1 21 5L21 7",0],["M21 17L21 19A2 2 0 0 1 19 21L17 21",0],["M7 21L5 21A2 2 0 0 1 3 19L3 17",0]],[16.3,8.7,3.25],0]);
 export default GlassFullscreen;

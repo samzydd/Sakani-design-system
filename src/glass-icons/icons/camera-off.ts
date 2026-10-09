@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "camera-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCameraOff = /*#__PURE__*/ createGlassIcon("camera-off", [["path",{"d":"M14.564 14.558a3 3 0 1 1 -4.122 -4.121"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M20 20H4a2 2 0 0 1 -2 -2V9a2 2 0 0 1 2 -2h1.997a2 2 0 0 0 0.819 -0.175"},0],["path",{"d":"M9.695 4.024A2 2 0 0 1 10.004 4h3.993a2 2 0 0 1 1.76 1.05l0.486 0.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v7.344"},0]]);
+export const GlassCameraOff = /*#__PURE__*/ createGlassIcon("camera-off", [[["M20 20L4 20A2 2 0 0 1 2 18L2 9A2 2 0 0 1 4 7L5.997 7A2 2 0 0 0 6.816 6.825Z",1],["M2 2L22 22",0]],[["M14.564 14.558A3 3 0 1 1 10.442 10.437",1],["M9.695 4.024A2 2 0 0 1 10.004 4L13.997 4A2 2 0 0 1 15.757 5.05L16.243 5.95A2 2 0 0 0 18.003 7L20 7A2 2 0 0 1 22 9L22 16.344",0]],[20.4,3.6,4.75],0]);
 export default GlassCameraOff;

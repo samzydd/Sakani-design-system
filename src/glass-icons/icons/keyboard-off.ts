@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "keyboard-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassKeyboardOff = /*#__PURE__*/ createGlassIcon("keyboard-off", [["path",{"d":"M20 4A2 2 0 0 1 22 6"},0],["path",{"d":"M22 6L22 16.41"},0],["path",{"d":"M7 16L16 16"},0],["path",{"d":"M9.69 4L20 4"},0],["path",{"d":"M14 8h0.01"},0],["path",{"d":"M18 8h0.01"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M20 20H4a2 2 0 0 1 -2 -2V6a2 2 0 0 1 2 -2"},0],["path",{"d":"M6 8h0.01"},0],["path",{"d":"M8 12h0.01"},0]]);
+export const GlassKeyboardOff = /*#__PURE__*/ createGlassIcon("keyboard-off", [[["M20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z",1],["M2 2L22 22",0],["M6 8L6.01 8",0]],[["M20 4A2 2 0 0 1 22 6",0],["M22 6L22 16.41",0],["M7 16L16 16",1],["M9.69 4L20 4",0],["M14 8L14.01 8",0],["M18 8L18.01 8",0],["M8 12L8.01 12",1]],[20.4,3.6,4.75],0]);
 export default GlassKeyboardOff;

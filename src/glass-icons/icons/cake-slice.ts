@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cake-slice"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCakeSlice = /*#__PURE__*/ createGlassIcon("cake-slice", [["path",{"d":"M16 13H3"},0],["path",{"d":"M16 17H3"},0],["path",{"d":"M7.2 7.9l-3.388 2.5A2 2 0 0 0 3 12.01V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1 -1v-8.654c0 -2 -2.44 -6.026 -6.44 -8.026a1 1 0 0 0 -1.082 0.057L10.4 5.6"},0],["circle",{"cx":"9","cy":"7","r":"2"},1]]);
+export const GlassCakeSlice = /*#__PURE__*/ createGlassIcon("cake-slice", [[["M7.2 7.9L3.812 10.4A2 2 0 0 0 3 12.01L3 20A1 1 0 0 0 4 21L20 21A1 1 0 0 0 21 20L21 11.346C21 9.346 18.56 5.32 14.56 3.32A1 1 0 0 0 13.478 3.377L10.4 5.6Z",1]],[["M16 13L3 13",1],["M16 17L3 17",1],["M7 7A2 2 0 1 0 11 7A2 2 0 1 0 7 7Z",1]],[19.4,4.789,4.75],0]);
 export default GlassCakeSlice;

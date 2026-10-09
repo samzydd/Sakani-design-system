@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clipboard-paste"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClipboardPaste = /*#__PURE__*/ createGlassIcon("clipboard-paste", [["path",{"d":"M11 14h10"},0],["path",{"d":"M16 4h2a2 2 0 0 1 2 2v1.344"},0],["path",{"d":"M17 18l4 -4l-4 -4"},0],["path",{"d":"M8 4H6a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 1.793 -1.113"},0],["rect",{"x":"8","y":"2","width":"8","height":"4","rx":"1"},1]]);
+export const GlassClipboardPaste = /*#__PURE__*/ createGlassIcon("clipboard-paste", [[["M8 4L6 4A2 2 0 0 0 4 6L4 20A2 2 0 0 0 6 22L18 22A2 2 0 0 0 19.793 20.887Z",1]],[["M11 14L21 14",0],["M16 4L18 4A2 2 0 0 1 20 6L20 7.344",0],["M17 18L21 14L17 10",0],["M9 2L15 2A1 1 0 0 1 16 3L16 5A1 1 0 0 1 15 6L9 6A1 1 0 0 1 8 5L8 3A1 1 0 0 1 9 2Z",0]],[18.193,5.6,4.75],0]);
 export default GlassClipboardPaste;

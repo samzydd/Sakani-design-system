@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "banknote-x"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBanknoteX = /*#__PURE__*/ createGlassIcon("banknote-x", [["path",{"d":"M13 18H4a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v5"},0],["path",{"d":"M17 17l5 5"},0],["path",{"d":"M18 12h0.01"},0],["path",{"d":"M22 17l-5 5"},0],["path",{"d":"M6 12h0.01"},0],["circle",{"cx":"12","cy":"12","r":"2"},1]]);
+export const GlassBanknoteX = /*#__PURE__*/ createGlassIcon("banknote-x", [[["M13 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6L20 6A2 2 0 0 1 22 8L22 13Z",1]],[["M17 17L22 22",0],["M18 12L18.01 12",1],["M22 17L17 22",0],["M6 12L6.01 12",1],["M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z",1]],[20.4,7.6,4.75],0]);
 export default GlassBanknoteX;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lamp-floor"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLampFloor = /*#__PURE__*/ createGlassIcon("lamp-floor", [["path",{"d":"M12 10v12"},0],["path",{"d":"M17.929 7.629A1 1 0 0 1 17 9H7a1 1 0 0 1 -0.928 -1.371l2 -5A1 1 0 0 1 9 2h6a1 1 0 0 1 0.928 0.629z"},1],["path",{"d":"M9 22h6"},0]]);
+export const GlassLampFloor = /*#__PURE__*/ createGlassIcon("lamp-floor", [[["M17.929 7.629A1 1 0 0 1 17 9L7 9A1 1 0 0 1 6.072 7.629L8.072 2.629A1 1 0 0 1 9 2L15 2A1 1 0 0 1 15.928 2.629Z",1]],[["M12 10L12 22",0],["M9 22L15 22",0]],[16.988,3.012,3.77],0]);
 export default GlassLampFloor;

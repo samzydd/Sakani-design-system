@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "earth"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEarth = /*#__PURE__*/ createGlassIcon("earth", [["path",{"d":"M21.54 15H17a2 2 0 0 0 -2 2v4.54"},0],["path",{"d":"M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1 0.9 2 2 2a2 2 0 0 0 2 -2c0 -1.1 0.9 -2 2 -2h3.17"},0],["path",{"d":"M11 21.95V18a2 2 0 0 0 -2 -2a2 2 0 0 1 -2 -2v-1a2 2 0 0 0 -2 -2H2.05"},0],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassEarth = /*#__PURE__*/ createGlassIcon("earth", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M21.54 15L17 15A2 2 0 0 0 15 17L15 21.54",1],["M7 3.34L7 5A3 3 0 0 0 10 8A2 2 0 0 1 12 10C12 11.1 12.9 12 14 12A2 2 0 0 0 16 10C16 8.9 16.9 8 18 8L21.17 8",1],["M11 21.95L11 18A2 2 0 0 0 9 16A2 2 0 0 1 7 14L7 13A2 2 0 0 0 5 11L2.05 11",1]],[20.4,3.6,4.75],0]);
 export default GlassEarth;

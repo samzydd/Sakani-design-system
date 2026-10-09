@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "unfold-horizontal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUnfoldHorizontal = /*#__PURE__*/ createGlassIcon("unfold-horizontal", [["path",{"d":"M16 12h6"},0],["path",{"d":"M8 12H2"},0],["path",{"d":"M12 2v2"},0],["path",{"d":"M12 8v2"},0],["path",{"d":"M12 14v2"},0],["path",{"d":"M12 20v2"},0],["path",{"d":"M19 15l3 -3l-3 -3"},0],["path",{"d":"M5 9l-3 3l3 3"},0]]);
+export const GlassUnfoldHorizontal = /*#__PURE__*/ createGlassIcon("unfold-horizontal", [[["M16 12L22 12",0],["M8 12L2 12",0],["M12 2L12 4",0],["M12 8L12 10",0],["M12 14L12 16",0],["M12 20L12 22",0],["M19 15L22 12L19 9",0],["M5 9L2 12L5 15",0]],[],[20.4,3.6,4.75],1]);
 export default GlassUnfoldHorizontal;

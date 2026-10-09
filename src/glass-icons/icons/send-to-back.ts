@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "send-to-back"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSendToBack = /*#__PURE__*/ createGlassIcon("send-to-back", [["rect",{"x":"14","y":"14","width":"8","height":"8","rx":"2"},1],["rect",{"x":"2","y":"2","width":"8","height":"8","rx":"2"},1],["path",{"d":"M7 14v1a2 2 0 0 0 2 2h1"},0],["path",{"d":"M14 7h1a2 2 0 0 1 2 2v1"},0]]);
+export const GlassSendToBack = /*#__PURE__*/ createGlassIcon("send-to-back", [[["M16 14L20 14A2 2 0 0 1 22 16L22 20A2 2 0 0 1 20 22L16 22A2 2 0 0 1 14 20L14 16A2 2 0 0 1 16 14Z",1],["M4 2L8 2A2 2 0 0 1 10 4L10 8A2 2 0 0 1 8 10L4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2Z",1]],[["M7 14L7 15A2 2 0 0 0 9 17L10 17",0],["M14 7L15 7A2 2 0 0 1 17 9L17 10",0]],[20.4,3.6,4.75],0]);
 export default GlassSendToBack;

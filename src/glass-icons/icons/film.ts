@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "film"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFilm = /*#__PURE__*/ createGlassIcon("film", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M7 3v18"},0],["path",{"d":"M3 7.5h4"},0],["path",{"d":"M3 12h18"},0],["path",{"d":"M3 16.5h4"},0],["path",{"d":"M17 3v18"},0],["path",{"d":"M17 7.5h4"},0],["path",{"d":"M17 16.5h4"},0]]);
+export const GlassFilm = /*#__PURE__*/ createGlassIcon("film", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M7 3L7 21",1],["M3 7.5L7 7.5",1],["M3 12L21 12",1],["M3 16.5L7 16.5",1],["M17 3L17 21",1],["M17 7.5L21 7.5",1],["M17 16.5L21 16.5",1]],[19.4,4.6,4.75],0]);
 export default GlassFilm;

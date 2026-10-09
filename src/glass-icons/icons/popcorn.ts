@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "popcorn"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPopcorn = /*#__PURE__*/ createGlassIcon("popcorn", [["path",{"d":"M18 8a2 2 0 0 0 0 -4a2 2 0 0 0 -4 0a2 2 0 0 0 -4 0a2 2 0 0 0 -4 0a2 2 0 0 0 0 4"},0],["path",{"d":"M10 22L9 8"},0],["path",{"d":"M14 22l1 -14"},0],["path",{"d":"M20 8c0.5 0 0.9 0.4 0.8 1l-2.6 12c-0.1 0.5 -0.7 1 -1.2 1H7c-0.6 0 -1.1 -0.4 -1.2 -1L3.2 9c-0.1 -0.6 0.3 -1 0.8 -1Z"},1]]);
+export const GlassPopcorn = /*#__PURE__*/ createGlassIcon("popcorn", [[["M20 8C20.5 8 20.9 8.4 20.8 9L18.2 21C18.1 21.5 17.5 22 17 22L7 22C6.4 22 5.9 21.6 5.8 21L3.2 9C3.1 8.4 3.5 8 4 8Z",1],["M18 8A2 2 0 0 0 18 4A2 2 0 0 0 14 4A2 2 0 0 0 10 4A2 2 0 0 0 6 4A2 2 0 0 0 6 8Z",1]],[["M10 22L9 8",1],["M14 22L15 8",1]],[19.215,3.6,4.75],0]);
 export default GlassPopcorn;

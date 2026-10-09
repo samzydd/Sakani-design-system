@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cloud-download"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCloudDownload = /*#__PURE__*/ createGlassIcon("cloud-download", [["path",{"d":"M12 13v8l-4 -4"},0],["path",{"d":"M12 21l4 -4"},0],["path",{"d":"M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284"},0]]);
+export const GlassCloudDownload = /*#__PURE__*/ createGlassIcon("cloud-download", [[["M4.393 15.269A7 7 0 1 1 15.71 8L17.5 8A4.5 4.5 0 0 1 19.936 16.284Z",1]],[["M12 13L12 21L8 17",0],["M12 21L16 17",0]],[20.386,4.625,4.75],0]);
 export default GlassCloudDownload;

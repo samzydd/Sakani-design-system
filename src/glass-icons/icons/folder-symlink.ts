@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-symlink"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderSymlink = /*#__PURE__*/ createGlassIcon("folder-symlink", [["path",{"d":"M2 9.35V5a2 2 0 0 1 2 -2h3.9a2 2 0 0 1 1.69 0.9l0.81 1.2a2 2 0 0 0 1.67 0.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2v-3a2 2 0 0 1 2 -2h7"},0],["path",{"d":"M8 16l3 -3l-3 -3"},0]]);
+export const GlassFolderSymlink = /*#__PURE__*/ createGlassIcon("folder-symlink", [[["M2 9.35L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 15A2 2 0 0 1 4 13L11 13Z",1]],[["M8 16L11 13L8 10",1]],[20.4,4.6,4.75],0]);
 export default GlassFolderSymlink;

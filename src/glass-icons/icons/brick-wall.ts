@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "brick-wall"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBrickWall = /*#__PURE__*/ createGlassIcon("brick-wall", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M12 9v6"},0],["path",{"d":"M16 15v6"},0],["path",{"d":"M16 3v6"},0],["path",{"d":"M3 15h18"},0],["path",{"d":"M3 9h18"},0],["path",{"d":"M8 15v6"},0],["path",{"d":"M8 3v6"},0]]);
+export const GlassBrickWall = /*#__PURE__*/ createGlassIcon("brick-wall", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M12 9L12 15",1],["M16 15L16 21",1],["M16 3L16 9",1],["M3 15L21 15",1],["M3 9L21 9",1],["M8 15L8 21",1],["M8 3L8 9",1]],[19.4,4.6,4.75],0]);
 export default GlassBrickWall;

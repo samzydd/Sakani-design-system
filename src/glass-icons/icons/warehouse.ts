@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "warehouse"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWarehouse = /*#__PURE__*/ createGlassIcon("warehouse", [["path",{"d":"M18 21V10a1 1 0 0 0 -1 -1H7a1 1 0 0 0 -1 1v11"},0],["path",{"d":"M22 19a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2V8a2 2 0 0 1 1.132 -1.803l7.95 -3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"},1],["path",{"d":"M6 13h12"},0],["path",{"d":"M6 17h12"},0]]);
+export const GlassWarehouse = /*#__PURE__*/ createGlassIcon("warehouse", [[["M22 19A2 2 0 0 1 20 21L4 21A2 2 0 0 1 2 19L2 8A2 2 0 0 1 3.132 6.197L11.082 2.223A2 2 0 0 1 12.919 2.223L20.867 6.197A2 2 0 0 1 22 8Z",1]],[["M18 21L18 10A1 1 0 0 0 17 9L7 9A1 1 0 0 0 6 10L6 21",1],["M6 13L18 13",1],["M6 17L18 17",1]],[20.4,3.609,4.75],0]);
 export default GlassWarehouse;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "parking-meter"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassParkingMeter = /*#__PURE__*/ createGlassIcon("parking-meter", [["path",{"d":"M11 15h2"},0],["path",{"d":"M12 12v3"},0],["path",{"d":"M12 19v3"},0],["path",{"d":"M15.282 19a1 1 0 0 0 0.948 -0.68l2.37 -6.988a7 7 0 1 0 -13.2 0l2.37 6.988a1 1 0 0 0 0.948 0.68z"},1],["path",{"d":"M9 9a3 3 0 1 1 6 0"},0]]);
+export const GlassParkingMeter = /*#__PURE__*/ createGlassIcon("parking-meter", [[["M15.282 19A1 1 0 0 0 16.23 18.32L18.6 11.332A7 7 0 1 0 5.4 11.332L7.77 18.32A1 1 0 0 0 8.718 19Z",1]],[["M11 15L13 15",1],["M12 12L12 15",1],["M12 19L12 22",0],["M9 9A3 3 0 1 1 15 9",1]],[17.394,3.6,4.75],0]);
 export default GlassParkingMeter;

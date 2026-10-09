@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "stethoscope"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassStethoscope = /*#__PURE__*/ createGlassIcon("stethoscope", [["path",{"d":"M11 2v2"},0],["path",{"d":"M5 2v2"},0],["path",{"d":"M5 3H4a2 2 0 0 0 -2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0 -2 -2h-1"},0],["path",{"d":"M8 15a6 6 0 0 0 12 0v-3"},0],["circle",{"cx":"20","cy":"10","r":"2"},1]]);
+export const GlassStethoscope = /*#__PURE__*/ createGlassIcon("stethoscope", [[["M5 3L4 3A2 2 0 0 0 2 5L2 9A6 6 0 0 0 14 9L14 5A2 2 0 0 0 12 3L11 3Z",1],["M8 15A6 6 0 0 0 20 15L20 12Z",1],["M11 2L11 4",0],["M5 2L5 4",0]],[["M18 10A2 2 0 1 0 22 10A2 2 0 1 0 18 10Z",0]],[18.4,3.6,4.75],0]);
 export default GlassStethoscope;

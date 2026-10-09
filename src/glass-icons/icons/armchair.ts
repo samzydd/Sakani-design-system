@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "armchair"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArmchair = /*#__PURE__*/ createGlassIcon("armchair", [["path",{"d":"M19 9V6a2 2 0 0 0 -2 -2H7a2 2 0 0 0 -2 2v3"},0],["path",{"d":"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2v-5a2 2 0 0 0 -4 0v1.5a0.5 0.5 0 0 1 -0.5 0.5h-9a0.5 0.5 0 0 1 -0.5 -0.5V11a2 2 0 0 0 -4 0z"},1],["path",{"d":"M5 18v2"},0],["path",{"d":"M19 18v2"},0]]);
+export const GlassArmchair = /*#__PURE__*/ createGlassIcon("armchair", [[["M3 16A2 2 0 0 0 5 18L19 18A2 2 0 0 0 21 16L21 11A2 2 0 0 0 17 11L17 12.5A0.5 0.5 0 0 1 16.5 13L7.5 13A0.5 0.5 0 0 1 7 12.5L7 11A2 2 0 0 0 3 11Z",1],["M19 9L19 6A2 2 0 0 0 17 4L7 4A2 2 0 0 0 5 6L5 9Z",1]],[["M5 18L5 20",1],["M19 18L19 20",1]],[19.4,5.6,4.75],0]);
 export default GlassArmchair;

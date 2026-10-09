@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "landmark"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLandmark = /*#__PURE__*/ createGlassIcon("landmark", [["path",{"d":"M10 18v-7"},0],["path",{"d":"M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A0.5 0.5 0 0 1 20.5 7h-17a0.5 0.5 0 0 1 -0.22 -0.949z"},1],["path",{"d":"M14 18v-7"},0],["path",{"d":"M18 18v-7"},0],["path",{"d":"M3 22h18"},0],["path",{"d":"M6 18v-7"},0]]);
+export const GlassLandmark = /*#__PURE__*/ createGlassIcon("landmark", [[["M11.119 2.205A2 2 0 0 1 12.881 2.205L20.721 6.051A0.5 0.5 0 0 1 20.5 7L3.5 7A0.5 0.5 0 0 1 3.28 6.051Z",1]],[["M10 18L10 11",0],["M14 18L14 11",0],["M18 18L18 11",0],["M3 22L21 22",0],["M6 18L6 11",0]],[19.401,3.609,4.75],0]);
 export default GlassLandmark;

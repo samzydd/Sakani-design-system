@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shrink"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShrink = /*#__PURE__*/ createGlassIcon("shrink", [["path",{"d":"M15 15l6 6"},0],["path",{"d":"M15 15v4.8"},0],["path",{"d":"M15 15h4.8"},0],["path",{"d":"M9 19.8V15"},0],["path",{"d":"M9 15H4.2"},0],["path",{"d":"M9 15l-6 6"},0],["path",{"d":"M15 4.2V9"},0],["path",{"d":"M15 9h4.8"},0],["path",{"d":"M15 9l6 -6"},0],["path",{"d":"M9 4.2V9"},0],["path",{"d":"M9 9H4.2"},0],["path",{"d":"M9 9L3 3"},0]]);
+export const GlassShrink = /*#__PURE__*/ createGlassIcon("shrink", [[["M15 15L21 21",0],["M15 15L15 19.8",0],["M15 15L19.8 15",0],["M9 19.8L9 15",0],["M9 15L4.2 15",0],["M9 15L3 21",0],["M15 4.2L15 9",0],["M15 9L19.8 9",0],["M15 9L21 3",0],["M9 4.2L9 9",0],["M9 9L4.2 9",0],["M9 9L3 3",0]],[],[19.4,4.6,4.75],1]);
 export default GlassShrink;

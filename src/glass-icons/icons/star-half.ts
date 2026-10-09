@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "star-half"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassStarHalf = /*#__PURE__*/ createGlassIcon("star-half", [["path",{"d":"M12 18.338a2.1 2.1 0 0 0 -0.987 0.244L6.396 21.01a0.53 0.53 0 0 1 -0.77 -0.56l0.881 -5.139a2.12 2.12 0 0 0 -0.611 -1.879L2.16 9.795a0.53 0.53 0 0 1 0.294 -0.906l5.165 -0.755a2.12 2.12 0 0 0 1.597 -1.16l2.309 -4.679A0.53 0.53 0 0 1 12 2"},0]]);
+export const GlassStarHalf = /*#__PURE__*/ createGlassIcon("star-half", [[["M12 18.338A2.1 2.1 0 0 0 11.013 18.582L6.396 21.01A0.53 0.53 0 0 1 5.626 20.45L6.507 15.311A2.12 2.12 0 0 0 5.896 13.432L2.16 9.795A0.53 0.53 0 0 1 2.454 8.889L7.619 8.134A2.12 2.12 0 0 0 9.216 6.974L11.525 2.295A0.53 0.53 0 0 1 12 2Z",1]],[],[10.4,3.6,4.75],0]);
 export default GlassStarHalf;

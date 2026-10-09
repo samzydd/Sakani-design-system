@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-pie"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartPie = /*#__PURE__*/ createGlassIcon("chart-pie", [["path",{"d":"M21 12c0.552 0 1.005 -0.449 0.95 -0.998a10 10 0 0 0 -8.953 -8.951c-0.55 -0.055 -0.998 0.398 -0.998 0.95v8a1 1 0 0 0 1 1z"},1],["path",{"d":"M21.21 15.89A10 10 0 1 1 8 2.83"},0]]);
+export const GlassChartPie = /*#__PURE__*/ createGlassIcon("chart-pie", [[["M21.21 15.89A10 10 0 1 1 8 2.83Z",1],["M21 12C21.552 12 22.005 11.551 21.95 11.002A10 10 0 0 0 12.997 2.051C12.447 1.996 11.999 2.449 11.999 3.001L11.999 11.001A1 1 0 0 0 12.999 12.001Z",1]],[],[20.353,3.648,4.75],0]);
 export default GlassChartPie;

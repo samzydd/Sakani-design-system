@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "audio-lines"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAudioLines = /*#__PURE__*/ createGlassIcon("audio-lines", [["path",{"d":"M2 10v3"},0],["path",{"d":"M6 6v11"},0],["path",{"d":"M10 3v18"},0],["path",{"d":"M14 8v7"},0],["path",{"d":"M18 5v13"},0],["path",{"d":"M22 10v3"},0]]);
+export const GlassAudioLines = /*#__PURE__*/ createGlassIcon("audio-lines", [[["M2 10L2 13",0],["M6 6L6 17",0],["M10 3L10 21",0],["M14 8L14 15",0],["M18 5L18 18",0],["M22 10L22 13",0]],[],[20.4,4.6,4.75],1]);
 export default GlassAudioLines;

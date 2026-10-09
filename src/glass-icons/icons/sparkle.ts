@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sparkle"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSparkle = /*#__PURE__*/ createGlassIcon("sparkle", [["path",{"d":"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0 -1.594 1.594l-1.051 5.558a1 1 0 0 1 -1.966 0l-1.051 -5.558a2 2 0 0 0 -1.594 -1.594l-5.558 -1.051a1 1 0 0 1 0 -1.966l5.558 -1.051a2 2 0 0 0 1.594 -1.594z"},1]]);
+export const GlassSparkle = /*#__PURE__*/ createGlassIcon("sparkle", [[["M11.017 2.814A1 1 0 0 1 12.983 2.814L14.034 8.372A2 2 0 0 0 15.628 9.966L21.186 11.017A1 1 0 0 1 21.186 12.983L15.628 14.034A2 2 0 0 0 14.034 15.628L12.983 21.186A1 1 0 0 1 11.017 21.186L9.966 15.628A2 2 0 0 0 8.372 14.034L2.814 12.983A1 1 0 0 1 2.814 11.017L8.372 9.966A2 2 0 0 0 9.966 8.372Z",1]],[],[20.398,3.602,4.75],0]);
 export default GlassSparkle;

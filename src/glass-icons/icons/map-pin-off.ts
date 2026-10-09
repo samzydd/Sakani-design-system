@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-pin-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMapPinOff = /*#__PURE__*/ createGlassIcon("map-pin-off", [["path",{"d":"M12.75 7.09a3 3 0 0 1 2.16 2.16"},0],["path",{"d":"M17.072 17.072c-1.634 2.17 -3.527 3.912 -4.471 4.727a1 1 0 0 1 -1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 1.432 -4.568"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M8.475 2.818A8 8 0 0 1 20 10c0 1.183 -0.31 2.377 -0.81 3.533"},0],["path",{"d":"M9.13 9.13a3 3 0 0 0 3.74 3.74"},0]]);
+export const GlassMapPinOff = /*#__PURE__*/ createGlassIcon("map-pin-off", [[["M17.072 17.072C15.438 19.242 13.545 20.984 12.601 21.799A1 1 0 0 1 11.399 21.799C9.539 20.193 4 14.993 4 10A8 8 0 0 1 5.432 5.432Z",1],["M9.13 9.13A3 3 0 0 0 12.87 12.87",0]],[["M12.75 7.09A3 3 0 0 1 14.91 9.25",0],["M2 2L22 22",1],["M8.475 2.818A8 8 0 0 1 20 10C20 11.183 19.69 12.377 19.19 13.533",0]],[15.472,7.032,4.75],0]);
 export default GlassMapPinOff;

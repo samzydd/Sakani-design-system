@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "binary"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBinary = /*#__PURE__*/ createGlassIcon("binary", [["rect",{"x":"14","y":"14","width":"4","height":"6","rx":"2"},1],["rect",{"x":"6","y":"4","width":"4","height":"6","rx":"2"},1],["path",{"d":"M6 20h4"},0],["path",{"d":"M14 10h4"},0],["path",{"d":"M6 14h2v6"},0],["path",{"d":"M14 4h2v6"},0]]);
+export const GlassBinary = /*#__PURE__*/ createGlassIcon("binary", [[["M16 14L16 14A2 2 0 0 1 18 16L18 18A2 2 0 0 1 16 20L16 20A2 2 0 0 1 14 18L14 16A2 2 0 0 1 16 14Z",1],["M8 4L8 4A2 2 0 0 1 10 6L10 8A2 2 0 0 1 8 10L8 10A2 2 0 0 1 6 8L6 6A2 2 0 0 1 8 4Z",1]],[["M6 20L10 20",0],["M14 10L18 10",0],["M6 14L8 14L8 20",0],["M14 4L16 4L16 10",0]],[16.4,5.6,4.75],0]);
 export default GlassBinary;

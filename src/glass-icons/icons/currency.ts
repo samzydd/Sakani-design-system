@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "currency"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCurrency = /*#__PURE__*/ createGlassIcon("currency", [["circle",{"cx":"12","cy":"12","r":"8"},1],["line",{"x1":"3","x2":"6","y1":"3","y2":"6"},0],["line",{"x1":"21","x2":"18","y1":"3","y2":"6"},0],["line",{"x1":"3","x2":"6","y1":"21","y2":"18"},0],["line",{"x1":"21","x2":"18","y1":"21","y2":"18"},0]]);
+export const GlassCurrency = /*#__PURE__*/ createGlassIcon("currency", [[["M4 12A8 8 0 1 0 20 12A8 8 0 1 0 4 12Z",1]],[["M3 3L6 6",0],["M21 3L18 6",0],["M3 21L6 18",0],["M21 21L18 18",0]],[18.4,5.6,4.75],0]);
 export default GlassCurrency;

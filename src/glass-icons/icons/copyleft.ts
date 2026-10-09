@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "copyleft"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCopyleft = /*#__PURE__*/ createGlassIcon("copyleft", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M9.17 14.83a4 4 0 1 0 0 -5.66"},0]]);
+export const GlassCopyleft = /*#__PURE__*/ createGlassIcon("copyleft", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M9.17 14.83A4 4 0 1 0 9.17 9.17",1]],[20.4,3.6,4.75],0]);
 export default GlassCopyleft;

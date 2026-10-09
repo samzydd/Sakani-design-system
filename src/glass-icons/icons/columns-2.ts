@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "columns-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassColumns2 = /*#__PURE__*/ createGlassIcon("columns-2", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M12 3v18"},0]]);
+export const GlassColumns2 = /*#__PURE__*/ createGlassIcon("columns-2", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M12 3L12 21",1]],[19.4,4.6,4.75],0]);
 export default GlassColumns2;

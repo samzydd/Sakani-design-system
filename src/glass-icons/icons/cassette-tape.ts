@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cassette-tape"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCassetteTape = /*#__PURE__*/ createGlassIcon("cassette-tape", [["rect",{"width":"20","height":"16","x":"2","y":"4","rx":"2"},1],["circle",{"cx":"8","cy":"10","r":"2"},1],["path",{"d":"M8 12h8"},0],["circle",{"cx":"16","cy":"10","r":"2"},1],["path",{"d":"M6 20l0.7 -2.9A1.4 1.4 0 0 1 8.1 16h7.8a1.4 1.4 0 0 1 1.4 1l0.7 3"},0]]);
+export const GlassCassetteTape = /*#__PURE__*/ createGlassIcon("cassette-tape", [[["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z",1]],[["M6 10A2 2 0 1 0 10 10A2 2 0 1 0 6 10Z",1],["M8 12L16 12",1],["M14 10A2 2 0 1 0 18 10A2 2 0 1 0 14 10Z",1],["M6 20L6.7 17.1A1.4 1.4 0 0 1 8.1 16L15.9 16A1.4 1.4 0 0 1 17.3 17L18 20",1]],[20.4,5.6,4.75],0]);
 export default GlassCassetteTape;

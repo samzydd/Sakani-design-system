@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "separator-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSeparatorVertical = /*#__PURE__*/ createGlassIcon("separator-vertical", [["path",{"d":"M12 3v18"},0],["path",{"d":"M16 16l4 -4l-4 -4"},0],["path",{"d":"M8 8l-4 4l4 4"},0]]);
+export const GlassSeparatorVertical = /*#__PURE__*/ createGlassIcon("separator-vertical", [[["M12 3L12 21",0],["M16 16L20 12L16 8",0],["M8 8L4 12L8 16",0]],[],[18.4,4.6,4.75],1]);
 export default GlassSeparatorVertical;

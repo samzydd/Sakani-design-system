@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mouse-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMouseOff = /*#__PURE__*/ createGlassIcon("mouse-off", [["path",{"d":"M12 6v0.343"},0],["path",{"d":"M18.218 18.218A7 7 0 0 1 5 15V9a7 7 0 0 1 0.782 -3.218"},0],["path",{"d":"M19 13.343V9A7 7 0 0 0 8.56 2.902"},0],["path",{"d":"M22 22L2 2"},0]]);
+export const GlassMouseOff = /*#__PURE__*/ createGlassIcon("mouse-off", [[["M18.218 18.218A7 7 0 0 1 5 15L5 9A7 7 0 0 1 5.782 5.782Z",1],["M22 22L2 2",0]],[["M12 6L12 6.343",0],["M19 13.343L19 9A7 7 0 0 0 8.56 2.902",0]],[20.4,3.6,4.75],0]);
 export default GlassMouseOff;

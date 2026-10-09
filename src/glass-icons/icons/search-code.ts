@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "search-code"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSearchCode = /*#__PURE__*/ createGlassIcon("search-code", [["path",{"d":"M13 13.5l2 -2.5l-2 -2.5"},0],["path",{"d":"M21 21l-4.3 -4.3"},0],["path",{"d":"M9 8.5L7 11l2 2.5"},0],["circle",{"cx":"11","cy":"11","r":"8"},1]]);
+export const GlassSearchCode = /*#__PURE__*/ createGlassIcon("search-code", [[["M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z",1]],[["M13 13.5L15 11L13 8.5",1],["M21 21L16.7 16.7",0],["M9 8.5L7 11L9 13.5",1]],[17.4,4.6,4.75],0]);
 export default GlassSearchCode;

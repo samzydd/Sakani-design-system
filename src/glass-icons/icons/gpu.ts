@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gpu"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGpu = /*#__PURE__*/ createGlassIcon("gpu", [["path",{"d":"M2 17h18a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2H2"},0],["path",{"d":"M2 21V3"},0],["path",{"d":"M7 17v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3"},0],["circle",{"cx":"16","cy":"11","r":"2"},1],["circle",{"cx":"8","cy":"11","r":"2"},1]]);
+export const GlassGpu = /*#__PURE__*/ createGlassIcon("gpu", [[["M2 17L20 17A2 2 0 0 0 22 15L22 7A2 2 0 0 0 20 5L2 5Z",1],["M2 21L2 3",0]],[["M7 17L7 20A1 1 0 0 0 8 21L13 21A1 1 0 0 0 14 20L14 17",0],["M14 11A2 2 0 1 0 18 11A2 2 0 1 0 14 11Z",1],["M6 11A2 2 0 1 0 10 11A2 2 0 1 0 6 11Z",1]],[20.4,4.6,4.75],0]);
 export default GlassGpu;

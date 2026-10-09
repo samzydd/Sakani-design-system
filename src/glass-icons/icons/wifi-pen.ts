@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wifi-pen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWifiPen = /*#__PURE__*/ createGlassIcon("wifi-pen", [["path",{"d":"M2 8.82a15 15 0 0 1 20 0"},0],["path",{"d":"M21.378 16.626a1 1 0 0 0 -3.004 -3.004l-4.01 4.012a2 2 0 0 0 -0.506 0.854l-0.837 2.87a0.5 0.5 0 0 0 0.62 0.62l2.87 -0.837a2 2 0 0 0 0.854 -0.506z"},1],["path",{"d":"M5 12.859a10 10 0 0 1 10.5 -2.222"},0],["path",{"d":"M8.5 16.429a5 5 0 0 1 3 -1.406"},0]]);
+export const GlassWifiPen = /*#__PURE__*/ createGlassIcon("wifi-pen", [[["M21.378 16.626A1 1 0 0 0 18.374 13.622L14.364 17.634A2 2 0 0 0 13.858 18.488L13.021 21.358A0.5 0.5 0 0 0 13.641 21.978L16.511 21.141A2 2 0 0 0 17.365 20.635Z",1]],[["M2 8.82A15 15 0 0 1 22 8.82",0],["M5 12.859A10 10 0 0 1 15.5 10.637",0],["M8.5 16.429A5 5 0 0 1 11.5 15.023",0]],[21.45,13.55,3],0]);
 export default GlassWifiPen;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tags"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTags = /*#__PURE__*/ createGlassIcon("tags", [["path",{"d":"M13.172 2a2 2 0 0 1 1.414 0.586l6.71 6.71a2.4 2.4 0 0 1 0 3.408l-4.592 4.592a2.4 2.4 0 0 1 -3.408 0l-6.71 -6.71A2 2 0 0 1 6 9.172V3a1 1 0 0 1 1 -1z"},1],["path",{"d":"M2 7v6.172a2 2 0 0 0 0.586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191 0.193"},0],["circle",{"cx":"10.5","cy":"6.5","r":".5"},1]]);
+export const GlassTags = /*#__PURE__*/ createGlassIcon("tags", [[["M13.172 2A2 2 0 0 1 14.586 2.586L21.296 9.296A2.4 2.4 0 0 1 21.296 12.704L16.704 17.296A2.4 2.4 0 0 1 13.296 17.296L6.586 10.586A2 2 0 0 1 6 9.172L6 3A1 1 0 0 1 7 2Z",1]],[["M2 7L2 13.172A2 2 0 0 0 2.586 14.586L9.296 21.296A2.4 2.4 0 0 0 12.487 21.489",0],["M10 6.5A0.5 0.5 0 1 0 11 6.5A0.5 0.5 0 1 0 10 6.5Z",1]],[20.397,3.6,4.75],0]);
 export default GlassTags;

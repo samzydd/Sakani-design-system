@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "route-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRouteOff = /*#__PURE__*/ createGlassIcon("route-off", [["circle",{"cx":"6","cy":"19","r":"3"},1],["path",{"d":"M9 19h8.5c0.4 0 0.9 -0.1 1.3 -0.2"},0],["path",{"d":"M5.2 5.2A3.5 3.53 0 0 0 6.5 12H12"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M21 15.3a3.5 3.5 0 0 0 -3.3 -3.3"},0],["path",{"d":"M15 5h-4.3"},0],["circle",{"cx":"18","cy":"5","r":"3"},1]]);
+export const GlassRouteOff = /*#__PURE__*/ createGlassIcon("route-off", [[["M5.2 5.2A3.5 3.53 0 0 0 6.5 12L12 12Z",1],["M15 5A3 3 0 1 0 21 5A3 3 0 1 0 15 5Z",1],["M3 19A3 3 0 1 0 9 19A3 3 0 1 0 3 19Z",1]],[["M9 19L17.5 19C17.9 19 18.4 18.9 18.8 18.8",0],["M2 2L22 22",0],["M21 15.3A3.5 3.5 0 0 0 17.7 12",0],["M15 5L10.7 5",0]],[19.4,3.6,4.75],0]);
 export default GlassRouteOff;

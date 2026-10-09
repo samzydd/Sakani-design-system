@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "disc-3"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDisc3 = /*#__PURE__*/ createGlassIcon("disc-3", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M6 12c0 -1.7 0.7 -3.2 1.8 -4.2"},0],["circle",{"cx":"12","cy":"12","r":"2"},1],["path",{"d":"M18 12c0 1.7 -0.7 3.2 -1.8 4.2"},0]]);
+export const GlassDisc3 = /*#__PURE__*/ createGlassIcon("disc-3", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M6 12C6 10.3 6.7 8.8 7.8 7.8",1],["M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z",1],["M18 12C18 13.7 17.3 15.2 16.2 16.2",1]],[20.4,3.6,4.75],0]);
 export default GlassDisc3;

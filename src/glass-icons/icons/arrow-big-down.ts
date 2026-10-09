@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-big-down"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArrowBigDown = /*#__PURE__*/ createGlassIcon("arrow-big-down", [["path",{"d":"M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 0 1 1h3.293a0.707 0.707 0 0 1 0.5 1.207l-7.086 7.086a1 1 0 0 1 -1.414 0l-7.086 -7.086a0.707 0.707 0 0 1 0.5 -1.207H8a1 1 0 0 0 1 -1z"},1]]);
+export const GlassArrowBigDown = /*#__PURE__*/ createGlassIcon("arrow-big-down", [[["M9 5A1 1 0 0 1 10 4L14 4A1 1 0 0 1 15 5L15 11A1 1 0 0 0 16 12L19.293 12A0.707 0.707 0 0 1 19.793 13.207L12.707 20.293A1 1 0 0 1 11.293 20.293L4.207 13.207A0.707 0.707 0 0 1 4.707 12L8 12A1 1 0 0 0 9 11Z",1]],[],[18.399,5.6,4.75],0]);
 export default GlassArrowBigDown;

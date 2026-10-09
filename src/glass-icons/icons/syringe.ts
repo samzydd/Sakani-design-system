@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "syringe"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSyringe = /*#__PURE__*/ createGlassIcon("syringe", [["path",{"d":"M18 2l4 4"},0],["path",{"d":"M17 7l3 -3"},0],["path",{"d":"M19 9L8.7 19.3c-1 1 -2.5 1 -3.4 0l-0.6 -0.6c-1 -1 -1 -2.5 0 -3.4L15 5"},0],["path",{"d":"M9 11l4 4"},0],["path",{"d":"M5 19l-3 3"},0],["path",{"d":"M14 4l6 6"},0]]);
+export const GlassSyringe = /*#__PURE__*/ createGlassIcon("syringe", [[["M19 9L8.7 19.3C7.7 20.3 6.2 20.3 5.3 19.3L4.7 18.7C3.7 17.7 3.7 16.2 4.7 15.3L15 5Z",1],["M14 4L20 10",0]],[["M18 2L22 6",0],["M17 7L20 4",0],["M9 11L13 15",1],["M5 19L2 22",0]],[18.4,5.6,4.75],0]);
 export default GlassSyringe;

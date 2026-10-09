@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tram-front"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTramFront = /*#__PURE__*/ createGlassIcon("tram-front", [["rect",{"width":"16","height":"16","x":"4","y":"3","rx":"2"},1],["path",{"d":"M4 11h16"},0],["path",{"d":"M12 3v8"},0],["path",{"d":"M8 19l-2 3"},0],["path",{"d":"M18 22l-2 -3"},0],["path",{"d":"M8 15h0.01"},0],["path",{"d":"M16 15h0.01"},0]]);
+export const GlassTramFront = /*#__PURE__*/ createGlassIcon("tram-front", [[["M6 3L18 3A2 2 0 0 1 20 5L20 17A2 2 0 0 1 18 19L6 19A2 2 0 0 1 4 17L4 5A2 2 0 0 1 6 3Z",1]],[["M4 11L20 11",1],["M12 3L12 11",1],["M8 19L6 22",0],["M18 22L16 19",0],["M8 15L8.01 15",1],["M16 15L16.01 15",1]],[18.4,4.6,4.75],0]);
 export default GlassTramFront;

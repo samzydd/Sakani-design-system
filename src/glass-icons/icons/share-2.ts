@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "share-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShare2 = /*#__PURE__*/ createGlassIcon("share-2", [["circle",{"cx":"18","cy":"5","r":"3"},1],["circle",{"cx":"6","cy":"12","r":"3"},1],["circle",{"cx":"18","cy":"19","r":"3"},1],["line",{"x1":"8.59","x2":"15.42","y1":"13.51","y2":"17.49"},0],["line",{"x1":"15.41","x2":"8.59","y1":"6.51","y2":"10.49"},0]]);
+export const GlassShare2 = /*#__PURE__*/ createGlassIcon("share-2", [[["M15 19A3 3 0 1 0 21 19A3 3 0 1 0 15 19Z",1],["M3 12A3 3 0 1 0 9 12A3 3 0 1 0 3 12Z",1],["M15 5A3 3 0 1 0 21 5A3 3 0 1 0 15 5Z",1]],[["M8.59 13.51L15.42 17.49",0],["M15.41 6.51L8.59 10.49",0]],[19.4,3.6,4.75],0]);
 export default GlassShare2;

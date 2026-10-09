@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rectangle-horizontal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRectangleHorizontal = /*#__PURE__*/ createGlassIcon("rectangle-horizontal", [["rect",{"width":"20","height":"12","x":"2","y":"6","rx":"2"},1]]);
+export const GlassRectangleHorizontal = /*#__PURE__*/ createGlassIcon("rectangle-horizontal", [[["M4 6L20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z",1]],[],[20.4,7.6,4.75],0]);
 export default GlassRectangleHorizontal;

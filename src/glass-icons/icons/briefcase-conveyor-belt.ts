@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "briefcase-conveyor-belt"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBriefcaseConveyorBelt = /*#__PURE__*/ createGlassIcon("briefcase-conveyor-belt", [["path",{"d":"M10 20v2"},0],["path",{"d":"M14 20v2"},0],["path",{"d":"M18 20v2"},0],["path",{"d":"M21 20H3"},0],["path",{"d":"M6 20v2"},0],["path",{"d":"M8 16V4a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v12"},0],["rect",{"x":"4","y":"6","width":"16","height":"10","rx":"2"},1]]);
+export const GlassBriefcaseConveyorBelt = /*#__PURE__*/ createGlassIcon("briefcase-conveyor-belt", [[["M6 6L18 6A2 2 0 0 1 20 8L20 14A2 2 0 0 1 18 16L6 16A2 2 0 0 1 4 14L4 8A2 2 0 0 1 6 6Z",1],["M8 16L8 4A2 2 0 0 1 10 2L14 2A2 2 0 0 1 16 4L16 16Z",1]],[["M10 20L10 22",0],["M14 20L14 22",0],["M18 20L18 22",0],["M21 20L3 20",0],["M6 20L6 22",0]],[18.4,3.6,4.75],0]);
 export default GlassBriefcaseConveyorBelt;

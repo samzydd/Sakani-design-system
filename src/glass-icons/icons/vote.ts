@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "vote"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVote = /*#__PURE__*/ createGlassIcon("vote", [["path",{"d":"M9 12l2 2l4 -4"},0],["path",{"d":"M5 7c0 -1.1 0.9 -2 2 -2h10a2 2 0 0 1 2 2v12H5V7Z"},1],["path",{"d":"M22 19H2"},0]]);
+export const GlassVote = /*#__PURE__*/ createGlassIcon("vote", [[["M5 7C5 5.9 5.9 5 7 5L17 5A2 2 0 0 1 19 7L19 19L5 19L5 7Z",1],["M22 19L2 19",0]],[["M9 12L11 14L15 10",1]],[20.4,6.6,4.75],0]);
 export default GlassVote;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-code"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderCode = /*#__PURE__*/ createGlassIcon("folder-code", [["path",{"d":"M10 10.5L8 13l2 2.5"},0],["path",{"d":"M14 10.5l2 2.5l-2 2.5"},0],["path",{"d":"M20 20a2 2 0 0 0 2 -2V8a2 2 0 0 0 -2 -2h-7.9a2 2 0 0 1 -1.69 -0.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0 -2 2v13a2 2 0 0 0 2 2z"},1]]);
+export const GlassFolderCode = /*#__PURE__*/ createGlassIcon("folder-code", [[["M20 20A2 2 0 0 0 22 18L22 8A2 2 0 0 0 20 6L12.1 6A2 2 0 0 1 10.41 5.1L9.6 3.9A2 2 0 0 0 7.93 3L4 3A2 2 0 0 0 2 5L2 18A2 2 0 0 0 4 20Z",1]],[["M10 10.5L8 13L10 15.5",1],["M14 10.5L16 13L14 15.5",1]],[20.4,4.6,4.75],0]);
 export default GlassFolderCode;

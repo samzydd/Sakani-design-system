@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "heart-crack"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHeartCrack = /*#__PURE__*/ createGlassIcon("heart-crack", [["path",{"d":"M12.409 5.824c-0.702 0.792 -1.15 1.496 -1.415 2.166l2.153 2.156a0.5 0.5 0 0 1 0 0.707l-2.293 2.293a0.5 0.5 0 0 0 0 0.707L12 15"},0],["path",{"d":"M13.508 20.313a2 2 0 0 1 -3 0.019L5 15c-1.5 -1.5 -3 -3.2 -3 -5.5a5.5 5.5 0 0 1 9.591 -3.677a0.6 0.6 0 0 0 0.818 0.001A5.5 5.5 0 0 1 22 9.5c0 2.29 -1.5 4 -3 5.5z"},1]]);
+export const GlassHeartCrack = /*#__PURE__*/ createGlassIcon("heart-crack", [[["M13.508 20.313A2 2 0 0 1 10.508 20.332L5 15C3.5 13.5 2 11.8 2 9.5A5.5 5.5 0 0 1 11.591 5.823A0.6 0.6 0 0 0 12.409 5.824A5.5 5.5 0 0 1 22 9.5C22 11.79 20.5 13.5 19 15Z",1]],[["M12.409 5.824C11.707 6.616 11.259 7.32 10.994 7.99L13.147 10.146A0.5 0.5 0 0 1 13.147 10.853L10.854 13.146A0.5 0.5 0 0 0 10.854 13.853L12 15",1]],[20.4,5.62,4.75],0]);
 export default GlassHeartCrack;

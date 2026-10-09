@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "diamond-percent"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDiamondPercent = /*#__PURE__*/ createGlassIcon("diamond-percent", [["path",{"d":"M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59 -7.59a2.41 2.41 0 0 0 0 -3.41L13.7 2.71a2.41 2.41 0 0 0 -3.41 0Z"},1],["path",{"d":"M9.2 9.2h0.01"},0],["path",{"d":"M14.5 9.5l-5 5"},0],["path",{"d":"M14.7 14.8h0.01"},0]]);
+export const GlassDiamondPercent = /*#__PURE__*/ createGlassIcon("diamond-percent", [[["M2.7 10.3A2.41 2.41 0 0 0 2.7 13.71L10.29 21.3A2.41 2.41 0 0 0 13.7 21.3L21.29 13.71A2.41 2.41 0 0 0 21.29 10.3L13.7 2.71A2.41 2.41 0 0 0 10.29 2.71Z",1]],[["M9.2 9.2L9.21 9.2",1],["M14.5 9.5L9.5 14.5",1],["M14.7 14.8L14.71 14.8",1]],[20.388,3.612,4.75],0]);
 export default GlassDiamondPercent;

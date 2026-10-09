@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-center-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignCenterVertical = /*#__PURE__*/ createGlassIcon("align-center-vertical", [["path",{"d":"M12 2v20"},0],["path",{"d":"M8 10H4a2 2 0 0 1 -2 -2V6c0 -1.1 0.9 -2 2 -2h4"},0],["path",{"d":"M16 10h4a2 2 0 0 0 2 -2V6a2 2 0 0 0 -2 -2h-4"},0],["path",{"d":"M8 20H7a2 2 0 0 1 -2 -2v-2c0 -1.1 0.9 -2 2 -2h1"},0],["path",{"d":"M16 14h1a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-1"},0]]);
+export const GlassAlignCenterVertical = /*#__PURE__*/ createGlassIcon("align-center-vertical", [[["M8 10L4 10A2 2 0 0 1 2 8L2 6C2 4.9 2.9 4 4 4L8 4Z",1],["M16 10L20 10A2 2 0 0 0 22 8L22 6A2 2 0 0 0 20 4L16 4Z",1],["M8 20L7 20A2 2 0 0 1 5 18L5 16C5 14.9 5.9 14 7 14L8 14Z",1],["M16 14L17 14A2 2 0 0 1 19 16L19 18A2 2 0 0 1 17 20L16 20Z",1]],[["M12 2L12 22",0]],[20.4,5.6,4.75],0]);
 export default GlassAlignCenterVertical;

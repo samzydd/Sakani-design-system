@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "panels-right-bottom"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPanelsRightBottom = /*#__PURE__*/ createGlassIcon("panels-right-bottom", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M3 15h12"},0],["path",{"d":"M15 3v18"},0]]);
+export const GlassPanelsRightBottom = /*#__PURE__*/ createGlassIcon("panels-right-bottom", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M3 15L15 15",1],["M15 3L15 21",1]],[19.4,4.6,4.75],0]);
 export default GlassPanelsRightBottom;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-arrow-out-up-left"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareArrowOutUpLeft = /*#__PURE__*/ createGlassIcon("square-arrow-out-up-left", [["path",{"d":"M13 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2v-6"},0],["path",{"d":"M3 3l9 9"},0],["path",{"d":"M3 9V3h6"},0]]);
+export const GlassSquareArrowOutUpLeft = /*#__PURE__*/ createGlassIcon("square-arrow-out-up-left", [[["M13 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 13Z",1]],[["M3 3L12 12",0],["M3 9L3 3L9 3",0]],[19.4,4.6,4.75],0]);
 export default GlassSquareArrowOutUpLeft;

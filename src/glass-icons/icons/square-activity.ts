@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-activity"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareActivity = /*#__PURE__*/ createGlassIcon("square-activity", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M17 12h-2l-2 5l-2 -10l-2 5H7"},0]]);
+export const GlassSquareActivity = /*#__PURE__*/ createGlassIcon("square-activity", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M17 12L15 12L13 17L11 7L9 12L7 12",1]],[19.4,4.6,4.75],0]);
 export default GlassSquareActivity;

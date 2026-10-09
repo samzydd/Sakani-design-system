@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "georgian-lari"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGeorgianLari = /*#__PURE__*/ createGlassIcon("georgian-lari", [["path",{"d":"M11.5 21a7.5 7.5 0 1 1 7.35 -9"},0],["path",{"d":"M13 12V3"},0],["path",{"d":"M4 21h16"},0],["path",{"d":"M9 12V3"},0]]);
+export const GlassGeorgianLari = /*#__PURE__*/ createGlassIcon("georgian-lari", [[["M11.5 21A7.5 7.5 0 1 1 18.85 12Z",1]],[["M13 12L13 3",1],["M4 21L20 21",0],["M9 12L9 3",1]],[17.37,7.48,4.55],0]);
 export default GlassGeorgianLari;

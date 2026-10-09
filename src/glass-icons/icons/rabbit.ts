@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rabbit"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRabbit = /*#__PURE__*/ createGlassIcon("rabbit", [["path",{"d":"M13 16a3 3 0 0 1 2.24 5"},0],["path",{"d":"M18 12h0.01"},0],["path",{"d":"M18 21h-8a4 4 0 0 1 -4 -4a7 7 0 0 1 7 -7h0.2L9.6 6.4a1 1 0 1 1 2.8 -2.8L15.8 7h0.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1 -2 2h-1a3 3 0 0 0 -3 3"},0],["path",{"d":"M20 8.54V4a2 2 0 1 0 -4 0v3"},0],["path",{"d":"M7.612 12.524a3 3 0 1 0 -1.6 4.3"},0]]);
+export const GlassRabbit = /*#__PURE__*/ createGlassIcon("rabbit", [[["M7.612 12.524A3 3 0 1 0 6.012 16.824Z",1],["M20 8.54L20 4A2 2 0 1 0 16 4L16 7Z",1]],[["M13 16A3 3 0 0 1 15.24 21",0],["M18 12L18.01 12",0],["M18 21L10 21A4 4 0 0 1 6 17A7 7 0 0 1 13 10L13.2 10L9.6 6.4A1 1 0 1 1 12.4 3.6L15.8 7L16 7C19.3 7 22 9.7 22 13L22 14A2 2 0 0 1 20 16L19 16A3 3 0 0 0 16 19",0]],[18.4,3.6,4.75],0]);
 export default GlassRabbit;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "battery-full"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBatteryFull = /*#__PURE__*/ createGlassIcon("battery-full", [["path",{"d":"M10 10v4"},0],["path",{"d":"M14 10v4"},0],["path",{"d":"M22 14v-4"},0],["path",{"d":"M6 10v4"},0],["rect",{"x":"2","y":"6","width":"16","height":"12","rx":"2"},1]]);
+export const GlassBatteryFull = /*#__PURE__*/ createGlassIcon("battery-full", [[["M4 6L16 6A2 2 0 0 1 18 8L18 16A2 2 0 0 1 16 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z",1]],[["M10 10L10 14",1],["M14 10L14 14",1],["M22 14L22 10",0],["M6 10L6 14",1]],[16.4,7.6,4.75],0]);
 export default GlassBatteryFull;

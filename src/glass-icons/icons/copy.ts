@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "copy"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCopy = /*#__PURE__*/ createGlassIcon("copy", [["rect",{"width":"14","height":"14","x":"8","y":"8","rx":"2","ry":"2"},1],["path",{"d":"M4 16c-1.1 0 -2 -0.9 -2 -2V4c0 -1.1 0.9 -2 2 -2h10c1.1 0 2 0.9 2 2"},0]]);
+export const GlassCopy = /*#__PURE__*/ createGlassIcon("copy", [[["M10 8L20 8A2 2 0 0 1 22 10L22 20A2 2 0 0 1 20 22L10 22A2 2 0 0 1 8 20L8 10A2 2 0 0 1 10 8Z",1],["M4 16C2.9 16 2 15.1 2 14L2 4C2 2.9 2.9 2 4 2L14 2C15.1 2 16 2.9 16 4Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassCopy;

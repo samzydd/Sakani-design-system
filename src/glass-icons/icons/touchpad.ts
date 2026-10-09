@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "touchpad"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTouchpad = /*#__PURE__*/ createGlassIcon("touchpad", [["rect",{"width":"20","height":"16","x":"2","y":"4","rx":"2"},1],["path",{"d":"M2 14h20"},0],["path",{"d":"M12 20v-6"},0]]);
+export const GlassTouchpad = /*#__PURE__*/ createGlassIcon("touchpad", [[["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z",1]],[["M2 14L22 14",1],["M12 20L12 14",1]],[20.4,5.6,4.75],0]);
 export default GlassTouchpad;

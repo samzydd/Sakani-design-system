@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "citrus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCitrus = /*#__PURE__*/ createGlassIcon("citrus", [["path",{"d":"M21.66 17.67a1.08 1.08 0 0 1 -0.04 1.6A12 12 0 0 1 4.73 2.38a1.1 1.1 0 0 1 1.61 -0.04z"},1],["path",{"d":"M19.65 15.66A8 8 0 0 1 8.35 4.34"},0],["path",{"d":"M14 10l-5.5 5.5"},0],["path",{"d":"M14 17.85V10H6.15"},0]]);
+export const GlassCitrus = /*#__PURE__*/ createGlassIcon("citrus", [[["M21.66 17.67A1.08 1.08 0 0 1 21.62 19.27A12 12 0 0 1 4.73 2.38A1.1 1.1 0 0 1 6.34 2.34Z",1]],[["M19.65 15.66A8 8 0 0 1 8.35 4.34",1],["M14 10L8.5 15.5",1],["M14 17.85L14 10L6.15 10",1]],[20.392,3.612,4.75],0]);
 export default GlassCitrus;

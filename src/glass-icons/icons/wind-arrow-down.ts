@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wind-arrow-down"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWindArrowDown = /*#__PURE__*/ createGlassIcon("wind-arrow-down", [["path",{"d":"M10 2v8"},0],["path",{"d":"M12.8 21.6A2 2 0 1 0 14 18H2"},0],["path",{"d":"M17.5 10a2.5 2.5 0 1 1 2 4H2"},0],["path",{"d":"M6 6l4 4l4 -4"},0]]);
+export const GlassWindArrowDown = /*#__PURE__*/ createGlassIcon("wind-arrow-down", [[["M17.5 10A2.5 2.5 0 1 1 19.5 14L2 14Z",1],["M12.8 21.6A2 2 0 1 0 14 18L2 18Z",1]],[["M10 2L10 10",0],["M6 6L10 10L14 6",0]],[20.399,10.602,4.75],0]);
 export default GlassWindArrowDown;

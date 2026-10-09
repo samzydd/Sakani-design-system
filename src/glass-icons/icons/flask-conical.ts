@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flask-conical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFlaskConical = /*#__PURE__*/ createGlassIcon("flask-conical", [["path",{"d":"M14 2v6a2 2 0 0 0 0.245 0.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1 -1.755 -2.96l5.51 -10.08A2 2 0 0 0 10 8V2"},0],["path",{"d":"M6.453 15h11.094"},0],["path",{"d":"M8.5 2h7"},0]]);
+export const GlassFlaskConical = /*#__PURE__*/ createGlassIcon("flask-conical", [[["M14 2L14 8A2 2 0 0 0 14.245 8.96L19.755 19.04A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4.245 19.04L9.755 8.96A2 2 0 0 0 10 8L10 2Z",1],["M8.5 2L15.5 2",0]],[["M6.453 15L17.547 15",1]],[18.396,3.6,4.75],0]);
 export default GlassFlaskConical;

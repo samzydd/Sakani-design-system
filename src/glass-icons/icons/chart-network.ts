@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-network"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartNetwork = /*#__PURE__*/ createGlassIcon("chart-network", [["path",{"d":"M13.11 7.664l1.78 2.672"},0],["path",{"d":"M14.162 12.788l-3.324 1.424"},0],["path",{"d":"M20 4l-6.06 1.515"},0],["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["circle",{"cx":"12","cy":"6","r":"2"},1],["circle",{"cx":"16","cy":"12","r":"2"},1],["circle",{"cx":"9","cy":"15","r":"2"},1]]);
+export const GlassChartNetwork = /*#__PURE__*/ createGlassIcon("chart-network", [[["M10 6A2 2 0 1 0 14 6A2 2 0 1 0 10 6Z",1],["M7 15A2 2 0 1 0 11 15A2 2 0 1 0 7 15Z",1],["M14 12A2 2 0 1 0 18 12A2 2 0 1 0 14 12Z",1],["M13.11 7.664L14.89 10.336",0],["M14.162 12.788L10.838 14.212",0]],[["M20 4L13.94 5.515",0],["M3 3L3 19A2 2 0 0 0 5 21L21 21",0]],[16.832,5.168,4.03],0]);
 export default GlassChartNetwork;

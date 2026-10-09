@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "axis-3d"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAxis3d = /*#__PURE__*/ createGlassIcon("axis-3d", [["path",{"d":"M13.5 10.5L15 9"},0],["path",{"d":"M4 4v15a1 1 0 0 0 1 1h15"},0],["path",{"d":"M4.293 19.707L6 18"},0],["path",{"d":"M9 15l1.5 -1.5"},0]]);
+export const GlassAxis3d = /*#__PURE__*/ createGlassIcon("axis-3d", [[["M13.5 10.5L15 9",0],["M4 4L4 19A1 1 0 0 0 5 20L20 20",0],["M4.293 19.707L6 18",0],["M9 15L10.5 13.5",0]],[],[18.4,5.6,4.75],1]);
 export default GlassAxis3d;

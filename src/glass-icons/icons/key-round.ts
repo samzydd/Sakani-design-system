@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "key-round"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassKeyRound = /*#__PURE__*/ createGlassIcon("key-round", [["path",{"d":"M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1 -1v-1a1 1 0 0 1 1 -1h1a1 1 0 0 0 1 -1v-1a1 1 0 0 1 1 -1h0.172a2 2 0 0 0 1.414 -0.586l0.814 -0.814a6.5 6.5 0 1 0 -4 -4z"},1],["circle",{"cx":"16.5","cy":"7.5","r":".5"},1]]);
+export const GlassKeyRound = /*#__PURE__*/ createGlassIcon("key-round", [[["M2.586 17.414A2 2 0 0 0 2 18.828L2 21A1 1 0 0 0 3 22L6 22A1 1 0 0 0 7 21L7 20A1 1 0 0 1 8 19L9 19A1 1 0 0 0 10 18L10 17A1 1 0 0 1 11 16L11.172 16A2 2 0 0 0 12.586 15.414L13.4 14.6A6.5 6.5 0 1 0 9.4 10.6Z",1]],[["M16 7.5A0.5 0.5 0 1 0 17 7.5A0.5 0.5 0 1 0 16 7.5Z",1]],[20.437,3.563,4.75],0]);
 export default GlassKeyRound;

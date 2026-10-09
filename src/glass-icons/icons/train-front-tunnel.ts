@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "train-front-tunnel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTrainFrontTunnel = /*#__PURE__*/ createGlassIcon("train-front-tunnel", [["path",{"d":"M2 22V12a10 10 0 1 1 20 0v10"},0],["path",{"d":"M15 6.8v1.4a3 2.8 0 1 1 -6 0V6.8"},0],["path",{"d":"M10 15h0.01"},0],["path",{"d":"M14 15h0.01"},0],["path",{"d":"M10 19a4 4 0 0 1 -4 -4v-3a6 6 0 1 1 12 0v3a4 4 0 0 1 -4 4Z"},1],["path",{"d":"M9 19l-2 3"},0],["path",{"d":"M15 19l2 3"},0]]);
+export const GlassTrainFrontTunnel = /*#__PURE__*/ createGlassIcon("train-front-tunnel", [[["M2 22L2 12A10 10 0 1 1 22 12L22 22Z",1]],[["M15 6.8L15 8.2A3 2.8 0 1 1 9 8.2L9 6.8",1],["M10 15L10.01 15",1],["M14 15L14.01 15",1],["M10 19A4 4 0 0 1 6 15L6 12A6 6 0 1 1 18 12L18 15A4 4 0 0 1 14 19Z",1],["M9 19L7 22",1],["M15 19L17 22",1]],[20.4,3.6,4.75],0]);
 export default GlassTrainFrontTunnel;

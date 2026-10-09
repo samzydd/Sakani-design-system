@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "car-front"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCarFront = /*#__PURE__*/ createGlassIcon("car-front", [["path",{"d":"M21 8l-2 2l-1.5 -3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0 -1.903 1.257L5 10L3 8"},0],["path",{"d":"M7 14h0.01"},0],["path",{"d":"M17 14h0.01"},0],["rect",{"width":"18","height":"8","x":"3","y":"10","rx":"2"},1],["path",{"d":"M5 18v2"},0],["path",{"d":"M19 18v2"},0]]);
+export const GlassCarFront = /*#__PURE__*/ createGlassIcon("car-front", [[["M5 10L19 10A2 2 0 0 1 21 12L21 16A2 2 0 0 1 19 18L5 18A2 2 0 0 1 3 16L3 12A2 2 0 0 1 5 10Z",1]],[["M21 8L19 10L17.5 6.3A2 2 0 0 0 15.646 5L8.4 5A2 2 0 0 0 6.497 6.257L5 10L3 8",0],["M7 14L7.01 14",1],["M17 14L17.01 14",1],["M5 18L5 20",1],["M19 18L19 20",1]],[19.4,11.6,4.75],0]);
 export default GlassCarFront;

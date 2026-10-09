@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-tree"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderTree = /*#__PURE__*/ createGlassIcon("folder-tree", [["path",{"d":"M20 10a1 1 0 0 0 1 -1V6a1 1 0 0 0 -1 -1h-2.5a1 1 0 0 1 -0.8 -0.4l-0.9 -1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0 -1 1v5a1 1 0 0 0 1 1Z"},1],["path",{"d":"M20 21a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1h-2.9a1 1 0 0 1 -0.88 -0.55l-0.42 -0.85a1 1 0 0 0 -0.92 -0.6H13a1 1 0 0 0 -1 1v5a1 1 0 0 0 1 1Z"},1],["path",{"d":"M3 5a2 2 0 0 0 2 2h3"},0],["path",{"d":"M3 3v13a2 2 0 0 0 2 2h3"},0]]);
+export const GlassFolderTree = /*#__PURE__*/ createGlassIcon("folder-tree", [[["M20 10A1 1 0 0 0 21 9L21 6A1 1 0 0 0 20 5L17.5 5A1 1 0 0 1 16.7 4.6L15.8 3.4A1 1 0 0 0 15 3L13 3A1 1 0 0 0 12 4L12 9A1 1 0 0 0 13 10Z",1],["M20 21A1 1 0 0 0 21 20L21 17A1 1 0 0 0 20 16L17.1 16A1 1 0 0 1 16.22 15.45L15.8 14.6A1 1 0 0 0 14.88 14L13 14A1 1 0 0 0 12 15L12 20A1 1 0 0 0 13 21Z",1]],[["M3 5A2 2 0 0 0 5 7L8 7",0],["M3 3L3 16A2 2 0 0 0 5 18L8 18",0]],[19.4,4.6,4.75],0]);
 export default GlassFolderTree;

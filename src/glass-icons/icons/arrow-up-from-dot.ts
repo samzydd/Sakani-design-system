@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-up-from-dot"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArrowUpFromDot = /*#__PURE__*/ createGlassIcon("arrow-up-from-dot", [["path",{"d":"M5 9l7 -7l7 7"},0],["path",{"d":"M12 16V2"},0],["circle",{"cx":"12","cy":"21","r":"1"},1]]);
+export const GlassArrowUpFromDot = /*#__PURE__*/ createGlassIcon("arrow-up-from-dot", [[["M5 9L12 2L19 9",0],["M12 16L12 2",0],["M11 21A1 1 0 1 0 13 21A1 1 0 1 0 11 21Z",0]],[],[17.4,3.6,4.75],1]);
 export default GlassArrowUpFromDot;

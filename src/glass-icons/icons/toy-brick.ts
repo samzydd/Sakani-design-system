@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "toy-brick"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassToyBrick = /*#__PURE__*/ createGlassIcon("toy-brick", [["rect",{"width":"18","height":"12","x":"3","y":"8","rx":"1"},1],["path",{"d":"M10 8V5c0 -0.6 -0.4 -1 -1 -1H6a1 1 0 0 0 -1 1v3"},0],["path",{"d":"M19 8V5c0 -0.6 -0.4 -1 -1 -1h-3a1 1 0 0 0 -1 1v3"},0]]);
+export const GlassToyBrick = /*#__PURE__*/ createGlassIcon("toy-brick", [[["M4 8L20 8A1 1 0 0 1 21 9L21 19A1 1 0 0 1 20 20L4 20A1 1 0 0 1 3 19L3 9A1 1 0 0 1 4 8Z",1]],[["M10 8L10 5C10 4.4 9.6 4 9 4L6 4A1 1 0 0 0 5 5L5 8",0],["M19 8L19 5C19 4.4 18.6 4 18 4L15 4A1 1 0 0 0 14 5L14 8",0]],[19.4,9.6,4.75],0]);
 export default GlassToyBrick;

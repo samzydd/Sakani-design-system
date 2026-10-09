@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pyramid"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPyramid = /*#__PURE__*/ createGlassIcon("pyramid", [["path",{"d":"M2.5 16.88a1 1 0 0 1 -0.32 -1.43l9 -13.02a1 1 0 0 1 1.64 0l9 13.01a1 1 0 0 1 -0.32 1.44l-8.51 4.86a2 2 0 0 1 -1.98 0Z"},1],["path",{"d":"M12 2v20"},0]]);
+export const GlassPyramid = /*#__PURE__*/ createGlassIcon("pyramid", [[["M2.5 16.88A1 1 0 0 1 2.18 15.45L11.18 2.43A1 1 0 0 1 12.82 2.43L21.82 15.44A1 1 0 0 1 21.5 16.88L12.99 21.74A2 2 0 0 1 11.01 21.74Z",1]],[["M12 2L12 22",1]],[20.399,3.602,4.75],0]);
 export default GlassPyramid;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ear"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEar = /*#__PURE__*/ createGlassIcon("ear", [["path",{"d":"M6 8.5a6.5 6.5 0 1 1 13 0c0 6 -6 6 -6 10a3.5 3.5 0 1 1 -7 0"},0],["path",{"d":"M15 8.5a2.5 2.5 0 0 0 -5 0v1a2 2 0 1 1 0 4"},0]]);
+export const GlassEar = /*#__PURE__*/ createGlassIcon("ear", [[["M6 8.5A6.5 6.5 0 1 1 19 8.5C19 14.5 13 14.5 13 18.5A3.5 3.5 0 1 1 6 18.5Z",1]],[["M15 8.5A2.5 2.5 0 0 0 10 8.5L10 9.5A2 2 0 1 1 10 13.5",1]],[17.4,3.6,4.75],0]);
 export default GlassEar;

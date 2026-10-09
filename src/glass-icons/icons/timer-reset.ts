@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "timer-reset"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTimerReset = /*#__PURE__*/ createGlassIcon("timer-reset", [["path",{"d":"M10 2h4"},0],["path",{"d":"M12 14v-4"},0],["path",{"d":"M4 13a8 8 0 0 1 8 -7a8 8 0 1 1 -5.3 14L4 17.6"},0],["path",{"d":"M9 17H4v5"},0]]);
+export const GlassTimerReset = /*#__PURE__*/ createGlassIcon("timer-reset", [[["M4 13A8 8 0 0 1 12 6A8 8 0 1 1 6.7 20L4 17.6Z",1]],[["M10 2L14 2",0],["M12 14L12 10",1],["M9 17L4 17L4 22",1]],[18.389,7.6,4.75],0]);
 export default GlassTimerReset;

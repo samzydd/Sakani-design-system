@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sun-moon"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSunMoon = /*#__PURE__*/ createGlassIcon("sun-moon", [["path",{"d":"M12 2v2"},0],["path",{"d":"M14.837 16.385a6 6 0 1 1 -7.223 -7.222c0.624 -0.147 0.97 0.66 0.715 1.248a4 4 0 0 0 5.26 5.259c0.589 -0.255 1.396 0.09 1.248 0.715"},1],["path",{"d":"M16 12a4 4 0 0 0 -4 -4"},0],["path",{"d":"M19 5l-1.256 1.256"},0],["path",{"d":"M20 12h2"},0]]);
+export const GlassSunMoon = /*#__PURE__*/ createGlassIcon("sun-moon", [[["M14.837 16.385A6 6 0 1 1 7.614 9.163C8.238 9.016 8.584 9.823 8.329 10.411A4 4 0 0 0 13.589 15.67C14.178 15.415 14.985 15.76 14.837 16.385",1]],[["M12 2L12 4",0],["M16 12A4 4 0 0 0 12 8",0],["M19 5L17.744 6.256",0],["M20 12L22 12",0]],[13.865,10.135,3.732],0]);
 export default GlassSunMoon;

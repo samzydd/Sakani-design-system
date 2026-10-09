@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-chevron-left"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleChevronLeft = /*#__PURE__*/ createGlassIcon("circle-chevron-left", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M14 16l-4 -4l4 -4"},0]]);
+export const GlassCircleChevronLeft = /*#__PURE__*/ createGlassIcon("circle-chevron-left", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M14 16L10 12L14 8",1]],[20.4,3.6,4.75],0]);
 export default GlassCircleChevronLeft;

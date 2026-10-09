@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-indent-increase" (alias of "indent-increase")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassIndentIncrease = /*#__PURE__*/ createGlassIcon("indent-increase", [["path",{"d":"M21 5H11"},0],["path",{"d":"M21 12H11"},0],["path",{"d":"M21 19H11"},0],["path",{"d":"M3 8l4 4l-4 4"},0]]);
+export const GlassIndentIncrease = /*#__PURE__*/ createGlassIcon("indent-increase", [[["M21 5L11 5",0],["M21 12L11 12",0],["M21 19L11 19",0],["M3 8L7 12L3 16",0]],[],[19.4,6.6,4.75],1]);
 export default GlassIndentIncrease;

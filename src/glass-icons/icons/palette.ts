@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "palette"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPalette = /*#__PURE__*/ createGlassIcon("palette", [["path",{"d":"M12 22a1 1 0 0 1 0 -20a10 9 0 0 1 10 9a5 5 0 0 1 -5 5h-2.25a1.75 1.75 0 0 0 -1.4 2.8l0.3 0.4a1.75 1.75 0 0 1 -1.4 2.8z"},1],["circle",{"cx":"13.5","cy":"6.5","r":".5"},1],["circle",{"cx":"17.5","cy":"10.5","r":".5"},1],["circle",{"cx":"6.5","cy":"12.5","r":".5"},1],["circle",{"cx":"8.5","cy":"7.5","r":".5"},1]]);
+export const GlassPalette = /*#__PURE__*/ createGlassIcon("palette", [[["M12 22A1 1 0 0 1 12 2A10 9 0 0 1 22 11A5 5 0 0 1 17 16L14.75 16A1.75 1.75 0 0 0 13.35 18.8L13.65 19.2A1.75 1.75 0 0 1 12.25 22Z",1]],[["M13 6.5A0.5 0.5 0 1 0 14 6.5A0.5 0.5 0 1 0 13 6.5Z",1],["M17 10.5A0.5 0.5 0 1 0 18 10.5A0.5 0.5 0 1 0 17 10.5Z",1],["M6 12.5A0.5 0.5 0 1 0 7 12.5A0.5 0.5 0 1 0 6 12.5Z",1],["M8 7.5A0.5 0.5 0 1 0 9 7.5A0.5 0.5 0 1 0 8 7.5Z",1]],[20.4,3.6,4.75],0]);
 export default GlassPalette;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clipboard-copy"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClipboardCopy = /*#__PURE__*/ createGlassIcon("clipboard-copy", [["rect",{"width":"8","height":"4","x":"8","y":"2","rx":"1","ry":"1"},1],["path",{"d":"M8 4H6a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"},0],["path",{"d":"M16 4h2a2 2 0 0 1 2 2v4"},0],["path",{"d":"M21 14H11"},0],["path",{"d":"M15 10l-4 4l4 4"},0]]);
+export const GlassClipboardCopy = /*#__PURE__*/ createGlassIcon("clipboard-copy", [[["M8 4L6 4A2 2 0 0 0 4 6L4 20A2 2 0 0 0 6 22L18 22A2 2 0 0 0 20 20L20 18Z",1]],[["M9 2L15 2A1 1 0 0 1 16 3L16 5A1 1 0 0 1 15 6L9 6A1 1 0 0 1 8 5L8 3A1 1 0 0 1 9 2Z",0],["M16 4L18 4A2 2 0 0 1 20 6L20 10",0],["M21 14L11 14",1],["M15 10L11 14L15 18",1]],[18.4,5.6,4.75],0]);
 export default GlassClipboardCopy;

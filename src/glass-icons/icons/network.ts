@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "network"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassNetwork = /*#__PURE__*/ createGlassIcon("network", [["rect",{"x":"16","y":"16","width":"6","height":"6","rx":"1"},1],["rect",{"x":"2","y":"16","width":"6","height":"6","rx":"1"},1],["rect",{"x":"9","y":"2","width":"6","height":"6","rx":"1"},1],["path",{"d":"M5 16v-3a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v3"},0],["path",{"d":"M12 12V8"},0]]);
+export const GlassNetwork = /*#__PURE__*/ createGlassIcon("network", [[["M5 16L5 13A1 1 0 0 1 6 12L18 12A1 1 0 0 1 19 13L19 16Z",1],["M3 16L7 16A1 1 0 0 1 8 17L8 21A1 1 0 0 1 7 22L3 22A1 1 0 0 1 2 21L2 17A1 1 0 0 1 3 16Z",1],["M10 2L14 2A1 1 0 0 1 15 3L15 7A1 1 0 0 1 14 8L10 8A1 1 0 0 1 9 7L9 3A1 1 0 0 1 10 2Z",1],["M17 16L21 16A1 1 0 0 1 22 17L22 21A1 1 0 0 1 21 22L17 22A1 1 0 0 1 16 21L16 17A1 1 0 0 1 17 16Z",1],["M12 12L12 8",0]],[],[20.4,3.6,4.75],0]);
 export default GlassNetwork;

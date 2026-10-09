@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "code-xml"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCodeXml = /*#__PURE__*/ createGlassIcon("code-xml", [["path",{"d":"M18 16l4 -4l-4 -4"},0],["path",{"d":"M6 8l-4 4l4 4"},0],["path",{"d":"M14.5 4l-5 16"},0]]);
+export const GlassCodeXml = /*#__PURE__*/ createGlassIcon("code-xml", [[["M18 16L22 12L18 8",0],["M6 8L2 12L6 16",0],["M14.5 4L9.5 20",0]],[],[20.4,5.6,4.75],1]);
 export default GlassCodeXml;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "vegan"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVegan = /*#__PURE__*/ createGlassIcon("vegan", [["path",{"d":"M16 8q6 0 6 -6q-6 0 -6 6"},1],["path",{"d":"M17.41 3.59a10 10 0 1 0 3 3"},0],["path",{"d":"M2 2a26.6 26.6 0 0 1 10 20c0.9 -6.82 1.5 -9.5 4 -14"},0]]);
+export const GlassVegan = /*#__PURE__*/ createGlassIcon("vegan", [[["M17.41 3.59A10 10 0 1 0 20.41 6.59Z",1]],[["M16 8Q22 8 22 2Q16 2 16 8",1],["M2 2A26.6 26.6 0 0 1 12 22C12.9 15.18 13.5 12.5 16 8",1]],[20.399,3.601,4.75],0]);
 export default GlassVegan;

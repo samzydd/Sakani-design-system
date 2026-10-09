@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "inbox"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassInbox = /*#__PURE__*/ createGlassIcon("inbox", [["polyline",{"points":"22 12 16 12 14 15 10 15 8 12 2 12"},0],["path",{"d":"M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2 -2v-6l-3.45 -6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0 -1.79 1.11z"},1]]);
+export const GlassInbox = /*#__PURE__*/ createGlassIcon("inbox", [[["M5.45 5.11L2 12L2 18A2 2 0 0 0 4 20L20 20A2 2 0 0 0 22 18L22 12L18.55 5.11A2 2 0 0 0 16.76 4L7.24 4A2 2 0 0 0 5.45 5.11Z",1]],[["M22 12L16 12L14 15L10 15L8 12L2 12",1]],[20.4,5.6,4.75],0]);
 export default GlassInbox;

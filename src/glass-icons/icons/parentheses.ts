@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "parentheses"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassParentheses = /*#__PURE__*/ createGlassIcon("parentheses", [["path",{"d":"M8 21s-4 -3 -4 -9s4 -9 4 -9"},0],["path",{"d":"M16 3s4 3 4 9s-4 9 -4 9"},0]]);
+export const GlassParentheses = /*#__PURE__*/ createGlassIcon("parentheses", [[["M8 21C8 21 4 18 4 12C4 6 8 3 8 3",0],["M16 3C16 3 20 6 20 12C20 18 16 21 16 21",0]],[],[18.4,4.6,4.75],1]);
 export default GlassParentheses;

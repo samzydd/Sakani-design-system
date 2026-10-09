@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "droplet"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDroplet = /*#__PURE__*/ createGlassIcon("droplet", [["path",{"d":"M12 22a7 7 0 0 0 7 -7c0 -2 -1 -3.9 -3 -5.5s-3.5 -4 -4 -6.5c-0.5 2.5 -2 4.9 -4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"},1]]);
+export const GlassDroplet = /*#__PURE__*/ createGlassIcon("droplet", [[["M12 22A7 7 0 0 0 19 15C19 13 18 11.1 16 9.5C14 7.9 12.5 5.5 12 3C11.5 5.5 10 7.9 8 9.5C6 11.1 5 13 5 15A7 7 0 0 0 12 22Z",1]],[],[17.4,4.6,4.75],0]);
 export default GlassDroplet;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wine-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWineOff = /*#__PURE__*/ createGlassIcon("wine-off", [["path",{"d":"M8 22h8"},0],["path",{"d":"M7 10h3"},0],["path",{"d":"M17 10h-1.343"},0],["path",{"d":"M12 15v7"},0],["path",{"d":"M7.307 7.307A12.33 12.33 0 0 0 7 10a5 5 0 0 0 7.391 4.391"},0],["path",{"d":"M8.638 2.981C8.75 2.668 8.872 2.34 9 2h6c1.5 4 2 6 2 8c0 0.407 -0.05 0.809 -0.145 1.198"},0],["line",{"x1":"2","x2":"22","y1":"2","y2":"22"},0]]);
+export const GlassWineOff = /*#__PURE__*/ createGlassIcon("wine-off", [[["M8 22L16 22",0],["M7 10L10 10",0],["M17 10L15.657 10",0],["M12 15L12 22",0],["M7.307 7.307A12.33 12.33 0 0 0 7 10A5 5 0 0 0 14.391 14.391",0],["M8.638 2.981C8.75 2.668 8.872 2.34 9 2L15 2C16.5 6 17 8 17 10C17 10.407 16.95 10.809 16.855 11.198",0],["M2 2L22 22",0]],[],[20.4,3.6,4.75],1]);
 export default GlassWineOff;

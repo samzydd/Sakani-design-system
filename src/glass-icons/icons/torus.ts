@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "torus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTorus = /*#__PURE__*/ createGlassIcon("torus", [["ellipse",{"cx":"12","cy":"11","rx":"3","ry":"2"},1],["ellipse",{"cx":"12","cy":"12.5","rx":"10","ry":"8.5"},1]]);
+export const GlassTorus = /*#__PURE__*/ createGlassIcon("torus", [[["M2 12.5A10 8.5 0 1 0 22 12.5A10 8.5 0 1 0 2 12.5Z",1]],[["M9 11A3 2 0 1 0 15 11A3 2 0 1 0 9 11Z",1]],[20.4,5.6,4.75],0]);
 export default GlassTorus;

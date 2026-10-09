@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-square-heart"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessageSquareHeart = /*#__PURE__*/ createGlassIcon("message-square-heart", [["path",{"d":"M22 17a2 2 0 0 1 -2 2H6.828a2 2 0 0 0 -1.414 0.586l-2.202 2.202A0.71 0.71 0 0 1 2 21.286V5a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2z"},1],["path",{"d":"M7.5 9.5c0 0.687 0.265 1.383 0.697 1.844l3.009 3.264a1.14 1.14 0 0 0 0.407 0.314a1 1 0 0 0 0.783 -0.004a1.14 1.14 0 0 0 0.398 -0.31l3.008 -3.264A2.77 2.77 0 0 0 16.5 9.5A2.5 2.5 0 0 0 12 8a2.5 2.5 0 0 0 -4.5 1.5"},1]]);
+export const GlassMessageSquareHeart = /*#__PURE__*/ createGlassIcon("message-square-heart", [[["M22 17A2 2 0 0 1 20 19L6.828 19A2 2 0 0 0 5.414 19.586L3.212 21.788A0.71 0.71 0 0 1 2 21.286L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5Z",1]],[["M7.5 9.5C7.5 10.187 7.765 10.883 8.197 11.344L11.206 14.608A1.14 1.14 0 0 0 11.613 14.922A1 1 0 0 0 12.396 14.918A1.14 1.14 0 0 0 12.794 14.608L15.802 11.344A2.77 2.77 0 0 0 16.5 9.5A2.5 2.5 0 0 0 12 8A2.5 2.5 0 0 0 7.5 9.5",1]],[20.4,4.6,4.75],0]);
 export default GlassMessageSquareHeart;

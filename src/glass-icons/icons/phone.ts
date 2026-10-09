@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "phone"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPhone = /*#__PURE__*/ createGlassIcon("phone", [["path",{"d":"M13.832 16.568a1 1 0 0 0 1.213 -0.303l0.355 -0.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2A18 18 0 0 1 2 4a2 2 0 0 1 2 -2h3a2 2 0 0 1 2 2v3a2 2 0 0 1 -0.8 1.6l-0.468 0.351a1 1 0 0 0 -0.292 1.233a14 14 0 0 0 6.392 6.384"},1]]);
+export const GlassPhone = /*#__PURE__*/ createGlassIcon("phone", [[["M13.832 16.568A1 1 0 0 0 15.045 16.265L15.4 15.8A2 2 0 0 1 17 15L20 15A2 2 0 0 1 22 17L22 20A2 2 0 0 1 20 22A18 18 0 0 1 2 4A2 2 0 0 1 4 2L7 2A2 2 0 0 1 9 4L9 7A2 2 0 0 1 8.2 8.6L7.732 8.951A1 1 0 0 0 7.44 10.184A14 14 0 0 0 13.832 16.568",1]],[],[20.4,3.6,4.75],0]);
 export default GlassPhone;

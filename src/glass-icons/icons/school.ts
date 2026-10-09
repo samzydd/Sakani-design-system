@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "school"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSchool = /*#__PURE__*/ createGlassIcon("school", [["path",{"d":"M14 21v-3a2 2 0 0 0 -4 0v3"},0],["path",{"d":"M18 4.933V21"},0],["path",{"d":"M4 6l7.106 -3.79a2 2 0 0 1 1.788 0L20 6"},0],["path",{"d":"M6 11l-3.52 2.147a1 1 0 0 0 -0.48 0.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2 -2v-5a1 1 0 0 0 -0.48 -0.853L18 11"},0],["path",{"d":"M6 4.933V21"},0],["circle",{"cx":"12","cy":"9","r":"2"},1]]);
+export const GlassSchool = /*#__PURE__*/ createGlassIcon("school", [[["M6 11L2.48 13.147A1 1 0 0 0 2 14.001L2 19A2 2 0 0 0 4 21L20 21A2 2 0 0 0 22 19L22 14A1 1 0 0 0 21.52 13.147L18 11Z",1]],[["M14 21L14 18A2 2 0 0 0 10 18L10 21",1],["M18 4.933L18 21",1],["M4 6L11.106 2.21A2 2 0 0 1 12.894 2.21L20 6",0],["M6 4.933L6 21",1],["M10 9A2 2 0 1 0 14 9A2 2 0 1 0 10 9Z",0]],[20.4,12.6,4.75],0]);
 export default GlassSchool;

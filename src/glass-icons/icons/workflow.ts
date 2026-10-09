@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "workflow"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWorkflow = /*#__PURE__*/ createGlassIcon("workflow", [["rect",{"width":"8","height":"8","x":"3","y":"3","rx":"2"},1],["path",{"d":"M7 11v4a2 2 0 0 0 2 2h4"},0],["rect",{"width":"8","height":"8","x":"13","y":"13","rx":"2"},1]]);
+export const GlassWorkflow = /*#__PURE__*/ createGlassIcon("workflow", [[["M5 3L9 3A2 2 0 0 1 11 5L11 9A2 2 0 0 1 9 11L5 11A2 2 0 0 1 3 9L3 5A2 2 0 0 1 5 3Z",1],["M15 13L19 13A2 2 0 0 1 21 15L21 19A2 2 0 0 1 19 21L15 21A2 2 0 0 1 13 19L13 15A2 2 0 0 1 15 13Z",1]],[["M7 11L7 15A2 2 0 0 0 9 17L13 17",0]],[19.4,4.6,4.75],0]);
 export default GlassWorkflow;

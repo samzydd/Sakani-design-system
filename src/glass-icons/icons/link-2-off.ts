@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "link-2-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLink2Off = /*#__PURE__*/ createGlassIcon("link-2-off", [["path",{"d":"M9 17H7A5 5 0 0 1 7 7"},0],["path",{"d":"M15 7h2a5 5 0 0 1 4 8"},0],["line",{"x1":"8","x2":"12","y1":"12","y2":"12"},0],["line",{"x1":"2","x2":"22","y1":"2","y2":"22"},0]]);
+export const GlassLink2Off = /*#__PURE__*/ createGlassIcon("link-2-off", [[["M9 17L7 17A5 5 0 0 1 7 7Z",1]],[["M15 7L17 7A5 5 0 0 1 21 15",0],["M8 12L12 12",0],["M2 2L22 22",0]],[8.3,7.7,3.25],0]);
 export default GlassLink2Off;

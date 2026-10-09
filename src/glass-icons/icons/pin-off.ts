@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pin-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPinOff = /*#__PURE__*/ createGlassIcon("pin-off", [["path",{"d":"M12 17v5"},0],["path",{"d":"M15 9.34V7a1 1 0 0 1 1 -1a2 2 0 0 0 0 -4H7.89"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M9 9v1.76a2 2 0 0 1 -1.11 1.79l-1.78 0.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h11"},0]]);
+export const GlassPinOff = /*#__PURE__*/ createGlassIcon("pin-off", [[["M9 9L9 10.76A2 2 0 0 1 7.89 12.55L6.11 13.45A2 2 0 0 0 5 15.24L5 16A1 1 0 0 0 6 17L17 17Z",1],["M15 9.34L15 7A1 1 0 0 1 16 6A2 2 0 0 0 16 2L7.89 2Z",1]],[["M12 17L12 22",0],["M2 2L22 22",0]],[16.52,3.48,4.55],0]);
 export default GlassPinOff;

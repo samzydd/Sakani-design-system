@@ -2,5 +2,5 @@
 // Shape data: Sakani Figma icon set, icon "rail-symbol"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRailSymbol = /*#__PURE__*/ createGlassIcon("rail-symbol", [["path",{"d":"M5 15H19"},0],["path",{"d":"M5 9H19"},0],["path",{"d":"M14 20L9 15L15 9L10 4"},0]]);
+export const GlassRailSymbol = /*#__PURE__*/ createGlassIcon("rail-symbol", [[["M5 15L19 15",0],["M5 9L19 9",0],["M14 20L9 15L15 9L10 4",0]],[],[17.4,5.6,4.75],1]);
 export default GlassRailSymbol;

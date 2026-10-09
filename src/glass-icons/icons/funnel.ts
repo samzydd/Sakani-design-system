@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "funnel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFunnel = /*#__PURE__*/ createGlassIcon("funnel", [["path",{"d":"M10 20a1 1 0 0 0 0.553 0.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 0.517 -1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0 -0.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"},1]]);
+export const GlassFunnel = /*#__PURE__*/ createGlassIcon("funnel", [[["M10 20A1 1 0 0 0 10.553 20.895L12.553 21.895A1 1 0 0 0 14 21L14 14A2 2 0 0 1 14.517 12.659L21.74 4.67A1 1 0 0 0 21 3L3 3A1 1 0 0 0 2.258 4.67L9.483 12.659A2 2 0 0 1 10 14Z",1]],[],[20.397,4.6,4.75],0]);
 export default GlassFunnel;

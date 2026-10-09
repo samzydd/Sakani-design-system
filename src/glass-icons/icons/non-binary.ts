@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "non-binary"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassNonBinary = /*#__PURE__*/ createGlassIcon("non-binary", [["path",{"d":"M12 2v10"},0],["path",{"d":"M8.5 4l7 4"},0],["path",{"d":"M8.5 8l7 -4"},0],["circle",{"cx":"12","cy":"17","r":"5"},1]]);
+export const GlassNonBinary = /*#__PURE__*/ createGlassIcon("non-binary", [[["M7 17A5 5 0 1 0 17 17A5 5 0 1 0 7 17Z",1]],[["M12 2L12 12",0],["M8.5 4L15.5 8",0],["M8.5 8L15.5 4",0]],[16.3,12.7,3.25],0]);
 export default GlassNonBinary;

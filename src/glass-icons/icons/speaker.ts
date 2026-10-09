@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "speaker"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSpeaker = /*#__PURE__*/ createGlassIcon("speaker", [["rect",{"width":"16","height":"20","x":"4","y":"2","rx":"2"},1],["path",{"d":"M12 6h0.01"},0],["circle",{"cx":"12","cy":"14","r":"4"},1],["path",{"d":"M12 14h0.01"},0]]);
+export const GlassSpeaker = /*#__PURE__*/ createGlassIcon("speaker", [[["M6 2L18 2A2 2 0 0 1 20 4L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2Z",1]],[["M12 6L12.01 6",1],["M8 14A4 4 0 1 0 16 14A4 4 0 1 0 8 14Z",1],["M12 14L12.01 14",1]],[18.4,3.6,4.75],0]);
 export default GlassSpeaker;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pointer-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPointerOff = /*#__PURE__*/ createGlassIcon("pointer-off", [["path",{"d":"M10 4.5V4a2 2 0 0 0 -2.41 -1.957"},0],["path",{"d":"M13.9 8.4a2 2 0 0 0 -1.26 -1.295"},0],["path",{"d":"M21.7 16.2A8 8 0 0 0 22 14v-3a2 2 0 1 0 -4 0v-1a2 2 0 0 0 -3.63 -1.158"},0],["path",{"d":"M7 15l-1.8 -1.8a2 2 0 0 0 -2.79 2.86L6 19.7a7.74 7.74 0 0 0 6 2.3h2a8 8 0 0 0 5.657 -2.343"},0],["path",{"d":"M6 6v8"},0],["path",{"d":"M2 2l20 20"},0]]);
+export const GlassPointerOff = /*#__PURE__*/ createGlassIcon("pointer-off", [[["M7 15L5.2 13.2A2 2 0 0 0 2.41 16.06L6 19.7A7.74 7.74 0 0 0 12 22L14 22A8 8 0 0 0 19.657 19.657Z",1],["M21.7 16.2A8 8 0 0 0 22 14L22 11A2 2 0 1 0 18 11L18 10A2 2 0 0 0 14.37 8.842Z",1]],[["M10 4.5L10 4A2 2 0 0 0 7.59 2.043",0],["M13.9 8.4A2 2 0 0 0 12.64 7.105",0],["M6 6L6 14",0],["M2 2L22 22",0]],[20.4,9.601,4.75],0]);
 export default GlassPointerOff;

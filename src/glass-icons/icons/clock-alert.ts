@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clock-alert"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClockAlert = /*#__PURE__*/ createGlassIcon("clock-alert", [["path",{"d":"M12 6v6l4 2"},0],["path",{"d":"M20 12v5"},0],["path",{"d":"M20 21h0.01"},0],["path",{"d":"M21.25 8.2A10 10 0 1 0 16 21.16"},0]]);
+export const GlassClockAlert = /*#__PURE__*/ createGlassIcon("clock-alert", [[["M21.25 8.2A10 10 0 1 0 16 21.16Z",1]],[["M12 6L12 12L16 14",1],["M20 12L20 17",1],["M20 21L20.01 21",0]],[19.65,3.606,4.75],0]);
 export default GlassClockAlert;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cookie"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCookie = /*#__PURE__*/ createGlassIcon("cookie", [["path",{"d":"M12 2a10 10 0 1 0 10 10a4 4 0 0 1 -5 -5a4 4 0 0 1 -5 -5"},1],["path",{"d":"M8.5 8.5v0.01"},0],["path",{"d":"M16 15.5v0.01"},0],["path",{"d":"M12 12v0.01"},0],["path",{"d":"M11 17v0.01"},0],["path",{"d":"M7 14v0.01"},0]]);
+export const GlassCookie = /*#__PURE__*/ createGlassIcon("cookie", [[["M12 2A10 10 0 1 0 22 12A4 4 0 0 1 17 7A4 4 0 0 1 12 2",1]],[["M8.5 8.5L8.5 8.51",1],["M16 15.5L16 15.51",1],["M12 12L12 12.01",1],["M11 17L11 17.01",1],["M7 14L7 14.01",1]],[20.4,3.6,4.75],0]);
 export default GlassCookie;

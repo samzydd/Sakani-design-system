@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "step-back"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassStepBack = /*#__PURE__*/ createGlassIcon("step-back", [["path",{"d":"M13.971 4.285A2 2 0 0 1 17 6v12a2 2 0 0 1 -3.029 1.715l-9.997 -5.998a2 2 0 0 1 -0.003 -3.432z"},1],["path",{"d":"M21 20V4"},0]]);
+export const GlassStepBack = /*#__PURE__*/ createGlassIcon("step-back", [[["M13.971 4.285A2 2 0 0 1 17 6L17 18A2 2 0 0 1 13.971 19.715L3.974 13.717A2 2 0 0 1 3.971 10.285Z",1]],[["M21 20L21 4",0]],[15.4,5.601,4.75],0]);
 export default GlassStepBack;

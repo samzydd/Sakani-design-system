@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ampersand"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAmpersand = /*#__PURE__*/ createGlassIcon("ampersand", [["path",{"d":"M16 12h3"},0],["path",{"d":"M17.5 12a8 8 0 0 1 -8 8A4.5 4.5 0 0 1 5 15.5c0 -6 8 -4 8 -8.5a3 3 0 1 0 -6 0c0 3 2.5 8.5 12 13"},0]]);
+export const GlassAmpersand = /*#__PURE__*/ createGlassIcon("ampersand", [[["M16 12L19 12",0],["M17.5 12A8 8 0 0 1 9.5 20A4.5 4.5 0 0 1 5 15.5C5 9.5 13 11.5 13 7A3 3 0 1 0 7 7C7 10 9.5 15.5 19 20",0]],[],[17.4,5.6,4.75],1]);
 export default GlassAmpersand;

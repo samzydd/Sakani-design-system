@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-pin-check"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMapPinCheck = /*#__PURE__*/ createGlassIcon("map-pin-check", [["path",{"d":"M19.43 12.935c0.357 -0.967 0.57 -1.955 0.57 -2.935a8 8 0 0 0 -16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0a32.197 32.197 0 0 0 0.813 -0.728"},0],["circle",{"cx":"12","cy":"10","r":"3"},1],["path",{"d":"M16 18l2 2l4 -4"},0]]);
+export const GlassMapPinCheck = /*#__PURE__*/ createGlassIcon("map-pin-check", [[["M19.43 12.935C19.787 11.968 20 10.98 20 10A8 8 0 0 0 4 10C4 14.993 9.539 20.193 11.399 21.799A1 1 0 0 0 12.601 21.799A32.197 32.197 0 0 0 13.414 21.071Z",1]],[["M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z",1],["M16 18L18 20L22 16",0]],[18.4,3.6,4.75],0]);
 export default GlassMapPinCheck;

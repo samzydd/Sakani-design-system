@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "signpost"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSignpost = /*#__PURE__*/ createGlassIcon("signpost", [["path",{"d":"M12 13v8"},0],["path",{"d":"M12 3v3"},0],["path",{"d":"M2.354 10.354a1.207 1.207 0 0 1 0 -1.708l2.06 -2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414 0.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1 -1.414 0.586H5.828a2 2 0 0 1 -1.414 -0.586z"},1]]);
+export const GlassSignpost = /*#__PURE__*/ createGlassIcon("signpost", [[["M2.354 10.354A1.207 1.207 0 0 1 2.354 8.646L4.414 6.586A2 2 0 0 1 5.828 6L18.172 6A2 2 0 0 1 19.586 6.586L21.646 8.646A1.207 1.207 0 0 1 21.646 10.354L19.586 12.414A2 2 0 0 1 18.172 13L5.828 13A2 2 0 0 1 4.414 12.414Z",1]],[["M12 13L12 21",0],["M12 3L12 6",0]],[20.395,7.6,4.75],0]);
 export default GlassSignpost;

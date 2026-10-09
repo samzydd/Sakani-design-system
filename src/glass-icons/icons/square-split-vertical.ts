@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-split-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareSplitVertical = /*#__PURE__*/ createGlassIcon("square-split-vertical", [["path",{"d":"M2 12h20"},0],["path",{"d":"M21 16v3a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2v-3"},0],["path",{"d":"M3 8V5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v3"},0]]);
+export const GlassSquareSplitVertical = /*#__PURE__*/ createGlassIcon("square-split-vertical", [[["M2 12L22 12",0],["M21 16L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 16",0],["M3 8L3 5A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 8",0]],[],[20.4,4.6,4.75],1]);
 export default GlassSquareSplitVertical;

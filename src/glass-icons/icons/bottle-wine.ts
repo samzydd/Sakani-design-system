@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bottle-wine"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBottleWine = /*#__PURE__*/ createGlassIcon("bottle-wine", [["path",{"d":"M10 3a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v2a6 6 0 0 0 1.2 3.6l0.6 0.8A6 6 0 0 1 17 13v8a1 1 0 0 1 -1 1H8a1 1 0 0 1 -1 -1v-8a6 6 0 0 1 1.2 -3.6l0.6 -0.8A6 6 0 0 0 10 5z"},1],["path",{"d":"M17 13h-4a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h4"},0]]);
+export const GlassBottleWine = /*#__PURE__*/ createGlassIcon("bottle-wine", [[["M10 3A1 1 0 0 1 11 2L13 2A1 1 0 0 1 14 3L14 5A6 6 0 0 0 15.2 8.6L15.8 9.4A6 6 0 0 1 17 13L17 21A1 1 0 0 1 16 22L8 22A1 1 0 0 1 7 21L7 13A6 6 0 0 1 8.2 9.4L8.8 8.6A6 6 0 0 0 10 5Z",1]],[["M17 13L13 13A1 1 0 0 0 12 14L12 17A1 1 0 0 0 13 18L17 18",1]],[15.4,3.6,4.75],0]);
 export default GlassBottleWine;

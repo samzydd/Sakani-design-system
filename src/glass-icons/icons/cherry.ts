@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cherry"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCherry = /*#__PURE__*/ createGlassIcon("cherry", [["path",{"d":"M2 17a5 5 0 0 0 10 0c0 -2.76 -2.5 -5 -5 -3c-2.5 -2 -5 0.24 -5 3Z"},1],["path",{"d":"M12 17a5 5 0 0 0 10 0c0 -2.76 -2.5 -5 -5 -3c-2.5 -2 -5 0.24 -5 3Z"},1],["path",{"d":"M7 14c3.22 -2.91 4.29 -8.75 5 -12c1.66 2.38 4.94 9 5 12"},0],["path",{"d":"M22 9c-4.29 0 -7.14 -2.33 -10 -7c5.71 0 10 4.67 10 7Z"},1]]);
+export const GlassCherry = /*#__PURE__*/ createGlassIcon("cherry", [[["M2 17A5 5 0 0 0 12 17C12 14.24 9.5 12 7 14C4.5 12 2 14.24 2 17Z",1],["M12 17A5 5 0 0 0 22 17C22 14.24 19.5 12 17 14C14.5 12 12 14.24 12 17Z",1],["M7 14C10.22 11.09 11.29 5.25 12 2C13.66 4.38 16.94 11 17 14Z",1],["M22 9C17.71 9 14.86 6.67 12 2C17.71 2 22 6.67 22 9Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassCherry;

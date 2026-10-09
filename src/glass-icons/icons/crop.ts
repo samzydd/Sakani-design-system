@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "crop"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCrop = /*#__PURE__*/ createGlassIcon("crop", [["path",{"d":"M6 2v14a2 2 0 0 0 2 2h14"},0],["path",{"d":"M18 22V8a2 2 0 0 0 -2 -2H2"},0]]);
+export const GlassCrop = /*#__PURE__*/ createGlassIcon("crop", [[["M6 2L6 16A2 2 0 0 0 8 18L22 18",0],["M18 22L18 8A2 2 0 0 0 16 6L2 6",0]],[],[20.4,3.6,4.75],1]);
 export default GlassCrop;

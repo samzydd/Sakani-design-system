@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "joystick"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassJoystick = /*#__PURE__*/ createGlassIcon("joystick", [["path",{"d":"M21 17a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2v-2Z"},1],["path",{"d":"M6 15v-2"},0],["path",{"d":"M12 15V9"},0],["circle",{"cx":"12","cy":"6","r":"3"},1]]);
+export const GlassJoystick = /*#__PURE__*/ createGlassIcon("joystick", [[["M21 17A2 2 0 0 0 19 15L5 15A2 2 0 0 0 3 17L3 19A2 2 0 0 0 5 21L19 21A2 2 0 0 0 21 19L21 17Z",1]],[["M6 15L6 13",1],["M12 15L12 9",0],["M9 6A3 3 0 1 0 15 6A3 3 0 1 0 9 6Z",0]],[19.4,16.6,4.75],0]);
 export default GlassJoystick;

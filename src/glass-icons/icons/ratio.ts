@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ratio"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRatio = /*#__PURE__*/ createGlassIcon("ratio", [["rect",{"width":"12","height":"20","x":"6","y":"2","rx":"2"},1],["rect",{"width":"20","height":"12","x":"2","y":"6","rx":"2"},1]]);
+export const GlassRatio = /*#__PURE__*/ createGlassIcon("ratio", [[["M8 2L16 2A2 2 0 0 1 18 4L18 20A2 2 0 0 1 16 22L8 22A2 2 0 0 1 6 20L6 4A2 2 0 0 1 8 2Z",1],["M4 6L20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassRatio;

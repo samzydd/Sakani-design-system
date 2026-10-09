@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-down-wide-narrow"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArrowDownWideNarrow = /*#__PURE__*/ createGlassIcon("arrow-down-wide-narrow", [["path",{"d":"M3 16l4 4l4 -4"},0],["path",{"d":"M7 20V4"},0],["path",{"d":"M11 4h10"},0],["path",{"d":"M11 8h7"},0],["path",{"d":"M11 12h4"},0]]);
+export const GlassArrowDownWideNarrow = /*#__PURE__*/ createGlassIcon("arrow-down-wide-narrow", [[["M3 16L7 20L11 16",0],["M7 20L7 4",0],["M11 4L21 4",0],["M11 8L18 8",0],["M11 12L15 12",0]],[],[19.4,5.6,4.75],1]);
 export default GlassArrowDownWideNarrow;

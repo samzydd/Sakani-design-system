@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tree-pine"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTreePine = /*#__PURE__*/ createGlassIcon("tree-pine", [["path",{"d":"M17 14l3 3.3a1 1 0 0 1 -0.7 1.7H4.7a1 1 0 0 1 -0.7 -1.7L7 14h-0.3a1 1 0 0 1 -0.7 -1.7L9 9h-0.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1 -0.8 1.7H15l3 3.3a1 1 0 0 1 -0.7 1.7H17Z"},1],["path",{"d":"M12 22v-3"},0]]);
+export const GlassTreePine = /*#__PURE__*/ createGlassIcon("tree-pine", [[["M17 14L20 17.3A1 1 0 0 1 19.3 19L4.7 19A1 1 0 0 1 4 17.3L7 14L6.7 14A1 1 0 0 1 6 12.3L9 9L8.8 9A1 1 0 0 1 8 7.3L12 3L16 7.3A1 1 0 0 1 15.2 9L15 9L18 12.3A1 1 0 0 1 17.3 14L17 14Z",1]],[["M12 22L12 19",0]],[18.686,4.6,4.75],0]);
 export default GlassTreePine;

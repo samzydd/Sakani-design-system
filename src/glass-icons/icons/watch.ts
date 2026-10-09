@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "watch"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWatch = /*#__PURE__*/ createGlassIcon("watch", [["path",{"d":"M12 10v2.2l1.6 1"},0],["path",{"d":"M16.13 7.66l-0.81 -4.05a2 2 0 0 0 -2 -1.61h-2.68a2 2 0 0 0 -2 1.61l-0.78 4.05"},0],["path",{"d":"M7.88 16.36l0.8 4a2 2 0 0 0 2 1.61h2.72a2 2 0 0 0 2 -1.61l0.81 -4.05"},0],["circle",{"cx":"12","cy":"12","r":"6"},1]]);
+export const GlassWatch = /*#__PURE__*/ createGlassIcon("watch", [[["M6 12A6 6 0 1 0 18 12A6 6 0 1 0 6 12Z",1],["M7.88 16.36L8.68 20.36A2 2 0 0 0 10.68 21.97L13.4 21.97A2 2 0 0 0 15.4 20.36L16.21 16.31Z",1],["M16.13 7.66L15.32 3.61A2 2 0 0 0 13.32 2L10.64 2A2 2 0 0 0 8.64 3.61L7.86 7.66Z",1]],[["M12 10L12 12.2L13.6 13.2",1]],[16.4,3.6,4.75],0]);
 export default GlassWatch;

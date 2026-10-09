@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-cursor"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTextCursor = /*#__PURE__*/ createGlassIcon("text-cursor", [["path",{"d":"M17 22h-1a4 4 0 0 1 -4 -4V6a4 4 0 0 1 4 -4h1"},0],["path",{"d":"M7 22h1a4 4 0 0 0 4 -4"},0],["path",{"d":"M7 2h1a4 4 0 0 1 4 4"},0]]);
+export const GlassTextCursor = /*#__PURE__*/ createGlassIcon("text-cursor", [[["M17 22L16 22A4 4 0 0 1 12 18L12 6A4 4 0 0 1 16 2L17 2",0],["M7 22L8 22A4 4 0 0 0 12 18",0],["M7 2L8 2A4 4 0 0 1 12 6",0]],[],[15.4,3.6,4.75],1]);
 export default GlassTextCursor;

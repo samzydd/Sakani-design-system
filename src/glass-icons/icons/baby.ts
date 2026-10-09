@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "baby"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBaby = /*#__PURE__*/ createGlassIcon("baby", [["path",{"d":"M10 16c0.5 0.3 1.2 0.5 2 0.5s1.5 -0.2 2 -0.5"},0],["path",{"d":"M15 12h0.01"},0],["path",{"d":"M19.38 6.813A9 9 0 0 1 20.8 10.2a2 2 0 0 1 0 3.6a9 9 0 0 1 -17.6 0a2 2 0 0 1 0 -3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-0.9 2.5 -2 2.5c-0.8 0 -1.5 -0.4 -1.5 -1"},0],["path",{"d":"M9 12h0.01"},0]]);
+export const GlassBaby = /*#__PURE__*/ createGlassIcon("baby", [[["M19.38 6.813A9 9 0 0 1 20.8 10.2A2 2 0 0 1 20.8 13.8A9 9 0 0 1 3.2 13.8A2 2 0 0 1 3.2 10.2A9 9 0 0 1 12 3C14 3 15.5 4.1 15.5 5.5C15.5 6.9 14.6 8 13.5 8C12.7 8 12 7.6 12 7Z",1]],[["M10 16C10.5 16.3 11.2 16.5 12 16.5C12.8 16.5 13.5 16.3 14 16",1],["M15 12L15.01 12",1],["M9 12L9.01 12",1]],[20.328,4.6,4.75],0]);
 export default GlassBaby;

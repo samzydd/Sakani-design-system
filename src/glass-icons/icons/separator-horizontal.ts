@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "separator-horizontal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSeparatorHorizontal = /*#__PURE__*/ createGlassIcon("separator-horizontal", [["path",{"d":"M16 16l-4 4l-4 -4"},0],["path",{"d":"M3 12h18"},0],["path",{"d":"M8 8l4 -4l4 4"},0]]);
+export const GlassSeparatorHorizontal = /*#__PURE__*/ createGlassIcon("separator-horizontal", [[["M16 16L12 20L8 16",0],["M3 12L21 12",0],["M8 8L12 4L16 8",0]],[],[19.4,5.6,4.75],1]);
 export default GlassSeparatorHorizontal;

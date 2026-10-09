@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-graph"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGitGraph = /*#__PURE__*/ createGlassIcon("git-graph", [["circle",{"cx":"5","cy":"6","r":"3"},1],["path",{"d":"M5 9v6"},0],["circle",{"cx":"5","cy":"18","r":"3"},1],["path",{"d":"M12 3v18"},0],["circle",{"cx":"19","cy":"6","r":"3"},1],["path",{"d":"M16 15.7A9 9 0 0 0 19 9"},0]]);
+export const GlassGitGraph = /*#__PURE__*/ createGlassIcon("git-graph", [[["M2 6A3 3 0 1 0 8 6A3 3 0 1 0 2 6Z",1],["M2 18A3 3 0 1 0 8 18A3 3 0 1 0 2 18Z",1],["M16 6A3 3 0 1 0 22 6A3 3 0 1 0 16 6Z",1]],[["M5 9L5 15",0],["M12 3L12 21",0],["M16 15.7A9 9 0 0 0 19 9",0]],[20.4,4.6,4.75],0]);
 export default GlassGitGraph;

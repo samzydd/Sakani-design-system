@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tractor"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTractor = /*#__PURE__*/ createGlassIcon("tractor", [["path",{"d":"M10 11l11 0.9a1 1 0 0 1 0.8 1.1l-0.665 4.158a1 1 0 0 1 -0.988 0.842H20"},0],["path",{"d":"M16 18h-5"},0],["path",{"d":"M18 5a1 1 0 0 0 -1 1v5.573"},0],["path",{"d":"M3 4h8.129a1 1 0 0 1 0.99 0.863L13 11.246"},0],["path",{"d":"M4 11V4"},0],["path",{"d":"M7 15h0.01"},0],["path",{"d":"M8 10.1V4"},0],["circle",{"cx":"18","cy":"18","r":"2"},1],["circle",{"cx":"7","cy":"15","r":"5"},1]]);
+export const GlassTractor = /*#__PURE__*/ createGlassIcon("tractor", [[["M2 15A5 5 0 1 0 12 15A5 5 0 1 0 2 15Z",1],["M10 11L21 11.9A1 1 0 0 1 21.8 13L21.135 17.158A1 1 0 0 1 20.147 18L20 18Z",1]],[["M16 18L11 18",0],["M18 5A1 1 0 0 0 17 6L17 11.573",0],["M3 4L11.129 4A1 1 0 0 1 12.119 4.863L13 11.246",0],["M4 11L4 4",0],["M7 15L7.01 15",1],["M8 10.1L8 4",0],["M16 18A2 2 0 1 0 20 18A2 2 0 1 0 16 18Z",0]],[20.205,11.6,4.75],0]);
 export default GlassTractor;

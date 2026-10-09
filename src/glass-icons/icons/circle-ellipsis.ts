@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-ellipsis"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleEllipsis = /*#__PURE__*/ createGlassIcon("circle-ellipsis", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M17 12h0.01"},0],["path",{"d":"M12 12h0.01"},0],["path",{"d":"M7 12h0.01"},0]]);
+export const GlassCircleEllipsis = /*#__PURE__*/ createGlassIcon("circle-ellipsis", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M17 12L17.01 12",1],["M12 12L12.01 12",1],["M7 12L7.01 12",1]],[20.4,3.6,4.75],0]);
 export default GlassCircleEllipsis;

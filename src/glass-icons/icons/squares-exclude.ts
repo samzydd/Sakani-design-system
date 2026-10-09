@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "squares-exclude"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquaresExclude = /*#__PURE__*/ createGlassIcon("squares-exclude", [["path",{"d":"M16 12v2a2 2 0 0 1 -2 2H9a1 1 0 0 0 -1 1v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2V10a2 2 0 0 0 -2 -2h0"},0],["path",{"d":"M4 16a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v3a1 1 0 0 1 -1 1h-5a2 2 0 0 0 -2 2v2"},0]]);
+export const GlassSquaresExclude = /*#__PURE__*/ createGlassIcon("squares-exclude", [[["M4 16A2 2 0 0 1 2 14L2 4A2 2 0 0 1 4 2L14 2A2 2 0 0 1 16 4L16 7A1 1 0 0 1 15 8L10 8A2 2 0 0 0 8 10L8 12Z",1],["M16 12L16 14A2 2 0 0 1 14 16L9 16A1 1 0 0 0 8 17L8 20A2 2 0 0 0 10 22L20 22A2 2 0 0 0 22 20L22 10A2 2 0 0 0 20 8L20 8Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassSquaresExclude;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "brick-wall-fire"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBrickWallFire = /*#__PURE__*/ createGlassIcon("brick-wall-fire", [["path",{"d":"M16 3v2.107"},0],["path",{"d":"M17 9c1 3 2.5 3.5 3.5 4.5A5 5 0 0 1 22 17a5 5 0 0 1 -10 0c0 -0.3 0 -0.6 0.1 -0.9a2 2 0 1 0 3.3 -2C13 11.5 16 9 17 9"},1],["path",{"d":"M21 8.274V5a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h3.938"},0],["path",{"d":"M3 15h5.253"},0],["path",{"d":"M3 9h8.228"},0],["path",{"d":"M8 15v6"},0],["path",{"d":"M8 3v6"},0]]);
+export const GlassBrickWallFire = /*#__PURE__*/ createGlassIcon("brick-wall-fire", [[["M21 8.274L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L8.938 21Z",1],["M17 9C18 12 19.5 12.5 20.5 13.5A5 5 0 0 1 22 17A5 5 0 0 1 12 17C12 16.7 12 16.4 12.1 16.1A2 2 0 1 0 15.4 14.1C13 11.5 16 9 17 9",1],["M16 3L16 5.107",0]],[["M3 15L8.253 15",1],["M3 9L11.228 9",1],["M8 15L8 21",1],["M8 3L8 9",1]],[20.4,4.6,4.75],0]);
 export default GlassBrickWallFire;

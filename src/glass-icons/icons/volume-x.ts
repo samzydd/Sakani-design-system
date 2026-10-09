@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "volume-x"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVolumeX = /*#__PURE__*/ createGlassIcon("volume-x", [["path",{"d":"M11 4.702a0.7 0.7 0 0 0 -1.203 -0.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0 -1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 0.997 0.413l3.383 3.384A0.7 0.7 0 0 0 11 19.298z"},1],["path",{"d":"M16.5 14.5l5 -5"},0],["path",{"d":"M16.5 9.5l5 5"},0]]);
+export const GlassVolumeX = /*#__PURE__*/ createGlassIcon("volume-x", [[["M11 4.702A0.7 0.7 0 0 0 9.797 4.204L6.413 7.587A1.4 1.4 0 0 1 5.416 8L3 8A1 1 0 0 0 2 9L2 15A1 1 0 0 0 3 16L5.416 16A1.4 1.4 0 0 1 6.413 16.413L9.796 19.797A0.7 0.7 0 0 0 11 19.298Z",1]],[["M16.5 14.5L21.5 9.5",0],["M16.5 9.5L21.5 14.5",0]],[9.4,5.592,4.75],0]);
 export default GlassVolumeX;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "piano"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPiano = /*#__PURE__*/ createGlassIcon("piano", [["path",{"d":"M10 13v4"},0],["path",{"d":"M14 13v4"},0],["path",{"d":"M18 13v4"},0],["path",{"d":"M2 13h20"},0],["path",{"d":"M22 11.5A3.5 3.5 0 0 0 18.5 8a3.52 3.52 0 0 1 -3.173 -2A7 7 0 0 0 2 9v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2 -2z"},1],["path",{"d":"M6 13v4"},0]]);
+export const GlassPiano = /*#__PURE__*/ createGlassIcon("piano", [[["M22 11.5A3.5 3.5 0 0 0 18.5 8A3.52 3.52 0 0 1 15.327 6A7 7 0 0 0 2 9L2 19A2 2 0 0 0 4 21L20 21A2 2 0 0 0 22 19Z",1]],[["M10 13L10 17",1],["M14 13L14 17",1],["M18 13L18 17",1],["M2 13L22 13",1],["M6 13L6 17",1]],[20.4,3.598,4.75],0]);
 export default GlassPiano;

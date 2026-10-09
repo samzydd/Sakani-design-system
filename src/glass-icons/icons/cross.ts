@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cross"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCross = /*#__PURE__*/ createGlassIcon("cross", [["path",{"d":"M4 9a2 2 0 0 0 -2 2v2a2 2 0 0 0 2 2h4a1 1 0 0 1 1 1v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2 -2v-4a1 1 0 0 1 1 -1h4a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-4a1 1 0 0 1 -1 -1V4a2 2 0 0 0 -2 -2h-2a2 2 0 0 0 -2 2v4a1 1 0 0 1 -1 1z"},1]]);
+export const GlassCross = /*#__PURE__*/ createGlassIcon("cross", [[["M4 9A2 2 0 0 0 2 11L2 13A2 2 0 0 0 4 15L8 15A1 1 0 0 1 9 16L9 20A2 2 0 0 0 11 22L13 22A2 2 0 0 0 15 20L15 16A1 1 0 0 1 16 15L20 15A2 2 0 0 0 22 13L22 11A2 2 0 0 0 20 9L16 9A1 1 0 0 1 15 8L15 4A2 2 0 0 0 13 2L11 2A2 2 0 0 0 9 4L9 8A1 1 0 0 1 8 9Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassCross;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lasso"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLasso = /*#__PURE__*/ createGlassIcon("lasso", [["path",{"d":"M3.704 14.467a10 8 0 1 1 3.115 2.375"},0],["path",{"d":"M7 22a5 5 0 0 1 -2 -3.994"},0],["circle",{"cx":"5","cy":"16","r":"2"},1]]);
+export const GlassLasso = /*#__PURE__*/ createGlassIcon("lasso", [[["M3.704 14.467A10 8 0 1 1 6.819 16.842Z",1]],[["M7 22A5 5 0 0 1 5 18.006",0],["M3 16A2 2 0 1 0 7 16A2 2 0 1 0 3 16Z",1]],[20.395,3.6,4.75],0]);
 export default GlassLasso;

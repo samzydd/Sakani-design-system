@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lock-keyhole"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLockKeyhole = /*#__PURE__*/ createGlassIcon("lock-keyhole", [["circle",{"cx":"12","cy":"16","r":"1"},1],["rect",{"x":"3","y":"10","width":"18","height":"12","rx":"2"},1],["path",{"d":"M7 10V7a5 5 0 0 1 10 0v3"},0]]);
+export const GlassLockKeyhole = /*#__PURE__*/ createGlassIcon("lock-keyhole", [[["M5 10L19 10A2 2 0 0 1 21 12L21 20A2 2 0 0 1 19 22L5 22A2 2 0 0 1 3 20L3 12A2 2 0 0 1 5 10Z",1],["M7 10L7 7A5 5 0 0 1 17 7L17 10Z",1]],[["M11 16A1 1 0 1 0 13 16A1 1 0 1 0 11 16Z",1]],[19.4,3.6,4.75],0]);
 export default GlassLockKeyhole;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "graduation-cap"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGraduationCap = /*#__PURE__*/ createGlassIcon("graduation-cap", [["path",{"d":"M21.42 10.922a1 1 0 0 0 -0.019 -1.838L12.83 5.18a2 2 0 0 0 -1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"},1],["path",{"d":"M22 10v6"},0],["path",{"d":"M6 12.5V16a6 3 0 0 0 12 0v-3.5"},0]]);
+export const GlassGraduationCap = /*#__PURE__*/ createGlassIcon("graduation-cap", [[["M21.42 10.922A1 1 0 0 0 21.401 9.084L12.83 5.18A2 2 0 0 0 11.17 5.18L2.6 9.08A1 1 0 0 0 2.6 10.912L11.17 14.82A2 2 0 0 0 12.83 14.82Z",1],["M6 12.5L6 16A6 3 0 0 0 18 16L18 12.5Z",1]],[["M22 10L22 16",0]],[20.416,6.607,4.75],0]);
 export default GlassGraduationCap;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "heater"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHeater = /*#__PURE__*/ createGlassIcon("heater", [["path",{"d":"M11 8c2 -3 -2 -3 0 -6"},0],["path",{"d":"M15.5 8c2 -3 -2 -3 0 -6"},0],["path",{"d":"M6 10h0.01"},0],["path",{"d":"M6 14h0.01"},0],["path",{"d":"M10 16v-4"},0],["path",{"d":"M14 16v-4"},0],["path",{"d":"M18 16v-4"},0],["path",{"d":"M20 6a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2h3"},0],["path",{"d":"M5 20v2"},0],["path",{"d":"M19 20v2"},0]]);
+export const GlassHeater = /*#__PURE__*/ createGlassIcon("heater", [[["M20 6A2 2 0 0 1 22 8L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 8A2 2 0 0 1 4 6L7 6Z",1]],[["M11 8C13 5 9 5 11 2",1],["M15.5 8C17.5 5 13.5 5 15.5 2",1],["M6 10L6.01 10",1],["M6 14L6.01 14",1],["M10 16L10 12",1],["M14 16L14 12",1],["M18 16L18 12",1],["M5 20L5 22",1],["M19 20L19 22",1]],[20.4,7.6,4.75],0]);
 export default GlassHeater;

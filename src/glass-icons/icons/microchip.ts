@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "microchip"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMicrochip = /*#__PURE__*/ createGlassIcon("microchip", [["path",{"d":"M10 12h4"},0],["path",{"d":"M10 17h4"},0],["path",{"d":"M10 7h4"},0],["path",{"d":"M18 12h2"},0],["path",{"d":"M18 18h2"},0],["path",{"d":"M18 6h2"},0],["path",{"d":"M4 12h2"},0],["path",{"d":"M4 18h2"},0],["path",{"d":"M4 6h2"},0],["rect",{"x":"6","y":"2","width":"12","height":"20","rx":"2"},1]]);
+export const GlassMicrochip = /*#__PURE__*/ createGlassIcon("microchip", [[["M8 2L16 2A2 2 0 0 1 18 4L18 20A2 2 0 0 1 16 22L8 22A2 2 0 0 1 6 20L6 4A2 2 0 0 1 8 2Z",1]],[["M10 12L14 12",1],["M10 17L14 17",1],["M10 7L14 7",1],["M18 12L20 12",1],["M18 18L20 18",1],["M18 6L20 6",1],["M4 12L6 12",1],["M4 18L6 18",1],["M4 6L6 6",1]],[16.4,3.6,4.75],0]);
 export default GlassMicrochip;

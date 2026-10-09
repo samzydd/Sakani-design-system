@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rectangle-goggles"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRectangleGoggles = /*#__PURE__*/ createGlassIcon("rectangle-goggles", [["path",{"d":"M20 6a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -1.6 -0.8l-1.6 -2.13a1 1 0 0 0 -1.6 0L9.6 17.2A2 2 0 0 1 8 18H4a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2z"},1]]);
+export const GlassRectangleGoggles = /*#__PURE__*/ createGlassIcon("rectangle-goggles", [[["M20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L16 18A2 2 0 0 1 14.4 17.2L12.8 15.07A1 1 0 0 0 11.2 15.07L9.6 17.2A2 2 0 0 1 8 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z",1]],[],[20.4,7.6,4.75],0]);
 export default GlassRectangleGoggles;

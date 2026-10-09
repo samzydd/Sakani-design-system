@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-pause"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquarePause = /*#__PURE__*/ createGlassIcon("square-pause", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["line",{"x1":"10","x2":"10","y1":"15","y2":"9"},0],["line",{"x1":"14","x2":"14","y1":"15","y2":"9"},0]]);
+export const GlassSquarePause = /*#__PURE__*/ createGlassIcon("square-pause", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M10 15L10 9",1],["M14 15L14 9",1]],[19.4,4.6,4.75],0]);
 export default GlassSquarePause;

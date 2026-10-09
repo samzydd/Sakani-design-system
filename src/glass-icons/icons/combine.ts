@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "combine"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCombine = /*#__PURE__*/ createGlassIcon("combine", [["path",{"d":"M14 3a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1"},0],["path",{"d":"M19 3a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1"},0],["path",{"d":"M7 15l3 3"},0],["path",{"d":"M7 21l3 -3H5a2 2 0 0 1 -2 -2v-2"},0],["rect",{"x":"14","y":"14","width":"7","height":"7","rx":"1"},1],["rect",{"x":"3","y":"3","width":"7","height":"7","rx":"1"},1]]);
+export const GlassCombine = /*#__PURE__*/ createGlassIcon("combine", [[["M15 14L20 14A1 1 0 0 1 21 15L21 20A1 1 0 0 1 20 21L15 21A1 1 0 0 1 14 20L14 15A1 1 0 0 1 15 14Z",1],["M4 3L9 3A1 1 0 0 1 10 4L10 9A1 1 0 0 1 9 10L4 10A1 1 0 0 1 3 9L3 4A1 1 0 0 1 4 3Z",1]],[["M14 3A1 1 0 0 1 15 4L15 9A1 1 0 0 1 14 10",0],["M19 3A1 1 0 0 1 20 4L20 9A1 1 0 0 1 19 10",0],["M7 15L10 18",0],["M7 21L10 18L5 18A2 2 0 0 1 3 16L3 14",0]],[19.4,4.6,4.75],0]);
 export default GlassCombine;

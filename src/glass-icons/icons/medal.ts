@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "medal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMedal = /*#__PURE__*/ createGlassIcon("medal", [["path",{"d":"M7.21 15L2.66 7.14a2 2 0 0 1 0.13 -2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6 0.8l1.6 2.14a2 2 0 0 1 0.14 2.2L16.79 15"},0],["path",{"d":"M11 12L5.12 2.2"},0],["path",{"d":"M13 12l5.88 -9.8"},0],["path",{"d":"M8 7h8"},0],["circle",{"cx":"12","cy":"17","r":"5"},1],["path",{"d":"M12 18v-2h-0.5"},0]]);
+export const GlassMedal = /*#__PURE__*/ createGlassIcon("medal", [[["M7.21 15L2.66 7.14A2 2 0 0 1 2.79 4.94L4.4 2.8A2 2 0 0 1 6 2L18 2A2 2 0 0 1 19.6 2.8L21.2 4.94A2 2 0 0 1 21.34 7.14L16.79 15Z",1],["M7 17A5 5 0 1 0 17 17A5 5 0 1 0 7 17Z",1]],[["M11 12L5.12 2.2",1],["M13 12L18.88 2.2",1],["M8 7L16 7",1],["M12 18L12 16L11.5 16",1]],[20,3.6,4.75],0]);
 export default GlassMedal;

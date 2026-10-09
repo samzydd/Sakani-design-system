@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-horizontal-space-between"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignHorizontalSpaceBetween = /*#__PURE__*/ createGlassIcon("align-horizontal-space-between", [["rect",{"width":"6","height":"14","x":"3","y":"5","rx":"2"},1],["rect",{"width":"6","height":"10","x":"15","y":"7","rx":"2"},1],["path",{"d":"M3 2v20"},0],["path",{"d":"M21 2v20"},0]]);
+export const GlassAlignHorizontalSpaceBetween = /*#__PURE__*/ createGlassIcon("align-horizontal-space-between", [[["M5 5L7 5A2 2 0 0 1 9 7L9 17A2 2 0 0 1 7 19L5 19A2 2 0 0 1 3 17L3 7A2 2 0 0 1 5 5Z",1],["M17 7L19 7A2 2 0 0 1 21 9L21 15A2 2 0 0 1 19 17L17 17A2 2 0 0 1 15 15L15 9A2 2 0 0 1 17 7Z",1],["M3 2L3 22",0]],[["M21 2L21 22",0]],[19.4,3.6,4.75],0]);
 export default GlassAlignHorizontalSpaceBetween;

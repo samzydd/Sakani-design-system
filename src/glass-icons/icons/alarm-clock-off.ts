@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "alarm-clock-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlarmClockOff = /*#__PURE__*/ createGlassIcon("alarm-clock-off", [["path",{"d":"M6.87 6.87a8 8 0 1 0 11.26 11.26"},0],["path",{"d":"M19.9 14.25a8 8 0 0 0 -9.15 -9.15"},0],["path",{"d":"M22 6l-3 -3"},0],["path",{"d":"M6.26 18.67L4 21"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M4 4L2 6"},0]]);
+export const GlassAlarmClockOff = /*#__PURE__*/ createGlassIcon("alarm-clock-off", [[["M6.87 6.87A8 8 0 1 0 18.13 18.13Z",1]],[["M19.9 14.25A8 8 0 0 0 10.75 5.1",0],["M22 6L19 3",0],["M6.26 18.67L4 21",0],["M2 2L22 22",1],["M4 4L2 6",0]],[16.784,8.216,4.327],0]);
 export default GlassAlarmClockOff;

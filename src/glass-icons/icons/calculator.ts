@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calculator"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCalculator = /*#__PURE__*/ createGlassIcon("calculator", [["rect",{"width":"16","height":"20","x":"4","y":"2","rx":"2"},1],["line",{"x1":"8","x2":"16","y1":"6","y2":"6"},0],["line",{"x1":"16","x2":"16","y1":"14","y2":"18"},0],["path",{"d":"M16 10h0.01"},0],["path",{"d":"M12 10h0.01"},0],["path",{"d":"M8 10h0.01"},0],["path",{"d":"M12 14h0.01"},0],["path",{"d":"M8 14h0.01"},0],["path",{"d":"M12 18h0.01"},0],["path",{"d":"M8 18h0.01"},0]]);
+export const GlassCalculator = /*#__PURE__*/ createGlassIcon("calculator", [[["M6 2L18 2A2 2 0 0 1 20 4L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2Z",1]],[["M8 6L16 6",1],["M16 14L16 18",1],["M16 10L16.01 10",1],["M12 10L12.01 10",1],["M8 10L8.01 10",1],["M12 14L12.01 14",1],["M8 14L8.01 14",1],["M12 18L12.01 18",1],["M8 18L8.01 18",1]],[18.4,3.6,4.75],0]);
 export default GlassCalculator;

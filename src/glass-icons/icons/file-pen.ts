@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-pen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFilePen = /*#__PURE__*/ createGlassIcon("file-pen", [["path",{"d":"M12.659 22H18a2 2 0 0 0 2 -2V8a2.4 2.4 0 0 0 -0.706 -1.706l-3.588 -3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0 -2 2v9.34"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M10.378 12.622a1 1 0 0 1 3 3.003L8.36 20.637a2 2 0 0 1 -0.854 0.506l-2.867 0.837a0.5 0.5 0 0 1 -0.62 -0.62l0.836 -2.869a2 2 0 0 1 0.506 -0.853z"},1]]);
+export const GlassFilePen = /*#__PURE__*/ createGlassIcon("file-pen", [[["M12.659 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 13.34Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M10.378 12.622A1 1 0 0 1 13.378 15.625L8.36 20.637A2 2 0 0 1 7.506 21.143L4.639 21.98A0.5 0.5 0 0 1 4.019 21.36L4.855 18.491A2 2 0 0 1 5.361 17.638Z",0]],[18.4,3.6,4.75],0]);
 export default GlassFilePen;

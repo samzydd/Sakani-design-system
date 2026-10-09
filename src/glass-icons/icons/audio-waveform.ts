@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "audio-waveform"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAudioWaveform = /*#__PURE__*/ createGlassIcon("audio-waveform", [["path",{"d":"M2 13a2 2 0 0 0 2 -2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2 -2"},0]]);
+export const GlassAudioWaveform = /*#__PURE__*/ createGlassIcon("audio-waveform", [[["M2 13A2 2 0 0 0 4 11L4 7A2 2 0 0 1 8 7L8 20A2 2 0 0 0 12 20L12 4A2 2 0 0 1 16 4L16 17A2 2 0 0 0 20 17L20 13A2 2 0 0 1 22 11",0]],[],[20.4,3.6,4.75],1]);
 export default GlassAudioWaveform;

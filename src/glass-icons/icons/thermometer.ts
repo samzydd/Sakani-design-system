@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "thermometer"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassThermometer = /*#__PURE__*/ createGlassIcon("thermometer", [["path",{"d":"M14 4v10.54a4 4 0 1 1 -4 0V4a2 2 0 0 1 4 0Z"},1]]);
+export const GlassThermometer = /*#__PURE__*/ createGlassIcon("thermometer", [[["M14 4L14 14.54A4 4 0 1 1 10 14.54L10 4A2 2 0 0 1 14 4Z",1]],[],[14.388,3.6,4.75],0]);
 export default GlassThermometer;

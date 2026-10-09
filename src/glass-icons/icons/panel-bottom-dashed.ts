@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "panel-bottom-dashed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPanelBottomDashed = /*#__PURE__*/ createGlassIcon("panel-bottom-dashed", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M14 15h1"},0],["path",{"d":"M19 15h2"},0],["path",{"d":"M3 15h2"},0],["path",{"d":"M9 15h1"},0]]);
+export const GlassPanelBottomDashed = /*#__PURE__*/ createGlassIcon("panel-bottom-dashed", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M14 15L15 15",1],["M19 15L21 15",1],["M3 15L5 15",1],["M9 15L10 15",1]],[19.4,4.6,4.75],0]);
 export default GlassPanelBottomDashed;

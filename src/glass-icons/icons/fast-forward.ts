@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fast-forward"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFastForward = /*#__PURE__*/ createGlassIcon("fast-forward", [["path",{"d":"M12 6a2 2 0 0 1 3.414 -1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 12 18z"},1],["path",{"d":"M2 6a2 2 0 0 1 3.414 -1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 2 18z"},1]]);
+export const GlassFastForward = /*#__PURE__*/ createGlassIcon("fast-forward", [[["M2 6A2 2 0 0 1 5.414 4.586L11.414 10.586A2 2 0 0 1 11.414 13.414L5.414 19.414A2 2 0 0 1 2 18Z",1],["M12 6A2 2 0 0 1 15.414 4.586L21.414 10.586A2 2 0 0 1 21.414 13.414L15.414 19.414A2 2 0 0 1 12 18Z",1]],[],[20.4,5.6,4.75],0]);
 export default GlassFastForward;

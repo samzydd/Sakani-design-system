@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sword"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSword = /*#__PURE__*/ createGlassIcon("sword", [["path",{"d":"M11 19l-6 -6"},0],["path",{"d":"M5 21l-2 -2"},0],["path",{"d":"M8 16l-4 4"},0],["path",{"d":"M9.5 17.5L20.414 6.586A2 2 0 0 0 21 5.172V3h-2.172a2 2 0 0 0 -1.414 0.586L6.5 14.5"},0]]);
+export const GlassSword = /*#__PURE__*/ createGlassIcon("sword", [[["M11 19L5 13",0],["M5 21L3 19",0],["M8 16L4 20",0],["M9.5 17.5L20.414 6.586A2 2 0 0 0 21 5.172L21 3L18.828 3A2 2 0 0 0 17.414 3.586L6.5 14.5",0]],[],[19.4,4.6,4.75],1]);
 export default GlassSword;

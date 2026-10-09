@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "russian-ruble"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRussianRuble = /*#__PURE__*/ createGlassIcon("russian-ruble", [["path",{"d":"M6 11h8a4 4 0 0 0 0 -8H9v18"},0],["path",{"d":"M6 15h8"},0]]);
+export const GlassRussianRuble = /*#__PURE__*/ createGlassIcon("russian-ruble", [[["M6 11L14 11A4 4 0 0 0 14 3L9 3L9 21",0],["M6 15L14 15",0]],[],[16.4,4.6,4.75],1]);
 export default GlassRussianRuble;

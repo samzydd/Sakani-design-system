@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "megaphone"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMegaphone = /*#__PURE__*/ createGlassIcon("megaphone", [["path",{"d":"M11 6a13 13 0 0 0 8.4 -2.8A1 1 0 0 1 21 4v12a1 1 0 0 1 -1.6 0.8A13 13 0 0 0 11 14H5a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2z"},1],["path",{"d":"M6 14a12 12 0 0 0 2.4 7.2a2 2 0 0 0 3.2 -2.4A8 8 0 0 1 10 14"},0],["path",{"d":"M8 6v8"},0]]);
+export const GlassMegaphone = /*#__PURE__*/ createGlassIcon("megaphone", [[["M11 6A13 13 0 0 0 19.4 3.2A1 1 0 0 1 21 4L21 16A1 1 0 0 1 19.4 16.8A13 13 0 0 0 11 14L5 14A2 2 0 0 1 3 12L3 8A2 2 0 0 1 5 6Z",1]],[["M6 14A12 12 0 0 0 8.4 21.2A2 2 0 0 0 11.6 18.8A8 8 0 0 1 10 14",0],["M8 6L8 14",1]],[19.4,4.604,4.75],0]);
 export default GlassMegaphone;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "plus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPlus = /*#__PURE__*/ createGlassIcon("plus", [["path",{"d":"M5 12h14"},0],["path",{"d":"M12 5v14"},0]]);
+export const GlassPlus = /*#__PURE__*/ createGlassIcon("plus", [[["M5 12L19 12",0],["M12 5L12 19",0]],[],[17.676,6.324,4.29],1]);
 export default GlassPlus;

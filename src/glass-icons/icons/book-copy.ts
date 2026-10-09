@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-copy"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBookCopy = /*#__PURE__*/ createGlassIcon("book-copy", [["path",{"d":"M5 7a2 2 0 0 0 -2 2v11"},0],["path",{"d":"M5.803 18H5a2 2 0 0 0 0 4h9.5a0.5 0.5 0 0 0 0.5 -0.5V21"},0],["path",{"d":"M9 15V4a2 2 0 0 1 2 -2h9.5a0.5 0.5 0 0 1 0.5 0.5v14a0.5 0.5 0 0 1 -0.5 0.5H11a2 2 0 0 1 0 -4h10"},0]]);
+export const GlassBookCopy = /*#__PURE__*/ createGlassIcon("book-copy", [[["M5.803 18L5 18A2 2 0 0 0 5 22L14.5 22A0.5 0.5 0 0 0 15 21.5L15 21Z",1]],[["M5 7A2 2 0 0 0 3 9L3 20",0],["M9 15L9 4A2 2 0 0 1 11 2L20.5 2A0.5 0.5 0 0 1 21 2.5L21 16.5A0.5 0.5 0 0 1 20.5 17L11 17A2 2 0 0 1 11 13L21 13",0]],[13.988,19.012,3.77],0]);
 export default GlassBookCopy;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flower"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFlower = /*#__PURE__*/ createGlassIcon("flower", [["circle",{"cx":"12","cy":"12","r":"3"},1],["path",{"d":"M12 16.5A4.5 4.5 0 1 1 7.5 12A4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5a4.5 4.5 0 1 1 -4.5 4.5"},1],["path",{"d":"M12 7.5V9"},0],["path",{"d":"M7.5 12H9"},0],["path",{"d":"M16.5 12H15"},0],["path",{"d":"M12 16.5V15"},0],["path",{"d":"M8 8l1.88 1.88"},0],["path",{"d":"M14.12 9.88L16 8"},0],["path",{"d":"M8 16l1.88 -1.88"},0],["path",{"d":"M14.12 14.12L16 16"},0]]);
+export const GlassFlower = /*#__PURE__*/ createGlassIcon("flower", [[["M12 16.5A4.5 4.5 0 1 1 7.5 12A4.5 4.5 0 1 1 12 7.5A4.5 4.5 0 1 1 16.5 12A4.5 4.5 0 1 1 12 16.5",1],["M12 7.5L12 9",0],["M7.5 12L9 12",0],["M16.5 12L15 12",0],["M12 16.5L12 15",0]],[["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z",1],["M8 8L9.88 9.88",1],["M14.12 9.88L16 8",1],["M8 16L9.88 14.12",1],["M14.12 14.12L16 16",1]],[19.4,4.6,4.75],0]);
 export default GlassFlower;

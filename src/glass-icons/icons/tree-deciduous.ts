@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tree-deciduous"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTreeDeciduous = /*#__PURE__*/ createGlassIcon("tree-deciduous", [["path",{"d":"M8 19a4 4 0 0 1 -2.24 -7.32A3.5 3.5 0 0 1 9 6.03V6a3 3 0 1 1 6 0v0.04a3.5 3.5 0 0 1 3.24 5.65A4 4 0 0 1 16 19Z"},1],["path",{"d":"M12 19v3"},0]]);
+export const GlassTreeDeciduous = /*#__PURE__*/ createGlassIcon("tree-deciduous", [[["M8 19A4 4 0 0 1 5.76 11.68A3.5 3.5 0 0 1 9 6.03L9 6A3 3 0 1 1 15 6L15 6.04A3.5 3.5 0 0 1 18.24 11.69A4 4 0 0 1 16 19Z",1]],[["M12 19L12 22",0]],[18.394,4.6,4.75],0]);
 export default GlassTreeDeciduous;

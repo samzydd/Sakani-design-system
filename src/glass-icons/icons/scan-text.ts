@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "scan-text"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassScanText = /*#__PURE__*/ createGlassIcon("scan-text", [["path",{"d":"M3 7V5a2 2 0 0 1 2 -2h2"},0],["path",{"d":"M17 3h2a2 2 0 0 1 2 2v2"},0],["path",{"d":"M21 17v2a2 2 0 0 1 -2 2h-2"},0],["path",{"d":"M7 21H5a2 2 0 0 1 -2 -2v-2"},0],["path",{"d":"M7 8h8"},0],["path",{"d":"M7 12h10"},0],["path",{"d":"M7 16h6"},0]]);
+export const GlassScanText = /*#__PURE__*/ createGlassIcon("scan-text", [[["M3 7L3 5A2 2 0 0 1 5 3L7 3",0],["M17 3L19 3A2 2 0 0 1 21 5L21 7",0],["M21 17L21 19A2 2 0 0 1 19 21L17 21",0],["M7 21L5 21A2 2 0 0 1 3 19L3 17",0],["M7 8L15 8",0],["M7 12L17 12",0],["M7 16L13 16",0]],[],[19.4,4.6,4.75],1]);
 export default GlassScanText;

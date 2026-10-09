@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sliders-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSlidersVertical = /*#__PURE__*/ createGlassIcon("sliders-vertical", [["path",{"d":"M10 8h4"},0],["path",{"d":"M12 21v-9"},0],["path",{"d":"M12 8V3"},0],["path",{"d":"M17 16h4"},0],["path",{"d":"M19 12V3"},0],["path",{"d":"M19 21v-5"},0],["path",{"d":"M3 14h4"},0],["path",{"d":"M5 10V3"},0],["path",{"d":"M5 21v-7"},0]]);
+export const GlassSlidersVertical = /*#__PURE__*/ createGlassIcon("sliders-vertical", [[["M10 8L14 8",0],["M12 21L12 12",0],["M12 8L12 3",0],["M17 16L21 16",0],["M19 12L19 3",0],["M19 21L19 16",0],["M3 14L7 14",0],["M5 10L5 3",0],["M5 21L5 14",0]],[],[19.4,4.6,4.75],1]);
 export default GlassSlidersVertical;

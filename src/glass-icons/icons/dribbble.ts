@@ -2,5 +2,5 @@
 // Shape data: Sakani Figma icon set, icon "dribbble"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDribbble = /*#__PURE__*/ createGlassIcon("dribbble", [["path",{"d":"M19.13 5.0901C15.22 9.1401 10 10.4401 2.25 10.9401"},0],["path",{"d":"M21.7501 12.8401C15.1301 11.4301 9.6101 13.8401 5.3701 19.1601"},0],["path",{"d":"M8.5601 2.75C12.9301 8.75 14.5601 12.17 16.5601 20.47"},0],["path",{"d":"M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z"},1]]);
+export const GlassDribbble = /*#__PURE__*/ createGlassIcon("dribbble", [[["M22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12Z",1]],[["M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94",1],["M21.75 12.84C15.13 11.43 9.61 13.84 5.37 19.16",1],["M8.56 2.75C12.93 8.75 14.56 12.17 16.56 20.47",1]],[20.4,3.6,4.75],0]);
 export default GlassDribbble;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "line-squiggle"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLineSquiggle = /*#__PURE__*/ createGlassIcon("line-squiggle", [["path",{"d":"M7 3.5c5 -2 7 2.5 3 4C1.5 10 2 15 5 16c5 2 9 -10 14 -7s0.5 13.5 -4 12c-5 -2.5 0.5 -11 6 -2"},0]]);
+export const GlassLineSquiggle = /*#__PURE__*/ createGlassIcon("line-squiggle", [[["M7 3.5C12 1.5 14 6 10 7.5C1.5 10 2 15 5 16C10 18 14 6 19 9C24 12 19.5 22.5 15 21C10 18.5 15.5 10 21 19",0]],[],[19.585,4.598,4.75],1]);
 export default GlassLineSquiggle;

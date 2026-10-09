@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "venus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVenus = /*#__PURE__*/ createGlassIcon("venus", [["path",{"d":"M12 15v7"},0],["path",{"d":"M9 19h6"},0],["circle",{"cx":"12","cy":"9","r":"6"},1]]);
+export const GlassVenus = /*#__PURE__*/ createGlassIcon("venus", [[["M6 9A6 6 0 1 0 18 9A6 6 0 1 0 6 9Z",1]],[["M12 15L12 22",0],["M9 19L15 19",0]],[16.988,4.012,3.77],0]);
 export default GlassVenus;

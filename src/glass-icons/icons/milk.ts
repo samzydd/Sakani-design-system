@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "milk"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMilk = /*#__PURE__*/ createGlassIcon("milk", [["path",{"d":"M8 2h8"},0],["path",{"d":"M9 2v2.789a4 4 0 0 1 -0.672 2.219l-0.656 0.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2 -2v-9.789a4 4 0 0 0 -0.672 -2.219l-0.656 -0.984A4 4 0 0 1 15 4.788V2"},0],["path",{"d":"M7 15a6.472 6.472 0 0 1 5 0a6.47 6.47 0 0 0 5 0"},0]]);
+export const GlassMilk = /*#__PURE__*/ createGlassIcon("milk", [[["M9 2L9 4.789A4 4 0 0 1 8.328 7.008L7.672 7.992A4 4 0 0 0 7 10.212L7 20A2 2 0 0 0 9 22L15 22A2 2 0 0 0 17 20L17 10.211A4 4 0 0 0 16.328 7.992L15.672 7.008A4 4 0 0 1 15 4.788L15 2Z",1],["M8 2L16 2",0]],[["M7 15A6.472 6.472 0 0 1 12 15A6.47 6.47 0 0 0 17 15",1]],[15.4,3.6,4.75],0]);
 export default GlassMilk;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "strikethrough"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassStrikethrough = /*#__PURE__*/ createGlassIcon("strikethrough", [["path",{"d":"M16 4H9a3 3 0 0 0 -2.83 4"},0],["path",{"d":"M14 12a4 4 0 0 1 0 8H6"},0],["line",{"x1":"4","x2":"20","y1":"12","y2":"12"},0]]);
+export const GlassStrikethrough = /*#__PURE__*/ createGlassIcon("strikethrough", [[["M14 12A4 4 0 0 1 14 20L6 20Z",1]],[["M16 4L9 4A3 3 0 0 0 6.17 8",0],["M4 12L20 12",0]],[16.988,13.012,3.77],0]);
 export default GlassStrikethrough;

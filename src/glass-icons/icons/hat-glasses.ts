@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hat-glasses"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHatGlasses = /*#__PURE__*/ createGlassIcon("hat-glasses", [["path",{"d":"M14 18a2 2 0 0 0 -4 0"},0],["path",{"d":"M19 11l-2.11 -6.657a2 2 0 0 0 -2.752 -1.148l-1.276 0.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0 -1.925 1.456L5 11"},0],["path",{"d":"M2 11h20"},0],["circle",{"cx":"17","cy":"18","r":"3"},1],["circle",{"cx":"7","cy":"18","r":"3"},1]]);
+export const GlassHatGlasses = /*#__PURE__*/ createGlassIcon("hat-glasses", [[["M19 11L16.89 4.343A2 2 0 0 0 14.138 3.195L12.862 3.805A2 2 0 0 1 12 4L8.5 4A2 2 0 0 0 6.575 5.456L5 11Z",1],["M14 18A3 3 0 1 0 20 18A3 3 0 1 0 14 18Z",1],["M4 18A3 3 0 1 0 10 18A3 3 0 1 0 4 18Z",1],["M14 18A2 2 0 0 0 10 18",0],["M2 11L22 11",0]],[],[20.4,4.605,4.75],0]);
 export default GlassHatGlasses;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "trees"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTrees = /*#__PURE__*/ createGlassIcon("trees", [["path",{"d":"M10 10v0.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1 -1 -5.8V10a3 3 0 0 1 6 0Z"},1],["path",{"d":"M7 16v6"},0],["path",{"d":"M13 19v3"},0],["path",{"d":"M12 19h8.3a1 1 0 0 0 0.7 -1.7L18 14h0.3a1 1 0 0 0 0.7 -1.7L16 9h0.2a1 1 0 0 0 0.8 -1.7L13 3l-1.4 1.5"},0]]);
+export const GlassTrees = /*#__PURE__*/ createGlassIcon("trees", [[["M12 19L20.3 19A1 1 0 0 0 21 17.3L18 14L18.3 14A1 1 0 0 0 19 12.3L16 9L16.2 9A1 1 0 0 0 17 7.3L13 3L11.6 4.5Z",1],["M10 10L10 10.2A3 3 0 0 1 8.9 16L5 16A3 3 0 0 1 4 10.2L4 10A3 3 0 0 1 10 10Z",1]],[["M7 16L7 22",0],["M13 19L13 22",0]],[19.686,4.6,4.75],0]);
 export default GlassTrees;

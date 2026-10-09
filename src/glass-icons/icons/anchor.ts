@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "anchor"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAnchor = /*#__PURE__*/ createGlassIcon("anchor", [["path",{"d":"M12 6v16"},0],["path",{"d":"M19 13l2 -1a9 9 0 0 1 -18 0l2 1"},0],["path",{"d":"M9 11h6"},0],["circle",{"cx":"12","cy":"4","r":"2"},1]]);
+export const GlassAnchor = /*#__PURE__*/ createGlassIcon("anchor", [[["M19 13L21 12A9 9 0 0 1 3 12L5 13Z",1]],[["M12 6L12 22",1],["M9 11L15 11",0],["M10 4A2 2 0 1 0 14 4A2 2 0 1 0 10 4Z",0]],[19.4,13.6,4.75],0]);
 export default GlassAnchor;

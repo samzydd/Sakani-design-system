@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "dam"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDam = /*#__PURE__*/ createGlassIcon("dam", [["path",{"d":"M11 11.31c1.17 0.56 1.54 1.69 3.5 1.69c2.5 0 2.5 -2 5 -2c1.3 0 1.9 0.5 2.5 1"},0],["path",{"d":"M11.75 18c0.35 0.5 1.45 1 2.75 1c2.5 0 2.5 -2 5 -2c1.3 0 1.9 0.5 2.5 1"},0],["path",{"d":"M2 10h4"},0],["path",{"d":"M2 14h4"},0],["path",{"d":"M2 18h4"},0],["path",{"d":"M2 6h4"},0],["path",{"d":"M7 3a1 1 0 0 0 -1 1v16a1 1 0 0 0 1 1h4a1 1 0 0 0 1 -1L10 4a1 1 0 0 0 -1 -1z"},1]]);
+export const GlassDam = /*#__PURE__*/ createGlassIcon("dam", [[["M7 3A1 1 0 0 0 6 4L6 20A1 1 0 0 0 7 21L11 21A1 1 0 0 0 12 20L10 4A1 1 0 0 0 9 3Z",1]],[["M11 11.31C12.17 11.87 12.54 13 14.5 13C17 13 17 11 19.5 11C20.8 11 21.4 11.5 22 12",0],["M11.75 18C12.1 18.5 13.2 19 14.5 19C17 19 17 17 19.5 17C20.8 17 21.4 17.5 22 18",0],["M2 10L6 10",0],["M2 14L6 14",0],["M2 18L6 18",0],["M2 6L6 6",0]],[10.4,4.6,4.75],0]);
 export default GlassDam;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "backpack"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBackpack = /*#__PURE__*/ createGlassIcon("backpack", [["path",{"d":"M4 10a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v10a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2z"},1],["path",{"d":"M8 10h8"},0],["path",{"d":"M8 18h8"},0],["path",{"d":"M8 22v-6a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v6"},0],["path",{"d":"M9 6V4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2"},0]]);
+export const GlassBackpack = /*#__PURE__*/ createGlassIcon("backpack", [[["M4 10A4 4 0 0 1 8 6L16 6A4 4 0 0 1 20 10L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20Z",1]],[["M8 10L16 10",1],["M8 18L16 18",1],["M8 22L8 16A2 2 0 0 1 10 14L14 14A2 2 0 0 1 16 16L16 22",1],["M9 6L9 4A2 2 0 0 1 11 2L13 2A2 2 0 0 1 15 4L15 6",0]],[18.4,7.6,4.75],0]);
 export default GlassBackpack;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sun-snow"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSunSnow = /*#__PURE__*/ createGlassIcon("sun-snow", [["path",{"d":"M10 21v-1"},0],["path",{"d":"M10 4V3"},0],["path",{"d":"M10 9a3 3 0 0 0 0 6"},0],["path",{"d":"M14 20l1.25 -2.5L18 18"},0],["path",{"d":"M14 4l1.25 2.5L18 6"},0],["path",{"d":"M17 21l-3 -6l1.5 -3H22"},0],["path",{"d":"M17 3l-3 6l1.5 3"},0],["path",{"d":"M2 12h1"},0],["path",{"d":"M20 10l-1.5 2l1.5 2"},0],["path",{"d":"M3.64 18.36l0.7 -0.7"},0],["path",{"d":"M4.34 6.34l-0.7 -0.7"},0]]);
+export const GlassSunSnow = /*#__PURE__*/ createGlassIcon("sun-snow", [[["M17 21L14 15L15.5 12L22 12Z",1],["M10 9A3 3 0 0 0 10 15Z",1],["M14 20L15.25 17.5L18 18",0],["M20 10L18.5 12L20 14",0]],[["M10 21L10 20",0],["M10 4L10 3",0],["M14 4L15.25 6.5L18 6",0],["M17 3L14 9L15.5 12",0],["M2 12L3 12",0],["M3.64 18.36L4.34 17.66",0],["M4.34 6.34L3.64 5.64",0]],[20.52,10.48,4.55],0]);
 export default GlassSunSnow;

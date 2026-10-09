@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "umbrella-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUmbrellaOff = /*#__PURE__*/ createGlassIcon("umbrella-off", [["path",{"d":"M12 13v7a2 2 0 0 0 4 0"},0],["path",{"d":"M12 2v2"},0],["path",{"d":"M18.656 13h2.336a1 1 0 0 0 0.97 -1.274a10.284 10.284 0 0 0 -12.07 -7.51"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M5.961 5.957a10.28 10.28 0 0 0 -3.922 5.769A1 1 0 0 0 3 13h10"},0]]);
+export const GlassUmbrellaOff = /*#__PURE__*/ createGlassIcon("umbrella-off", [[["M18.656 13L20.992 13A1 1 0 0 0 21.962 11.726A10.284 10.284 0 0 0 9.892 4.216Z",1],["M5.961 5.957A10.28 10.28 0 0 0 2.039 11.726A1 1 0 0 0 3 13L13 13Z",1],["M12 13L12 20A2 2 0 0 0 16 20Z",1]],[["M12 2L12 4",1],["M2 2L22 22",0]],[20.396,5.599,4.75],0]);
 export default GlassUmbrellaOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-braces-corner" (alias of "file-json-2")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileJson2 = /*#__PURE__*/ createGlassIcon("file-json-2", [["path",{"d":"M14 22h4a2 2 0 0 0 2 -2V8a2.4 2.4 0 0 0 -0.706 -1.706l-3.588 -3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0 -2 2v6"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M5 14a1 1 0 0 0 -1 1v2a1 1 0 0 1 -1 1a1 1 0 0 1 1 1v2a1 1 0 0 0 1 1"},0],["path",{"d":"M9 22a1 1 0 0 0 1 -1v-2a1 1 0 0 1 1 -1a1 1 0 0 1 -1 -1v-2a1 1 0 0 0 -1 -1"},0]]);
+export const GlassFileJson2 = /*#__PURE__*/ createGlassIcon("file-json-2", [[["M14 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 10Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M5 14A1 1 0 0 0 4 15L4 17A1 1 0 0 1 3 18A1 1 0 0 1 4 19L4 21A1 1 0 0 0 5 22",0],["M9 22A1 1 0 0 0 10 21L10 19A1 1 0 0 1 11 18A1 1 0 0 1 10 17L10 15A1 1 0 0 0 9 14",1]],[18.4,3.6,4.75],0]);
 export default GlassFileJson2;

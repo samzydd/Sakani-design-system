@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "asterisk"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAsterisk = /*#__PURE__*/ createGlassIcon("asterisk", [["path",{"d":"M12 5v14"},0],["path",{"d":"M18.065 8.496l-12.125 7"},0],["path",{"d":"M5.94 8.504l12.125 7"},0]]);
+export const GlassAsterisk = /*#__PURE__*/ createGlassIcon("asterisk", [[["M12 5L12 19",0],["M18.065 8.496L5.94 15.496",0],["M5.94 8.504L18.065 15.504",0]],[],[16.741,6.324,4.29],1]);
 export default GlassAsterisk;

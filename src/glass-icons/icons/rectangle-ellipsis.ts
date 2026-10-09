@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rectangle-ellipsis"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRectangleEllipsis = /*#__PURE__*/ createGlassIcon("rectangle-ellipsis", [["rect",{"width":"20","height":"12","x":"2","y":"6","rx":"2"},1],["path",{"d":"M12 12h0.01"},0],["path",{"d":"M17 12h0.01"},0],["path",{"d":"M7 12h0.01"},0]]);
+export const GlassRectangleEllipsis = /*#__PURE__*/ createGlassIcon("rectangle-ellipsis", [[["M4 6L20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z",1]],[["M12 12L12.01 12",1],["M17 12L17.01 12",1],["M7 12L7.01 12",1]],[20.4,7.6,4.75],0]);
 export default GlassRectangleEllipsis;

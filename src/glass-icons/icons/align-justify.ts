@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-align-justify" (alias of "align-justify")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignJustify = /*#__PURE__*/ createGlassIcon("align-justify", [["path",{"d":"M3 5h18"},0],["path",{"d":"M3 12h18"},0],["path",{"d":"M3 19h18"},0]]);
+export const GlassAlignJustify = /*#__PURE__*/ createGlassIcon("align-justify", [[["M3 5L21 5",0],["M3 12L21 12",0],["M3 19L21 19",0]],[],[19.4,6.6,4.75],1]);
 export default GlassAlignJustify;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "search-slash"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSearchSlash = /*#__PURE__*/ createGlassIcon("search-slash", [["path",{"d":"M13.5 8.5l-5 5"},0],["circle",{"cx":"11","cy":"11","r":"8"},1],["path",{"d":"M21 21l-4.3 -4.3"},0]]);
+export const GlassSearchSlash = /*#__PURE__*/ createGlassIcon("search-slash", [[["M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z",1]],[["M13.5 8.5L8.5 13.5",1],["M21 21L16.7 16.7",0]],[17.4,4.6,4.75],0]);
 export default GlassSearchSlash;

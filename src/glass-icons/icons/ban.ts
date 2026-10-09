@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ban"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBan = /*#__PURE__*/ createGlassIcon("ban", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M4.929 4.929L19.07 19.071"},0]]);
+export const GlassBan = /*#__PURE__*/ createGlassIcon("ban", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M4.929 4.929L19.07 19.071",1]],[20.4,3.6,4.75],0]);
 export default GlassBan;

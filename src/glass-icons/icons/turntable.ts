@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "turntable"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTurntable = /*#__PURE__*/ createGlassIcon("turntable", [["path",{"d":"M10 12.01h0.01"},0],["path",{"d":"M18 8v4a8 8 0 0 1 -1.07 4"},0],["circle",{"cx":"10","cy":"12","r":"4"},1],["rect",{"x":"2","y":"4","width":"20","height":"16","rx":"2"},1]]);
+export const GlassTurntable = /*#__PURE__*/ createGlassIcon("turntable", [[["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z",1]],[["M10 12.01L10.01 12.01",1],["M18 8L18 12A8 8 0 0 1 16.93 16",1],["M6 12A4 4 0 1 0 14 12A4 4 0 1 0 6 12Z",1]],[20.4,5.6,4.75],0]);
 export default GlassTurntable;

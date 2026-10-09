@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "plug-zap"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPlugZap = /*#__PURE__*/ createGlassIcon("plug-zap", [["path",{"d":"M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6 -6l-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"},1],["path",{"d":"M2 22l3 -3"},0],["path",{"d":"M7.5 13.5L10 11"},0],["path",{"d":"M10.5 16.5L13 14"},0],["path",{"d":"M18 3l-4 4h6l-4 4"},0]]);
+export const GlassPlugZap = /*#__PURE__*/ createGlassIcon("plug-zap", [[["M6.3 20.3A2.4 2.4 0 0 0 9.7 20.3L12 18L6 12L3.7 14.3A2.4 2.4 0 0 0 3.7 17.7Z",1]],[["M2 22L5 19",0],["M7.5 13.5L10 11",0],["M10.5 16.5L13 14",0],["M18 3L14 7L20 7L16 11",0]],[11.45,12.55,3],0]);
 export default GlassPlugZap;

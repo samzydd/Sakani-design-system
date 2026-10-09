@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "spotlight"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSpotlight = /*#__PURE__*/ createGlassIcon("spotlight", [["path",{"d":"M15.295 19.562L16 22"},0],["path",{"d":"M17 16l3.758 2.098"},0],["path",{"d":"M19 12.5l3.026 -0.598"},0],["path",{"d":"M7.61 6.3a3 3 0 0 0 -3.92 1.3l-1.38 2.79a3 3 0 0 0 1.3 3.91l6.89 3.597a1 1 0 0 0 1.342 -0.447l3.106 -6.211a1 1 0 0 0 -0.447 -1.341z"},1],["path",{"d":"M8 9V2"},0]]);
+export const GlassSpotlight = /*#__PURE__*/ createGlassIcon("spotlight", [[["M7.61 6.3A3 3 0 0 0 3.69 7.6L2.31 10.39A3 3 0 0 0 3.61 14.3L10.5 17.897A1 1 0 0 0 11.842 17.45L14.948 11.239A1 1 0 0 0 14.501 9.898Z",1]],[["M15.295 19.562L16 22",0],["M17 16L20.758 18.098",0],["M19 12.5L22.026 11.902",0],["M8 9L8 2",0]],[13.88,7.191,4.034],0]);
 export default GlassSpotlight;

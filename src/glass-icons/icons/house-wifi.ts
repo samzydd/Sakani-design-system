@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "house-wifi"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHouseWifi = /*#__PURE__*/ createGlassIcon("house-wifi", [["path",{"d":"M9.5 13.866a4 4 0 0 1 5 0.01"},0],["path",{"d":"M12 17h0.01"},0],["path",{"d":"M3 10a2 2 0 0 1 0.709 -1.528l7 -6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2z"},1],["path",{"d":"M7 10.754a8 8 0 0 1 10 0"},0]]);
+export const GlassHouseWifi = /*#__PURE__*/ createGlassIcon("house-wifi", [[["M3 10A2 2 0 0 1 3.709 8.472L10.709 2.472A2 2 0 0 1 13.291 2.472L20.291 8.472A2 2 0 0 1 21 10L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19Z",1]],[["M9.5 13.866A4 4 0 0 1 14.5 13.876",1],["M12 17L12.01 17",1],["M7 10.754A8 8 0 0 1 17 10.754",1]],[19.4,3.6,4.75],0]);
 export default GlassHouseWifi;

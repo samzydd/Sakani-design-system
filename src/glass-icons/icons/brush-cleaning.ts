@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "brush-cleaning"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBrushCleaning = /*#__PURE__*/ createGlassIcon("brush-cleaning", [["path",{"d":"M16 22l-1 -4"},0],["path",{"d":"M19 14a1 1 0 0 0 1 -1v-1a2 2 0 0 0 -2 -2h-3a1 1 0 0 1 -1 -1V4a2 2 0 0 0 -4 0v5a1 1 0 0 1 -1 1H6a2 2 0 0 0 -2 2v1a1 1 0 0 0 1 1"},0],["path",{"d":"M19 14H5l-1.973 6.767A1 1 0 0 0 4 22h16a1 1 0 0 0 0.973 -1.233z"},1],["path",{"d":"M8 22l1 -4"},0]]);
+export const GlassBrushCleaning = /*#__PURE__*/ createGlassIcon("brush-cleaning", [[["M19 14L5 14L3.027 20.767A1 1 0 0 0 4 22L20 22A1 1 0 0 0 20.973 20.767Z",1],["M19 14A1 1 0 0 0 20 13L20 12A2 2 0 0 0 18 10L15 10A1 1 0 0 1 14 9L14 4A2 2 0 0 0 10 4L10 9A1 1 0 0 1 9 10L6 10A2 2 0 0 0 4 12L4 13A1 1 0 0 0 5 14Z",1]],[["M16 22L15 18",1],["M8 22L9 18",1]],[19.399,3.6,4.75],0]);
 export default GlassBrushCleaning;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bluetooth-searching"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBluetoothSearching = /*#__PURE__*/ createGlassIcon("bluetooth-searching", [["path",{"d":"M7 7l10 10l-5 5V2l5 5L7 17"},0],["path",{"d":"M20.83 14.83a4 4 0 0 0 0 -5.66"},0],["path",{"d":"M18 12h0.01"},0]]);
+export const GlassBluetoothSearching = /*#__PURE__*/ createGlassIcon("bluetooth-searching", [[["M7 7L17 17L12 22L12 2L17 7L7 17",0],["M20.83 14.83A4 4 0 0 0 20.83 9.17",0],["M18 12L18.01 12",0]],[],[20.388,3.6,4.75],1]);
 export default GlassBluetoothSearching;

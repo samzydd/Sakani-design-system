@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "spell-check-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSpellCheck2 = /*#__PURE__*/ createGlassIcon("spell-check-2", [["path",{"d":"M6 16l6 -12l6 12"},0],["path",{"d":"M8 12h8"},0],["path",{"d":"M4 21c1.1 0 1.1 -1 2.3 -1s1.1 1 2.3 1c1.1 0 1.1 -1 2.3 -1c1.1 0 1.1 1 2.3 1c1.1 0 1.1 -1 2.3 -1c1.1 0 1.1 1 2.3 1c1.1 0 1.1 -1 2.3 -1"},0]]);
+export const GlassSpellCheck2 = /*#__PURE__*/ createGlassIcon("spell-check-2", [[["M6 16L12 4L18 16Z",1]],[["M8 12L16 12",1],["M4 21C5.1 21 5.1 20 6.3 20C7.5 20 7.4 21 8.6 21C9.7 21 9.7 20 10.9 20C12 20 12 21 13.2 21C14.3 21 14.3 20 15.5 20C16.6 20 16.6 21 17.8 21C18.9 21 18.9 20 20.1 20",0]],[16.988,5.012,3.77],0]);
 export default GlassSpellCheck2;

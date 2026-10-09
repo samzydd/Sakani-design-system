@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cuboid"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCuboid = /*#__PURE__*/ createGlassIcon("cuboid", [["path",{"d":"M10 22v-8"},0],["path",{"d":"M2.336 8.89L10 14l11.715 -7.029"},0],["path",{"d":"M22 14a2 2 0 0 1 -0.971 1.715l-10 6a2 2 0 0 1 -2.138 -0.05l-6 -4A2 2 0 0 1 2 16v-6a2 2 0 0 1 0.971 -1.715l10 -6a2 2 0 0 1 2.138 0.05l6 4A2 2 0 0 1 22 8z"},1]]);
+export const GlassCuboid = /*#__PURE__*/ createGlassIcon("cuboid", [[["M22 14A2 2 0 0 1 21.029 15.715L11.029 21.715A2 2 0 0 1 8.891 21.665L2.891 17.665A2 2 0 0 1 2 16L2 10A2 2 0 0 1 2.971 8.285L12.971 2.285A2 2 0 0 1 15.109 2.335L21.109 6.335A2 2 0 0 1 22 8Z",1]],[["M10 22L10 14",1],["M2.336 8.89L10 14L21.715 6.971",1]],[20.4,3.6,4.75],0]);
 export default GlassCuboid;

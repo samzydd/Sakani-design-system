@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-question-mark"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleQuestionMark = /*#__PURE__*/ createGlassIcon("circle-question-mark", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M9.09 9a3 3 0 0 1 5.83 1c0 2 -3 3 -3 3"},0],["path",{"d":"M12 17h0.01"},0]]);
+export const GlassCircleQuestionMark = /*#__PURE__*/ createGlassIcon("circle-question-mark", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M9.09 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13",1],["M12 17L12.01 17",1]],[20.4,3.6,4.75],0]);
 export default GlassCircleQuestionMark;

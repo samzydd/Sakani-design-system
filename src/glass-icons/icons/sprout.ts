@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sprout"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSprout = /*#__PURE__*/ createGlassIcon("sprout", [["path",{"d":"M14 9.536V7a4 4 0 0 1 4 -4h1.5a0.5 0.5 0 0 1 0.5 0.5V5a4 4 0 0 1 -4 4a4 4 0 0 0 -4 4c0 2 1 3 1 5a5 5 0 0 1 -1 3"},0],["path",{"d":"M4 9a5 5 0 0 1 8 4a5 5 0 0 1 -8 -4"},1],["path",{"d":"M5 21h14"},0]]);
+export const GlassSprout = /*#__PURE__*/ createGlassIcon("sprout", [[["M4 9A5 5 0 0 1 12 13A5 5 0 0 1 4 9",1]],[["M14 9.536L14 7A4 4 0 0 1 18 3L19.5 3A0.5 0.5 0 0 1 20 3.5L20 5A4 4 0 0 1 16 9A4 4 0 0 0 12 13C12 15 13 16 13 18A5 5 0 0 1 12 21",0],["M5 21L19 21",0]],[11.45,8.57,3],0]);
 export default GlassSprout;

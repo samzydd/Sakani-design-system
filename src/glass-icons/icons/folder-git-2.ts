@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-git-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderGit2 = /*#__PURE__*/ createGlassIcon("folder-git-2", [["path",{"d":"M18 19a5 5 0 0 1 -5 -5v8"},0],["path",{"d":"M9 20H4a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h3.9a2 2 0 0 1 1.69 0.9l0.81 1.2a2 2 0 0 0 1.67 0.9H20a2 2 0 0 1 2 2v5"},0],["circle",{"cx":"13","cy":"12","r":"2"},1],["circle",{"cx":"20","cy":"19","r":"2"},1]]);
+export const GlassFolderGit2 = /*#__PURE__*/ createGlassIcon("folder-git-2", [[["M9 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 13Z",1]],[["M18 19A5 5 0 0 1 13 14L13 22",1],["M11 12A2 2 0 1 0 15 12A2 2 0 1 0 11 12Z",1],["M18 19A2 2 0 1 0 22 19A2 2 0 1 0 18 19Z",0]],[20.4,4.6,4.75],0]);
 export default GlassFolderGit2;

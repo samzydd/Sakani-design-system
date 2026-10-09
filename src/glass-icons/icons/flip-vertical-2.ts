@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flip-vertical-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFlipVertical2 = /*#__PURE__*/ createGlassIcon("flip-vertical-2", [["path",{"d":"M17 3l-5 5l-5 -5h10"},1],["path",{"d":"M17 21l-5 -5l-5 5h10"},1],["path",{"d":"M4 12H2"},0],["path",{"d":"M10 12H8"},0],["path",{"d":"M16 12h-2"},0],["path",{"d":"M22 12h-2"},0]]);
+export const GlassFlipVertical2 = /*#__PURE__*/ createGlassIcon("flip-vertical-2", [[["M17 3L12 8L7 3L17 3",1],["M17 21L12 16L7 21L17 21",1]],[["M4 12L2 12",0],["M10 12L8 12",0],["M16 12L14 12",0],["M22 12L20 12",0]],[15.4,4.6,4.75],0]);
 export default GlassFlipVertical2;

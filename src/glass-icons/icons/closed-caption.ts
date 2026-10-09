@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "closed-caption"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClosedCaption = /*#__PURE__*/ createGlassIcon("closed-caption", [["path",{"d":"M10 9.17a3 3 0 1 0 0 5.66"},0],["path",{"d":"M17 9.17a3 3 0 1 0 0 5.66"},0],["rect",{"x":"2","y":"5","width":"20","height":"14","rx":"2"},1]]);
+export const GlassClosedCaption = /*#__PURE__*/ createGlassIcon("closed-caption", [[["M4 5L20 5A2 2 0 0 1 22 7L22 17A2 2 0 0 1 20 19L4 19A2 2 0 0 1 2 17L2 7A2 2 0 0 1 4 5Z",1]],[["M10 9.17A3 3 0 1 0 10 14.83",1],["M17 9.17A3 3 0 1 0 17 14.83",1]],[20.4,6.6,4.75],0]);
 export default GlassClosedCaption;

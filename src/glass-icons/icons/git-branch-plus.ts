@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-branch-plus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGitBranchPlus = /*#__PURE__*/ createGlassIcon("git-branch-plus", [["path",{"d":"M6 3v12"},0],["path",{"d":"M18 9a3 3 0 1 0 0 -6a3 3 0 0 0 0 6z"},1],["path",{"d":"M6 21a3 3 0 1 0 0 -6a3 3 0 0 0 0 6z"},1],["path",{"d":"M15 6a9 9 0 0 0 -9 9"},0],["path",{"d":"M18 15v6"},0],["path",{"d":"M21 18h-6"},0]]);
+export const GlassGitBranchPlus = /*#__PURE__*/ createGlassIcon("git-branch-plus", [[["M18 9A3 3 0 1 0 18 3A3 3 0 0 0 18 9Z",1],["M6 21A3 3 0 1 0 6 15A3 3 0 0 0 6 21Z",1]],[["M6 3L6 15",0],["M15 6A9 9 0 0 0 6 15",0],["M18 15L18 21",0],["M21 18L15 18",0]],[19.4,4.6,4.75],0]);
 export default GlassGitBranchPlus;

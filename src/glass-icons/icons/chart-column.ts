@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-column"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartColumn = /*#__PURE__*/ createGlassIcon("chart-column", [["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["path",{"d":"M18 17V9"},0],["path",{"d":"M13 17V5"},0],["path",{"d":"M8 17v-3"},0]]);
+export const GlassChartColumn = /*#__PURE__*/ createGlassIcon("chart-column", [[["M3 3L3 19A2 2 0 0 0 5 21L21 21",0],["M18 17L18 9",0],["M13 17L13 5",0],["M8 17L8 14",0]],[],[19.4,4.6,4.75],1]);
 export default GlassChartColumn;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "radical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRadical = /*#__PURE__*/ createGlassIcon("radical", [["path",{"d":"M3 12h3.28a1 1 0 0 1 0.948 0.684l2.298 7.934a0.5 0.5 0 0 0 0.96 -0.044L13.82 4.771A1 1 0 0 1 14.792 4H21"},0]]);
+export const GlassRadical = /*#__PURE__*/ createGlassIcon("radical", [[["M3 12L6.28 12A1 1 0 0 1 7.228 12.684L9.526 20.618A0.5 0.5 0 0 0 10.486 20.574L13.82 4.771A1 1 0 0 1 14.792 4L21 4",0]],[],[19.4,5.6,4.75],1]);
 export default GlassRadical;

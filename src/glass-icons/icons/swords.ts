@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "swords"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSwords = /*#__PURE__*/ createGlassIcon("swords", [["path",{"d":"M13 19l6 -6"},0],["path",{"d":"M14.5 17.5L3.586 6.586A2 2 0 0 1 3 5.172V3h2.172a2 2 0 0 1 1.414 0.586L17.5 14.5"},0],["path",{"d":"M14.828 6.172l2.586 -2.586A2 2 0 0 1 18.828 3H21v2.172a2 2 0 0 1 -0.586 1.414l-2.586 2.586"},0],["path",{"d":"M16 16l4 4"},0],["path",{"d":"M19 21l2 -2"},0],["path",{"d":"M5 14l4 4"},0],["path",{"d":"M5 21l-2 -2"},0],["path",{"d":"M7.5 16.5L4 20"},0]]);
+export const GlassSwords = /*#__PURE__*/ createGlassIcon("swords", [[["M14.828 6.172L17.414 3.586A2 2 0 0 1 18.828 3L21 3L21 5.172A2 2 0 0 1 20.414 6.586L17.828 9.172Z",1]],[["M13 19L19 13",0],["M14.5 17.5L3.586 6.586A2 2 0 0 1 3 5.172L3 3L5.172 3A2 2 0 0 1 6.586 3.586L17.5 14.5",0],["M16 16L20 20",0],["M19 21L21 19",0],["M5 14L9 18",0],["M5 21L3 19",0],["M7.5 16.5L4 20",0]],[20.45,3.55,3],0]);
 export default GlassSwords;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pilcrow-left"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPilcrowLeft = /*#__PURE__*/ createGlassIcon("pilcrow-left", [["path",{"d":"M14 3v11"},0],["path",{"d":"M14 9h-3a3 3 0 0 1 0 -6h9"},0],["path",{"d":"M18 3v11"},0],["path",{"d":"M22 18H2l4 -4"},0],["path",{"d":"M6 22l-4 -4"},0]]);
+export const GlassPilcrowLeft = /*#__PURE__*/ createGlassIcon("pilcrow-left", [[["M14 9L11 9A3 3 0 0 1 11 3L20 3Z",1],["M22 18L2 18L6 14Z",1]],[["M14 3L14 14",1],["M18 3L18 14",0],["M6 22L2 18",0]],[20.4,4.6,4.75],0]);
 export default GlassPilcrowLeft;

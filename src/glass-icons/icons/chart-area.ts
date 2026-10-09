@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-area"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartArea = /*#__PURE__*/ createGlassIcon("chart-area", [["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["path",{"d":"M7 11.207a0.5 0.5 0 0 1 0.146 -0.353l2 -2a0.5 0.5 0 0 1 0.708 0l3.292 3.292a0.5 0.5 0 0 0 0.708 0l4.292 -4.292a0.5 0.5 0 0 1 0.854 0.353V16a1 1 0 0 1 -1 1H8a1 1 0 0 1 -1 -1z"},1]]);
+export const GlassChartArea = /*#__PURE__*/ createGlassIcon("chart-area", [[["M7 11.207A0.5 0.5 0 0 1 7.146 10.854L9.146 8.854A0.5 0.5 0 0 1 9.854 8.854L13.146 12.146A0.5 0.5 0 0 0 13.854 12.146L18.146 7.854A0.5 0.5 0 0 1 19 8.207L19 16A1 1 0 0 1 18 17L8 17A1 1 0 0 1 7 16Z",1]],[["M3 3L3 19A2 2 0 0 0 5 21L21 21",0]],[17.988,8.72,3.77],0]);
 export default GlassChartArea;

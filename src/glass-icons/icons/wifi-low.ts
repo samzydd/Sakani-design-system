@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wifi-low"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWifiLow = /*#__PURE__*/ createGlassIcon("wifi-low", [["path",{"d":"M12 20h0.01"},0],["path",{"d":"M8.5 16.429a5 5 0 0 1 7 0"},0]]);
+export const GlassWifiLow = /*#__PURE__*/ createGlassIcon("wifi-low", [[["M12 20L12.01 20",0],["M8.5 16.429A5 5 0 0 1 15.5 16.429",0]],[],[14.95,15.55,3],1]);
 export default GlassWifiLow;

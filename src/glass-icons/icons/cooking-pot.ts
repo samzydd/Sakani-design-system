@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cooking-pot"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCookingPot = /*#__PURE__*/ createGlassIcon("cooking-pot", [["path",{"d":"M2 12h20"},0],["path",{"d":"M20 12v8a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2v-8"},0],["path",{"d":"M4 8l16 -4"},0],["path",{"d":"M8.86 6.78l-0.45 -1.81a2 2 0 0 1 1.45 -2.43l1.94 -0.48a2 2 0 0 1 2.43 1.46l0.45 1.8"},0]]);
+export const GlassCookingPot = /*#__PURE__*/ createGlassIcon("cooking-pot", [[["M20 12L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 12Z",1],["M2 12L22 12",0]],[["M4 8L20 4",0],["M8.86 6.78L8.41 4.97A2 2 0 0 1 9.86 2.54L11.8 2.06A2 2 0 0 1 14.23 3.52L14.68 5.32",0]],[20.4,13.6,4.75],0]);
 export default GlassCookingPot;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tablet-smartphone"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTabletSmartphone = /*#__PURE__*/ createGlassIcon("tablet-smartphone", [["rect",{"width":"10","height":"14","x":"3","y":"8","rx":"2"},1],["path",{"d":"M5 4a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-2.4"},0],["path",{"d":"M8 18h0.01"},0]]);
+export const GlassTabletSmartphone = /*#__PURE__*/ createGlassIcon("tablet-smartphone", [[["M5 4A2 2 0 0 1 7 2L19 2A2 2 0 0 1 21 4L21 20A2 2 0 0 1 19 22L16.6 22Z",1],["M5 8L11 8A2 2 0 0 1 13 10L13 20A2 2 0 0 1 11 22L5 22A2 2 0 0 1 3 20L3 10A2 2 0 0 1 5 8Z",1]],[["M8 18L8.01 18",1]],[19.4,3.6,4.75],0]);
 export default GlassTabletSmartphone;

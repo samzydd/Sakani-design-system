@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gavel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGavel = /*#__PURE__*/ createGlassIcon("gavel", [["path",{"d":"M14 13l-8.381 8.38a1 1 0 0 1 -3.001 -3l8.384 -8.381"},0],["path",{"d":"M16 16l6 -6"},0],["path",{"d":"M21.5 10.5l-8 -8"},0],["path",{"d":"M8 8l6 -6"},0],["path",{"d":"M8.5 7.5l8 8"},0]]);
+export const GlassGavel = /*#__PURE__*/ createGlassIcon("gavel", [[["M14 13L5.619 21.38A1 1 0 0 1 2.618 18.38L11.002 9.999Z",1]],[["M16 16L22 10",0],["M21.5 10.5L13.5 2.5",0],["M8 8L14 2",0],["M8.5 7.5L16.5 15.5",1]],[12.988,11.011,3.771],0]);
 export default GlassGavel;

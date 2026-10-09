@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "image-down"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassImageDown = /*#__PURE__*/ createGlassIcon("image-down", [["path",{"d":"M10.3 21H5a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10l-3.1 -3.1a2 2 0 0 0 -2.814 0.014L6 21"},0],["path",{"d":"M14 19l3 3v-5.5"},0],["path",{"d":"M17 22l3 -3"},0],["circle",{"cx":"9","cy":"9","r":"2"},1]]);
+export const GlassImageDown = /*#__PURE__*/ createGlassIcon("image-down", [[["M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9Z",1],["M14 19L17 22L17 16.5Z",1]],[["M10.3 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 15L17.9 11.9A2 2 0 0 0 15.086 11.914L6 21",0],["M17 22L20 19",0]],[15.52,8.48,4.55],0]);
 export default GlassImageDown;

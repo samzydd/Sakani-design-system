@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hand-metal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHandMetal = /*#__PURE__*/ createGlassIcon("hand-metal", [["path",{"d":"M18 12.5V10a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v1.4"},0],["path",{"d":"M14 11V9a2 2 0 1 0 -4 0v2"},0],["path",{"d":"M10 10.5V5a2 2 0 1 0 -4 0v9"},0],["path",{"d":"M7 15l-1.76 -1.76a2 2 0 0 0 -2.83 2.82l3.6 3.6C7.5 21.14 9.2 22 12 22h2a8 8 0 0 0 8 -8V7a2 2 0 1 0 -4 0v5"},0]]);
+export const GlassHandMetal = /*#__PURE__*/ createGlassIcon("hand-metal", [[["M7 15L5.24 13.24A2 2 0 0 0 2.41 16.06L6.01 19.66C7.5 21.14 9.2 22 12 22L14 22A8 8 0 0 0 22 14L22 7A2 2 0 1 0 18 7L18 12Z",1]],[["M18 12.5L18 10A2 2 0 0 0 16 8A2 2 0 0 0 14 10L14 11.4",0],["M14 11L14 9A2 2 0 1 0 10 9L10 11",0],["M10 10.5L10 5A2 2 0 1 0 6 5L6 14",0]],[20.4,6.6,4.75],0]);
 export default GlassHandMetal;

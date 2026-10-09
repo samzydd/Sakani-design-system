@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-pi"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquarePi = /*#__PURE__*/ createGlassIcon("square-pi", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M7 7h10"},0],["path",{"d":"M10 7v10"},0],["path",{"d":"M16 17a2 2 0 0 1 -2 -2V7"},0]]);
+export const GlassSquarePi = /*#__PURE__*/ createGlassIcon("square-pi", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M7 7L17 7",1],["M10 7L10 17",1],["M16 17A2 2 0 0 1 14 15L14 7",1]],[19.4,4.6,4.75],0]);
 export default GlassSquarePi;

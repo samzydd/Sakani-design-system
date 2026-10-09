@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "newspaper"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassNewspaper = /*#__PURE__*/ createGlassIcon("newspaper", [["path",{"d":"M15 18h-5"},0],["path",{"d":"M18 14h-8"},0],["path",{"d":"M4 22h16a2 2 0 0 0 2 -2V4a2 2 0 0 0 -2 -2H8a2 2 0 0 0 -2 2v16a2 2 0 0 1 -4 0v-9a2 2 0 0 1 2 -2h2"},0],["rect",{"width":"8","height":"4","x":"10","y":"6","rx":"1"},1]]);
+export const GlassNewspaper = /*#__PURE__*/ createGlassIcon("newspaper", [[["M11 6L17 6A1 1 0 0 1 18 7L18 9A1 1 0 0 1 17 10L11 10A1 1 0 0 1 10 9L10 7A1 1 0 0 1 11 6Z",1]],[["M15 18L10 18",0],["M18 14L10 14",0],["M4 22L20 22A2 2 0 0 0 22 20L22 4A2 2 0 0 0 20 2L8 2A2 2 0 0 0 6 4L6 20A2 2 0 0 1 2 20L2 11A2 2 0 0 1 4 9L6 9",0]],[17.45,6.55,3],0]);
 export default GlassNewspaper;

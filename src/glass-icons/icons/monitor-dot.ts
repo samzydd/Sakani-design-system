@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "monitor-dot"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMonitorDot = /*#__PURE__*/ createGlassIcon("monitor-dot", [["path",{"d":"M12 17v4"},0],["path",{"d":"M22 12.307V15a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h8.693"},0],["path",{"d":"M8 21h8"},0],["circle",{"cx":"19","cy":"6","r":"3"},1]]);
+export const GlassMonitorDot = /*#__PURE__*/ createGlassIcon("monitor-dot", [[["M22 12.307L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3L12.693 3Z",1]],[["M12 17L12 21",0],["M8 21L16 21",0],["M16 6A3 3 0 1 0 22 6A3 3 0 1 0 16 6Z",0]],[20.4,4.6,4.75],0]);
 export default GlassMonitorDot;

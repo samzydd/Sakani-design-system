@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "id-card-lanyard"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassIdCardLanyard = /*#__PURE__*/ createGlassIcon("id-card-lanyard", [["path",{"d":"M13.5 8h-3"},0],["path",{"d":"M15 2l-1 2h3a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2H7a2 2 0 0 1 -2 -2V6a2 2 0 0 1 2 -2h3"},0],["path",{"d":"M16.899 22A5 5 0 0 0 7.1 22"},0],["path",{"d":"M9 2l3 6"},0],["circle",{"cx":"12","cy":"15","r":"3"},1]]);
+export const GlassIdCardLanyard = /*#__PURE__*/ createGlassIcon("id-card-lanyard", [[["M15 2L14 4L17 4A2 2 0 0 1 19 6L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 6A2 2 0 0 1 7 4L10 4Z",1]],[["M13.5 8L10.5 8",1],["M16.899 22A5 5 0 0 0 7.1 22",1],["M9 2L12 8",1],["M9 15A3 3 0 1 0 15 15A3 3 0 1 0 9 15Z",1]],[17.4,3.6,4.75],0]);
 export default GlassIdCardLanyard;

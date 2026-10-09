@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-function"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareFunction = /*#__PURE__*/ createGlassIcon("square-function", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2","ry":"2"},1],["path",{"d":"M9 17c2 0 2.8 -1 2.8 -2.8V10c0 -2 1 -3.3 3.2 -3"},0],["path",{"d":"M9 11.2h5.7"},0]]);
+export const GlassSquareFunction = /*#__PURE__*/ createGlassIcon("square-function", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M9 17C11 17 11.8 16 11.8 14.2L11.8 10C11.8 8 12.8 6.7 15 7",1],["M9 11.2L14.7 11.2",1]],[19.4,4.6,4.75],0]);
 export default GlassSquareFunction;

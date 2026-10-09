@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "footprints"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFootprints = /*#__PURE__*/ createGlassIcon("footprints", [["path",{"d":"M4 16v-2.38C4 11.5 2.97 10.5 3 8c0.03 -2.72 1.49 -6 4.5 -6C9.37 2 10 3.8 10 5.5c0 3.11 -2 5.66 -2 8.68V16a2 2 0 1 1 -4 0Z"},1],["path",{"d":"M20 20v-2.38c0 -2.12 1.03 -3.12 1 -5.62c-0.03 -2.72 -1.49 -6 -4.5 -6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"},1],["path",{"d":"M16 17h4"},0],["path",{"d":"M4 13h4"},0]]);
+export const GlassFootprints = /*#__PURE__*/ createGlassIcon("footprints", [[["M4 16L4 13.62C4 11.5 2.97 10.5 3 8C3.03 5.28 4.49 2 7.5 2C9.37 2 10 3.8 10 5.5C10 8.61 8 11.16 8 14.18L8 16A2 2 0 1 1 4 16Z",1],["M20 20L20 17.62C20 15.5 21.03 14.5 21 12C20.97 9.28 19.51 6 16.5 6C14.63 6 14 7.8 14 9.5C14 12.61 16 15.16 16 18.18L16 20A2 2 0 1 0 20 20Z",1],["M16 17L20 17",0],["M4 13L8 13",0]],[],[19.4,3.6,4.75],0]);
 export default GlassFootprints;

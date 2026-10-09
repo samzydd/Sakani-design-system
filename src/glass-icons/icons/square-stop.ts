@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-stop"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareStop = /*#__PURE__*/ createGlassIcon("square-stop", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["rect",{"x":"9","y":"9","width":"6","height":"6","rx":"1"},1]]);
+export const GlassSquareStop = /*#__PURE__*/ createGlassIcon("square-stop", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M10 9L14 9A1 1 0 0 1 15 10L15 14A1 1 0 0 1 14 15L10 15A1 1 0 0 1 9 14L9 10A1 1 0 0 1 10 9Z",1]],[19.4,4.6,4.75],0]);
 export default GlassSquareStop;

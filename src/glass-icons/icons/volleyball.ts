@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "volleyball"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVolleyball = /*#__PURE__*/ createGlassIcon("volleyball", [["path",{"d":"M11 7a16 16 20 0 1 10.98 4.362"},0],["path",{"d":"M12 12a13 13 0 0 1 -8.66 5"},0],["path",{"d":"M16.83 13.634a16 16 0 0 1 -9.267 7.328"},0],["path",{"d":"M20.66 17A13 13 0 0 0 12 12a13 13 0 0 1 0 -10"},0],["path",{"d":"M8.17 15.366a16 16 0 0 1 -1.713 -11.69"},0],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassVolleyball = /*#__PURE__*/ createGlassIcon("volleyball", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M11 7A16 16 20 0 1 21.98 11.362",1],["M12 12A13 13 0 0 1 3.34 17",1],["M16.83 13.634A16 16 0 0 1 7.563 20.962",1],["M20.66 17A13 13 0 0 0 12 12A13 13 0 0 1 12 2",1],["M8.17 15.366A16 16 0 0 1 6.457 3.676",1]],[20.4,3.6,4.75],0]);
 export default GlassVolleyball;

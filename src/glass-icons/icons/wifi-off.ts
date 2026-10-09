@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wifi-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWifiOff = /*#__PURE__*/ createGlassIcon("wifi-off", [["path",{"d":"M12 20h0.01"},0],["path",{"d":"M8.5 16.429a5 5 0 0 1 7 0"},0],["path",{"d":"M5 12.859a10 10 0 0 1 5.17 -2.69"},0],["path",{"d":"M19 12.859a10 10 0 0 0 -2.007 -1.523"},0],["path",{"d":"M2 8.82a15 15 0 0 1 4.177 -2.643"},0],["path",{"d":"M22 8.82a15 15 0 0 0 -11.288 -3.764"},0],["path",{"d":"M2 2l20 20"},0]]);
+export const GlassWifiOff = /*#__PURE__*/ createGlassIcon("wifi-off", [[["M12 20L12.01 20",0],["M8.5 16.429A5 5 0 0 1 15.5 16.429",0],["M5 12.859A10 10 0 0 1 10.17 10.169",0],["M19 12.859A10 10 0 0 0 16.993 11.336",0],["M2 8.82A15 15 0 0 1 6.177 6.177",0],["M22 8.82A15 15 0 0 0 10.712 5.056",0],["M2 2L22 22",0]],[],[20.4,3.6,4.75],1]);
 export default GlassWifiOff;

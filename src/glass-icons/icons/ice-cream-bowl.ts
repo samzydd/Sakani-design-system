@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ice-cream-bowl"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassIceCreamBowl = /*#__PURE__*/ createGlassIcon("ice-cream-bowl", [["path",{"d":"M12 17c5 0 8 -2.69 8 -6H4c0 3.31 3 6 8 6"},1],["path",{"d":"M8 21h8"},0],["path",{"d":"M12 18v3"},0],["path",{"d":"M5.14 11a3.5 3.5 0 1 1 6.71 0"},0],["path",{"d":"M12.14 11a3.5 3.5 0 1 1 6.71 0"},0],["path",{"d":"M15.5 6.5a3.5 3.5 0 1 0 -7 0"},0]]);
+export const GlassIceCreamBowl = /*#__PURE__*/ createGlassIcon("ice-cream-bowl", [[["M12 17C17 17 20 14.31 20 11L4 11C4 14.31 7 17 12 17",1],["M12.14 11A3.5 3.5 0 1 1 18.85 11Z",1],["M5.14 11A3.5 3.5 0 1 1 11.85 11Z",1]],[["M8 21L16 21",0],["M12 18L12 21",0],["M15.5 6.5A3.5 3.5 0 1 0 8.5 6.5",0]],[18.4,8.12,4.75],0]);
 export default GlassIceCreamBowl;

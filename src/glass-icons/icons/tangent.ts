@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tangent"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTangent = /*#__PURE__*/ createGlassIcon("tangent", [["circle",{"cx":"17","cy":"4","r":"2"},1],["path",{"d":"M15.59 5.41L5.41 15.59"},0],["circle",{"cx":"4","cy":"17","r":"2"},1],["path",{"d":"M12 22s-4 -9 -1.5 -11.5S22 12 22 12"},0]]);
+export const GlassTangent = /*#__PURE__*/ createGlassIcon("tangent", [[["M12 22C12 22 8 13 10.5 10.5C13 8 22 12 22 12Z",1]],[["M15 4A2 2 0 1 0 19 4A2 2 0 1 0 15 4Z",0],["M15.59 5.41L5.41 15.59",0],["M2 17A2 2 0 1 0 6 17A2 2 0 1 0 2 17Z",0]],[20.938,10.742,3.853],0]);
 export default GlassTangent;

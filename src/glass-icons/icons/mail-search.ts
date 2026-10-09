@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mail-search"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMailSearch = /*#__PURE__*/ createGlassIcon("mail-search", [["path",{"d":"M22 12.5V6a2 2 0 0 0 -2 -2H4a2 2 0 0 0 -2 2v12c0 1.1 0.9 2 2 2h7.5"},0],["path",{"d":"M22 7l-8.97 5.7a1.94 1.94 0 0 1 -2.06 0L2 7"},0],["path",{"d":"M18 21a3 3 0 1 0 0 -6a3 3 0 0 0 0 6Z"},1],["circle",{"cx":"18","cy":"18","r":"3"},1],["path",{"d":"M22 22l-1.5 -1.5"},0]]);
+export const GlassMailSearch = /*#__PURE__*/ createGlassIcon("mail-search", [[["M22 12.5L22 6A2 2 0 0 0 20 4L4 4A2 2 0 0 0 2 6L2 18C2 19.1 2.9 20 4 20L11.5 20Z",1]],[["M22 7L13.03 12.7A1.94 1.94 0 0 1 10.97 12.7L2 7",1],["M18 21A3 3 0 1 0 18 15A3 3 0 0 0 18 21Z",0],["M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18Z",0],["M22 22L20.5 20.5",0]],[20.4,5.6,4.75],0]);
 export default GlassMailSearch;

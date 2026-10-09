@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clock-1"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClock1 = /*#__PURE__*/ createGlassIcon("clock-1", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M12 6v6l2 -4"},0]]);
+export const GlassClock1 = /*#__PURE__*/ createGlassIcon("clock-1", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M12 6L12 12L14 8",1]],[20.4,3.6,4.75],0]);
 export default GlassClock1;

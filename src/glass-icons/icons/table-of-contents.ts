@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "table-of-contents"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTableOfContents = /*#__PURE__*/ createGlassIcon("table-of-contents", [["path",{"d":"M16 5H3"},0],["path",{"d":"M16 12H3"},0],["path",{"d":"M16 19H3"},0],["path",{"d":"M21 5h0.01"},0],["path",{"d":"M21 12h0.01"},0],["path",{"d":"M21 19h0.01"},0]]);
+export const GlassTableOfContents = /*#__PURE__*/ createGlassIcon("table-of-contents", [[["M16 5L3 5",0],["M16 12L3 12",0],["M16 19L3 19",0],["M21 5L21.01 5",0],["M21 12L21.01 12",0],["M21 19L21.01 19",0]],[],[19.41,6.6,4.75],1]);
 export default GlassTableOfContents;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "air-vent"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAirVent = /*#__PURE__*/ createGlassIcon("air-vent", [["path",{"d":"M18 17.5a2.5 2.5 0 1 1 -4 2.03V12"},0],["path",{"d":"M6 12H4a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v5a2 2 0 0 1 -2 2h-2"},0],["path",{"d":"M6 8h12"},0],["path",{"d":"M6.6 15.572A2 2 0 1 0 10 17v-5"},0]]);
+export const GlassAirVent = /*#__PURE__*/ createGlassIcon("air-vent", [[["M6 12L4 12A2 2 0 0 1 2 10L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5L22 10A2 2 0 0 1 20 12L18 12Z",1]],[["M18 17.5A2.5 2.5 0 1 1 14 19.53L14 12",0],["M6 8L18 8",1],["M6.6 15.572A2 2 0 1 0 10 17L10 12",0]],[20.4,4.6,4.75],0]);
 export default GlassAirVent;

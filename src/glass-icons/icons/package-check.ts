@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "package-check"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPackageCheck = /*#__PURE__*/ createGlassIcon("package-check", [["path",{"d":"M12 22V12"},0],["path",{"d":"M16 17l2 2l4 -4"},0],["path",{"d":"M21 11.127V8a2 2 0 0 0 -1 -1.73l-7 -4a2 2 0 0 0 -2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 0.001l1.32 -0.753"},0],["path",{"d":"M3.29 7L12 12l8.71 -5"},0],["path",{"d":"M7.5 4.27l8.997 5.148"},0]]);
+export const GlassPackageCheck = /*#__PURE__*/ createGlassIcon("package-check", [[["M21 11.127L21 8A2 2 0 0 0 20 6.27L13 2.27A2 2 0 0 0 11 2.27L4 6.27A2 2 0 0 0 3 8L3 16A2 2 0 0 0 4 17.729L11 21.729A2 2 0 0 0 13 21.73L14.32 20.977Z",1]],[["M12 22L12 12",1],["M16 17L18 19L22 15",0],["M3.29 7L12 12L20.71 7",1],["M7.5 4.27L16.497 9.418",1]],[19.4,3.602,4.75],0]);
 export default GlassPackageCheck;

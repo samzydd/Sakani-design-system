@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-ordered"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassListOrdered = /*#__PURE__*/ createGlassIcon("list-ordered", [["path",{"d":"M11 5h10"},0],["path",{"d":"M11 12h10"},0],["path",{"d":"M11 19h10"},0],["path",{"d":"M4 4h1v5"},0],["path",{"d":"M4 9h2"},0],["path",{"d":"M6.5 20H3.4c0 -1 2.6 -1.925 2.6 -3.5a1.5 1.5 0 0 0 -2.6 -1.02"},0]]);
+export const GlassListOrdered = /*#__PURE__*/ createGlassIcon("list-ordered", [[["M11 5L21 5",0],["M11 12L21 12",0],["M11 19L21 19",0],["M4 4L5 4L5 9",0],["M4 9L6 9",0],["M6.5 20L3.4 20C3.4 19 6 18.075 6 16.5A1.5 1.5 0 0 0 3.4 15.48",0]],[],[19.4,5.6,4.75],1]);
 export default GlassListOrdered;

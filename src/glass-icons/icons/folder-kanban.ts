@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-kanban"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderKanban = /*#__PURE__*/ createGlassIcon("folder-kanban", [["path",{"d":"M4 20h16a2 2 0 0 0 2 -2V8a2 2 0 0 0 -2 -2h-7.93a2 2 0 0 1 -1.66 -0.9l-0.82 -1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0 -2 2v13c0 1.1 0.9 2 2 2Z"},1],["path",{"d":"M8 10v4"},0],["path",{"d":"M12 10v2"},0],["path",{"d":"M16 10v6"},0]]);
+export const GlassFolderKanban = /*#__PURE__*/ createGlassIcon("folder-kanban", [[["M4 20L20 20A2 2 0 0 0 22 18L22 8A2 2 0 0 0 20 6L12.07 6A2 2 0 0 1 10.41 5.1L9.59 3.9A2 2 0 0 0 7.93 3L4 3A2 2 0 0 0 2 5L2 18C2 19.1 2.9 20 4 20Z",1]],[["M8 10L8 14",1],["M12 10L12 12",1],["M16 10L16 16",1]],[20.4,4.6,4.75],0]);
 export default GlassFolderKanban;

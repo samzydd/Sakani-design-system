@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clipboard-pen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClipboardPen = /*#__PURE__*/ createGlassIcon("clipboard-pen", [["path",{"d":"M16 4h2a2 2 0 0 1 2 2v2"},0],["path",{"d":"M21.34 15.664a1 1 0 1 0 -3.004 -3.004l-5.01 5.012a2 2 0 0 0 -0.506 0.854l-0.837 2.87a0.5 0.5 0 0 0 0.62 0.62l2.87 -0.837a2 2 0 0 0 0.854 -0.506z"},1],["path",{"d":"M8 22H6a2 2 0 0 1 -2 -2V6a2 2 0 0 1 2 -2h2"},0],["rect",{"x":"8","y":"2","width":"8","height":"4","rx":"1"},1]]);
+export const GlassClipboardPen = /*#__PURE__*/ createGlassIcon("clipboard-pen", [[["M21.34 15.664A1 1 0 1 0 18.336 12.66L13.326 17.672A2 2 0 0 0 12.82 18.526L11.983 21.396A0.5 0.5 0 0 0 12.603 22.016L15.473 21.179A2 2 0 0 0 16.327 20.673Z",1],["M9 2L15 2A1 1 0 0 1 16 3L16 5A1 1 0 0 1 15 6L9 6A1 1 0 0 1 8 5L8 3A1 1 0 0 1 9 2Z",1]],[["M16 4L18 4A2 2 0 0 1 20 6L20 8",0],["M8 22L6 22A2 2 0 0 1 4 20L4 6A2 2 0 0 1 6 4L8 4",0]],[20.36,3.6,4.75],0]);
 export default GlassClipboardPen;

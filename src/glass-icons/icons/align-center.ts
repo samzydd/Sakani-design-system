@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-align-center" (alias of "align-center")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignCenter = /*#__PURE__*/ createGlassIcon("align-center", [["path",{"d":"M21 5H3"},0],["path",{"d":"M17 12H7"},0],["path",{"d":"M19 19H5"},0]]);
+export const GlassAlignCenter = /*#__PURE__*/ createGlassIcon("align-center", [[["M21 5L3 5",0],["M17 12L7 12",0],["M19 19L5 19",0]],[],[19.4,6.6,4.75],1]);
 export default GlassAlignCenter;

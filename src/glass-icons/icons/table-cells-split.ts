@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "table-cells-split"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTableCellsSplit = /*#__PURE__*/ createGlassIcon("table-cells-split", [["path",{"d":"M12 15V9"},0],["path",{"d":"M3 15h18"},0],["path",{"d":"M3 9h18"},0],["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1]]);
+export const GlassTableCellsSplit = /*#__PURE__*/ createGlassIcon("table-cells-split", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M12 15L12 9",1],["M3 15L21 15",1],["M3 9L21 9",1]],[19.4,4.6,4.75],0]);
 export default GlassTableCellsSplit;

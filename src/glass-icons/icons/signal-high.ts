@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "signal-high"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSignalHigh = /*#__PURE__*/ createGlassIcon("signal-high", [["path",{"d":"M2 20h0.01"},0],["path",{"d":"M7 20v-4"},0],["path",{"d":"M12 20v-8"},0],["path",{"d":"M17 20V8"},0]]);
+export const GlassSignalHigh = /*#__PURE__*/ createGlassIcon("signal-high", [[["M2 20L2.01 20",0],["M7 20L7 16",0],["M12 20L12 12",0],["M17 20L17 8",0]],[],[15.52,9.48,4.55],1]);
 export default GlassSignalHigh;

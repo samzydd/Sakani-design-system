@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "step-forward"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassStepForward = /*#__PURE__*/ createGlassIcon("step-forward", [["path",{"d":"M10.029 4.285A2 2 0 0 0 7 6v12a2 2 0 0 0 3.029 1.715l9.997 -5.998a2 2 0 0 0 0.003 -3.432z"},1],["path",{"d":"M3 4v16"},0]]);
+export const GlassStepForward = /*#__PURE__*/ createGlassIcon("step-forward", [[["M10.029 4.285A2 2 0 0 0 7 6L7 18A2 2 0 0 0 10.029 19.715L20.026 13.717A2 2 0 0 0 20.029 10.285Z",1]],[["M3 4L3 20",0]],[19.392,5.601,4.75],0]);
 export default GlassStepForward;

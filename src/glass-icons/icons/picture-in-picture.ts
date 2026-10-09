@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "picture-in-picture"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPictureInPicture = /*#__PURE__*/ createGlassIcon("picture-in-picture", [["path",{"d":"M2 10h6V4"},0],["path",{"d":"M2 4l6 6"},0],["path",{"d":"M21 10V7a2 2 0 0 0 -2 -2h-7"},0],["path",{"d":"M3 14v2a2 2 0 0 0 2 2h3"},0],["rect",{"x":"12","y":"14","width":"10","height":"7","rx":"1"},1]]);
+export const GlassPictureInPicture = /*#__PURE__*/ createGlassIcon("picture-in-picture", [[["M13 14L21 14A1 1 0 0 1 22 15L22 20A1 1 0 0 1 21 21L13 21A1 1 0 0 1 12 20L12 15A1 1 0 0 1 13 14Z",1]],[["M2 10L8 10L8 4",0],["M2 4L8 10",0],["M21 10L21 7A2 2 0 0 0 19 5L12 5",0],["M3 14L3 16A2 2 0 0 0 5 18L8 18",0]],[21.3,14.7,3.25],0]);
 export default GlassPictureInPicture;

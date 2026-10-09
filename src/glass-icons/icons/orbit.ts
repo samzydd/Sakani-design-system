@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "orbit"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassOrbit = /*#__PURE__*/ createGlassIcon("orbit", [["path",{"d":"M20.341 6.484A10 10 0 0 1 10.266 21.85"},0],["path",{"d":"M3.659 17.516A10 10 0 0 1 13.74 2.152"},0],["circle",{"cx":"12","cy":"12","r":"3"},1],["circle",{"cx":"19","cy":"5","r":"2"},1],["circle",{"cx":"5","cy":"19","r":"2"},1]]);
+export const GlassOrbit = /*#__PURE__*/ createGlassIcon("orbit", [[["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z",1],["M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5Z",1],["M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z",1]],[["M20.341 6.484A10 10 0 0 1 10.266 21.85",0],["M3.659 17.516A10 10 0 0 1 13.74 2.152",0]],[19.4,4.6,4.75],0]);
 export default GlassOrbit;

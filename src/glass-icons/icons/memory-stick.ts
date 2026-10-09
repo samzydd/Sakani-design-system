@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "memory-stick"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMemoryStick = /*#__PURE__*/ createGlassIcon("memory-stick", [["path",{"d":"M12 12v-2"},0],["path",{"d":"M12 18v-2"},0],["path",{"d":"M16 12v-2"},0],["path",{"d":"M16 18v-2"},0],["path",{"d":"M2 11h1.5"},0],["path",{"d":"M20 18v-2"},0],["path",{"d":"M20.5 11H22"},0],["path",{"d":"M4 18v-2"},0],["path",{"d":"M8 12v-2"},0],["path",{"d":"M8 18v-2"},0],["rect",{"x":"2","y":"6","width":"20","height":"10","rx":"2"},1]]);
+export const GlassMemoryStick = /*#__PURE__*/ createGlassIcon("memory-stick", [[["M4 6L20 6A2 2 0 0 1 22 8L22 14A2 2 0 0 1 20 16L4 16A2 2 0 0 1 2 14L2 8A2 2 0 0 1 4 6Z",1],["M2 11L3.5 11",0],["M20.5 11L22 11",0]],[["M12 12L12 10",1],["M12 18L12 16",1],["M16 12L16 10",1],["M16 18L16 16",1],["M20 18L20 16",1],["M4 18L4 16",1],["M8 12L8 10",1],["M8 18L8 16",1]],[20.4,7.6,4.75],0]);
 export default GlassMemoryStick;

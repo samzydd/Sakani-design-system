@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "highlighter"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHighlighter = /*#__PURE__*/ createGlassIcon("highlighter", [["path",{"d":"M9 11l-6 6v3h9l3 -3"},0],["path",{"d":"M22 12l-4.6 4.6a2 2 0 0 1 -2.8 0l-5.2 -5.2a2 2 0 0 1 0 -2.8L14 4"},0]]);
+export const GlassHighlighter = /*#__PURE__*/ createGlassIcon("highlighter", [[["M22 12L17.4 16.6A2 2 0 0 1 14.6 16.6L9.4 11.4A2 2 0 0 1 9.4 8.6L14 4Z",1],["M9 11L3 17L3 20L12 20L15 17Z",1]],[],[20.4,5.6,4.75],0]);
 export default GlassHighlighter;

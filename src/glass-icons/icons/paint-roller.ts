@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "paint-roller"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPaintRoller = /*#__PURE__*/ createGlassIcon("paint-roller", [["rect",{"width":"16","height":"6","x":"2","y":"2","rx":"2"},1],["path",{"d":"M10 16v-2a2 2 0 0 1 2 -2h8a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2h-2"},0],["rect",{"width":"4","height":"6","x":"8","y":"16","rx":"1"},1]]);
+export const GlassPaintRoller = /*#__PURE__*/ createGlassIcon("paint-roller", [[["M4 2L16 2A2 2 0 0 1 18 4L18 6A2 2 0 0 1 16 8L4 8A2 2 0 0 1 2 6L2 4A2 2 0 0 1 4 2Z",1],["M10 16L10 14A2 2 0 0 1 12 12L20 12A2 2 0 0 0 22 10L22 7A2 2 0 0 0 20 5L18 5Z",1]],[["M9 16L11 16A1 1 0 0 1 12 17L12 21A1 1 0 0 1 11 22L9 22A1 1 0 0 1 8 21L8 17A1 1 0 0 1 9 16Z",0]],[20.4,3.6,4.75],0]);
 export default GlassPaintRoller;

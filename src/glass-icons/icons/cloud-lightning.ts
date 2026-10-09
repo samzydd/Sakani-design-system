@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cloud-lightning"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCloudLightning = /*#__PURE__*/ createGlassIcon("cloud-lightning", [["path",{"d":"M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 0.5 8.973"},0],["path",{"d":"M13 12l-3 5h4l-3 5"},0]]);
+export const GlassCloudLightning = /*#__PURE__*/ createGlassIcon("cloud-lightning", [[["M6 16.326A7 7 0 1 1 15.71 8L17.5 8A4.5 4.5 0 0 1 18 16.973Z",1]],[["M13 12L10 17L14 17L11 22",1]],[20.401,4.61,4.75],0]);
 export default GlassCloudLightning;

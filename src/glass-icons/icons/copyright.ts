@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "copyright"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCopyright = /*#__PURE__*/ createGlassIcon("copyright", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M14.83 14.83a4 4 0 1 1 0 -5.66"},0]]);
+export const GlassCopyright = /*#__PURE__*/ createGlassIcon("copyright", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M14.83 14.83A4 4 0 1 1 14.83 9.17",1]],[20.4,3.6,4.75],0]);
 export default GlassCopyright;

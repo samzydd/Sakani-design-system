@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "creative-commons"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCreativeCommons = /*#__PURE__*/ createGlassIcon("creative-commons", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M10 9.3a2.8 2.8 0 0 0 -3.5 1a3.1 3.1 0 0 0 0 3.4a2.7 2.7 0 0 0 3.5 1"},0],["path",{"d":"M17 9.3a2.8 2.8 0 0 0 -3.5 1a3.1 3.1 0 0 0 0 3.4a2.7 2.7 0 0 0 3.5 1"},0]]);
+export const GlassCreativeCommons = /*#__PURE__*/ createGlassIcon("creative-commons", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M10 9.3A2.8 2.8 0 0 0 6.5 10.3A3.1 3.1 0 0 0 6.5 13.7A2.7 2.7 0 0 0 10 14.7",1],["M17 9.3A2.8 2.8 0 0 0 13.5 10.3A3.1 3.1 0 0 0 13.5 13.7A2.7 2.7 0 0 0 17 14.7",1]],[20.4,3.6,4.75],0]);
 export default GlassCreativeCommons;

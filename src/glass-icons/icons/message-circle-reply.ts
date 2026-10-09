@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-circle-reply"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessageCircleReply = /*#__PURE__*/ createGlassIcon("message-circle-reply", [["path",{"d":"M2.992 16.342a2 2 0 0 1 0.094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413 -0.998a2 2 0 0 1 1.099 0.092a10 10 0 1 0 -4.777 -4.719"},1],["path",{"d":"M10 15l-3 -3l3 -3"},0],["path",{"d":"M7 12h8a2 2 0 0 1 2 2v1"},0]]);
+export const GlassMessageCircleReply = /*#__PURE__*/ createGlassIcon("message-circle-reply", [[["M2.992 16.342A2 2 0 0 1 3.086 17.509L2.021 20.799A1 1 0 0 0 3.257 21.967L6.67 20.969A2 2 0 0 1 7.769 21.061A10 10 0 1 0 2.992 16.342",1]],[["M10 15L7 12L10 9",1],["M7 12L15 12A2 2 0 0 1 17 14L17 15",1]],[20.371,3.64,4.75],0]);
 export default GlassMessageCircleReply;

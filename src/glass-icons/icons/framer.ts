@@ -2,5 +2,5 @@
 // Shape data: Sakani Figma icon set, icon "framer"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFramer = /*#__PURE__*/ createGlassIcon("framer", [["path",{"d":"M12 16V23L5 16V9H19V2H5L19 16H12Z"},1],["path",{"d":"M5 16H12"},0]]);
+export const GlassFramer = /*#__PURE__*/ createGlassIcon("framer", [[["M12 16L12 23L5 16L5 9L19 9L19 2L5 2L19 16L12 16Z",1]],[["M5 16L12 16",1]],[17.4,3.6,4.75],0]);
 export default GlassFramer;

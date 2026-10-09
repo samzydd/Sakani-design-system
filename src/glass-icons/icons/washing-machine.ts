@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "washing-machine"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWashingMachine = /*#__PURE__*/ createGlassIcon("washing-machine", [["path",{"d":"M3 6h3"},0],["path",{"d":"M17 6h0.01"},0],["rect",{"width":"18","height":"20","x":"3","y":"2","rx":"2"},1],["circle",{"cx":"12","cy":"13","r":"5"},1],["path",{"d":"M12 18a2.5 2.5 0 0 0 0 -5a2.5 2.5 0 0 1 0 -5"},0]]);
+export const GlassWashingMachine = /*#__PURE__*/ createGlassIcon("washing-machine", [[["M5 2L19 2A2 2 0 0 1 21 4L21 20A2 2 0 0 1 19 22L5 22A2 2 0 0 1 3 20L3 4A2 2 0 0 1 5 2Z",1]],[["M3 6L6 6",1],["M17 6L17.01 6",1],["M7 13A5 5 0 1 0 17 13A5 5 0 1 0 7 13Z",1],["M12 18A2.5 2.5 0 0 0 12 13A2.5 2.5 0 0 1 12 8",1]],[19.4,3.6,4.75],0]);
 export default GlassWashingMachine;

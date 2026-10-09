@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-big-right-dash"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArrowBigRightDash = /*#__PURE__*/ createGlassIcon("arrow-big-right-dash", [["path",{"d":"M11 9a1 1 0 0 0 1 -1V4.707a0.707 0.707 0 0 1 1.207 -0.5l6.94 6.94a1.207 1.207 0 0 1 0 1.707l-6.94 6.94a0.707 0.707 0 0 1 -1.207 -0.5V16a1 1 0 0 0 -1 -1H9a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1z"},1],["path",{"d":"M4 9v6"},0]]);
+export const GlassArrowBigRightDash = /*#__PURE__*/ createGlassIcon("arrow-big-right-dash", [[["M11 9A1 1 0 0 0 12 8L12 4.707A0.707 0.707 0 0 1 13.207 4.207L20.147 11.147A1.207 1.207 0 0 1 20.147 12.854L13.207 19.794A0.707 0.707 0 0 1 12 19.294L12 16A1 1 0 0 0 11 15L9 15A1 1 0 0 1 8 14L8 10A1 1 0 0 1 9 9Z",1]],[["M4 9L4 15",0]],[18.896,5.601,4.75],0]);
 export default GlassArrowBigRightDash;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "badge-pound-sterling"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBadgePoundSterling = /*#__PURE__*/ createGlassIcon("badge-pound-sterling", [["path",{"d":"M3.85 8.62a4 4 0 0 1 4.78 -4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1 -4.77 4.78a4 4 0 0 1 -6.75 0a4 4 0 0 1 -4.78 -4.77a4 4 0 0 1 0 -6.76Z"},1],["path",{"d":"M8 12h4"},0],["path",{"d":"M10 16V9.5a2.5 2.5 0 0 1 5 0"},0],["path",{"d":"M8 16h7"},0]]);
+export const GlassBadgePoundSterling = /*#__PURE__*/ createGlassIcon("badge-pound-sterling", [[["M3.85 8.62A4 4 0 0 1 8.63 3.85A4 4 0 0 1 15.37 3.85A4 4 0 0 1 20.15 8.63A4 4 0 0 1 20.15 15.37A4 4 0 0 1 15.38 20.15A4 4 0 0 1 8.63 20.15A4 4 0 0 1 3.85 15.38A4 4 0 0 1 3.85 8.62Z",1]],[["M8 12L12 12",1],["M10 16L10 9.5A2.5 2.5 0 0 1 15 9.5",1],["M8 16L15 16",1]],[20.379,3.621,4.75],0]);
 export default GlassBadgePoundSterling;

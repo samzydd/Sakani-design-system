@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-parking-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareParkingOff = /*#__PURE__*/ createGlassIcon("square-parking-off", [["path",{"d":"M3.6 3.6A2 2 0 0 1 5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -0.59 1.41"},0],["path",{"d":"M3 8.7V19a2 2 0 0 0 2 2h10.3"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M13 13a3 3 0 1 0 0 -6H9v2"},0],["path",{"d":"M9 17v-2.3"},0]]);
+export const GlassSquareParkingOff = /*#__PURE__*/ createGlassIcon("square-parking-off", [[["M13 13A3 3 0 1 0 13 7L9 7L9 9Z",1]],[["M3.6 3.6A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 20.41 20.41",0],["M3 8.7L3 19A2 2 0 0 0 5 21L15.3 21",0],["M2 2L22 22",0],["M9 17L9 14.7",0]],[15.45,7.55,3],0]);
 export default GlassSquareParkingOff;

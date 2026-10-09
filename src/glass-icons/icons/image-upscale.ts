@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "image-upscale"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassImageUpscale = /*#__PURE__*/ createGlassIcon("image-upscale", [["path",{"d":"M16 3h5v5"},0],["path",{"d":"M17 21h2a2 2 0 0 0 2 -2"},0],["path",{"d":"M21 12v3"},0],["path",{"d":"M21 3l-5 5"},0],["path",{"d":"M3 7V5a2 2 0 0 1 2 -2"},0],["path",{"d":"M5 21l4.144 -4.144a1.21 1.21 0 0 1 1.712 0L13 19"},0],["path",{"d":"M9 3h3"},0],["rect",{"x":"3","y":"11","width":"10","height":"10","rx":"1"},1]]);
+export const GlassImageUpscale = /*#__PURE__*/ createGlassIcon("image-upscale", [[["M4 11L12 11A1 1 0 0 1 13 12L13 20A1 1 0 0 1 12 21L4 21A1 1 0 0 1 3 20L3 12A1 1 0 0 1 4 11Z",1]],[["M16 3L21 3L21 8",0],["M17 21L19 21A2 2 0 0 0 21 19",0],["M21 12L21 15",0],["M21 3L16 8",0],["M3 7L3 5A2 2 0 0 1 5 3",0],["M5 21L9.144 16.856A1.21 1.21 0 0 1 10.856 16.856L13 19",1],["M9 3L12 3",0]],[12.3,11.7,3.25],0]);
 export default GlassImageUpscale;

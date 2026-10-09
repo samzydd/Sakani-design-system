@@ -1,9 +1,9 @@
-/* Glass icons -- the SVG layers' theme-dependent paint.
+/* Glass icons -- the SVG layers' paint.
  *
- * The values come from the --glass-icon-* tokens (tokens.css), declared on
- * :root and .dark, so an icon follows the nearest theme scope by inheritance
- * like every other Sakani component. The `surface` prop pins them locally.
- * Per-icon gradient colours arrive inline as --gi-from / --gi-to.
+ * Every colour comes from the --glass-icon-* tokens (tokens.css), declared on
+ * :root and .dark and mirroring the Figma glass-icon/* variables, so an icon
+ * follows the nearest theme scope by inheritance like every other Sakani
+ * component. The `surface` prop pins one theme locally.
  */
 .root {
   display: inline-block;
@@ -13,32 +13,26 @@
 }
 
 .onLight {
-  --glass-icon-frost: rgba(255, 255, 255, 0.66);
-  --glass-icon-haze: 0.85;
-  --glass-icon-shine: 0.6;
+  --glass-icon-accent: #c9cdd3;
+  --glass-icon-glass-top: rgba(142, 147, 155, 0.5);
+  --glass-icon-glass-bottom: rgba(80, 85, 94, 0.74);
   --glass-icon-rim: rgba(255, 255, 255, 0.95);
-  --glass-icon-whiten: 0%;
-  --glass-icon-detail-opacity: 0.9;
-  --glass-icon-plate: rgba(255, 255, 255, 0.55);
+  --glass-icon-detail: #ffffff;
+  --glass-icon-detail-off: #666b74;
 }
 
 .onDark {
-  --glass-icon-frost: rgba(255, 255, 255, 0.26);
-  --glass-icon-haze: 1;
-  --glass-icon-shine: 0.35;
-  --glass-icon-rim: rgba(255, 255, 255, 0.75);
-  --glass-icon-whiten: 92%;
-  --glass-icon-detail-opacity: 1;
-  --glass-icon-plate: rgba(255, 255, 255, 0.12);
+  --glass-icon-accent: #8f959e;
+  --glass-icon-glass-top: rgba(255, 255, 255, 0.3);
+  --glass-icon-glass-bottom: rgba(255, 255, 255, 0.1);
+  --glass-icon-rim: rgba(255, 255, 255, 0.7);
+  --glass-icon-detail: #ffffff;
+  --glass-icon-detail-off: #c9cdd4;
 }
 
-.frost { fill: var(--glass-icon-frost, rgba(255, 255, 255, 0.66)); }
-.haze { opacity: var(--glass-icon-haze, 0.85); }
-.shineStop { stop-color: #fff; stop-opacity: var(--glass-icon-shine, 0.6); }
-.shineEnd { stop-color: #fff; stop-opacity: 0; }
+.accent { fill: var(--glass-icon-accent, #c9cdd3); }
+.glassTop { stop-color: var(--glass-icon-glass-top, rgba(142, 147, 155, 0.5)); }
+.glassBottom { stop-color: var(--glass-icon-glass-bottom, rgba(80, 85, 94, 0.74)); }
 .rimStart { stop-color: var(--glass-icon-rim, rgba(255, 255, 255, 0.95)); }
-.detail {
-  stroke: color-mix(in srgb, #fff var(--glass-icon-whiten, 0%), var(--gi-to));
-  opacity: var(--glass-icon-detail-opacity, 0.9);
-}
-.plate { fill: var(--glass-icon-plate, rgba(255, 255, 255, 0.55)); }
+.detail { stroke: var(--glass-icon-detail, #fff); }
+.detailOff { stroke: var(--glass-icon-detail-off, #666b74); }

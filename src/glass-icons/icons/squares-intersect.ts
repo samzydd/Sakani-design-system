@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "squares-intersect"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquaresIntersect = /*#__PURE__*/ createGlassIcon("squares-intersect", [["path",{"d":"M10 22a2 2 0 0 1 -2 -2"},0],["path",{"d":"M14 2a2 2 0 0 1 2 2"},0],["path",{"d":"M16 22h-2"},0],["path",{"d":"M2 10V8"},0],["path",{"d":"M2 4a2 2 0 0 1 2 -2"},0],["path",{"d":"M20 8a2 2 0 0 1 2 2"},0],["path",{"d":"M22 14v2"},0],["path",{"d":"M22 20a2 2 0 0 1 -2 2"},0],["path",{"d":"M4 16a2 2 0 0 1 -2 -2"},0],["path",{"d":"M8 10a2 2 0 0 1 2 -2h5a1 1 0 0 1 1 1v5a2 2 0 0 1 -2 2H9a1 1 0 0 1 -1 -1z"},1],["path",{"d":"M8 2h2"},0]]);
+export const GlassSquaresIntersect = /*#__PURE__*/ createGlassIcon("squares-intersect", [[["M8 10A2 2 0 0 1 10 8L15 8A1 1 0 0 1 16 9L16 14A2 2 0 0 1 14 16L9 16A1 1 0 0 1 8 15Z",1]],[["M10 22A2 2 0 0 1 8 20",0],["M14 2A2 2 0 0 1 16 4",0],["M16 22L14 22",0],["M2 10L2 8",0],["M2 4A2 2 0 0 1 4 2",0],["M20 8A2 2 0 0 1 22 10",0],["M22 14L22 16",0],["M22 20A2 2 0 0 1 20 22",0],["M4 16A2 2 0 0 1 2 14",0],["M8 2L10 2",0]],[15.45,8.55,3],0]);
 export default GlassSquaresIntersect;

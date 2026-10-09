@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "aperture"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAperture = /*#__PURE__*/ createGlassIcon("aperture", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M14.31 8l5.74 9.94"},0],["path",{"d":"M9.69 8h11.48"},0],["path",{"d":"M7.38 12l5.74 -9.94"},0],["path",{"d":"M9.69 16L3.95 6.06"},0],["path",{"d":"M14.31 16H2.83"},0],["path",{"d":"M16.62 12l-5.74 9.94"},0]]);
+export const GlassAperture = /*#__PURE__*/ createGlassIcon("aperture", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M14.31 8L20.05 17.94",1],["M9.69 8L21.17 8",1],["M7.38 12L13.12 2.06",1],["M9.69 16L3.95 6.06",1],["M14.31 16L2.83 16",1],["M16.62 12L10.88 21.94",1]],[20.4,3.6,4.75],0]);
 export default GlassAperture;

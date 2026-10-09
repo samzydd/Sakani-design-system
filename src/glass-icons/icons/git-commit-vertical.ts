@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-commit-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGitCommitVertical = /*#__PURE__*/ createGlassIcon("git-commit-vertical", [["path",{"d":"M12 3v6"},0],["circle",{"cx":"12","cy":"12","r":"3"},1],["path",{"d":"M12 15v6"},0]]);
+export const GlassGitCommitVertical = /*#__PURE__*/ createGlassIcon("git-commit-vertical", [[["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z",1]],[["M12 3L12 9",0],["M12 15L12 21",0]],[14.45,9.55,3],0]);
 export default GlassGitCommitVertical;

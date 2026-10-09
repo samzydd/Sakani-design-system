@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "timer-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTimerOff = /*#__PURE__*/ createGlassIcon("timer-off", [["path",{"d":"M10 2h4"},0],["path",{"d":"M4.6 11a8 8 0 0 0 1.7 8.7a8 8 0 0 0 8.7 1.7"},0],["path",{"d":"M7.4 7.4a8 8 0 0 1 10.3 1a8 8 0 0 1 0.9 10.2"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M12 12v-2"},0]]);
+export const GlassTimerOff = /*#__PURE__*/ createGlassIcon("timer-off", [[["M10 2L14 2",0],["M4.6 11A8 8 0 0 0 6.3 19.7A8 8 0 0 0 15 21.4",0],["M7.4 7.4A8 8 0 0 1 17.7 8.4A8 8 0 0 1 18.6 18.6",0],["M2 2L22 22",0],["M12 12L12 10",0]],[],[20.4,3.6,4.75],1]);
 export default GlassTimerOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "face-expressionless" (alias of "annoyed")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAnnoyed = /*#__PURE__*/ createGlassIcon("annoyed", [["path",{"d":"M14 10h2"},0],["path",{"d":"M8 10h2"},0],["path",{"d":"M8 16h8"},0],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassAnnoyed = /*#__PURE__*/ createGlassIcon("annoyed", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M14 10L16 10",1],["M8 10L10 10",1],["M8 16L16 16",1]],[20.4,3.6,4.75],0]);
 export default GlassAnnoyed;

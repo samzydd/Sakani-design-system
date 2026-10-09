@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "database-backup"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDatabaseBackup = /*#__PURE__*/ createGlassIcon("database-backup", [["ellipse",{"cx":"12","cy":"5","rx":"9","ry":"3"},1],["path",{"d":"M3 12a9 3 0 0 0 5 2.69"},0],["path",{"d":"M21 9.3V5"},0],["path",{"d":"M3 5v14a9 3 0 0 0 6.47 2.88"},0],["path",{"d":"M12 12v4h4"},0],["path",{"d":"M13 20a5 5 0 0 0 9 -3a4.5 4.5 0 0 0 -4.5 -4.5c-1.33 0 -2.54 0.54 -3.41 1.41L12 16"},0]]);
+export const GlassDatabaseBackup = /*#__PURE__*/ createGlassIcon("database-backup", [[["M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5Z",1],["M13 20A5 5 0 0 0 22 17A4.5 4.5 0 0 0 17.5 12.5C16.17 12.5 14.96 13.04 14.09 13.91L12 16Z",1]],[["M3 12A9 3 0 0 0 8 14.69",0],["M21 9.3L21 5",0],["M3 5L3 19A9 3 0 0 0 9.47 21.88",0],["M12 12L12 16L16 16",1]],[20.4,3.6,4.75],0]);
 export default GlassDatabaseBackup;

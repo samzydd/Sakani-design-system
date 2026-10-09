@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bird"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBird = /*#__PURE__*/ createGlassIcon("bird", [["path",{"d":"M16 7h0.01"},0],["path",{"d":"M3.4 18H12a8 8 0 0 0 8 -8V7a4 4 0 0 0 -7.28 -2.3L2 20"},0],["path",{"d":"M20 7l2 0.5l-2 0.5"},0],["path",{"d":"M10 18v3"},0],["path",{"d":"M14 17.75V21"},0],["path",{"d":"M7 18a6 6 0 0 0 3.84 -10.61"},0]]);
+export const GlassBird = /*#__PURE__*/ createGlassIcon("bird", [[["M3.4 18L12 18A8 8 0 0 0 20 10L20 7A4 4 0 0 0 12.72 4.7L2 20Z",1],["M20 7L22 7.5L20 8",0]],[["M16 7L16.01 7",1],["M10 18L10 21",0],["M14 17.75L14 21",0],["M7 18A6 6 0 0 0 10.84 7.39",1]],[20.4,4.59,4.75],0]);
 export default GlassBird;

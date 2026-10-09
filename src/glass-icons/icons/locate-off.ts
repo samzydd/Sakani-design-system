@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "locate-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLocateOff = /*#__PURE__*/ createGlassIcon("locate-off", [["path",{"d":"M12 19v3"},0],["path",{"d":"M12 2v3"},0],["path",{"d":"M18.89 13.24a7 7 0 0 0 -8.13 -8.13"},0],["path",{"d":"M19 12h3"},0],["path",{"d":"M2 12h3"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M7.05 7.05a7 7 0 0 0 9.9 9.9"},0]]);
+export const GlassLocateOff = /*#__PURE__*/ createGlassIcon("locate-off", [[["M7.05 7.05A7 7 0 0 0 16.95 16.95Z",1]],[["M12 19L12 22",0],["M12 2L12 5",0],["M18.89 13.24A7 7 0 0 0 10.76 5.11",0],["M19 12L22 12",0],["M2 12L5 12",0],["M2 2L22 22",0]],[15.946,8.054,3.757],0]);
 export default GlassLocateOff;

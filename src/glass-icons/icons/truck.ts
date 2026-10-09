@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "truck"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTruck = /*#__PURE__*/ createGlassIcon("truck", [["path",{"d":"M14 18V6a2 2 0 0 0 -2 -2H4a2 2 0 0 0 -2 2v11a1 1 0 0 0 1 1h2"},0],["path",{"d":"M15 18H9"},0],["path",{"d":"M19 18h2a1 1 0 0 0 1 -1v-3.65a1 1 0 0 0 -0.22 -0.624l-3.48 -4.35A1 1 0 0 0 17.52 8H14"},0],["circle",{"cx":"17","cy":"18","r":"2"},1],["circle",{"cx":"7","cy":"18","r":"2"},1]]);
+export const GlassTruck = /*#__PURE__*/ createGlassIcon("truck", [[["M14 18L14 6A2 2 0 0 0 12 4L4 4A2 2 0 0 0 2 6L2 17A1 1 0 0 0 3 18L5 18Z",1],["M15 18L9 18",0]],[["M19 18L21 18A1 1 0 0 0 22 17L22 13.35A1 1 0 0 0 21.78 12.726L18.3 8.376A1 1 0 0 0 17.52 8L14 8",0],["M15 18A2 2 0 1 0 19 18A2 2 0 1 0 15 18Z",0],["M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18Z",1]],[13.676,5.324,4.29],0]);
 export default GlassTruck;

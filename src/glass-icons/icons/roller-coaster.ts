@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "roller-coaster"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRollerCoaster = /*#__PURE__*/ createGlassIcon("roller-coaster", [["path",{"d":"M6 19V5"},0],["path",{"d":"M10 19V6.8"},0],["path",{"d":"M14 19v-7.8"},0],["path",{"d":"M18 5v4"},0],["path",{"d":"M18 19v-6"},0],["path",{"d":"M22 19V9"},0],["path",{"d":"M2 19V9a4 4 0 0 1 4 -4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0 -3 -6.65"},0]]);
+export const GlassRollerCoaster = /*#__PURE__*/ createGlassIcon("roller-coaster", [[["M6 19L6 5",0],["M10 19L10 6.8",0],["M14 19L14 11.2",0],["M18 5L18 9",0],["M18 19L18 13",0],["M22 19L22 9",0],["M2 19L2 9A4 4 0 0 1 6 5C8 5 10 6.33 12 9C14 11.67 16 13 18 13A4 4 0 1 0 15 6.35",0]],[],[20.4,6.6,4.75],1]);
 export default GlassRollerCoaster;

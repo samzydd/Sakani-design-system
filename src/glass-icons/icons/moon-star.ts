@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "moon-star"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMoonStar = /*#__PURE__*/ createGlassIcon("moon-star", [["path",{"d":"M18 5h4"},0],["path",{"d":"M20 3v4"},0],["path",{"d":"M20.985 12.486a9 9 0 1 1 -9.473 -9.472c0.405 -0.022 0.617 0.46 0.402 0.803a6 6 0 0 0 8.268 8.268c0.344 -0.215 0.825 -0.004 0.803 0.401"},1]]);
+export const GlassMoonStar = /*#__PURE__*/ createGlassIcon("moon-star", [[["M20.985 12.486A9 9 0 1 1 11.512 3.014C11.917 2.992 12.129 3.474 11.914 3.817A6 6 0 0 0 20.182 12.085C20.526 11.87 21.007 12.081 20.985 12.486",1]],[["M18 5L22 5",0],["M20 3L20 7",0]],[19.385,4.614,4.75],0]);
 export default GlassMoonStar;

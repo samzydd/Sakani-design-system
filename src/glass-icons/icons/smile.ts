@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "face-slightly-smiling" (alias of "smile")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSmile = /*#__PURE__*/ createGlassIcon("smile", [["path",{"d":"M15 10V9"},0],["path",{"d":"M16.472 15a6 6 0 0 1 -8.943 0"},0],["path",{"d":"M9 10V9"},0],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassSmile = /*#__PURE__*/ createGlassIcon("smile", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M15 10L15 9",1],["M16.472 15A6 6 0 0 1 7.529 15",1],["M9 10L9 9",1]],[20.4,3.6,4.75],0]);
 export default GlassSmile;

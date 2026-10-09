@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "table-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTable2 = /*#__PURE__*/ createGlassIcon("table-2", [["path",{"d":"M9 3H5a2 2 0 0 0 -2 2v4"},0],["path",{"d":"M9 3h10a2 2 0 0 1 2 2v4"},0],["path",{"d":"M9 3v18"},0],["path",{"d":"M9 21h10a2 2 0 0 0 2 -2V9"},0],["path",{"d":"M9 21H5a2 2 0 0 1 -2 -2V9"},0],["path",{"d":"M3 9h18"},0]]);
+export const GlassTable2 = /*#__PURE__*/ createGlassIcon("table-2", [[["M9 3L5 3A2 2 0 0 0 3 5L3 9",0],["M9 3L19 3A2 2 0 0 1 21 5L21 9",0],["M9 3L9 21",0],["M9 21L19 21A2 2 0 0 0 21 19L21 9",0],["M9 21L5 21A2 2 0 0 1 3 19L3 9",0],["M3 9L21 9",0]],[],[19.4,4.6,4.75],1]);
 export default GlassTable2;

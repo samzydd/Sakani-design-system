@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ship-wheel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShipWheel = /*#__PURE__*/ createGlassIcon("ship-wheel", [["circle",{"cx":"12","cy":"12","r":"8"},1],["path",{"d":"M12 2v7.5"},0],["path",{"d":"M19 5l-5.23 5.23"},0],["path",{"d":"M22 12h-7.5"},0],["path",{"d":"M19 19l-5.23 -5.23"},0],["path",{"d":"M12 14.5V22"},0],["path",{"d":"M10.23 13.77L5 19"},0],["path",{"d":"M9.5 12H2"},0],["path",{"d":"M10.23 10.23L5 5"},0],["circle",{"cx":"12","cy":"12","r":"2.5"},1]]);
+export const GlassShipWheel = /*#__PURE__*/ createGlassIcon("ship-wheel", [[["M4 12A8 8 0 1 0 20 12A8 8 0 1 0 4 12Z",1]],[["M12 2L12 9.5",1],["M19 5L13.77 10.23",1],["M22 12L14.5 12",1],["M19 19L13.77 13.77",1],["M12 14.5L12 22",1],["M10.23 13.77L5 19",1],["M9.5 12L2 12",1],["M10.23 10.23L5 5",1],["M9.5 12A2.5 2.5 0 1 0 14.5 12A2.5 2.5 0 1 0 9.5 12Z",1]],[18.4,5.6,4.75],0]);
 export default GlassShipWheel;

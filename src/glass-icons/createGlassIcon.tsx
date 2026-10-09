@@ -1,92 +1,52 @@
 /**
  * Glass icons
  *
- * Every Lucide icon in the Sakani icon set, rendered in a frosted-glass style:
- * a solid gradient copy of the shape sits behind, a frosted copy sits in front
- * and slightly offset, and the colour behind shows through the glass as a soft
- * haze. A crisp line drawing on the glass keeps the icon's details readable
- * (a plain filled silhouette turns a calendar into a square).
+ * Every icon in the Sakani icon set as monochrome frosted glass, mirroring the
+ * Figma "Glass Icons" component set layer for layer:
  *
- * The whole effect is drawn in SVG -- gradients, a mask and a Gaussian blur --
- * rather than with CSS backdrop-filter, so it renders identically in every
- * browser and costs nothing until the icon paints. Which parts of a shape get
- * filled is decided at build time (scripts/glass-icons): only closed shapes are
- * filled, because filling an open line (a checkmark, an arrow) paints a chord.
+ *   Accent           a disc tucked behind the shape's top-right corner; where
+ *                    the glass covers it, it shows through blurred.
+ *   Glass            the icon's main shape as one frosted solid: a top-to-bottom
+ *                    gradient, a bright rim along its edge and a soft shadow.
+ *   Detail           lines that sit off the glass, drawn solid.
+ *   Detail on glass  lines that sit on the glass, drawn white and clipped to it.
  *
- * Variants
- *   frosted (default) -- solid shape behind, frosted shape in front.
- *   tile             -- the icon on a rounded glass plate.
+ * Which parts are glass and which are lines is decided at build time
+ * (scripts/glass-icons/decompose.mjs) with the same rules the Figma build uses.
+ * Everything is plain SVG drawn in the icon's 24-unit space, so the icon scales
+ * cleanly to any size and renders the same in every browser. Colours come from
+ * the --glass-icon-* tokens, so light and dark follow the theme.
  */
 import React from 'react';
 import styles from './GlassIcon.module.css';
 
-/** One element of an icon: [tag, attributes, closed (1 = safe to fill)]. */
-export type GlassIconNode = ReadonlyArray<readonly [string, Readonly<Record<string, string | number>>, (0 | 1)?]>;
+/** [path data, flag]: for body parts the flag means "filled"; for details, "on the glass". */
+type Part = readonly [string, 0 | 1];
 
-/** The ten tones, matching the modes of the "Glass icon" variable collection in Figma. */
-export type GlassIconTone =
-  | 'violet' | 'brand' | 'iridescent' | 'blue' | 'sky'
-  | 'teal' | 'green' | 'orange' | 'red' | 'pink';
-
-export type GlassIconVariant = 'frosted' | 'tile';
-
-/**
- * Gradient stops per tone (from, mid, to: light to deep), 1:1 with the Figma
- * variables glass-icon/from, /mid and /to. `brand` follows the primary scale.
- */
-export const GLASS_ICON_TONES: Record<GlassIconTone, readonly string[]> = {
-  violet: ['#b4abff', '#9083f3', '#6c5ce7'],
-  brand: ['var(--color-primary-300, #ffa170)', 'var(--color-primary-400, #ff7538)', 'var(--color-primary-500, #ff4700)'],
-  iridescent: ['#ff6ad5', '#7cc9ff', '#ffe36e'],
-  blue: ['#8cc8ff', '#5e9bef', '#2f6fe0'],
-  sky: ['#9be3ff', '#55bfeb', '#0e9bd8'],
-  teal: ['#8ff0e3', '#4ec2b5', '#0d9488'],
-  green: ['#9cf0b8', '#59c981', '#16a34a'],
-  orange: ['#ffc69a', '#f89455', '#f2620f'],
-  red: ['#fdabab', '#ef647a', '#e11d48'],
-  pink: ['#fbb6da', '#ee7bb2', '#e2408a'],
-};
-
-/**
- * Line-drawing colour (Figma glass-icon/detail) where it differs from the last
- * stop: the deepest stop would be too light, or isn't the family's ink colour.
- */
-const DETAIL_FOR: Partial<Record<GlassIconTone, string>> = {
-  brand: 'var(--color-primary-600, #e63d00)',
-  iridescent: '#6b4fd8',
-};
+/** Build-time data for one icon: [body, detail, accent disc [cx, cy, r], line-only icon]. */
+export type GlassIconData = readonly [
+  body: ReadonlyArray<Part>,
+  detail: ReadonlyArray<Part>,
+  accent: readonly [number, number, number],
+  pure: 0 | 1,
+];
 
 export interface GlassIconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref' | 'children' | 'fill' | 'stroke'> {
-  /** Rendered size in px, or any CSS length. Default 48. */
+  /** Rendered size: px, or any CSS length ('1em' follows the text size). Default 24. */
   size?: number | string;
-  /** Colour family. Default 'violet'. */
-  tone?: GlassIconTone;
-  /** Custom gradient (light to deep); overrides `tone`. Any CSS colours, two or more. */
-  colors?: readonly string[];
-  variant?: GlassIconVariant;
-  /** The crisp line drawing on the glass. Default true; turn off for a pure silhouette. */
-  detail?: boolean;
   /** Force the light- or dark-surface treatment instead of following a `.dark` ancestor. */
   surface?: 'auto' | 'light' | 'dark';
   /** Accessible name. Without it the icon is decorative (aria-hidden). */
   title?: string;
 }
 
-/** Draws the icon's shapes with the given paint. Used once per layer. */
-type ShapeRenderer = (paint: {
-  stroke: string;
-  fill: string;
-  strokeWidth: number;
-  className?: string;
-  /** false = never fill (the line drawing). */
-  allowFill: boolean;
-}) => React.ReactNode;
+/** Draws a set of paths with the given paint. */
+type Drawer = (paint: { fill?: string; stroke?: string; strokeWidth: number }) => React.ReactNode;
 
-const SW = 2.5;          // silhouette stroke width, in the icon's 24-unit space
-const DETAIL_SW = 1.35;  // the line drawing on the glass
-const BACK = 'translate(2.1 -2.1)';
-const FRONT = 'translate(-0.5 0.5)';
-const BLEED = { x: -6, y: -6, width: 36, height: 36 } as const;
+const BODY_SW = 2.5;   // glass shape outline, in the icon's 24-unit space
+const PURE_SW = 3;     // line-only icons are drawn a little heavier
+const DETAIL_SW = 2;   // the lines
+const AREA = { x: -4, y: -4, width: 32, height: 32 } as const;
 
 function useSafeId() {
   return 'gi' + React.useId().replace(/[^a-zA-Z0-9_-]/g, '');
@@ -94,163 +54,111 @@ function useSafeId() {
 
 /** The shared renderer behind every glass icon. */
 export function GlassIconSvg({
-  shapes, size = 48, tone = 'violet', colors, variant = 'frosted', detail = true,
-  surface = 'auto', title, className, style, ...rest
-}: GlassIconProps & { shapes: ShapeRenderer }) {
+  body, onGlass, offGlass, accent, pure, size = 24, surface = 'auto', title, className, ...rest
+}: GlassIconProps & {
+  body: Drawer;
+  onGlass?: Drawer | null;
+  offGlass?: Drawer | null;
+  accent: readonly [number, number, number];
+  pure?: boolean;
+}) {
   const id = useSafeId();
-  const stops = colors && colors.length >= 2 ? colors : GLASS_ICON_TONES[tone];
-  const from = stops[0];
-  const to = stops[stops.length - 1];
-  const detailColor = colors ? to : (DETAIL_FOR[tone] ?? to);
-  const gradId = `${id}g`;
-
-  const cssVars = {
-    '--gi-from': from,
-    '--gi-to': detailColor,
-    ...style,
-  } as React.CSSProperties;
-
+  const sw = pure ? PURE_SW : BODY_SW;
+  const [cx, cy, r] = accent;
   const rootClass = [
     styles.root,
     surface === 'dark' ? styles.onDark : '',
     surface === 'light' ? styles.onLight : '',
     className ?? '',
   ].filter(Boolean).join(' ');
-
-  const gradient = (
-    <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
-      {stops.map((c, i) => (
-        <stop key={i} offset={i / (stops.length - 1)} style={{ stopColor: c }} />
-      ))}
-    </linearGradient>
-  );
-
   const a11y = title
     ? { role: 'img' as const, 'aria-label': title }
     : { 'aria-hidden': true as const, focusable: 'false' as const };
 
-  if (variant === 'tile') {
-    const glyph = 'translate(12 12) scale(0.7) translate(-12 -12)';
-    return (
-      <svg
-        width={size} height={size} viewBox="-4 -4 32 32" className={rootClass} style={cssVars} {...a11y} {...rest}
-      >
-        {title && <title>{title}</title>}
-        <defs>
-          {gradient}
-          <radialGradient id={`${id}s`} cx="0.25" cy="0.15" r="0.9">
-            <stop offset="0" className={styles.shineStop} />
-            <stop offset="1" className={styles.shineEnd} />
-          </radialGradient>
-          <linearGradient id={`${id}r`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" className={styles.rimStart} />
-            <stop offset="1" style={{ stopColor: to }} stopOpacity={0.35} />
-          </linearGradient>
-          <filter id={`${id}b`} x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="2.2" />
-          </filter>
-          <clipPath id={`${id}c`}>
-            <rect x="-3" y="-3" width="30" height="30" rx="8.5" />
-          </clipPath>
-        </defs>
-        <g clipPath={`url(#${id}c)`}>
-          <rect x="-3" y="-3" width="30" height="30" className={styles.plate} />
-          {/* The glyph's own colour glowing through the plate. */}
-          <g transform={glyph} filter={`url(#${id}b)`} opacity={0.55}>
-            {shapes({ stroke: `url(#${gradId})`, fill: `url(#${gradId})`, strokeWidth: SW + 1, allowFill: true })}
-          </g>
-          <rect x="-3" y="-3" width="30" height="30" fill={`url(#${id}s)`} />
-        </g>
-        <rect x="-2.7" y="-2.7" width="29.4" height="29.4" rx="8.2" fill="none" stroke={`url(#${id}r)`} strokeWidth={0.6} />
-        <g transform={glyph}>
-          {shapes({ stroke: `url(#${gradId})`, fill: `url(#${gradId})`, strokeWidth: 2.2, allowFill: false })}
-        </g>
-      </svg>
-    );
-  }
-
   return (
-    <svg
-      width={size} height={size} viewBox="-2 -2 28 28" className={rootClass} style={cssVars} {...a11y} {...rest}
-    >
+    <svg width={size} height={size} viewBox="0 0 24 24" className={rootClass} {...a11y} {...rest}>
       {title && <title>{title}</title>}
       <defs>
-        {gradient}
-        <radialGradient id={`${id}s`} cx="0.3" cy="0.25" r="0.75">
-          <stop offset="0" className={styles.shineStop} />
-          <stop offset="1" className={styles.shineEnd} />
-        </radialGradient>
-        <linearGradient id={`${id}r`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" className={styles.rimStart} />
-          <stop offset="1" style={{ stopColor: to }} stopOpacity={0.35} />
+        <linearGradient id={`${id}g`} gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="24">
+          <stop offset="0" className={styles.glassTop} />
+          <stop offset="1" className={styles.glassBottom} />
         </linearGradient>
-        <filter id={`${id}b`} x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur stdDeviation="1.3" />
+        <linearGradient id={`${id}r`} gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="24" y2="24">
+          <stop offset="0" className={styles.rimStart} />
+          <stop offset="0.55" stopColor="#fff" stopOpacity={0.08} />
+          <stop offset="1" stopColor="#fff" stopOpacity={0.35} />
+        </linearGradient>
+        {/* Where the glass is, and where it isn't. */}
+        <mask id={`${id}m`} maskUnits="userSpaceOnUse" {...AREA}>
+          {body({ fill: '#fff', stroke: '#fff', strokeWidth: sw })}
+        </mask>
+        <mask id={`${id}o`} maskUnits="userSpaceOnUse" {...AREA}>
+          <rect {...AREA} fill="#fff" />
+          {body({ fill: '#000', stroke: '#000', strokeWidth: sw })}
+        </mask>
+        <filter id={`${id}b`} filterUnits="userSpaceOnUse" {...AREA}>
+          <feGaussianBlur stdDeviation="2" />
         </filter>
-        {/* Where the glass is: the front silhouette. */}
-        <mask id={`${id}m`} maskUnits="userSpaceOnUse" {...BLEED}>
-          <g transform={FRONT}>{shapes({ stroke: '#fff', fill: '#fff', strokeWidth: SW, allowFill: true })}</g>
-        </mask>
-        {/* The glass edge: a thin band just outside the front silhouette. */}
-        <mask id={`${id}e`} maskUnits="userSpaceOnUse" {...BLEED}>
-          <g transform={FRONT}>
-            {shapes({ stroke: '#fff', fill: '#fff', strokeWidth: SW + 0.6, allowFill: true })}
-            {shapes({ stroke: '#000', fill: '#000', strokeWidth: SW, allowFill: true })}
-          </g>
-        </mask>
+        <filter id={`${id}s`} filterUnits="userSpaceOnUse" {...AREA}>
+          <feGaussianBlur stdDeviation="1" />
+        </filter>
+        {/* The rim: a thin band just inside the glass outline. */}
+        <filter id={`${id}e`} filterUnits="userSpaceOnUse" {...AREA}>
+          <feMorphology in="SourceAlpha" operator="erode" radius="0.5" result="inner" />
+          <feComposite in="SourceAlpha" in2="inner" operator="out" result="ring" />
+          <feComposite in="SourceGraphic" in2="ring" operator="in" />
+        </filter>
       </defs>
 
-      {/* 1. The solid shape behind. */}
-      <g transform={BACK} id={`${id}k`}>
-        {shapes({ stroke: `url(#${gradId})`, fill: `url(#${gradId})`, strokeWidth: SW, allowFill: true })}
+      {/* Outside the glass: its soft shadow and the uncovered part of the disc. */}
+      <g mask={`url(#${id}o)`}>
+        <g filter={`url(#${id}s)`} transform="translate(0 1)" opacity={0.12}>
+          {body({ fill: '#000', stroke: '#000', strokeWidth: sw })}
+        </g>
+        <circle cx={cx} cy={cy} r={r} className={styles.accent} />
       </g>
 
-      {/* 2. The frosted glass in front: a milky base, the shape behind seen
-             through it blurred, and a soft highlight. */}
+      {/* The glass: the disc seen through it blurred, then the frosted fill. */}
       <g mask={`url(#${id}m)`}>
-        <rect {...BLEED} className={styles.frost} />
-        <g filter={`url(#${id}b)`} className={styles.haze}>
-          <use href={`#${id}k`} />
-        </g>
-        <rect {...BLEED} fill={`url(#${id}s)`} />
+        <circle cx={cx} cy={cy} r={r} className={styles.accent} filter={`url(#${id}b)`} />
+        <rect {...AREA} fill={`url(#${id}g)`} />
       </g>
+      <g filter={`url(#${id}e)`}>{body({ fill: `url(#${id}r)`, stroke: `url(#${id}r)`, strokeWidth: sw })}</g>
 
-      {/* 3. The glass edge. */}
-      <rect {...BLEED} fill={`url(#${id}r)`} mask={`url(#${id}e)`} />
-
-      {/* 4. The line drawing on the glass. */}
-      {detail && (
-        <g transform={FRONT}>
-          {shapes({ stroke: 'currentColor', fill: 'none', strokeWidth: DETAIL_SW, className: styles.detail, allowFill: false })}
-        </g>
-      )}
+      {offGlass && <g className={styles.detailOff} fill="none">{offGlass({ strokeWidth: DETAIL_SW })}</g>}
+      {onGlass && <g className={styles.detail} fill="none" mask={`url(#${id}m)`}>{onGlass({ strokeWidth: DETAIL_SW })}</g>}
     </svg>
   );
 }
 
-/** Renders a node list (the build-time data for one icon). */
-function nodeShapes(node: GlassIconNode): ShapeRenderer {
-  return ({ stroke, fill, strokeWidth, className, allowFill }) =>
-    node.map(([tag, attrs, closed], i) =>
-      React.createElement(tag, {
-        key: i,
-        ...attrs,
-        stroke,
-        fill: allowFill && closed ? fill : 'none',
-        strokeWidth,
-        strokeLinecap: 'round',
-        strokeLinejoin: 'round',
-        className,
-      }),
-    );
+/** Draws build-time parts; `filled` decides per part whether the fill paint applies. */
+function partsDrawer(parts: ReadonlyArray<Part>, filled: boolean): Drawer {
+  return ({ fill, stroke, strokeWidth }) =>
+    parts.map(([d, f], i) => (
+      <path
+        key={i}
+        d={d}
+        fill={filled && f ? fill : 'none'}
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    ));
 }
 
 export type GlassIconComponent = React.FC<GlassIconProps> & { iconName: string };
 
-/** Builds a glass icon component from an icon's build-time node data. */
-export function createGlassIcon(iconName: string, node: GlassIconNode): GlassIconComponent {
-  const shapes = nodeShapes(node);
-  const Component = ((props: GlassIconProps) => <GlassIconSvg {...props} shapes={shapes} />) as GlassIconComponent;
+/** Builds a glass icon component from an icon's build-time data. */
+export function createGlassIcon(iconName: string, [body, detail, accent, pure]: GlassIconData): GlassIconComponent {
+  const on = detail.filter((p) => p[1]);
+  const off = detail.filter((p) => !p[1]);
+  const drawBody = partsDrawer(body, true);
+  const drawOn = on.length ? partsDrawer(on, false) : null;
+  const drawOff = off.length ? partsDrawer(off, false) : null;
+  const Component = ((props: GlassIconProps) => (
+    <GlassIconSvg {...props} body={drawBody} onGlass={drawOn} offGlass={drawOff} accent={accent} pure={!!pure} />
+  )) as GlassIconComponent;
   Component.displayName = 'Glass' + iconName.split('-').map((p) => p[0].toUpperCase() + p.slice(1)).join('');
   Component.iconName = iconName;
   return Component;
@@ -265,13 +173,11 @@ type LucideLike = React.ComponentType<{
 /**
  * Glass treatment for any Lucide icon component, including ones added to
  * Lucide after this package was built. Prefer the generated `Glass*`
- * components: they know which parts are closed shapes and fill them, while
- * this falls back to outlines (a component gives no way to tell a closed
- * shape from an open line).
+ * components: they know which parts are solid shapes and which are lines,
+ * while this draws the whole icon as a glass stroke (a component gives no way
+ * to tell the parts apart).
  */
 export function GlassIcon({ icon: Icon, ...props }: GlassIconProps & { icon: LucideLike }) {
-  const shapes: ShapeRenderer = ({ stroke, strokeWidth, className }) => (
-    <Icon size={24} color={stroke} strokeWidth={strokeWidth} className={className} />
-  );
-  return <GlassIconSvg {...props} shapes={shapes} />;
+  const body: Drawer = ({ stroke, strokeWidth }) => <Icon size={24} color={stroke} strokeWidth={strokeWidth} />;
+  return <GlassIconSvg {...props} body={body} accent={[17.4, 6.6, 4.5]} pure />;
 }

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "case-lower"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCaseLower = /*#__PURE__*/ createGlassIcon("case-lower", [["path",{"d":"M10 9v7"},0],["path",{"d":"M14 6v10"},0],["circle",{"cx":"17.5","cy":"12.5","r":"3.5"},1],["circle",{"cx":"6.5","cy":"12.5","r":"3.5"},1]]);
+export const GlassCaseLower = /*#__PURE__*/ createGlassIcon("case-lower", [[["M14 12.5A3.5 3.5 0 1 0 21 12.5A3.5 3.5 0 1 0 14 12.5Z",1],["M3 12.5A3.5 3.5 0 1 0 10 12.5A3.5 3.5 0 1 0 3 12.5Z",1],["M10 9L10 16",0]],[["M14 6L14 16",1]],[19.4,10.6,4.75],0]);
 export default GlassCaseLower;

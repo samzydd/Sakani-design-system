@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "printer-check"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPrinterCheck = /*#__PURE__*/ createGlassIcon("printer-check", [["path",{"d":"M13.5 22H7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h10a1 1 0 0 1 1 1v0.5"},0],["path",{"d":"M16 19l2 2l4 -4"},0],["path",{"d":"M6 18H4a2 2 0 0 1 -2 -2v-5a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v2"},0],["path",{"d":"M6 9V3a1 1 0 0 1 1 -1h10a1 1 0 0 1 1 1v6"},0]]);
+export const GlassPrinterCheck = /*#__PURE__*/ createGlassIcon("printer-check", [[["M6 18L4 18A2 2 0 0 1 2 16L2 11A2 2 0 0 1 4 9L20 9A2 2 0 0 1 22 11L22 13Z",1],["M6 9L6 3A1 1 0 0 1 7 2L17 2A1 1 0 0 1 18 3L18 9Z",1],["M13.5 22L7 22A1 1 0 0 1 6 21L6 15A1 1 0 0 1 7 14L17 14A1 1 0 0 1 18 15L18 15.5Z",1]],[["M16 19L18 21L22 17",0]],[20.4,3.6,4.75],0]);
 export default GlassPrinterCheck;

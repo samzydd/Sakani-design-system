@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "grip"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGrip = /*#__PURE__*/ createGlassIcon("grip", [["circle",{"cx":"12","cy":"5","r":"1"},1],["circle",{"cx":"19","cy":"5","r":"1"},1],["circle",{"cx":"5","cy":"5","r":"1"},1],["circle",{"cx":"12","cy":"12","r":"1"},1],["circle",{"cx":"19","cy":"12","r":"1"},1],["circle",{"cx":"5","cy":"12","r":"1"},1],["circle",{"cx":"12","cy":"19","r":"1"},1],["circle",{"cx":"19","cy":"19","r":"1"},1],["circle",{"cx":"5","cy":"19","r":"1"},1]]);
+export const GlassGrip = /*#__PURE__*/ createGlassIcon("grip", [[["M11 5A1 1 0 1 0 13 5A1 1 0 1 0 11 5Z",0],["M18 5A1 1 0 1 0 20 5A1 1 0 1 0 18 5Z",0],["M4 5A1 1 0 1 0 6 5A1 1 0 1 0 4 5Z",0],["M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12Z",0],["M18 12A1 1 0 1 0 20 12A1 1 0 1 0 18 12Z",0],["M4 12A1 1 0 1 0 6 12A1 1 0 1 0 4 12Z",0],["M11 19A1 1 0 1 0 13 19A1 1 0 1 0 11 19Z",0],["M18 19A1 1 0 1 0 20 19A1 1 0 1 0 18 19Z",0],["M4 19A1 1 0 1 0 6 19A1 1 0 1 0 4 19Z",0]],[],[18.4,5.6,4.75],1]);
 export default GlassGrip;

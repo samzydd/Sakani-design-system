@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "droplet-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDropletOff = /*#__PURE__*/ createGlassIcon("droplet-off", [["path",{"d":"M18.715 13.186C18.29 11.858 17.384 10.607 16 9.5c-2 -1.6 -3.5 -4 -4 -6.5a10.7 10.7 0 0 1 -0.884 2.586"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M8.795 8.797A11 11 0 0 1 8 9.5C6 11.1 5 13 5 15a7 7 0 0 0 13.222 3.208"},0]]);
+export const GlassDropletOff = /*#__PURE__*/ createGlassIcon("droplet-off", [[["M8.795 8.797A11 11 0 0 1 8 9.5C6 11.1 5 13 5 15A7 7 0 0 0 18.222 18.208Z",1]],[["M18.715 13.186C18.29 11.858 17.384 10.607 16 9.5C14 7.9 12.5 5.5 12 3A10.7 10.7 0 0 1 11.116 5.586",0],["M2 2L22 22",0]],[17.019,10,4.088],0]);
 export default GlassDropletOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cannabis"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCannabis = /*#__PURE__*/ createGlassIcon("cannabis", [["path",{"d":"M12 22v-4"},0],["path",{"d":"M7 12c-1.5 0 -4.5 1.5 -5 3c3.5 1.5 6 1 6 1c-1.5 1.5 -2 3.5 -2 5c2.5 0 4.5 -1.5 6 -3c1.5 1.5 3.5 3 6 3c0 -1.5 -0.5 -3.5 -2 -5c0 0 2.5 0.5 6 -1c-0.5 -1.5 -3.5 -3 -5 -3c1.5 -1 4 -4 4 -6c-2.5 0 -5.5 1.5 -7 3c0 -2.5 -0.5 -5 -2 -7c-1.5 2 -2 4.5 -2 7c-1.5 -1.5 -4.5 -3 -7 -3c0 2 2.5 5 4 6"},1]]);
+export const GlassCannabis = /*#__PURE__*/ createGlassIcon("cannabis", [[["M7 12C5.5 12 2.5 13.5 2 15C5.5 16.5 8 16 8 16C6.5 17.5 6 19.5 6 21C8.5 21 10.5 19.5 12 18C13.5 19.5 15.5 21 18 21C18 19.5 17.5 17.5 16 16C16 16 18.5 16.5 22 15C21.5 13.5 18.5 12 17 12C18.5 11 21 8 21 6C18.5 6 15.5 7.5 14 9C14 6.5 13.5 4 12 2C10.5 4 10 6.5 10 9C8.5 7.5 5.5 6 3 6C3 8 5.5 11 7 12",1]],[["M12 22L12 18",0]],[20.4,3.6,4.75],0]);
 export default GlassCannabis;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-digit"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileDigit = /*#__PURE__*/ createGlassIcon("file-digit", [["path",{"d":"M4 12V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.706 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1 -2 2"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M10 16h2v6"},0],["path",{"d":"M10 22h4"},0],["rect",{"x":"2","y":"16","width":"4","height":"6","rx":"2"},1]]);
+export const GlassFileDigit = /*#__PURE__*/ createGlassIcon("file-digit", [[["M4 12L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M10 16L12 16L12 22",1],["M10 22L14 22",0],["M4 16L4 16A2 2 0 0 1 6 18L6 20A2 2 0 0 1 4 22L4 22A2 2 0 0 1 2 20L2 18A2 2 0 0 1 4 16Z",0]],[18.4,3.6,4.75],0]);
 export default GlassFileDigit;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "repeat-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRepeat2 = /*#__PURE__*/ createGlassIcon("repeat-2", [["path",{"d":"M2 9l3 -3l3 3"},0],["path",{"d":"M13 18H7a2 2 0 0 1 -2 -2V6"},0],["path",{"d":"M22 15l-3 3l-3 -3"},0],["path",{"d":"M11 6h6a2 2 0 0 1 2 2v10"},0]]);
+export const GlassRepeat2 = /*#__PURE__*/ createGlassIcon("repeat-2", [[["M2 9L5 6L8 9",0],["M13 18L7 18A2 2 0 0 1 5 16L5 6",0],["M22 15L19 18L16 15",0],["M11 6L17 6A2 2 0 0 1 19 8L19 18",0]],[],[20.4,7.6,4.75],1]);
 export default GlassRepeat2;

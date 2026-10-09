@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cast"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCast = /*#__PURE__*/ createGlassIcon("cast", [["path",{"d":"M2 8V6a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-6"},0],["path",{"d":"M2 12a9 9 0 0 1 8 8"},0],["path",{"d":"M2 16a5 5 0 0 1 4 4"},0],["line",{"x1":"2","x2":"2.01","y1":"20","y2":"20"},0]]);
+export const GlassCast = /*#__PURE__*/ createGlassIcon("cast", [[["M2 8L2 6A2 2 0 0 1 4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L14 20Z",1]],[["M2 12A9 9 0 0 1 10 20",0],["M2 16A5 5 0 0 1 6 20",0],["M2 20L2.01 20",0]],[20.4,5.6,4.75],0]);
 export default GlassCast;

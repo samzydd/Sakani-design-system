@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "car"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCar = /*#__PURE__*/ createGlassIcon("car", [["path",{"d":"M19 17h2c0.6 0 1 -0.4 1 -1v-3c0 -0.9 -0.7 -1.7 -1.5 -1.9C18.7 10.6 16 10 16 10s-1.3 -1.4 -2.2 -2.3c-0.5 -0.4 -1.1 -0.7 -1.8 -0.7H5c-0.6 0 -1.1 0.4 -1.4 0.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 0.6 0.4 1 1 1h2"},0],["circle",{"cx":"7","cy":"17","r":"2"},1],["path",{"d":"M9 17h6"},0],["circle",{"cx":"17","cy":"17","r":"2"},1]]);
+export const GlassCar = /*#__PURE__*/ createGlassIcon("car", [[["M19 17L21 17C21.6 17 22 16.6 22 16L22 13C22 12.1 21.3 11.3 20.5 11.1C18.7 10.6 16 10 16 10C16 10 14.7 8.6 13.8 7.7C13.3 7.3 12.7 7 12 7L5 7C4.4 7 3.9 7.4 3.6 7.9L2.2 10.8A3.7 3.7 0 0 0 2 12L2 16C2 16.6 2.4 17 3 17L5 17Z",1],["M9 17L15 17",0]],[["M5 17A2 2 0 1 0 9 17A2 2 0 1 0 5 17Z",1],["M15 17A2 2 0 1 0 19 17A2 2 0 1 0 15 17Z",1]],[20.4,8.6,4.75],0]);
 export default GlassCar;

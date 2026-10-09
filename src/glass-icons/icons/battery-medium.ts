@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "battery-medium"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBatteryMedium = /*#__PURE__*/ createGlassIcon("battery-medium", [["path",{"d":"M10 14v-4"},0],["path",{"d":"M22 14v-4"},0],["path",{"d":"M6 14v-4"},0],["rect",{"x":"2","y":"6","width":"16","height":"12","rx":"2"},1]]);
+export const GlassBatteryMedium = /*#__PURE__*/ createGlassIcon("battery-medium", [[["M4 6L16 6A2 2 0 0 1 18 8L18 16A2 2 0 0 1 16 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z",1]],[["M10 14L10 10",1],["M22 14L22 10",0],["M6 14L6 10",1]],[16.4,7.6,4.75],0]);
 export default GlassBatteryMedium;

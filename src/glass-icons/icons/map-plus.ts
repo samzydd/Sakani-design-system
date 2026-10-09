@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-plus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMapPlus = /*#__PURE__*/ createGlassIcon("map-plus", [["path",{"d":"M11 19l-1.106 -0.552a2 2 0 0 0 -1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 0.553 -0.894l4.553 -2.277a2 2 0 0 1 1.788 0l4.212 2.106a2 2 0 0 0 1.788 0l3.659 -1.83A1 1 0 0 1 21 4.619V12"},0],["path",{"d":"M15 5.764V12"},0],["path",{"d":"M18 15v6"},0],["path",{"d":"M21 18h-6"},0],["path",{"d":"M9 3.236v15"},0]]);
+export const GlassMapPlus = /*#__PURE__*/ createGlassIcon("map-plus", [[["M11 19L9.894 18.448A2 2 0 0 0 8.106 18.448L4.447 20.278A1 1 0 0 1 3 19.381L3 6.618A1 1 0 0 1 3.553 5.724L8.106 3.447A2 2 0 0 1 9.894 3.447L14.106 5.553A2 2 0 0 0 15.894 5.553L19.553 3.723A1 1 0 0 1 21 4.619L21 12Z",1]],[["M15 5.764L15 12",1],["M18 15L18 21",0],["M21 18L15 18",0],["M9 3.236L9 18.236",1]],[19.4,4.845,4.75],0]);
 export default GlassMapPlus;

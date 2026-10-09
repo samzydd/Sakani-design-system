@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-pen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquarePen = /*#__PURE__*/ createGlassIcon("square-pen", [["path",{"d":"M12 3H5a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2v-7"},0],["path",{"d":"M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1 -0.853 0.505l-2.873 0.84a0.5 0.5 0 0 1 -0.62 -0.62l0.84 -2.873a2 2 0 0 1 0.506 -0.852z"},1]]);
+export const GlassSquarePen = /*#__PURE__*/ createGlassIcon("square-pen", [[["M12 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L19 21A2 2 0 0 0 21 19L21 12Z",1]],[["M18.375 2.625A1 1 0 0 1 21.375 5.625L12.362 14.639A2 2 0 0 1 11.509 15.144L8.636 15.984A0.5 0.5 0 0 1 8.016 15.364L8.856 12.491A2 2 0 0 1 9.362 11.639Z",0]],[19.4,4.6,4.75],0]);
 export default GlassSquarePen;

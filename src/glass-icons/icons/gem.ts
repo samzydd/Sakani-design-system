@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gem"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGem = /*#__PURE__*/ createGlassIcon("gem", [["path",{"d":"M10.5 3L8 9l4 13l4 -13l-2.5 -6"},0],["path",{"d":"M17 3a2 2 0 0 1 1.6 0.8l3 4a2 2 0 0 1 0.013 2.382l-7.99 10.986a2 2 0 0 1 -3.247 0l-7.99 -10.986A2 2 0 0 1 2.4 7.8l2.998 -3.997A2 2 0 0 1 7 3z"},1],["path",{"d":"M2 9h20"},0]]);
+export const GlassGem = /*#__PURE__*/ createGlassIcon("gem", [[["M17 3A2 2 0 0 1 18.6 3.8L21.6 7.8A2 2 0 0 1 21.613 10.182L13.623 21.168A2 2 0 0 1 10.376 21.168L2.386 10.182A2 2 0 0 1 2.4 7.8L5.398 3.803A2 2 0 0 1 7 3Z",1]],[["M10.5 3L8 9L12 22L16 9L13.5 3",1],["M2 9L22 9",1]],[20.392,4.6,4.75],0]);
 export default GlassGem;

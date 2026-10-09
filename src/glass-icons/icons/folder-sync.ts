@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-sync"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderSync = /*#__PURE__*/ createGlassIcon("folder-sync", [["path",{"d":"M9 20H4a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h3.9a2 2 0 0 1 1.69 0.9l0.81 1.2a2 2 0 0 0 1.67 0.9H20a2 2 0 0 1 2 2v0.5"},0],["path",{"d":"M12 10v4h4"},0],["path",{"d":"M12 14l1.535 -1.605a5 5 0 0 1 8 1.5"},0],["path",{"d":"M22 22v-4h-4"},0],["path",{"d":"M22 18l-1.535 1.605a5 5 0 0 1 -8 -1.5"},0]]);
+export const GlassFolderSync = /*#__PURE__*/ createGlassIcon("folder-sync", [[["M9 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 8.5Z",1]],[["M12 10L12 14L16 14",1],["M12 14L13.535 12.395A5 5 0 0 1 21.535 13.895",1],["M22 22L22 18L18 18",0],["M22 18L20.465 19.605A5 5 0 0 1 12.465 18.105",0]],[20.4,4.6,4.75],0]);
 export default GlassFolderSync;

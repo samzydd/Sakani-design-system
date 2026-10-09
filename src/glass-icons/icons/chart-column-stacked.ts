@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-column-stacked"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartColumnStacked = /*#__PURE__*/ createGlassIcon("chart-column-stacked", [["path",{"d":"M11 13H7"},0],["path",{"d":"M19 9h-4"},0],["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["rect",{"x":"15","y":"5","width":"4","height":"12","rx":"1"},1],["rect",{"x":"7","y":"8","width":"4","height":"9","rx":"1"},1]]);
+export const GlassChartColumnStacked = /*#__PURE__*/ createGlassIcon("chart-column-stacked", [[["M16 5L18 5A1 1 0 0 1 19 6L19 16A1 1 0 0 1 18 17L16 17A1 1 0 0 1 15 16L15 6A1 1 0 0 1 16 5Z",1],["M8 8L10 8A1 1 0 0 1 11 9L11 16A1 1 0 0 1 10 17L8 17A1 1 0 0 1 7 16L7 9A1 1 0 0 1 8 8Z",1],["M11 13L7 13",0],["M19 9L15 9",0]],[["M3 3L3 19A2 2 0 0 0 5 21L21 21",0]],[17.988,6.012,3.77],0]);
 export default GlassChartColumnStacked;

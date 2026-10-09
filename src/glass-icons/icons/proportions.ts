@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "proportions"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassProportions = /*#__PURE__*/ createGlassIcon("proportions", [["rect",{"width":"20","height":"16","x":"2","y":"4","rx":"2"},1],["path",{"d":"M12 9v11"},0],["path",{"d":"M2 9h13a2 2 0 0 1 2 2v9"},0]]);
+export const GlassProportions = /*#__PURE__*/ createGlassIcon("proportions", [[["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z",1]],[["M12 9L12 20",1],["M2 9L15 9A2 2 0 0 1 17 11L17 20",1]],[20.4,5.6,4.75],0]);
 export default GlassProportions;

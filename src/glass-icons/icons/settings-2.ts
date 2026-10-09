@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "settings-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSettings2 = /*#__PURE__*/ createGlassIcon("settings-2", [["path",{"d":"M14 17H5"},0],["path",{"d":"M19 7h-9"},0],["circle",{"cx":"17","cy":"17","r":"3"},1],["circle",{"cx":"7","cy":"7","r":"3"},1]]);
+export const GlassSettings2 = /*#__PURE__*/ createGlassIcon("settings-2", [[["M4 7A3 3 0 1 0 10 7A3 3 0 1 0 4 7Z",1],["M14 17A3 3 0 1 0 20 17A3 3 0 1 0 14 17Z",1]],[["M14 17L5 17",0],["M19 7L10 7",0]],[18.4,5.6,4.75],0]);
 export default GlassSettings2;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cake"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCake = /*#__PURE__*/ createGlassIcon("cake", [["path",{"d":"M20 21v-8a2 2 0 0 0 -2 -2H6a2 2 0 0 0 -2 2v8"},0],["path",{"d":"M4 16s0.5 -1 2 -1s2.5 2 4 2s2.5 -2 4 -2s2.5 2 4 2s2 -1 2 -1"},0],["path",{"d":"M2 21h20"},0],["path",{"d":"M7 8v3"},0],["path",{"d":"M12 8v3"},0],["path",{"d":"M17 8v3"},0],["path",{"d":"M7 4h0.01"},0],["path",{"d":"M12 4h0.01"},0],["path",{"d":"M17 4h0.01"},0]]);
+export const GlassCake = /*#__PURE__*/ createGlassIcon("cake", [[["M20 21L20 13A2 2 0 0 0 18 11L6 11A2 2 0 0 0 4 13L4 21Z",1],["M2 21L22 21",0]],[["M4 16C4 16 4.5 15 6 15C7.5 15 8.5 17 10 17C11.5 17 12.5 15 14 15C15.5 15 16.5 17 18 17C19.5 17 20 16 20 16",1],["M7 8L7 11",0],["M12 8L12 11",0],["M17 8L17 11",0],["M7 4L7.01 4",0],["M12 4L12.01 4",0],["M17 4L17.01 4",0]],[20.4,12.6,4.75],0]);
 export default GlassCake;

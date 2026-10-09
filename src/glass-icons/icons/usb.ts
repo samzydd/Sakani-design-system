@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "usb"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUsb = /*#__PURE__*/ createGlassIcon("usb", [["circle",{"cx":"10","cy":"7","r":"1"},1],["circle",{"cx":"4","cy":"20","r":"1"},1],["path",{"d":"M4.7 19.3L19 5"},0],["path",{"d":"M21 3l-3 1l2 2Z"},1],["path",{"d":"M9.26 7.68L5 12l2 5"},0],["path",{"d":"M10 14l5 2l3.5 -3.5"},0],["path",{"d":"M18 12l1 -1l1 1l-1 1Z"},1]]);
+export const GlassUsb = /*#__PURE__*/ createGlassIcon("usb", [[["M9 7A1 1 0 1 0 11 7A1 1 0 1 0 9 7Z",0],["M3 20A1 1 0 1 0 5 20A1 1 0 1 0 3 20Z",0],["M4.7 19.3L19 5",0],["M21 3L18 4L20 6Z",0],["M9.26 7.68L5 12L7 17",0],["M10 14L15 16L18.5 12.5",0],["M18 12L19 11L20 12L19 13Z",0]],[],[19.4,4.6,4.75],1]);
 export default GlassUsb;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "blend"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBlend = /*#__PURE__*/ createGlassIcon("blend", [["circle",{"cx":"15","cy":"9","r":"7"},1],["circle",{"cx":"9","cy":"15","r":"7"},1]]);
+export const GlassBlend = /*#__PURE__*/ createGlassIcon("blend", [[["M8 9A7 7 0 1 0 22 9A7 7 0 1 0 8 9Z",1],["M2 15A7 7 0 1 0 16 15A7 7 0 1 0 2 15Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassBlend;

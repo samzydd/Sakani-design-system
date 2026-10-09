@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pizza"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPizza = /*#__PURE__*/ createGlassIcon("pizza", [["path",{"d":"M12 14l-1 1"},0],["path",{"d":"M13.75 18.25l-1.25 1.42"},0],["path",{"d":"M17.775 5.654a15.68 15.68 0 0 0 -12.121 12.12"},0],["path",{"d":"M18.8 9.3a1 1 0 0 0 2.1 7.7"},0],["path",{"d":"M21.964 20.732a1 1 0 0 1 -1.232 1.232l-18 -5a1 1 0 0 1 -0.695 -1.232A19.68 19.68 0 0 1 15.732 2.037a1 1 0 0 1 1.232 0.695z"},1]]);
+export const GlassPizza = /*#__PURE__*/ createGlassIcon("pizza", [[["M21.964 20.732A1 1 0 0 1 20.732 21.964L2.732 16.964A1 1 0 0 1 2.037 15.732A19.68 19.68 0 0 1 15.732 2.037A1 1 0 0 1 16.964 2.732Z",1],["M13.75 18.25L12.5 19.67",0]],[["M12 14L11 15",1],["M17.775 5.654A15.68 15.68 0 0 0 5.654 17.774",1],["M18.8 9.3A1 1 0 0 0 20.9 17",1]],[20.398,3.603,4.75],0]);
 export default GlassPizza;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "crosshair"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCrosshair = /*#__PURE__*/ createGlassIcon("crosshair", [["circle",{"cx":"12","cy":"12","r":"10"},1],["line",{"x1":"22","x2":"18","y1":"12","y2":"12"},0],["line",{"x1":"6","x2":"2","y1":"12","y2":"12"},0],["line",{"x1":"12","x2":"12","y1":"6","y2":"2"},0],["line",{"x1":"12","x2":"12","y1":"22","y2":"18"},0]]);
+export const GlassCrosshair = /*#__PURE__*/ createGlassIcon("crosshair", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M22 12L18 12",1],["M6 12L2 12",1],["M12 6L12 2",1],["M12 22L12 18",1]],[20.4,3.6,4.75],0]);
 export default GlassCrosshair;

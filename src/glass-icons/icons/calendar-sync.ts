@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calendar-sync"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCalendarSync = /*#__PURE__*/ createGlassIcon("calendar-sync", [["path",{"d":"M11 10v4h4"},0],["path",{"d":"M11 14l1.535 -1.605a5 5 0 0 1 8 1.5"},0],["path",{"d":"M16 2v3"},0],["path",{"d":"M21 18l-1.535 1.605a5 5 0 0 1 -8 -1.5"},0],["path",{"d":"M21 22v-4h-4"},0],["path",{"d":"M21 8.517V5a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h3.517"},0],["path",{"d":"M3 9h4"},0],["path",{"d":"M8 2v3"},0]]);
+export const GlassCalendarSync = /*#__PURE__*/ createGlassIcon("calendar-sync", [[["M21 8.517L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L8.517 21Z",1],["M16 2L16 5",0],["M8 2L8 5",0]],[["M11 10L11 14L15 14",1],["M11 14L12.535 12.395A5 5 0 0 1 20.535 13.895",1],["M21 18L19.465 19.605A5 5 0 0 1 11.465 18.105",0],["M21 22L21 18L17 18",0],["M3 9L7 9",1]],[19.4,3.6,4.75],0]);
 export default GlassCalendarSync;

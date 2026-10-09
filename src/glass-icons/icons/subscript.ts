@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "subscript"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSubscript = /*#__PURE__*/ createGlassIcon("subscript", [["path",{"d":"M4 5l8 8"},0],["path",{"d":"M12 5l-8 8"},0],["path",{"d":"M20 19h-4c0 -1.5 0.44 -2 1.5 -2.5S20 15.33 20 14c0 -0.47 -0.17 -0.93 -0.48 -1.29a2.11 2.11 0 0 0 -2.62 -0.44c-0.42 0.24 -0.74 0.62 -0.9 1.07"},0]]);
+export const GlassSubscript = /*#__PURE__*/ createGlassIcon("subscript", [[["M4 5L12 13",0],["M12 5L4 13",0],["M20 19L16 19C16 17.5 16.44 17 17.5 16.5C18.56 16 20 15.33 20 14C20 13.53 19.83 13.07 19.52 12.71A2.11 2.11 0 0 0 16.9 12.27C16.48 12.51 16.16 12.89 16 13.34",0]],[],[18.4,6.6,4.75],1]);
 export default GlassSubscript;

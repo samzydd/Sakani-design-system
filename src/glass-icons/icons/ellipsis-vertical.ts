@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ellipsis-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEllipsisVertical = /*#__PURE__*/ createGlassIcon("ellipsis-vertical", [["circle",{"cx":"12","cy":"12","r":"1"},1],["circle",{"cx":"12","cy":"5","r":"1"},1],["circle",{"cx":"12","cy":"19","r":"1"},1]]);
+export const GlassEllipsisVertical = /*#__PURE__*/ createGlassIcon("ellipsis-vertical", [[["M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12Z",0],["M11 5A1 1 0 1 0 13 5A1 1 0 1 0 11 5Z",0],["M11 19A1 1 0 1 0 13 19A1 1 0 1 0 11 19Z",0]],[],[11.4,5.6,4.75],1]);
 export default GlassEllipsisVertical;

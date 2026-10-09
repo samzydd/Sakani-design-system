@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rewind"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRewind = /*#__PURE__*/ createGlassIcon("rewind", [["path",{"d":"M12 6a2 2 0 0 0 -3.414 -1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 12 18z"},1],["path",{"d":"M22 6a2 2 0 0 0 -3.414 -1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 22 18z"},1]]);
+export const GlassRewind = /*#__PURE__*/ createGlassIcon("rewind", [[["M22 6A2 2 0 0 0 18.586 4.586L12.586 10.586A2 2 0 0 0 12.586 13.414L18.586 19.414A2 2 0 0 0 22 18Z",1],["M12 6A2 2 0 0 0 8.586 4.586L2.586 10.586A2 2 0 0 0 2.586 13.414L8.586 19.414A2 2 0 0 0 12 18Z",1]],[],[20.4,5.6,4.75],0]);
 export default GlassRewind;

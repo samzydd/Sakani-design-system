@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "monitor-speaker"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMonitorSpeaker = /*#__PURE__*/ createGlassIcon("monitor-speaker", [["path",{"d":"M5.5 20H8"},0],["path",{"d":"M17 9h0.01"},0],["rect",{"width":"10","height":"16","x":"12","y":"4","rx":"2"},1],["path",{"d":"M8 6H4a2 2 0 0 0 -2 2v6a2 2 0 0 0 2 2h4"},0],["circle",{"cx":"17","cy":"15","r":"1"},1]]);
+export const GlassMonitorSpeaker = /*#__PURE__*/ createGlassIcon("monitor-speaker", [[["M14 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L14 20A2 2 0 0 1 12 18L12 6A2 2 0 0 1 14 4Z",1],["M8 6L4 6A2 2 0 0 0 2 8L2 14A2 2 0 0 0 4 16L8 16Z",1]],[["M5.5 20L8 20",0],["M17 9L17.01 9",1],["M16 15A1 1 0 1 0 18 15A1 1 0 1 0 16 15Z",1]],[20.4,5.6,4.75],0]);
 export default GlassMonitorSpeaker;

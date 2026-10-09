@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "forklift"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassForklift = /*#__PURE__*/ createGlassIcon("forklift", [["path",{"d":"M12 12H5a2 2 0 0 0 -2 2v5"},0],["path",{"d":"M15 19h7"},0],["path",{"d":"M16 19V2"},0],["path",{"d":"M6 12V7a2 2 0 0 1 2 -2h2.172a2 2 0 0 1 1.414 0.586l3.828 3.828A2 2 0 0 1 16 10.828"},0],["path",{"d":"M7 19h4"},0],["circle",{"cx":"13","cy":"19","r":"2"},1],["circle",{"cx":"5","cy":"19","r":"2"},1]]);
+export const GlassForklift = /*#__PURE__*/ createGlassIcon("forklift", [[["M6 12L6 7A2 2 0 0 1 8 5L10.172 5A2 2 0 0 1 11.586 5.586L15.414 9.414A2 2 0 0 1 16 10.828Z",1]],[["M12 12L5 12A2 2 0 0 0 3 14L3 19",0],["M15 19L22 19",0],["M16 19L16 2",0],["M7 19L11 19",0],["M11 19A2 2 0 1 0 15 19A2 2 0 1 0 11 19Z",0],["M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z",0]],[15.3,5.7,3.25],0]);
 export default GlassForklift;

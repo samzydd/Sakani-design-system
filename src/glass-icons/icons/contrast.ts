@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "contrast"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassContrast = /*#__PURE__*/ createGlassIcon("contrast", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M12 18a6 6 0 0 0 0 -12v12z"},1]]);
+export const GlassContrast = /*#__PURE__*/ createGlassIcon("contrast", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M12 18A6 6 0 0 0 12 6L12 18Z",1]],[20.4,3.6,4.75],0]);
 export default GlassContrast;

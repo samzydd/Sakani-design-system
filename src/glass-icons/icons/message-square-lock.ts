@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-square-lock"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessageSquareLock = /*#__PURE__*/ createGlassIcon("message-square-lock", [["path",{"d":"M22 8.5V5a2 2 0 0 0 -2 -2H4a2 2 0 0 0 -2 2v16.286a0.71 0.71 0 0 0 1.212 0.502l2.202 -2.202A2 2 0 0 1 6.828 19H10"},0],["path",{"d":"M20 15v-2a2 2 0 0 0 -4 0v2"},0],["rect",{"x":"14","y":"15","width":"8","height":"5","rx":"1"},1]]);
+export const GlassMessageSquareLock = /*#__PURE__*/ createGlassIcon("message-square-lock", [[["M22 8.5L22 5A2 2 0 0 0 20 3L4 3A2 2 0 0 0 2 5L2 21.286A0.71 0.71 0 0 0 3.212 21.788L5.414 19.586A2 2 0 0 1 6.828 19L10 19Z",1],["M20 15L20 13A2 2 0 0 0 16 13L16 15",0]],[["M15 15L21 15A1 1 0 0 1 22 16L22 19A1 1 0 0 1 21 20L15 20A1 1 0 0 1 14 19L14 16A1 1 0 0 1 15 15Z",0]],[20.4,4.6,4.75],0]);
 export default GlassMessageSquareLock;

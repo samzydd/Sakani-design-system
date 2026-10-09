@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-dollar-sign"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleDollarSign = /*#__PURE__*/ createGlassIcon("circle-dollar-sign", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"},0],["path",{"d":"M12 18V6"},0]]);
+export const GlassCircleDollarSign = /*#__PURE__*/ createGlassIcon("circle-dollar-sign", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M16 8L10 8A2 2 0 1 0 10 12L14 12A2 2 0 1 1 14 16L8 16",1],["M12 18L12 6",1]],[20.4,3.6,4.75],0]);
 export default GlassCircleDollarSign;

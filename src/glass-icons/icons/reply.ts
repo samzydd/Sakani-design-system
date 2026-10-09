@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "reply"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassReply = /*#__PURE__*/ createGlassIcon("reply", [["path",{"d":"M20 18v-2a4 4 0 0 0 -4 -4H4"},0],["path",{"d":"M9 17l-5 -5l5 -5"},0]]);
+export const GlassReply = /*#__PURE__*/ createGlassIcon("reply", [[["M20 18L20 16A4 4 0 0 0 16 12L4 12",0],["M9 17L4 12L9 7",0]],[],[18.4,8.6,4.75],1]);
 export default GlassReply;

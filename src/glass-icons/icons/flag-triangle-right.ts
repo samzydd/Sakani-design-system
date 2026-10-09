@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flag-triangle-right"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFlagTriangleRight = /*#__PURE__*/ createGlassIcon("flag-triangle-right", [["path",{"d":"M6 22V2.8a0.8 0.8 0 0 1 1.17 -0.71l11.38 5.69a0.8 0.8 0 0 1 0 1.44L6 15.5"},0]]);
+export const GlassFlagTriangleRight = /*#__PURE__*/ createGlassIcon("flag-triangle-right", [[["M6 22L6 2.8A0.8 0.8 0 0 1 7.17 2.09L18.55 7.78A0.8 0.8 0 0 1 18.55 9.22L6 15.5",0]],[],[17.401,3.602,4.75],1]);
 export default GlassFlagTriangleRight;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "barcode"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBarcode = /*#__PURE__*/ createGlassIcon("barcode", [["path",{"d":"M3 5v14"},0],["path",{"d":"M8 5v14"},0],["path",{"d":"M12 5v14"},0],["path",{"d":"M17 5v14"},0],["path",{"d":"M21 5v14"},0]]);
+export const GlassBarcode = /*#__PURE__*/ createGlassIcon("barcode", [[["M3 5L3 19",0],["M8 5L8 19",0],["M12 5L12 19",0],["M17 5L17 19",0],["M21 5L21 19",0]],[],[19.4,6.6,4.75],1]);
 export default GlassBarcode;

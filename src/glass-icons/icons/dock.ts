@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "dock"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDock = /*#__PURE__*/ createGlassIcon("dock", [["path",{"d":"M2 8h20"},0],["rect",{"width":"20","height":"16","x":"2","y":"4","rx":"2"},1],["path",{"d":"M6 16h12"},0]]);
+export const GlassDock = /*#__PURE__*/ createGlassIcon("dock", [[["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z",1]],[["M2 8L22 8",1],["M6 16L18 16",1]],[20.4,5.6,4.75],0]);
 export default GlassDock;

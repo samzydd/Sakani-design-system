@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sheet"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSheet = /*#__PURE__*/ createGlassIcon("sheet", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2","ry":"2"},1],["line",{"x1":"3","x2":"21","y1":"9","y2":"9"},0],["line",{"x1":"3","x2":"21","y1":"15","y2":"15"},0],["line",{"x1":"9","x2":"9","y1":"9","y2":"21"},0],["line",{"x1":"15","x2":"15","y1":"9","y2":"21"},0]]);
+export const GlassSheet = /*#__PURE__*/ createGlassIcon("sheet", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M3 9L21 9",1],["M3 15L21 15",1],["M9 9L9 21",1],["M15 9L15 21",1]],[19.4,4.6,4.75],0]);
 export default GlassSheet;

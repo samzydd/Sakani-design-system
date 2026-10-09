@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-heart"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBookHeart = /*#__PURE__*/ createGlassIcon("book-heart", [["path",{"d":"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1 -1 1H6.5a1 1 0 0 1 0 -5H20"},0],["path",{"d":"M8.62 9.8A2.25 2.25 0 1 1 12 6.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a0.998 0.998 0 0 1 -1.507 0z"},1]]);
+export const GlassBookHeart = /*#__PURE__*/ createGlassIcon("book-heart", [[["M8.62 9.8A2.25 2.25 0 1 1 12 6.836A2.25 2.25 0 1 1 15.38 9.802L12.754 12.658A0.998 0.998 0 0 1 11.247 12.658Z",1]],[["M4 19.5L4 4.5A2.5 2.5 0 0 1 6.5 2L19 2A1 1 0 0 1 20 3L20 21A1 1 0 0 1 19 22L6.5 22A1 1 0 0 1 6.5 17L20 17",0]],[15.446,6.546,3],0]);
 export default GlassBookHeart;

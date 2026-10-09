@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "skip-forward"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSkipForward = /*#__PURE__*/ createGlassIcon("skip-forward", [["path",{"d":"M21 4v16"},0],["path",{"d":"M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997 -5.998a2 2 0 0 0 0.003 -3.432z"},1]]);
+export const GlassSkipForward = /*#__PURE__*/ createGlassIcon("skip-forward", [[["M6.029 4.285A2 2 0 0 0 3 6L3 18A2 2 0 0 0 6.029 19.715L16.026 13.717A2 2 0 0 0 16.029 10.285Z",1]],[["M21 4L21 20",0]],[15.392,5.601,4.75],0]);
 export default GlassSkipForward;

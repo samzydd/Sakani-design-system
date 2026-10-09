@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "battery-warning"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBatteryWarning = /*#__PURE__*/ createGlassIcon("battery-warning", [["path",{"d":"M10 17h0.01"},0],["path",{"d":"M10 7v6"},0],["path",{"d":"M14 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-2"},0],["path",{"d":"M22 14v-4"},0],["path",{"d":"M6 18H4a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2h2"},0]]);
+export const GlassBatteryWarning = /*#__PURE__*/ createGlassIcon("battery-warning", [[["M14 6L16 6A2 2 0 0 1 18 8L18 16A2 2 0 0 1 16 18L14 18Z",1],["M6 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6L6 6Z",1]],[["M10 17L10.01 17",0],["M10 7L10 13",0],["M22 14L22 10",0]],[16.4,7.6,4.75],0]);
 export default GlassBatteryWarning;

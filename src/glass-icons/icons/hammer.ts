@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hammer"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHammer = /*#__PURE__*/ createGlassIcon("hammer", [["path",{"d":"M15 12l-9.373 9.373a1 1 0 0 1 -3.001 -3L12 9"},0],["path",{"d":"M18 15l4 -4"},0],["path",{"d":"M21.5 11.5l-1.914 -1.914A2 2 0 0 1 19 8.172v-0.344a2 2 0 0 0 -0.586 -1.414l-1.657 -1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414 0.586L18.5 14.5"},0]]);
+export const GlassHammer = /*#__PURE__*/ createGlassIcon("hammer", [[["M21.5 11.5L19.586 9.586A2 2 0 0 1 19 8.172L19 7.828A2 2 0 0 0 18.414 6.414L16.757 4.757A6 6 0 0 0 12.516 3L9 3L10.243 4.243A6 6 0 0 1 12 8.485L12 10L14 12L15.172 12A2 2 0 0 1 16.586 12.586L18.5 14.5Z",1],["M15 12L5.627 21.373A1 1 0 0 1 2.626 18.373L12 9Z",1],["M18 15L22 11",0]],[],[20.4,4.6,4.75],0]);
 export default GlassHammer;

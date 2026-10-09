@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "unplug"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUnplug = /*#__PURE__*/ createGlassIcon("unplug", [["path",{"d":"M19 5l3 -3"},0],["path",{"d":"M2 22l3 -3"},0],["path",{"d":"M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6 -6l-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"},1],["path",{"d":"M7.5 13.5L10 11"},0],["path",{"d":"M10.5 16.5L13 14"},0],["path",{"d":"M12 6l6 6l2.3 -2.3a2.4 2.4 0 0 0 0 -3.4l-2.6 -2.6a2.4 2.4 0 0 0 -3.4 0Z"},1]]);
+export const GlassUnplug = /*#__PURE__*/ createGlassIcon("unplug", [[["M6.3 20.3A2.4 2.4 0 0 0 9.7 20.3L12 18L6 12L3.7 14.3A2.4 2.4 0 0 0 3.7 17.7Z",1],["M12 6L18 12L20.3 9.7A2.4 2.4 0 0 0 20.3 6.3L17.7 3.7A2.4 2.4 0 0 0 14.3 3.7Z",1]],[["M19 5L22 2",0],["M2 22L5 19",0],["M7.5 13.5L10 11",0],["M10.5 16.5L13 14",0]],[19.397,4.603,4.75],0]);
 export default GlassUnplug;

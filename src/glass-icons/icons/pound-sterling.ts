@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pound-sterling"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPoundSterling = /*#__PURE__*/ createGlassIcon("pound-sterling", [["path",{"d":"M18 7c0 -5.333 -8 -5.333 -8 0"},0],["path",{"d":"M10 7v14"},0],["path",{"d":"M6 21h12"},0],["path",{"d":"M6 13h10"},0]]);
+export const GlassPoundSterling = /*#__PURE__*/ createGlassIcon("pound-sterling", [[["M18 7C18 1.667 10 1.667 10 7Z",1]],[["M10 7L10 21",0],["M6 21L18 21",0],["M6 13L16 13",0]],[17.45,3.55,3],0]);
 export default GlassPoundSterling;

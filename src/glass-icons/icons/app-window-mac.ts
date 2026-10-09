@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "app-window-mac"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAppWindowMac = /*#__PURE__*/ createGlassIcon("app-window-mac", [["rect",{"width":"20","height":"16","x":"2","y":"4","rx":"2"},1],["path",{"d":"M6 8h0.01"},0],["path",{"d":"M10 8h0.01"},0],["path",{"d":"M14 8h0.01"},0]]);
+export const GlassAppWindowMac = /*#__PURE__*/ createGlassIcon("app-window-mac", [[["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z",1]],[["M6 8L6.01 8",1],["M10 8L10.01 8",1],["M14 8L14.01 8",1]],[20.4,5.6,4.75],0]);
 export default GlassAppWindowMac;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hospital"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHospital = /*#__PURE__*/ createGlassIcon("hospital", [["path",{"d":"M12 7v4"},0],["path",{"d":"M14 21v-3a2 2 0 0 0 -4 0v3"},0],["path",{"d":"M14 9h-4"},0],["path",{"d":"M18 11h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2h2"},0],["path",{"d":"M18 21V5a2 2 0 0 0 -2 -2H8a2 2 0 0 0 -2 2v16"},0]]);
+export const GlassHospital = /*#__PURE__*/ createGlassIcon("hospital", [[["M18 11L20 11A2 2 0 0 1 22 13L22 19A2 2 0 0 1 20 21L4 21A2 2 0 0 1 2 19L2 10A2 2 0 0 1 4 8L6 8Z",1],["M18 21L18 5A2 2 0 0 0 16 3L8 3A2 2 0 0 0 6 5L6 21Z",1],["M12 7L12 11",0],["M14 9L10 9",0]],[["M14 21L14 18A2 2 0 0 0 10 18L10 21",1]],[20.4,4.6,4.75],0]);
 export default GlassHospital;

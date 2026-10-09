@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "loader-circle"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLoaderCircle = /*#__PURE__*/ createGlassIcon("loader-circle", [["path",{"d":"M21 12a9 9 0 1 1 -6.219 -8.56"},0]]);
+export const GlassLoaderCircle = /*#__PURE__*/ createGlassIcon("loader-circle", [[["M21 12A9 9 0 1 1 14.781 3.44Z",1]],[],[19.4,4.623,4.75],0]);
 export default GlassLoaderCircle;

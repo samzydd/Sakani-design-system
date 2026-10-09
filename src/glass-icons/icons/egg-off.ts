@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "egg-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEggOff = /*#__PURE__*/ createGlassIcon("egg-off", [["path",{"d":"M2 2l20 20"},0],["path",{"d":"M20 14.347V14c0 -6 -4 -12 -8 -12c-1.078 0 -2.157 0.436 -3.157 1.19"},0],["path",{"d":"M6.206 6.21C4.871 8.4 4 11.2 4 14a8 8 0 0 0 14.568 4.568"},0]]);
+export const GlassEggOff = /*#__PURE__*/ createGlassIcon("egg-off", [[["M6.206 6.21C4.871 8.4 4 11.2 4 14A8 8 0 0 0 18.568 18.568Z",1],["M2 2L22 22",0]],[["M20 14.347L20 14C20 8 16 2 12 2C10.922 2 9.843 2.436 8.843 3.19",0]],[20.4,3.6,4.75],0]);
 export default GlassEggOff;

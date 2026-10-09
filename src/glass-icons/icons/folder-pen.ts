@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-pen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderPen = /*#__PURE__*/ createGlassIcon("folder-pen", [["path",{"d":"M2 11.5V5a2 2 0 0 1 2 -2h3.9c0.7 0 1.3 0.3 1.7 0.9l0.8 1.2c0.4 0.6 1 0.9 1.7 0.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-9.5"},0],["path",{"d":"M11.378 13.626a1 1 0 1 0 -3.004 -3.004l-5.01 5.012a2 2 0 0 0 -0.506 0.854l-0.837 2.87a0.5 0.5 0 0 0 0.62 0.62l2.87 -0.837a2 2 0 0 0 0.854 -0.506z"},1]]);
+export const GlassFolderPen = /*#__PURE__*/ createGlassIcon("folder-pen", [[["M2 11.5L2 5A2 2 0 0 1 4 3L7.9 3C8.6 3 9.2 3.3 9.6 3.9L10.4 5.1C10.8 5.7 11.4 6 12.1 6L20 6A2 2 0 0 1 22 8L22 18A2 2 0 0 1 20 20L10.5 20Z",1]],[["M11.378 13.626A1 1 0 1 0 8.374 10.622L3.364 15.634A2 2 0 0 0 2.858 16.488L2.021 19.358A0.5 0.5 0 0 0 2.641 19.978L5.511 19.141A2 2 0 0 0 6.365 18.635Z",0]],[20.4,4.6,4.75],0]);
 export default GlassFolderPen;

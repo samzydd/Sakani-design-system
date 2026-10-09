@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "move-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMoveVertical = /*#__PURE__*/ createGlassIcon("move-vertical", [["path",{"d":"M12 2v20"},0],["path",{"d":"M8 18l4 4l4 -4"},0],["path",{"d":"M8 6l4 -4l4 4"},0]]);
+export const GlassMoveVertical = /*#__PURE__*/ createGlassIcon("move-vertical", [[["M12 2L12 22",0],["M8 18L12 22L16 18",0],["M8 6L12 2L16 6",0]],[],[14.4,3.6,4.75],1]);
 export default GlassMoveVertical;

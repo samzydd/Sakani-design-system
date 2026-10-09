@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "euro"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEuro = /*#__PURE__*/ createGlassIcon("euro", [["path",{"d":"M4 10h12"},0],["path",{"d":"M4 14h9"},0],["path",{"d":"M19 6a7.7 7.7 0 0 0 -5.2 -2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8c2 0 3.8 -0.8 5.2 -2"},0]]);
+export const GlassEuro = /*#__PURE__*/ createGlassIcon("euro", [[["M19 6A7.7 7.7 0 0 0 13.8 4A7.9 7.9 0 0 0 6 12C6 16.4 9.5 20 13.8 20C15.8 20 17.6 19.2 19 18Z",1]],[["M4 10L16 10",1],["M4 14L13 14",1]],[17.4,5.6,4.75],0]);
 export default GlassEuro;

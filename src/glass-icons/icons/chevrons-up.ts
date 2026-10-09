@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chevrons-up"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChevronsUp = /*#__PURE__*/ createGlassIcon("chevrons-up", [["path",{"d":"M17 11l-5 -5l-5 5"},0],["path",{"d":"M17 18l-5 -5l-5 5"},0]]);
+export const GlassChevronsUp = /*#__PURE__*/ createGlassIcon("chevrons-up", [[["M17 11L12 6L7 11",0],["M17 18L12 13L7 18",0]],[],[15.988,7.012,3.77],1]);
 export default GlassChevronsUp;

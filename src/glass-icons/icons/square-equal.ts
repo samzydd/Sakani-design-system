@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-equal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareEqual = /*#__PURE__*/ createGlassIcon("square-equal", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M7 10h10"},0],["path",{"d":"M7 14h10"},0]]);
+export const GlassSquareEqual = /*#__PURE__*/ createGlassIcon("square-equal", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M7 10L17 10",1],["M7 14L17 14",1]],[19.4,4.6,4.75],0]);
 export default GlassSquareEqual;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-question-mark"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileQuestionMark = /*#__PURE__*/ createGlassIcon("file-question-mark", [["path",{"d":"M6 22a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.704 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1 -2 2z"},1],["path",{"d":"M12 17h0.01"},0],["path",{"d":"M9.1 9a3 3 0 0 1 5.82 1c0 2 -3 3 -3 3"},0]]);
+export const GlassFileQuestionMark = /*#__PURE__*/ createGlassIcon("file-question-mark", [[["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22Z",1]],[["M12 17L12.01 17",1],["M9.1 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13",1]],[18.4,3.6,4.75],0]);
 export default GlassFileQuestionMark;

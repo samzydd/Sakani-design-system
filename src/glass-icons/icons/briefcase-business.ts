@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "briefcase-business"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBriefcaseBusiness = /*#__PURE__*/ createGlassIcon("briefcase-business", [["path",{"d":"M12 12h0.01"},0],["path",{"d":"M16 6V4a2 2 0 0 0 -2 -2h-4a2 2 0 0 0 -2 2v2"},0],["path",{"d":"M22 13a18.15 18.15 0 0 1 -20 0"},0],["rect",{"width":"20","height":"14","x":"2","y":"6","rx":"2"},1]]);
+export const GlassBriefcaseBusiness = /*#__PURE__*/ createGlassIcon("briefcase-business", [[["M4 6L20 6A2 2 0 0 1 22 8L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 8A2 2 0 0 1 4 6Z",1]],[["M12 12L12.01 12",1],["M16 6L16 4A2 2 0 0 0 14 2L10 2A2 2 0 0 0 8 4L8 6",0],["M22 13A18.15 18.15 0 0 1 2 13",1]],[20.4,7.6,4.75],0]);
 export default GlassBriefcaseBusiness;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shuffle"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShuffle = /*#__PURE__*/ createGlassIcon("shuffle", [["path",{"d":"M18 14l4 4l-4 4"},0],["path",{"d":"M18 2l4 4l-4 4"},0],["path",{"d":"M2 18h1.973a4 4 0 0 0 3.3 -1.7l5.454 -8.6a4 4 0 0 1 3.3 -1.7H22"},0],["path",{"d":"M2 6h1.972a4 4 0 0 1 3.6 2.2"},0],["path",{"d":"M22 18h-6.041a4 4 0 0 1 -3.3 -1.8l-0.359 -0.45"},0]]);
+export const GlassShuffle = /*#__PURE__*/ createGlassIcon("shuffle", [[["M18 14L22 18L18 22",0],["M18 2L22 6L18 10",0],["M2 18L3.973 18A4 4 0 0 0 7.273 16.3L12.727 7.7A4 4 0 0 1 16.027 6L22 6",0],["M2 6L3.972 6A4 4 0 0 1 7.572 8.2",0],["M22 18L15.959 18A4 4 0 0 1 12.659 16.2L12.3 15.75",0]],[],[20.4,3.6,4.75],1]);
 export default GlassShuffle;

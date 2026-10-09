@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "apple"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassApple = /*#__PURE__*/ createGlassIcon("apple", [["path",{"d":"M12 6.528V3a1 1 0 0 1 1 -1h0"},0],["path",{"d":"M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0 -10 -4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10a3 3 0 0 0 3.648 0.648a5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21"},1]]);
+export const GlassApple = /*#__PURE__*/ createGlassIcon("apple", [[["M18.237 21A15 15 0 0 0 22 11A6 6 0 0 0 12 6.528A6 6 0 0 0 2 11A15.1 15.1 0 0 0 5.763 21A3 3 0 0 0 9.411 21.648A5.5 5.5 0 0 1 14.589 21.648A3 3 0 0 0 18.237 21",1]],[["M12 6.528L12 3A1 1 0 0 1 13 2L13 2",0]],[20.4,6.604,4.75],0]);
 export default GlassApple;

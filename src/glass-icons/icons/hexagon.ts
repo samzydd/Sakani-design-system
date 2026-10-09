@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hexagon"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHexagon = /*#__PURE__*/ createGlassIcon("hexagon", [["path",{"d":"M21 16V8a2 2 0 0 0 -1 -1.73l-7 -4a2 2 0 0 0 -2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7 -4A2 2 0 0 0 21 16z"},1]]);
+export const GlassHexagon = /*#__PURE__*/ createGlassIcon("hexagon", [[["M21 16L21 8A2 2 0 0 0 20 6.27L13 2.27A2 2 0 0 0 11 2.27L4 6.27A2 2 0 0 0 3 8L3 16A2 2 0 0 0 4 17.73L11 21.73A2 2 0 0 0 13 21.73L20 17.73A2 2 0 0 0 21 16Z",1]],[],[19.4,3.602,4.75],0]);
 export default GlassHexagon;

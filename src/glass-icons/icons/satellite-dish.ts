@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "satellite-dish"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSatelliteDish = /*#__PURE__*/ createGlassIcon("satellite-dish", [["path",{"d":"M4 10a7.31 7.31 0 0 0 10 10Z"},1],["path",{"d":"M9 15l3 -3"},0],["path",{"d":"M17 13a6 6 0 0 0 -6 -6"},0],["path",{"d":"M21 13A10 10 0 0 0 11 3"},0]]);
+export const GlassSatelliteDish = /*#__PURE__*/ createGlassIcon("satellite-dish", [[["M4 10A7.31 7.31 0 0 0 14 20Z",1]],[["M9 15L12 12",0],["M17 13A6 6 0 0 0 11 7",0],["M21 13A10 10 0 0 0 11 3",0]],[13.145,10.855,3.509],0]);
 export default GlassSatelliteDish;

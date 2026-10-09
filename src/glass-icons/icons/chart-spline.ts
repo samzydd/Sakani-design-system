@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-spline"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartSpline = /*#__PURE__*/ createGlassIcon("chart-spline", [["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["path",{"d":"M7 16c0.5 -2 1.5 -7 4 -7c2 0 2 3 4 3c2.5 0 4.5 -5 5 -7"},0]]);
+export const GlassChartSpline = /*#__PURE__*/ createGlassIcon("chart-spline", [[["M3 3L3 19A2 2 0 0 0 5 21L21 21",0],["M7 16C7.5 14 8.5 9 11 9C13 9 13 12 15 12C17.5 12 19.5 7 20 5",0]],[],[19.4,4.6,4.75],1]);
 export default GlassChartSpline;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "milk-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMilkOff = /*#__PURE__*/ createGlassIcon("milk-off", [["path",{"d":"M8 2h8"},0],["path",{"d":"M9 2v1.343"},0],["path",{"d":"M15 2v2.789a4 4 0 0 0 0.672 2.219l0.656 0.984a4 4 0 0 1 0.672 2.22v1.131"},0],["path",{"d":"M7.8 7.8l-0.128 0.192A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2 -2v-3"},0],["path",{"d":"M7 15a6.47 6.47 0 0 1 5 0a6.472 6.472 0 0 0 3.435 0.435"},0],["line",{"x1":"2","x2":"22","y1":"2","y2":"22"},0]]);
+export const GlassMilkOff = /*#__PURE__*/ createGlassIcon("milk-off", [[["M7.8 7.8L7.672 7.992A4 4 0 0 0 7 10.212L7 20A2 2 0 0 0 9 22L15 22A2 2 0 0 0 17 20L17 17Z",1]],[["M8 2L16 2",0],["M9 2L9 3.343",0],["M15 2L15 4.789A4 4 0 0 0 15.672 7.008L16.328 7.992A4 4 0 0 1 17 10.212L17 11.343",0],["M7 15A6.47 6.47 0 0 1 12 15A6.472 6.472 0 0 0 15.435 15.435",1],["M2 2L22 22",0]],[15.645,9.155,4.342],0]);
 export default GlassMilkOff;

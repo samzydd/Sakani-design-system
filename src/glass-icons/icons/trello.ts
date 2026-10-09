@@ -2,5 +2,5 @@
 // Shape data: Sakani Figma icon set, icon "trello"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTrello = /*#__PURE__*/ createGlassIcon("trello", [["path",{"d":"M19 3H5C3.8954 3 3 3.8954 3 5V19C3 20.1046 3.8954 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.8954 20.1046 3 19 3Z"},1],["path",{"d":"M10 7H7V16H10V7Z"},1],["path",{"d":"M17 7H14V12H17V7Z"},1]]);
+export const GlassTrello = /*#__PURE__*/ createGlassIcon("trello", [[["M19 3L5 3C3.895 3 3 3.895 3 5L3 19C3 20.105 3.895 21 5 21L19 21C20.105 21 21 20.105 21 19L21 5C21 3.895 20.105 3 19 3Z",1]],[["M10 7L7 7L7 16L10 16L10 7Z",1],["M17 7L14 7L14 12L17 12L17 7Z",1]],[19.4,4.6,4.75],0]);
 export default GlassTrello;

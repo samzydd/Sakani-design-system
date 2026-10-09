@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-pull-request-create"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGitPullRequestCreate = /*#__PURE__*/ createGlassIcon("git-pull-request-create", [["circle",{"cx":"6","cy":"6","r":"3"},1],["path",{"d":"M6 9v12"},0],["path",{"d":"M13 6h3a2 2 0 0 1 2 2v3"},0],["path",{"d":"M18 15v6"},0],["path",{"d":"M21 18h-6"},0]]);
+export const GlassGitPullRequestCreate = /*#__PURE__*/ createGlassIcon("git-pull-request-create", [[["M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z",1]],[["M6 9L6 21",0],["M13 6L16 6A2 2 0 0 1 18 8L18 11",0],["M18 15L18 21",0],["M21 18L15 18",0]],[8.45,3.55,3],0]);
 export default GlassGitPullRequestCreate;

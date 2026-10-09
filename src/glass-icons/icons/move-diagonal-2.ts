@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "move-diagonal-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMoveDiagonal2 = /*#__PURE__*/ createGlassIcon("move-diagonal-2", [["path",{"d":"M19 13v6h-6"},0],["path",{"d":"M5 11V5h6"},0],["path",{"d":"M5 5l14 14"},0]]);
+export const GlassMoveDiagonal2 = /*#__PURE__*/ createGlassIcon("move-diagonal-2", [[["M19 13L19 19L13 19",0],["M5 11L5 5L11 5",0],["M5 5L19 19",0]],[],[17.676,6.324,4.29],1]);
 export default GlassMoveDiagonal2;

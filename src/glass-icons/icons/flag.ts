@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flag"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFlag = /*#__PURE__*/ createGlassIcon("flag", [["path",{"d":"M4 22V4a1 1 0 0 1 0.4 -0.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067 -0.8A1 1 0 0 1 20 4v10a1 1 0 0 1 -0.4 0.8A6 6 0 0 1 16 16c-3 0 -5 -2 -8 -2a6 6 0 0 0 -4 1.528"},0]]);
+export const GlassFlag = /*#__PURE__*/ createGlassIcon("flag", [[["M4 22L4 4A1 1 0 0 1 4.4 3.2A6 6 0 0 1 8 2C11 2 13 4 15.333 4Q17.333 4 18.4 3.2A1 1 0 0 1 20 4L20 14A1 1 0 0 1 19.6 14.8A6 6 0 0 1 16 16C13 16 11 14 8 14A6 6 0 0 0 4 15.528",0]],[],[18.4,3.6,4.75],1]);
 export default GlassFlag;

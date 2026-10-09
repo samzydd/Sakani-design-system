@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "notepad-text-dashed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassNotepadTextDashed = /*#__PURE__*/ createGlassIcon("notepad-text-dashed", [["path",{"d":"M8 2v4"},0],["path",{"d":"M12 2v4"},0],["path",{"d":"M16 2v4"},0],["path",{"d":"M16 4h2a2 2 0 0 1 2 2v2"},0],["path",{"d":"M20 12v2"},0],["path",{"d":"M20 18v2a2 2 0 0 1 -2 2h-1"},0],["path",{"d":"M13 22h-2"},0],["path",{"d":"M7 22H6a2 2 0 0 1 -2 -2v-2"},0],["path",{"d":"M4 14v-2"},0],["path",{"d":"M4 8V6a2 2 0 0 1 2 -2h2"},0],["path",{"d":"M8 10h6"},0],["path",{"d":"M8 14h8"},0],["path",{"d":"M8 18h5"},0]]);
+export const GlassNotepadTextDashed = /*#__PURE__*/ createGlassIcon("notepad-text-dashed", [[["M8 2L8 6",0],["M12 2L12 6",0],["M16 2L16 6",0],["M16 4L18 4A2 2 0 0 1 20 6L20 8",0],["M20 12L20 14",0],["M20 18L20 20A2 2 0 0 1 18 22L17 22",0],["M13 22L11 22",0],["M7 22L6 22A2 2 0 0 1 4 20L4 18",0],["M4 14L4 12",0],["M4 8L4 6A2 2 0 0 1 6 4L8 4",0],["M8 10L14 10",0],["M8 14L16 14",0],["M8 18L13 18",0]],[],[18.4,3.6,4.75],1]);
 export default GlassNotepadTextDashed;

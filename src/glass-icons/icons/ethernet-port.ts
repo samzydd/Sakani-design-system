@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ethernet-port"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEthernetPort = /*#__PURE__*/ createGlassIcon("ethernet-port", [["path",{"d":"M10 8v1"},0],["path",{"d":"M14 8v1"},0],["path",{"d":"M18 8v1"},0],["path",{"d":"M19 17a2 2 0 0 0 -1.765 1.059l-0.47 0.882A2 2 0 0 1 15 20H9a2 2 0 0 1 -1.765 -1.059l-0.47 -0.882A2 2 0 0 0 5 17H4a2 2 0 0 1 -2 -2V6a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2z"},1],["path",{"d":"M6 8v1"},0]]);
+export const GlassEthernetPort = /*#__PURE__*/ createGlassIcon("ethernet-port", [[["M19 17A2 2 0 0 0 17.235 18.059L16.765 18.941A2 2 0 0 1 15 20L9 20A2 2 0 0 1 7.235 18.941L6.765 18.059A2 2 0 0 0 5 17L4 17A2 2 0 0 1 2 15L2 6A2 2 0 0 1 4 4L20 4A2 2 0 0 1 22 6L22 15A2 2 0 0 1 20 17Z",1]],[["M10 8L10 9",1],["M14 8L14 9",1],["M18 8L18 9",1],["M6 8L6 9",1]],[20.4,5.6,4.75],0]);
 export default GlassEthernetPort;

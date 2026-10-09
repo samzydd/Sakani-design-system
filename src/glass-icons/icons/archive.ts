@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "archive"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArchive = /*#__PURE__*/ createGlassIcon("archive", [["rect",{"width":"20","height":"5","x":"2","y":"3","rx":"1"},1],["path",{"d":"M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2V8"},0],["path",{"d":"M10 12h4"},0]]);
+export const GlassArchive = /*#__PURE__*/ createGlassIcon("archive", [[["M4 8L4 19A2 2 0 0 0 6 21L18 21A2 2 0 0 0 20 19L20 8Z",1],["M3 3L21 3A1 1 0 0 1 22 4L22 7A1 1 0 0 1 21 8L3 8A1 1 0 0 1 2 7L2 4A1 1 0 0 1 3 3Z",1]],[["M10 12L14 12",1]],[20.4,4.6,4.75],0]);
 export default GlassArchive;

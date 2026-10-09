@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "between-vertical-end"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBetweenVerticalEnd = /*#__PURE__*/ createGlassIcon("between-vertical-end", [["rect",{"width":"7","height":"13","x":"3","y":"3","rx":"1"},1],["path",{"d":"M9 22l3 -3l3 3"},0],["rect",{"width":"7","height":"13","x":"14","y":"3","rx":"1"},1]]);
+export const GlassBetweenVerticalEnd = /*#__PURE__*/ createGlassIcon("between-vertical-end", [[["M4 3L9 3A1 1 0 0 1 10 4L10 15A1 1 0 0 1 9 16L4 16A1 1 0 0 1 3 15L3 4A1 1 0 0 1 4 3Z",1],["M15 3L20 3A1 1 0 0 1 21 4L21 15A1 1 0 0 1 20 16L15 16A1 1 0 0 1 14 15L14 4A1 1 0 0 1 15 3Z",1]],[["M9 22L12 19L15 22",0]],[19.4,4.6,4.75],0]);
 export default GlassBetweenVerticalEnd;

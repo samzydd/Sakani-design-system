@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "target"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTarget = /*#__PURE__*/ createGlassIcon("target", [["circle",{"cx":"12","cy":"12","r":"10"},1],["circle",{"cx":"12","cy":"12","r":"6"},1],["circle",{"cx":"12","cy":"12","r":"2"},1]]);
+export const GlassTarget = /*#__PURE__*/ createGlassIcon("target", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M6 12A6 6 0 1 0 18 12A6 6 0 1 0 6 12Z",1],["M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z",1]],[20.4,3.6,4.75],0]);
 export default GlassTarget;

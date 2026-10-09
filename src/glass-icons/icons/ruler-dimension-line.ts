@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ruler-dimension-line"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRulerDimensionLine = /*#__PURE__*/ createGlassIcon("ruler-dimension-line", [["path",{"d":"M10 15v-3"},0],["path",{"d":"M14 15v-3"},0],["path",{"d":"M18 15v-3"},0],["path",{"d":"M2 8V4"},0],["path",{"d":"M22 6H2"},0],["path",{"d":"M22 8V4"},0],["path",{"d":"M6 15v-3"},0],["rect",{"x":"2","y":"12","width":"20","height":"8","rx":"2"},1]]);
+export const GlassRulerDimensionLine = /*#__PURE__*/ createGlassIcon("ruler-dimension-line", [[["M4 12L20 12A2 2 0 0 1 22 14L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 14A2 2 0 0 1 4 12Z",1]],[["M10 15L10 12",1],["M14 15L14 12",1],["M18 15L18 12",1],["M2 8L2 4",0],["M22 6L2 6",0],["M22 8L22 4",0],["M6 15L6 12",1]],[20.4,13.6,4.75],0]);
 export default GlassRulerDimensionLine;

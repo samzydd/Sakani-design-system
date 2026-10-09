@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "projector"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassProjector = /*#__PURE__*/ createGlassIcon("projector", [["path",{"d":"M5 7L3 5"},0],["path",{"d":"M9 6V3"},0],["path",{"d":"M13 7l2 -2"},0],["circle",{"cx":"9","cy":"13","r":"3"},1],["path",{"d":"M11.83 12H20a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2h2.17"},0],["path",{"d":"M16 16h2"},0]]);
+export const GlassProjector = /*#__PURE__*/ createGlassIcon("projector", [[["M11.83 12L20 12A2 2 0 0 1 22 14L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 14A2 2 0 0 1 4 12L6.17 12Z",1]],[["M5 7L3 5",0],["M9 6L9 3",0],["M13 7L15 5",0],["M6 13A3 3 0 1 0 12 13A3 3 0 1 0 6 13Z",1],["M16 16L18 16",1]],[20.4,13.6,4.75],0]);
 export default GlassProjector;

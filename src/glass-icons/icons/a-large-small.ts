@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "a-large-small"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassALargeSmall = /*#__PURE__*/ createGlassIcon("a-large-small", [["path",{"d":"M15 16l2.536 -7.328a1.02 1.02 1 0 1 1.928 0L22 16"},0],["path",{"d":"M15.697 14h5.606"},0],["path",{"d":"M2 16l4.039 -9.69a0.5 0.5 0 0 1 0.923 0L11 16"},0],["path",{"d":"M3.304 13h6.392"},0]]);
+export const GlassALargeSmall = /*#__PURE__*/ createGlassIcon("a-large-small", [[["M2 16L6.039 6.31A0.5 0.5 0 0 1 6.962 6.31L11 16Z",1],["M15 16L17.536 8.672A1.02 1.02 1 0 1 19.464 8.672L22 16Z",1]],[["M15.697 14L21.303 14",1],["M3.304 13L9.696 13",1]],[20.4,7.602,4.75],0]);
 export default GlassALargeSmall;

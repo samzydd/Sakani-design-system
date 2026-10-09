@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "spline-pointer"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSplinePointer = /*#__PURE__*/ createGlassIcon("spline-pointer", [["path",{"d":"M12.034 12.681a0.498 0.498 0 0 1 0.647 -0.647l9 3.5a0.5 0.5 0 0 1 -0.033 0.943l-3.444 1.068a1 1 0 0 0 -0.66 0.66l-1.067 3.443a0.5 0.5 0 0 1 -0.943 0.033z"},1],["path",{"d":"M5 17A12 12 0 0 1 17 5"},0],["circle",{"cx":"19","cy":"5","r":"2"},1],["circle",{"cx":"5","cy":"19","r":"2"},1]]);
+export const GlassSplinePointer = /*#__PURE__*/ createGlassIcon("spline-pointer", [[["M12.034 12.681A0.498 0.498 0 0 1 12.681 12.034L21.681 15.534A0.5 0.5 0 0 1 21.648 16.477L18.204 17.545A1 1 0 0 0 17.544 18.205L16.477 21.648A0.5 0.5 0 0 1 15.534 21.681Z",1],["M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5Z",1],["M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z",1]],[["M5 17A12 12 0 0 1 17 5",0]],[20.398,4.6,4.75],0]);
 export default GlassSplinePointer;

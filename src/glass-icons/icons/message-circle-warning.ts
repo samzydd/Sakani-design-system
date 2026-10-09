@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-circle-warning"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessageCircleWarning = /*#__PURE__*/ createGlassIcon("message-circle-warning", [["path",{"d":"M2.992 16.342a2 2 0 0 1 0.094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413 -0.998a2 2 0 0 1 1.099 0.092a10 10 0 1 0 -4.777 -4.719"},1],["path",{"d":"M12 8v4"},0],["path",{"d":"M12 16h0.01"},0]]);
+export const GlassMessageCircleWarning = /*#__PURE__*/ createGlassIcon("message-circle-warning", [[["M2.992 16.342A2 2 0 0 1 3.086 17.509L2.021 20.799A1 1 0 0 0 3.257 21.967L6.67 20.969A2 2 0 0 1 7.769 21.061A10 10 0 1 0 2.992 16.342",1]],[["M12 8L12 12",1],["M12 16L12.01 16",1]],[20.371,3.64,4.75],0]);
 export default GlassMessageCircleWarning;

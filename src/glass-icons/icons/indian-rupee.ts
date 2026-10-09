@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "indian-rupee"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassIndianRupee = /*#__PURE__*/ createGlassIcon("indian-rupee", [["path",{"d":"M6 3h12"},0],["path",{"d":"M6 8h12"},0],["path",{"d":"M6 13l8.5 8"},0],["path",{"d":"M6 13h3"},0],["path",{"d":"M9 13c6.667 0 6.667 -10 0 -10"},0]]);
+export const GlassIndianRupee = /*#__PURE__*/ createGlassIcon("indian-rupee", [[["M9 13C15.667 13 15.667 3 9 3Z",1]],[["M6 3L18 3",0],["M6 8L18 8",1],["M6 13L14.5 21",0],["M6 13L9 13",0]],[13.3,3.7,3.25],0]);
 export default GlassIndianRupee;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calendar-check-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCalendarCheck2 = /*#__PURE__*/ createGlassIcon("calendar-check-2", [["path",{"d":"M19 3L5 3"},0],["path",{"d":"M21 13L21 5"},0],["path",{"d":"M21 5A2 2 0 0 0 19 3"},0],["path",{"d":"M3 19A2 2 0 0 0 5 21"},0],["path",{"d":"M3 5L3 19"},0],["path",{"d":"M5 3A2 2 0 0 0 3 5"},0],["path",{"d":"M16 19l2 2l4 -4"},0],["path",{"d":"M16 2v3"},0],["path",{"d":"M3 9h18"},0],["path",{"d":"M5 21L12.5 21"},0],["path",{"d":"M8 2v3"},0]]);
+export const GlassCalendarCheck2 = /*#__PURE__*/ createGlassIcon("calendar-check-2", [[["M19 3L5 3",0],["M21 13L21 5",0],["M21 5A2 2 0 0 0 19 3",0],["M3 19A2 2 0 0 0 5 21",0],["M3 5L3 19",0],["M5 3A2 2 0 0 0 3 5",0],["M16 19L18 21L22 17",0],["M16 2L16 5",0],["M3 9L21 9",0],["M5 21L12.5 21",0],["M8 2L8 5",0]],[],[20.4,3.6,4.75],1]);
 export default GlassCalendarCheck2;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "drum"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDrum = /*#__PURE__*/ createGlassIcon("drum", [["path",{"d":"M2 2l8 8"},0],["path",{"d":"M22 2l-8 8"},0],["ellipse",{"cx":"12","cy":"9","rx":"10","ry":"5"},1],["path",{"d":"M7 13.4v7.9"},0],["path",{"d":"M12 14v8"},0],["path",{"d":"M17 13.4v7.9"},0],["path",{"d":"M2 9v8a10 5 0 0 0 20 0V9"},0]]);
+export const GlassDrum = /*#__PURE__*/ createGlassIcon("drum", [[["M2 9L2 17A10 5 0 0 0 22 17L22 9Z",1],["M2 9A10 5 0 1 0 22 9A10 5 0 1 0 2 9Z",1]],[["M2 2L10 10",1],["M22 2L14 10",1],["M7 13.4L7 21.3",1],["M12 14L12 22",1],["M17 13.4L17 21.3",1]],[20.4,5.6,4.75],0]);
 export default GlassDrum;

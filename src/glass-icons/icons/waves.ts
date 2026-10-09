@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "waves-horizontal" (alias of "waves")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWaves = /*#__PURE__*/ createGlassIcon("waves", [["path",{"d":"M2 12q2.5 2 5 0t5 0t5 0t5 0"},0],["path",{"d":"M2 19q2.5 2 5 0t5 0t5 0t5 0"},0],["path",{"d":"M2 5q2.5 2 5 0t5 0t5 0t5 0"},0]]);
+export const GlassWaves = /*#__PURE__*/ createGlassIcon("waves", [[["M2 12Q4.5 14 7 12Q9.5 10 12 12Q14.5 14 17 12Q19.5 10 22 12",0],["M2 19Q4.5 21 7 19Q9.5 17 12 19Q14.5 21 17 19Q19.5 17 22 19",0],["M2 5Q4.5 7 7 5Q9.5 3 12 5Q14.5 7 17 5Q19.5 3 22 5",0]],[],[20.4,5.6,4.75],1]);
 export default GlassWaves;

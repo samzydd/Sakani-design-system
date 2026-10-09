@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "dice-6"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDice6 = /*#__PURE__*/ createGlassIcon("dice-6", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2","ry":"2"},1],["path",{"d":"M16 8h0.01"},0],["path",{"d":"M16 12h0.01"},0],["path",{"d":"M16 16h0.01"},0],["path",{"d":"M8 8h0.01"},0],["path",{"d":"M8 12h0.01"},0],["path",{"d":"M8 16h0.01"},0]]);
+export const GlassDice6 = /*#__PURE__*/ createGlassIcon("dice-6", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M16 8L16.01 8",1],["M16 12L16.01 12",1],["M16 16L16.01 16",1],["M8 8L8.01 8",1],["M8 12L8.01 12",1],["M8 16L8.01 16",1]],[19.4,4.6,4.75],0]);
 export default GlassDice6;

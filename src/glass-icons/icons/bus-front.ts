@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bus-front"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBusFront = /*#__PURE__*/ createGlassIcon("bus-front", [["path",{"d":"M4 6L2 7"},0],["path",{"d":"M10 6h4"},0],["path",{"d":"M22 7l-2 -1"},0],["rect",{"width":"16","height":"16","x":"4","y":"3","rx":"2"},1],["path",{"d":"M4 11h16"},0],["path",{"d":"M8 15h0.01"},0],["path",{"d":"M16 15h0.01"},0],["path",{"d":"M6 19v2"},0],["path",{"d":"M18 21v-2"},0]]);
+export const GlassBusFront = /*#__PURE__*/ createGlassIcon("bus-front", [[["M6 3L18 3A2 2 0 0 1 20 5L20 17A2 2 0 0 1 18 19L6 19A2 2 0 0 1 4 17L4 5A2 2 0 0 1 6 3Z",1],["M4 6L2 7",0],["M22 7L20 6",0]],[["M10 6L14 6",1],["M4 11L20 11",1],["M8 15L8.01 15",1],["M16 15L16.01 15",1],["M6 19L6 21",1],["M18 21L18 19",1]],[20.4,4.6,4.75],0]);
 export default GlassBusFront;

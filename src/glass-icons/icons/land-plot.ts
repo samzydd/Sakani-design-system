@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "land-plot"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLandPlot = /*#__PURE__*/ createGlassIcon("land-plot", [["path",{"d":"M12 8l6 -3l-6 -3v10"},0],["path",{"d":"M8 11.99l-5.5 3.14a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5 -4.86a1 1 0 0 0 0 -1.74L16 12"},0],["path",{"d":"M6.49 12.85l11.02 6.3"},0],["path",{"d":"M17.51 12.85L6.5 19.15"},0]]);
+export const GlassLandPlot = /*#__PURE__*/ createGlassIcon("land-plot", [[["M8 11.99L2.5 15.13A1 1 0 0 0 2.5 16.87L11 21.73A2 2 0 0 0 13 21.73L21.5 16.87A1 1 0 0 0 21.5 15.13L16 12Z",1]],[["M12 8L18 5L12 2L12 12",0],["M6.49 12.85L17.51 19.15",1],["M17.51 12.85L6.5 19.15",1]],[20.402,13.59,4.75],0]);
 export default GlassLandPlot;

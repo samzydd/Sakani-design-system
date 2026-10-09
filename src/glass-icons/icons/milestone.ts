@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "milestone"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMilestone = /*#__PURE__*/ createGlassIcon("milestone", [["path",{"d":"M12 13v8"},0],["path",{"d":"M12 3v3"},0],["path",{"d":"M18.172 6a2 2 0 0 1 1.414 0.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1 -1.414 0.586H4a1 1 0 0 1 -1 -1V7a1 1 0 0 1 1 -1z"},1]]);
+export const GlassMilestone = /*#__PURE__*/ createGlassIcon("milestone", [[["M18.172 6A2 2 0 0 1 19.586 6.586L21.646 8.646A1.207 1.207 0 0 1 21.646 10.354L19.586 12.414A2 2 0 0 1 18.172 13L4 13A1 1 0 0 1 3 12L3 7A1 1 0 0 1 4 6Z",1]],[["M12 13L12 21",0],["M12 3L12 6",0]],[20.395,7.6,4.75],0]);
 export default GlassMilestone;

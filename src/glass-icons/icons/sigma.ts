@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sigma"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSigma = /*#__PURE__*/ createGlassIcon("sigma", [["path",{"d":"M18 7V5a1 1 0 0 0 -1 -1H6.5a0.5 0.5 0 0 0 -0.4 0.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a0.5 0.5 0 0 0 0.4 0.8H17a1 1 0 0 0 1 -1v-2"},0]]);
+export const GlassSigma = /*#__PURE__*/ createGlassIcon("sigma", [[["M18 7L18 5A1 1 0 0 0 17 4L6.5 4A0.5 0.5 0 0 0 6.1 4.8L10.6 10.8A2 2 0 0 1 10.6 13.2L6.1 19.2A0.5 0.5 0 0 0 6.5 20L17 20A1 1 0 0 0 18 19L18 17Z",1]],[],[16.4,5.6,4.75],0]);
 export default GlassSigma;

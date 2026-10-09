@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-code"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareCode = /*#__PURE__*/ createGlassIcon("square-code", [["path",{"d":"M10 9l-3 3l3 3"},0],["path",{"d":"M14 15l3 -3l-3 -3"},0],["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"2"},1]]);
+export const GlassSquareCode = /*#__PURE__*/ createGlassIcon("square-code", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M10 9L7 12L10 15",1],["M14 15L17 12L14 9",1]],[19.4,4.6,4.75],0]);
 export default GlassSquareCode;

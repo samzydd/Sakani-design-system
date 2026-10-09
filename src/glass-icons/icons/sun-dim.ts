@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sun-dim"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSunDim = /*#__PURE__*/ createGlassIcon("sun-dim", [["circle",{"cx":"12","cy":"12","r":"4"},1],["path",{"d":"M12 4h0.01"},0],["path",{"d":"M20 12h0.01"},0],["path",{"d":"M12 20h0.01"},0],["path",{"d":"M4 12h0.01"},0],["path",{"d":"M17.657 6.343h0.01"},0],["path",{"d":"M17.657 17.657h0.01"},0],["path",{"d":"M6.343 17.657h0.01"},0],["path",{"d":"M6.343 6.343h0.01"},0]]);
+export const GlassSunDim = /*#__PURE__*/ createGlassIcon("sun-dim", [[["M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z",1]],[["M12 4L12.01 4",0],["M20 12L20.01 12",0],["M12 20L12.01 20",0],["M4 12L4.01 12",0],["M17.657 6.343L17.667 6.343",0],["M17.657 17.657L17.667 17.657",0],["M6.343 17.657L6.353 17.657",0],["M6.343 6.343L6.353 6.343",0]],[15.45,8.55,3],0]);
 export default GlassSunDim;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "face-angry" (alias of "angry")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAngry = /*#__PURE__*/ createGlassIcon("angry", [["path",{"d":"M15 12v-1.584"},0],["path",{"d":"M17 10a5 5 0 0 0 -3 1"},0],["path",{"d":"M7 10a5 5 0 0 1 3 1"},0],["path",{"d":"M9 12v-1.584"},0],["path",{"d":"M9 17a5 5 0 0 1 6.001 0"},0],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassAngry = /*#__PURE__*/ createGlassIcon("angry", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M15 12L15 10.416",1],["M17 10A5 5 0 0 0 14 11",1],["M7 10A5 5 0 0 1 10 11",1],["M9 12L9 10.416",1],["M9 17A5 5 0 0 1 15.001 17",1]],[20.4,3.6,4.75],0]);
 export default GlassAngry;

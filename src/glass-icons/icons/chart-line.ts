@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-line"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartLine = /*#__PURE__*/ createGlassIcon("chart-line", [["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["path",{"d":"M19 9l-5 5l-4 -4l-3 3"},0]]);
+export const GlassChartLine = /*#__PURE__*/ createGlassIcon("chart-line", [[["M3 3L3 19A2 2 0 0 0 5 21L21 21",0],["M19 9L14 14L10 10L7 13",0]],[],[19.4,4.6,4.75],1]);
 export default GlassChartLine;

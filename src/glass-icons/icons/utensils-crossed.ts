@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "utensils-crossed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUtensilsCrossed = /*#__PURE__*/ createGlassIcon("utensils-crossed", [["path",{"d":"M16 2l-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"},0],["path",{"d":"M15 15L3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c0.7 0.7 2 0.7 2.8 0L15 15Z"},1],["path",{"d":"M15 15l7 7"},0],["path",{"d":"M2.1 21.8l6.4 -6.3"},0],["path",{"d":"M19 5l-7 7"},0]]);
+export const GlassUtensilsCrossed = /*#__PURE__*/ createGlassIcon("utensils-crossed", [[["M15 15L3.3 3.3A4.2 4.2 0 0 0 3.3 9.3L10.6 16.6C11.3 17.3 12.6 17.3 13.4 16.6L15 15Z",1],["M16 2L13.7 4.3A3 3 0 0 0 13.7 8.5L15.5 10.3A3 3 0 0 0 19.7 10.3L22 8Z",1]],[["M15 15L22 22",0],["M2.1 21.8L8.5 15.5",0],["M19 5L12 12",1]],[20.4,3.6,4.75],0]);
 export default GlassUtensilsCrossed;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "philippine-peso"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPhilippinePeso = /*#__PURE__*/ createGlassIcon("philippine-peso", [["path",{"d":"M20 11H4"},0],["path",{"d":"M20 7H4"},0],["path",{"d":"M7 21V4a1 1 0 0 1 1 -1h4a1 1 0 0 1 0 12H7"},0]]);
+export const GlassPhilippinePeso = /*#__PURE__*/ createGlassIcon("philippine-peso", [[["M7 21L7 4A1 1 0 0 1 8 3L12 3A1 1 0 0 1 12 15L7 15Z",1]],[["M20 11L4 11",1],["M20 7L4 7",1]],[16.4,4.6,4.75],0]);
 export default GlassPhilippinePeso;

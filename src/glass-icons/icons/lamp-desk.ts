@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lamp-desk"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLampDesk = /*#__PURE__*/ createGlassIcon("lamp-desk", [["path",{"d":"M10.293 2.293a1 1 0 0 1 1.414 0l2.5 2.5l5.994 1.227a1 1 0 0 1 0.506 1.687l-7 7a1 1 0 0 1 -1.687 -0.506l-1.227 -5.994l-2.5 -2.5a1 1 0 0 1 0 -1.414z"},1],["path",{"d":"M14.207 4.793l-3.414 3.414"},0],["path",{"d":"M3 20a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1a1 1 0 0 1 -1 1H4a1 1 0 0 1 -1 -1z"},1],["path",{"d":"M9.086 6.5l-4.793 4.793a1 1 0 0 0 -0.18 1.17L7 18"},0]]);
+export const GlassLampDesk = /*#__PURE__*/ createGlassIcon("lamp-desk", [[["M10.293 2.293A1 1 0 0 1 11.707 2.293L14.207 4.793L20.201 6.02A1 1 0 0 1 20.707 7.707L13.707 14.707A1 1 0 0 1 12.02 14.201L10.793 8.207L8.293 5.707A1 1 0 0 1 8.293 4.293Z",1],["M3 20A2 2 0 0 1 5 18L9 18A2 2 0 0 1 11 20L11 21A1 1 0 0 1 10 22L4 22A1 1 0 0 1 3 21Z",1],["M14.207 4.793L10.793 8.207",0]],[["M9.086 6.5L4.293 11.293A1 1 0 0 0 4.113 12.463L7 18",0]],[19.4,3.6,4.75],0]);
 export default GlassLampDesk;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "keyboard-music"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassKeyboardMusic = /*#__PURE__*/ createGlassIcon("keyboard-music", [["rect",{"width":"20","height":"16","x":"2","y":"4","rx":"2"},1],["path",{"d":"M6 8h4"},0],["path",{"d":"M14 8h0.01"},0],["path",{"d":"M18 8h0.01"},0],["path",{"d":"M2 12h20"},0],["path",{"d":"M6 12v4"},0],["path",{"d":"M10 12v4"},0],["path",{"d":"M14 12v4"},0],["path",{"d":"M18 12v4"},0]]);
+export const GlassKeyboardMusic = /*#__PURE__*/ createGlassIcon("keyboard-music", [[["M4 4L20 4A2 2 0 0 1 22 6L22 18A2 2 0 0 1 20 20L4 20A2 2 0 0 1 2 18L2 6A2 2 0 0 1 4 4Z",1]],[["M6 8L10 8",1],["M14 8L14.01 8",1],["M18 8L18.01 8",1],["M2 12L22 12",1],["M6 12L6 16",1],["M10 12L10 16",1],["M14 12L14 16",1],["M18 12L18 16",1]],[20.4,5.6,4.75],0]);
 export default GlassKeyboardMusic;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "menu"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMenu = /*#__PURE__*/ createGlassIcon("menu", [["path",{"d":"M4 5h16"},0],["path",{"d":"M4 12h16"},0],["path",{"d":"M4 19h16"},0]]);
+export const GlassMenu = /*#__PURE__*/ createGlassIcon("menu", [[["M4 5L20 5",0],["M4 12L20 12",0],["M4 19L20 19",0]],[],[18.4,6.6,4.75],1]);
 export default GlassMenu;

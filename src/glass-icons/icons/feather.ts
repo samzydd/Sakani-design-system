@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "feather"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFeather = /*#__PURE__*/ createGlassIcon("feather", [["path",{"d":"M14.086 18.412A2 2 0 0 1 12.67 19H5v-7.672a2 2 0 0 1 0.586 -1.414L11.75 3.75a6 6 0 1 1 8.49 8.49z"},1],["path",{"d":"M16 8L2 22"},0],["path",{"d":"M17.488 15H9"},0]]);
+export const GlassFeather = /*#__PURE__*/ createGlassIcon("feather", [[["M14.086 18.412A2 2 0 0 1 12.67 19L5 19L5 11.328A2 2 0 0 1 5.586 9.914L11.75 3.75A6 6 0 1 1 20.24 12.24Z",1]],[["M16 8L2 22",1],["M17.488 15L9 15",1]],[20.392,3.598,4.75],0]);
 export default GlassFeather;

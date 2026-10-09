@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shrub"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShrub = /*#__PURE__*/ createGlassIcon("shrub", [["path",{"d":"M12 22v-5.172a2 2 0 0 0 -0.586 -1.414L9.5 13.5"},0],["path",{"d":"M14.5 14.5L12 17"},0],["path",{"d":"M17 8.8A6 6 0 0 1 13.8 20H10A6.5 6.5 0 0 1 7 8a5 5 0 0 1 10 0z"},1]]);
+export const GlassShrub = /*#__PURE__*/ createGlassIcon("shrub", [[["M17 8.8A6 6 0 0 1 13.8 20L10 20A6.5 6.5 0 0 1 7 8A5 5 0 0 1 17 8Z",1]],[["M12 22L12 16.828A2 2 0 0 0 11.414 15.414L9.5 13.5",1],["M14.5 14.5L12 17",1]],[18.39,4.6,4.75],0]);
 export default GlassShrub;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "paperclip"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPaperclip = /*#__PURE__*/ createGlassIcon("paperclip", [["path",{"d":"M16 6l-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414 -8.586a4 4 0 1 0 -5.657 -5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379 -8.551"},0]]);
+export const GlassPaperclip = /*#__PURE__*/ createGlassIcon("paperclip", [[["M16 6L7.586 14.586A2 2 0 0 0 10.415 17.415L18.829 8.829A4 4 0 1 0 13.172 3.172L4.793 11.723A6 6 0 1 0 13.278 20.208L21.657 11.657",0]],[],[20.057,3.6,4.75],1]);
 export default GlassPaperclip;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "messages-square"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessagesSquare = /*#__PURE__*/ createGlassIcon("messages-square", [["path",{"d":"M16 10a2 2 0 0 1 -2 2H6.828a2 2 0 0 0 -1.414 0.586l-2.202 2.202A0.71 0.71 0 0 1 2 14.286V4a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z"},1],["path",{"d":"M20 9a2 2 0 0 1 2 2v10.286a0.71 0.71 0 0 1 -1.212 0.502l-2.202 -2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1 -2 -2v-1"},0]]);
+export const GlassMessagesSquare = /*#__PURE__*/ createGlassIcon("messages-square", [[["M16 10A2 2 0 0 1 14 12L6.828 12A2 2 0 0 0 5.414 12.586L3.212 14.788A0.71 0.71 0 0 1 2 14.286L2 4A2 2 0 0 1 4 2L14 2A2 2 0 0 1 16 4Z",1],["M20 9A2 2 0 0 1 22 11L22 21.286A0.71 0.71 0 0 1 20.788 21.788L18.586 19.586A2 2 0 0 0 17.172 19L10 19A2 2 0 0 1 8 17L8 16Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassMessagesSquare;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-spreadsheet"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileSpreadsheet = /*#__PURE__*/ createGlassIcon("file-spreadsheet", [["path",{"d":"M6 22a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.704 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1 -2 2z"},1],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M8 13h2"},0],["path",{"d":"M14 13h2"},0],["path",{"d":"M8 17h2"},0],["path",{"d":"M14 17h2"},0]]);
+export const GlassFileSpreadsheet = /*#__PURE__*/ createGlassIcon("file-spreadsheet", [[["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M8 13L10 13",1],["M14 13L16 13",1],["M8 17L10 17",1],["M14 17L16 17",1]],[18.4,3.6,4.75],0]);
 export default GlassFileSpreadsheet;

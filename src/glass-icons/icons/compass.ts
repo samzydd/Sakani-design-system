@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "compass"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCompass = /*#__PURE__*/ createGlassIcon("compass", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M16.24 7.76l-1.804 5.411a2 2 0 0 1 -1.265 1.265L7.76 16.24l1.804 -5.411a2 2 0 0 1 1.265 -1.265z"},1]]);
+export const GlassCompass = /*#__PURE__*/ createGlassIcon("compass", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M16.24 7.76L14.436 13.171A2 2 0 0 1 13.171 14.436L7.76 16.24L9.564 10.829A2 2 0 0 1 10.829 9.564Z",1]],[20.4,3.6,4.75],0]);
 export default GlassCompass;

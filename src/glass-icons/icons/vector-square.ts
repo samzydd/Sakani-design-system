@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "vector-square"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVectorSquare = /*#__PURE__*/ createGlassIcon("vector-square", [["path",{"d":"M17.055 4.533a24 24 0 0 0 -10.11 0"},0],["path",{"d":"M19.467 17.055a24 24 0 0 0 0 -10.11"},0],["path",{"d":"M4.533 6.945a24 24 0 0 0 0 10.11"},0],["path",{"d":"M6.945 19.467a24 24 0 0 0 10.11 0"},0],["circle",{"cx":"19","cy":"19","r":"2"},1],["circle",{"cx":"19","cy":"5","r":"2"},1],["circle",{"cx":"5","cy":"19","r":"2"},1],["circle",{"cx":"5","cy":"5","r":"2"},1]]);
+export const GlassVectorSquare = /*#__PURE__*/ createGlassIcon("vector-square", [[["M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19Z",1],["M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5Z",1],["M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19Z",1],["M3 5A2 2 0 1 0 7 5A2 2 0 1 0 3 5Z",1]],[["M17.055 4.533A24 24 0 0 0 6.945 4.533",0],["M19.467 17.055A24 24 0 0 0 19.467 6.945",0],["M4.533 6.945A24 24 0 0 0 4.533 17.055",0],["M6.945 19.467A24 24 0 0 0 17.055 19.467",0]],[19.4,4.6,4.75],0]);
 export default GlassVectorSquare;

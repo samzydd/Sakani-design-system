@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "thermometer-snowflake"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassThermometerSnowflake = /*#__PURE__*/ createGlassIcon("thermometer-snowflake", [["path",{"d":"M10 20l-1.25 -2.5L6 18"},0],["path",{"d":"M10 4L8.75 6.5L6 6"},0],["path",{"d":"M10.585 15H10"},0],["path",{"d":"M2 12h6.5L10 9"},0],["path",{"d":"M20 14.54a4 4 0 1 1 -4 0V4a2 2 0 0 1 4 0z"},1],["path",{"d":"M4 10l1.5 2L4 14"},0],["path",{"d":"M7 21l3 -6l-1.5 -3"},0],["path",{"d":"M7 3l3 6h2"},0]]);
+export const GlassThermometerSnowflake = /*#__PURE__*/ createGlassIcon("thermometer-snowflake", [[["M20 14.54A4 4 0 1 1 16 14.54L16 4A2 2 0 0 1 20 4Z",1]],[["M10 20L8.75 17.5L6 18",0],["M10 4L8.75 6.5L6 6",0],["M10.585 15L10 15",0],["M2 12L8.5 12L10 9",0],["M4 10L5.5 12L4 14",0],["M7 21L10 15L8.5 12",0],["M7 3L10 9L12 9",0]],[20.388,3.6,4.75],0]);
 export default GlassThermometerSnowflake;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mic-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMicOff = /*#__PURE__*/ createGlassIcon("mic-off", [["path",{"d":"M12 19v3"},0],["path",{"d":"M15 9.34V5a3 3 0 0 0 -5.68 -1.33"},0],["path",{"d":"M16.95 16.95A7 7 0 0 1 5 12v-2"},0],["path",{"d":"M18.89 13.23A7 7 0 0 0 19 12v-2"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M9 9v3a3 3 0 0 0 5.12 2.12"},0]]);
+export const GlassMicOff = /*#__PURE__*/ createGlassIcon("mic-off", [[["M15 9.34L15 5A3 3 0 0 0 9.32 3.67Z",1]],[["M12 19L12 22",0],["M16.95 16.95A7 7 0 0 1 5 12L5 10",0],["M18.89 13.23A7 7 0 0 0 19 12L19 10",0],["M2 2L22 22",0],["M9 9L9 12A3 3 0 0 0 14.12 14.12",0]],[14.45,2.57,3],0]);
 export default GlassMicOff;

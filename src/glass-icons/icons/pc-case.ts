@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pc-case"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPcCase = /*#__PURE__*/ createGlassIcon("pc-case", [["rect",{"width":"14","height":"20","x":"5","y":"2","rx":"2"},1],["path",{"d":"M15 14h0.01"},0],["path",{"d":"M9 6h6"},0],["path",{"d":"M9 10h6"},0]]);
+export const GlassPcCase = /*#__PURE__*/ createGlassIcon("pc-case", [[["M7 2L17 2A2 2 0 0 1 19 4L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 4A2 2 0 0 1 7 2Z",1]],[["M15 14L15.01 14",1],["M9 6L15 6",1],["M9 10L15 10",1]],[17.4,3.6,4.75],0]);
 export default GlassPcCase;

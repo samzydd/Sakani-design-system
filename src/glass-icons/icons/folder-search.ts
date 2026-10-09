@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-search"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderSearch = /*#__PURE__*/ createGlassIcon("folder-search", [["path",{"d":"M10.7 20H4a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h3.9a2 2 0 0 1 1.69 0.9l0.81 1.2a2 2 0 0 0 1.67 0.9H20a2 2 0 0 1 2 2v4.1"},0],["path",{"d":"M21 21l-1.9 -1.9"},0],["circle",{"cx":"17","cy":"17","r":"3"},1]]);
+export const GlassFolderSearch = /*#__PURE__*/ createGlassIcon("folder-search", [[["M10.7 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 12.1Z",1]],[["M21 21L19.1 19.1",0],["M14 17A3 3 0 1 0 20 17A3 3 0 1 0 14 17Z",0]],[20.4,4.6,4.75],0]);
 export default GlassFolderSearch;

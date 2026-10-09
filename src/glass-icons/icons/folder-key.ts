@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folder-key"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolderKey = /*#__PURE__*/ createGlassIcon("folder-key", [["path",{"d":"M13 20H4a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h3.9a2 2 0 0 1 1.69 0.9l0.81 1.2a2 2 0 0 0 1.67 0.9H20a2 2 0 0 1 2 2v1.36"},0],["path",{"d":"M19 12v6"},0],["path",{"d":"M19 14h2"},0],["circle",{"cx":"19","cy":"20","r":"2"},1]]);
+export const GlassFolderKey = /*#__PURE__*/ createGlassIcon("folder-key", [[["M13 20L4 20A2 2 0 0 1 2 18L2 5A2 2 0 0 1 4 3L7.9 3A2 2 0 0 1 9.59 3.9L10.4 5.1A2 2 0 0 0 12.07 6L20 6A2 2 0 0 1 22 8L22 9.36Z",1]],[["M19 12L19 18",0],["M19 14L21 14",0],["M17 20A2 2 0 1 0 21 20A2 2 0 1 0 17 20Z",0]],[20.4,4.6,4.75],0]);
 export default GlassFolderKey;

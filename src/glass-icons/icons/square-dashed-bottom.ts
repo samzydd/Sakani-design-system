@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-dashed-bottom"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareDashedBottom = /*#__PURE__*/ createGlassIcon("square-dashed-bottom", [["path",{"d":"M5 21a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2"},0],["path",{"d":"M9 21h1"},0],["path",{"d":"M14 21h1"},0]]);
+export const GlassSquareDashedBottom = /*#__PURE__*/ createGlassIcon("square-dashed-bottom", [[["M5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21Z",1],["M9 21L10 21",0],["M14 21L15 21",0]],[],[19.4,4.6,4.75],0]);
 export default GlassSquareDashedBottom;

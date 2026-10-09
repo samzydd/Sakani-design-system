@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "snail"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSnail = /*#__PURE__*/ createGlassIcon("snail", [["path",{"d":"M2 13a6 6 0 1 0 12 0a4 4 0 1 0 -8 0a2 2 0 0 0 4 0"},0],["circle",{"cx":"10","cy":"13","r":"8"},1],["path",{"d":"M2 21h12c4.4 0 8 -3.6 8 -8V7a2 2 0 1 0 -4 0v6"},0],["path",{"d":"M18 3L19.1 5.2"},0],["path",{"d":"M22 3L20.9 5.2"},0]]);
+export const GlassSnail = /*#__PURE__*/ createGlassIcon("snail", [[["M2 13A8 8 0 1 0 18 13A8 8 0 1 0 2 13Z",1],["M2 21L14 21C18.4 21 22 17.4 22 13L22 7A2 2 0 1 0 18 7L18 13Z",1]],[["M2 13A6 6 0 1 0 14 13A4 4 0 1 0 6 13A2 2 0 0 0 10 13",1],["M18 3L19.1 5.2",1],["M22 3L20.9 5.2",1]],[20.4,6.6,4.75],0]);
 export default GlassSnail;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "redo-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRedo2 = /*#__PURE__*/ createGlassIcon("redo-2", [["path",{"d":"M15 14l5 -5l-5 -5"},0],["path",{"d":"M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13"},0]]);
+export const GlassRedo2 = /*#__PURE__*/ createGlassIcon("redo-2", [[["M20 9L9.5 9A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20L13 20Z",1]],[["M15 14L20 9L15 4",1]],[18.4,10.6,4.75],0]);
 export default GlassRedo2;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mouse-pointer-2"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMousePointer2 = /*#__PURE__*/ createGlassIcon("mouse-pointer-2", [["path",{"d":"M4.037 4.688a0.495 0.495 0 0 1 0.651 -0.651l16 6.5a0.5 0.5 0 0 1 -0.063 0.947l-6.124 1.58a2 2 0 0 0 -1.438 1.435l-1.579 6.126a0.5 0.5 0 0 1 -0.947 0.063z"},1]]);
+export const GlassMousePointer2 = /*#__PURE__*/ createGlassIcon("mouse-pointer-2", [[["M4.037 4.688A0.495 0.495 0 0 1 4.688 4.037L20.688 10.537A0.5 0.5 0 0 1 20.625 11.484L14.501 13.064A2 2 0 0 0 13.063 14.499L11.484 20.625A0.5 0.5 0 0 1 10.537 20.688Z",1]],[],[19.399,5.597,4.75],0]);
 export default GlassMousePointer2;

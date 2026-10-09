@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-pause"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCirclePause = /*#__PURE__*/ createGlassIcon("circle-pause", [["circle",{"cx":"12","cy":"12","r":"10"},1],["line",{"x1":"10","x2":"10","y1":"15","y2":"9"},0],["line",{"x1":"14","x2":"14","y1":"15","y2":"9"},0]]);
+export const GlassCirclePause = /*#__PURE__*/ createGlassIcon("circle-pause", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M10 15L10 9",1],["M14 15L14 9",1]],[20.4,3.6,4.75],0]);
 export default GlassCirclePause;

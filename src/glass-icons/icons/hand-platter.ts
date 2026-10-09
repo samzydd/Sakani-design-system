@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hand-platter"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHandPlatter = /*#__PURE__*/ createGlassIcon("hand-platter", [["path",{"d":"M12 3V2"},0],["path",{"d":"M15.4 17.4l3.2 -2.8a2 2 0 1 1 2.8 2.9l-3.6 3.3c-0.7 0.8 -1.7 1.2 -2.8 1.2h-4c-1.1 0 -2.1 -0.4 -2.8 -1.2l-1.302 -1.464A1 1 0 0 0 6.151 19H5"},0],["path",{"d":"M2 14h12a2 2 0 0 1 0 4h-2"},0],["path",{"d":"M4 10h16"},0],["path",{"d":"M5 10a7 7 0 0 1 14 0"},0],["path",{"d":"M5 14v6a1 1 0 0 1 -1 1H2"},0]]);
+export const GlassHandPlatter = /*#__PURE__*/ createGlassIcon("hand-platter", [[["M5 10A7 7 0 0 1 19 10Z",1],["M15.4 17.4L18.6 14.6A2 2 0 1 1 21.4 17.5L17.8 20.8C17.1 21.6 16.1 22 15 22L11 22C9.9 22 8.9 21.6 8.2 20.8L6.898 19.336A1 1 0 0 0 6.151 19L5 19Z",1],["M2 14L14 14A2 2 0 0 1 14 18L12 18Z",1],["M12 3L12 2",0],["M4 10L20 10",0]],[["M5 14L5 20A1 1 0 0 1 4 21L2 21",0]],[20.411,3.6,4.75],0]);
 export default GlassHandPlatter;

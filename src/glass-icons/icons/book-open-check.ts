@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-open-check"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBookOpenCheck = /*#__PURE__*/ createGlassIcon("book-open-check", [["path",{"d":"M12 5v16"},0],["path",{"d":"M16 12l2 2l4 -4"},0],["path",{"d":"M22 6V5a2 2 0 0 0 -1.999 -2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0 -4 -2H4a2 2 0 0 0 -2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2a5 5 0 0 1 4 -2h4.001A2 2 0 0 0 22 17v-1.344"},0]]);
+export const GlassBookOpenCheck = /*#__PURE__*/ createGlassIcon("book-open-check", [[["M22 6L22 5A2 2 0 0 0 20.001 3L16 3.002A5 5 0 0 0 12 5A5 5 0 0 0 8 3L4 3A2 2 0 0 0 2 5L2 17A2 2 0 0 0 3.999 19L8 19A5 5 0 0 1 12 21A5 5 0 0 1 16 19L20.001 19A2 2 0 0 0 22 17L22 15.656Z",1]],[["M12 5L12 21",1],["M16 12L18 14L22 10",1]],[20.4,4.6,4.75],0]);
 export default GlassBookOpenCheck;

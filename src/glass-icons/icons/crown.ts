@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "crown"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCrown = /*#__PURE__*/ createGlassIcon("crown", [["path",{"d":"M11.562 3.266a0.5 0.5 0 0 1 0.876 0L15.39 8.87a1 1 0 0 0 1.516 0.294L21.183 5.5a0.5 0.5 0 0 1 0.798 0.519l-2.834 10.246a1 1 0 0 1 -0.956 0.734H5.81a1 1 0 0 1 -0.957 -0.734L2.02 6.02a0.5 0.5 0 0 1 0.798 -0.519l4.276 3.664a1 1 0 0 0 1.516 -0.294z"},1],["path",{"d":"M5 21h14"},0]]);
+export const GlassCrown = /*#__PURE__*/ createGlassIcon("crown", [[["M11.562 3.266A0.5 0.5 0 0 1 12.438 3.266L15.39 8.87A1 1 0 0 0 16.906 9.164L21.183 5.5A0.5 0.5 0 0 1 21.981 6.019L19.147 16.265A1 1 0 0 1 18.191 16.999L5.81 16.999A1 1 0 0 1 4.853 16.265L2.02 6.02A0.5 0.5 0 0 1 2.818 5.501L7.094 9.165A1 1 0 0 0 8.61 8.871Z",1]],[["M5 21L19 21",0]],[20.397,4.61,4.75],0]);
 export default GlassCrown;

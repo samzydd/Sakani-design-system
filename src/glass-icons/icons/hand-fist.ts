@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hand-fist"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHandFist = /*#__PURE__*/ createGlassIcon("hand-fist", [["path",{"d":"M12.035 17.012a3 3 0 0 0 -3 -3l-0.311 -0.002a0.72 0.72 0 0 1 -0.505 -1.229l1.195 -1.195A2 2 0 0 1 10.828 11H12a2 2 0 0 0 0 -4H9.243a3 3 0 0 0 -2.122 0.879l-2.707 2.707A4.83 4.83 0 0 0 3 14a8 8 0 0 0 8 8h2a8 8 0 0 0 8 -8V7a2 2 0 1 0 -4 0v2a2 2 0 1 0 4 0"},0],["path",{"d":"M13.888 9.662A2 2 0 0 0 17 8V5A2 2 0 1 0 13 5"},0],["path",{"d":"M9 5A2 2 0 1 0 5 5V10"},0],["path",{"d":"M9 7V4A2 2 0 1 1 13 4V7.268"},0]]);
+export const GlassHandFist = /*#__PURE__*/ createGlassIcon("hand-fist", [[["M13.888 9.662A2 2 0 0 0 17 8L17 5A2 2 0 1 0 13 5Z",1],["M9 7L9 4A2 2 0 1 1 13 4L13 7.268Z",1],["M9 5A2 2 0 1 0 5 5L5 10Z",1]],[["M12.035 17.012A3 3 0 0 0 9.035 14.012L8.724 14.01A0.72 0.72 0 0 1 8.219 12.781L9.414 11.586A2 2 0 0 1 10.828 11L12 11A2 2 0 0 0 12 7L9.243 7A3 3 0 0 0 7.121 7.879L4.414 10.586A4.83 4.83 0 0 0 3 14A8 8 0 0 0 11 22L13 22A8 8 0 0 0 21 14L21 7A2 2 0 1 0 17 7L17 9A2 2 0 1 0 21 9",0]],[15.988,3.012,3.77],0]);
 export default GlassHandFist;

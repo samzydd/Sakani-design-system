@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "monitor-smartphone"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMonitorSmartphone = /*#__PURE__*/ createGlassIcon("monitor-smartphone", [["path",{"d":"M18 8V6a2 2 0 0 0 -2 -2H4a2 2 0 0 0 -2 2v7a2 2 0 0 0 2 2h8"},0],["path",{"d":"M10 19v-3.96v3.15"},0],["path",{"d":"M7 19h5"},0],["rect",{"width":"6","height":"10","x":"16","y":"12","rx":"2"},1]]);
+export const GlassMonitorSmartphone = /*#__PURE__*/ createGlassIcon("monitor-smartphone", [[["M18 8L18 6A2 2 0 0 0 16 4L4 4A2 2 0 0 0 2 6L2 13A2 2 0 0 0 4 15L12 15Z",1],["M18 12L20 12A2 2 0 0 1 22 14L22 20A2 2 0 0 1 20 22L18 22A2 2 0 0 1 16 20L16 14A2 2 0 0 1 18 12Z",1]],[["M10 19L10 15.04L10 18.19",0],["M7 19L12 19",0]],[20.4,5.6,4.75],0]);
 export default GlassMonitorSmartphone;

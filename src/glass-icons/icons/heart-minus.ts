@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "heart-minus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHeartMinus = /*#__PURE__*/ createGlassIcon("heart-minus", [["path",{"d":"M14.876 18.99l-1.368 1.323a2 2 0 0 1 -3 0.019L5 15c-1.5 -1.5 -3 -3.2 -3 -5.5a5.5 5.5 0 0 1 9.591 -3.676a0.56 0.56 0 0 0 0.818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1 -0.244 1.572"},0],["path",{"d":"M15 15h6"},0]]);
+export const GlassHeartMinus = /*#__PURE__*/ createGlassIcon("heart-minus", [[["M14.876 18.99L13.508 20.313A2 2 0 0 1 10.508 20.332L5 15C3.5 13.5 2 11.8 2 9.5A5.5 5.5 0 0 1 11.591 5.824A0.56 0.56 0 0 0 12.409 5.824A5.49 5.49 0 0 1 22 9.5A5.2 5.2 0 0 1 21.756 11.072Z",1]],[["M15 15L21 15",1]],[20.4,5.605,4.75],0]);
 export default GlassHeartMinus;

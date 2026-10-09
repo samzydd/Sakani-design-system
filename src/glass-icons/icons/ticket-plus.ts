@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ticket-plus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTicketPlus = /*#__PURE__*/ createGlassIcon("ticket-plus", [["path",{"d":"M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2 -2v-2a3 3 0 0 1 0 -6V7a2 2 0 0 0 -2 -2H4a2 2 0 0 0 -2 2Z"},1],["path",{"d":"M9 12h6"},0],["path",{"d":"M12 9v6"},0]]);
+export const GlassTicketPlus = /*#__PURE__*/ createGlassIcon("ticket-plus", [[["M2 9A3 3 0 0 1 2 15L2 17A2 2 0 0 0 4 19L20 19A2 2 0 0 0 22 17L22 15A3 3 0 0 1 22 9L22 7A2 2 0 0 0 20 5L4 5A2 2 0 0 0 2 7Z",1]],[["M9 12L15 12",1],["M12 9L12 15",1]],[20.4,6.6,4.75],0]);
 export default GlassTicketPlus;

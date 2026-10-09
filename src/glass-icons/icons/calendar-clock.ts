@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calendar-clock"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCalendarClock = /*#__PURE__*/ createGlassIcon("calendar-clock", [["path",{"d":"M16 14v2.2l1.6 1"},0],["path",{"d":"M16 2v3"},0],["path",{"d":"M21 7.338V5a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h2.338"},0],["path",{"d":"M3 9h5.859"},0],["path",{"d":"M8 2v3"},0],["circle",{"cx":"16","cy":"16","r":"6"},1]]);
+export const GlassCalendarClock = /*#__PURE__*/ createGlassIcon("calendar-clock", [[["M21 7.338L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L7.338 21Z",1],["M10 16A6 6 0 1 0 22 16A6 6 0 1 0 10 16Z",1],["M16 2L16 5",0],["M8 2L8 5",0]],[["M16 14L16 16.2L17.6 17.2",1],["M3 9L8.859 9",1]],[20.4,3.6,4.75],0]);
 export default GlassCalendarClock;

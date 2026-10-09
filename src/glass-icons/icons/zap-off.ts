@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "zap-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassZapOff = /*#__PURE__*/ createGlassIcon("zap-off", [["path",{"d":"M10.768 5.111L13.44 2.44a1.5 1.5 0 0 1 2.474 1.561l-1.633 4.625"},0],["path",{"d":"M18.889 13.232l0.672 -0.672A1.5 1.5 0 0 0 18.5 10h-2.844"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M7.94 7.94l-3.5 3.499A1.5 1.5 0 0 0 5.5 14h4.002a0.5 0.5 0 0 1 0.471 0.666L8.086 20a1.5 1.5 0 0 0 2.475 1.56l5.5 -5.5"},0]]);
+export const GlassZapOff = /*#__PURE__*/ createGlassIcon("zap-off", [[["M7.94 7.94L4.44 11.439A1.5 1.5 0 0 0 5.5 14L9.502 14A0.5 0.5 0 0 1 9.973 14.666L8.086 20A1.5 1.5 0 0 0 10.561 21.56L16.061 16.06Z",1]],[["M10.768 5.111L13.44 2.44A1.5 1.5 0 0 1 15.914 4.001L14.281 8.626",0],["M18.889 13.232L19.561 12.56A1.5 1.5 0 0 0 18.5 10L15.656 10",0],["M2 2L22 22",0]],[14.728,9.273,4.305],0]);
 export default GlassZapOff;

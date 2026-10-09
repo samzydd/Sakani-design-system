@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gallery-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGalleryVertical = /*#__PURE__*/ createGlassIcon("gallery-vertical", [["path",{"d":"M3 2h18"},0],["rect",{"width":"18","height":"12","x":"3","y":"6","rx":"2"},1],["path",{"d":"M3 22h18"},0]]);
+export const GlassGalleryVertical = /*#__PURE__*/ createGlassIcon("gallery-vertical", [[["M5 6L19 6A2 2 0 0 1 21 8L21 16A2 2 0 0 1 19 18L5 18A2 2 0 0 1 3 16L3 8A2 2 0 0 1 5 6Z",1]],[["M3 2L21 2",0],["M3 22L21 22",0]],[19.4,7.6,4.75],0]);
 export default GlassGalleryVertical;

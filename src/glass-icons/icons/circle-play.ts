@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-play"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCirclePlay = /*#__PURE__*/ createGlassIcon("circle-play", [["path",{"d":"M9 9.003a1 1 0 0 1 1.517 -0.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"},1],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassCirclePlay = /*#__PURE__*/ createGlassIcon("circle-play", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M9 9.003A1 1 0 0 1 10.517 8.144L15.514 11.141A1 1 0 0 1 15.514 12.859L10.517 15.856A1 1 0 0 1 9 14.996Z",1]],[20.4,3.6,4.75],0]);
 export default GlassCirclePlay;

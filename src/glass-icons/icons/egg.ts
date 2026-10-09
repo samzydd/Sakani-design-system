@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "egg"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEgg = /*#__PURE__*/ createGlassIcon("egg", [["path",{"d":"M12 2C8 2 4 8 4 14a8 8 0 0 0 16 0c0 -6 -4 -12 -8 -12"},1]]);
+export const GlassEgg = /*#__PURE__*/ createGlassIcon("egg", [[["M12 2C8 2 4 8 4 14A8 8 0 0 0 20 14C20 8 16 2 12 2",1]],[],[18.4,3.6,4.75],0]);
 export default GlassEgg;

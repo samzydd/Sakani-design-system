@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bot"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBot = /*#__PURE__*/ createGlassIcon("bot", [["path",{"d":"M12 8V4H8"},0],["rect",{"width":"16","height":"12","x":"4","y":"8","rx":"2"},1],["path",{"d":"M2 14h2"},0],["path",{"d":"M20 14h2"},0],["path",{"d":"M15 13v2"},0],["path",{"d":"M9 13v2"},0]]);
+export const GlassBot = /*#__PURE__*/ createGlassIcon("bot", [[["M6 8L18 8A2 2 0 0 1 20 10L20 18A2 2 0 0 1 18 20L6 20A2 2 0 0 1 4 18L4 10A2 2 0 0 1 6 8Z",1]],[["M12 8L12 4L8 4",0],["M2 14L4 14",1],["M20 14L22 14",1],["M15 13L15 15",1],["M9 13L9 15",1]],[18.4,9.6,4.75],0]);
 export default GlassBot;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fire-extinguisher"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFireExtinguisher = /*#__PURE__*/ createGlassIcon("fire-extinguisher", [["path",{"d":"M15 6.5V3a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3.5"},0],["path",{"d":"M9 18h8"},0],["path",{"d":"M18 3h-3"},0],["path",{"d":"M11 3a6 6 0 0 0 -6 6v11"},0],["path",{"d":"M5 13h4"},0],["path",{"d":"M17 10a4 4 0 0 0 -8 0v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2Z"},1]]);
+export const GlassFireExtinguisher = /*#__PURE__*/ createGlassIcon("fire-extinguisher", [[["M17 10A4 4 0 0 0 9 10L9 20A2 2 0 0 0 11 22L15 22A2 2 0 0 0 17 20Z",1]],[["M15 6.5L15 3A1 1 0 0 0 14 2L12 2A1 1 0 0 0 11 3L11 6.5",0],["M9 18L17 18",1],["M18 3L15 3",0],["M11 3A6 6 0 0 0 5 9L5 20",0],["M5 13L9 13",0]],[15.4,7.6,4.75],0]);
 export default GlassFireExtinguisher;

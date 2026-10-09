@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "plane-takeoff"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPlaneTakeoff = /*#__PURE__*/ createGlassIcon("plane-takeoff", [["path",{"d":"M2 22h20"},0],["path",{"d":"M6.36 17.4L4 17l-2 -4l1.1 -0.55a2 2 0 0 1 1.8 0l0.17 0.1a2 2 0 0 0 1.8 0L8 12L5 6l0.9 -0.45a2 2 0 0 1 2.09 0.2l4.02 3a2 2 0 0 0 2.1 0.2l4.19 -2.06a2.41 2.41 0 0 1 1.73 -0.17L21 7a1.4 1.4 0 0 1 0.87 1.99l-0.38 0.76c-0.23 0.46 -0.6 0.84 -1.07 1.08L7.58 17.2a2 2 0 0 1 -1.22 0.18Z"},1]]);
+export const GlassPlaneTakeoff = /*#__PURE__*/ createGlassIcon("plane-takeoff", [[["M6.36 17.4L4 17L2 13L3.1 12.45A2 2 0 0 1 4.9 12.45L5.07 12.55A2 2 0 0 0 6.87 12.55L8 12L5 6L5.9 5.55A2 2 0 0 1 7.99 5.75L12.01 8.75A2 2 0 0 0 14.11 8.95L18.3 6.89A2.41 2.41 0 0 1 20.03 6.72L21 7A1.4 1.4 0 0 1 21.87 8.99L21.49 9.75C21.26 10.21 20.89 10.59 20.42 10.83L7.58 17.2A2 2 0 0 1 6.36 17.38Z",1]],[["M2 22L22 22",0]],[20.423,6.952,4.75],0]);
 export default GlassPlaneTakeoff;

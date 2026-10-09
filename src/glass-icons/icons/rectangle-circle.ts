@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rectangle-circle"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRectangleCircle = /*#__PURE__*/ createGlassIcon("rectangle-circle", [["path",{"d":"M14 4v16H3a1 1 0 0 1 -1 -1V5a1 1 0 0 1 1 -1z"},1],["circle",{"cx":"14","cy":"12","r":"8"},1]]);
+export const GlassRectangleCircle = /*#__PURE__*/ createGlassIcon("rectangle-circle", [[["M6 12A8 8 0 1 0 22 12A8 8 0 1 0 6 12Z",1],["M14 4L14 20L3 20A1 1 0 0 1 2 19L2 5A1 1 0 0 1 3 4Z",1]],[],[20.4,5.6,4.75],0]);
 export default GlassRectangleCircle;

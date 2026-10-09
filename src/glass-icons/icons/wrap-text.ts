@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-wrap" (alias of "wrap-text")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWrapText = /*#__PURE__*/ createGlassIcon("wrap-text", [["path",{"d":"M16 16l-3 3l3 3"},0],["path",{"d":"M3 12h14.5a1 1 0 0 1 0 7H13"},0],["path",{"d":"M3 19h6"},0],["path",{"d":"M3 5h18"},0]]);
+export const GlassWrapText = /*#__PURE__*/ createGlassIcon("wrap-text", [[["M3 12L17.5 12A1 1 0 0 1 17.5 19L13 19Z",1]],[["M16 16L13 19L16 22",1],["M3 19L9 19",0],["M3 5L21 5",0]],[19.4,13.6,4.75],0]);
 export default GlassWrapText;

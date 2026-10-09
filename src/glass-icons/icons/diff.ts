@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "diff"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDiff = /*#__PURE__*/ createGlassIcon("diff", [["path",{"d":"M12 3v14"},0],["path",{"d":"M5 10h14"},0],["path",{"d":"M5 21h14"},0]]);
+export const GlassDiff = /*#__PURE__*/ createGlassIcon("diff", [[["M12 3L12 17",0],["M5 10L19 10",0],["M5 21L19 21",0]],[],[17.4,4.6,4.75],1]);
 export default GlassDiff;

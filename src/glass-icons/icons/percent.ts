@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "percent"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPercent = /*#__PURE__*/ createGlassIcon("percent", [["line",{"x1":"19","x2":"5","y1":"5","y2":"19"},0],["circle",{"cx":"6.5","cy":"6.5","r":"2.5"},1],["circle",{"cx":"17.5","cy":"17.5","r":"2.5"},1]]);
+export const GlassPercent = /*#__PURE__*/ createGlassIcon("percent", [[["M15 17.5A2.5 2.5 0 1 0 20 17.5A2.5 2.5 0 1 0 15 17.5Z",1],["M4 6.5A2.5 2.5 0 1 0 9 6.5A2.5 2.5 0 1 0 4 6.5Z",1]],[["M19 5L5 19",0]],[18.4,5.6,4.75],0]);
 export default GlassPercent;

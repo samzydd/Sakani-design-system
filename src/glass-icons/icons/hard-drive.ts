@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hard-drive"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHardDrive = /*#__PURE__*/ createGlassIcon("hard-drive", [["path",{"d":"M10 16h0.01"},0],["path",{"d":"M2.212 11.577a2 2 0 0 0 -0.212 0.896V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2 -2v-5.527a2 2 0 0 0 -0.212 -0.896L18.55 5.11A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0 -1.79 1.11z"},1],["path",{"d":"M21.946 12.013H2.054"},0],["path",{"d":"M6 16h0.01"},0]]);
+export const GlassHardDrive = /*#__PURE__*/ createGlassIcon("hard-drive", [[["M2.212 11.577A2 2 0 0 0 2 12.473L2 18A2 2 0 0 0 4 20L20 20A2 2 0 0 0 22 18L22 12.473A2 2 0 0 0 21.788 11.577L18.55 5.11A2 2 0 0 0 16.76 4L7.24 4A2 2 0 0 0 5.45 5.11Z",1]],[["M10 16L10.01 16",1],["M21.946 12.013L2.054 12.013",1],["M6 16L6.01 16",1]],[20.4,5.6,4.75],0]);
 export default GlassHardDrive;

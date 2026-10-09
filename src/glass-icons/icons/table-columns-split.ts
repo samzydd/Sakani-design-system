@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "table-columns-split"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTableColumnsSplit = /*#__PURE__*/ createGlassIcon("table-columns-split", [["path",{"d":"M14 14v2"},0],["path",{"d":"M14 20v2"},0],["path",{"d":"M14 2v2"},0],["path",{"d":"M14 8v2"},0],["path",{"d":"M2 15h8"},0],["path",{"d":"M2 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2H2"},0],["path",{"d":"M2 9h8"},0],["path",{"d":"M22 15h-4"},0],["path",{"d":"M22 3h-2a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h2"},0],["path",{"d":"M22 9h-4"},0],["path",{"d":"M5 3v18"},0]]);
+export const GlassTableColumnsSplit = /*#__PURE__*/ createGlassIcon("table-columns-split", [[["M2 3L8 3A2 2 0 0 1 10 5L10 19A2 2 0 0 1 8 21L2 21Z",1]],[["M14 14L14 16",0],["M14 20L14 22",0],["M14 2L14 4",0],["M14 8L14 10",0],["M2 15L10 15",1],["M2 9L10 9",1],["M22 15L18 15",0],["M22 3L20 3A2 2 0 0 0 18 5L18 19A2 2 0 0 0 20 21L22 21",0],["M22 9L18 9",0],["M5 3L5 21",1]],[8.4,4.6,4.75],0]);
 export default GlassTableColumnsSplit;

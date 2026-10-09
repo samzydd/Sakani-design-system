@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "siren"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSiren = /*#__PURE__*/ createGlassIcon("siren", [["path",{"d":"M7 18v-6a5 5 0 1 1 10 0v6"},0],["path",{"d":"M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1 -1v-1a2 2 0 0 0 -2 -2H7a2 2 0 0 0 -2 2z"},1],["path",{"d":"M21 12h1"},0],["path",{"d":"M18.5 4.5L18 5"},0],["path",{"d":"M2 12h1"},0],["path",{"d":"M12 2v1"},0],["path",{"d":"M4.929 4.929l0.707 0.707"},0],["path",{"d":"M12 12v6"},0]]);
+export const GlassSiren = /*#__PURE__*/ createGlassIcon("siren", [[["M7 18L7 12A5 5 0 1 1 17 12L17 18Z",1],["M5 21A1 1 0 0 0 6 22L18 22A1 1 0 0 0 19 21L19 20A2 2 0 0 0 17 18L7 18A2 2 0 0 0 5 20Z",1]],[["M21 12L22 12",0],["M18.5 4.5L18 5",0],["M2 12L3 12",0],["M12 2L12 3",0],["M4.929 4.929L5.636 5.636",0],["M12 12L12 18",1]],[17.52,8.48,4.55],0]);
 export default GlassSiren;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-no-axes-column"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartNoAxesColumn = /*#__PURE__*/ createGlassIcon("chart-no-axes-column", [["path",{"d":"M5 21v-6"},0],["path",{"d":"M12 21V3"},0],["path",{"d":"M19 21V9"},0]]);
+export const GlassChartNoAxesColumn = /*#__PURE__*/ createGlassIcon("chart-no-axes-column", [[["M5 21L5 15",0],["M12 21L12 3",0],["M19 21L19 9",0]],[],[17.4,4.6,4.75],1]);
 export default GlassChartNoAxesColumn;

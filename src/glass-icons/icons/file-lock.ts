@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-lock"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileLock = /*#__PURE__*/ createGlassIcon("file-lock", [["path",{"d":"M4 9.8V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.706 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1 -2 2h-3"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M9 17v-2a2 2 0 0 0 -4 0v2"},0],["rect",{"width":"8","height":"5","x":"3","y":"17","rx":"1"},1]]);
+export const GlassFileLock = /*#__PURE__*/ createGlassIcon("file-lock", [[["M4 9.8L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L15 22Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M9 17L9 15A2 2 0 0 0 5 15L5 17",1],["M4 17L10 17A1 1 0 0 1 11 18L11 21A1 1 0 0 1 10 22L4 22A1 1 0 0 1 3 21L3 18A1 1 0 0 1 4 17Z",0]],[18.4,3.6,4.75],0]);
 export default GlassFileLock;

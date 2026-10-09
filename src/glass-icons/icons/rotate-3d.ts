@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rotate-3d"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRotate3d = /*#__PURE__*/ createGlassIcon("rotate-3d", [["path",{"d":"M15.194 13.707l3.814 1.86l-1.86 3.814"},0],["path",{"d":"M16.4721 7.5279A5 10 0 1 0 13 21.798"},0],["path",{"d":"M21.798 11A10 5 0 1 0 19 15.5707"},0]]);
+export const GlassRotate3d = /*#__PURE__*/ createGlassIcon("rotate-3d", [[["M21.798 11A10 5 0 1 0 19 15.571Z",1],["M16.472 7.528A5 10 0 1 0 13 21.798Z",1]],[["M15.194 13.707L19.008 15.567L17.148 19.381",1]],[20.198,3.614,4.75],0]);
 export default GlassRotate3d;

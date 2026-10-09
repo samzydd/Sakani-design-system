@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "traffic-cone"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTrafficCone = /*#__PURE__*/ createGlassIcon("traffic-cone", [["path",{"d":"M16.05 10.966a5 2.5 0 0 1 -8.1 0"},0],["path",{"d":"M16.923 14.049l4.48 2.04a1 1 0 0 1 0.001 1.831l-8.574 3.9a2 2 0 0 1 -1.66 0l-8.574 -3.91a1 1 0 0 1 0 -1.83l4.484 -2.04"},0],["path",{"d":"M16.949 14.14a5 2.5 0 1 1 -9.9 0L10.063 3.5a2 2 0 0 1 3.874 0z"},1],["path",{"d":"M9.194 6.57a5 2.5 0 0 0 5.61 0"},0]]);
+export const GlassTrafficCone = /*#__PURE__*/ createGlassIcon("traffic-cone", [[["M16.923 14.049L21.403 16.089A1 1 0 0 1 21.404 17.92L12.83 21.82A2 2 0 0 1 11.17 21.82L2.596 17.91A1 1 0 0 1 2.596 16.08L7.08 14.04Z",1],["M16.949 14.14A5 2.5 0 1 1 7.049 14.14L10.063 3.5A2 2 0 0 1 13.937 3.5Z",1]],[["M16.05 10.966A5 2.5 0 0 1 7.95 10.966",1],["M9.194 6.57A5 2.5 0 0 0 14.804 6.57",1]],[20.401,3.598,4.75],0]);
 export default GlassTrafficCone;

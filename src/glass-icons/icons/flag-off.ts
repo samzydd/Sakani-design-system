@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flag-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFlagOff = /*#__PURE__*/ createGlassIcon("flag-off", [["path",{"d":"M16 16c-3 0 -5 -2 -8 -2a6 6 0 0 0 -4 1.528"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M4 22V4"},0],["path",{"d":"M7.656 2H8c3 0 5 2 7.333 2q2 0 3.067 -0.8A1 1 0 0 1 20 4v10.347"},0]]);
+export const GlassFlagOff = /*#__PURE__*/ createGlassIcon("flag-off", [[["M16 16C13 16 11 14 8 14A6 6 0 0 0 4 15.528",0],["M2 2L22 22",0],["M4 22L4 4",0],["M7.656 2L8 2C11 2 13 4 15.333 4Q17.333 4 18.4 3.2A1 1 0 0 1 20 4L20 14.347",0]],[],[20.4,3.6,4.75],1]);
 export default GlassFlagOff;

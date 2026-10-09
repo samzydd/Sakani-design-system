@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "git-compare"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGitCompare = /*#__PURE__*/ createGlassIcon("git-compare", [["circle",{"cx":"18","cy":"18","r":"3"},1],["circle",{"cx":"6","cy":"6","r":"3"},1],["path",{"d":"M13 6h3a2 2 0 0 1 2 2v7"},0],["path",{"d":"M11 18H8a2 2 0 0 1 -2 -2V9"},0]]);
+export const GlassGitCompare = /*#__PURE__*/ createGlassIcon("git-compare", [[["M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z",1],["M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18Z",1]],[["M13 6L16 6A2 2 0 0 1 18 8L18 15",0],["M11 18L8 18A2 2 0 0 1 6 16L6 9",0]],[19.4,4.6,4.75],0]);
 export default GlassGitCompare;

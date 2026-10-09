@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sun-medium"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSunMedium = /*#__PURE__*/ createGlassIcon("sun-medium", [["circle",{"cx":"12","cy":"12","r":"4"},1],["path",{"d":"M12 3v1"},0],["path",{"d":"M12 20v1"},0],["path",{"d":"M3 12h1"},0],["path",{"d":"M20 12h1"},0],["path",{"d":"M18.364 5.636l-0.707 0.707"},0],["path",{"d":"M6.343 17.657l-0.707 0.707"},0],["path",{"d":"M5.636 5.636l0.707 0.707"},0],["path",{"d":"M17.657 17.657l0.707 0.707"},0]]);
+export const GlassSunMedium = /*#__PURE__*/ createGlassIcon("sun-medium", [[["M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z",1]],[["M12 3L12 4",0],["M12 20L12 21",0],["M3 12L4 12",0],["M20 12L21 12",0],["M18.364 5.636L17.657 6.343",0],["M6.343 17.657L5.636 18.364",0],["M5.636 5.636L6.343 6.343",0],["M17.657 17.657L18.364 18.364",0]],[15.45,8.55,3],0]);
 export default GlassSunMedium;

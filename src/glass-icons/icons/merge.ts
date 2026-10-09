@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "merge"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMerge = /*#__PURE__*/ createGlassIcon("merge", [["path",{"d":"M8 6l4 -4l4 4"},0],["path",{"d":"M12 2v10.3a4 4 0 0 1 -1.172 2.872L4 22"},0],["path",{"d":"M20 22l-5 -5"},0]]);
+export const GlassMerge = /*#__PURE__*/ createGlassIcon("merge", [[["M8 6L12 2L16 6",0],["M12 2L12 12.3A4 4 0 0 1 10.828 15.172L4 22",0],["M20 22L15 17",0]],[],[18.4,3.6,4.75],1]);
 export default GlassMerge;

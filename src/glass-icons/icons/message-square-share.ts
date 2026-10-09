@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-square-share"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessageSquareShare = /*#__PURE__*/ createGlassIcon("message-square-share", [["path",{"d":"M12 3H4a2 2 0 0 0 -2 2v16.286a0.71 0.71 0 0 0 1.212 0.502l2.202 -2.202A2 2 0 0 1 6.828 19H20a2 2 0 0 0 2 -2v-4"},0],["path",{"d":"M16 3h6v6"},0],["path",{"d":"M16 9l6 -6"},0]]);
+export const GlassMessageSquareShare = /*#__PURE__*/ createGlassIcon("message-square-share", [[["M12 3L4 3A2 2 0 0 0 2 5L2 21.286A0.71 0.71 0 0 0 3.212 21.788L5.414 19.586A2 2 0 0 1 6.828 19L20 19A2 2 0 0 0 22 17L22 13Z",1]],[["M16 3L22 3L22 9",0],["M16 9L22 3",0]],[20.4,4.6,4.75],0]);
 export default GlassMessageSquareShare;

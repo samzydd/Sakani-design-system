@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-check-big"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleCheckBig = /*#__PURE__*/ createGlassIcon("circle-check-big", [["path",{"d":"M21.801 10A10 10 0 1 1 17 3.335"},0],["path",{"d":"M9 11l3 3L22 4"},0]]);
+export const GlassCircleCheckBig = /*#__PURE__*/ createGlassIcon("circle-check-big", [[["M21.801 10A10 10 0 1 1 17 3.335Z",1]],[["M9 11L12 14L22 4",1]],[20.402,3.614,4.75],0]);
 export default GlassCircleCheckBig;

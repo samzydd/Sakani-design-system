@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pointer"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPointer = /*#__PURE__*/ createGlassIcon("pointer", [["path",{"d":"M22 14a8 8 0 0 1 -8 8"},0],["path",{"d":"M18 11v-1a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2"},0],["path",{"d":"M14 10V9a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v1"},0],["path",{"d":"M10 9.5V4a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v10"},0],["path",{"d":"M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1 -8 8h-2c-2.8 0 -4.5 -0.86 -5.99 -2.34l-3.6 -3.6a2 2 0 0 1 2.83 -2.82L7 15"},0]]);
+export const GlassPointer = /*#__PURE__*/ createGlassIcon("pointer", [[["M18 11A2 2 0 1 1 22 11L22 14A8 8 0 0 1 14 22L12 22C9.2 22 7.5 21.14 6.01 19.66L2.41 16.06A2 2 0 0 1 5.24 13.24L7 15Z",1],["M22 14A8 8 0 0 1 14 22",0]],[["M18 11L18 10A2 2 0 0 0 16 8A2 2 0 0 0 14 10",0],["M14 10L14 9A2 2 0 0 0 12 7A2 2 0 0 0 10 9L10 10",0],["M10 9.5L10 4A2 2 0 0 0 8 2A2 2 0 0 0 6 4L6 14",0]],[20.4,10.6,4.75],0]);
 export default GlassPointer;

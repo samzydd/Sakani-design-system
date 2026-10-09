@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wrench"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWrench = /*#__PURE__*/ createGlassIcon("wrench", [["path",{"d":"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106 -3.105c0.32 -0.322 0.863 -0.22 0.983 0.218a6 6 0 0 1 -8.259 7.057l-7.91 7.91a1 1 0 0 1 -2.999 -3l7.91 -7.91a6 6 0 0 1 7.057 -8.259c0.438 0.12 0.54 0.662 0.219 0.984z"},1]]);
+export const GlassWrench = /*#__PURE__*/ createGlassIcon("wrench", [[["M14.7 6.3A1 1 0 0 0 14.7 7.7L16.3 9.3A1 1 0 0 0 17.7 9.3L20.806 6.195C21.126 5.873 21.669 5.975 21.789 6.413A6 6 0 0 1 13.53 13.47L5.62 21.38A1 1 0 0 1 2.621 18.38L10.531 10.47A6 6 0 0 1 17.588 2.211C18.026 2.331 18.128 2.873 17.807 3.195Z",1]],[],[20.385,3.615,4.75],0]);
 export default GlassWrench;

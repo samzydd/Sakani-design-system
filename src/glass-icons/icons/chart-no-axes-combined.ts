@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-no-axes-combined"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartNoAxesCombined = /*#__PURE__*/ createGlassIcon("chart-no-axes-combined", [["path",{"d":"M12 16v5"},0],["path",{"d":"M16 14.639V21"},0],["path",{"d":"M20 10.656V21"},0],["path",{"d":"M22 3l-8.646 8.646a0.5 0.5 0 0 1 -0.708 0L9.354 8.354a0.5 0.5 0 0 0 -0.707 0L2 15"},0],["path",{"d":"M4 18.463V21"},0],["path",{"d":"M8 14.656V21"},0]]);
+export const GlassChartNoAxesCombined = /*#__PURE__*/ createGlassIcon("chart-no-axes-combined", [[["M12 16L12 21",0],["M16 14.639L16 21",0],["M20 10.656L20 21",0],["M22 3L13.354 11.646A0.5 0.5 0 0 1 12.646 11.646L9.354 8.354A0.5 0.5 0 0 0 8.647 8.354L2 15",0],["M4 18.463L4 21",0],["M8 14.656L8 21",0]],[],[20.4,4.6,4.75],1]);
 export default GlassChartNoAxesCombined;

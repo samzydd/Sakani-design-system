@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lamp-wall-down"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLampWallDown = /*#__PURE__*/ createGlassIcon("lamp-wall-down", [["path",{"d":"M19.929 18.629A1 1 0 0 1 19 20H9a1 1 0 0 1 -0.928 -1.371l2 -5A1 1 0 0 1 11 13h6a1 1 0 0 1 0.928 0.629z"},1],["path",{"d":"M6 3a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2H5a1 1 0 0 1 -1 -1V4a1 1 0 0 1 1 -1z"},1],["path",{"d":"M8 6h4a2 2 0 0 1 2 2v5"},0]]);
+export const GlassLampWallDown = /*#__PURE__*/ createGlassIcon("lamp-wall-down", [[["M19.929 18.629A1 1 0 0 1 19 20L9 20A1 1 0 0 1 8.072 18.629L10.072 13.629A1 1 0 0 1 11 13L17 13A1 1 0 0 1 17.928 13.629Z",1],["M6 3A2 2 0 0 1 8 5L8 7A2 2 0 0 1 6 9L5 9A1 1 0 0 1 4 8L4 4A1 1 0 0 1 5 3Z",1]],[["M8 6L12 6A2 2 0 0 1 14 8L14 13",0]],[18.4,4.6,4.75],0]);
 export default GlassLampWallDown;

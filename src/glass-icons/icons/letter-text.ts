@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "text-initial" (alias of "letter-text")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLetterText = /*#__PURE__*/ createGlassIcon("letter-text", [["path",{"d":"M15 5h6"},0],["path",{"d":"M15 12h6"},0],["path",{"d":"M3 19h18"},0],["path",{"d":"M3 12l3.553 -7.724a0.5 0.5 0 0 1 0.894 0L11 12"},0],["path",{"d":"M3.92 10h6.16"},0]]);
+export const GlassLetterText = /*#__PURE__*/ createGlassIcon("letter-text", [[["M3 12L6.553 4.276A0.5 0.5 0 0 1 7.447 4.276L11 12Z",1]],[["M15 5L21 5",0],["M15 12L21 12",0],["M3 19L21 19",0],["M3.92 10L10.08 10",1]],[10.45,4.55,3],0]);
 export default GlassLetterText;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "drone"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDrone = /*#__PURE__*/ createGlassIcon("drone", [["path",{"d":"M10 10L7 7"},0],["path",{"d":"M10 14l-3 3"},0],["path",{"d":"M14 10l3 -3"},0],["path",{"d":"M14 14l3 3"},0],["path",{"d":"M14.205 4.139a4 4 0 1 1 5.439 5.863"},0],["path",{"d":"M19.637 14a4 4 0 1 1 -5.432 5.868"},0],["path",{"d":"M4.367 10a4 4 0 1 1 5.438 -5.862"},0],["path",{"d":"M9.795 19.862a4 4 0 1 1 -5.429 -5.873"},0],["rect",{"x":"10","y":"8","width":"4","height":"8","rx":"1"},1]]);
+export const GlassDrone = /*#__PURE__*/ createGlassIcon("drone", [[["M11 8L13 8A1 1 0 0 1 14 9L14 15A1 1 0 0 1 13 16L11 16A1 1 0 0 1 10 15L10 9A1 1 0 0 1 11 8Z",1],["M4.367 10A4 4 0 1 1 9.805 4.138Z",1],["M19.637 14A4 4 0 1 1 14.205 19.868Z",1],["M14.205 4.139A4 4 0 1 1 19.644 10.002Z",1],["M9.795 19.862A4 4 0 1 1 4.366 13.989Z",1],["M10 10L7 7",0],["M10 14L7 17",0],["M14 10L17 7",0],["M14 14L17 17",0]],[],[19.396,4.584,4.75],0]);
 export default GlassDrone;

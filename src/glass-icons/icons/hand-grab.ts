@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hand-grab"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHandGrab = /*#__PURE__*/ createGlassIcon("hand-grab", [["path",{"d":"M18 11.5V9a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v1.4"},0],["path",{"d":"M14 10V8a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v2"},0],["path",{"d":"M10 9.9V9a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v5"},0],["path",{"d":"M6 14a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2"},0],["path",{"d":"M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1 -8 8h-4a8 8 0 0 1 -8 -8a2 2 0 1 1 4 0"},0]]);
+export const GlassHandGrab = /*#__PURE__*/ createGlassIcon("hand-grab", [[["M18 11A2 2 0 1 1 22 11L22 14A8 8 0 0 1 14 22L10 22A8 8 0 0 1 2 14A2 2 0 1 1 6 14Z",1],["M6 14A2 2 0 0 0 4 12A2 2 0 0 0 2 14",0]],[["M18 11.5L18 9A2 2 0 0 0 16 7A2 2 0 0 0 14 9L14 10.4",0],["M14 10L14 8A2 2 0 0 0 12 6A2 2 0 0 0 10 8L10 10",0],["M10 9.9L10 9A2 2 0 0 0 8 7A2 2 0 0 0 6 9L6 14",0]],[20.4,10.6,4.75],0]);
 export default GlassHandGrab;

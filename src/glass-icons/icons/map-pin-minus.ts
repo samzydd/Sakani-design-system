@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-pin-minus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMapPinMinus = /*#__PURE__*/ createGlassIcon("map-pin-minus", [["path",{"d":"M18.977 14C19.6 12.701 20 11.343 20 10a8 8 0 0 0 -16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0a32 32 0 0 0 0.824 -0.738"},0],["circle",{"cx":"12","cy":"10","r":"3"},1],["path",{"d":"M16 18h6"},0]]);
+export const GlassMapPinMinus = /*#__PURE__*/ createGlassIcon("map-pin-minus", [[["M18.977 14C19.6 12.701 20 11.343 20 10A8 8 0 0 0 4 10C4 14.993 9.539 20.193 11.399 21.799A1 1 0 0 0 12.601 21.799A32 32 0 0 0 13.425 21.061Z",1]],[["M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z",1],["M16 18L22 18",0]],[18.4,3.6,4.75],0]);
 export default GlassMapPinMinus;

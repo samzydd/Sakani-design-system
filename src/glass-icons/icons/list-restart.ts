@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-restart"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassListRestart = /*#__PURE__*/ createGlassIcon("list-restart", [["path",{"d":"M21 5H3"},0],["path",{"d":"M7 12H3"},0],["path",{"d":"M7 19H3"},0],["path",{"d":"M12 18a5 5 0 0 0 9 -3a4.5 4.5 0 0 0 -4.5 -4.5c-1.33 0 -2.54 0.54 -3.41 1.41L11 14"},0],["path",{"d":"M11 10v4h4"},0]]);
+export const GlassListRestart = /*#__PURE__*/ createGlassIcon("list-restart", [[["M12 18A5 5 0 0 0 21 15A4.5 4.5 0 0 0 16.5 10.5C15.17 10.5 13.96 11.04 13.09 11.91L11 14Z",1]],[["M21 5L3 5",0],["M7 12L3 12",0],["M7 19L3 19",0],["M11 10L11 14L15 14",1]],[20.3,11.2,3.25],0]);
 export default GlassListRestart;

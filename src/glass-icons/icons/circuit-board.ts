@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circuit-board"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircuitBoard = /*#__PURE__*/ createGlassIcon("circuit-board", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M11 9h4a2 2 0 0 0 2 -2V3"},0],["circle",{"cx":"9","cy":"9","r":"2"},1],["path",{"d":"M7 21v-4a2 2 0 0 1 2 -2h4"},0],["circle",{"cx":"15","cy":"15","r":"2"},1]]);
+export const GlassCircuitBoard = /*#__PURE__*/ createGlassIcon("circuit-board", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M11 9L15 9A2 2 0 0 0 17 7L17 3",1],["M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9Z",1],["M7 21L7 17A2 2 0 0 1 9 15L13 15",1],["M13 15A2 2 0 1 0 17 15A2 2 0 1 0 13 15Z",1]],[19.4,4.6,4.75],0]);
 export default GlassCircuitBoard;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "utensils"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUtensils = /*#__PURE__*/ createGlassIcon("utensils", [["path",{"d":"M3 2v7c0 1.1 0.9 2 2 2h4a2 2 0 0 0 2 -2V2"},0],["path",{"d":"M7 2v20"},0],["path",{"d":"M21 15V2a5 5 0 0 0 -5 5v6c0 1.1 0.9 2 2 2h3Z"},1],["path",{"d":"M21 15v7"},0]]);
+export const GlassUtensils = /*#__PURE__*/ createGlassIcon("utensils", [[["M3 2L3 9C3 10.1 3.9 11 5 11L9 11A2 2 0 0 0 11 9L11 2Z",1],["M21 15L21 2A5 5 0 0 0 16 7L16 13C16 14.1 16.9 15 18 15L21 15Z",1]],[["M7 2L7 22",0],["M21 15L21 22",0]],[19.4,3.6,4.75],0]);
 export default GlassUtensils;

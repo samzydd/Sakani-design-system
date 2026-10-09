@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "test-tubes"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTestTubes = /*#__PURE__*/ createGlassIcon("test-tubes", [["path",{"d":"M9 2v17.5A2.5 2.5 0 0 1 6.5 22A2.5 2.5 0 0 1 4 19.5V2"},0],["path",{"d":"M20 2v17.5a2.5 2.5 0 0 1 -2.5 2.5a2.5 2.5 0 0 1 -2.5 -2.5V2"},0],["path",{"d":"M3 2h7"},0],["path",{"d":"M14 2h7"},0],["path",{"d":"M9 16H4"},0],["path",{"d":"M20 16h-5"},0]]);
+export const GlassTestTubes = /*#__PURE__*/ createGlassIcon("test-tubes", [[["M9 2L9 19.5A2.5 2.5 0 0 1 6.5 22A2.5 2.5 0 0 1 4 19.5L4 2Z",1],["M20 2L20 19.5A2.5 2.5 0 0 1 17.5 22A2.5 2.5 0 0 1 15 19.5L15 2Z",1],["M3 2L10 2",0],["M14 2L21 2",0]],[["M9 16L4 16",1],["M20 16L15 16",1]],[19.4,3.6,4.75],0]);
 export default GlassTestTubes;

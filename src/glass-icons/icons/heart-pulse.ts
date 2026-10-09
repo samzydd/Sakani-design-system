@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "heart-pulse"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHeartPulse = /*#__PURE__*/ createGlassIcon("heart-pulse", [["path",{"d":"M2 9.5a5.5 5.5 0 0 1 9.591 -3.676a0.56 0.56 0 0 0 0.818 0A5.49 5.49 0 0 1 22 9.5c0 2.29 -1.5 4 -3 5.5l-5.492 5.313a2 2 0 0 1 -3 0.019L5 15c-1.5 -1.5 -3 -3.2 -3 -5.5"},1],["path",{"d":"M3.22 13H9.5l0.5 -1l2 4.5l2 -7l1.5 3.5h5.27"},0]]);
+export const GlassHeartPulse = /*#__PURE__*/ createGlassIcon("heart-pulse", [[["M2 9.5A5.5 5.5 0 0 1 11.591 5.824A0.56 0.56 0 0 0 12.409 5.824A5.49 5.49 0 0 1 22 9.5C22 11.79 20.5 13.5 19 15L13.508 20.313A2 2 0 0 1 10.508 20.332L5 15C3.5 13.5 2 11.8 2 9.5",1]],[["M3.22 13L9.5 13L10 12L12 16.5L14 9.5L15.5 13L20.77 13",1]],[20.4,5.605,4.75],0]);
 export default GlassHeartPulse;

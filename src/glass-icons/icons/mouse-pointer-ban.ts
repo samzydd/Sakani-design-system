@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mouse-pointer-ban"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMousePointerBan = /*#__PURE__*/ createGlassIcon("mouse-pointer-ban", [["path",{"d":"M2.034 2.681a0.498 0.498 0 0 1 0.647 -0.647l9 3.5a0.5 0.5 0 0 1 -0.033 0.944L8.204 7.545a1 1 0 0 0 -0.66 0.66l-1.066 3.443a0.5 0.5 0 0 1 -0.944 0.033z"},1],["circle",{"cx":"16","cy":"16","r":"6"},1],["path",{"d":"M11.8 11.8l8.4 8.4"},0]]);
+export const GlassMousePointerBan = /*#__PURE__*/ createGlassIcon("mouse-pointer-ban", [[["M10 16A6 6 0 1 0 22 16A6 6 0 1 0 10 16Z",1],["M2.034 2.681A0.498 0.498 0 0 1 2.681 2.034L11.681 5.534A0.5 0.5 0 0 1 11.648 6.478L8.204 7.545A1 1 0 0 0 7.544 8.205L6.478 11.648A0.5 0.5 0 0 1 5.534 11.681Z",1]],[["M11.8 11.8L20.2 20.2",1]],[20.4,3.599,4.75],0]);
 export default GlassMousePointerBan;

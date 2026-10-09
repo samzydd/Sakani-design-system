@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "package-search"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPackageSearch = /*#__PURE__*/ createGlassIcon("package-search", [["path",{"d":"M12 22V12"},0],["path",{"d":"M20.27 18.27L22 20"},0],["path",{"d":"M21 10.498V8a2 2 0 0 0 -1 -1.73l-7 -4a2 2 0 0 0 -2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 0.001l0.98 -0.559"},0],["path",{"d":"M3.29 7L12 12l8.71 -5"},0],["path",{"d":"M7.5 4.27l8.997 5.148"},0],["circle",{"cx":"18.5","cy":"16.5","r":"2.5"},1]]);
+export const GlassPackageSearch = /*#__PURE__*/ createGlassIcon("package-search", [[["M21 10.498L21 8A2 2 0 0 0 20 6.27L13 2.27A2 2 0 0 0 11 2.27L4 6.27A2 2 0 0 0 3 8L3 16A2 2 0 0 0 4 17.729L11 21.729A2 2 0 0 0 13 21.73L13.98 21.171Z",1]],[["M12 22L12 12",1],["M20.27 18.27L22 20",0],["M3.29 7L12 12L20.71 7",1],["M7.5 4.27L16.497 9.418",1],["M16 16.5A2.5 2.5 0 1 0 21 16.5A2.5 2.5 0 1 0 16 16.5Z",0]],[19.4,3.602,4.75],0]);
 export default GlassPackageSearch;

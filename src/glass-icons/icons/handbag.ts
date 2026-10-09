@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "handbag"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHandbag = /*#__PURE__*/ createGlassIcon("handbag", [["path",{"d":"M2.048 18.566A2 2 0 0 0 4 21h16a2 2 0 0 0 1.952 -2.434l-2 -9A2 2 0 0 0 18 8H6a2 2 0 0 0 -1.952 1.566z"},1],["path",{"d":"M8 11V6a4 4 0 0 1 8 0v5"},0]]);
+export const GlassHandbag = /*#__PURE__*/ createGlassIcon("handbag", [[["M2.048 18.566A2 2 0 0 0 4 21L20 21A2 2 0 0 0 21.952 18.566L19.952 9.566A2 2 0 0 0 18 8L6 8A2 2 0 0 0 4.048 9.566Z",1]],[["M8 11L8 6A4 4 0 0 1 16 6L16 11",0]],[20.398,9.6,4.75],0]);
 export default GlassHandbag;

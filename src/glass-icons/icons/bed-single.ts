@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bed-single"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBedSingle = /*#__PURE__*/ createGlassIcon("bed-single", [["path",{"d":"M3 20v-8a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v8"},0],["path",{"d":"M5 10V6a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v4"},0],["path",{"d":"M3 18h18"},0]]);
+export const GlassBedSingle = /*#__PURE__*/ createGlassIcon("bed-single", [[["M3 20L3 12A2 2 0 0 1 5 10L19 10A2 2 0 0 1 21 12L21 20Z",1],["M5 10L5 6A2 2 0 0 1 7 4L17 4A2 2 0 0 1 19 6L19 10Z",1]],[["M3 18L21 18",1]],[19.4,5.6,4.75],0]);
 export default GlassBedSingle;

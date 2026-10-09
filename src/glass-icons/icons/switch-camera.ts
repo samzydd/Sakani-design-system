@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "switch-camera"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSwitchCamera = /*#__PURE__*/ createGlassIcon("switch-camera", [["path",{"d":"M11 19H4a2 2 0 0 1 -2 -2V7a2 2 0 0 1 2 -2h5"},0],["path",{"d":"M13 5h7a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-5"},0],["circle",{"cx":"12","cy":"12","r":"3"},1],["path",{"d":"M18 22l-3 -3l3 -3"},0],["path",{"d":"M6 2l3 3l-3 3"},0]]);
+export const GlassSwitchCamera = /*#__PURE__*/ createGlassIcon("switch-camera", [[["M13 5L20 5A2 2 0 0 1 22 7L22 17A2 2 0 0 1 20 19L15 19Z",1],["M11 19L4 19A2 2 0 0 1 2 17L2 7A2 2 0 0 1 4 5L9 5Z",1],["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z",0]],[["M18 22L15 19L18 16",1],["M6 2L9 5L6 8",1]],[20.4,6.6,4.75],0]);
 export default GlassSwitchCamera;

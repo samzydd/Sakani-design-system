@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "monitor-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMonitorOff = /*#__PURE__*/ createGlassIcon("monitor-off", [["path",{"d":"M12 17v4"},0],["path",{"d":"M17 17H4a2 2 0 0 1 -2 -2V5a2 2 0 0 1 1.184 -1.826"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M8 21h8"},0],["path",{"d":"M8.656 3H20a2 2 0 0 1 2 2v10a2 2 0 0 1 -0.293 1.042"},0]]);
+export const GlassMonitorOff = /*#__PURE__*/ createGlassIcon("monitor-off", [[["M12 17L12 21",0],["M17 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 3.184 3.174",0],["M2 2L22 22",0],["M8 21L16 21",0],["M8.656 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 21.707 16.042",0]],[],[20.4,3.6,4.75],1]);
 export default GlassMonitorOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "toggle-right"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassToggleRight = /*#__PURE__*/ createGlassIcon("toggle-right", [["circle",{"cx":"15","cy":"12","r":"3"},1],["rect",{"width":"20","height":"14","x":"2","y":"5","rx":"7"},1]]);
+export const GlassToggleRight = /*#__PURE__*/ createGlassIcon("toggle-right", [[["M9 5L15 5A7 7 0 0 1 22 12L22 12A7 7 0 0 1 15 19L9 19A7 7 0 0 1 2 12L2 12A7 7 0 0 1 9 5Z",1]],[["M12 12A3 3 0 1 0 18 12A3 3 0 1 0 12 12Z",1]],[20.4,6.6,4.75],0]);
 export default GlassToggleRight;

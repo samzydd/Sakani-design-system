@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "magnet"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMagnet = /*#__PURE__*/ createGlassIcon("magnet", [["path",{"d":"M12 15l4 4"},0],["path",{"d":"M2.352 10.648a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.029 -6.029a1 1 0 1 1 3 3l-6.029 6.029a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.365 -6.367A1 1 0 0 0 8.716 4.282z"},1],["path",{"d":"M5 8l4 4"},0]]);
+export const GlassMagnet = /*#__PURE__*/ createGlassIcon("magnet", [[["M2.352 10.648A1.205 1.205 0 0 0 2.352 12.352L4.648 14.648A1.205 1.205 0 0 0 6.352 14.648L12.381 8.619A1 1 0 1 1 15.381 11.619L9.352 17.648A1.205 1.205 0 0 0 9.352 19.352L11.648 21.648A1.205 1.205 0 0 0 13.352 21.648L19.717 15.281A1 1 0 0 0 8.716 4.282Z",1]],[["M12 15L16 19",1],["M5 8L9 12",1]],[20.395,3.603,4.75],0]);
 export default GlassMagnet;

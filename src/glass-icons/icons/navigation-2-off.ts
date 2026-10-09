@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "navigation-2-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassNavigation2Off = /*#__PURE__*/ createGlassIcon("navigation-2-off", [["path",{"d":"M9.31 9.31L5 21l7 -4l7 4l-1.17 -3.17"},0],["path",{"d":"M14.53 8.88L12 2l-1.17 3.17"},0],["line",{"x1":"2","x2":"22","y1":"2","y2":"22"},0]]);
+export const GlassNavigation2Off = /*#__PURE__*/ createGlassIcon("navigation-2-off", [[["M9.31 9.31L5 21L12 17L19 21L17.83 17.83Z",1]],[["M14.53 8.88L12 2L10.83 5.17",0],["M2 2L22 22",0]],[17.676,10.634,4.29],0]);
 export default GlassNavigation2Off;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBus = /*#__PURE__*/ createGlassIcon("bus", [["path",{"d":"M8 6v6"},0],["path",{"d":"M15 6v6"},0],["path",{"d":"M2 12h19.6"},0],["path",{"d":"M18 18h3s0.5 -1.7 0.8 -2.8c0.1 -0.4 0.2 -0.8 0.2 -1.2c0 -0.4 -0.1 -0.8 -0.2 -1.2l-1.4 -5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0 -2 2v10h3"},0],["circle",{"cx":"7","cy":"18","r":"2"},1],["path",{"d":"M9 18h5"},0],["circle",{"cx":"16","cy":"18","r":"2"},1]]);
+export const GlassBus = /*#__PURE__*/ createGlassIcon("bus", [[["M18 18L21 18C21 18 21.5 16.3 21.8 15.2C21.9 14.8 22 14.4 22 14C22 13.6 21.9 13.2 21.8 12.8L20.4 7.8C20.1 6.8 19.1 6 18 6L4 6A2 2 0 0 0 2 8L2 18L5 18Z",1],["M9 18L14 18",0]],[["M8 6L8 12",1],["M15 6L15 12",1],["M2 12L21.6 12",1],["M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18Z",1],["M14 18A2 2 0 1 0 18 18A2 2 0 1 0 14 18Z",1]],[20.4,7.6,4.75],0]);
 export default GlassBus;

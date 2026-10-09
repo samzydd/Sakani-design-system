@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "notebook-pen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassNotebookPen = /*#__PURE__*/ createGlassIcon("notebook-pen", [["path",{"d":"M13.4 2H6a2 2 0 0 0 -2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-7.4"},0],["path",{"d":"M2 6h4"},0],["path",{"d":"M2 10h4"},0],["path",{"d":"M2 14h4"},0],["path",{"d":"M2 18h4"},0],["path",{"d":"M21.378 5.626a1 1 0 1 0 -3.004 -3.004l-5.01 5.012a2 2 0 0 0 -0.506 0.854l-0.837 2.87a0.5 0.5 0 0 0 0.62 0.62l2.87 -0.837a2 2 0 0 0 0.854 -0.506z"},1]]);
+export const GlassNotebookPen = /*#__PURE__*/ createGlassIcon("notebook-pen", [[["M13.4 2L6 2A2 2 0 0 0 4 4L4 20A2 2 0 0 0 6 22L18 22A2 2 0 0 0 20 20L20 12.6Z",1]],[["M2 6L6 6",1],["M2 10L6 10",1],["M2 14L6 14",1],["M2 18L6 18",1],["M21.378 5.626A1 1 0 1 0 18.374 2.622L13.364 7.634A2 2 0 0 0 12.858 8.488L12.021 11.358A0.5 0.5 0 0 0 12.641 11.978L15.511 11.141A2 2 0 0 0 16.365 10.635Z",0]],[18.4,3.6,4.75],0]);
 export default GlassNotebookPen;

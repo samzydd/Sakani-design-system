@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "group"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGroup = /*#__PURE__*/ createGlassIcon("group", [["path",{"d":"M3 7V5c0 -1.1 0.9 -2 2 -2h2"},0],["path",{"d":"M17 3h2c1.1 0 2 0.9 2 2v2"},0],["path",{"d":"M21 17v2c0 1.1 -0.9 2 -2 2h-2"},0],["path",{"d":"M7 21H5c-1.1 0 -2 -0.9 -2 -2v-2"},0],["rect",{"width":"7","height":"5","x":"7","y":"7","rx":"1"},1],["rect",{"width":"7","height":"5","x":"10","y":"12","rx":"1"},1]]);
+export const GlassGroup = /*#__PURE__*/ createGlassIcon("group", [[["M11 12L16 12A1 1 0 0 1 17 13L17 16A1 1 0 0 1 16 17L11 17A1 1 0 0 1 10 16L10 13A1 1 0 0 1 11 12Z",1],["M8 7L13 7A1 1 0 0 1 14 8L14 11A1 1 0 0 1 13 12L8 12A1 1 0 0 1 7 11L7 8A1 1 0 0 1 8 7Z",1]],[["M3 7L3 5C3 3.9 3.9 3 5 3L7 3",0],["M17 3L19 3C20.1 3 21 3.9 21 5L21 7",0],["M21 17L21 19C21 20.1 20.1 21 19 21L17 21",0],["M7 21L5 21C3.9 21 3 20.1 3 19L3 17",0]],[16.3,7.7,3.25],0]);
 export default GlassGroup;

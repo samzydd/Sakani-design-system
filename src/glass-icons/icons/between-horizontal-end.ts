@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "between-horizontal-end"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBetweenHorizontalEnd = /*#__PURE__*/ createGlassIcon("between-horizontal-end", [["rect",{"width":"13","height":"7","x":"3","y":"3","rx":"1"},1],["path",{"d":"M22 15l-3 -3l3 -3"},0],["rect",{"width":"13","height":"7","x":"3","y":"14","rx":"1"},1]]);
+export const GlassBetweenHorizontalEnd = /*#__PURE__*/ createGlassIcon("between-horizontal-end", [[["M4 3L15 3A1 1 0 0 1 16 4L16 9A1 1 0 0 1 15 10L4 10A1 1 0 0 1 3 9L3 4A1 1 0 0 1 4 3Z",1],["M4 14L15 14A1 1 0 0 1 16 15L16 20A1 1 0 0 1 15 21L4 21A1 1 0 0 1 3 20L3 15A1 1 0 0 1 4 14Z",1]],[["M22 15L19 12L22 9",0]],[14.4,4.6,4.75],0]);
 export default GlassBetweenHorizontalEnd;

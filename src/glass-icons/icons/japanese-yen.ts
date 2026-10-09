@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "japanese-yen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassJapaneseYen = /*#__PURE__*/ createGlassIcon("japanese-yen", [["path",{"d":"M12 9.5V21"},0],["path",{"d":"M12 9.5L6 3"},0],["path",{"d":"M12 9.5L18 3"},0],["path",{"d":"M6 15h12"},0],["path",{"d":"M6 11h12"},0]]);
+export const GlassJapaneseYen = /*#__PURE__*/ createGlassIcon("japanese-yen", [[["M12 9.5L12 21",0],["M12 9.5L6 3",0],["M12 9.5L18 3",0],["M6 15L18 15",0],["M6 11L18 11",0]],[],[16.4,4.6,4.75],1]);
 export default GlassJapaneseYen;

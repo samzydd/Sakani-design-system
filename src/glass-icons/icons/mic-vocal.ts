@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mic-vocal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMicVocal = /*#__PURE__*/ createGlassIcon("mic-vocal", [["path",{"d":"M11 7.601l-5.994 8.19a1 1 0 0 0 0.1 1.298l0.817 0.818a1 1 0 0 0 1.314 0.087L15.09 12"},0],["path",{"d":"M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0 -3.928 2.356 -6 2c-2.072 -0.356 -2.775 -3.369 -1.5 -4.5"},0],["circle",{"cx":"16","cy":"7","r":"5"},1]]);
+export const GlassMicVocal = /*#__PURE__*/ createGlassIcon("mic-vocal", [[["M11 7A5 5 0 1 0 21 7A5 5 0 1 0 11 7Z",1],["M11 7.601L5.006 15.791A1 1 0 0 0 5.106 17.089L5.923 17.907A1 1 0 0 0 7.237 17.994L15.09 12Z",1]],[["M16.5 21.174C15.5 20.5 14.372 20 13 20C10.942 20 9.072 22.356 7 22C4.928 21.644 4.225 18.631 5.5 17.5",0]],[19.4,3.6,4.75],0]);
 export default GlassMicVocal;

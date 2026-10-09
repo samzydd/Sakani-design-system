@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "worm"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWorm = /*#__PURE__*/ createGlassIcon("worm", [["path",{"d":"M19 12l-1.5 3"},0],["path",{"d":"M19.63 18.81L22 20"},0],["path",{"d":"M6.47 8.23a1.68 1.68 0 0 1 2.44 1.93l-0.64 2.08a6.76 6.76 0 0 0 10.16 7.67l0.42 -0.27a1 1 0 1 0 -2.73 -4.21l-0.42 0.27a1.76 1.76 0 0 1 -2.63 -1.99l0.64 -2.08A6.66 6.66 0 0 0 3.94 3.9l-0.7 0.4a1 1 0 1 0 2.55 4.34z"},1]]);
+export const GlassWorm = /*#__PURE__*/ createGlassIcon("worm", [[["M6.47 8.23A1.68 1.68 0 0 1 8.91 10.16L8.27 12.24A6.76 6.76 0 0 0 18.43 19.91L18.85 19.64A1 1 0 1 0 16.12 15.43L15.7 15.7A1.76 1.76 0 0 1 13.07 13.71L13.71 11.63A6.66 6.66 0 0 0 3.94 3.9L3.24 4.3A1 1 0 1 0 5.79 8.64Z",1]],[["M19 12L17.5 15",0],["M19.63 18.81L22 20",0]],[18.387,4.554,4.75],0]);
 export default GlassWorm;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "send-horizontal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSendHorizontal = /*#__PURE__*/ createGlassIcon("send-horizontal", [["path",{"d":"M3.714 3.048a0.498 0.498 0 0 0 -0.683 0.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a0.498 0.498 0 0 0 0.682 0.627l18 -8.5a0.5 0.5 0 0 0 0 -0.904z"},1],["path",{"d":"M6 12h16"},0]]);
+export const GlassSendHorizontal = /*#__PURE__*/ createGlassIcon("send-horizontal", [[["M3.714 3.048A0.498 0.498 0 0 0 3.031 3.675L5.874 11.302A2 2 0 0 1 5.874 12.698L3.032 20.325A0.498 0.498 0 0 0 3.714 20.952L21.714 12.452A0.5 0.5 0 0 0 21.714 11.548Z",1]],[["M6 12L22 12",1]],[20.4,4.599,4.75],0]);
 export default GlassSendHorizontal;

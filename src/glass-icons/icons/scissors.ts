@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "scissors"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassScissors = /*#__PURE__*/ createGlassIcon("scissors", [["circle",{"cx":"6","cy":"6","r":"3"},1],["path",{"d":"M8.12 8.12L12 12"},0],["path",{"d":"M20 4L8.12 15.88"},0],["circle",{"cx":"6","cy":"18","r":"3"},1],["path",{"d":"M14.8 14.8L20 20"},0]]);
+export const GlassScissors = /*#__PURE__*/ createGlassIcon("scissors", [[["M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z",1],["M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18Z",1]],[["M8.12 8.12L12 12",0],["M20 4L8.12 15.88",0],["M14.8 14.8L20 20",0]],[7.4,4.6,4.75],0]);
 export default GlassScissors;

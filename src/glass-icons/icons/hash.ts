@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hash"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHash = /*#__PURE__*/ createGlassIcon("hash", [["line",{"x1":"4","x2":"20","y1":"9","y2":"9"},0],["line",{"x1":"4","x2":"20","y1":"15","y2":"15"},0],["line",{"x1":"10","x2":"8","y1":"3","y2":"21"},0],["line",{"x1":"16","x2":"14","y1":"3","y2":"21"},0]]);
+export const GlassHash = /*#__PURE__*/ createGlassIcon("hash", [[["M4 9L20 9",0],["M4 15L20 15",0],["M10 3L8 21",0],["M16 3L14 21",0]],[],[18.4,4.6,4.75],1]);
 export default GlassHash;

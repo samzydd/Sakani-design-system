@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "replace"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassReplace = /*#__PURE__*/ createGlassIcon("replace", [["path",{"d":"M14 4a1 1 0 0 1 1 -1"},0],["path",{"d":"M15 10a1 1 0 0 1 -1 -1"},0],["path",{"d":"M21 4a1 1 0 0 0 -1 -1"},0],["path",{"d":"M21 9a1 1 0 0 1 -1 1"},0],["path",{"d":"M3 7l3 3l3 -3"},0],["path",{"d":"M6 10V5a2 2 0 0 1 2 -2h2"},0],["rect",{"x":"3","y":"14","width":"7","height":"7","rx":"1"},1]]);
+export const GlassReplace = /*#__PURE__*/ createGlassIcon("replace", [[["M4 14L9 14A1 1 0 0 1 10 15L10 20A1 1 0 0 1 9 21L4 21A1 1 0 0 1 3 20L3 15A1 1 0 0 1 4 14Z",1]],[["M14 4A1 1 0 0 1 15 3",0],["M15 10A1 1 0 0 1 14 9",0],["M21 4A1 1 0 0 0 20 3",0],["M21 9A1 1 0 0 1 20 10",0],["M3 7L6 10L9 7",0],["M6 10L6 5A2 2 0 0 1 8 3L10 3",0]],[9.45,14.55,3],0]);
 export default GlassReplace;

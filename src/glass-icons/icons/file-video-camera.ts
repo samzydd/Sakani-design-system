@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-video-camera"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileVideoCamera = /*#__PURE__*/ createGlassIcon("file-video-camera", [["path",{"d":"M4 12V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.706 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1 -2 2"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M10 17.843l3.033 -1.755a0.64 0.64 0 0 1 0.967 0.56v4.704a0.65 0.65 0 0 1 -0.967 0.56L10 20.157"},0],["rect",{"width":"7","height":"6","x":"3","y":"16","rx":"1"},1]]);
+export const GlassFileVideoCamera = /*#__PURE__*/ createGlassIcon("file-video-camera", [[["M4 12L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M10 17.843L13.033 16.088A0.64 0.64 0 0 1 14 16.648L14 21.352A0.65 0.65 0 0 1 13.033 21.912L10 20.157",1],["M4 16L9 16A1 1 0 0 1 10 17L10 21A1 1 0 0 1 9 22L4 22A1 1 0 0 1 3 21L3 17A1 1 0 0 1 4 16Z",0]],[18.4,3.6,4.75],0]);
 export default GlassFileVideoCamera;

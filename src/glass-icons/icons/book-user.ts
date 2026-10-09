@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-user"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBookUser = /*#__PURE__*/ createGlassIcon("book-user", [["path",{"d":"M15 13a3 3 0 1 0 -6 0"},0],["path",{"d":"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1 -1 1H6.5a1 1 0 0 1 0 -5H20"},0],["circle",{"cx":"12","cy":"8","r":"2"},1]]);
+export const GlassBookUser = /*#__PURE__*/ createGlassIcon("book-user", [[["M15 13A3 3 0 1 0 9 13Z",1],["M10 8A2 2 0 1 0 14 8A2 2 0 1 0 10 8Z",1]],[["M4 19.5L4 4.5A2.5 2.5 0 0 1 6.5 2L19 2A1 1 0 0 1 20 3L20 21A1 1 0 0 1 19 22L6.5 22A1 1 0 0 1 6.5 17L20 17",0]],[14.45,6.55,3],0]);
 export default GlassBookUser;

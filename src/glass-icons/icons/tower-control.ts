@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tower-control"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTowerControl = /*#__PURE__*/ createGlassIcon("tower-control", [["path",{"d":"M18.2 12.27L20 6H4l1.8 6.27a1 1 0 0 0 0.95 0.73h10.5a1 1 0 0 0 0.96 -0.73Z"},1],["path",{"d":"M8 13v9"},0],["path",{"d":"M16 22v-9"},0],["path",{"d":"M9 6l1 7"},0],["path",{"d":"M15 6l-1 7"},0],["path",{"d":"M12 6V2"},0],["path",{"d":"M13 2h-2"},0]]);
+export const GlassTowerControl = /*#__PURE__*/ createGlassIcon("tower-control", [[["M18.2 12.27L20 6L4 6L5.8 12.27A1 1 0 0 0 6.75 13L17.25 13A1 1 0 0 0 18.21 12.27Z",1]],[["M8 13L8 22",0],["M16 22L16 13",0],["M9 6L10 13",1],["M15 6L14 13",1],["M12 6L12 2",0],["M13 2L11 2",0]],[18.4,7.6,4.75],0]);
 export default GlassTowerControl;

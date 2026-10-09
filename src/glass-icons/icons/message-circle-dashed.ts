@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-circle-dashed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessageCircleDashed = /*#__PURE__*/ createGlassIcon("message-circle-dashed", [["path",{"d":"M10.1 2.182a10 10 0 0 1 3.8 0"},0],["path",{"d":"M13.9 21.818a10 10 0 0 1 -3.8 0"},0],["path",{"d":"M17.609 3.72a10 10 0 0 1 2.69 2.7"},0],["path",{"d":"M2.182 13.9a10 10 0 0 1 0 -3.8"},0],["path",{"d":"M20.28 17.61a10 10 0 0 1 -2.7 2.69"},0],["path",{"d":"M21.818 10.1a10 10 0 0 1 0 3.8"},0],["path",{"d":"M3.721 6.391a10 10 0 0 1 2.7 -2.69"},0],["path",{"d":"M6.163 21.117l-2.906 0.85a1 1 0 0 1 -1.236 -1.169l0.965 -2.98"},0]]);
+export const GlassMessageCircleDashed = /*#__PURE__*/ createGlassIcon("message-circle-dashed", [[["M6.163 21.117L3.257 21.967A1 1 0 0 1 2.021 20.798L2.986 17.818Z",1]],[["M10.1 2.182A10 10 0 0 1 13.9 2.182",0],["M13.9 21.818A10 10 0 0 1 10.1 21.818",0],["M17.609 3.72A10 10 0 0 1 20.299 6.42",0],["M2.182 13.9A10 10 0 0 1 2.182 10.1",0],["M20.28 17.61A10 10 0 0 1 17.58 20.3",0],["M21.818 10.1A10 10 0 0 1 21.818 13.9",0],["M3.721 6.391A10 10 0 0 1 6.421 3.701",0]],[5.613,18.368,3],0]);
 export default GlassMessageCircleDashed;

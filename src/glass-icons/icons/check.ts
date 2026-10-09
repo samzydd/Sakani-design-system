@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "check"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCheck = /*#__PURE__*/ createGlassIcon("check", [["path",{"d":"M20 6L9 17l-5 -5"},0]]);
+export const GlassCheck = /*#__PURE__*/ createGlassIcon("check", [[["M20 6L9 17L4 12",0]],[],[18.4,7.6,4.75],1]);
 export default GlassCheck;

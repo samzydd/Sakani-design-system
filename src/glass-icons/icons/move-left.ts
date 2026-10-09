@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "move-left"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMoveLeft = /*#__PURE__*/ createGlassIcon("move-left", [["path",{"d":"M6 8L2 12L6 16"},0],["path",{"d":"M2 12H22"},0]]);
+export const GlassMoveLeft = /*#__PURE__*/ createGlassIcon("move-left", [[["M6 8L2 12L6 16",0],["M2 12L22 12",0]],[],[20.4,9.6,4.75],1]);
 export default GlassMoveLeft;

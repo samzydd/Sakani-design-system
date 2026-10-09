@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "video-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVideoOff = /*#__PURE__*/ createGlassIcon("video-off", [["path",{"d":"M10.66 6H14a2 2 0 0 1 2 2v2.5l5.248 -3.062A0.5 0.5 0 0 1 22 7.87v8.196"},0],["path",{"d":"M16 16a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2h2"},0],["path",{"d":"M2 2l20 20"},0]]);
+export const GlassVideoOff = /*#__PURE__*/ createGlassIcon("video-off", [[["M16 16A2 2 0 0 1 14 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6L6 6Z",1],["M10.66 6L14 6A2 2 0 0 1 16 8L16 10.5L21.248 7.438A0.5 0.5 0 0 1 22 7.87L22 16.066Z",1]],[["M2 2L22 22",1]],[20.4,7.6,4.75],0]);
 export default GlassVideoOff;

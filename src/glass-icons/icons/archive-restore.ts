@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "archive-restore"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArchiveRestore = /*#__PURE__*/ createGlassIcon("archive-restore", [["rect",{"width":"20","height":"5","x":"2","y":"3","rx":"1"},1],["path",{"d":"M4 8v11a2 2 0 0 0 2 2h2"},0],["path",{"d":"M20 8v11a2 2 0 0 1 -2 2h-2"},0],["path",{"d":"M9 15l3 -3l3 3"},0],["path",{"d":"M12 12v9"},0]]);
+export const GlassArchiveRestore = /*#__PURE__*/ createGlassIcon("archive-restore", [[["M3 3L21 3A1 1 0 0 1 22 4L22 7A1 1 0 0 1 21 8L3 8A1 1 0 0 1 2 7L2 4A1 1 0 0 1 3 3Z",1]],[["M4 8L4 19A2 2 0 0 0 6 21L8 21",0],["M20 8L20 19A2 2 0 0 1 18 21L16 21",0],["M9 15L12 12L15 15",0],["M12 12L12 21",0]],[20.4,4.6,4.75],0]);
 export default GlassArchiveRestore;

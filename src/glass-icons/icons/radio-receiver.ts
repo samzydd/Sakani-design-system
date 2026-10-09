@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "radio-receiver"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRadioReceiver = /*#__PURE__*/ createGlassIcon("radio-receiver", [["path",{"d":"M5 16v2"},0],["path",{"d":"M19 16v2"},0],["rect",{"width":"20","height":"8","x":"2","y":"8","rx":"2"},1],["path",{"d":"M18 12h0.01"},0]]);
+export const GlassRadioReceiver = /*#__PURE__*/ createGlassIcon("radio-receiver", [[["M4 8L20 8A2 2 0 0 1 22 10L22 14A2 2 0 0 1 20 16L4 16A2 2 0 0 1 2 14L2 10A2 2 0 0 1 4 8Z",1]],[["M5 16L5 18",1],["M19 16L19 18",1],["M18 12L18.01 12",1]],[20.4,9.6,4.75],0]);
 export default GlassRadioReceiver;

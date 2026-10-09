@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-end-horizontal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignEndHorizontal = /*#__PURE__*/ createGlassIcon("align-end-horizontal", [["rect",{"width":"6","height":"16","x":"4","y":"2","rx":"2"},1],["rect",{"width":"6","height":"9","x":"14","y":"9","rx":"2"},1],["path",{"d":"M22 22H2"},0]]);
+export const GlassAlignEndHorizontal = /*#__PURE__*/ createGlassIcon("align-end-horizontal", [[["M6 2L8 2A2 2 0 0 1 10 4L10 16A2 2 0 0 1 8 18L6 18A2 2 0 0 1 4 16L4 4A2 2 0 0 1 6 2Z",1],["M16 9L18 9A2 2 0 0 1 20 11L20 16A2 2 0 0 1 18 18L16 18A2 2 0 0 1 14 16L14 11A2 2 0 0 1 16 9Z",1]],[["M22 22L2 22",0]],[18.4,3.6,4.75],0]);
 export default GlassAlignEndHorizontal;

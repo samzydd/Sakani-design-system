@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-arrow-right"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleArrowRight = /*#__PURE__*/ createGlassIcon("circle-arrow-right", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M12 16l4 -4l-4 -4"},0],["path",{"d":"M8 12h8"},0]]);
+export const GlassCircleArrowRight = /*#__PURE__*/ createGlassIcon("circle-arrow-right", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M12 16L16 12L12 8",1],["M8 12L16 12",1]],[20.4,3.6,4.75],0]);
 export default GlassCircleArrowRight;

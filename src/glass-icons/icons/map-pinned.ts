@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-pinned"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMapPinned = /*#__PURE__*/ createGlassIcon("map-pinned", [["path",{"d":"M18 8c0 3.613 -3.869 7.429 -5.393 8.795a1 1 0 0 1 -1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0"},1],["circle",{"cx":"12","cy":"8","r":"2"},1],["path",{"d":"M8.714 14h-3.71a1 1 0 0 0 -0.948 0.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 0.948 -1.316l-2 -6a1 1 0 0 0 -0.949 -0.684h-3.712"},0]]);
+export const GlassMapPinned = /*#__PURE__*/ createGlassIcon("map-pinned", [[["M8.714 14L5.004 14A1 1 0 0 0 4.056 14.683L2.052 20.683A1 1 0 0 0 3 22L21 22A1 1 0 0 0 21.948 20.684L19.948 14.684A1 1 0 0 0 18.999 14L15.287 14Z",1],["M18 8C18 11.613 14.131 15.429 12.607 16.795A1 1 0 0 1 11.393 16.795C9.87 15.429 6 11.613 6 8A6 6 0 0 1 18 8",1]],[["M10 8A2 2 0 1 0 14 8A2 2 0 1 0 10 8Z",1]],[20.398,3.6,4.75],0]);
 export default GlassMapPinned;

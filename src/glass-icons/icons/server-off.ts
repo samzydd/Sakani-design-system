@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "server-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassServerOff = /*#__PURE__*/ createGlassIcon("server-off", [["path",{"d":"M7 2h13a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-5"},0],["path",{"d":"M10 10L2.5 2.5C2 2 2 2.5 2 5v3a2 2 0 0 0 2 2h6z"},1],["path",{"d":"M22 17v-1a2 2 0 0 0 -2 -2h-1"},0],["path",{"d":"M4 14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h16.5l1 -0.5l0.5 0.5l-8 -8H4z"},1],["path",{"d":"M6 18h0.01"},0],["path",{"d":"M2 2l20 20"},0]]);
+export const GlassServerOff = /*#__PURE__*/ createGlassIcon("server-off", [[["M4 14A2 2 0 0 0 2 16L2 20A2 2 0 0 0 4 22L20.5 22L21.5 21.5L22 22L14 14L4 14Z",1],["M7 2L20 2A2 2 0 0 1 22 4L22 8A2 2 0 0 1 20 10L15 10Z",1]],[["M10 10L2.5 2.5C2 2 2 2.5 2 5L2 8A2 2 0 0 0 4 10L10 10Z",0],["M22 17L22 16A2 2 0 0 0 20 14L19 14",0],["M6 18L6.01 18",1],["M2 2L22 22",0]],[20.4,3.6,4.75],0]);
 export default GlassServerOff;

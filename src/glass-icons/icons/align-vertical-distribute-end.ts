@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-vertical-distribute-end"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignVerticalDistributeEnd = /*#__PURE__*/ createGlassIcon("align-vertical-distribute-end", [["rect",{"width":"14","height":"6","x":"5","y":"14","rx":"2"},1],["rect",{"width":"10","height":"6","x":"7","y":"4","rx":"2"},1],["path",{"d":"M2 20h20"},0],["path",{"d":"M2 10h20"},0]]);
+export const GlassAlignVerticalDistributeEnd = /*#__PURE__*/ createGlassIcon("align-vertical-distribute-end", [[["M7 14L17 14A2 2 0 0 1 19 16L19 18A2 2 0 0 1 17 20L7 20A2 2 0 0 1 5 18L5 16A2 2 0 0 1 7 14Z",1],["M9 4L15 4A2 2 0 0 1 17 6L17 8A2 2 0 0 1 15 10L9 10A2 2 0 0 1 7 8L7 6A2 2 0 0 1 9 4Z",1],["M2 20L22 20",0]],[["M2 10L22 10",0]],[20.4,5.6,4.75],0]);
 export default GlassAlignVerticalDistributeEnd;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lightbulb-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLightbulbOff = /*#__PURE__*/ createGlassIcon("lightbulb-off", [["path",{"d":"M16.8 11.2c0.8 -0.9 1.2 -2 1.2 -3.2a6 6 0 0 0 -9.3 -5"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M6.3 6.3a4.67 4.67 0 0 0 1.2 5.2c0.7 0.7 1.3 1.5 1.5 2.5"},0],["path",{"d":"M9 18h6"},0],["path",{"d":"M10 22h4"},0]]);
+export const GlassLightbulbOff = /*#__PURE__*/ createGlassIcon("lightbulb-off", [[["M16.8 11.2C17.6 10.3 18 9.2 18 8A6 6 0 0 0 8.7 3",0],["M2 2L22 22",0],["M6.3 6.3A4.67 4.67 0 0 0 7.5 11.5C8.2 12.2 8.8 13 9 14",0],["M9 18L15 18",0],["M10 22L14 22",0]],[],[20.4,3.6,4.75],1]);
 export default GlassLightbulbOff;

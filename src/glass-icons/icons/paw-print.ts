@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "paw-print"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPawPrint = /*#__PURE__*/ createGlassIcon("paw-print", [["circle",{"cx":"11","cy":"4","r":"2"},1],["circle",{"cx":"18","cy":"8","r":"2"},1],["circle",{"cx":"20","cy":"16","r":"2"},1],["path",{"d":"M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1 -6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"},1]]);
+export const GlassPawPrint = /*#__PURE__*/ createGlassIcon("paw-print", [[["M9 10A5 5 0 0 1 14 15L14 18.5A3.5 3.5 0 0 1 7.16 19.545Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z",1]],[["M9 4A2 2 0 1 0 13 4A2 2 0 1 0 9 4Z",0],["M16 8A2 2 0 1 0 20 8A2 2 0 1 0 16 8Z",0],["M18 16A2 2 0 1 0 22 16A2 2 0 1 0 18 16Z",0]],[12.989,11.011,3.768],0]);
 export default GlassPawPrint;

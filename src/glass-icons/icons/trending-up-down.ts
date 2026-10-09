@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "trending-up-down"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTrendingUpDown = /*#__PURE__*/ createGlassIcon("trending-up-down", [["path",{"d":"M14.828 14.828L21 21"},0],["path",{"d":"M21 16v5h-5"},0],["path",{"d":"M21 3l-9 9l-4 -4l-6 6"},0],["path",{"d":"M21 8V3h-5"},0]]);
+export const GlassTrendingUpDown = /*#__PURE__*/ createGlassIcon("trending-up-down", [[["M14.828 14.828L21 21",0],["M21 16L21 21L16 21",0],["M21 3L12 12L8 8L2 14",0],["M21 8L21 3L16 3",0]],[],[19.4,4.6,4.75],1]);
 export default GlassTrendingUpDown;

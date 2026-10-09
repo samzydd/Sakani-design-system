@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "forward"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassForward = /*#__PURE__*/ createGlassIcon("forward", [["path",{"d":"M15 17l5 -5l-5 -5"},0],["path",{"d":"M4 18v-2a4 4 0 0 1 4 -4h12"},0]]);
+export const GlassForward = /*#__PURE__*/ createGlassIcon("forward", [[["M15 17L20 12L15 7",0],["M4 18L4 16A4 4 0 0 1 8 12L20 12",0]],[],[18.4,8.6,4.75],1]);
 export default GlassForward;

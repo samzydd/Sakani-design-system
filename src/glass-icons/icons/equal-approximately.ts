@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "equal-approximately"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEqualApproximately = /*#__PURE__*/ createGlassIcon("equal-approximately", [["path",{"d":"M5 15a6.5 6.5 0 0 1 7 0a6.5 6.5 0 0 0 7 0"},0],["path",{"d":"M5 9a6.5 6.5 0 0 1 7 0a6.5 6.5 0 0 0 7 0"},0]]);
+export const GlassEqualApproximately = /*#__PURE__*/ createGlassIcon("equal-approximately", [[["M5 15A6.5 6.5 0 0 1 12 15A6.5 6.5 0 0 0 19 15",0],["M5 9A6.5 6.5 0 0 1 12 9A6.5 6.5 0 0 0 19 9",0]],[],[17.676,9.301,4.29],1]);
 export default GlassEqualApproximately;

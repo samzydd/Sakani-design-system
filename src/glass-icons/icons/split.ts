@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "split"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSplit = /*#__PURE__*/ createGlassIcon("split", [["path",{"d":"M16 3h5v5"},0],["path",{"d":"M8 3H3v5"},0],["path",{"d":"M12 22v-8.3a4 4 0 0 0 -1.172 -2.872L3 3"},0],["path",{"d":"M15 9l6 -6"},0]]);
+export const GlassSplit = /*#__PURE__*/ createGlassIcon("split", [[["M16 3L21 3L21 8",0],["M8 3L3 3L3 8",0],["M12 22L12 13.7A4 4 0 0 0 10.828 10.828L3 3",0],["M15 9L21 3",0]],[],[19.4,4.6,4.75],1]);
 export default GlassSplit;

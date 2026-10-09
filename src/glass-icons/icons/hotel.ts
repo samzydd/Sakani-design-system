@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hotel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHotel = /*#__PURE__*/ createGlassIcon("hotel", [["path",{"d":"M10 22v-6.57"},0],["path",{"d":"M12 11h0.01"},0],["path",{"d":"M12 7h0.01"},0],["path",{"d":"M14 15.43V22"},0],["path",{"d":"M15 16a5 5 0 0 0 -6 0"},0],["path",{"d":"M16 11h0.01"},0],["path",{"d":"M16 7h0.01"},0],["path",{"d":"M8 11h0.01"},0],["path",{"d":"M8 7h0.01"},0],["rect",{"x":"4","y":"2","width":"16","height":"20","rx":"2"},1]]);
+export const GlassHotel = /*#__PURE__*/ createGlassIcon("hotel", [[["M6 2L18 2A2 2 0 0 1 20 4L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2Z",1]],[["M10 22L10 15.43",1],["M12 11L12.01 11",1],["M12 7L12.01 7",1],["M14 15.43L14 22",1],["M15 16A5 5 0 0 0 9 16",1],["M16 11L16.01 11",1],["M16 7L16.01 7",1],["M8 11L8.01 11",1],["M8 7L8.01 7",1]],[18.4,3.6,4.75],0]);
 export default GlassHotel;

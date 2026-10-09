@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-gauge"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleGauge = /*#__PURE__*/ createGlassIcon("circle-gauge", [["path",{"d":"M15.6 2.7a10 10 0 1 0 5.7 5.7"},0],["circle",{"cx":"12","cy":"12","r":"2"},1],["path",{"d":"M13.4 10.6L19 5"},0]]);
+export const GlassCircleGauge = /*#__PURE__*/ createGlassIcon("circle-gauge", [[["M15.6 2.7A10 10 0 1 0 21.3 8.4Z",1]],[["M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z",1],["M13.4 10.6L19 5",1]],[20.377,3.623,4.75],0]);
 export default GlassCircleGauge;

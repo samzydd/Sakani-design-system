@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "languages"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLanguages = /*#__PURE__*/ createGlassIcon("languages", [["path",{"d":"M5 8l6 6"},0],["path",{"d":"M4 14l6 -6l2 -3"},0],["path",{"d":"M2 5h12"},0],["path",{"d":"M7 2h1"},0],["path",{"d":"M22 22l-5 -10l-5 10"},0],["path",{"d":"M14 18h6"},0]]);
+export const GlassLanguages = /*#__PURE__*/ createGlassIcon("languages", [[["M22 22L17 12L12 22Z",1]],[["M5 8L11 14",0],["M4 14L10 8L12 5",0],["M2 5L14 5",0],["M7 2L8 2",0],["M14 18L20 18",1]],[21.3,12.7,3.25],0]);
 export default GlassLanguages;

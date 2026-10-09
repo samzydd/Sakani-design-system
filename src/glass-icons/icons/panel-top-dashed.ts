@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "panel-top-dashed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPanelTopDashed = /*#__PURE__*/ createGlassIcon("panel-top-dashed", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M14 9h1"},0],["path",{"d":"M19 9h2"},0],["path",{"d":"M3 9h2"},0],["path",{"d":"M9 9h1"},0]]);
+export const GlassPanelTopDashed = /*#__PURE__*/ createGlassIcon("panel-top-dashed", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M14 9L15 9",1],["M19 9L21 9",1],["M3 9L5 9",1],["M9 9L10 9",1]],[19.4,4.6,4.75],0]);
 export default GlassPanelTopDashed;

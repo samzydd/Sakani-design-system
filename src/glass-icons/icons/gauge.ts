@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gauge"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGauge = /*#__PURE__*/ createGlassIcon("gauge", [["path",{"d":"M12 14l4 -4"},0],["path",{"d":"M3.34 19a10 10 0 1 1 17.32 0"},0]]);
+export const GlassGauge = /*#__PURE__*/ createGlassIcon("gauge", [[["M3.34 19A10 10 0 1 1 20.66 19Z",1]],[["M12 14L16 10",1]],[20.389,5.6,4.75],0]);
 export default GlassGauge;

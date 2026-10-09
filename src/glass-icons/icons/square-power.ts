@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-power"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquarePower = /*#__PURE__*/ createGlassIcon("square-power", [["path",{"d":"M12 7v4"},0],["path",{"d":"M7.998 9.003a5 5 0 1 0 8 -0.005"},0],["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"2"},1]]);
+export const GlassSquarePower = /*#__PURE__*/ createGlassIcon("square-power", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M12 7L12 11",1],["M7.998 9.003A5 5 0 1 0 15.998 8.998",1]],[19.4,4.6,4.75],0]);
 export default GlassSquarePower;

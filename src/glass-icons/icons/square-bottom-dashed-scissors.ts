@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-bottom-dashed-scissors"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareBottomDashedScissors = /*#__PURE__*/ createGlassIcon("square-bottom-dashed-scissors", [["path",{"d":"M14 21h1"},0],["path",{"d":"M17 17l-2.18 -2.18"},0],["path",{"d":"M5 21a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2"},0],["path",{"d":"M9 21h1"},0],["path",{"d":"M9.56 14.44L17 7"},0],["path",{"d":"M9.56 9.56L12 12"},0],["circle",{"cx":"8.5","cy":"15.5","r":"1.5"},1],["circle",{"cx":"8.5","cy":"8.5","r":"1.5"},1]]);
+export const GlassSquareBottomDashedScissors = /*#__PURE__*/ createGlassIcon("square-bottom-dashed-scissors", [[["M5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21Z",1],["M14 21L15 21",0],["M9 21L10 21",0]],[["M17 17L14.82 14.82",1],["M9.56 14.44L17 7",1],["M9.56 9.56L12 12",1],["M7 15.5A1.5 1.5 0 1 0 10 15.5A1.5 1.5 0 1 0 7 15.5Z",1],["M7 8.5A1.5 1.5 0 1 0 10 8.5A1.5 1.5 0 1 0 7 8.5Z",1]],[19.4,4.6,4.75],0]);
 export default GlassSquareBottomDashedScissors;

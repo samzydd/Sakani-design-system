@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mic-signal" (alias of "podcast")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPodcast = /*#__PURE__*/ createGlassIcon("podcast", [["path",{"d":"M12 17v4"},0],["path",{"d":"M18 11a6 6 0 0 0 -3 -5.197"},0],["path",{"d":"M2 11a10 10 0 0 1 5 -8.662"},0],["path",{"d":"M22 11a10 10 0 0 0 -5 -8.662"},0],["path",{"d":"M6 11a6 6 0 0 1 3 -5.197"},0],["path",{"d":"M9 21h6"},0],["rect",{"x":"10","y":"9","width":"4","height":"8","rx":"2"},1]]);
+export const GlassPodcast = /*#__PURE__*/ createGlassIcon("podcast", [[["M12 9L12 9A2 2 0 0 1 14 11L14 15A2 2 0 0 1 12 17L12 17A2 2 0 0 1 10 15L10 11A2 2 0 0 1 12 9Z",1]],[["M12 17L12 21",0],["M18 11A6 6 0 0 0 15 5.803",0],["M2 11A10 10 0 0 1 7 2.338",0],["M22 11A10 10 0 0 0 17 2.338",0],["M6 11A6 6 0 0 1 9 5.803",0],["M9 21L15 21",0]],[13.45,9.55,3],0]);
 export default GlassPodcast;

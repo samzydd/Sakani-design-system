@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "infinity"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassInfinity = /*#__PURE__*/ createGlassIcon("infinity", [["path",{"d":"M6 16c5 0 7 -8 12 -8a4 4 0 0 1 0 8c-5 0 -7 -8 -12 -8a4 4 0 1 0 0 8"},1]]);
+export const GlassInfinity = /*#__PURE__*/ createGlassIcon("infinity", [[["M6 16C11 16 13 8 18 8A4 4 0 0 1 18 16C13 16 11 8 6 8A4 4 0 1 0 6 16",0]],[],[20.4,9.6,4.75],1]);
 export default GlassInfinity;

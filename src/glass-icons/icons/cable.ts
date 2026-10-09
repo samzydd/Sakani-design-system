@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cable"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCable = /*#__PURE__*/ createGlassIcon("cable", [["path",{"d":"M17 19a1 1 0 0 1 -1 -1v-2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a1 1 0 0 1 -1 1z"},1],["path",{"d":"M17 21v-2"},0],["path",{"d":"M19 14V6.5a1 1 0 0 0 -7 0v11a1 1 0 0 1 -7 0V10"},0],["path",{"d":"M21 21v-2"},0],["path",{"d":"M3 5V3"},0],["path",{"d":"M4 10a2 2 0 0 1 -2 -2V6a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v2a2 2 0 0 1 -2 2z"},1],["path",{"d":"M7 5V3"},0]]);
+export const GlassCable = /*#__PURE__*/ createGlassIcon("cable", [[["M4 10A2 2 0 0 1 2 8L2 6A1 1 0 0 1 3 5L7 5A1 1 0 0 1 8 6L8 8A2 2 0 0 1 6 10Z",1],["M17 19A1 1 0 0 1 16 18L16 16A2 2 0 0 1 18 14L20 14A2 2 0 0 1 22 16L22 18A1 1 0 0 1 21 19Z",1]],[["M17 21L17 19",1],["M19 14L19 6.5A1 1 0 0 0 12 6.5L12 17.5A1 1 0 0 1 5 17.5L5 10",0],["M21 21L21 19",1],["M3 5L3 3",1],["M7 5L7 3",1]],[20.4,6.6,4.75],0]);
 export default GlassCable;

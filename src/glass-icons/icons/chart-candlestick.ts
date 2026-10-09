@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-candlestick"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartCandlestick = /*#__PURE__*/ createGlassIcon("chart-candlestick", [["path",{"d":"M9 5v4"},0],["rect",{"width":"4","height":"6","x":"7","y":"9","rx":"1"},1],["path",{"d":"M9 15v2"},0],["path",{"d":"M17 3v2"},0],["rect",{"width":"4","height":"8","x":"15","y":"5","rx":"1"},1],["path",{"d":"M17 13v3"},0],["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0]]);
+export const GlassChartCandlestick = /*#__PURE__*/ createGlassIcon("chart-candlestick", [[["M16 5L18 5A1 1 0 0 1 19 6L19 12A1 1 0 0 1 18 13L16 13A1 1 0 0 1 15 12L15 6A1 1 0 0 1 16 5Z",1],["M8 9L10 9A1 1 0 0 1 11 10L11 14A1 1 0 0 1 10 15L8 15A1 1 0 0 1 7 14L7 10A1 1 0 0 1 8 9Z",1]],[["M9 5L9 9",0],["M9 15L9 17",1],["M17 3L17 5",1],["M17 13L17 16",0],["M3 3L3 19A2 2 0 0 0 5 21L21 21",0]],[17.988,6.012,3.77],0]);
 export default GlassChartCandlestick;

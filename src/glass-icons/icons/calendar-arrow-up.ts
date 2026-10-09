@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calendar-arrow-up"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCalendarArrowUp = /*#__PURE__*/ createGlassIcon("calendar-arrow-up", [["path",{"d":"M14 17l4 -4l4 4"},0],["path",{"d":"M16 2v3"},0],["path",{"d":"M18 21v-8"},0],["path",{"d":"M21 10.343V5a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h9"},0],["path",{"d":"M3 9h18"},0],["path",{"d":"M8 2v3"},0]]);
+export const GlassCalendarArrowUp = /*#__PURE__*/ createGlassIcon("calendar-arrow-up", [[["M21 10.343L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L14 21Z",1],["M16 2L16 5",0],["M8 2L8 5",0]],[["M14 17L18 13L22 17",1],["M18 21L18 13",0],["M3 9L21 9",1]],[19.4,3.6,4.75],0]);
 export default GlassCalendarArrowUp;

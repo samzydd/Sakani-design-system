@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "face-grinning" (alias of "laugh")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLaugh = /*#__PURE__*/ createGlassIcon("laugh", [["path",{"d":"M15 10V9"},0],["path",{"d":"M7.084 14.302a5.12 5.12 0 0 0 9.833 0a0.24 0.24 0 0 0 -0.235 -0.302H7.32a0.24 0.24 0 0 0 -0.235 0.302"},1],["path",{"d":"M9 10V9"},0],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassLaugh = /*#__PURE__*/ createGlassIcon("laugh", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M15 10L15 9",1],["M7.084 14.302A5.12 5.12 0 0 0 16.917 14.302A0.24 0.24 0 0 0 16.682 14L7.32 14A0.24 0.24 0 0 0 7.085 14.302",1],["M9 10L9 9",1]],[20.4,3.6,4.75],0]);
 export default GlassLaugh;

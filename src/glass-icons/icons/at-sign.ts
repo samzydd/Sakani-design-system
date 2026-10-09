@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "at-sign"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAtSign = /*#__PURE__*/ createGlassIcon("at-sign", [["circle",{"cx":"12","cy":"12","r":"4"},1],["path",{"d":"M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0 -4 8"},0]]);
+export const GlassAtSign = /*#__PURE__*/ createGlassIcon("at-sign", [[["M16 8L16 13A3 3 0 0 0 22 13L22 12A10 10 0 1 0 18 20Z",1]],[["M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z",1]],[20.4,3.608,4.75],0]);
 export default GlassAtSign;

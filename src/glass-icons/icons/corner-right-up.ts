@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "corner-right-up"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCornerRightUp = /*#__PURE__*/ createGlassIcon("corner-right-up", [["path",{"d":"M10 9l5 -5l5 5"},0],["path",{"d":"M4 20h7a4 4 0 0 0 4 -4V4"},0]]);
+export const GlassCornerRightUp = /*#__PURE__*/ createGlassIcon("corner-right-up", [[["M10 9L15 4L20 9",0],["M4 20L11 20A4 4 0 0 0 15 16L15 4",0]],[],[18.4,5.6,4.75],1]);
 export default GlassCornerRightUp;

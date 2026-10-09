@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shredder"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShredder = /*#__PURE__*/ createGlassIcon("shredder", [["path",{"d":"M4 13V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.706 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v5"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M10 22v-5"},0],["path",{"d":"M14 19v-2"},0],["path",{"d":"M18 20v-3"},0],["path",{"d":"M2 13h20"},0],["path",{"d":"M6 20v-3"},0]]);
+export const GlassShredder = /*#__PURE__*/ createGlassIcon("shredder", [[["M4 13L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 13Z",1],["M2 13L22 13",0]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M10 22L10 17",0],["M14 19L14 17",0],["M18 20L18 17",0],["M6 20L6 17",0]],[20.4,3.6,4.75],0]);
 export default GlassShredder;

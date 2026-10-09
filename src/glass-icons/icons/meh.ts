@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "face-neutral" (alias of "meh")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMeh = /*#__PURE__*/ createGlassIcon("meh", [["path",{"d":"M15 10V9"},0],["path",{"d":"M8 16h8"},0],["path",{"d":"M9 10V9"},0],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassMeh = /*#__PURE__*/ createGlassIcon("meh", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M15 10L15 9",1],["M8 16L16 16",1],["M9 10L9 9",1]],[20.4,3.6,4.75],0]);
 export default GlassMeh;

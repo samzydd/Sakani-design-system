@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "battery-charging"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBatteryCharging = /*#__PURE__*/ createGlassIcon("battery-charging", [["path",{"d":"M11 7l-3 5h4l-3 5"},0],["path",{"d":"M14.856 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-2.935"},0],["path",{"d":"M22 14v-4"},0],["path",{"d":"M5.14 18H4a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2h2.936"},0]]);
+export const GlassBatteryCharging = /*#__PURE__*/ createGlassIcon("battery-charging", [[["M14.856 6L16 6A2 2 0 0 1 18 8L18 16A2 2 0 0 1 16 18L13.065 18Z",1],["M5.14 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6L6.936 6Z",1]],[["M11 7L8 12L12 12L9 17",0],["M22 14L22 10",0]],[16.4,7.6,4.75],0]);
 export default GlassBatteryCharging;

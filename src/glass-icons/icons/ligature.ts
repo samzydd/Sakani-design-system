@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ligature"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLigature = /*#__PURE__*/ createGlassIcon("ligature", [["path",{"d":"M14 12h2v8"},0],["path",{"d":"M14 20h4"},0],["path",{"d":"M6 12h4"},0],["path",{"d":"M6 20h4"},0],["path",{"d":"M8 20V8a4 4 0 0 1 7.464 -2"},0]]);
+export const GlassLigature = /*#__PURE__*/ createGlassIcon("ligature", [[["M14 12L16 12L16 20",0],["M14 20L18 20",0],["M6 12L10 12",0],["M6 20L10 20",0],["M8 20L8 8A4 4 0 0 1 15.464 6",0]],[],[16.4,5.611,4.75],1]);
 export default GlassLigature;

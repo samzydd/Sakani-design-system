@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "scissors-line-dashed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassScissorsLineDashed = /*#__PURE__*/ createGlassIcon("scissors-line-dashed", [["path",{"d":"M5.42 9.42L8 12"},0],["circle",{"cx":"4","cy":"8","r":"2"},1],["path",{"d":"M14 6l-8.58 8.58"},0],["circle",{"cx":"4","cy":"16","r":"2"},1],["path",{"d":"M10.8 14.8L14 18"},0],["path",{"d":"M16 12h-2"},0],["path",{"d":"M22 12h-2"},0]]);
+export const GlassScissorsLineDashed = /*#__PURE__*/ createGlassIcon("scissors-line-dashed", [[["M2 16A2 2 0 1 0 6 16A2 2 0 1 0 2 16Z",1],["M2 8A2 2 0 1 0 6 8A2 2 0 1 0 2 8Z",1]],[["M5.42 9.42L8 12",0],["M14 6L5.42 14.58",0],["M10.8 14.8L14 18",0],["M16 12L14 12",0],["M22 12L20 12",0]],[4.988,7.012,3.77],0]);
 export default GlassScissorsLineDashed;

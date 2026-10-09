@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bone"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBone = /*#__PURE__*/ createGlassIcon("bone", [["path",{"d":"M17 10c0.7 -0.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0 -5a0.5 0.5 0 0 1 -0.5 -0.5a2.5 2.5 0 1 0 -5 0c0 0.81 0.7 1.8 0 2.5l-7 7c-0.7 0.7 -1.69 0 -2.5 0a2.5 2.5 0 0 0 0 5c0.28 0 0.5 0.22 0.5 0.5a2.5 2.5 0 1 0 5 0c0 -0.81 -0.7 -1.8 0 -2.5Z"},1]]);
+export const GlassBone = /*#__PURE__*/ createGlassIcon("bone", [[["M17 10C17.7 9.3 18.69 10 19.5 10A2.5 2.5 0 1 0 19.5 5A0.5 0.5 0 0 1 19 4.5A2.5 2.5 0 1 0 14 4.5C14 5.31 14.7 6.3 14 7L7 14C6.3 14.7 5.31 14 4.5 14A2.5 2.5 0 0 0 4.5 19C4.78 19 5 19.22 5 19.5A2.5 2.5 0 1 0 10 19.5C10 18.69 9.3 17.7 10 17Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassBone;

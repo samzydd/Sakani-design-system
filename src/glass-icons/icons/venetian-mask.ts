@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "venetian-mask"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVenetianMask = /*#__PURE__*/ createGlassIcon("venetian-mask", [["path",{"d":"M18 11c-1.5 0 -2.5 0.5 -3 2"},0],["path",{"d":"M4 6a2 2 0 0 0 -2 2v4a5 5 0 0 0 5 5a8 8 0 0 1 5 2a8 8 0 0 1 5 -2a5 5 0 0 0 5 -5V8a2 2 0 0 0 -2 -2h-3a8 8 0 0 0 -5 2a8 8 0 0 0 -5 -2z"},1],["path",{"d":"M6 11c1.5 0 2.5 0.5 3 2"},0]]);
+export const GlassVenetianMask = /*#__PURE__*/ createGlassIcon("venetian-mask", [[["M4 6A2 2 0 0 0 2 8L2 12A5 5 0 0 0 7 17A8 8 0 0 1 12 19A8 8 0 0 1 17 17A5 5 0 0 0 22 12L22 8A2 2 0 0 0 20 6L17 6A8 8 0 0 0 12 8A8 8 0 0 0 7 6Z",1]],[["M18 11C16.5 11 15.5 11.5 15 13",1],["M6 11C7.5 11 8.5 11.5 9 13",1]],[20.4,7.6,4.75],0]);
 export default GlassVenetianMask;

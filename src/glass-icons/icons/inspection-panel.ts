@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "inspection-panel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassInspectionPanel = /*#__PURE__*/ createGlassIcon("inspection-panel", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["path",{"d":"M7 7h0.01"},0],["path",{"d":"M17 7h0.01"},0],["path",{"d":"M7 17h0.01"},0],["path",{"d":"M17 17h0.01"},0]]);
+export const GlassInspectionPanel = /*#__PURE__*/ createGlassIcon("inspection-panel", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M7 7L7.01 7",1],["M17 7L17.01 7",1],["M7 17L7.01 17",1],["M17 17L17.01 17",1]],[19.4,4.6,4.75],0]);
 export default GlassInspectionPanel;

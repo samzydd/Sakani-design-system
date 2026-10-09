@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gamepad"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGamepad = /*#__PURE__*/ createGlassIcon("gamepad", [["line",{"x1":"6","x2":"10","y1":"12","y2":"12"},0],["line",{"x1":"8","x2":"8","y1":"10","y2":"14"},0],["line",{"x1":"15","x2":"15.01","y1":"13","y2":"13"},0],["line",{"x1":"18","x2":"18.01","y1":"11","y2":"11"},0],["rect",{"width":"20","height":"12","x":"2","y":"6","rx":"2"},1]]);
+export const GlassGamepad = /*#__PURE__*/ createGlassIcon("gamepad", [[["M4 6L20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z",1]],[["M6 12L10 12",1],["M8 10L8 14",1],["M15 13L15.01 13",1],["M18 11L18.01 11",1]],[20.4,7.6,4.75],0]);
 export default GlassGamepad;

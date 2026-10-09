@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "stamp"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassStamp = /*#__PURE__*/ createGlassIcon("stamp", [["path",{"d":"M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0 -6 0c0 2 1 2 1 3.5V13"},0],["path",{"d":"M20 15.5a2.5 2.5 0 0 0 -2.5 -2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1 -1z"},1],["path",{"d":"M5 22h14"},0]]);
+export const GlassStamp = /*#__PURE__*/ createGlassIcon("stamp", [[["M20 15.5A2.5 2.5 0 0 0 17.5 13L6.5 13A2.5 2.5 0 0 0 4 15.5L4 17A1 1 0 0 0 5 18L19 18A1 1 0 0 0 20 17Z",1],["M14 13L14 8.5C14 7 15 7 15 5A3 3 0 0 0 9 5C9 7 10 7 10 8.5L10 13Z",1]],[["M5 22L19 22",0]],[18.4,3.6,4.75],0]);
 export default GlassStamp;

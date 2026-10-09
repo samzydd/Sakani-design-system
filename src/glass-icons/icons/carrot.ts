@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "carrot"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCarrot = /*#__PURE__*/ createGlassIcon("carrot", [["path",{"d":"M15 16a1 1 0 0 0 -7 -7q-4 4 -5.987 12.385a0.5 0.5 0 0 0 0.602 0.602Q11 20 15 16l-3 -3"},0],["path",{"d":"M15 9q4 4 7 0q-3 -4 -7 0q4 -4 0 -7q-4 3 0 7"},1],["path",{"d":"M8 15l-2.58 -2.58"},0]]);
+export const GlassCarrot = /*#__PURE__*/ createGlassIcon("carrot", [[["M15 16A1 1 0 0 0 8 9Q4 13 2.013 21.385A0.5 0.5 0 0 0 2.615 21.987Q11 20 15 16L12 13Z",1]],[["M15 9Q19 13 22 9Q19 5 15 9Q19 5 15 2Q11 5 15 9",0],["M8 15L5.42 12.42",1]],[15.056,8.944,4.407],0]);
 export default GlassCarrot;

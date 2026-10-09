@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-right"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArrowRight = /*#__PURE__*/ createGlassIcon("arrow-right", [["path",{"d":"M5 12h14"},0],["path",{"d":"M12 5l7 7l-7 7"},0]]);
+export const GlassArrowRight = /*#__PURE__*/ createGlassIcon("arrow-right", [[["M5 12L19 12",0],["M12 5L19 12L12 19",0]],[],[17.676,6.324,4.29],1]);
 export default GlassArrowRight;

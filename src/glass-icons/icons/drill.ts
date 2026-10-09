@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "drill"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDrill = /*#__PURE__*/ createGlassIcon("drill", [["path",{"d":"M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1H5a3 3 0 0 1 -3 -3a1 1 0 0 1 1 -1z"},1],["path",{"d":"M13 10H4a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h9a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1l-0.81 3.242a1 1 0 0 1 -0.97 0.758H8"},0],["path",{"d":"M14 4h3a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-3"},0],["path",{"d":"M18 6h4"},0],["path",{"d":"M5 10l-2 8"},0],["path",{"d":"M7 18l2 -8"},0]]);
+export const GlassDrill = /*#__PURE__*/ createGlassIcon("drill", [[["M10 18A1 1 0 0 1 11 19L11 21A1 1 0 0 1 10 22L5 22A3 3 0 0 1 2 19A1 1 0 0 1 3 18Z",1],["M14 4L17 4A1 1 0 0 1 18 5L18 7A1 1 0 0 1 17 8L14 8Z",1]],[["M13 10L4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2L13 2A1 1 0 0 1 14 3L14 9A1 1 0 0 1 13 10L12.19 13.242A1 1 0 0 1 11.22 14L8 14",0],["M18 6L22 6",0],["M5 10L3 18",0],["M7 18L9 10",0]],[16.4,5.6,4.75],0]);
 export default GlassDrill;

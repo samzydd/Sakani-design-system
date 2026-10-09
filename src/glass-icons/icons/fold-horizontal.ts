@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fold-horizontal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFoldHorizontal = /*#__PURE__*/ createGlassIcon("fold-horizontal", [["path",{"d":"M2 12h6"},0],["path",{"d":"M22 12h-6"},0],["path",{"d":"M12 2v2"},0],["path",{"d":"M12 8v2"},0],["path",{"d":"M12 14v2"},0],["path",{"d":"M12 20v2"},0],["path",{"d":"M19 9l-3 3l3 3"},0],["path",{"d":"M5 15l3 -3l-3 -3"},0]]);
+export const GlassFoldHorizontal = /*#__PURE__*/ createGlassIcon("fold-horizontal", [[["M2 12L8 12",0],["M22 12L16 12",0],["M12 2L12 4",0],["M12 8L12 10",0],["M12 14L12 16",0],["M12 20L12 22",0],["M19 9L16 12L19 15",0],["M5 15L8 12L5 9",0]],[],[20.4,3.6,4.75],1]);
 export default GlassFoldHorizontal;

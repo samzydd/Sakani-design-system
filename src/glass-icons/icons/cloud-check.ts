@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cloud-check"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCloudCheck = /*#__PURE__*/ createGlassIcon("cloud-check", [["path",{"d":"M17 15l-5.5 5.5L9 18"},0],["path",{"d":"M5.516 16.07A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 3.501 7.327"},0]]);
+export const GlassCloudCheck = /*#__PURE__*/ createGlassIcon("cloud-check", [[["M5.516 16.07A7 7 0 1 1 15.71 8L17.5 8A4.5 4.5 0 0 1 21.001 15.327Z",1]],[["M17 15L11.5 20.5L9 18",0]],[20.389,4.624,4.75],0]);
 export default GlassCloudCheck;

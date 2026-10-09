@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-music"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileMusic = /*#__PURE__*/ createGlassIcon("file-music", [["path",{"d":"M11.65 22H18a2 2 0 0 0 2 -2V8a2.4 2.4 0 0 0 -0.706 -1.706l-3.588 -3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0 -2 2v10.35"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M8 20v-7l3 1.474"},0],["circle",{"cx":"6","cy":"20","r":"2"},1]]);
+export const GlassFileMusic = /*#__PURE__*/ createGlassIcon("file-music", [[["M11.65 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.294L15.706 2.706A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 14.35Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M8 20L8 13L11 14.474",1],["M4 20A2 2 0 1 0 8 20A2 2 0 1 0 4 20Z",0]],[18.4,3.6,4.75],0]);
 export default GlassFileMusic;

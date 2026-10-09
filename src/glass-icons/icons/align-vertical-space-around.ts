@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "align-vertical-space-around"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlignVerticalSpaceAround = /*#__PURE__*/ createGlassIcon("align-vertical-space-around", [["rect",{"width":"10","height":"6","x":"7","y":"9","rx":"2"},1],["path",{"d":"M22 20H2"},0],["path",{"d":"M22 4H2"},0]]);
+export const GlassAlignVerticalSpaceAround = /*#__PURE__*/ createGlassIcon("align-vertical-space-around", [[["M9 9L15 9A2 2 0 0 1 17 11L17 13A2 2 0 0 1 15 15L9 15A2 2 0 0 1 7 13L7 11A2 2 0 0 1 9 9Z",1]],[["M22 20L2 20",0],["M22 4L2 4",0]],[16.3,9.7,3.25],0]);
 export default GlassAlignVerticalSpaceAround;

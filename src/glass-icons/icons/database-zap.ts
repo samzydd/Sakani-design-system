@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "database-zap"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDatabaseZap = /*#__PURE__*/ createGlassIcon("database-zap", [["ellipse",{"cx":"12","cy":"5","rx":"9","ry":"3"},1],["path",{"d":"M3 5V19A9 3 0 0 0 15 21.84"},0],["path",{"d":"M21 5V8"},0],["path",{"d":"M21 12L18 17H22L19 22"},0],["path",{"d":"M3 12A9 3 0 0 0 14.59 14.87"},0]]);
+export const GlassDatabaseZap = /*#__PURE__*/ createGlassIcon("database-zap", [[["M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5Z",1],["M21 5L21 8",0]],[["M3 5L3 19A9 3 0 0 0 15 21.84",0],["M21 12L18 17L22 17L19 22",0],["M3 12A9 3 0 0 0 14.59 14.87",0]],[19.4,3.6,4.75],0]);
 export default GlassDatabaseZap;

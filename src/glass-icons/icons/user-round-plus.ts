@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "user-round-plus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUserRoundPlus = /*#__PURE__*/ createGlassIcon("user-round-plus", [["path",{"d":"M2 21a8 8 0 0 1 13.292 -6"},0],["circle",{"cx":"10","cy":"8","r":"5"},1],["path",{"d":"M19 16v6"},0],["path",{"d":"M22 19h-6"},0]]);
+export const GlassUserRoundPlus = /*#__PURE__*/ createGlassIcon("user-round-plus", [[["M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8Z",1]],[["M2 21A8 8 0 0 1 15.292 15",0],["M19 16L19 22",0],["M22 19L16 19",0]],[14.3,3.7,3.25],0]);
 export default GlassUserRoundPlus;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "waypoints"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWaypoints = /*#__PURE__*/ createGlassIcon("waypoints", [["path",{"d":"M10.586 5.414l-5.172 5.172"},0],["path",{"d":"M18.586 13.414l-5.172 5.172"},0],["path",{"d":"M6 12h12"},0],["circle",{"cx":"12","cy":"20","r":"2"},1],["circle",{"cx":"12","cy":"4","r":"2"},1],["circle",{"cx":"20","cy":"12","r":"2"},1],["circle",{"cx":"4","cy":"12","r":"2"},1]]);
+export const GlassWaypoints = /*#__PURE__*/ createGlassIcon("waypoints", [[["M2 12A2 2 0 1 0 6 12A2 2 0 1 0 2 12Z",1],["M10 4A2 2 0 1 0 14 4A2 2 0 1 0 10 4Z",1],["M18 12A2 2 0 1 0 22 12A2 2 0 1 0 18 12Z",1],["M10 20A2 2 0 1 0 14 20A2 2 0 1 0 10 20Z",1]],[["M10.586 5.414L5.414 10.586",0],["M18.586 13.414L13.414 18.586",0],["M6 12L18 12",0]],[20.4,3.6,4.75],0]);
 export default GlassWaypoints;

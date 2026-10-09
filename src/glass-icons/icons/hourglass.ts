@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hourglass"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHourglass = /*#__PURE__*/ createGlassIcon("hourglass", [["path",{"d":"M5 22h14"},0],["path",{"d":"M5 2h14"},0],["path",{"d":"M17 22v-4.172a2 2 0 0 0 -0.586 -1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"},0],["path",{"d":"M7 2v4.172a2 2 0 0 0 0.586 1.414L12 12l4.414 -4.414A2 2 0 0 0 17 6.172V2"},0]]);
+export const GlassHourglass = /*#__PURE__*/ createGlassIcon("hourglass", [[["M7 2L7 6.172A2 2 0 0 0 7.586 7.586L12 12L16.414 7.586A2 2 0 0 0 17 6.172L17 2Z",1],["M17 22L17 17.828A2 2 0 0 0 16.414 16.414L12 12L7.586 16.414A2 2 0 0 0 7 17.828L7 22Z",1],["M5 22L19 22",0],["M5 2L19 2",0]],[],[17.4,3.6,4.75],0]);
 export default GlassHourglass;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "undo-dot"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUndoDot = /*#__PURE__*/ createGlassIcon("undo-dot", [["path",{"d":"M21 17a9 9 0 0 0 -15 -6.7L3 13"},0],["path",{"d":"M3 7v6h6"},0],["circle",{"cx":"12","cy":"17","r":"1"},1]]);
+export const GlassUndoDot = /*#__PURE__*/ createGlassIcon("undo-dot", [[["M21 17A9 9 0 0 0 6 10.3L3 13",0],["M3 7L3 13L9 13",0],["M11 17A1 1 0 1 0 13 17A1 1 0 1 0 11 17Z",0]],[],[19.4,8.6,4.75],1]);
 export default GlassUndoDot;

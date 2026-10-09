@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-slash"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleSlash = /*#__PURE__*/ createGlassIcon("circle-slash", [["circle",{"cx":"12","cy":"12","r":"10"},1],["line",{"x1":"9","x2":"15","y1":"15","y2":"9"},0]]);
+export const GlassCircleSlash = /*#__PURE__*/ createGlassIcon("circle-slash", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M9 15L15 9",1]],[20.4,3.6,4.75],0]);
 export default GlassCircleSlash;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "accessibility"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAccessibility = /*#__PURE__*/ createGlassIcon("accessibility", [["circle",{"cx":"16","cy":"4","r":"1"},1],["path",{"d":"M18 19l1 -7l-6 1"},0],["path",{"d":"M5 8l3 -3l5.5 3l-2.36 3.5"},0],["path",{"d":"M4.24 14.5a5 5 0 0 0 6.88 6"},0],["path",{"d":"M13.76 17.5a5 5 0 0 0 -6.88 -6"},0]]);
+export const GlassAccessibility = /*#__PURE__*/ createGlassIcon("accessibility", [[["M5 8L8 5L13.5 8L11.14 11.5Z",1],["M18 19L19 12L13 13Z",1],["M13.76 17.5A5 5 0 0 0 6.88 11.5",0]],[["M15 4A1 1 0 1 0 17 4A1 1 0 1 0 15 4Z",0],["M4.24 14.5A5 5 0 0 0 11.12 20.5",0]],[17.676,6.324,4.29],0]);
 export default GlassAccessibility;

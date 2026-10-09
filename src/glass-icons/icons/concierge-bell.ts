@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "concierge-bell"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassConciergeBell = /*#__PURE__*/ createGlassIcon("concierge-bell", [["path",{"d":"M3 20a1 1 0 0 1 -1 -1v-1a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v1a1 1 0 0 1 -1 1Z"},1],["path",{"d":"M20 16a8 8 0 1 0 -16 0"},0],["path",{"d":"M12 4v4"},0],["path",{"d":"M10 4h4"},0]]);
+export const GlassConciergeBell = /*#__PURE__*/ createGlassIcon("concierge-bell", [[["M20 16A8 8 0 1 0 4 16Z",1],["M3 20A1 1 0 0 1 2 19L2 18A2 2 0 0 1 4 16L20 16A2 2 0 0 1 22 18L22 19A1 1 0 0 1 21 20Z",1]],[["M12 4L12 8",0],["M10 4L14 4",0]],[20.4,9.6,4.75],0]);
 export default GlassConciergeBell;

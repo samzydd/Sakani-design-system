@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "heading"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHeading = /*#__PURE__*/ createGlassIcon("heading", [["path",{"d":"M6 12h12"},0],["path",{"d":"M6 20V4"},0],["path",{"d":"M18 20V4"},0]]);
+export const GlassHeading = /*#__PURE__*/ createGlassIcon("heading", [[["M6 12L18 12",0],["M6 20L6 4",0],["M18 20L18 4",0]],[],[16.4,5.6,4.75],1]);
 export default GlassHeading;

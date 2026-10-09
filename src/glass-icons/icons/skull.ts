@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "skull"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSkull = /*#__PURE__*/ createGlassIcon("skull", [["path",{"d":"M12.5 17l-0.5 -1l-0.5 1h1z"},1],["path",{"d":"M15 22a1 1 0 0 0 1 -1v-1a2 2 0 0 0 1.56 -3.25a8 8 0 1 0 -11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z"},1],["circle",{"cx":"15","cy":"12","r":"1"},1],["circle",{"cx":"9","cy":"12","r":"1"},1]]);
+export const GlassSkull = /*#__PURE__*/ createGlassIcon("skull", [[["M15 22A1 1 0 0 0 16 21L16 20A2 2 0 0 0 17.56 16.75A8 8 0 1 0 6.44 16.75A2 2 0 0 0 8 20L8 21A1 1 0 0 0 9 22Z",1]],[["M12.5 17L12 16L11.5 17L12.5 17Z",1],["M14 12A1 1 0 1 0 16 12A1 1 0 1 0 14 12Z",1],["M8 12A1 1 0 1 0 10 12A1 1 0 1 0 8 12Z",1]],[18.393,4.634,4.75],0]);
 export default GlassSkull;

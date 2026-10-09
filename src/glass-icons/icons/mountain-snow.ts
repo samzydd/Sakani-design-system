@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mountain-snow"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMountainSnow = /*#__PURE__*/ createGlassIcon("mountain-snow", [["path",{"d":"M8 3l4 8l5 -5l5 15H2L8 3z"},1],["path",{"d":"M4.14 15.08c2.62 -1.57 5.24 -1.43 7.86 0.42c2.74 1.94 5.49 2 8.23 0.19"},0]]);
+export const GlassMountainSnow = /*#__PURE__*/ createGlassIcon("mountain-snow", [[["M8 3L12 11L17 6L22 21L2 21L8 3Z",1]],[["M4.14 15.08C6.76 13.51 9.38 13.65 12 15.5C14.74 17.44 17.49 17.5 20.23 15.69",1]],[20.4,4.6,4.75],0]);
 export default GlassMountainSnow;

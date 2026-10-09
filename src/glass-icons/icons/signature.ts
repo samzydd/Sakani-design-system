@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "signature"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSignature = /*#__PURE__*/ createGlassIcon("signature", [["path",{"d":"M21 17l-2.156 -1.868A0.5 0.5 0 0 0 18 15.5v0.5a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1c0 -2.545 -3.991 -3.97 -8.5 -4a1 1 0 0 0 0 5c4.153 0 4.745 -11.295 5.708 -13.5a2.5 2.5 0 1 1 3.31 3.284"},0],["path",{"d":"M3 21h18"},0]]);
+export const GlassSignature = /*#__PURE__*/ createGlassIcon("signature", [[["M21 17L18.844 15.132A0.5 0.5 0 0 0 18 15.5L18 16A1 1 0 0 1 17 17L15 17A1 1 0 0 1 14 16C14 13.455 10.009 12.03 5.5 12A1 1 0 0 0 5.5 17C9.653 17 10.245 5.705 11.208 3.5A2.5 2.5 0 1 1 14.518 6.784",0],["M3 21L21 21",0]],[],[19.4,3.601,4.75],1]);
 export default GlassSignature;

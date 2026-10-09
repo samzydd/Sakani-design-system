@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fish-symbol"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFishSymbol = /*#__PURE__*/ createGlassIcon("fish-symbol", [["path",{"d":"M2 16s9 -15 20 -4C11 23 2 8 2 8"},0]]);
+export const GlassFishSymbol = /*#__PURE__*/ createGlassIcon("fish-symbol", [[["M2 16C2 16 11 1 22 12C11 23 2 8 2 8",0]],[],[20.4,9.584,4.75],1]);
 export default GlassFishSymbol;

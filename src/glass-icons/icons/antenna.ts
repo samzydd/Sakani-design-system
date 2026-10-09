@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "antenna"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAntenna = /*#__PURE__*/ createGlassIcon("antenna", [["path",{"d":"M2 12L7 2"},0],["path",{"d":"M7 12l5 -10"},0],["path",{"d":"M12 12l5 -10"},0],["path",{"d":"M17 12l5 -10"},0],["path",{"d":"M4.5 7h15"},0],["path",{"d":"M12 16v6"},0]]);
+export const GlassAntenna = /*#__PURE__*/ createGlassIcon("antenna", [[["M2 12L7 2",0],["M7 12L12 2",0],["M12 12L17 2",0],["M17 12L22 2",0],["M4.5 7L19.5 7",0],["M12 16L12 22",0]],[],[20.4,3.6,4.75],1]);
 export default GlassAntenna;

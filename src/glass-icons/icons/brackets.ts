@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "brackets"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBrackets = /*#__PURE__*/ createGlassIcon("brackets", [["path",{"d":"M16 3h3a1 1 0 0 1 1 1v16a1 1 0 0 1 -1 1h-3"},0],["path",{"d":"M8 21H5a1 1 0 0 1 -1 -1V4a1 1 0 0 1 1 -1h3"},0]]);
+export const GlassBrackets = /*#__PURE__*/ createGlassIcon("brackets", [[["M16 3L19 3A1 1 0 0 1 20 4L20 20A1 1 0 0 1 19 21L16 21",0],["M8 21L5 21A1 1 0 0 1 4 20L4 4A1 1 0 0 1 5 3L8 3",0]],[],[18.4,4.6,4.75],1]);
 export default GlassBrackets;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "alarm-smoke"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAlarmSmoke = /*#__PURE__*/ createGlassIcon("alarm-smoke", [["path",{"d":"M11 21c0 -2.5 2 -2.5 2 -5"},0],["path",{"d":"M16 21c0 -2.5 2 -2.5 2 -5"},0],["path",{"d":"M19 8l-0.8 3a1.25 1.25 0 0 1 -1.2 1H7a1.25 1.25 0 0 1 -1.2 -1L5 8"},0],["path",{"d":"M21 3a1 1 0 0 1 1 1v2a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2V4a1 1 0 0 1 1 -1z"},1],["path",{"d":"M6 21c0 -2.5 2 -2.5 2 -5"},0]]);
+export const GlassAlarmSmoke = /*#__PURE__*/ createGlassIcon("alarm-smoke", [[["M21 3A1 1 0 0 1 22 4L22 6A2 2 0 0 1 20 8L4 8A2 2 0 0 1 2 6L2 4A1 1 0 0 1 3 3Z",1]],[["M11 21C11 18.5 13 18.5 13 16",0],["M16 21C16 18.5 18 18.5 18 16",0],["M19 8L18.2 11A1.25 1.25 0 0 1 17 12L7 12A1.25 1.25 0 0 1 5.8 11L5 8",0],["M6 21C6 18.5 8 18.5 8 16",0]],[20.4,4.6,4.75],0]);
 export default GlassAlarmSmoke;

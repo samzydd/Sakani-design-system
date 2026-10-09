@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "italic"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassItalic = /*#__PURE__*/ createGlassIcon("italic", [["line",{"x1":"19","x2":"10","y1":"4","y2":"4"},0],["line",{"x1":"14","x2":"5","y1":"20","y2":"20"},0],["line",{"x1":"15","x2":"9","y1":"4","y2":"20"},0]]);
+export const GlassItalic = /*#__PURE__*/ createGlassIcon("italic", [[["M19 4L10 4",0],["M14 20L5 20",0],["M15 4L9 20",0]],[],[17.4,5.6,4.75],1]);
 export default GlassItalic;

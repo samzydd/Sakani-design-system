@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "zap"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassZap = /*#__PURE__*/ createGlassIcon("zap", [["path",{"d":"M15.914 4a1.5 1.5 0 0 0 -2.474 -1.561l-9 9A1.5 1.5 0 0 0 5.5 14h4.002a0.5 0.5 0 0 1 0.471 0.666L8.086 20a1.5 1.5 0 0 0 2.475 1.56l9 -9A1.5 1.5 0 0 0 18.5 10h-3.997a0.5 0.5 0 0 1 -0.472 -0.667z"},1]]);
+export const GlassZap = /*#__PURE__*/ createGlassIcon("zap", [[["M15.914 4A1.5 1.5 0 0 0 13.44 2.439L4.44 11.439A1.5 1.5 0 0 0 5.5 14L9.502 14A0.5 0.5 0 0 1 9.973 14.666L8.086 20A1.5 1.5 0 0 0 10.561 21.56L19.561 12.56A1.5 1.5 0 0 0 18.5 10L14.503 10A0.5 0.5 0 0 1 14.031 9.333Z",1]],[],[18.4,3.601,4.75],0]);
 export default GlassZap;

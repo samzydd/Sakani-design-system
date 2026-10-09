@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "timer"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTimer = /*#__PURE__*/ createGlassIcon("timer", [["line",{"x1":"10","x2":"14","y1":"2","y2":"2"},0],["line",{"x1":"12","x2":"15","y1":"14","y2":"11"},0],["circle",{"cx":"12","cy":"14","r":"8"},1]]);
+export const GlassTimer = /*#__PURE__*/ createGlassIcon("timer", [[["M4 14A8 8 0 1 0 20 14A8 8 0 1 0 4 14Z",1]],[["M10 2L14 2",0],["M12 14L15 11",1]],[18.4,7.6,4.75],0]);
 export default GlassTimer;

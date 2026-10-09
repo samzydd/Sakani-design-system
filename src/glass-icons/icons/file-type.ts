@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-type"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileType = /*#__PURE__*/ createGlassIcon("file-type", [["path",{"d":"M6 22a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.704 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1 -2 2z"},1],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M11 18h2"},0],["path",{"d":"M12 12v6"},0],["path",{"d":"M9 13v-0.5a0.5 0.5 0 0 1 0.5 -0.5h5a0.5 0.5 0 0 1 0.5 0.5v0.5"},0]]);
+export const GlassFileType = /*#__PURE__*/ createGlassIcon("file-type", [[["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M11 18L13 18",1],["M12 12L12 18",1],["M9 13L9 12.5A0.5 0.5 0 0 1 9.5 12L14.5 12A0.5 0.5 0 0 1 15 12.5L15 13",1]],[18.4,3.6,4.75],0]);
 export default GlassFileType;

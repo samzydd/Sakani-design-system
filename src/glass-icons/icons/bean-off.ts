@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bean-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBeanOff = /*#__PURE__*/ createGlassIcon("bean-off", [["path",{"d":"M9 9c-0.64 0.64 -1.521 0.954 -2.402 1.165A6 6 0 0 0 8 22a13.96 13.96 0 0 0 9.9 -4.1"},0],["path",{"d":"M10.75 5.093A6 6 0 0 1 22 8c0 2.411 -0.61 4.68 -1.683 6.66"},0],["path",{"d":"M5.341 10.62a4 4 0 0 0 6.487 1.208"},0],["path",{"d":"M10.62 5.341a4.015 4.015 0 0 1 2.039 2.04"},0],["line",{"x1":"2","x2":"22","y1":"2","y2":"22"},0]]);
+export const GlassBeanOff = /*#__PURE__*/ createGlassIcon("bean-off", [[["M9 9C8.36 9.64 7.479 9.954 6.598 10.165A6 6 0 0 0 8 22A13.96 13.96 0 0 0 17.9 17.9Z",1],["M10.75 5.093A6 6 0 0 1 22 8C22 10.411 21.39 12.68 20.317 14.66Z",1],["M10.62 5.341A4.015 4.015 0 0 1 12.659 7.381",0]],[["M5.341 10.62A4 4 0 0 0 11.828 11.828",1],["M2 2L22 22",0]],[20.4,3.61,4.75],0]);
 export default GlassBeanOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "badge-percent"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBadgePercent = /*#__PURE__*/ createGlassIcon("badge-percent", [["path",{"d":"M3.85 8.62a4 4 0 0 1 4.78 -4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1 -4.77 4.78a4 4 0 0 1 -6.75 0a4 4 0 0 1 -4.78 -4.77a4 4 0 0 1 0 -6.76Z"},1],["path",{"d":"M15 9l-6 6"},0],["path",{"d":"M9 9h0.01"},0],["path",{"d":"M15 15h0.01"},0]]);
+export const GlassBadgePercent = /*#__PURE__*/ createGlassIcon("badge-percent", [[["M3.85 8.62A4 4 0 0 1 8.63 3.85A4 4 0 0 1 15.37 3.85A4 4 0 0 1 20.15 8.63A4 4 0 0 1 20.15 15.37A4 4 0 0 1 15.38 20.15A4 4 0 0 1 8.63 20.15A4 4 0 0 1 3.85 15.38A4 4 0 0 1 3.85 8.62Z",1]],[["M15 9L9 15",1],["M9 9L9.01 9",1],["M15 15L15.01 15",1]],[20.379,3.621,4.75],0]);
 export default GlassBadgePercent;

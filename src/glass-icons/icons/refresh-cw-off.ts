@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "refresh-cw-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRefreshCwOff = /*#__PURE__*/ createGlassIcon("refresh-cw-off", [["path",{"d":"M21 8L18.74 5.74A9.75 9.75 0 0 0 12 3C11 3 10.03 3.16 9.13 3.47"},0],["path",{"d":"M8 16H3v5"},0],["path",{"d":"M3 12C3 9.51 4 7.26 5.64 5.64"},0],["path",{"d":"M3 16l2.26 2.26A9.75 9.75 0 0 0 12 21c2.49 0 4.74 -1 6.36 -2.64"},0],["path",{"d":"M21 12c0 1 -0.16 1.97 -0.47 2.87"},0],["path",{"d":"M21 3v5h-5"},0],["path",{"d":"M22 22L2 2"},0]]);
+export const GlassRefreshCwOff = /*#__PURE__*/ createGlassIcon("refresh-cw-off", [[["M21 8L18.74 5.74A9.75 9.75 0 0 0 12 3C11 3 10.03 3.16 9.13 3.47",0],["M8 16L3 16L3 21",0],["M3 12C3 9.51 4 7.26 5.64 5.64",0],["M3 16L5.26 18.26A9.75 9.75 0 0 0 12 21C14.49 21 16.74 20 18.36 18.36",0],["M21 12C21 13 20.84 13.97 20.53 14.87",0],["M21 3L21 8L16 8",0],["M22 22L2 2",0]],[],[20.4,3.6,4.75],1]);
 export default GlassRefreshCwOff;

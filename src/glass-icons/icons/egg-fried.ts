@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "egg-fried"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEggFried = /*#__PURE__*/ createGlassIcon("egg-fried", [["circle",{"cx":"11.5","cy":"12.5","r":"3.5"},1],["path",{"d":"M3 8c0 -3.5 2.5 -6 6.5 -6c5 0 4.83 3 7.5 5s5 2 5 6c0 4.5 -2.5 6.5 -7 6.5c-2.5 0 -2.5 2.5 -6 2.5s-7 -2 -7 -5.5c0 -3 1.5 -3 1.5 -5C3.5 10 3 9 3 8Z"},1]]);
+export const GlassEggFried = /*#__PURE__*/ createGlassIcon("egg-fried", [[["M3 8C3 4.5 5.5 2 9.5 2C14.5 2 14.33 5 17 7C19.67 9 22 9 22 13C22 17.5 19.5 19.5 15 19.5C12.5 19.5 12.5 22 9 22C5.5 22 2 20 2 16.5C2 13.5 3.5 13.5 3.5 11.5C3.5 10 3 9 3 8Z",1]],[["M8 12.5A3.5 3.5 0 1 0 15 12.5A3.5 3.5 0 1 0 8 12.5Z",1]],[20.4,3.6,4.75],0]);
 export default GlassEggFried;

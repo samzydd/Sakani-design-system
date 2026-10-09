@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "goal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGoal = /*#__PURE__*/ createGlassIcon("goal", [["path",{"d":"M12 13V2l8 4l-8 4"},0],["path",{"d":"M20.561 10.222a9 9 0 1 1 -12.55 -5.29"},0],["path",{"d":"M8.002 9.997a5 5 0 1 0 8.9 2.02"},0]]);
+export const GlassGoal = /*#__PURE__*/ createGlassIcon("goal", [[["M20.561 10.222A9 9 0 1 1 8.011 4.932Z",1]],[["M12 13L12 2L20 6L12 10",0],["M8.002 9.997A5 5 0 1 0 16.902 12.017",1]],[19.38,6.532,4.75],0]);
 export default GlassGoal;

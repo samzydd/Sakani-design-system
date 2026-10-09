@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hand-helping"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHandHelping = /*#__PURE__*/ createGlassIcon("hand-helping", [["path",{"d":"M11 12h2a2 2 0 1 0 0 -4h-3c-0.6 0 -1.1 0.2 -1.4 0.6L3 14"},0],["path",{"d":"M7 18l1.6 -1.4c0.3 -0.4 0.8 -0.6 1.4 -0.6h4c1.1 0 2.1 -0.4 2.8 -1.2l4.6 -4.4a2 2 0 0 0 -2.75 -2.91l-4.2 3.9"},0],["path",{"d":"M2 13l6 6"},0]]);
+export const GlassHandHelping = /*#__PURE__*/ createGlassIcon("hand-helping", [[["M7 18L8.6 16.6C8.9 16.2 9.4 16 10 16L14 16C15.1 16 16.1 15.6 16.8 14.8L21.4 10.4A2 2 0 0 0 18.65 7.49L14.45 11.39Z",1],["M11 12L13 12A2 2 0 1 0 13 8L10 8C9.4 8 8.9 8.2 8.6 8.6L3 14Z",1],["M2 13L8 19",0]],[],[20.426,8.544,4.75],0]);
 export default GlassHandHelping;

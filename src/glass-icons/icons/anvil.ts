@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "anvil"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAnvil = /*#__PURE__*/ createGlassIcon("anvil", [["path",{"d":"M7 10H6a4 4 0 0 1 -4 -4a1 1 0 0 1 1 -1h4"},0],["path",{"d":"M7 5a1 1 0 0 1 1 -1h13a1 1 0 0 1 1 1a7 7 0 0 1 -7 7H8a1 1 0 0 1 -1 -1z"},1],["path",{"d":"M9 12v5"},0],["path",{"d":"M15 12v5"},0],["path",{"d":"M5 20a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3a1 1 0 0 1 -1 1H6a1 1 0 0 1 -1 -1"},1]]);
+export const GlassAnvil = /*#__PURE__*/ createGlassIcon("anvil", [[["M7 5A1 1 0 0 1 8 4L21 4A1 1 0 0 1 22 5A7 7 0 0 1 15 12L8 12A1 1 0 0 1 7 11Z",1],["M5 20A3 3 0 0 1 8 17L16 17A3 3 0 0 1 19 20A1 1 0 0 1 18 21L6 21A1 1 0 0 1 5 20",1]],[["M7 10L6 10A4 4 0 0 1 2 6A1 1 0 0 1 3 5L7 5",0],["M9 12L9 17",0],["M15 12L15 17",0]],[20.4,5.6,4.75],0]);
 export default GlassAnvil;

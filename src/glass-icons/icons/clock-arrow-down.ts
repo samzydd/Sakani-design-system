@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clock-arrow-down"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClockArrowDown = /*#__PURE__*/ createGlassIcon("clock-arrow-down", [["path",{"d":"M12 6v6l2 1"},0],["path",{"d":"M12.337 21.994a10 10 0 1 1 9.588 -8.767"},0],["path",{"d":"M14 18l4 4l4 -4"},0],["path",{"d":"M18 14v8"},0]]);
+export const GlassClockArrowDown = /*#__PURE__*/ createGlassIcon("clock-arrow-down", [[["M12.337 21.994A10 10 0 1 1 21.925 13.227Z",1]],[["M12 6L12 12L14 13",1],["M14 18L18 22L22 18",0],["M18 14L18 22",1]],[20.375,3.617,4.75],0]);
 export default GlassClockArrowDown;

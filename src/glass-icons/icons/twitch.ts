@@ -2,5 +2,5 @@
 // Shape data: Sakani Figma icon set, icon "twitch"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTwitch = /*#__PURE__*/ createGlassIcon("twitch", [["path",{"d":"M11 11V7"},0],["path",{"d":"M16 11V7"},0],["path",{"d":"M21 2H3V18H8V22L12 18H17L21 14V2Z"},1]]);
+export const GlassTwitch = /*#__PURE__*/ createGlassIcon("twitch", [[["M21 2L3 2L3 18L8 18L8 22L12 18L17 18L21 14L21 2Z",1]],[["M11 11L11 7",1],["M16 11L16 7",1]],[19.4,3.6,4.75],0]);
 export default GlassTwitch;

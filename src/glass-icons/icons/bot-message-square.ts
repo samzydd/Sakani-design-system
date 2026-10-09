@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bot-message-square"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBotMessageSquare = /*#__PURE__*/ createGlassIcon("bot-message-square", [["path",{"d":"M12 6V2H8"},0],["path",{"d":"M15 11v2"},0],["path",{"d":"M2 12h2"},0],["path",{"d":"M20 12h2"},0],["path",{"d":"M20 16a2 2 0 0 1 -2 2H8.828a2 2 0 0 0 -1.414 0.586l-2.202 2.202A0.71 0.71 0 0 1 4 20.286V8a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2z"},1],["path",{"d":"M9 11v2"},0]]);
+export const GlassBotMessageSquare = /*#__PURE__*/ createGlassIcon("bot-message-square", [[["M20 16A2 2 0 0 1 18 18L8.828 18A2 2 0 0 0 7.414 18.586L5.212 20.788A0.71 0.71 0 0 1 4 20.286L4 8A2 2 0 0 1 6 6L18 6A2 2 0 0 1 20 8Z",1]],[["M12 6L12 2L8 2",0],["M15 11L15 13",1],["M2 12L4 12",1],["M20 12L22 12",1],["M9 11L9 13",1]],[18.4,7.6,4.75],0]);
 export default GlassBotMessageSquare;

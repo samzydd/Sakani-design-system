@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "haze"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHaze = /*#__PURE__*/ createGlassIcon("haze", [["path",{"d":"M5.2 6.2l1.4 1.4"},0],["path",{"d":"M2 13h2"},0],["path",{"d":"M20 13h2"},0],["path",{"d":"M17.4 7.6l1.4 -1.4"},0],["path",{"d":"M22 17H2"},0],["path",{"d":"M22 21H2"},0],["path",{"d":"M16 13a4 4 0 0 0 -8 0"},0],["path",{"d":"M12 5V2.5"},0]]);
+export const GlassHaze = /*#__PURE__*/ createGlassIcon("haze", [[["M16 13A4 4 0 0 0 8 13Z",1]],[["M5.2 6.2L6.6 7.6",0],["M2 13L4 13",0],["M20 13L22 13",0],["M17.4 7.6L18.8 6.2",0],["M22 17L2 17",0],["M22 21L2 21",0],["M12 5L12 2.5",0]],[15.45,9.55,3],0]);
 export default GlassHaze;

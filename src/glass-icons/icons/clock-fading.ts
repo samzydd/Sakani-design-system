@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clock-fading"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClockFading = /*#__PURE__*/ createGlassIcon("clock-fading", [["path",{"d":"M12 2a10 10 0 0 1 7.38 16.75"},0],["path",{"d":"M12 6v6l4 2"},0],["path",{"d":"M2.5 8.875a10 10 0 0 0 -0.5 3"},0],["path",{"d":"M2.83 16a10 10 0 0 0 2.43 3.4"},0],["path",{"d":"M4.636 5.235a10 10 0 0 1 0.891 -0.857"},0],["path",{"d":"M8.644 21.42a10 10 0 0 0 7.631 -0.38"},0]]);
+export const GlassClockFading = /*#__PURE__*/ createGlassIcon("clock-fading", [[["M12 2A10 10 0 0 1 19.38 18.75",0],["M12 6L12 12L16 14",0],["M2.5 8.875A10 10 0 0 0 2 11.875",0],["M2.83 16A10 10 0 0 0 5.26 19.4",0],["M4.636 5.235A10 10 0 0 1 5.527 4.378",0],["M8.644 21.42A10 10 0 0 0 16.275 21.04",0]],[],[20.397,3.6,4.75],1]);
 export default GlassClockFading;

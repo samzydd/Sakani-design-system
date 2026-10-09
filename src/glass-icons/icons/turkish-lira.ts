@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "turkish-lira"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTurkishLira = /*#__PURE__*/ createGlassIcon("turkish-lira", [["path",{"d":"M15 4L5 9"},0],["path",{"d":"M15 8.5l-10 5"},0],["path",{"d":"M18 12a9 9 0 0 1 -9 9V3"},0]]);
+export const GlassTurkishLira = /*#__PURE__*/ createGlassIcon("turkish-lira", [[["M18 12A9 9 0 0 1 9 21L9 3Z",1]],[["M15 4L5 9",0],["M15 8.5L5 13.5",1]],[16.4,4.6,4.75],0]);
 export default GlassTurkishLira;

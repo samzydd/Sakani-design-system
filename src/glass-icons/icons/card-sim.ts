@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "card-sim"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCardSim = /*#__PURE__*/ createGlassIcon("card-sim", [["path",{"d":"M12 14v4"},0],["path",{"d":"M14.172 2a2 2 0 0 1 1.414 0.586l3.828 3.828A2 2 0 0 1 20 7.828V20a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2z"},1],["path",{"d":"M8 14h8"},0],["rect",{"x":"8","y":"10","width":"8","height":"8","rx":"1"},1]]);
+export const GlassCardSim = /*#__PURE__*/ createGlassIcon("card-sim", [[["M14.172 2A2 2 0 0 1 15.586 2.586L19.414 6.414A2 2 0 0 1 20 7.828L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2Z",1]],[["M12 14L12 18",1],["M8 14L16 14",1],["M9 10L15 10A1 1 0 0 1 16 11L16 17A1 1 0 0 1 15 18L9 18A1 1 0 0 1 8 17L8 11A1 1 0 0 1 9 10Z",1]],[18.4,3.6,4.75],0]);
 export default GlassCardSim;

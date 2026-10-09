@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hdmi-port"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHdmiPort = /*#__PURE__*/ createGlassIcon("hdmi-port", [["path",{"d":"M22 9a1 1 0 0 0 -1 -1H3a1 1 0 0 0 -1 1v4a1 1 0 0 0 1 1h0.5a2 2 0 0 1 1.6 0.8l0.3 0.4A2 2 0 0 0 7 16h10a2 2 0 0 0 1.6 -0.8l0.3 -0.4a2 2 0 0 1 1.6 -0.8h0.5a1 1 0 0 0 1 -1z"},1],["path",{"d":"M8 12h8"},0]]);
+export const GlassHdmiPort = /*#__PURE__*/ createGlassIcon("hdmi-port", [[["M22 9A1 1 0 0 0 21 8L3 8A1 1 0 0 0 2 9L2 13A1 1 0 0 0 3 14L3.5 14A2 2 0 0 1 5.1 14.8L5.4 15.2A2 2 0 0 0 7 16L17 16A2 2 0 0 0 18.6 15.2L18.9 14.8A2 2 0 0 1 20.5 14L21 14A1 1 0 0 0 22 13Z",1]],[["M8 12L16 12",1]],[20.4,9.6,4.75],0]);
 export default GlassHdmiPort;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "transgender"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTransgender = /*#__PURE__*/ createGlassIcon("transgender", [["path",{"d":"M12 16v6"},0],["path",{"d":"M14 20h-4"},0],["path",{"d":"M18 2h4v4"},0],["path",{"d":"M2 2l7.17 7.17"},0],["path",{"d":"M2 5.355V2h3.357"},0],["path",{"d":"M22 2l-7.17 7.17"},0],["path",{"d":"M8 5L5 8"},0],["circle",{"cx":"12","cy":"12","r":"4"},1]]);
+export const GlassTransgender = /*#__PURE__*/ createGlassIcon("transgender", [[["M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12Z",1]],[["M12 16L12 22",0],["M14 20L10 20",0],["M18 2L22 2L22 6",0],["M2 2L9.17 9.17",0],["M2 5.355L2 2L5.357 2",0],["M22 2L14.83 9.17",0],["M8 5L5 8",0]],[15.45,8.55,3],0]);
 export default GlassTransgender;

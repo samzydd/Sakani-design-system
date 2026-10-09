@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bike"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBike = /*#__PURE__*/ createGlassIcon("bike", [["circle",{"cx":"18.5","cy":"17.5","r":"3.5"},1],["circle",{"cx":"5.5","cy":"17.5","r":"3.5"},1],["circle",{"cx":"15","cy":"5","r":"1"},1],["path",{"d":"M12 17.5V14l-3 -3l4 -3l2 3h2"},0]]);
+export const GlassBike = /*#__PURE__*/ createGlassIcon("bike", [[["M15 17.5A3.5 3.5 0 1 0 22 17.5A3.5 3.5 0 1 0 15 17.5Z",1],["M2 17.5A3.5 3.5 0 1 0 9 17.5A3.5 3.5 0 1 0 2 17.5Z",1],["M12 17.5L12 14L9 11L13 8L15 11L17 11Z",1]],[["M14 5A1 1 0 1 0 16 5A1 1 0 1 0 14 5Z",0]],[20.4,9.6,4.75],0]);
 export default GlassBike;

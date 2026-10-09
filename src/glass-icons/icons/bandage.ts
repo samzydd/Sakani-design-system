@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bandage"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBandage = /*#__PURE__*/ createGlassIcon("bandage", [["path",{"d":"M10 10.01h0.01"},0],["path",{"d":"M10 14.01h0.01"},0],["path",{"d":"M14 10.01h0.01"},0],["path",{"d":"M14 14.01h0.01"},0],["path",{"d":"M18 6v12"},0],["path",{"d":"M6 6v12"},0],["rect",{"x":"2","y":"6","width":"20","height":"12","rx":"2"},1]]);
+export const GlassBandage = /*#__PURE__*/ createGlassIcon("bandage", [[["M4 6L20 6A2 2 0 0 1 22 8L22 16A2 2 0 0 1 20 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6Z",1]],[["M10 10.01L10.01 10.01",1],["M10 14.01L10.01 14.01",1],["M14 10.01L14.01 10.01",1],["M14 14.01L14.01 14.01",1],["M18 6L18 18",1],["M6 6L6 18",1]],[20.4,7.6,4.75],0]);
 export default GlassBandage;

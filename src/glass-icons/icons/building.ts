@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "building"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBuilding = /*#__PURE__*/ createGlassIcon("building", [["path",{"d":"M12 10h0.01"},0],["path",{"d":"M12 14h0.01"},0],["path",{"d":"M12 6h0.01"},0],["path",{"d":"M16 10h0.01"},0],["path",{"d":"M16 14h0.01"},0],["path",{"d":"M16 6h0.01"},0],["path",{"d":"M8 10h0.01"},0],["path",{"d":"M8 14h0.01"},0],["path",{"d":"M8 6h0.01"},0],["path",{"d":"M9 22v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"},0],["rect",{"x":"4","y":"2","width":"16","height":"20","rx":"2"},1]]);
+export const GlassBuilding = /*#__PURE__*/ createGlassIcon("building", [[["M6 2L18 2A2 2 0 0 1 20 4L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2Z",1]],[["M12 10L12.01 10",1],["M12 14L12.01 14",1],["M12 6L12.01 6",1],["M16 10L16.01 10",1],["M16 14L16.01 14",1],["M16 6L16.01 6",1],["M8 10L8.01 10",1],["M8 14L8.01 14",1],["M8 6L8.01 6",1],["M9 22L9 19A1 1 0 0 1 10 18L14 18A1 1 0 0 1 15 19L15 22",1]],[18.4,3.6,4.75],0]);
 export default GlassBuilding;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cpu"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCpu = /*#__PURE__*/ createGlassIcon("cpu", [["path",{"d":"M12 20v2"},0],["path",{"d":"M12 2v2"},0],["path",{"d":"M17 20v2"},0],["path",{"d":"M17 2v2"},0],["path",{"d":"M2 12h2"},0],["path",{"d":"M2 17h2"},0],["path",{"d":"M2 7h2"},0],["path",{"d":"M20 12h2"},0],["path",{"d":"M20 17h2"},0],["path",{"d":"M20 7h2"},0],["path",{"d":"M7 20v2"},0],["path",{"d":"M7 2v2"},0],["rect",{"x":"4","y":"4","width":"16","height":"16","rx":"2"},1],["rect",{"x":"8","y":"8","width":"8","height":"8","rx":"1"},1]]);
+export const GlassCpu = /*#__PURE__*/ createGlassIcon("cpu", [[["M6 4L18 4A2 2 0 0 1 20 6L20 18A2 2 0 0 1 18 20L6 20A2 2 0 0 1 4 18L4 6A2 2 0 0 1 6 4Z",1]],[["M12 20L12 22",1],["M12 2L12 4",1],["M17 20L17 22",1],["M17 2L17 4",1],["M2 12L4 12",1],["M2 17L4 17",1],["M2 7L4 7",1],["M20 12L22 12",1],["M20 17L22 17",1],["M20 7L22 7",1],["M7 20L7 22",1],["M7 2L7 4",1],["M9 8L15 8A1 1 0 0 1 16 9L16 15A1 1 0 0 1 15 16L9 16A1 1 0 0 1 8 15L8 9A1 1 0 0 1 9 8Z",1]],[18.4,5.6,4.75],0]);
 export default GlassCpu;

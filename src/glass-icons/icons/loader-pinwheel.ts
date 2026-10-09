@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "loader-pinwheel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLoaderPinwheel = /*#__PURE__*/ createGlassIcon("loader-pinwheel", [["path",{"d":"M22 12a1 1 0 0 1 -10 0a1 1 0 0 0 -10 0"},0],["path",{"d":"M7 20.7a1 1 0 1 1 5 -8.7a1 1 0 1 0 5 -8.6"},0],["path",{"d":"M7 3.3a1 1 0 1 1 5 8.6a1 1 0 1 0 5 8.6"},0],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassLoaderPinwheel = /*#__PURE__*/ createGlassIcon("loader-pinwheel", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M22 12A1 1 0 0 1 12 12A1 1 0 0 0 2 12",1],["M7 20.7A1 1 0 1 1 12 12A1 1 0 1 0 17 3.4",1],["M7 3.3A1 1 0 1 1 12 11.9A1 1 0 1 0 17 20.5",1]],[20.4,3.6,4.75],0]);
 export default GlassLoaderPinwheel;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-square-dashed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessageSquareDashed = /*#__PURE__*/ createGlassIcon("message-square-dashed", [["path",{"d":"M14 3h2"},0],["path",{"d":"M16 19h-2"},0],["path",{"d":"M2 12v-2"},0],["path",{"d":"M2 16v5.286a0.71 0.71 0 0 0 1.212 0.502l1.149 -1.149"},0],["path",{"d":"M20 19a2 2 0 0 0 2 -2v-1"},0],["path",{"d":"M22 10v2"},0],["path",{"d":"M22 6V5a2 2 0 0 0 -2 -2"},0],["path",{"d":"M4 3a2 2 0 0 0 -2 2v1"},0],["path",{"d":"M8 19h2"},0],["path",{"d":"M8 3h2"},0]]);
+export const GlassMessageSquareDashed = /*#__PURE__*/ createGlassIcon("message-square-dashed", [[["M14 3L16 3",0],["M16 19L14 19",0],["M2 12L2 10",0],["M2 16L2 21.286A0.71 0.71 0 0 0 3.212 21.788L4.361 20.639",0],["M20 19A2 2 0 0 0 22 17L22 16",0],["M22 10L22 12",0],["M22 6L22 5A2 2 0 0 0 20 3",0],["M4 3A2 2 0 0 0 2 5L2 6",0],["M8 19L10 19",0],["M8 3L10 3",0]],[],[20.4,4.6,4.75],1]);
 export default GlassMessageSquareDashed;

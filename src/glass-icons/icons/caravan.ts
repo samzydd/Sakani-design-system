@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "caravan"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCaravan = /*#__PURE__*/ createGlassIcon("caravan", [["path",{"d":"M18 19V9a4 4 0 0 0 -4 -4H6a4 4 0 0 0 -4 4v8a2 2 0 0 0 2 2h2"},0],["path",{"d":"M2 9h3a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1H2"},0],["path",{"d":"M22 17v1a1 1 0 0 1 -1 1H10v-9a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v9"},0],["circle",{"cx":"8","cy":"19","r":"2"},1]]);
+export const GlassCaravan = /*#__PURE__*/ createGlassIcon("caravan", [[["M18 19L18 9A4 4 0 0 0 14 5L6 5A4 4 0 0 0 2 9L2 17A2 2 0 0 0 4 19L6 19Z",1]],[["M2 9L5 9A1 1 0 0 1 6 10L6 12A1 1 0 0 1 5 13L2 13",1],["M22 17L22 18A1 1 0 0 1 21 19L10 19L10 10A1 1 0 0 1 11 9L13 9A1 1 0 0 1 14 10L14 19",1],["M6 19A2 2 0 1 0 10 19A2 2 0 1 0 6 19Z",1]],[16.4,6.6,4.75],0]);
 export default GlassCaravan;

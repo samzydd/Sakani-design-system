@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "superscript"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSuperscript = /*#__PURE__*/ createGlassIcon("superscript", [["path",{"d":"M4 19l8 -8"},0],["path",{"d":"M12 19l-8 -8"},0],["path",{"d":"M20 12h-4c0 -1.5 0.442 -2 1.5 -2.5S20 8.334 20 7.002c0 -0.472 -0.17 -0.93 -0.484 -1.29a2.105 2.105 0 0 0 -2.617 -0.436c-0.42 0.239 -0.738 0.614 -0.899 1.06"},0]]);
+export const GlassSuperscript = /*#__PURE__*/ createGlassIcon("superscript", [[["M4 19L12 11",0],["M12 19L4 11",0],["M20 12L16 12C16 10.5 16.442 10 17.5 9.5C18.558 9 20 8.334 20 7.002C20 6.53 19.83 6.072 19.516 5.712A2.105 2.105 0 0 0 16.899 5.276C16.479 5.515 16.161 5.89 16 6.336",0]],[],[18.4,6.606,4.75],1]);
 export default GlassSuperscript;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "arrow-up-z-a"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassArrowUpZA = /*#__PURE__*/ createGlassIcon("arrow-up-z-a", [["path",{"d":"M3 8l4 -4l4 4"},0],["path",{"d":"M7 4v16"},0],["path",{"d":"M15 4h5l-5 6h5"},0],["path",{"d":"M15 20v-3.5a2.5 2.5 0 0 1 5 0V20"},0],["path",{"d":"M20 18h-5"},0]]);
+export const GlassArrowUpZA = /*#__PURE__*/ createGlassIcon("arrow-up-z-a", [[["M15 20L15 16.5A2.5 2.5 0 0 1 20 16.5L20 20Z",1]],[["M3 8L7 4L11 8",0],["M7 4L7 20",0],["M15 4L20 4L15 10L20 10",0],["M20 18L15 18",1]],[19.45,14.55,3],0]);
 export default GlassArrowUpZA;

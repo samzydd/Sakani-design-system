@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "plane"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPlane = /*#__PURE__*/ createGlassIcon("plane", [["path",{"d":"M17.8 19.2L16 11l3.5 -3.5C21 6 21.5 4 21 3c-1 -0.5 -3 0 -4.5 1.5L13 8L4.8 6.2c-0.5 -0.1 -0.9 0.1 -1.1 0.5l-0.3 0.5c-0.2 0.5 -0.1 1 0.3 1.3L9 12l-2 3H4l-1 1l3 2l2 3l1 -1v-3l3 -2l3.5 5.3c0.3 0.4 0.8 0.5 1.3 0.3l0.5 -0.2c0.4 -0.3 0.6 -0.7 0.5 -1.2z"},1]]);
+export const GlassPlane = /*#__PURE__*/ createGlassIcon("plane", [[["M17.8 19.2L16 11L19.5 7.5C21 6 21.5 4 21 3C20 2.5 18 3 16.5 4.5L13 8L4.8 6.2C4.3 6.1 3.9 6.3 3.7 6.7L3.4 7.2C3.2 7.7 3.3 8.2 3.7 8.5L9 12L7 15L4 15L3 16L6 18L8 21L9 20L9 17L12 15L15.5 20.3C15.8 20.7 16.3 20.8 16.8 20.6L17.3 20.4C17.7 20.1 17.9 19.7 17.8 19.2Z",1]],[],[19.587,4.412,4.75],0]);
 export default GlassPlane;

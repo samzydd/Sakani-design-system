@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bath"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBath = /*#__PURE__*/ createGlassIcon("bath", [["path",{"d":"M10 4L8 6"},0],["path",{"d":"M17 19v2"},0],["path",{"d":"M2 12h20"},0],["path",{"d":"M7 19v2"},0],["path",{"d":"M9 5L7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-5"},0]]);
+export const GlassBath = /*#__PURE__*/ createGlassIcon("bath", [[["M9 5L7.621 3.621A2.121 2.121 0 0 0 4 5L4 17A2 2 0 0 0 6 19L18 19A2 2 0 0 0 20 17L20 12Z",1],["M10 4L8 6",0]],[["M17 19L17 21",1],["M2 12L22 12",1],["M7 19L7 21",1]],[18.4,4.597,4.75],0]);
 export default GlassBath;

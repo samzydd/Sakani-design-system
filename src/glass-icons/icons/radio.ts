@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "radio"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRadio = /*#__PURE__*/ createGlassIcon("radio", [["path",{"d":"M16.247 7.761a6 6 0 0 1 0 8.478"},0],["path",{"d":"M19.075 4.933a10 10 0 0 1 0 14.134"},0],["path",{"d":"M4.925 19.067a10 10 0 0 1 0 -14.134"},0],["path",{"d":"M7.753 16.239a6 6 0 0 1 0 -8.478"},0],["circle",{"cx":"12","cy":"12","r":"2"},1]]);
+export const GlassRadio = /*#__PURE__*/ createGlassIcon("radio", [[["M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z",1]],[["M16.247 7.761A6 6 0 0 1 16.247 16.239",0],["M19.075 4.933A10 10 0 0 1 19.075 19.067",0],["M4.925 19.067A10 10 0 0 1 4.925 4.933",0],["M7.753 16.239A6 6 0 0 1 7.753 7.761",0]],[13.45,10.55,3],0]);
 export default GlassRadio;

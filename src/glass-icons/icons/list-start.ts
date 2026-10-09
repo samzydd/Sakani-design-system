@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-start"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassListStart = /*#__PURE__*/ createGlassIcon("list-start", [["path",{"d":"M3 5h6"},0],["path",{"d":"M3 12h13"},0],["path",{"d":"M3 19h13"},0],["path",{"d":"M16 8l-3 -3l3 -3"},0],["path",{"d":"M21 19V7a2 2 0 0 0 -2 -2h-6"},0]]);
+export const GlassListStart = /*#__PURE__*/ createGlassIcon("list-start", [[["M3 5L9 5",0],["M3 12L16 12",0],["M3 19L16 19",0],["M16 8L13 5L16 2",0],["M21 19L21 7A2 2 0 0 0 19 5L13 5",0]],[],[19.4,3.6,4.75],1]);
 export default GlassListStart;

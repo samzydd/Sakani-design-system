@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ruler"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRuler = /*#__PURE__*/ createGlassIcon("ruler", [["path",{"d":"M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1 -3.4 0L2.7 8.7a2.41 2.41 0 0 1 0 -3.4l2.6 -2.6a2.41 2.41 0 0 1 3.4 0Z"},1],["path",{"d":"M14.5 12.5l2 -2"},0],["path",{"d":"M11.5 9.5l2 -2"},0],["path",{"d":"M8.5 6.5l2 -2"},0],["path",{"d":"M17.5 15.5l2 -2"},0]]);
+export const GlassRuler = /*#__PURE__*/ createGlassIcon("ruler", [[["M21.3 15.3A2.4 2.4 0 0 1 21.3 18.7L18.7 21.3A2.4 2.4 0 0 1 15.3 21.3L2.7 8.7A2.41 2.41 0 0 1 2.7 5.3L5.3 2.7A2.41 2.41 0 0 1 8.7 2.7Z",1]],[["M14.5 12.5L16.5 10.5",1],["M11.5 9.5L13.5 7.5",1],["M8.5 6.5L10.5 4.5",1],["M17.5 15.5L19.5 13.5",1]],[20.397,3.598,4.75],0]);
 export default GlassRuler;

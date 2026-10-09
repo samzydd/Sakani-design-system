@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "weight"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWeight = /*#__PURE__*/ createGlassIcon("weight", [["circle",{"cx":"12","cy":"5","r":"3"},1],["path",{"d":"M6.5 8a2 2 0 0 0 -1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925 -2.54L19.4 9.5A2 2 0 0 0 17.48 8Z"},1]]);
+export const GlassWeight = /*#__PURE__*/ createGlassIcon("weight", [[["M6.5 8A2 2 0 0 0 4.595 9.46L2.1 18.5A2 2 0 0 0 4 21L20 21A2 2 0 0 0 21.925 18.46L19.4 9.5A2 2 0 0 0 17.48 8Z",1]],[["M9 5A3 3 0 1 0 15 5A3 3 0 1 0 9 5Z",0]],[20.391,9.6,4.75],0]);
 export default GlassWeight;

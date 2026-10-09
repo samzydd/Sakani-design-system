@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fuel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFuel = /*#__PURE__*/ createGlassIcon("fuel", [["path",{"d":"M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0 -0.59 -1.42L18 5"},0],["path",{"d":"M14 21V5a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2v16"},0],["path",{"d":"M2 21h13"},0],["path",{"d":"M3 9h11"},0]]);
+export const GlassFuel = /*#__PURE__*/ createGlassIcon("fuel", [[["M14 21L14 5A2 2 0 0 0 12 3L5 3A2 2 0 0 0 3 5L3 21Z",1],["M14 13L16 13A2 2 0 0 1 18 15L18 17A2 2 0 0 0 22 17L22 10.002A2 2 0 0 0 21.41 8.582L18 5Z",1],["M2 21L15 21",0]],[["M3 9L14 9",1]],[20.4,4.6,4.75],0]);
 export default GlassFuel;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rotate-ccw-clock" (alias of "history")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHistory = /*#__PURE__*/ createGlassIcon("history", [["path",{"d":"M3 12a9 9 0 1 0 9 -9a9.75 9.75 0 0 0 -6.74 2.74L3 8"},0],["path",{"d":"M3 3v5h5"},0],["path",{"d":"M12 7v5l4 2"},0]]);
+export const GlassHistory = /*#__PURE__*/ createGlassIcon("history", [[["M3 12A9 9 0 1 0 12 3A9.75 9.75 0 0 0 5.26 5.74L3 8Z",1]],[["M3 3L3 8L8 8",1],["M12 7L12 12L16 14",1]],[19.4,4.6,4.75],0]);
 export default GlassHistory;

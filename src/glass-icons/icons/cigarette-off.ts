@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cigarette-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCigaretteOff = /*#__PURE__*/ createGlassIcon("cigarette-off", [["path",{"d":"M12 12H3a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h13"},0],["path",{"d":"M18 8c0 -2.5 -2 -2.5 -2 -5"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M21 12a1 1 0 0 1 1 1v2a1 1 0 0 1 -0.5 0.866"},0],["path",{"d":"M22 8c0 -2.5 -2 -2.5 -2 -5"},0],["path",{"d":"M7 12v4"},0]]);
+export const GlassCigaretteOff = /*#__PURE__*/ createGlassIcon("cigarette-off", [[["M12 12L3 12A1 1 0 0 0 2 13L2 15A1 1 0 0 0 3 16L16 16Z",1],["M7 12L7 16",0]],[["M18 8C18 5.5 16 5.5 16 3",0],["M2 2L22 22",0],["M21 12A1 1 0 0 1 22 13L22 15A1 1 0 0 1 21.5 15.866",0],["M22 8C22 5.5 20 5.5 20 3",0]],[14.676,13.324,4.29],0]);
 export default GlassCigaretteOff;

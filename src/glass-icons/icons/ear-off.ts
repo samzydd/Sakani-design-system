@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ear-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEarOff = /*#__PURE__*/ createGlassIcon("ear-off", [["path",{"d":"M6 18.5a3.5 3.5 0 1 0 7 0c0 -1.57 0.92 -2.52 2.04 -3.46"},0],["path",{"d":"M6 8.5c0 -0.75 0.13 -1.47 0.36 -2.14"},0],["path",{"d":"M8.8 3.15A6.5 6.5 0 0 1 19 8.5c0 1.63 -0.44 2.81 -1.09 3.76"},0],["path",{"d":"M12.5 6A2.5 2.5 0 0 1 15 8.5"},0],["path",{"d":"M10 13a2 2 0 0 0 1.82 -1.18"},0],["line",{"x1":"2","x2":"22","y1":"2","y2":"22"},0]]);
+export const GlassEarOff = /*#__PURE__*/ createGlassIcon("ear-off", [[["M6 18.5A3.5 3.5 0 1 0 13 18.5C13 16.93 13.92 15.98 15.04 15.04Z",1]],[["M6 8.5C6 7.75 6.13 7.03 6.36 6.36",0],["M8.8 3.15A6.5 6.5 0 0 1 19 8.5C19 10.13 18.56 11.31 17.91 12.26",0],["M12.5 6A2.5 2.5 0 0 1 15 8.5",0],["M10 13A2 2 0 0 0 11.82 11.82",0],["M2 2L22 22",0]],[14.49,15.59,3],0]);
 export default GlassEarOff;

@@ -2,5 +2,5 @@
 // Shape data: Sakani Figma icon set, icon "codepen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCodepen = /*#__PURE__*/ createGlassIcon("codepen", [["path",{"d":"M22 15.5V8.5L12 2L2 8.5V15.5L12 22L22 15.5Z"},1],["path",{"d":"M12 2V8.5"},0],["path",{"d":"M22 8.5L12 15.5"},0],["path",{"d":"M22 15.5L12 8.5"},0],["path",{"d":"M12 22V15.5"},0],["path",{"d":"M2 15.5L12 8.5"},0],["path",{"d":"M2 8.5L12 15.5"},0]]);
+export const GlassCodepen = /*#__PURE__*/ createGlassIcon("codepen", [[["M22 15.5L22 8.5L12 2L2 8.5L2 15.5L12 22L22 15.5Z",1]],[["M12 2L12 8.5",1],["M22 8.5L12 15.5",1],["M22 15.5L12 8.5",1],["M12 22L12 15.5",1],["M2 15.5L12 8.5",1],["M2 8.5L12 15.5",1]],[20.4,3.6,4.75],0]);
 export default GlassCodepen;

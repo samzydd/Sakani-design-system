@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "contact-round"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassContactRound = /*#__PURE__*/ createGlassIcon("contact-round", [["path",{"d":"M16 2v2"},0],["path",{"d":"M17.915 21a6 6 0 1 0 -12 0"},0],["path",{"d":"M8 2v2"},0],["circle",{"cx":"12","cy":"11","r":"4"},1],["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"2"},1]]);
+export const GlassContactRound = /*#__PURE__*/ createGlassIcon("contact-round", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1],["M16 2L16 4",0],["M8 2L8 4",0]],[["M17.915 21A6 6 0 1 0 5.915 21",1],["M8 11A4 4 0 1 0 16 11A4 4 0 1 0 8 11Z",1]],[19.4,3.6,4.75],0]);
 export default GlassContactRound;

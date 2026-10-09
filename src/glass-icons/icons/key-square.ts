@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "key-square"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassKeySquare = /*#__PURE__*/ createGlassIcon("key-square", [["path",{"d":"M12.4 2.7a2.5 2.5 0 0 1 3.4 0l5.5 5.5a2.5 2.5 0 0 1 0 3.4l-3.7 3.7a2.5 2.5 0 0 1 -3.4 0L8.7 9.8a2.5 2.5 0 0 1 0 -3.4z"},1],["path",{"d":"M14 7l3 3"},0],["path",{"d":"M9.4 10.6l-6.814 6.814A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1 -1v-1a1 1 0 0 1 1 -1h1a1 1 0 0 0 1 -1v-1a1 1 0 0 1 1 -1h0.172a2 2 0 0 0 1.414 -0.586l0.814 -0.814"},0]]);
+export const GlassKeySquare = /*#__PURE__*/ createGlassIcon("key-square", [[["M12.4 2.7A2.5 2.5 0 0 1 15.8 2.7L21.3 8.2A2.5 2.5 0 0 1 21.3 11.6L17.6 15.3A2.5 2.5 0 0 1 14.2 15.3L8.7 9.8A2.5 2.5 0 0 1 8.7 6.4Z",1],["M9.4 10.6L2.586 17.414A2 2 0 0 0 2 18.828L2 21A1 1 0 0 0 3 22L6 22A1 1 0 0 0 7 21L7 20A1 1 0 0 1 8 19L9 19A1 1 0 0 0 10 18L10 17A1 1 0 0 1 11 16L11.172 16A2 2 0 0 0 12.586 15.414L13.4 14.6Z",1]],[["M14 7L17 10",1]],[20.367,3.633,4.75],0]);
 export default GlassKeySquare;

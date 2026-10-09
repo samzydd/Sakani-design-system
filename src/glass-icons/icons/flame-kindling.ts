@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flame-kindling"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFlameKindling = /*#__PURE__*/ createGlassIcon("flame-kindling", [["path",{"d":"M12 2c1 3 2.5 3.5 3.5 4.5A5 5 0 0 1 17 10a5 5 0 1 1 -10 0c0 -0.3 0 -0.6 0.1 -0.9a2 2 0 1 0 3.3 -2C8 4.5 11 2 12 2Z"},1],["path",{"d":"M5 22l14 -4"},0],["path",{"d":"M5 18l14 4"},0]]);
+export const GlassFlameKindling = /*#__PURE__*/ createGlassIcon("flame-kindling", [[["M12 2C13 5 14.5 5.5 15.5 6.5A5 5 0 0 1 17 10A5 5 0 1 1 7 10C7 9.7 7 9.4 7.1 9.1A2 2 0 1 0 10.4 7.1C8 4.5 11 2 12 2Z",1]],[["M5 22L19 18",0],["M5 18L19 22",0]],[15.832,3.168,4.03],0]);
 export default GlassFlameKindling;

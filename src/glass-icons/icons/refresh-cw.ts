@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "refresh-cw"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRefreshCw = /*#__PURE__*/ createGlassIcon("refresh-cw", [["path",{"d":"M3 12a9 9 0 0 1 9 -9a9.75 9.75 0 0 1 6.74 2.74L21 8"},0],["path",{"d":"M21 3v5h-5"},0],["path",{"d":"M21 12a9 9 0 0 1 -9 9a9.75 9.75 0 0 1 -6.74 -2.74L3 16"},0],["path",{"d":"M8 16H3v5"},0]]);
+export const GlassRefreshCw = /*#__PURE__*/ createGlassIcon("refresh-cw", [[["M3 12A9 9 0 0 1 12 3A9.75 9.75 0 0 1 18.74 5.74L21 8",0],["M21 3L21 8L16 8",0],["M21 12A9 9 0 0 1 12 21A9.75 9.75 0 0 1 5.26 18.26L3 16",0],["M8 16L3 16L3 21",0]],[],[19.4,4.6,4.75],1]);
 export default GlassRefreshCw;

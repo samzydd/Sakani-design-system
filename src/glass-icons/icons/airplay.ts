@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "airplay"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAirplay = /*#__PURE__*/ createGlassIcon("airplay", [["path",{"d":"M5 17H4a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-1"},0],["path",{"d":"M12 15l5 6H7Z"},1]]);
+export const GlassAirplay = /*#__PURE__*/ createGlassIcon("airplay", [[["M5 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L19 17Z",1]],[["M12 15L17 21L7 21Z",0]],[20.4,4.6,4.75],0]);
 export default GlassAirplay;

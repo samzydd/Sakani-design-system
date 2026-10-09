@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "equal-not"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEqualNot = /*#__PURE__*/ createGlassIcon("equal-not", [["line",{"x1":"5","x2":"19","y1":"9","y2":"9"},0],["line",{"x1":"5","x2":"19","y1":"15","y2":"15"},0],["line",{"x1":"19","x2":"5","y1":"5","y2":"19"},0]]);
+export const GlassEqualNot = /*#__PURE__*/ createGlassIcon("equal-not", [[["M5 9L19 9",0],["M5 15L19 15",0],["M19 5L5 19",0]],[],[17.676,6.324,4.29],1]);
 export default GlassEqualNot;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "waves-ladder"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWavesLadder = /*#__PURE__*/ createGlassIcon("waves-ladder", [["path",{"d":"M19 5a2 2 0 0 0 -2 2v11"},0],["path",{"d":"M2 18c0.6 0.5 1.2 1 2.5 1c2.5 0 2.5 -2 5 -2c2.6 0 2.4 2 5 2c2.5 0 2.5 -2 5 -2c1.3 0 1.9 0.5 2.5 1"},0],["path",{"d":"M7 13h10"},0],["path",{"d":"M7 9h10"},0],["path",{"d":"M9 5a2 2 0 0 0 -2 2v11"},0]]);
+export const GlassWavesLadder = /*#__PURE__*/ createGlassIcon("waves-ladder", [[["M19 5A2 2 0 0 0 17 7L17 18",0],["M2 18C2.6 18.5 3.2 19 4.5 19C7 19 7 17 9.5 17C12.1 17 11.9 19 14.5 19C17 19 17 17 19.5 17C20.8 17 21.4 17.5 22 18",0],["M7 13L17 13",0],["M7 9L17 9",0],["M9 5A2 2 0 0 0 7 7L7 18",0]],[],[20.4,6.6,4.75],1]);
 export default GlassWavesLadder;

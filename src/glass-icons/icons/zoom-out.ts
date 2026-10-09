@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "zoom-out"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassZoomOut = /*#__PURE__*/ createGlassIcon("zoom-out", [["circle",{"cx":"11","cy":"11","r":"8"},1],["line",{"x1":"21","x2":"16.65","y1":"21","y2":"16.65"},0],["line",{"x1":"8","x2":"14","y1":"11","y2":"11"},0]]);
+export const GlassZoomOut = /*#__PURE__*/ createGlassIcon("zoom-out", [[["M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z",1]],[["M21 21L16.65 16.65",0],["M8 11L14 11",1]],[17.4,4.6,4.75],0]);
 export default GlassZoomOut;

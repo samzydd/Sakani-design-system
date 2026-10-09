@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wifi-sync"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWifiSync = /*#__PURE__*/ createGlassIcon("wifi-sync", [["path",{"d":"M11.965 10.105v4L13.5 12.5a5 5 0 0 1 8 1.5"},0],["path",{"d":"M11.965 14.105h4"},0],["path",{"d":"M17.965 18.105h4L20.43 19.71a5 5 0 0 1 -8 -1.5"},0],["path",{"d":"M2 8.82a15 15 0 0 1 20 0"},0],["path",{"d":"M21.965 22.105v-4"},0],["path",{"d":"M5 12.86a10 10 0 0 1 3 -2.032"},0],["path",{"d":"M8.5 16.429h0.01"},0]]);
+export const GlassWifiSync = /*#__PURE__*/ createGlassIcon("wifi-sync", [[["M17.965 18.105L21.965 18.105L20.43 19.71A5 5 0 0 1 12.43 18.21Z",1]],[["M11.965 10.105L11.965 14.105L13.5 12.5A5 5 0 0 1 21.5 14",0],["M11.965 14.105L15.965 14.105",0],["M2 8.82A15 15 0 0 1 22 8.82",0],["M21.965 22.105L21.965 18.105",0],["M5 12.86A10 10 0 0 1 8 10.828",0],["M8.5 16.429L8.51 16.429",0]],[21.338,18.732,3.129],0]);
 export default GlassWifiSync;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "router"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRouter = /*#__PURE__*/ createGlassIcon("router", [["rect",{"width":"20","height":"8","x":"2","y":"14","rx":"2"},1],["path",{"d":"M6.01 18H6"},0],["path",{"d":"M10.01 18H10"},0],["path",{"d":"M15 10v4"},0],["path",{"d":"M17.84 7.17a4 4 0 0 0 -5.66 0"},0],["path",{"d":"M20.66 4.34a8 8 0 0 0 -11.31 0"},0]]);
+export const GlassRouter = /*#__PURE__*/ createGlassIcon("router", [[["M4 14L20 14A2 2 0 0 1 22 16L22 20A2 2 0 0 1 20 22L4 22A2 2 0 0 1 2 20L2 16A2 2 0 0 1 4 14Z",1]],[["M6.01 18L6 18",1],["M10.01 18L10 18",1],["M15 10L15 14",0],["M17.84 7.17A4 4 0 0 0 12.18 7.17",0],["M20.66 4.34A8 8 0 0 0 9.35 4.34",0]],[20.4,15.6,4.75],0]);
 export default GlassRouter;

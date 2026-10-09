@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bubbles"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBubbles = /*#__PURE__*/ createGlassIcon("bubbles", [["path",{"d":"M7.001 15.085A1.5 1.5 0 0 1 9 16.5"},0],["circle",{"cx":"18.5","cy":"8.5","r":"3.5"},1],["circle",{"cx":"7.5","cy":"16.5","r":"5.5"},1],["circle",{"cx":"7.5","cy":"4.5","r":"2.5"},1]]);
+export const GlassBubbles = /*#__PURE__*/ createGlassIcon("bubbles", [[["M2 16.5A5.5 5.5 0 1 0 13 16.5A5.5 5.5 0 1 0 2 16.5Z",1],["M15 8.5A3.5 3.5 0 1 0 22 8.5A3.5 3.5 0 1 0 15 8.5Z",1]],[["M7.001 15.085A1.5 1.5 0 0 1 9 16.5",1],["M5 4.5A2.5 2.5 0 1 0 10 4.5A2.5 2.5 0 1 0 5 4.5Z",0]],[20.4,6.6,4.75],0]);
 export default GlassBubbles;

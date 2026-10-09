@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "captions-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCaptionsOff = /*#__PURE__*/ createGlassIcon("captions-off", [["path",{"d":"M10.5 5H19a2 2 0 0 1 2 2v8.5"},0],["path",{"d":"M17 11h-0.5"},0],["path",{"d":"M19 19H5a2 2 0 0 1 -2 -2V7a2 2 0 0 1 2 -2"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M7 11h4"},0],["path",{"d":"M7 15h2.5"},0]]);
+export const GlassCaptionsOff = /*#__PURE__*/ createGlassIcon("captions-off", [[["M19 19L5 19A2 2 0 0 1 3 17L3 7A2 2 0 0 1 5 5Z",1],["M2 2L22 22",0]],[["M10.5 5L19 5A2 2 0 0 1 21 7L21 15.5",0],["M17 11L16.5 11",0],["M7 11L11 11",1],["M7 15L9.5 15",1]],[20.4,3.6,4.75],0]);
 export default GlassCaptionsOff;

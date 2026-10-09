@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-round-corner"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareRoundCorner = /*#__PURE__*/ createGlassIcon("square-round-corner", [["path",{"d":"M21 11a8 8 0 0 0 -8 -8"},0],["path",{"d":"M21 15v4a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h4"},0]]);
+export const GlassSquareRoundCorner = /*#__PURE__*/ createGlassIcon("square-round-corner", [[["M21 15L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L9 3Z",1]],[["M21 11A8 8 0 0 0 13 3",0]],[19.4,4.6,4.75],0]);
 export default GlassSquareRoundCorner;

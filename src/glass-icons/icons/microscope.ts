@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "microscope"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMicroscope = /*#__PURE__*/ createGlassIcon("microscope", [["path",{"d":"M6 18h8"},0],["path",{"d":"M3 22h18"},0],["path",{"d":"M14 22a7 7 0 1 0 0 -14h-1"},0],["path",{"d":"M9 14h2"},0],["path",{"d":"M9 12a2 2 0 0 1 -2 -2V6h6v4a2 2 0 0 1 -2 2Z"},1],["path",{"d":"M12 6V3a1 1 0 0 0 -1 -1H9a1 1 0 0 0 -1 1v3"},0]]);
+export const GlassMicroscope = /*#__PURE__*/ createGlassIcon("microscope", [[["M14 22A7 7 0 1 0 14 8L13 8Z",1],["M9 12A2 2 0 0 1 7 10L7 6L13 6L13 10A2 2 0 0 1 11 12Z",1]],[["M6 18L14 18",0],["M3 22L21 22",0],["M9 14L11 14",0],["M12 6L12 3A1 1 0 0 0 11 2L9 2A1 1 0 0 0 8 3L8 6",0]],[19.4,7.6,4.75],0]);
 export default GlassMicroscope;

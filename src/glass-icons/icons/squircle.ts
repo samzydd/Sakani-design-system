@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "squircle"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquircle = /*#__PURE__*/ createGlassIcon("squircle", [["path",{"d":"M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9"},1]]);
+export const GlassSquircle = /*#__PURE__*/ createGlassIcon("squircle", [[["M12 3C19.2 3 21 4.8 21 12C21 19.2 19.2 21 12 21C4.8 21 3 19.2 3 12C3 4.8 4.8 3 12 3",1]],[],[19.4,4.6,4.75],0]);
 export default GlassSquircle;

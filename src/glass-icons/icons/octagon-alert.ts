@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "octagon-alert"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassOctagonAlert = /*#__PURE__*/ createGlassIcon("octagon-alert", [["path",{"d":"M12 16h0.01"},0],["path",{"d":"M12 8v4"},0],["path",{"d":"M15.312 2a2 2 0 0 1 1.414 0.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1 -0.586 1.414l-4.688 4.688a2 2 0 0 1 -1.414 0.586H8.688a2 2 0 0 1 -1.414 -0.586l-4.688 -4.688A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 0.586 -1.414l4.688 -4.688A2 2 0 0 1 8.688 2z"},1]]);
+export const GlassOctagonAlert = /*#__PURE__*/ createGlassIcon("octagon-alert", [[["M15.312 2A2 2 0 0 1 16.726 2.586L21.414 7.274A2 2 0 0 1 22 8.688L22 15.312A2 2 0 0 1 21.414 16.726L16.726 21.414A2 2 0 0 1 15.312 22L8.688 22A2 2 0 0 1 7.274 21.414L2.586 16.726A2 2 0 0 1 2 15.312L2 8.688A2 2 0 0 1 2.586 7.274L7.274 2.586A2 2 0 0 1 8.688 2Z",1]],[["M12 16L12.01 16",1],["M12 8L12 12",1]],[20.4,3.6,4.75],0]);
 export default GlassOctagonAlert;

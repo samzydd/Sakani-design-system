@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cloud-hail"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCloudHail = /*#__PURE__*/ createGlassIcon("cloud-hail", [["path",{"d":"M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"},0],["path",{"d":"M16 14v2"},0],["path",{"d":"M8 14v2"},0],["path",{"d":"M16 20h0.01"},0],["path",{"d":"M8 20h0.01"},0],["path",{"d":"M12 16v2"},0],["path",{"d":"M12 22h0.01"},0]]);
+export const GlassCloudHail = /*#__PURE__*/ createGlassIcon("cloud-hail", [[["M4 14.899A7 7 0 1 1 15.71 8L17.5 8A4.5 4.5 0 0 1 20 16.242Z",1],["M8 14L8 16",0]],[["M16 14L16 16",1],["M16 20L16.01 20",0],["M8 20L8.01 20",0],["M12 16L12 18",0],["M12 22L12.01 22",0]],[20.389,4.613,4.75],0]);
 export default GlassCloudHail;

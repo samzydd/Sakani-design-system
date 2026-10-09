@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "kanban"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassKanban = /*#__PURE__*/ createGlassIcon("kanban", [["path",{"d":"M5 3v14"},0],["path",{"d":"M12 3v8"},0],["path",{"d":"M19 3v18"},0]]);
+export const GlassKanban = /*#__PURE__*/ createGlassIcon("kanban", [[["M5 3L5 17",0],["M12 3L12 11",0],["M19 3L19 21",0]],[],[17.4,4.6,4.75],1]);
 export default GlassKanban;

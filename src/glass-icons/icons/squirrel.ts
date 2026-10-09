@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "squirrel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquirrel = /*#__PURE__*/ createGlassIcon("squirrel", [["path",{"d":"M15.236 22a3 3 0 0 0 -2.2 -5"},0],["path",{"d":"M16 20a3 3 0 0 1 3 -3h1a2 2 0 0 0 2 -2v-2a4 4 0 0 0 -4 -4V4"},0],["path",{"d":"M18 13h0.01"},0],["path",{"d":"M18 6a4 4 0 0 0 -4 4a7 7 0 0 0 -7 7c0 -5 4 -5 4 -10.5a4.5 4.5 0 1 0 -9 0a2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10"},0]]);
+export const GlassSquirrel = /*#__PURE__*/ createGlassIcon("squirrel", [[["M15.236 22A3 3 0 0 0 13.036 17",0],["M16 20A3 3 0 0 1 19 17L20 17A2 2 0 0 0 22 15L22 13A4 4 0 0 0 18 9L18 4",0],["M18 13L18.01 13",0],["M18 6A4 4 0 0 0 14 10A7 7 0 0 0 7 17C7 12 11 12 11 6.5A4.5 4.5 0 1 0 2 6.5A2.5 2.5 0 0 0 7 6.5C7 10 3 11 3 17C3 19.8 5.2 22 8 22L18 22",0]],[],[20.4,3.6,4.75],1]);
 export default GlassSquirrel;

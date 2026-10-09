@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shrimp"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShrimp = /*#__PURE__*/ createGlassIcon("shrimp", [["path",{"d":"M10 2a3.28 3.28 0 0 0 3.227 1.798l6.17 -0.561A1 1 0 1 1 19.614 8H8.5a6.44 6.44 0 0 0 -5.63 9.75A6.5 6.5 0 0 0 8.5 21c1.38 0 2 -0.5 2.5 -1"},0],["path",{"d":"M10 8a8.5 8.5 0 0 0 0 8"},0],["path",{"d":"M11 22c-0.5 -0.5 -1.12 -1 -2.5 -1a1 1 0 0 1 0 -5H12a7 7 0 0 0 7 -7V8"},0],["path",{"d":"M13 12h0.01"},0],["path",{"d":"M8 16c-2 0 -4.5 -4 -4 -6"},0]]);
+export const GlassShrimp = /*#__PURE__*/ createGlassIcon("shrimp", [[["M10 2A3.28 3.28 0 0 0 13.227 3.798L19.397 3.237A1 1 0 1 1 19.614 8L8.5 8A6.44 6.44 0 0 0 2.87 17.75A6.5 6.5 0 0 0 8.5 21C9.88 21 10.5 20.5 11 20",0],["M10 8A8.5 8.5 0 0 0 10 16",0],["M11 22C10.5 21.5 9.88 21 8.5 21A1 1 0 0 1 8.5 16L12 16A7 7 0 0 0 19 9L19 8",0],["M13 12L13.01 12",0],["M8 16C6 16 3.5 12 4 10",0]],[],[20.287,3.6,4.75],1]);
 export default GlassShrimp;

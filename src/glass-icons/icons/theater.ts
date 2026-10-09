@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "theater"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTheater = /*#__PURE__*/ createGlassIcon("theater", [["path",{"d":"M2 10s3 -3 3 -8"},0],["path",{"d":"M22 10s-3 -3 -3 -8"},0],["path",{"d":"M10 2c0 4.4 -3.6 8 -8 8"},0],["path",{"d":"M14 2c0 4.4 3.6 8 8 8"},0],["path",{"d":"M2 10s2 2 2 5"},0],["path",{"d":"M22 10s-2 2 -2 5"},0],["path",{"d":"M8 15h8"},0],["path",{"d":"M2 22v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"},0],["path",{"d":"M14 22v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"},0]]);
+export const GlassTheater = /*#__PURE__*/ createGlassIcon("theater", [[["M14 22L14 21A2 2 0 0 1 16 19L20 19A2 2 0 0 1 22 21L22 22Z",1],["M2 22L2 21A2 2 0 0 1 4 19L8 19A2 2 0 0 1 10 21L10 22Z",1]],[["M2 10C2 10 5 7 5 2",0],["M22 10C22 10 19 7 19 2",0],["M10 2C10 6.4 6.4 10 2 10",0],["M14 2C14 6.4 17.6 10 22 10",0],["M2 10C2 10 4 12 4 15",0],["M22 10C22 10 20 12 20 15",0],["M8 15L16 15",0]],[20.4,20.6,4.75],0]);
 export default GlassTheater;

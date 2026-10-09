@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "decimals-arrow-left"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDecimalsArrowLeft = /*#__PURE__*/ createGlassIcon("decimals-arrow-left", [["path",{"d":"M13 21l-3 -3l3 -3"},0],["path",{"d":"M20 18H10"},0],["path",{"d":"M3 11h0.01"},0],["rect",{"x":"6","y":"3","width":"5","height":"8","rx":"2.5"},1]]);
+export const GlassDecimalsArrowLeft = /*#__PURE__*/ createGlassIcon("decimals-arrow-left", [[["M8.5 3L8.5 3A2.5 2.5 0 0 1 11 5.5L11 8.5A2.5 2.5 0 0 1 8.5 11L8.5 11A2.5 2.5 0 0 1 6 8.5L6 5.5A2.5 2.5 0 0 1 8.5 3Z",1]],[["M13 21L10 18L13 15",0],["M20 18L10 18",0],["M3 11L3.01 11",0]],[10.45,3.55,3],0]);
 export default GlassDecimalsArrowLeft;

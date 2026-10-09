@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "omega"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassOmega = /*#__PURE__*/ createGlassIcon("omega", [["path",{"d":"M3 20h4.5a0.5 0.5 0 0 0 0.5 -0.5v-0.282a0.52 0.52 0 0 0 -0.247 -0.437a8 8 0 1 1 8.494 -0.001a0.52 0.52 0 0 0 -0.247 0.438v0.282a0.5 0.5 0 0 0 0.5 0.5H21"},0]]);
+export const GlassOmega = /*#__PURE__*/ createGlassIcon("omega", [[["M3 20L7.5 20A0.5 0.5 0 0 0 8 19.5L8 19.218A0.52 0.52 0 0 0 7.753 18.781A8 8 0 1 1 16.247 18.78A0.52 0.52 0 0 0 16 19.218L16 19.5A0.5 0.5 0 0 0 16.5 20L21 20Z",1]],[],[19.4,5.637,4.75],0]);
 export default GlassOmega;

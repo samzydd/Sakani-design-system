@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-equal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleEqual = /*#__PURE__*/ createGlassIcon("circle-equal", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M7 10h10"},0],["path",{"d":"M7 14h10"},0]]);
+export const GlassCircleEqual = /*#__PURE__*/ createGlassIcon("circle-equal", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M7 10L17 10",1],["M7 14L17 14",1]],[20.4,3.6,4.75],0]);
 export default GlassCircleEqual;

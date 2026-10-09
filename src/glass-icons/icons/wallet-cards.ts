@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wallet-cards"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWalletCards = /*#__PURE__*/ createGlassIcon("wallet-cards", [["path",{"d":"M3 11h3.75a2 2 0 0 1 1.6 0.8l0.45 0.6a4 4 0 0 0 6.4 0l0.45 -0.6a2 2 0 0 1 1.6 -0.8H21"},0],["path",{"d":"M3 7h18"},0],["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"2"},1]]);
+export const GlassWalletCards = /*#__PURE__*/ createGlassIcon("wallet-cards", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M3 11L6.75 11A2 2 0 0 1 8.35 11.8L8.8 12.4A4 4 0 0 0 15.2 12.4L15.65 11.8A2 2 0 0 1 17.25 11L21 11",1],["M3 7L21 7",1]],[19.4,4.6,4.75],0]);
 export default GlassWalletCards;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "luggage"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLuggage = /*#__PURE__*/ createGlassIcon("luggage", [["path",{"d":"M6 20a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2"},0],["path",{"d":"M8 18V4a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v14"},0],["path",{"d":"M10 20h4"},0],["circle",{"cx":"16","cy":"20","r":"2"},1],["circle",{"cx":"8","cy":"20","r":"2"},1]]);
+export const GlassLuggage = /*#__PURE__*/ createGlassIcon("luggage", [[["M6 20A2 2 0 0 1 4 18L4 8A2 2 0 0 1 6 6L18 6A2 2 0 0 1 20 8L20 18A2 2 0 0 1 18 20Z",1],["M8 18L8 4A2 2 0 0 1 10 2L14 2A2 2 0 0 1 16 4L16 18Z",1],["M10 20L14 20",0],["M14 20A2 2 0 1 0 18 20A2 2 0 1 0 14 20Z",0],["M6 20A2 2 0 1 0 10 20A2 2 0 1 0 6 20Z",0]],[],[18.4,3.6,4.75],0]);
 export default GlassLuggage;

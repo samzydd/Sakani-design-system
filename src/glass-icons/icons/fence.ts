@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "fence"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFence = /*#__PURE__*/ createGlassIcon("fence", [["path",{"d":"M4 3L2 5v15c0 0.6 0.4 1 1 1h2c0.6 0 1 -0.4 1 -1V5Z"},1],["path",{"d":"M6 8h4"},0],["path",{"d":"M6 18h4"},0],["path",{"d":"M12 3l-2 2v15c0 0.6 0.4 1 1 1h2c0.6 0 1 -0.4 1 -1V5Z"},1],["path",{"d":"M14 8h4"},0],["path",{"d":"M14 18h4"},0],["path",{"d":"M20 3l-2 2v15c0 0.6 0.4 1 1 1h2c0.6 0 1 -0.4 1 -1V5Z"},1]]);
+export const GlassFence = /*#__PURE__*/ createGlassIcon("fence", [[["M20 3L18 5L18 20C18 20.6 18.4 21 19 21L21 21C21.6 21 22 20.6 22 20L22 5Z",1],["M4 3L2 5L2 20C2 20.6 2.4 21 3 21L5 21C5.6 21 6 20.6 6 20L6 5Z",1],["M12 3L10 5L10 20C10 20.6 10.4 21 11 21L13 21C13.6 21 14 20.6 14 20L14 5Z",1],["M6 8L10 8",0],["M6 18L10 18",0],["M14 8L18 8",0],["M14 18L18 18",0]],[],[20.4,4.6,4.75],0]);
 export default GlassFence;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-lock"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBookLock = /*#__PURE__*/ createGlassIcon("book-lock", [["path",{"d":"M18 6V4a2 2 0 1 0 -4 0v2"},0],["path",{"d":"M20 15v6a1 1 0 0 1 -1 1H6.5a1 1 0 0 1 0 -5H20"},0],["path",{"d":"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H10"},0],["rect",{"x":"12","y":"6","width":"8","height":"5","rx":"1"},1]]);
+export const GlassBookLock = /*#__PURE__*/ createGlassIcon("book-lock", [[["M13 6L19 6A1 1 0 0 1 20 7L20 10A1 1 0 0 1 19 11L13 11A1 1 0 0 1 12 10L12 7A1 1 0 0 1 13 6Z",1],["M18 6L18 4A2 2 0 1 0 14 4L14 6Z",1]],[["M20 15L20 21A1 1 0 0 1 19 22L6.5 22A1 1 0 0 1 6.5 17L20 17",0],["M4 19.5L4 4.5A2.5 2.5 0 0 1 6.5 2L10 2",0]],[19.45,2.55,3],0]);
 export default GlassBookLock;

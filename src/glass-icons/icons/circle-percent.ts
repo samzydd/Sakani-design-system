@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-percent"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCirclePercent = /*#__PURE__*/ createGlassIcon("circle-percent", [["circle",{"cx":"12","cy":"12","r":"10"},1],["path",{"d":"M15 9l-6 6"},0],["path",{"d":"M9 9h0.01"},0],["path",{"d":"M15 15h0.01"},0]]);
+export const GlassCirclePercent = /*#__PURE__*/ createGlassIcon("circle-percent", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M15 9L9 15",1],["M9 9L9.01 9",1],["M15 15L15.01 15",1]],[20.4,3.6,4.75],0]);
 export default GlassCirclePercent;

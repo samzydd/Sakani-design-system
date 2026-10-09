@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "house-plug"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHousePlug = /*#__PURE__*/ createGlassIcon("house-plug", [["path",{"d":"M10 12V8.964"},0],["path",{"d":"M14 12V8.964"},0],["path",{"d":"M15 12a1 1 0 0 1 1 1v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a1 1 0 0 1 1 -1z"},1],["path",{"d":"M8.5 21H5a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 0.709 -1.528l7 -6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1 -2 2h-5a2 2 0 0 1 -2 -2v-2"},0]]);
+export const GlassHousePlug = /*#__PURE__*/ createGlassIcon("house-plug", [[["M8.5 21L5 21A2 2 0 0 1 3 19L3 10A2 2 0 0 1 3.709 8.472L10.709 2.472A2 2 0 0 1 13.291 2.472L20.291 8.472A2 2 0 0 1 21 10L21 19A2 2 0 0 1 19 21L14 21A2 2 0 0 1 12 19L12 17Z",1]],[["M10 12L10 8.964",1],["M14 12L14 8.964",1],["M15 12A1 1 0 0 1 16 13L16 15A2 2 0 0 1 14 17L10 17A2 2 0 0 1 8 15L8 13A1 1 0 0 1 9 12Z",1]],[19.4,3.6,4.75],0]);
 export default GlassHousePlug;

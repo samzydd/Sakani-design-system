@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "server-crash"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassServerCrash = /*#__PURE__*/ createGlassIcon("server-crash", [["path",{"d":"M6 10H4a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-2"},0],["path",{"d":"M6 14H4a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-2"},0],["path",{"d":"M6 6h0.01"},0],["path",{"d":"M6 18h0.01"},0],["path",{"d":"M13 6l-4 6h6l-4 6"},0]]);
+export const GlassServerCrash = /*#__PURE__*/ createGlassIcon("server-crash", [[["M6 14L4 14A2 2 0 0 0 2 16L2 20A2 2 0 0 0 4 22L20 22A2 2 0 0 0 22 20L22 16A2 2 0 0 0 20 14L18 14Z",1],["M6 10L4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2L20 2A2 2 0 0 1 22 4L22 8A2 2 0 0 1 20 10L18 10Z",1]],[["M6 6L6.01 6",1],["M6 18L6.01 18",1],["M13 6L9 12L15 12L11 18",1]],[20.4,3.6,4.75],0]);
 export default GlassServerCrash;

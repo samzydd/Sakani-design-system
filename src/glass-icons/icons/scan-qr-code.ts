@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "scan-qr-code"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassScanQrCode = /*#__PURE__*/ createGlassIcon("scan-qr-code", [["path",{"d":"M17 12v4a1 1 0 0 1 -1 1h-4"},0],["path",{"d":"M17 3h2a2 2 0 0 1 2 2v2"},0],["path",{"d":"M17 8V7"},0],["path",{"d":"M21 17v2a2 2 0 0 1 -2 2h-2"},0],["path",{"d":"M3 7V5a2 2 0 0 1 2 -2h2"},0],["path",{"d":"M7 17h0.01"},0],["path",{"d":"M7 21H5a2 2 0 0 1 -2 -2v-2"},0],["rect",{"x":"7","y":"7","width":"5","height":"5","rx":"1"},1]]);
+export const GlassScanQrCode = /*#__PURE__*/ createGlassIcon("scan-qr-code", [[["M8 7L11 7A1 1 0 0 1 12 8L12 11A1 1 0 0 1 11 12L8 12A1 1 0 0 1 7 11L7 8A1 1 0 0 1 8 7Z",1]],[["M17 12L17 16A1 1 0 0 1 16 17L12 17",0],["M17 3L19 3A2 2 0 0 1 21 5L21 7",0],["M17 8L17 7",0],["M21 17L21 19A2 2 0 0 1 19 21L17 21",0],["M3 7L3 5A2 2 0 0 1 5 3L7 3",0],["M7 17L7.01 17",0],["M7 21L5 21A2 2 0 0 1 3 19L3 17",0]],[11.45,7.55,3],0]);
 export default GlassScanQrCode;

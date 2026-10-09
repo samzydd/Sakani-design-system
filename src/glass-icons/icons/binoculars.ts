@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "binoculars"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBinoculars = /*#__PURE__*/ createGlassIcon("binoculars", [["path",{"d":"M10 10h4"},0],["path",{"d":"M19 7V4a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3"},0],["path",{"d":"M20 21a2 2 0 0 0 2 -2v-3.851c0 -1.39 -2 -2.962 -2 -4.829V8a1 1 0 0 0 -1 -1h-4a1 1 0 0 0 -1 1v11a2 2 0 0 0 2 2z"},1],["path",{"d":"M22 16L2 16"},0],["path",{"d":"M4 21a2 2 0 0 1 -2 -2v-3.851c0 -1.39 2 -2.962 2 -4.829V8a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v11a2 2 0 0 1 -2 2z"},1],["path",{"d":"M9 7V4a1 1 0 0 0 -1 -1H6a1 1 0 0 0 -1 1v3"},0]]);
+export const GlassBinoculars = /*#__PURE__*/ createGlassIcon("binoculars", [[["M4 21A2 2 0 0 1 2 19L2 15.149C2 13.759 4 12.187 4 10.32L4 8A1 1 0 0 1 5 7L9 7A1 1 0 0 1 10 8L10 19A2 2 0 0 1 8 21Z",1],["M20 21A2 2 0 0 0 22 19L22 15.149C22 13.759 20 12.187 20 10.32L20 8A1 1 0 0 0 19 7L15 7A1 1 0 0 0 14 8L14 19A2 2 0 0 0 16 21Z",1],["M10 10L14 10",0]],[["M19 7L19 4A1 1 0 0 0 18 3L16 3A1 1 0 0 0 15 4L15 7",0],["M22 16L2 16",1],["M9 7L9 4A1 1 0 0 0 8 3L6 3A1 1 0 0 0 5 4L5 7",0]],[20.4,8.6,4.75],0]);
 export default GlassBinoculars;

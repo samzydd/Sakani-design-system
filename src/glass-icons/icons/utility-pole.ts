@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "utility-pole"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUtilityPole = /*#__PURE__*/ createGlassIcon("utility-pole", [["path",{"d":"M12 2v20"},0],["path",{"d":"M2 5h20"},0],["path",{"d":"M3 3v2"},0],["path",{"d":"M7 3v2"},0],["path",{"d":"M17 3v2"},0],["path",{"d":"M21 3v2"},0],["path",{"d":"M19 5l-7 7l-7 -7"},0]]);
+export const GlassUtilityPole = /*#__PURE__*/ createGlassIcon("utility-pole", [[["M12 2L12 22",0],["M2 5L22 5",0],["M3 3L3 5",0],["M7 3L7 5",0],["M17 3L17 5",0],["M21 3L21 5",0],["M19 5L12 12L5 5",0]],[],[20.4,3.6,4.75],1]);
 export default GlassUtilityPole;

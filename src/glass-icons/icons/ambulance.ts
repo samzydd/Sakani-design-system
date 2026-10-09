@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ambulance"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAmbulance = /*#__PURE__*/ createGlassIcon("ambulance", [["path",{"d":"M10 10H6"},0],["path",{"d":"M14 18V6a2 2 0 0 0 -2 -2H4a2 2 0 0 0 -2 2v11a1 1 0 0 0 1 1h2"},0],["path",{"d":"M19 18h2a1 1 0 0 0 1 -1v-3.28a1 1 0 0 0 -0.684 -0.948l-1.923 -0.641a1 1 0 0 1 -0.578 -0.502l-1.539 -3.076A1 1 0 0 0 16.382 8H14"},0],["path",{"d":"M8 8v4"},0],["path",{"d":"M9 18h6"},0],["circle",{"cx":"17","cy":"18","r":"2"},1],["circle",{"cx":"7","cy":"18","r":"2"},1]]);
+export const GlassAmbulance = /*#__PURE__*/ createGlassIcon("ambulance", [[["M14 18L14 6A2 2 0 0 0 12 4L4 4A2 2 0 0 0 2 6L2 17A1 1 0 0 0 3 18L5 18Z",1],["M9 18L15 18",0]],[["M10 10L6 10",1],["M19 18L21 18A1 1 0 0 0 22 17L22 13.72A1 1 0 0 0 21.316 12.772L19.393 12.131A1 1 0 0 1 18.815 11.629L17.276 8.553A1 1 0 0 0 16.382 8L14 8",0],["M8 8L8 12",1],["M15 18A2 2 0 1 0 19 18A2 2 0 1 0 15 18Z",0],["M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18Z",1]],[13.676,5.324,4.29],0]);
 export default GlassAmbulance;

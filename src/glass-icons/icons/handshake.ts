@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "handshake"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHandshake = /*#__PURE__*/ createGlassIcon("handshake", [["path",{"d":"M11 17l2 2a1 1 0 1 0 3 -3"},0],["path",{"d":"M14 14l2.5 2.5a1 1 0 1 0 3 -3l-3.88 -3.88a3 3 0 0 0 -4.24 0l-0.88 0.88a1 1 0 1 1 -3 -3l2.81 -2.81a5.79 5.79 0 0 1 7.06 -0.87l0.47 0.28a2 2 0 0 0 1.42 0.25L21 4"},0],["path",{"d":"M21 3l1 11h-2"},0],["path",{"d":"M3 3L2 14l6.5 6.5a1 1 0 1 0 3 -3"},0],["path",{"d":"M3 4h8"},0]]);
+export const GlassHandshake = /*#__PURE__*/ createGlassIcon("handshake", [[["M3 3L2 14L8.5 20.5A1 1 0 1 0 11.5 17.5Z",1]],[["M11 17L13 19A1 1 0 1 0 16 16",0],["M14 14L16.5 16.5A1 1 0 1 0 19.5 13.5L15.62 9.62A3 3 0 0 0 11.38 9.62L10.5 10.5A1 1 0 1 1 7.5 7.5L10.31 4.69A5.79 5.79 0 0 1 17.37 3.82L17.84 4.1A2 2 0 0 0 19.26 4.35L21 4",0],["M21 3L22 14L20 14",0],["M3 4L11 4",0]],[10.521,4.6,4.75],0]);
 export default GlassHandshake;

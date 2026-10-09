@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "webhook-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWebhookOff = /*#__PURE__*/ createGlassIcon("webhook-off", [["path",{"d":"M17 17h-5c-1.09 -0.02 -1.94 0.92 -2.5 1.9A3 3 0 1 1 2.57 15"},0],["path",{"d":"M9 3.4a4 4 0 0 1 6.52 0.66"},0],["path",{"d":"M6 17l3.1 -5.8a2.5 2.5 0 0 0 0.057 -2.05"},0],["path",{"d":"M20.3 20.3a4 4 0 0 1 -2.3 0.7"},0],["path",{"d":"M18.6 13a4 4 0 0 1 3.357 3.414"},0],["path",{"d":"M12 6l0.6 1"},0],["path",{"d":"M2 2l20 20"},0]]);
+export const GlassWebhookOff = /*#__PURE__*/ createGlassIcon("webhook-off", [[["M17 17L12 17C10.91 16.98 10.06 17.92 9.5 18.9A3 3 0 1 1 2.57 15",0],["M9 3.4A4 4 0 0 1 15.52 4.06",0],["M6 17L9.1 11.2A2.5 2.5 0 0 0 9.157 9.15",0],["M20.3 20.3A4 4 0 0 1 18 21",0],["M18.6 13A4 4 0 0 1 21.957 16.414",0],["M12 6L12.6 7",0],["M2 2L22 22",0]],[],[20.4,3.6,4.75],1]);
 export default GlassWebhookOff;

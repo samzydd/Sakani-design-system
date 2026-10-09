@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "undo"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUndo = /*#__PURE__*/ createGlassIcon("undo", [["path",{"d":"M3 7v6h6"},0],["path",{"d":"M21 17a9 9 0 0 0 -9 -9a9 9 0 0 0 -6 2.3L3 13"},0]]);
+export const GlassUndo = /*#__PURE__*/ createGlassIcon("undo", [[["M3 7L3 13L9 13",0],["M21 17A9 9 0 0 0 12 8A9 9 0 0 0 6 10.3L3 13",0]],[],[19.4,8.6,4.75],1]);
 export default GlassUndo;

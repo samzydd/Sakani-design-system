@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pill-bottle"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPillBottle = /*#__PURE__*/ createGlassIcon("pill-bottle", [["path",{"d":"M18 11h-4a1 1 0 0 0 -1 1v5a1 1 0 0 0 1 1h4"},0],["path",{"d":"M6 7v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2V7"},0],["rect",{"width":"16","height":"5","x":"4","y":"2","rx":"1"},1]]);
+export const GlassPillBottle = /*#__PURE__*/ createGlassIcon("pill-bottle", [[["M6 7L6 20A2 2 0 0 0 8 22L16 22A2 2 0 0 0 18 20L18 7Z",1],["M5 2L19 2A1 1 0 0 1 20 3L20 6A1 1 0 0 1 19 7L5 7A1 1 0 0 1 4 6L4 3A1 1 0 0 1 5 2Z",1]],[["M18 11L14 11A1 1 0 0 0 13 12L13 17A1 1 0 0 0 14 18L18 18",1]],[18.4,3.6,4.75],0]);
 export default GlassPillBottle;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "vibrate"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVibrate = /*#__PURE__*/ createGlassIcon("vibrate", [["path",{"d":"M2 8l2 2l-2 2l2 2l-2 2"},0],["path",{"d":"M22 8l-2 2l2 2l-2 2l2 2"},0],["rect",{"width":"8","height":"14","x":"8","y":"5","rx":"1"},1]]);
+export const GlassVibrate = /*#__PURE__*/ createGlassIcon("vibrate", [[["M9 5L15 5A1 1 0 0 1 16 6L16 18A1 1 0 0 1 15 19L9 19A1 1 0 0 1 8 18L8 6A1 1 0 0 1 9 5Z",1]],[["M2 8L4 10L2 12L4 14L2 16",0],["M22 8L20 10L22 12L20 14L22 16",0]],[14.676,6.324,4.29],0]);
 export default GlassVibrate;

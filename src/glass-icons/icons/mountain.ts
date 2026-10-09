@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mountain"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMountain = /*#__PURE__*/ createGlassIcon("mountain", [["path",{"d":"M8 3l4 8l5 -5l5 15H2L8 3z"},1]]);
+export const GlassMountain = /*#__PURE__*/ createGlassIcon("mountain", [[["M8 3L12 11L17 6L22 21L2 21L8 3Z",1]],[],[20.4,4.6,4.75],0]);
 export default GlassMountain;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "banana"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBanana = /*#__PURE__*/ createGlassIcon("banana", [["path",{"d":"M4 13c3.5 -2 8 -2 10 2a5.5 5.5 0 0 1 8 5"},0],["path",{"d":"M5.15 17.89c5.52 -1.52 8.65 -6.89 7 -12C11.55 4 11.5 2 13 2c3.22 0 5 5.5 5 8c0 6.5 -4.2 12 -10.49 12C5.11 22 2 22 2 20c0 -1.5 1.14 -1.55 3.15 -2.11Z"},1]]);
+export const GlassBanana = /*#__PURE__*/ createGlassIcon("banana", [[["M5.15 17.89C10.67 16.37 13.8 11 12.15 5.89C11.55 4 11.5 2 13 2C16.22 2 18 7.5 18 10C18 16.5 13.8 22 7.51 22C5.11 22 2 22 2 20C2 18.5 3.14 18.45 5.15 17.89Z",1]],[["M4 13C7.5 11 12 11 14 15A5.5 5.5 0 0 1 22 20",0]],[16.4,3.6,4.75],0]);
 export default GlassBanana;

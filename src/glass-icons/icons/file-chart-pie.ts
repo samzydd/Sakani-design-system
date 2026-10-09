@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-chart-pie"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileChartPie = /*#__PURE__*/ createGlassIcon("file-chart-pie", [["path",{"d":"M15.941 22H18a2 2 0 0 0 2 -2V8a2.4 2.4 0 0 0 -0.706 -1.704l-3.588 -3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0 -2 2v3.512"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M4.017 11.512a6 6 0 1 0 8.466 8.475"},0],["path",{"d":"M9 16a1 1 0 0 1 -1 -1v-4c0 -0.552 0.45 -1.008 0.995 -0.917a6 6 0 0 1 4.922 4.922c0.091 0.544 -0.365 0.995 -0.917 0.995z"},1]]);
+export const GlassFileChartPie = /*#__PURE__*/ createGlassIcon("file-chart-pie", [[["M15.941 22L18 22A2 2 0 0 0 20 20L20 8A2.4 2.4 0 0 0 19.294 6.296L15.706 2.708A2.4 2.4 0 0 0 14 2L6 2A2 2 0 0 0 4 4L4 7.512Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M4.017 11.512A6 6 0 1 0 12.483 19.987",0],["M9 16A1 1 0 0 1 8 15L8 11C8 10.448 8.45 9.992 8.995 10.083A6 6 0 0 1 13.917 15.005C14.008 15.549 13.552 16 13 16Z",1]],[18.4,3.6,4.75],0]);
 export default GlassFileChartPie;

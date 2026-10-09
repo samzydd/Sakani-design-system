@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pi"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPi = /*#__PURE__*/ createGlassIcon("pi", [["line",{"x1":"9","x2":"9","y1":"4","y2":"20"},0],["path",{"d":"M4 7c0 -1.7 1.3 -3 3 -3h13"},0],["path",{"d":"M18 20c-1.7 0 -3 -1.3 -3 -3V4"},0]]);
+export const GlassPi = /*#__PURE__*/ createGlassIcon("pi", [[["M9 4L9 20",0],["M4 7C4 5.3 5.3 4 7 4L20 4",0],["M18 20C16.3 20 15 18.7 15 17L15 4",0]],[],[18.4,5.6,4.75],1]);
 export default GlassPi;

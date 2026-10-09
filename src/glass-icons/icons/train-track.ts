@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "train-track"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTrainTrack = /*#__PURE__*/ createGlassIcon("train-track", [["path",{"d":"M2 17L17 2"},0],["path",{"d":"M2 14l8 8"},0],["path",{"d":"M5 11l8 8"},0],["path",{"d":"M8 8l8 8"},0],["path",{"d":"M11 5l8 8"},0],["path",{"d":"M14 2l8 8"},0],["path",{"d":"M7 22L22 7"},0]]);
+export const GlassTrainTrack = /*#__PURE__*/ createGlassIcon("train-track", [[["M2 17L17 2",0],["M2 14L10 22",0],["M5 11L13 19",0],["M8 8L16 16",0],["M11 5L19 13",0],["M14 2L22 10",0],["M7 22L22 7",0]],[],[20.4,3.6,4.75],1]);
 export default GlassTrainTrack;

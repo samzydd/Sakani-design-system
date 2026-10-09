@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-pin-x"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMapPinX = /*#__PURE__*/ createGlassIcon("map-pin-x", [["path",{"d":"M19.752 11.901A7.78 7.78 0 0 0 20 10a8 8 0 0 0 -16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0a19 19 0 0 0 0.09 -0.077"},0],["circle",{"cx":"12","cy":"10","r":"3"},1],["path",{"d":"M21.5 15.5l-5 5"},0],["path",{"d":"M21.5 20.5l-5 -5"},0]]);
+export const GlassMapPinX = /*#__PURE__*/ createGlassIcon("map-pin-x", [[["M19.752 11.901A7.78 7.78 0 0 0 20 10A8 8 0 0 0 4 10C4 14.993 9.539 20.193 11.399 21.799A1 1 0 0 0 12.601 21.799A19 19 0 0 0 12.691 21.722Z",1]],[["M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z",1],["M21.5 15.5L16.5 20.5",0],["M21.5 20.5L16.5 15.5",0]],[18.4,3.6,4.75],0]);
 export default GlassMapPinX;

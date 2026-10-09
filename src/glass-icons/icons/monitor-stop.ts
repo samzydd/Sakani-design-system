@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "monitor-stop"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMonitorStop = /*#__PURE__*/ createGlassIcon("monitor-stop", [["path",{"d":"M12 17v4"},0],["path",{"d":"M8 21h8"},0],["rect",{"x":"2","y":"3","width":"20","height":"14","rx":"2"},1],["rect",{"x":"9","y":"7","width":"6","height":"6","rx":"1"},1]]);
+export const GlassMonitorStop = /*#__PURE__*/ createGlassIcon("monitor-stop", [[["M4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3Z",1]],[["M12 17L12 21",0],["M8 21L16 21",0],["M10 7L14 7A1 1 0 0 1 15 8L15 12A1 1 0 0 1 14 13L10 13A1 1 0 0 1 9 12L9 8A1 1 0 0 1 10 7Z",1]],[20.4,4.6,4.75],0]);
 export default GlassMonitorStop;

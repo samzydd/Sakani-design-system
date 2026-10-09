@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "download"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDownload = /*#__PURE__*/ createGlassIcon("download", [["path",{"d":"M12 15V3"},0],["path",{"d":"M21 15v4a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2v-4"},0],["path",{"d":"M7 10l5 5l5 -5"},0]]);
+export const GlassDownload = /*#__PURE__*/ createGlassIcon("download", [[["M21 15L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 15Z",1]],[["M12 15L12 3",0],["M7 10L12 15L17 10",0]],[19.4,16.6,4.75],0]);
 export default GlassDownload;

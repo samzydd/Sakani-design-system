@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "eraser"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEraser = /*#__PURE__*/ createGlassIcon("eraser", [["path",{"d":"M21 21H8a2 2 0 0 1 -1.42 -0.587l-3.994 -3.999a2 2 0 0 1 0 -2.828l10 -10a2 2 0 0 1 2.829 0l5.999 6a2 2 0 0 1 0 2.828L12.834 21"},0],["path",{"d":"M5.082 11.09l8.828 8.828"},0]]);
+export const GlassEraser = /*#__PURE__*/ createGlassIcon("eraser", [[["M21 21L8 21A2 2 0 0 1 6.58 20.413L2.586 16.414A2 2 0 0 1 2.586 13.586L12.586 3.586A2 2 0 0 1 15.415 3.586L21.414 9.586A2 2 0 0 1 21.414 12.414L12.834 21Z",1]],[["M5.082 11.09L13.91 19.918",1]],[20.4,4.608,4.75],0]);
 export default GlassEraser;

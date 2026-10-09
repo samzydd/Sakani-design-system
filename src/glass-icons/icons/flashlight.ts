@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flashlight"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFlashlight = /*#__PURE__*/ createGlassIcon("flashlight", [["path",{"d":"M12 13v1"},0],["path",{"d":"M17 2a1 1 0 0 1 1 1v4a3 3 0 0 1 -0.6 1.8l-0.6 0.8A4 4 0 0 0 16 12v8a2 2 0 0 1 -2 2H10a2 2 0 0 1 -2 -2v-8a4 4 0 0 0 -0.8 -2.4l-0.6 -0.8A3 3 0 0 1 6 7V3a1 1 0 0 1 1 -1z"},1],["path",{"d":"M6 6h12"},0]]);
+export const GlassFlashlight = /*#__PURE__*/ createGlassIcon("flashlight", [[["M17 2A1 1 0 0 1 18 3L18 7A3 3 0 0 1 17.4 8.8L16.8 9.6A4 4 0 0 0 16 12L16 20A2 2 0 0 1 14 22L10 22A2 2 0 0 1 8 20L8 12A4 4 0 0 0 7.2 9.6L6.6 8.8A3 3 0 0 1 6 7L6 3A1 1 0 0 1 7 2Z",1]],[["M12 13L12 14",1],["M6 6L18 6",1]],[16.4,3.6,4.75],0]);
 export default GlassFlashlight;

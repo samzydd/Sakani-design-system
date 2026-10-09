@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "factory"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFactory = /*#__PURE__*/ createGlassIcon("factory", [["path",{"d":"M12 16h0.01"},0],["path",{"d":"M16 16h0.01"},0],["path",{"d":"M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2V8.5a0.5 0.5 0 0 0 -0.769 -0.422l-4.462 2.844A0.5 0.5 0 0 1 15 10.5v-2a0.5 0.5 0 0 0 -0.769 -0.422L9.77 10.922A0.5 0.5 0 0 1 9 10.5V5a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2z"},1],["path",{"d":"M8 16h0.01"},0]]);
+export const GlassFactory = /*#__PURE__*/ createGlassIcon("factory", [[["M3 19A2 2 0 0 0 5 21L19 21A2 2 0 0 0 21 19L21 8.5A0.5 0.5 0 0 0 20.231 8.078L15.769 10.922A0.5 0.5 0 0 1 15 10.5L15 8.5A0.5 0.5 0 0 0 14.231 8.078L9.77 10.922A0.5 0.5 0 0 1 9 10.5L9 5A2 2 0 0 0 7 3L5 3A2 2 0 0 0 3 5Z",1]],[["M12 16L12.01 16",1],["M16 16L16.01 16",1],["M8 16L8.01 16",1]],[19.4,4.6,4.75],0]);
 export default GlassFactory;

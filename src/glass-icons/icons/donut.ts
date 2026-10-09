@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "donut"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDonut = /*#__PURE__*/ createGlassIcon("donut", [["path",{"d":"M20.5 10a2.5 2.5 0 0 1 -2.4 -3H18a2.95 2.95 0 0 1 -2.6 -4.4a10 10 0 1 0 6.3 7.1c-0.3 0.2 -0.8 0.3 -1.2 0.3"},1],["circle",{"cx":"12","cy":"12","r":"3"},1]]);
+export const GlassDonut = /*#__PURE__*/ createGlassIcon("donut", [[["M20.5 10A2.5 2.5 0 0 1 18.1 7L18 7A2.95 2.95 0 0 1 15.4 2.6A10 10 0 1 0 21.7 9.7C21.4 9.9 20.9 10 20.5 10",1]],[["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z",1]],[20.36,3.601,4.75],0]);
 export default GlassDonut;

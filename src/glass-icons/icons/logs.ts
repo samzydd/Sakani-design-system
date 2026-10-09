@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "logs"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLogs = /*#__PURE__*/ createGlassIcon("logs", [["path",{"d":"M3 5h1"},0],["path",{"d":"M3 12h1"},0],["path",{"d":"M3 19h1"},0],["path",{"d":"M8 5h1"},0],["path",{"d":"M8 12h1"},0],["path",{"d":"M8 19h1"},0],["path",{"d":"M13 5h8"},0],["path",{"d":"M13 12h8"},0],["path",{"d":"M13 19h8"},0]]);
+export const GlassLogs = /*#__PURE__*/ createGlassIcon("logs", [[["M3 5L4 5",0],["M3 12L4 12",0],["M3 19L4 19",0],["M8 5L9 5",0],["M8 12L9 12",0],["M8 19L9 19",0],["M13 5L21 5",0],["M13 12L21 12",0],["M13 19L21 19",0]],[],[19.4,6.6,4.75],1]);
 export default GlassLogs;

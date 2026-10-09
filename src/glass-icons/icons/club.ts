@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "club"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClub = /*#__PURE__*/ createGlassIcon("club", [["path",{"d":"M17.28 9.05a5.5 5.5 0 1 0 -10.56 0A5.5 5.5 0 1 0 12 17.66a5.5 5.5 0 1 0 5.28 -8.6Z"},1],["path",{"d":"M12 17.66L12 22"},0]]);
+export const GlassClub = /*#__PURE__*/ createGlassIcon("club", [[["M17.28 9.05A5.5 5.5 0 1 0 6.72 9.05A5.5 5.5 0 1 0 12 17.66A5.5 5.5 0 1 0 17.28 9.06Z",1]],[["M12 17.66L12 22",0]],[20.388,3.636,4.75],0]);
 export default GlassClub;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "candy-cane"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCandyCane = /*#__PURE__*/ createGlassIcon("candy-cane", [["path",{"d":"M10.8 5l2.111 4.223"},0],["path",{"d":"M17.75 7L15 2.1"},0],["path",{"d":"M4.874 14.647l2.12 4.24"},0],["path",{"d":"M5.7 21a2 2 0 0 1 -3.5 -2l8.6 -14a6 6 0 0 1 10.4 6a2 2 0 1 1 -3.464 -2a2 2 0 1 0 -3.464 -2z"},1],["path",{"d":"M7.906 9.712l2.005 4.411"},0]]);
+export const GlassCandyCane = /*#__PURE__*/ createGlassIcon("candy-cane", [[["M5.7 21A2 2 0 0 1 2.2 19L10.8 5A6 6 0 0 1 21.2 11A2 2 0 1 1 17.736 9A2 2 0 1 0 14.272 7Z",1],["M10.8 5L12.911 9.223",0],["M17.75 7L15 2.1",0],["M4.874 14.647L6.994 18.887",0],["M7.906 9.712L9.911 14.123",0]],[],[20.39,3.61,4.75],0]);
 export default GlassCandyCane;

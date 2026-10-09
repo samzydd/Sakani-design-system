@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cog"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCog = /*#__PURE__*/ createGlassIcon("cog", [["path",{"d":"M11 10.27L7 3.34"},0],["path",{"d":"M11 13.73l-4 6.93"},0],["path",{"d":"M12 22v-2"},0],["path",{"d":"M12 2v2"},0],["path",{"d":"M14 12h8"},0],["path",{"d":"M17 20.66l-1 -1.73"},0],["path",{"d":"M17 3.34l-1 1.73"},0],["path",{"d":"M2 12h2"},0],["path",{"d":"M20.66 17l-1.73 -1"},0],["path",{"d":"M20.66 7l-1.73 1"},0],["path",{"d":"M3.34 17l1.73 -1"},0],["path",{"d":"M3.34 7l1.73 1"},0],["circle",{"cx":"12","cy":"12","r":"2"},1],["circle",{"cx":"12","cy":"12","r":"8"},1]]);
+export const GlassCog = /*#__PURE__*/ createGlassIcon("cog", [[["M4 12A8 8 0 1 0 20 12A8 8 0 1 0 4 12Z",1]],[["M11 10.27L7 3.34",1],["M11 13.73L7 20.66",1],["M12 22L12 20",1],["M12 2L12 4",1],["M14 12L22 12",1],["M17 20.66L16 18.93",1],["M17 3.34L16 5.07",1],["M2 12L4 12",1],["M20.66 17L18.93 16",1],["M20.66 7L18.93 8",1],["M3.34 17L5.07 16",1],["M3.34 7L5.07 8",1],["M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z",1]],[18.4,5.6,4.75],0]);
 export default GlassCog;

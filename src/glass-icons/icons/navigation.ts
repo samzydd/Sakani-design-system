@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "navigation"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassNavigation = /*#__PURE__*/ createGlassIcon("navigation", [["polygon",{"points":"3 11 22 2 13 21 11 13 3 11"},1]]);
+export const GlassNavigation = /*#__PURE__*/ createGlassIcon("navigation", [[["M3 11L22 2L13 21L11 13L3 11Z",1]],[],[20.4,3.6,4.75],0]);
 export default GlassNavigation;

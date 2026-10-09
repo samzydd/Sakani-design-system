@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "map-pin-house"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMapPinHouse = /*#__PURE__*/ createGlassIcon("map-pin-house", [["path",{"d":"M15 22a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 0.445 -0.832l3 -2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1 -1 1z"},1],["path",{"d":"M18 10a8 8 0 0 0 -16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 0.601 0.2"},0],["path",{"d":"M18 22v-3"},0],["circle",{"cx":"10","cy":"10","r":"3"},1]]);
+export const GlassMapPinHouse = /*#__PURE__*/ createGlassIcon("map-pin-house", [[["M18 10A8 8 0 0 0 2 10C2 14.993 7.539 20.193 9.399 21.799A1 1 0 0 0 10 21.999Z",1]],[["M15 22A1 1 0 0 1 14 21L14 17A1 1 0 0 1 14.445 16.168L17.445 14.168A1 1 0 0 1 18.555 14.168L21.555 16.168A1 1 0 0 1 22 17L22 21A1 1 0 0 1 21 22Z",0],["M18 22L18 19",0],["M7 10A3 3 0 1 0 13 10A3 3 0 1 0 7 10Z",1]],[16.4,3.6,4.75],0]);
 export default GlassMapPinHouse;

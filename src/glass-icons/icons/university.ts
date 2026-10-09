@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "university"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUniversity = /*#__PURE__*/ createGlassIcon("university", [["path",{"d":"M14 21v-3a2 2 0 0 0 -4 0v3"},0],["path",{"d":"M18 12h0.01"},0],["path",{"d":"M18 16h0.01"},0],["path",{"d":"M22 7a1 1 0 0 0 -1 -1h-2a2 2 0 0 1 -1.143 -0.359L13.143 2.36a2 2 0 0 0 -2.286 -0.001L6.143 5.64A2 2 0 0 1 5 6H3a1 1 0 0 0 -1 1v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2 -2z"},1],["path",{"d":"M6 12h0.01"},0],["path",{"d":"M6 16h0.01"},0],["circle",{"cx":"12","cy":"10","r":"2"},1]]);
+export const GlassUniversity = /*#__PURE__*/ createGlassIcon("university", [[["M22 7A1 1 0 0 0 21 6L19 6A2 2 0 0 1 17.857 5.641L13.143 2.36A2 2 0 0 0 10.857 2.359L6.143 5.64A2 2 0 0 1 5 6L3 6A1 1 0 0 0 2 7L2 19A2 2 0 0 0 4 21L20 21A2 2 0 0 0 22 19Z",1]],[["M14 21L14 18A2 2 0 0 0 10 18L10 21",1],["M18 12L18.01 12",1],["M18 16L18.01 16",1],["M6 12L6.01 12",1],["M6 16L6.01 16",1],["M10 10A2 2 0 1 0 14 10A2 2 0 1 0 10 10Z",1]],[20.4,3.608,4.75],0]);
 export default GlassUniversity;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "scale"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassScale = /*#__PURE__*/ createGlassIcon("scale", [["path",{"d":"M12 3v18"},0],["path",{"d":"M19 8l3 8a5 5 0 0 1 -6 0zV7"},1],["path",{"d":"M3 7h1a17 17 0 0 0 8 -2a17 17 0 0 0 8 2h1"},0],["path",{"d":"M5 8l3 8a5 5 0 0 1 -6 0zV7"},1],["path",{"d":"M7 21h10"},0]]);
+export const GlassScale = /*#__PURE__*/ createGlassIcon("scale", [[["M19 8L22 16A5 5 0 0 1 16 16Z",1],["M5 8L8 16A5 5 0 0 1 2 16Z",1],["M19 8L19 7",0],["M5 8L5 7",0]],[["M12 3L12 21",0],["M3 7L4 7A17 17 0 0 0 12 5A17 17 0 0 0 20 7L21 7",0],["M7 21L17 21",0]],[20.4,8.6,4.75],0]);
 export default GlassScale;

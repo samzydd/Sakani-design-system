@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shopping-cart"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShoppingCart = /*#__PURE__*/ createGlassIcon("shopping-cart", [["path",{"d":"M2.05 2.05l1.099 -0.028a1 1 0 0 1 1.008 0.815l2.69 14.347A1 1 0 0 0 7.83 18H18"},0],["path",{"d":"M4.563 5h16.435a1 1 0 0 1 0.981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25"},0],["circle",{"cx":"18","cy":"20","r":"2"},1],["circle",{"cx":"8","cy":"20","r":"2"},1]]);
+export const GlassShoppingCart = /*#__PURE__*/ createGlassIcon("shopping-cart", [[["M4.563 5L20.998 5A1 1 0 0 1 21.979 6.204L20.953 12.43A2 2 0 0 1 18.962 14L6.25 14Z",1]],[["M2.05 2.05L3.149 2.022A1 1 0 0 1 4.157 2.837L6.847 17.184A1 1 0 0 0 7.83 18L18 18",0],["M16 20A2 2 0 1 0 20 20A2 2 0 1 0 16 20Z",0],["M6 20A2 2 0 1 0 10 20A2 2 0 1 0 6 20Z",0]],[20.4,6.6,4.75],0]);
 export default GlassShoppingCart;

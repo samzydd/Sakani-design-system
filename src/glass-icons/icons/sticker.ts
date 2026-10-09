@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sticker"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSticker = /*#__PURE__*/ createGlassIcon("sticker", [["path",{"d":"M21 9a2.4 2.4 0 0 0 -0.706 -1.706l-3.588 -3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2z"},1],["path",{"d":"M15 3v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M8 13h0.01"},0],["path",{"d":"M16 13h0.01"},0],["path",{"d":"M10 16s0.8 1 2 1c1.3 0 2 -1 2 -1"},0]]);
+export const GlassSticker = /*#__PURE__*/ createGlassIcon("sticker", [[["M21 9A2.4 2.4 0 0 0 20.294 7.294L16.706 3.706A2.4 2.4 0 0 0 15 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L19 21A2 2 0 0 0 21 19Z",1]],[["M15 3L15 8A1 1 0 0 0 16 9L21 9",1],["M8 13L8.01 13",1],["M16 13L16.01 13",1],["M10 16C10 16 10.8 17 12 17C13.3 17 14 16 14 16",1]],[19.4,4.6,4.75],0]);
 export default GlassSticker;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lectern"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLectern = /*#__PURE__*/ createGlassIcon("lectern", [["path",{"d":"M16 12h3a2 2 0 0 0 1.902 -1.38l1.056 -3.333A1 1 0 0 0 21 6H3a1 1 0 0 0 -0.958 1.287l1.056 3.334A2 2 0 0 0 5 12h3"},0],["path",{"d":"M18 6V3a1 1 0 0 0 -1 -1h-3"},0],["rect",{"width":"8","height":"12","x":"8","y":"10","rx":"1"},1]]);
+export const GlassLectern = /*#__PURE__*/ createGlassIcon("lectern", [[["M16 12L19 12A2 2 0 0 0 20.902 10.62L21.958 7.287A1 1 0 0 0 21 6L3 6A1 1 0 0 0 2.042 7.287L3.098 10.621A2 2 0 0 0 5 12L8 12Z",1],["M9 10L15 10A1 1 0 0 1 16 11L16 21A1 1 0 0 1 15 22L9 22A1 1 0 0 1 8 21L8 11A1 1 0 0 1 9 10Z",1]],[["M18 6L18 3A1 1 0 0 0 17 2L14 2",0]],[20.397,7.6,4.75],0]);
 export default GlassLectern;

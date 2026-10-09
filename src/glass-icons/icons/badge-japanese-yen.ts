@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "badge-japanese-yen"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBadgeJapaneseYen = /*#__PURE__*/ createGlassIcon("badge-japanese-yen", [["path",{"d":"M3.85 8.62a4 4 0 0 1 4.78 -4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1 -4.77 4.78a4 4 0 0 1 -6.75 0a4 4 0 0 1 -4.78 -4.77a4 4 0 0 1 0 -6.76Z"},1],["path",{"d":"M9 8l3 3v7"},0],["path",{"d":"M12 11l3 -3"},0],["path",{"d":"M9 12h6"},0],["path",{"d":"M9 16h6"},0]]);
+export const GlassBadgeJapaneseYen = /*#__PURE__*/ createGlassIcon("badge-japanese-yen", [[["M3.85 8.62A4 4 0 0 1 8.63 3.85A4 4 0 0 1 15.37 3.85A4 4 0 0 1 20.15 8.63A4 4 0 0 1 20.15 15.37A4 4 0 0 1 15.38 20.15A4 4 0 0 1 8.63 20.15A4 4 0 0 1 3.85 15.38A4 4 0 0 1 3.85 8.62Z",1]],[["M9 8L12 11L12 18",1],["M12 11L15 8",1],["M9 12L15 12",1],["M9 16L15 16",1]],[20.379,3.621,4.75],0]);
 export default GlassBadgeJapaneseYen;

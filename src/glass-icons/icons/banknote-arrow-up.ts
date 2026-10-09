@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "banknote-arrow-up"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBanknoteArrowUp = /*#__PURE__*/ createGlassIcon("banknote-arrow-up", [["path",{"d":"M12 18H4a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v5"},0],["path",{"d":"M18 12h0.01"},0],["path",{"d":"M19 22v-6"},0],["path",{"d":"M22 19l-3 -3l-3 3"},0],["path",{"d":"M6 12h0.01"},0],["circle",{"cx":"12","cy":"12","r":"2"},1]]);
+export const GlassBanknoteArrowUp = /*#__PURE__*/ createGlassIcon("banknote-arrow-up", [[["M12 18L4 18A2 2 0 0 1 2 16L2 8A2 2 0 0 1 4 6L20 6A2 2 0 0 1 22 8L22 13Z",1]],[["M18 12L18.01 12",1],["M19 22L19 16",0],["M22 19L19 16L16 19",0],["M6 12L6.01 12",1],["M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z",1]],[20.4,7.6,4.75],0]);
 export default GlassBanknoteArrowUp;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "loader"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLoader = /*#__PURE__*/ createGlassIcon("loader", [["path",{"d":"M12 2v4"},0],["path",{"d":"M16.2 7.8l2.9 -2.9"},0],["path",{"d":"M18 12h4"},0],["path",{"d":"M16.2 16.2l2.9 2.9"},0],["path",{"d":"M12 18v4"},0],["path",{"d":"M4.9 19.1l2.9 -2.9"},0],["path",{"d":"M2 12h4"},0],["path",{"d":"M4.9 4.9l2.9 2.9"},0]]);
+export const GlassLoader = /*#__PURE__*/ createGlassIcon("loader", [[["M12 2L12 6",0],["M16.2 7.8L19.1 4.9",0],["M18 12L22 12",0],["M16.2 16.2L19.1 19.1",0],["M12 18L12 22",0],["M4.9 19.1L7.8 16.2",0],["M2 12L6 12",0],["M4.9 4.9L7.8 7.8",0]],[],[20.4,3.6,4.75],1]);
 export default GlassLoader;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "dollar-sign"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDollarSign = /*#__PURE__*/ createGlassIcon("dollar-sign", [["line",{"x1":"12","x2":"12","y1":"2","y2":"22"},0],["path",{"d":"M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"},0]]);
+export const GlassDollarSign = /*#__PURE__*/ createGlassIcon("dollar-sign", [[["M12 2L12 22",0],["M17 5L9.5 5A3.5 3.5 0 0 0 9.5 12L14.5 12A3.5 3.5 0 0 1 14.5 19L6 19",0]],[],[16.4,3.6,4.75],1]);
 export default GlassDollarSign;

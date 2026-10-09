@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "layout-template"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLayoutTemplate = /*#__PURE__*/ createGlassIcon("layout-template", [["rect",{"width":"18","height":"7","x":"3","y":"3","rx":"1"},1],["rect",{"width":"9","height":"7","x":"3","y":"14","rx":"1"},1],["rect",{"width":"5","height":"7","x":"16","y":"14","rx":"1"},1]]);
+export const GlassLayoutTemplate = /*#__PURE__*/ createGlassIcon("layout-template", [[["M4 3L20 3A1 1 0 0 1 21 4L21 9A1 1 0 0 1 20 10L4 10A1 1 0 0 1 3 9L3 4A1 1 0 0 1 4 3Z",1],["M4 14L11 14A1 1 0 0 1 12 15L12 20A1 1 0 0 1 11 21L4 21A1 1 0 0 1 3 20L3 15A1 1 0 0 1 4 14Z",1]],[["M17 14L20 14A1 1 0 0 1 21 15L21 20A1 1 0 0 1 20 21L17 21A1 1 0 0 1 16 20L16 15A1 1 0 0 1 17 14Z",0]],[19.4,4.6,4.75],0]);
 export default GlassLayoutTemplate;

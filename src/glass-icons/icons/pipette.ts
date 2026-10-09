@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pipette"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPipette = /*#__PURE__*/ createGlassIcon("pipette", [["path",{"d":"M12 9l-8.414 8.414A2 2 0 0 0 3 18.828v1.344a2 2 0 0 1 -0.586 1.414A2 2 0 0 1 3.828 21h1.344a2 2 0 0 0 1.414 -0.586L15 12"},0],["path",{"d":"M18 9l0.4 0.4a1 1 0 1 1 -3 3l-3.8 -3.8a1 1 0 1 1 3 -3l0.4 0.4l3.4 -3.4a1 1 0 1 1 3 3z"},1],["path",{"d":"M2 22l0.414 -0.414"},0]]);
+export const GlassPipette = /*#__PURE__*/ createGlassIcon("pipette", [[["M18 9L18.4 9.4A1 1 0 1 1 15.4 12.4L11.6 8.6A1 1 0 1 1 14.6 5.6L15 6L18.4 2.6A1 1 0 1 1 21.4 5.6Z",1],["M12 9L3.586 17.414A2 2 0 0 0 3 18.828L3 20.172A2 2 0 0 1 2.414 21.586A2 2 0 0 1 3.828 21L5.172 21A2 2 0 0 0 6.586 20.414L15 12Z",1],["M2 22L2.414 21.586",0]],[],[20.419,3.581,4.75],0]);
 export default GlassPipette;

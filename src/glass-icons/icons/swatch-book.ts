@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "swatch-book"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSwatchBook = /*#__PURE__*/ createGlassIcon("swatch-book", [["path",{"d":"M11 17a4 4 0 0 1 -8 0V5a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2Z"},1],["path",{"d":"M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2H7"},0],["path",{"d":"M7 17h0.01"},0],["path",{"d":"M11 8l2.3 -2.3a2.4 2.4 0 0 1 3.404 0.004L18.6 7.6a2.4 2.4 0 0 1 0.026 3.434L9.9 19.8"},0]]);
+export const GlassSwatchBook = /*#__PURE__*/ createGlassIcon("swatch-book", [[["M11 17A4 4 0 0 1 3 17L3 5A2 2 0 0 1 5 3L9 3A2 2 0 0 1 11 5Z",1],["M11 8L13.3 5.7A2.4 2.4 0 0 1 16.704 5.704L18.6 7.6A2.4 2.4 0 0 1 18.626 11.034L9.9 19.8Z",1],["M16.7 13L19 13A2 2 0 0 1 21 15L21 19A2 2 0 0 1 19 21L7 21Z",1]],[["M7 17L7.01 17",1]],[19.4,4.6,4.75],0]);
 export default GlassSwatchBook;

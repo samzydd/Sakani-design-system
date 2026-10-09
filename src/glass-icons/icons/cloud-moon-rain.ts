@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cloud-moon-rain"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCloudMoonRain = /*#__PURE__*/ createGlassIcon("cloud-moon-rain", [["path",{"d":"M11 20v2"},0],["path",{"d":"M18.376 14.512a6 6 0 0 0 3.461 -4.127c0.148 -0.625 -0.659 -0.97 -1.248 -0.714a4 4 0 0 1 -5.259 -5.26c0.255 -0.589 -0.09 -1.395 -0.716 -1.248a6 6 0 0 0 -4.594 5.36"},0],["path",{"d":"M3 20a5 5 0 1 1 8.9 -4H13a3 3 0 0 1 2 5.24"},0],["path",{"d":"M7 19v2"},0]]);
+export const GlassCloudMoonRain = /*#__PURE__*/ createGlassIcon("cloud-moon-rain", [[["M3 20A5 5 0 1 1 11.9 16L13 16A3 3 0 0 1 15 21.24Z",1],["M18.376 14.512A6 6 0 0 0 21.837 10.385C21.985 9.76 21.178 9.415 20.589 9.671A4 4 0 0 1 15.33 4.411C15.585 3.822 15.24 3.016 14.614 3.163A6 6 0 0 0 10.02 8.523Z",1],["M11 20L11 22",0],["M7 19L7 21",0]],[],[20.255,4.745,4.75],0]);
 export default GlassCloudMoonRain;

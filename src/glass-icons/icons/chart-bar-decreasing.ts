@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-bar-decreasing"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartBarDecreasing = /*#__PURE__*/ createGlassIcon("chart-bar-decreasing", [["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["path",{"d":"M7 11h8"},0],["path",{"d":"M7 16h3"},0],["path",{"d":"M7 6h12"},0]]);
+export const GlassChartBarDecreasing = /*#__PURE__*/ createGlassIcon("chart-bar-decreasing", [[["M3 3L3 19A2 2 0 0 0 5 21L21 21",0],["M7 11L15 11",0],["M7 16L10 16",0],["M7 6L19 6",0]],[],[19.4,4.6,4.75],1]);
 export default GlassChartBarDecreasing;

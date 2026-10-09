@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "ferris-wheel"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFerrisWheel = /*#__PURE__*/ createGlassIcon("ferris-wheel", [["circle",{"cx":"12","cy":"12","r":"2"},1],["path",{"d":"M12 2v4"},0],["path",{"d":"M6.8 15l-3.5 2"},0],["path",{"d":"M20.7 7l-3.5 2"},0],["path",{"d":"M6.8 9L3.3 7"},0],["path",{"d":"M20.7 17l-3.5 -2"},0],["path",{"d":"M9 22l3 -8l3 8"},0],["path",{"d":"M8 22h8"},0],["path",{"d":"M18 18.7a9 9 0 1 0 -12 0"},0]]);
+export const GlassFerrisWheel = /*#__PURE__*/ createGlassIcon("ferris-wheel", [[["M18 18.7A9 9 0 1 0 6 18.7Z",1]],[["M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z",1],["M12 2L12 6",1],["M6.8 15L3.3 17",1],["M20.7 7L17.2 9",1],["M6.8 9L3.3 7",1],["M20.7 17L17.2 15",1],["M9 22L12 14L15 22",1],["M8 22L16 22",0]],[19.378,4.634,4.75],0]);
 export default GlassFerrisWheel;

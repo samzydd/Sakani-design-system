@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-circle-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessageCircleOff = /*#__PURE__*/ createGlassIcon("message-circle-off", [["path",{"d":"M2 2l20 20"},0],["path",{"d":"M4.93 4.929a10 10 0 0 0 -1.938 11.412a2 2 0 0 1 0.094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413 -0.998a2 2 0 0 1 1.099 0.092a10 10 0 0 0 11.302 -1.989"},0],["path",{"d":"M8.35 2.69A10 10 0 0 1 21.3 15.65"},0]]);
+export const GlassMessageCircleOff = /*#__PURE__*/ createGlassIcon("message-circle-off", [[["M4.93 4.929A10 10 0 0 0 2.992 16.341A2 2 0 0 1 3.086 17.508L2.021 20.798A1 1 0 0 0 3.257 21.966L6.67 20.968A2 2 0 0 1 7.769 21.06A10 10 0 0 0 19.071 19.071Z",1],["M2 2L22 22",0]],[["M8.35 2.69A10 10 0 0 1 21.3 15.65",0]],[20.4,3.6,4.75],0]);
 export default GlassMessageCircleOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-divide"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSquareDivide = /*#__PURE__*/ createGlassIcon("square-divide", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2","ry":"2"},1],["line",{"x1":"8","x2":"16","y1":"12","y2":"12"},0],["line",{"x1":"12","x2":"12","y1":"16","y2":"16"},0],["line",{"x1":"12","x2":"12","y1":"8","y2":"8"},0]]);
+export const GlassSquareDivide = /*#__PURE__*/ createGlassIcon("square-divide", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M8 12L16 12",1],["M12 16L12 16",1],["M12 8L12 8",1]],[19.4,4.6,4.75],0]);
 export default GlassSquareDivide;

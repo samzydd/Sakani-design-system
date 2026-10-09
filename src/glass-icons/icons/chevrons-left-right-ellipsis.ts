@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chevrons-left-right-ellipsis"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChevronsLeftRightEllipsis = /*#__PURE__*/ createGlassIcon("chevrons-left-right-ellipsis", [["path",{"d":"M12 12h0.01"},0],["path",{"d":"M16 12h0.01"},0],["path",{"d":"M17 7l5 5l-5 5"},0],["path",{"d":"M7 7l-5 5l5 5"},0],["path",{"d":"M8 12h0.01"},0]]);
+export const GlassChevronsLeftRightEllipsis = /*#__PURE__*/ createGlassIcon("chevrons-left-right-ellipsis", [[["M12 12L12.01 12",0],["M16 12L16.01 12",0],["M17 7L22 12L17 17",0],["M7 7L2 12L7 17",0],["M8 12L8.01 12",0]],[],[20.4,8.6,4.75],1]);
 export default GlassChevronsLeftRightEllipsis;

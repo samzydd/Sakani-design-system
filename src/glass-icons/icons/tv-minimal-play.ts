@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tv-minimal-play"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTvMinimalPlay = /*#__PURE__*/ createGlassIcon("tv-minimal-play", [["path",{"d":"M15.033 9.44a0.647 0.647 0 0 1 0 1.12l-4.065 2.352a0.645 0.645 0 0 1 -0.968 -0.56V7.648a0.645 0.645 0 0 1 0.967 -0.56z"},1],["path",{"d":"M7 21h10"},0],["rect",{"width":"20","height":"14","x":"2","y":"3","rx":"2"},1]]);
+export const GlassTvMinimalPlay = /*#__PURE__*/ createGlassIcon("tv-minimal-play", [[["M4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3Z",1]],[["M15.033 9.44A0.647 0.647 0 0 1 15.033 10.56L10.968 12.912A0.645 0.645 0 0 1 10 12.352L10 7.648A0.645 0.645 0 0 1 10.967 7.088Z",1],["M7 21L17 21",0]],[20.4,4.6,4.75],0]);
 export default GlassTvMinimalPlay;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "a-arrow-up"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassAArrowUp = /*#__PURE__*/ createGlassIcon("a-arrow-up", [["path",{"d":"M14 11l4 -4l4 4"},0],["path",{"d":"M18 16V7"},0],["path",{"d":"M2 16l4.039 -9.69a0.5 0.5 0 0 1 0.923 0L11 16"},0],["path",{"d":"M3.304 13h6.392"},0]]);
+export const GlassAArrowUp = /*#__PURE__*/ createGlassIcon("a-arrow-up", [[["M2 16L6.039 6.31A0.5 0.5 0 0 1 6.962 6.31L11 16Z",1]],[["M14 11L18 7L22 11",0],["M18 16L18 7",0],["M3.304 13L9.696 13",1]],[10.3,6.702,3.249],0]);
 export default GlassAArrowUp;

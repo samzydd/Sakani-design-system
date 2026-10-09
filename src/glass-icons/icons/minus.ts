@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "minus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMinus = /*#__PURE__*/ createGlassIcon("minus", [["path",{"d":"M5 12h14"},0]]);
+export const GlassMinus = /*#__PURE__*/ createGlassIcon("minus", [[["M5 12L19 12",0]],[],[17.676,13.324,4.29],1]);
 export default GlassMinus;

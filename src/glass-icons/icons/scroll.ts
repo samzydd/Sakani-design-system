@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "scroll"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassScroll = /*#__PURE__*/ createGlassIcon("scroll", [["path",{"d":"M19 17V5a2 2 0 0 0 -2 -2H4"},0],["path",{"d":"M8 21h12a2 2 0 0 0 2 -2v-1a1 1 0 0 0 -1 -1H11a1 1 0 0 0 -1 1v1a2 2 0 1 1 -4 0V5a2 2 0 1 0 -4 0v2a1 1 0 0 0 1 1h3"},0]]);
+export const GlassScroll = /*#__PURE__*/ createGlassIcon("scroll", [[["M19 17L19 5A2 2 0 0 0 17 3L4 3",0],["M8 21L20 21A2 2 0 0 0 22 19L22 18A1 1 0 0 0 21 17L11 17A1 1 0 0 0 10 18L10 19A2 2 0 1 1 6 19L6 5A2 2 0 1 0 2 5L2 7A1 1 0 0 0 3 8L6 8",0]],[],[20.4,4.6,4.75],1]);
 export default GlassScroll;

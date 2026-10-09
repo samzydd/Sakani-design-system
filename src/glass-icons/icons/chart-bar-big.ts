@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-bar-big"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartBarBig = /*#__PURE__*/ createGlassIcon("chart-bar-big", [["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["rect",{"x":"7","y":"13","width":"9","height":"4","rx":"1"},1],["rect",{"x":"7","y":"5","width":"12","height":"4","rx":"1"},1]]);
+export const GlassChartBarBig = /*#__PURE__*/ createGlassIcon("chart-bar-big", [[["M8 5L18 5A1 1 0 0 1 19 6L19 8A1 1 0 0 1 18 9L8 9A1 1 0 0 1 7 8L7 6A1 1 0 0 1 8 5Z",1],["M8 13L15 13A1 1 0 0 1 16 14L16 16A1 1 0 0 1 15 17L8 17A1 1 0 0 1 7 16L7 14A1 1 0 0 1 8 13Z",1]],[["M3 3L3 19A2 2 0 0 0 5 21L21 21",0]],[17.988,6.012,3.77],0]);
 export default GlassChartBarBig;

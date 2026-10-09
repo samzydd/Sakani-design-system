@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "gallery-horizontal-end"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGalleryHorizontalEnd = /*#__PURE__*/ createGlassIcon("gallery-horizontal-end", [["path",{"d":"M2 7v10"},0],["path",{"d":"M6 5v14"},0],["rect",{"width":"12","height":"18","x":"10","y":"3","rx":"2"},1]]);
+export const GlassGalleryHorizontalEnd = /*#__PURE__*/ createGlassIcon("gallery-horizontal-end", [[["M12 3L20 3A2 2 0 0 1 22 5L22 19A2 2 0 0 1 20 21L12 21A2 2 0 0 1 10 19L10 5A2 2 0 0 1 12 3Z",1]],[["M2 7L2 17",0],["M6 5L6 19",0]],[20.4,4.6,4.75],0]);
 export default GlassGalleryHorizontalEnd;

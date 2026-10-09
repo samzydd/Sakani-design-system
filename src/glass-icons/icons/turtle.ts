@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "turtle"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTurtle = /*#__PURE__*/ createGlassIcon("turtle", [["path",{"d":"M12 10l2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-3a8 8 0 1 0 -16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-3l2 -4h4Z"},1],["path",{"d":"M4.82 7.9L8 10"},0],["path",{"d":"M15.18 7.9L12 10"},0],["path",{"d":"M16.93 10H20a2 2 0 0 1 0 4H2"},0]]);
+export const GlassTurtle = /*#__PURE__*/ createGlassIcon("turtle", [[["M12 10L14 14L14 17A1 1 0 0 0 15 18L17 18A1 1 0 0 0 18 17L18 14A8 8 0 1 0 2 14L2 17A1 1 0 0 0 3 18L5 18A1 1 0 0 0 6 17L6 14L8 10L12 10Z",1],["M16.93 10L20 10A2 2 0 0 1 20 14L2 14Z",1],["M4.82 7.9L8 10",0],["M15.18 7.9L12 10",0]],[],[20.4,7.6,4.75],0]);
 export default GlassTurtle;

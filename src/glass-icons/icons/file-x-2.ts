@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-x-corner" (alias of "file-x-2")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFileX2 = /*#__PURE__*/ createGlassIcon("file-x-2", [["path",{"d":"M11 22H6a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.706 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v5"},0],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5"},0],["path",{"d":"M15 17l5 5"},0],["path",{"d":"M20 17l-5 5"},0]]);
+export const GlassFileX2 = /*#__PURE__*/ createGlassIcon("file-x-2", [[["M11 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.706 2.706L19.294 6.294A2.4 2.4 0 0 1 20 8L20 13Z",1]],[["M14 2L14 7A1 1 0 0 0 15 8L20 8",1],["M15 17L20 22",0],["M20 17L15 22",0]],[18.4,3.6,4.75],0]);
 export default GlassFileX2;

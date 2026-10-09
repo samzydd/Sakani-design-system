@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "case-upper"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCaseUpper = /*#__PURE__*/ createGlassIcon("case-upper", [["path",{"d":"M15 11h4.5a1 1 0 0 1 0 5h-4a0.5 0.5 0 0 1 -0.5 -0.5v-9a0.5 0.5 0 0 1 0.5 -0.5h3a1 1 0 0 1 0 5"},0],["path",{"d":"M2 16l4.039 -9.69a0.5 0.5 0 0 1 0.923 0L11 16"},0],["path",{"d":"M3.304 13h6.392"},0]]);
+export const GlassCaseUpper = /*#__PURE__*/ createGlassIcon("case-upper", [[["M2 16L6.039 6.31A0.5 0.5 0 0 1 6.962 6.31L11 16Z",1]],[["M15 11L19.5 11A1 1 0 0 1 19.5 16L15.5 16A0.5 0.5 0 0 1 15 15.5L15 6.5A0.5 0.5 0 0 1 15.5 6L18.5 6A1 1 0 0 1 18.5 11",0],["M3.304 13L9.696 13",1]],[10.3,6.702,3.249],0]);
 export default GlassCaseUpper;

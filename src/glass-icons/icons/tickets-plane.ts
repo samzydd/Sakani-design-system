@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tickets-plane"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTicketsPlane = /*#__PURE__*/ createGlassIcon("tickets-plane", [["path",{"d":"M10.5 17h1.227a2 2 0 0 0 1.345 -0.52L18 12"},0],["path",{"d":"M12 13.5l3.794 0.506"},0],["path",{"d":"M3.173 8.18l11 -5a2 2 0 0 1 2.647 0.993L18.56 8"},0],["path",{"d":"M6 10V8"},0],["path",{"d":"M6 14v1"},0],["path",{"d":"M6 19v2"},0],["rect",{"x":"2","y":"8","width":"20","height":"13","rx":"2"},1]]);
+export const GlassTicketsPlane = /*#__PURE__*/ createGlassIcon("tickets-plane", [[["M4 8L20 8A2 2 0 0 1 22 10L22 19A2 2 0 0 1 20 21L4 21A2 2 0 0 1 2 19L2 10A2 2 0 0 1 4 8Z",1]],[["M10.5 17L11.727 17A2 2 0 0 0 13.072 16.48L18 12",1],["M12 13.5L15.794 14.006",1],["M3.173 8.18L14.173 3.18A2 2 0 0 1 16.82 4.173L18.56 8",0],["M6 10L6 8",1],["M6 14L6 15",1],["M6 19L6 21",1]],[20.4,9.6,4.75],0]);
 export default GlassTicketsPlane;

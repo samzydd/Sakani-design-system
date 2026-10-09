@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-divide"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleDivide = /*#__PURE__*/ createGlassIcon("circle-divide", [["circle",{"cx":"12","cy":"12","r":"10"},1],["line",{"x1":"8","x2":"16","y1":"12","y2":"12"},0],["line",{"x1":"12","x2":"12","y1":"16","y2":"16"},0],["line",{"x1":"12","x2":"12","y1":"8","y2":"8"},0]]);
+export const GlassCircleDivide = /*#__PURE__*/ createGlassIcon("circle-divide", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M8 12L16 12",1],["M12 16L12 16",1],["M12 8L12 8",1]],[20.4,3.6,4.75],0]);
 export default GlassCircleDivide;

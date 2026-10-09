@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sunrise"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSunrise = /*#__PURE__*/ createGlassIcon("sunrise", [["path",{"d":"M12 2v8"},0],["path",{"d":"M4.93 10.93l1.41 1.41"},0],["path",{"d":"M2 18h2"},0],["path",{"d":"M20 18h2"},0],["path",{"d":"M19.07 10.93l-1.41 1.41"},0],["path",{"d":"M22 22H2"},0],["path",{"d":"M8 6l4 -4l4 4"},0],["path",{"d":"M16 18a4 4 0 0 0 -8 0"},0]]);
+export const GlassSunrise = /*#__PURE__*/ createGlassIcon("sunrise", [[["M16 18A4 4 0 0 0 8 18Z",1]],[["M12 2L12 10",0],["M4.93 10.93L6.34 12.34",0],["M2 18L4 18",0],["M20 18L22 18",0],["M19.07 10.93L17.66 12.34",0],["M22 22L2 22",0],["M8 6L12 2L16 6",0]],[15.45,14.55,3],0]);
 export default GlassSunrise;

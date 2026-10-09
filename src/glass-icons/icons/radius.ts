@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "radius"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRadius = /*#__PURE__*/ createGlassIcon("radius", [["path",{"d":"M20.34 17.52a10 10 0 1 0 -2.82 2.82"},0],["circle",{"cx":"19","cy":"19","r":"2"},1],["path",{"d":"M13.41 13.41l4.18 4.18"},0],["circle",{"cx":"12","cy":"12","r":"2"},1]]);
+export const GlassRadius = /*#__PURE__*/ createGlassIcon("radius", [[["M20.34 17.52A10 10 0 1 0 17.52 20.34Z",1]],[["M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19Z",1],["M13.41 13.41L17.59 17.59",1],["M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12Z",1]],[20.401,3.601,4.75],0]);
 export default GlassRadius;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "image-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassImageOff = /*#__PURE__*/ createGlassIcon("image-off", [["line",{"x1":"2","x2":"22","y1":"2","y2":"22"},0],["path",{"d":"M10.41 10.41a2 2 0 1 1 -2.83 -2.83"},0],["line",{"x1":"13.5","x2":"6","y1":"13.5","y2":"21"},0],["line",{"x1":"18","x2":"21","y1":"12","y2":"15"},0],["path",{"d":"M3.59 3.59A1.99 1.99 0 0 0 3 5v14a2 2 0 0 0 2 2h14c0.55 0 1.052 -0.22 1.41 -0.59"},0],["path",{"d":"M21 15V5a2 2 0 0 0 -2 -2H9"},0]]);
+export const GlassImageOff = /*#__PURE__*/ createGlassIcon("image-off", [[["M2 2L22 22",0],["M10.41 10.41A2 2 0 1 1 7.58 7.58",0],["M13.5 13.5L6 21",0],["M18 12L21 15",0],["M3.59 3.59A1.99 1.99 0 0 0 3 5L3 19A2 2 0 0 0 5 21L19 21C19.55 21 20.052 20.78 20.41 20.41",0],["M21 15L21 5A2 2 0 0 0 19 3L9 3",0]],[],[20.4,3.6,4.75],1]);
 export default GlassImageOff;

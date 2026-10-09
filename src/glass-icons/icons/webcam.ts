@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "webcam"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWebcam = /*#__PURE__*/ createGlassIcon("webcam", [["circle",{"cx":"12","cy":"10","r":"8"},1],["circle",{"cx":"12","cy":"10","r":"3"},1],["path",{"d":"M7 22h10"},0],["path",{"d":"M12 22v-4"},0]]);
+export const GlassWebcam = /*#__PURE__*/ createGlassIcon("webcam", [[["M4 10A8 8 0 1 0 20 10A8 8 0 1 0 4 10Z",1]],[["M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z",1],["M7 22L17 22",0],["M12 22L12 18",0]],[18.4,3.6,4.75],0]);
 export default GlassWebcam;

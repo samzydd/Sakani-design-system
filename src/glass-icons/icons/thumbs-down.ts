@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "thumbs-down"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassThumbsDown = /*#__PURE__*/ createGlassIcon("thumbs-down", [["path",{"d":"M9 18.12L10 14H4.17a2 2 0 0 1 -1.92 -2.56l2.33 -8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-2.76a2 2 0 0 0 -1.79 1.11L12 22a3.13 3.13 0 0 1 -3 -3.88Z"},1],["path",{"d":"M17 14V2"},0]]);
+export const GlassThumbsDown = /*#__PURE__*/ createGlassIcon("thumbs-down", [[["M9 18.12L10 14L4.17 14A2 2 0 0 1 2.25 11.44L4.58 3.44A2 2 0 0 1 6.5 2L20 2A2 2 0 0 1 22 4L22 12A2 2 0 0 1 20 14L17.24 14A2 2 0 0 0 15.45 15.11L12 22A3.13 3.13 0 0 1 9 18.12Z",1]],[["M17 14L17 2",1]],[20.4,3.6,4.75],0]);
 export default GlassThumbsDown;

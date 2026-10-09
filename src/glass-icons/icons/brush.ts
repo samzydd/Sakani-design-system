@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "brush"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBrush = /*#__PURE__*/ createGlassIcon("brush", [["path",{"d":"M11 10l3 3"},0],["path",{"d":"M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1 -0.708 1.792A1 1 0 0 0 3 21z"},1],["path",{"d":"M9.969 17.031L21.378 5.624a1 1 0 0 0 -3.002 -3.002L6.967 14.031"},0]]);
+export const GlassBrush = /*#__PURE__*/ createGlassIcon("brush", [[["M6.5 21A3.5 3.5 0 1 0 3 17.5A2.62 2.62 0 0 1 2.292 19.292A1 1 0 0 0 3 21Z",1]],[["M11 10L14 13",0],["M9.969 17.031L21.378 5.624A1 1 0 0 0 18.376 2.622L6.967 14.031",0]],[9.45,14.55,3],0]);
 export default GlassBrush;

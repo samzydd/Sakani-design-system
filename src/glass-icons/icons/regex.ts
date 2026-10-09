@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "regex"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRegex = /*#__PURE__*/ createGlassIcon("regex", [["path",{"d":"M17 3v10"},0],["path",{"d":"M12.67 5.5l8.66 5"},0],["path",{"d":"M12.67 10.5l8.66 -5"},0],["path",{"d":"M9 17a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2 -2v-2z"},1]]);
+export const GlassRegex = /*#__PURE__*/ createGlassIcon("regex", [[["M9 17A2 2 0 0 0 7 15L5 15A2 2 0 0 0 3 17L3 19A2 2 0 0 0 5 21L7 21A2 2 0 0 0 9 19L9 17Z",1]],[["M17 3L17 13",0],["M12.67 5.5L21.33 10.5",0],["M12.67 10.5L21.33 5.5",0]],[8.45,15.55,3],0]);
 export default GlassRegex;

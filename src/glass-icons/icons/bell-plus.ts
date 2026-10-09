@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bell-plus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBellPlus = /*#__PURE__*/ createGlassIcon("bell-plus", [["path",{"d":"M10.268 21a2 2 0 0 0 3.464 0"},0],["path",{"d":"M15 8h6"},0],["path",{"d":"M18 5v6"},0],["path",{"d":"M20.002 14.464a9 9 0 0 0 0.738 0.863A1 1 0 0 1 20 17H4a1 1 0 0 1 -0.74 -1.673C4.59 13.956 6 12.499 6 8a6 6 0 0 1 8.75 -5.332"},0]]);
+export const GlassBellPlus = /*#__PURE__*/ createGlassIcon("bell-plus", [[["M20.002 14.464A9 9 0 0 0 20.74 15.327A1 1 0 0 1 20 17L4 17A1 1 0 0 1 3.26 15.327C4.59 13.956 6 12.499 6 8A6 6 0 0 1 14.75 2.668Z",1],["M18 5L18 11",0]],[["M10.268 21A2 2 0 0 0 13.732 21",0],["M15 8L21 8",1]],[19.4,3.621,4.75],0]);
 export default GlassBellPlus;

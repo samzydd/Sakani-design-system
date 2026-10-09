@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "badge-question-mark"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBadgeQuestionMark = /*#__PURE__*/ createGlassIcon("badge-question-mark", [["path",{"d":"M3.85 8.62a4 4 0 0 1 4.78 -4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1 -4.77 4.78a4 4 0 0 1 -6.75 0a4 4 0 0 1 -4.78 -4.77a4 4 0 0 1 0 -6.76Z"},1],["path",{"d":"M9.09 9a3 3 0 0 1 5.83 1c0 2 -3 3 -3 3"},0],["line",{"x1":"12","x2":"12.01","y1":"17","y2":"17"},0]]);
+export const GlassBadgeQuestionMark = /*#__PURE__*/ createGlassIcon("badge-question-mark", [[["M3.85 8.62A4 4 0 0 1 8.63 3.85A4 4 0 0 1 15.37 3.85A4 4 0 0 1 20.15 8.63A4 4 0 0 1 20.15 15.37A4 4 0 0 1 15.38 20.15A4 4 0 0 1 8.63 20.15A4 4 0 0 1 3.85 15.38A4 4 0 0 1 3.85 8.62Z",1]],[["M9.09 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13",1],["M12 17L12.01 17",1]],[20.379,3.621,4.75],0]);
 export default GlassBadgeQuestionMark;

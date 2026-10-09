@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-gantt"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartGantt = /*#__PURE__*/ createGlassIcon("chart-gantt", [["path",{"d":"M10 6h8"},0],["path",{"d":"M12 16h6"},0],["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["path",{"d":"M8 11h7"},0]]);
+export const GlassChartGantt = /*#__PURE__*/ createGlassIcon("chart-gantt", [[["M10 6L18 6",0],["M12 16L18 16",0],["M3 3L3 19A2 2 0 0 0 5 21L21 21",0],["M8 11L15 11",0]],[],[19.4,4.6,4.75],1]);
 export default GlassChartGantt;

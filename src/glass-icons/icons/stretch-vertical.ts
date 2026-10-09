@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "stretch-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassStretchVertical = /*#__PURE__*/ createGlassIcon("stretch-vertical", [["rect",{"width":"6","height":"20","x":"4","y":"2","rx":"2"},1],["rect",{"width":"6","height":"20","x":"14","y":"2","rx":"2"},1]]);
+export const GlassStretchVertical = /*#__PURE__*/ createGlassIcon("stretch-vertical", [[["M16 2L18 2A2 2 0 0 1 20 4L20 20A2 2 0 0 1 18 22L16 22A2 2 0 0 1 14 20L14 4A2 2 0 0 1 16 2Z",1],["M6 2L8 2A2 2 0 0 1 10 4L10 20A2 2 0 0 1 8 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2Z",1]],[],[18.4,3.6,4.75],0]);
 export default GlassStretchVertical;

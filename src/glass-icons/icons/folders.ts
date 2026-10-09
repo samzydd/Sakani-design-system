@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "folders"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFolders = /*#__PURE__*/ createGlassIcon("folders", [["path",{"d":"M20 5a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2H9a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h2.5a1.5 1.5 0 0 1 1.2 0.6l0.6 0.8a1.5 1.5 0 0 0 1.2 0.6z"},1],["path",{"d":"M3 8.268a2 2 0 0 0 -1 1.738V19a2 2 0 0 0 2 2h11a2 2 0 0 0 1.732 -1"},0]]);
+export const GlassFolders = /*#__PURE__*/ createGlassIcon("folders", [[["M20 5A2 2 0 0 1 22 7L22 14A2 2 0 0 1 20 16L9 16A2 2 0 0 1 7 14L7 5A2 2 0 0 1 9 3L11.5 3A1.5 1.5 0 0 1 12.7 3.6L13.3 4.4A1.5 1.5 0 0 0 14.5 5Z",1],["M3 8.268A2 2 0 0 0 2 10.006L2 19A2 2 0 0 0 4 21L15 21A2 2 0 0 0 16.732 20Z",1]],[],[20.4,4.6,4.75],0]);
 export default GlassFolders;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "laptop-minimal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLaptopMinimal = /*#__PURE__*/ createGlassIcon("laptop-minimal", [["rect",{"width":"18","height":"12","x":"3","y":"4","rx":"2","ry":"2"},1],["line",{"x1":"2","x2":"22","y1":"20","y2":"20"},0]]);
+export const GlassLaptopMinimal = /*#__PURE__*/ createGlassIcon("laptop-minimal", [[["M5 4L19 4A2 2 0 0 1 21 6L21 14A2 2 0 0 1 19 16L5 16A2 2 0 0 1 3 14L3 6A2 2 0 0 1 5 4Z",1]],[["M2 20L22 20",0]],[19.4,5.6,4.75],0]);
 export default GlassLaptopMinimal;

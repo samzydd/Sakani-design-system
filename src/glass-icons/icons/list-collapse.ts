@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-collapse"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassListCollapse = /*#__PURE__*/ createGlassIcon("list-collapse", [["path",{"d":"M10 5h11"},0],["path",{"d":"M10 12h11"},0],["path",{"d":"M10 19h11"},0],["path",{"d":"M3 10l3 -3l-3 -3"},0],["path",{"d":"M3 20l3 -3l-3 -3"},0]]);
+export const GlassListCollapse = /*#__PURE__*/ createGlassIcon("list-collapse", [[["M10 5L21 5",0],["M10 12L21 12",0],["M10 19L21 19",0],["M3 10L6 7L3 4",0],["M3 20L6 17L3 14",0]],[],[19.4,5.6,4.75],1]);
 export default GlassListCollapse;

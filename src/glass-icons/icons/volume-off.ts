@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "volume-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVolumeOff = /*#__PURE__*/ createGlassIcon("volume-off", [["path",{"d":"M16 9a5 5 0 0 1 0.95 2.293"},0],["path",{"d":"M19.364 5.636a9 9 0 0 1 1.889 9.96"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M7 7l-0.587 0.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0 -1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 0.997 0.413l3.383 3.384A0.705 0.705 0 0 0 11 19.298V11"},0],["path",{"d":"M9.828 4.172A0.686 0.686 0 0 1 11 4.657v0.686"},0]]);
+export const GlassVolumeOff = /*#__PURE__*/ createGlassIcon("volume-off", [[["M7 7L6.413 7.587A1.4 1.4 0 0 1 5.416 8L3 8A1 1 0 0 0 2 9L2 15A1 1 0 0 0 3 16L5.416 16A1.4 1.4 0 0 1 6.413 16.413L9.796 19.797A0.705 0.705 0 0 0 11 19.298L11 11Z",1]],[["M16 9A5 5 0 0 1 16.95 11.293",0],["M19.364 5.636A9 9 0 0 1 21.253 15.596",0],["M2 2L22 22",0],["M9.828 4.172A0.686 0.686 0 0 1 11 4.657L11 5.343",0]],[9.832,8.168,4.031],0]);
 export default GlassVolumeOff;

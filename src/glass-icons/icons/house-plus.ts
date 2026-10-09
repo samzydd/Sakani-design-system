@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "house-plus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHousePlus = /*#__PURE__*/ createGlassIcon("house-plus", [["path",{"d":"M12.35 21H5a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 0.71 -1.53l7 -6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v2.35"},0],["path",{"d":"M14.8 12.4A1 1 0 0 0 14 12h-4a1 1 0 0 0 -1 1v8"},0],["path",{"d":"M15 18h6"},0],["path",{"d":"M18 15v6"},0]]);
+export const GlassHousePlus = /*#__PURE__*/ createGlassIcon("house-plus", [[["M12.35 21L5 21A2 2 0 0 1 3 19L3 10A2 2 0 0 1 3.71 8.47L10.71 2.47A2 2 0 0 1 13.29 2.47L20.29 8.47A2 2 0 0 1 21 10L21 12.35Z",1]],[["M14.8 12.4A1 1 0 0 0 14 12L10 12A1 1 0 0 0 9 13L9 21",1],["M15 18L21 18",0],["M18 15L18 21",0]],[19.4,3.598,4.75],0]);
 export default GlassHousePlus;

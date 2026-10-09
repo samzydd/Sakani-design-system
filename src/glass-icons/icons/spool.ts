@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "spool"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSpool = /*#__PURE__*/ createGlassIcon("spool", [["path",{"d":"M17 13.44L4.442 17.082A2 2 0 0 0 4.982 21H19a2 2 0 0 0 0.558 -3.921l-1.115 -0.32A2 2 0 0 1 17 14.837V7.66"},0],["path",{"d":"M7 10.56l12.558 -3.642A2 2 0 0 0 19.018 3H5a2 2 0 0 0 -0.558 3.921l1.115 0.32A2 2 0 0 1 7 9.163v7.178"},0]]);
+export const GlassSpool = /*#__PURE__*/ createGlassIcon("spool", [[["M17 13.44L4.442 17.082A2 2 0 0 0 4.982 21L19 21A2 2 0 0 0 19.558 17.079L18.443 16.759A2 2 0 0 1 17 14.837L17 7.66",0],["M7 10.56L19.558 6.918A2 2 0 0 0 19.018 3L5 3A2 2 0 0 0 4.442 6.921L5.557 7.241A2 2 0 0 1 7 9.163L7 16.341",0]],[],[19.399,4.6,4.75],1]);
 export default GlassSpool;

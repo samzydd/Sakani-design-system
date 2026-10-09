@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pencil"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPencil = /*#__PURE__*/ createGlassIcon("pencil", [["path",{"d":"M21.174 6.812a1 1 0 0 0 -3.986 -3.987L3.842 16.174a2 2 0 0 0 -0.5 0.83l-1.321 4.352a0.5 0.5 0 0 0 0.623 0.622l4.353 -1.32a2 2 0 0 0 0.83 -0.497z"},1],["path",{"d":"M15 5l4 4"},0]]);
+export const GlassPencil = /*#__PURE__*/ createGlassIcon("pencil", [[["M21.174 6.812A1 1 0 0 0 17.188 2.825L3.842 16.174A2 2 0 0 0 3.342 17.004L2.021 21.356A0.5 0.5 0 0 0 2.644 21.978L6.997 20.658A2 2 0 0 0 7.827 20.161Z",1]],[["M15 5L19 9",1]],[20.4,3.6,4.75],0]);
 export default GlassPencil;

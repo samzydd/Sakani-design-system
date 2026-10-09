@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mail-question-mark"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMailQuestionMark = /*#__PURE__*/ createGlassIcon("mail-question-mark", [["path",{"d":"M22 10.5V6a2 2 0 0 0 -2 -2H4a2 2 0 0 0 -2 2v12c0 1.1 0.9 2 2 2h12.5"},0],["path",{"d":"M22 7l-8.97 5.7a1.94 1.94 0 0 1 -2.06 0L2 7"},0],["path",{"d":"M18 15.28c0.2 -0.4 0.5 -0.8 0.9 -1a2.1 2.1 0 0 1 2.6 0.4c0.3 0.4 0.5 0.8 0.5 1.3c0 1.3 -2 2 -2 2"},0],["path",{"d":"M20 22v0.01"},0]]);
+export const GlassMailQuestionMark = /*#__PURE__*/ createGlassIcon("mail-question-mark", [[["M22 10.5L22 6A2 2 0 0 0 20 4L4 4A2 2 0 0 0 2 6L2 18C2 19.1 2.9 20 4 20L16.5 20Z",1]],[["M22 7L13.03 12.7A1.94 1.94 0 0 1 10.97 12.7L2 7",1],["M18 15.28C18.2 14.88 18.5 14.48 18.9 14.28A2.1 2.1 0 0 1 21.5 14.68C21.8 15.08 22 15.48 22 15.98C22 17.28 20 17.98 20 17.98",0],["M20 22L20 22.01",0]],[20.4,5.6,4.75],0]);
 export default GlassMailQuestionMark;

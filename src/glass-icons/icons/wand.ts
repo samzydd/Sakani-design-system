@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wand"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWand = /*#__PURE__*/ createGlassIcon("wand", [["path",{"d":"M15 4V2"},0],["path",{"d":"M15 16v-2"},0],["path",{"d":"M8 9h2"},0],["path",{"d":"M20 9h2"},0],["path",{"d":"M17.8 11.8L19 13"},0],["path",{"d":"M15 9h0.01"},0],["path",{"d":"M17.8 6.2L19 5"},0],["path",{"d":"M3 21l9 -9"},0],["path",{"d":"M12.2 6.2L11 5"},0]]);
+export const GlassWand = /*#__PURE__*/ createGlassIcon("wand", [[["M15 4L15 2",0],["M15 16L15 14",0],["M8 9L10 9",0],["M20 9L22 9",0],["M17.8 11.8L19 13",0],["M15 9L15.01 9",0],["M17.8 6.2L19 5",0],["M3 21L12 12",0],["M12.2 6.2L11 5",0]],[],[20.4,3.6,4.75],1]);
 export default GlassWand;

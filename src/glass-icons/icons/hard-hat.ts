@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "hard-hat"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassHardHat = /*#__PURE__*/ createGlassIcon("hard-hat", [["path",{"d":"M10 10V5a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v5"},0],["path",{"d":"M14 6a6 6 0 0 1 6 6v3"},0],["path",{"d":"M4 15v-3a6 6 0 0 1 6 -6"},0],["rect",{"x":"2","y":"15","width":"20","height":"4","rx":"1"},1]]);
+export const GlassHardHat = /*#__PURE__*/ createGlassIcon("hard-hat", [[["M3 15L21 15A1 1 0 0 1 22 16L22 18A1 1 0 0 1 21 19L3 19A1 1 0 0 1 2 18L2 16A1 1 0 0 1 3 15Z",1]],[["M10 10L10 5A1 1 0 0 1 11 4L13 4A1 1 0 0 1 14 5L14 10",0],["M14 6A6 6 0 0 1 20 12L20 15",0],["M4 15L4 12A6 6 0 0 1 10 6",0]],[20.4,16.6,4.75],0]);
 export default GlassHardHat;

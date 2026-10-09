@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "badge-x"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBadgeX = /*#__PURE__*/ createGlassIcon("badge-x", [["path",{"d":"M3.85 8.62a4 4 0 0 1 4.78 -4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1 -4.77 4.78a4 4 0 0 1 -6.75 0a4 4 0 0 1 -4.78 -4.77a4 4 0 0 1 0 -6.76Z"},1],["line",{"x1":"15","x2":"9","y1":"9","y2":"15"},0],["line",{"x1":"9","x2":"15","y1":"9","y2":"15"},0]]);
+export const GlassBadgeX = /*#__PURE__*/ createGlassIcon("badge-x", [[["M3.85 8.62A4 4 0 0 1 8.63 3.85A4 4 0 0 1 15.37 3.85A4 4 0 0 1 20.15 8.63A4 4 0 0 1 20.15 15.37A4 4 0 0 1 15.38 20.15A4 4 0 0 1 8.63 20.15A4 4 0 0 1 3.85 15.38A4 4 0 0 1 3.85 8.62Z",1]],[["M15 9L9 15",1],["M9 9L15 15",1]],[20.379,3.621,4.75],0]);
 export default GlassBadgeX;

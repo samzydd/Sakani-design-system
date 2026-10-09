@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lightbulb"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLightbulb = /*#__PURE__*/ createGlassIcon("lightbulb", [["path",{"d":"M15 14c0.2 -1 0.7 -1.7 1.5 -2.5c1 -0.9 1.5 -2.2 1.5 -3.5A6 6 0 0 0 6 8c0 1 0.2 2.2 1.5 3.5c0.7 0.7 1.3 1.5 1.5 2.5"},0],["path",{"d":"M9 18h6"},0],["path",{"d":"M10 22h4"},0]]);
+export const GlassLightbulb = /*#__PURE__*/ createGlassIcon("lightbulb", [[["M15 14C15.2 13 15.7 12.3 16.5 11.5C17.5 10.6 18 9.3 18 8A6 6 0 0 0 6 8C6 9 6.2 10.2 7.5 11.5C8.2 12.2 8.8 13 9 14Z",1]],[["M9 18L15 18",0],["M10 22L14 22",0]],[16.988,3.012,3.77],0]);
 export default GlassLightbulb;

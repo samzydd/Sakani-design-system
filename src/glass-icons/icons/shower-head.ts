@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shower-head"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShowerHead = /*#__PURE__*/ createGlassIcon("shower-head", [["path",{"d":"M4 4l2.5 2.5"},0],["path",{"d":"M13.5 6.5a4.95 4.95 0 0 0 -7 7"},0],["path",{"d":"M15 5L5 15"},0],["path",{"d":"M14 17v0.01"},0],["path",{"d":"M10 16v0.01"},0],["path",{"d":"M13 13v0.01"},0],["path",{"d":"M16 10v0.01"},0],["path",{"d":"M11 20v0.01"},0],["path",{"d":"M17 14v0.01"},0],["path",{"d":"M20 11v0.01"},0]]);
+export const GlassShowerHead = /*#__PURE__*/ createGlassIcon("shower-head", [[["M13.5 6.5A4.95 4.95 0 0 0 6.5 13.5Z",1],["M15 5L5 15",0]],[["M4 4L6.5 6.5",0],["M14 17L14 17.01",0],["M10 16L10 16.01",0],["M13 13L13 13.01",0],["M16 10L16 10.01",0],["M11 20L11 20.01",0],["M17 14L17 14.01",0],["M20 11L20 11.01",0]],[14.3,5.7,3.25],0]);
 export default GlassShowerHead;

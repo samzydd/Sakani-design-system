@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bot-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBotOff = /*#__PURE__*/ createGlassIcon("bot-off", [["path",{"d":"M13.67 8H18a2 2 0 0 1 2 2v4.33"},0],["path",{"d":"M2 14h2"},0],["path",{"d":"M20 14h2"},0],["path",{"d":"M22 22L2 2"},0],["path",{"d":"M8 8H6a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 1.414 -0.586"},0],["path",{"d":"M9 13v2"},0],["path",{"d":"M9.67 4H12v2.33"},0]]);
+export const GlassBotOff = /*#__PURE__*/ createGlassIcon("bot-off", [[["M8 8L6 8A2 2 0 0 0 4 10L4 18A2 2 0 0 0 6 20L18 20A2 2 0 0 0 19.414 19.414Z",1]],[["M13.67 8L18 8A2 2 0 0 1 20 10L20 14.33",0],["M2 14L4 14",1],["M20 14L22 14",0],["M22 22L2 2",1],["M9 13L9 15",1],["M9.67 4L12 4L12 6.33",0]],[17.869,9.545,4.658],0]);
 export default GlassBotOff;

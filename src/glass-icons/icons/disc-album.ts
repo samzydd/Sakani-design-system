@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "disc-album"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDiscAlbum = /*#__PURE__*/ createGlassIcon("disc-album", [["rect",{"width":"18","height":"18","x":"3","y":"3","rx":"2"},1],["circle",{"cx":"12","cy":"12","r":"5"},1],["path",{"d":"M12 12h0.01"},0]]);
+export const GlassDiscAlbum = /*#__PURE__*/ createGlassIcon("disc-album", [[["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z",1]],[["M7 12A5 5 0 1 0 17 12A5 5 0 1 0 7 12Z",1],["M12 12L12.01 12",1]],[19.4,4.6,4.75],0]);
 export default GlassDiscAlbum;

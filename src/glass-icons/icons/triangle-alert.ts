@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "triangle-alert"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTriangleAlert = /*#__PURE__*/ createGlassIcon("triangle-alert", [["path",{"d":"M21.73 18l-8 -14a2 2 0 0 0 -3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73 -3"},1],["path",{"d":"M12 9v4"},0],["path",{"d":"M12 17h0.01"},0]]);
+export const GlassTriangleAlert = /*#__PURE__*/ createGlassIcon("triangle-alert", [[["M21.73 18L13.73 4A2 2 0 0 0 10.25 4L2.25 18A2 2 0 0 0 4 21L20 21A2 2 0 0 0 21.73 18",1]],[["M12 9L12 13",1],["M12 17L12.01 17",1]],[20.396,4.595,4.75],0]);
 export default GlassTriangleAlert;

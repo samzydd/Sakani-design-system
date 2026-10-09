@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "paintbrush-vertical"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPaintbrushVertical = /*#__PURE__*/ createGlassIcon("paintbrush-vertical", [["path",{"d":"M10 2v2"},0],["path",{"d":"M14 2v4"},0],["path",{"d":"M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1 -1z"},1],["path",{"d":"M6 12a1 1 0 0 0 -1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1 -1h2a2 2 0 0 0 2 -2v-1a1 1 0 0 0 -1 -1"},0]]);
+export const GlassPaintbrushVertical = /*#__PURE__*/ createGlassIcon("paintbrush-vertical", [[["M17 2A1 1 0 0 1 18 3L18 12L6 12L6 3A1 1 0 0 1 7 2Z",1],["M6 12A1 1 0 0 0 5 13L5 14A2 2 0 0 0 7 16L9 16A1 1 0 0 1 10 17L10 19.9A2 2 0 1 0 14 19.9L14 17A1 1 0 0 1 15 16L17 16A2 2 0 0 0 19 14L19 13A1 1 0 0 0 18 12Z",1]],[["M10 2L10 4",1],["M14 2L14 6",1]],[17.4,3.6,4.75],0]);
 export default GlassPaintbrushVertical;

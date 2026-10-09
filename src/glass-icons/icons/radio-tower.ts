@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "radio-tower"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRadioTower = /*#__PURE__*/ createGlassIcon("radio-tower", [["path",{"d":"M4.9 16.1C1 12.2 1 5.8 4.9 1.9"},0],["path",{"d":"M7.8 4.7a6.14 6.14 0 0 0 -0.8 7.5"},0],["circle",{"cx":"12","cy":"9","r":"2"},1],["path",{"d":"M16.2 4.8c2 2 2.26 5.11 0.8 7.47"},0],["path",{"d":"M19.1 1.9a9.96 9.96 0 0 1 0 14.1"},0],["path",{"d":"M9.5 18h5"},0],["path",{"d":"M8 22l4 -11l4 11"},0]]);
+export const GlassRadioTower = /*#__PURE__*/ createGlassIcon("radio-tower", [[["M8 22L12 11L16 22Z",1],["M9.5 18L14.5 18",0]],[["M4.9 16.1C1 12.2 1 5.8 4.9 1.9",0],["M7.8 4.7A6.14 6.14 0 0 0 7 12.2",0],["M10 9A2 2 0 1 0 14 9A2 2 0 1 0 10 9Z",0],["M16.2 4.8C18.2 6.8 18.46 9.91 17 12.27",0],["M19.1 1.9A9.96 9.96 0 0 1 19.1 16",0]],[15.144,11.856,3.51],0]);
 export default GlassRadioTower;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "triangle-dashed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTriangleDashed = /*#__PURE__*/ createGlassIcon("triangle-dashed", [["path",{"d":"M10.17 4.193a2 2 0 0 1 3.666 0.013"},0],["path",{"d":"M14 21h2"},0],["path",{"d":"M15.874 7.743l1 1.732"},0],["path",{"d":"M18.849 12.952l1 1.732"},0],["path",{"d":"M21.824 18.18a2 2 0 0 1 -1.835 2.824"},0],["path",{"d":"M4.024 21a2 2 0 0 1 -1.839 -2.839"},0],["path",{"d":"M5.136 12.952l-1 1.732"},0],["path",{"d":"M8 21h2"},0],["path",{"d":"M8.102 7.743l-1 1.732"},0]]);
+export const GlassTriangleDashed = /*#__PURE__*/ createGlassIcon("triangle-dashed", [[["M10.17 4.193A2 2 0 0 1 13.836 4.206",0],["M14 21L16 21",0],["M15.874 7.743L16.874 9.475",0],["M18.849 12.952L19.849 14.684",0],["M21.824 18.18A2 2 0 0 1 19.989 21.004",0],["M4.024 21A2 2 0 0 1 2.185 18.161",0],["M5.136 12.952L4.136 14.684",0],["M8 21L10 21",0],["M8.102 7.743L7.102 9.475",0]],[],[20.398,4.6,4.75],1]);
 export default GlassTriangleDashed;

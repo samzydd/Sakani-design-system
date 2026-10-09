@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "image-play"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassImagePlay = /*#__PURE__*/ createGlassIcon("image-play", [["path",{"d":"M15 15.003a1 1 0 0 1 1.517 -0.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997a1 1 0 0 1 -1.517 -0.86z"},1],["path",{"d":"M21 12.17V5a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h6"},0],["path",{"d":"M6 21l5 -5"},0],["circle",{"cx":"9","cy":"9","r":"2"},1]]);
+export const GlassImagePlay = /*#__PURE__*/ createGlassIcon("image-play", [[["M21 12.17L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L11 21Z",1]],[["M15 15.003A1 1 0 0 1 16.517 14.144L21.514 17.141A1 1 0 0 1 21.514 18.859L16.517 21.856A1 1 0 0 1 15 20.996Z",0],["M6 21L11 16",1],["M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9Z",1]],[19.4,4.6,4.75],0]);
 export default GlassImagePlay;

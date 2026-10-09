@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "iteration-cw"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassIterationCw = /*#__PURE__*/ createGlassIcon("iteration-cw", [["path",{"d":"M4 10a8 8 0 1 1 8 8H4"},0],["path",{"d":"M8 22l-4 -4l4 -4"},0]]);
+export const GlassIterationCw = /*#__PURE__*/ createGlassIcon("iteration-cw", [[["M4 10A8 8 0 1 1 12 18L4 18Z",1]],[["M8 22L4 18L8 14",1]],[18.4,3.6,4.75],0]);
 export default GlassIterationCw;

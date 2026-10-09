@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "smartphone-nfc"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSmartphoneNfc = /*#__PURE__*/ createGlassIcon("smartphone-nfc", [["rect",{"width":"7","height":"12","x":"2","y":"6","rx":"1"},1],["path",{"d":"M13 8.32a7.43 7.43 0 0 1 0 7.36"},0],["path",{"d":"M16.46 6.21a11.76 11.76 0 0 1 0 11.58"},0],["path",{"d":"M19.91 4.1a15.91 15.91 0 0 1 0.01 15.8"},0]]);
+export const GlassSmartphoneNfc = /*#__PURE__*/ createGlassIcon("smartphone-nfc", [[["M3 6L8 6A1 1 0 0 1 9 7L9 17A1 1 0 0 1 8 18L3 18A1 1 0 0 1 2 17L2 7A1 1 0 0 1 3 6Z",1]],[["M13 8.32A7.43 7.43 0 0 1 13 15.68",0],["M16.46 6.21A11.76 11.76 0 0 1 16.46 17.79",0],["M19.91 4.1A15.91 15.91 0 0 1 19.92 19.9",0]],[7.988,7.012,3.77],0]);
 export default GlassSmartphoneNfc;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "calendar-fold"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCalendarFold = /*#__PURE__*/ createGlassIcon("calendar-fold", [["path",{"d":"M16 2v3"},0],["path",{"d":"M21 15V5a2 2 0 0 0 -2 -2H5a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h10v-5a1 1 0 0 1 1 -1za2.4 2.4 0 0 1 -0.706 1.706l-3.588 3.588A2.4 2.4 0 0 1 15 21"},1],["path",{"d":"M3 9h18"},0],["path",{"d":"M8 2v3"},0]]);
+export const GlassCalendarFold = /*#__PURE__*/ createGlassIcon("calendar-fold", [[["M21 15L21 5A2 2 0 0 0 19 3L5 3A2 2 0 0 0 3 5L3 19A2 2 0 0 0 5 21L15 21L15 16A1 1 0 0 1 16 15Z",1],["M16 2L16 5",0],["M8 2L8 5",0]],[["M21 15A2.4 2.4 0 0 1 20.294 16.706L16.706 20.294A2.4 2.4 0 0 1 15 21",0],["M3 9L21 9",1]],[19.4,3.6,4.75],0]);
 export default GlassCalendarFold;

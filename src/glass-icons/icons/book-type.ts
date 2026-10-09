@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-type"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBookType = /*#__PURE__*/ createGlassIcon("book-type", [["path",{"d":"M10 13h4"},0],["path",{"d":"M12 6v7"},0],["path",{"d":"M16 8V6H8v2"},0],["path",{"d":"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1 -1 1H6.5a1 1 0 0 1 0 -5H20"},0]]);
+export const GlassBookType = /*#__PURE__*/ createGlassIcon("book-type", [[["M16 8L16 6L8 6L8 8Z",1]],[["M10 13L14 13",0],["M12 6L12 13",0],["M4 19.5L4 4.5A2.5 2.5 0 0 1 6.5 2L19 2A1 1 0 0 1 20 3L20 21A1 1 0 0 1 19 22L6.5 22A1 1 0 0 1 6.5 17L20 17",0]],[15.45,6.55,3],0]);
 export default GlassBookType;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "notebook-text"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassNotebookText = /*#__PURE__*/ createGlassIcon("notebook-text", [["path",{"d":"M2 6h4"},0],["path",{"d":"M2 10h4"},0],["path",{"d":"M2 14h4"},0],["path",{"d":"M2 18h4"},0],["rect",{"width":"16","height":"20","x":"4","y":"2","rx":"2"},1],["path",{"d":"M9.5 8h5"},0],["path",{"d":"M9.5 12H16"},0],["path",{"d":"M9.5 16H14"},0]]);
+export const GlassNotebookText = /*#__PURE__*/ createGlassIcon("notebook-text", [[["M6 2L18 2A2 2 0 0 1 20 4L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2Z",1]],[["M2 6L6 6",1],["M2 10L6 10",1],["M2 14L6 14",1],["M2 18L6 18",1],["M9.5 8L14.5 8",1],["M9.5 12L16 12",1],["M9.5 16L14 16",1]],[18.4,3.6,4.75],0]);
 export default GlassNotebookText;

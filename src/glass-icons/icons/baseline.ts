@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "baseline"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBaseline = /*#__PURE__*/ createGlassIcon("baseline", [["path",{"d":"M4 20h16"},0],["path",{"d":"M6 16l6 -12l6 12"},0],["path",{"d":"M8 12h8"},0]]);
+export const GlassBaseline = /*#__PURE__*/ createGlassIcon("baseline", [[["M6 16L12 4L18 16Z",1]],[["M4 20L20 20",0],["M8 12L16 12",1]],[16.988,5.012,3.77],0]);
 export default GlassBaseline;

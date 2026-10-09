@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "grip-horizontal"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGripHorizontal = /*#__PURE__*/ createGlassIcon("grip-horizontal", [["circle",{"cx":"12","cy":"9","r":"1"},1],["circle",{"cx":"19","cy":"9","r":"1"},1],["circle",{"cx":"5","cy":"9","r":"1"},1],["circle",{"cx":"12","cy":"15","r":"1"},1],["circle",{"cx":"19","cy":"15","r":"1"},1],["circle",{"cx":"5","cy":"15","r":"1"},1]]);
+export const GlassGripHorizontal = /*#__PURE__*/ createGlassIcon("grip-horizontal", [[["M11 9A1 1 0 1 0 13 9A1 1 0 1 0 11 9Z",0],["M18 9A1 1 0 1 0 20 9A1 1 0 1 0 18 9Z",0],["M4 9A1 1 0 1 0 6 9A1 1 0 1 0 4 9Z",0],["M11 15A1 1 0 1 0 13 15A1 1 0 1 0 11 15Z",0],["M18 15A1 1 0 1 0 20 15A1 1 0 1 0 18 15Z",0],["M4 15A1 1 0 1 0 6 15A1 1 0 1 0 4 15Z",0]],[],[18.4,9.6,4.75],1]);
 export default GlassGripHorizontal;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "eye"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassEye = /*#__PURE__*/ createGlassIcon("eye", [["path",{"d":"M2.062 12.348a1 1 0 0 1 0 -0.696a10.75 10.75 0 0 1 19.876 0a1 1 0 0 1 0 0.696a10.75 10.75 0 0 1 -19.876 0"},1],["circle",{"cx":"12","cy":"12","r":"3"},1]]);
+export const GlassEye = /*#__PURE__*/ createGlassIcon("eye", [[["M2.062 12.348A1 1 0 0 1 2.062 11.652A10.75 10.75 0 0 1 21.938 11.652A1 1 0 0 1 21.938 12.348A10.75 10.75 0 0 1 2.062 12.348",1]],[["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z",1]],[20.401,6.645,4.75],0]);
 export default GlassEye;

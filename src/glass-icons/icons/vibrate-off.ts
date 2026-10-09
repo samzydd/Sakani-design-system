@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "vibrate-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassVibrateOff = /*#__PURE__*/ createGlassIcon("vibrate-off", [["path",{"d":"M2 8l2 2l-2 2l2 2l-2 2"},0],["path",{"d":"M22 8l-2 2l2 2l-2 2l2 2"},0],["path",{"d":"M8 8v10c0 0.55 0.45 1 1 1h6c0.55 0 1 -0.45 1 -1v-2"},0],["path",{"d":"M16 10.34V6c0 -0.55 -0.45 -1 -1 -1h-4.34"},0],["line",{"x1":"2","x2":"22","y1":"2","y2":"22"},0]]);
+export const GlassVibrateOff = /*#__PURE__*/ createGlassIcon("vibrate-off", [[["M8 8L8 18C8 18.55 8.45 19 9 19L15 19C15.55 19 16 18.55 16 18L16 16Z",1]],[["M2 8L4 10L2 12L4 14L2 16",0],["M22 8L20 10L22 12L20 14L22 16",0],["M16 10.34L16 6C16 5.45 15.55 5 15 5L10.66 5",0],["M2 2L22 22",0]],[15.144,8.856,3.51],0]);
 export default GlassVibrateOff;

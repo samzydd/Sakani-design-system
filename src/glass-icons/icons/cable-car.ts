@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cable-car"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCableCar = /*#__PURE__*/ createGlassIcon("cable-car", [["path",{"d":"M10 3h0.01"},0],["path",{"d":"M14 2h0.01"},0],["path",{"d":"M2 9l20 -5"},0],["path",{"d":"M12 12V6.5"},0],["rect",{"width":"16","height":"10","x":"4","y":"12","rx":"3"},1],["path",{"d":"M9 12v5"},0],["path",{"d":"M15 12v5"},0],["path",{"d":"M4 17h16"},0]]);
+export const GlassCableCar = /*#__PURE__*/ createGlassIcon("cable-car", [[["M7 12L17 12A3 3 0 0 1 20 15L20 19A3 3 0 0 1 17 22L7 22A3 3 0 0 1 4 19L4 15A3 3 0 0 1 7 12Z",1]],[["M10 3L10.01 3",0],["M14 2L14.01 2",0],["M2 9L22 4",0],["M12 12L12 6.5",0],["M9 12L9 17",1],["M15 12L15 17",1],["M4 17L20 17",1]],[18.4,13.6,4.75],0]);
 export default GlassCableCar;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "boom-box"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBoomBox = /*#__PURE__*/ createGlassIcon("boom-box", [["path",{"d":"M4 9V5a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4"},0],["path",{"d":"M8 8v1"},0],["path",{"d":"M12 8v1"},0],["path",{"d":"M16 8v1"},0],["rect",{"width":"20","height":"12","x":"2","y":"9","rx":"2"},1],["circle",{"cx":"8","cy":"15","r":"2"},1],["circle",{"cx":"16","cy":"15","r":"2"},1]]);
+export const GlassBoomBox = /*#__PURE__*/ createGlassIcon("boom-box", [[["M4 9L20 9A2 2 0 0 1 22 11L22 19A2 2 0 0 1 20 21L4 21A2 2 0 0 1 2 19L2 11A2 2 0 0 1 4 9Z",1],["M4 9L4 5A2 2 0 0 1 6 3L18 3A2 2 0 0 1 20 5L20 9Z",1],["M8 8L8 9",0],["M12 8L12 9",0],["M16 8L16 9",0]],[["M6 15A2 2 0 1 0 10 15A2 2 0 1 0 6 15Z",1],["M14 15A2 2 0 1 0 18 15A2 2 0 1 0 14 15Z",1]],[20.4,4.6,4.75],0]);
 export default GlassBoomBox;

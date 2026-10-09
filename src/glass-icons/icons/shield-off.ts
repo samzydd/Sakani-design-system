@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shield-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShieldOff = /*#__PURE__*/ createGlassIcon("shield-off", [["path",{"d":"M2 2l20 20"},0],["path",{"d":"M5 5a1 1 0 0 0 -1 1v7c0 5 3.5 7.5 7.67 8.94a1 1 0 0 0 0.67 0.01c2.35 -0.82 4.48 -1.97 5.9 -3.71"},0],["path",{"d":"M9.309 3.652A12.252 12.252 0 0 0 11.24 2.28a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1v7a9.784 9.784 0 0 1 -0.08 1.264"},0]]);
+export const GlassShieldOff = /*#__PURE__*/ createGlassIcon("shield-off", [[["M5 5A1 1 0 0 0 4 6L4 13C4 18 7.5 20.5 11.67 21.94A1 1 0 0 0 12.34 21.95C14.69 21.13 16.82 19.98 18.24 18.24Z",1],["M2 2L22 22",0]],[["M9.309 3.652A12.252 12.252 0 0 0 11.24 2.28A1.17 1.17 0 0 1 12.76 2.28C14.51 3.81 17 5 19 5A1 1 0 0 1 20 6L20 13A9.784 9.784 0 0 1 19.92 14.264",0]],[20.4,3.6,4.75],0]);
 export default GlassShieldOff;

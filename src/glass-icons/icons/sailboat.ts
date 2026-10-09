@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "sailboat"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSailboat = /*#__PURE__*/ createGlassIcon("sailboat", [["path",{"d":"M10 2v15"},0],["path",{"d":"M7 22a4 4 0 0 1 -4 -4a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1a4 4 0 0 1 -4 4z"},1],["path",{"d":"M9.159 2.46a1 1 0 0 1 1.521 -0.193l9.977 8.98A1 1 0 0 1 20 13H4a1 1 0 0 1 -0.824 -1.567z"},1]]);
+export const GlassSailboat = /*#__PURE__*/ createGlassIcon("sailboat", [[["M9.159 2.46A1 1 0 0 1 10.68 2.267L20.657 11.247A1 1 0 0 1 20 13L4 13A1 1 0 0 1 3.176 11.433Z",1],["M7 22A4 4 0 0 1 3 18A1 1 0 0 1 4 17L20 17A1 1 0 0 1 21 18A4 4 0 0 1 17 22Z",1]],[["M10 2L10 17",1]],[19.4,3.601,4.75],0]);
 export default GlassSailboat;

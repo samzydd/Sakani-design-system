@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "wind"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassWind = /*#__PURE__*/ createGlassIcon("wind", [["path",{"d":"M12.8 19.6A2 2 0 1 0 14 16H2"},0],["path",{"d":"M17.5 8a2.5 2.5 0 1 1 2 4H2"},0],["path",{"d":"M9.8 4.4A2 2 0 1 1 11 8H2"},0]]);
+export const GlassWind = /*#__PURE__*/ createGlassIcon("wind", [[["M17.5 8A2.5 2.5 0 1 1 19.5 12L2 12Z",1],["M12.8 19.6A2 2 0 1 0 14 16L2 16Z",1],["M9.8 4.4A2 2 0 1 1 11 8L2 8Z",1]],[],[20.399,5.606,4.75],0]);
 export default GlassWind;

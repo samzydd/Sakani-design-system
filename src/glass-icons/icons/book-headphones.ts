@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-headphones"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBookHeadphones = /*#__PURE__*/ createGlassIcon("book-headphones", [["path",{"d":"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1 -1 1H6.5a1 1 0 0 1 0 -5H20"},0],["path",{"d":"M8 12v-2a4 4 0 0 1 8 0v2"},0],["circle",{"cx":"15","cy":"12","r":"1"},1],["circle",{"cx":"9","cy":"12","r":"1"},1]]);
+export const GlassBookHeadphones = /*#__PURE__*/ createGlassIcon("book-headphones", [[["M8 12L8 10A4 4 0 0 1 16 10L16 12Z",1],["M14 12A1 1 0 1 0 16 12A1 1 0 1 0 14 12Z",0],["M8 12A1 1 0 1 0 10 12A1 1 0 1 0 8 12Z",0]],[["M4 19.5L4 4.5A2.5 2.5 0 0 1 6.5 2L19 2A1 1 0 0 1 20 3L20 21A1 1 0 0 1 19 22L6.5 22A1 1 0 0 1 6.5 17L20 17",0]],[15.45,6.55,3],0]);
 export default GlassBookHeadphones;

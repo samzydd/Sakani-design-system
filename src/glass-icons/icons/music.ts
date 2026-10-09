@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "music"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMusic = /*#__PURE__*/ createGlassIcon("music", [["path",{"d":"M9 18V5l12 -2v13"},0],["circle",{"cx":"6","cy":"18","r":"3"},1],["circle",{"cx":"18","cy":"16","r":"3"},1]]);
+export const GlassMusic = /*#__PURE__*/ createGlassIcon("music", [[["M9 18L9 5L21 3L21 16Z",1]],[["M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18Z",0],["M15 16A3 3 0 1 0 21 16A3 3 0 1 0 15 16Z",1]],[19.52,4.48,4.55],0]);
 export default GlassMusic;

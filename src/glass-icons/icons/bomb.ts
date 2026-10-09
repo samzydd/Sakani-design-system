@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bomb"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassBomb = /*#__PURE__*/ createGlassIcon("bomb", [["circle",{"cx":"11","cy":"13","r":"9"},1],["path",{"d":"M14.35 4.65L16.3 2.7a2.41 2.41 0 0 1 3.4 0l1.6 1.6a2.4 2.4 0 0 1 0 3.4l-1.95 1.95"},0],["path",{"d":"M22 2l-1.5 1.5"},0]]);
+export const GlassBomb = /*#__PURE__*/ createGlassIcon("bomb", [[["M2 13A9 9 0 1 0 20 13A9 9 0 1 0 2 13Z",1]],[["M14.35 4.65L16.3 2.7A2.41 2.41 0 0 1 19.7 2.7L21.3 4.3A2.4 2.4 0 0 1 21.3 7.7L19.35 9.65",0],["M22 2L20.5 3.5",0]],[18.4,5.6,4.75],0]);
 export default GlassBomb;

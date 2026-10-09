@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "castle"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCastle = /*#__PURE__*/ createGlassIcon("castle", [["path",{"d":"M10 5V3"},0],["path",{"d":"M14 5V3"},0],["path",{"d":"M15 21v-3a3 3 0 0 0 -6 0v3"},0],["path",{"d":"M18 3v8"},0],["path",{"d":"M18 5H6"},0],["path",{"d":"M22 11H2"},0],["path",{"d":"M22 9v10a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2V9"},0],["path",{"d":"M6 3v8"},0]]);
+export const GlassCastle = /*#__PURE__*/ createGlassIcon("castle", [[["M22 9L22 19A2 2 0 0 1 20 21L4 21A2 2 0 0 1 2 19L2 9Z",1]],[["M10 5L10 3",0],["M14 5L14 3",0],["M15 21L15 18A3 3 0 0 0 9 18L9 21",1],["M18 3L18 11",0],["M18 5L6 5",0],["M22 11L2 11",1],["M6 3L6 11",0]],[20.4,10.6,4.75],0]);
 export default GlassCastle;

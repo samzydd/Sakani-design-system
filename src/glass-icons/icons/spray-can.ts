@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "spray-can"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSprayCan = /*#__PURE__*/ createGlassIcon("spray-can", [["path",{"d":"M3 3h0.01"},0],["path",{"d":"M7 5h0.01"},0],["path",{"d":"M11 7h0.01"},0],["path",{"d":"M3 7h0.01"},0],["path",{"d":"M7 9h0.01"},0],["path",{"d":"M3 11h0.01"},0],["rect",{"width":"4","height":"4","x":"15","y":"5"},1],["path",{"d":"M19 9l2 2v10c0 0.6 -0.4 1 -1 1h-6c-0.6 0 -1 -0.4 -1 -1V11l2 -2"},0],["path",{"d":"M13 14l8 -2"},0],["path",{"d":"M13 19l8 -2"},0]]);
+export const GlassSprayCan = /*#__PURE__*/ createGlassIcon("spray-can", [[["M19 9L21 11L21 21C21 21.6 20.6 22 20 22L14 22C13.4 22 13 21.6 13 21L13 11L15 9Z",1]],[["M3 3L3.01 3",0],["M7 5L7.01 5",0],["M11 7L11.01 7",0],["M3 7L3.01 7",0],["M7 9L7.01 9",0],["M3 11L3.01 11",0],["M15 5L19 5L19 9L15 9Z",0],["M13 14L21 12",1],["M13 19L21 17",1]],[19.832,10.168,4.03],0]);
 export default GlassSprayCan;

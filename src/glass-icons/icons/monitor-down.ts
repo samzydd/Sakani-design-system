@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "monitor-down"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMonitorDown = /*#__PURE__*/ createGlassIcon("monitor-down", [["path",{"d":"M12 13V7"},0],["path",{"d":"M15 10l-3 3l-3 -3"},0],["rect",{"width":"20","height":"14","x":"2","y":"3","rx":"2"},1],["path",{"d":"M12 17v4"},0],["path",{"d":"M8 21h8"},0]]);
+export const GlassMonitorDown = /*#__PURE__*/ createGlassIcon("monitor-down", [[["M4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3Z",1]],[["M12 13L12 7",1],["M15 10L12 13L9 10",1],["M12 17L12 21",0],["M8 21L16 21",0]],[20.4,4.6,4.75],0]);
 export default GlassMonitorDown;

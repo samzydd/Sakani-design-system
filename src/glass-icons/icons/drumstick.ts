@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "drumstick"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDrumstick = /*#__PURE__*/ createGlassIcon("drumstick", [["path",{"d":"M15.4 15.63a7.875 6 135 1 1 6.23 -6.23a4.5 3.43 135 0 0 -6.23 6.23"},1],["path",{"d":"M8.29 12.71l-2.6 2.6a2.5 2.5 0 1 0 -1.65 4.65A2.5 2.5 0 1 0 8.7 18.3l2.59 -2.59"},0]]);
+export const GlassDrumstick = /*#__PURE__*/ createGlassIcon("drumstick", [[["M15.4 15.63A7.875 6 135 1 1 21.63 9.4A4.5 3.43 135 0 0 15.4 15.63",1],["M8.29 12.71L5.69 15.31A2.5 2.5 0 1 0 4.04 19.96A2.5 2.5 0 1 0 8.7 18.3L11.29 15.71Z",1]],[],[20.384,3.61,4.75],0]);
 export default GlassDrumstick;

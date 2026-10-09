@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "face-slightly-frowning" (alias of "frown")
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFrown = /*#__PURE__*/ createGlassIcon("frown", [["path",{"d":"M15 10V9"},0],["path",{"d":"M9 10V9"},0],["path",{"d":"M9 16a5 5 0 0 1 6 0"},0],["circle",{"cx":"12","cy":"12","r":"10"},1]]);
+export const GlassFrown = /*#__PURE__*/ createGlassIcon("frown", [[["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z",1]],[["M15 10L15 9",1],["M9 10L9 9",1],["M9 16A5 5 0 0 1 15 16",1]],[20.4,3.6,4.75],0]);
 export default GlassFrown;

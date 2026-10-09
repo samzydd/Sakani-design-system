@@ -2,5 +2,5 @@
 // Shape data: Sakani Figma icon set, icon "facebook"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassFacebook = /*#__PURE__*/ createGlassIcon("facebook", [["path",{"d":"M18 2H15C13.6739 2 12.4021 2.5268 11.4645 3.4645C10.5268 4.4021 10 5.6739 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.7348 14.1054 6.4804 14.2929 6.2929C14.4804 6.1054 14.7348 6 15 6H18V2Z"},1]]);
+export const GlassFacebook = /*#__PURE__*/ createGlassIcon("facebook", [[["M18 2L15 2C13.674 2 12.402 2.527 11.464 3.464C10.527 4.402 10 5.674 10 7L10 10L7 10L7 14L10 14L10 22L14 22L14 14L17 14L18 10L14 10L14 7C14 6.735 14.105 6.48 14.293 6.293C14.48 6.105 14.735 6 15 6L18 6L18 2Z",1]],[],[16.4,3.6,4.75],0]);
 export default GlassFacebook;

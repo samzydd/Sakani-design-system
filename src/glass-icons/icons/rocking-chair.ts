@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rocking-chair"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRockingChair = /*#__PURE__*/ createGlassIcon("rocking-chair", [["path",{"d":"M15 13l3.708 7.416"},0],["path",{"d":"M3 19a15 15 0 0 0 18 0"},0],["path",{"d":"M3 2l3.21 9.633A2 2 0 0 0 8.109 13H18"},0],["path",{"d":"M9 13l-3.708 7.416"},0]]);
+export const GlassRockingChair = /*#__PURE__*/ createGlassIcon("rocking-chair", [[["M15 13L18.708 20.416",0],["M3 19A15 15 0 0 0 21 19",0],["M3 2L6.21 11.633A2 2 0 0 0 8.109 13L18 13",0],["M9 13L5.292 20.416",0]],[],[19.4,3.6,4.75],1]);
 export default GlassRockingChair;

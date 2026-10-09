@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "trash"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassTrash = /*#__PURE__*/ createGlassIcon("trash", [["path",{"d":"M10 11v6"},0],["path",{"d":"M14 11v6"},0],["path",{"d":"M19 6v14a2 2 0 0 1 -2 2H7a2 2 0 0 1 -2 -2V6"},0],["path",{"d":"M3 6h18"},0],["path",{"d":"M8 6V4a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"},0]]);
+export const GlassTrash = /*#__PURE__*/ createGlassIcon("trash", [[["M19 6L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 6Z",1],["M3 6L21 6",0]],[["M10 11L10 17",1],["M14 11L14 17",1],["M8 6L8 4A2 2 0 0 1 10 2L14 2A2 2 0 0 1 16 4L16 6",0]],[19.4,7.6,4.75],0]);
 export default GlassTrash;

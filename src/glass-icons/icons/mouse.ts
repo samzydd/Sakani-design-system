@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mouse"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMouse = /*#__PURE__*/ createGlassIcon("mouse", [["rect",{"x":"5","y":"2","width":"14","height":"20","rx":"7"},1],["path",{"d":"M12 6v4"},0]]);
+export const GlassMouse = /*#__PURE__*/ createGlassIcon("mouse", [[["M12 2L12 2A7 7 0 0 1 19 9L19 15A7 7 0 0 1 12 22L12 22A7 7 0 0 1 5 15L5 9A7 7 0 0 1 12 2Z",1]],[["M12 6L12 10",1]],[17.4,3.6,4.75],0]);
 export default GlassMouse;

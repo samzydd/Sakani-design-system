@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "swiss-franc"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSwissFranc = /*#__PURE__*/ createGlassIcon("swiss-franc", [["path",{"d":"M10 21V3h8"},0],["path",{"d":"M6 16h9"},0],["path",{"d":"M10 9.5h7"},0]]);
+export const GlassSwissFranc = /*#__PURE__*/ createGlassIcon("swiss-franc", [[["M10 21L10 3L18 3",0],["M6 16L15 16",0],["M10 9.5L17 9.5",0]],[],[16.4,4.6,4.75],1]);
 export default GlassSwissFranc;

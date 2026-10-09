@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clapperboard"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClapperboard = /*#__PURE__*/ createGlassIcon("clapperboard", [["path",{"d":"M12.296 3.464l3.02 3.956"},0],["path",{"d":"M20.2 6L3 11l-0.9 -2.4c-0.3 -1.1 0.3 -2.2 1.3 -2.5l13.5 -4c1.1 -0.3 2.2 0.3 2.5 1.3z"},1],["path",{"d":"M3 11h18v8a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2z"},1],["path",{"d":"M6.18 5.276l3.1 3.899"},0]]);
+export const GlassClapperboard = /*#__PURE__*/ createGlassIcon("clapperboard", [[["M3 11L21 11L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19Z",1],["M20.2 6L3 11L2.1 8.6C1.8 7.5 2.4 6.4 3.4 6.1L16.9 2.1C18 1.8 19.1 2.4 19.4 3.4Z",1],["M12.296 3.464L15.316 7.42",0],["M6.18 5.276L9.28 9.175",0]],[],[19.4,3.623,4.75],0]);
 export default GlassClapperboard;

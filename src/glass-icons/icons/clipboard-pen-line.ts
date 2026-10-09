@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clipboard-pen-line"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassClipboardPenLine = /*#__PURE__*/ createGlassIcon("clipboard-pen-line", [["rect",{"width":"8","height":"4","x":"8","y":"2","rx":"1"},1],["path",{"d":"M8 4H6a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-0.5"},0],["path",{"d":"M16 4h2a2 2 0 0 1 1.73 1"},0],["path",{"d":"M8 18h1"},0],["path",{"d":"M21.378 12.626a1 1 0 0 0 -3.004 -3.004l-4.01 4.012a2 2 0 0 0 -0.506 0.854l-0.837 2.87a0.5 0.5 0 0 0 0.62 0.62l2.87 -0.837a2 2 0 0 0 0.854 -0.506z"},1]]);
+export const GlassClipboardPenLine = /*#__PURE__*/ createGlassIcon("clipboard-pen-line", [[["M8 4L6 4A2 2 0 0 0 4 6L4 20A2 2 0 0 0 6 22L18 22A2 2 0 0 0 20 20L20 19.5Z",1]],[["M9 2L15 2A1 1 0 0 1 16 3L16 5A1 1 0 0 1 15 6L9 6A1 1 0 0 1 8 5L8 3A1 1 0 0 1 9 2Z",0],["M16 4L18 4A2 2 0 0 1 19.73 5",0],["M8 18L9 18",1],["M21.378 12.626A1 1 0 0 0 18.374 9.622L14.364 13.634A2 2 0 0 0 13.858 14.488L13.021 17.358A0.5 0.5 0 0 0 13.641 17.978L16.511 17.141A2 2 0 0 0 17.365 16.635Z",0]],[18.4,5.6,4.75],0]);
 export default GlassClipboardPenLine;

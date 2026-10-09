@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rotate-ccw-square"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassRotateCcwSquare = /*#__PURE__*/ createGlassIcon("rotate-ccw-square", [["path",{"d":"M20 9V7a2 2 0 0 0 -2 -2h-6"},0],["path",{"d":"M15 2l-3 3l3 3"},0],["path",{"d":"M20 13v5a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2V7a2 2 0 0 1 2 -2h2"},0]]);
+export const GlassRotateCcwSquare = /*#__PURE__*/ createGlassIcon("rotate-ccw-square", [[["M20 13L20 18A2 2 0 0 1 18 20L6 20A2 2 0 0 1 4 18L4 7A2 2 0 0 1 6 5L8 5Z",1]],[["M20 9L20 7A2 2 0 0 0 18 5L12 5",0],["M15 2L12 5L15 8",0]],[18.4,6.6,4.75],0]);
 export default GlassRotateCcwSquare;

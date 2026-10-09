@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "message-square-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassMessageSquareOff = /*#__PURE__*/ createGlassIcon("message-square-off", [["path",{"d":"M19 19H6.828a2 2 0 0 0 -1.414 0.586l-2.202 2.202A0.7 0.7 0 0 1 2 21.286V5a2 2 0 0 1 1.184 -1.826"},0],["path",{"d":"M2 2l20 20"},0],["path",{"d":"M8.656 3H20a2 2 0 0 1 2 2v11.344"},0]]);
+export const GlassMessageSquareOff = /*#__PURE__*/ createGlassIcon("message-square-off", [[["M19 19L6.828 19A2 2 0 0 0 5.414 19.586L3.212 21.788A0.7 0.7 0 0 1 2 21.286L2 5A2 2 0 0 1 3.184 3.174Z",1],["M2 2L22 22",0]],[["M8.656 3L20 3A2 2 0 0 1 22 5L22 16.344",0]],[20.4,3.6,4.75],0]);
 export default GlassMessageSquareOff;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "shield-alert"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassShieldAlert = /*#__PURE__*/ createGlassIcon("shield-alert", [["path",{"d":"M20 13c0 5 -3.5 7.5 -7.66 8.95a1 1 0 0 1 -0.67 -0.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1 -1c2 0 4.5 -1.2 6.24 -2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"},1],["path",{"d":"M12 8v4"},0],["path",{"d":"M12 16h0.01"},0]]);
+export const GlassShieldAlert = /*#__PURE__*/ createGlassIcon("shield-alert", [[["M20 13C20 18 16.5 20.5 12.34 21.95A1 1 0 0 1 11.67 21.94C7.5 20.5 4 18 4 13L4 6A1 1 0 0 1 5 5C7 5 9.5 3.8 11.24 2.28A1.17 1.17 0 0 1 12.76 2.28C14.51 3.81 17 5 19 5A1 1 0 0 1 20 6Z",1]],[["M12 8L12 12",1],["M12 16L12.01 16",1]],[18.4,3.6,4.75],0]);
 export default GlassShieldAlert;

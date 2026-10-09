@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chart-column-decreasing"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChartColumnDecreasing = /*#__PURE__*/ createGlassIcon("chart-column-decreasing", [["path",{"d":"M13 17V9"},0],["path",{"d":"M18 17v-3"},0],["path",{"d":"M3 3v16a2 2 0 0 0 2 2h16"},0],["path",{"d":"M8 17V5"},0]]);
+export const GlassChartColumnDecreasing = /*#__PURE__*/ createGlassIcon("chart-column-decreasing", [[["M13 17L13 9",0],["M18 17L18 14",0],["M3 3L3 19A2 2 0 0 0 5 21L21 21",0],["M8 17L8 5",0]],[],[19.4,4.6,4.75],1]);
 export default GlassChartColumnDecreasing;

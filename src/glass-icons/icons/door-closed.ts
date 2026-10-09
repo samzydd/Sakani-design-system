@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "door-closed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassDoorClosed = /*#__PURE__*/ createGlassIcon("door-closed", [["path",{"d":"M19 21V5a2 2 0 0 0 -2 -2H7a2 2 0 0 0 -2 2v16"},0],["path",{"d":"M2 21h20"},0],["path",{"d":"M9 12h0.01"},0]]);
+export const GlassDoorClosed = /*#__PURE__*/ createGlassIcon("door-closed", [[["M19 21L19 5A2 2 0 0 0 17 3L7 3A2 2 0 0 0 5 5L5 21Z",1],["M2 21L22 21",0]],[["M9 12L9.01 12",1]],[20.4,4.6,4.75],0]);
 export default GlassDoorClosed;

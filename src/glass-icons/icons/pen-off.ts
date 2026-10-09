@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "pen-off"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassPenOff = /*#__PURE__*/ createGlassIcon("pen-off", [["path",{"d":"M10 10l-6.157 6.162a2 2 0 0 0 -0.5 0.833l-1.322 4.36a0.5 0.5 0 0 0 0.622 0.624l4.358 -1.323a2 2 0 0 0 0.83 -0.5L14 13.982"},0],["path",{"d":"M12.829 7.172l4.359 -4.346a1 1 0 1 1 3.986 3.986l-4.353 4.353"},0],["path",{"d":"M2 2l20 20"},0]]);
+export const GlassPenOff = /*#__PURE__*/ createGlassIcon("pen-off", [[["M10 10L3.843 16.162A2 2 0 0 0 3.343 16.995L2.021 21.355A0.5 0.5 0 0 0 2.643 21.979L7.001 20.656A2 2 0 0 0 7.831 20.156L14 13.982Z",1],["M12.829 7.172L17.188 2.826A1 1 0 1 1 21.174 6.812L16.821 11.165Z",1]],[["M2 2L22 22",0]],[20.397,3.603,4.75],0]);
 export default GlassPenOff;

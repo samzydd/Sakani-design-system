@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-dot-dashed"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCircleDotDashed = /*#__PURE__*/ createGlassIcon("circle-dot-dashed", [["path",{"d":"M10.1 2.18a9.93 9.93 0 0 1 3.8 0"},0],["path",{"d":"M17.6 3.71a9.95 9.95 0 0 1 2.69 2.7"},0],["path",{"d":"M21.82 10.1a9.93 9.93 0 0 1 0 3.8"},0],["path",{"d":"M20.29 17.6a9.95 9.95 0 0 1 -2.7 2.69"},0],["path",{"d":"M13.9 21.82a9.94 9.94 0 0 1 -3.8 0"},0],["path",{"d":"M6.4 20.29a9.95 9.95 0 0 1 -2.69 -2.7"},0],["path",{"d":"M2.18 13.9a9.93 9.93 0 0 1 0 -3.8"},0],["path",{"d":"M3.71 6.4a9.95 9.95 0 0 1 2.7 -2.69"},0],["circle",{"cx":"12","cy":"12","r":"1"},1]]);
+export const GlassCircleDotDashed = /*#__PURE__*/ createGlassIcon("circle-dot-dashed", [[["M10.1 2.18A9.93 9.93 0 0 1 13.9 2.18",0],["M17.6 3.71A9.95 9.95 0 0 1 20.29 6.41",0],["M21.82 10.1A9.93 9.93 0 0 1 21.82 13.9",0],["M20.29 17.6A9.95 9.95 0 0 1 17.59 20.29",0],["M13.9 21.82A9.94 9.94 0 0 1 10.1 21.82",0],["M6.4 20.29A9.95 9.95 0 0 1 3.71 17.59",0],["M2.18 13.9A9.93 9.93 0 0 1 2.18 10.1",0],["M3.71 6.4A9.95 9.95 0 0 1 6.41 3.71",0],["M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12Z",0]],[],[20.403,3.597,4.75],1]);
 export default GlassCircleDotDashed;

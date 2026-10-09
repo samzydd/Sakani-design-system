@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-filter-plus"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassListFilterPlus = /*#__PURE__*/ createGlassIcon("list-filter-plus", [["path",{"d":"M12 5H2"},0],["path",{"d":"M6 12h12"},0],["path",{"d":"M9 19h6"},0],["path",{"d":"M16 5h6"},0],["path",{"d":"M19 8V2"},0]]);
+export const GlassListFilterPlus = /*#__PURE__*/ createGlassIcon("list-filter-plus", [[["M12 5L2 5",0],["M6 12L18 12",0],["M9 19L15 19",0],["M16 5L22 5",0],["M19 8L19 2",0]],[],[20.4,3.6,4.75],1]);
 export default GlassListFilterPlus;

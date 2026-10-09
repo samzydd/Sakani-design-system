@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chevrons-right-left"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassChevronsRightLeft = /*#__PURE__*/ createGlassIcon("chevrons-right-left", [["path",{"d":"M20 17l-5 -5l5 -5"},0],["path",{"d":"M4 17l5 -5l-5 -5"},0]]);
+export const GlassChevronsRightLeft = /*#__PURE__*/ createGlassIcon("chevrons-right-left", [[["M20 17L15 12L20 7",0],["M4 17L9 12L4 7",0]],[],[18.4,8.6,4.75],1]);
 export default GlassChevronsRightLeft;

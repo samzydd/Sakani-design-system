@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "lollipop"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLollipop = /*#__PURE__*/ createGlassIcon("lollipop", [["circle",{"cx":"11","cy":"11","r":"8"},1],["path",{"d":"M21 21l-4.3 -4.3"},0],["path",{"d":"M11 11a2 2 0 0 0 4 0a4 4 0 0 0 -8 0a6 6 0 0 0 12 0"},0]]);
+export const GlassLollipop = /*#__PURE__*/ createGlassIcon("lollipop", [[["M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z",1]],[["M21 21L16.7 16.7",0],["M11 11A2 2 0 0 0 15 11A4 4 0 0 0 7 11A6 6 0 0 0 19 11",1]],[17.4,4.6,4.75],0]);
 export default GlassLollipop;

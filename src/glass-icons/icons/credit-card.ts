@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "credit-card"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCreditCard = /*#__PURE__*/ createGlassIcon("credit-card", [["rect",{"width":"20","height":"14","x":"2","y":"5","rx":"2"},1],["line",{"x1":"2","x2":"22","y1":"10","y2":"10"},0]]);
+export const GlassCreditCard = /*#__PURE__*/ createGlassIcon("credit-card", [[["M4 5L20 5A2 2 0 0 1 22 7L22 17A2 2 0 0 1 20 19L4 19A2 2 0 0 1 2 17L2 7A2 2 0 0 1 4 5Z",1]],[["M2 10L22 10",1]],[20.4,6.6,4.75],0]);
 export default GlassCreditCard;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "grid-2x2-check"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassGrid2x2Check = /*#__PURE__*/ createGlassIcon("grid-2x2-check", [["path",{"d":"M12 3v17a1 1 0 0 1 -1 1H5a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v6a1 1 0 0 1 -1 1H3"},0],["path",{"d":"M16 19l2 2l4 -4"},0]]);
+export const GlassGrid2x2Check = /*#__PURE__*/ createGlassIcon("grid-2x2-check", [[["M12 3L12 20A1 1 0 0 1 11 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3L19 3A2 2 0 0 1 21 5L21 11A1 1 0 0 1 20 12L3 12",0],["M16 19L18 21L22 17",0]],[],[20.4,4.6,4.75],1]);
 export default GlassGrid2x2Check;

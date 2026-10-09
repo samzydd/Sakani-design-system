@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "underline"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassUnderline = /*#__PURE__*/ createGlassIcon("underline", [["path",{"d":"M6 4v6a6 6 0 0 0 12 0V4"},0],["line",{"x1":"4","x2":"20","y1":"20","y2":"20"},0]]);
+export const GlassUnderline = /*#__PURE__*/ createGlassIcon("underline", [[["M6 4L6 10A6 6 0 0 0 18 10L18 4Z",1]],[["M4 20L20 20",0]],[16.988,5.012,3.77],0]);
 export default GlassUnderline;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "soap-dispenser-droplet"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassSoapDispenserDroplet = /*#__PURE__*/ createGlassIcon("soap-dispenser-droplet", [["path",{"d":"M10.5 2v4"},0],["path",{"d":"M14 2H7a2 2 0 0 0 -2 2"},0],["path",{"d":"M19.29 14.76A6.67 6.67 0 0 1 17 11a6.6 6.6 0 0 1 -2.29 3.76c-1.15 0.92 -1.71 2.04 -1.71 3.19c0 2.22 1.8 4.05 4 4.05s4 -1.83 4 -4.05c0 -1.16 -0.57 -2.26 -1.71 -3.19"},1],["path",{"d":"M9.607 21H6a2 2 0 0 1 -2 -2v-7a2 2 0 0 1 2 -2h7V7a1 1 0 0 0 -1 -1H9a1 1 0 0 0 -1 1v3"},0]]);
+export const GlassSoapDispenserDroplet = /*#__PURE__*/ createGlassIcon("soap-dispenser-droplet", [[["M19.29 14.76A6.67 6.67 0 0 1 17 11A6.6 6.6 0 0 1 14.71 14.76C13.56 15.68 13 16.8 13 17.95C13 20.17 14.8 22 17 22C19.2 22 21 20.17 21 17.95C21 16.79 20.43 15.69 19.29 14.76",1]],[["M10.5 2L10.5 6",0],["M14 2L7 2A2 2 0 0 0 5 4",0],["M9.607 21L6 21A2 2 0 0 1 4 19L4 12A2 2 0 0 1 6 10L13 10L13 7A1 1 0 0 0 12 6L9 6A1 1 0 0 0 8 7L8 10",0]],[20.144,11.856,3.51],0]);
 export default GlassSoapDispenserDroplet;

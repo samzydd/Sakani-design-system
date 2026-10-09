@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "cloud-alert"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassCloudAlert = /*#__PURE__*/ createGlassIcon("cloud-alert", [["path",{"d":"M12 12v4"},0],["path",{"d":"M12 20h0.01"},0],["path",{"d":"M8.128 16.949A7 7 0 1 1 15.71 8h1.79a1 1 0 0 1 0 9h-1.642"},0]]);
+export const GlassCloudAlert = /*#__PURE__*/ createGlassIcon("cloud-alert", [[["M8.128 16.949A7 7 0 1 1 15.71 8L17.5 8A1 1 0 0 1 17.5 17L15.858 17Z",1]],[["M12 12L12 16",1],["M12 20L12.01 20",0]],[20.4,4.63,4.75],0]);
 export default GlassCloudAlert;

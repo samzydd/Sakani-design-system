@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "library-big"
 import { createGlassIcon } from '../createGlassIcon';
 
-export const GlassLibraryBig = /*#__PURE__*/ createGlassIcon("library-big", [["rect",{"width":"8","height":"18","x":"3","y":"3","rx":"1"},1],["path",{"d":"M7 3v18"},0],["path",{"d":"M20.4 18.9c0.2 0.5 -0.1 1.1 -0.6 1.3l-1.9 0.7c-0.5 0.2 -1.1 -0.1 -1.3 -0.6L11.1 5.1c-0.2 -0.5 0.1 -1.1 0.6 -1.3l1.9 -0.7c0.5 -0.2 1.1 0.1 1.3 0.6Z"},1]]);
+export const GlassLibraryBig = /*#__PURE__*/ createGlassIcon("library-big", [[["M4 3L10 3A1 1 0 0 1 11 4L11 20A1 1 0 0 1 10 21L4 21A1 1 0 0 1 3 20L3 4A1 1 0 0 1 4 3Z",1],["M20.4 18.9C20.6 19.4 20.3 20 19.8 20.2L17.9 20.9C17.4 21.1 16.8 20.8 16.6 20.3L11.1 5.1C10.9 4.6 11.2 4 11.7 3.8L13.6 3.1C14.1 2.9 14.7 3.2 14.9 3.7Z",1]],[["M7 3L7 21",1]],[18.861,4.6,4.75],0]);
 export default GlassLibraryBig;
