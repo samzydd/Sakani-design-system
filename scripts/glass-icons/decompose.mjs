@@ -96,6 +96,8 @@ export function decompose(node) {
     ],
     // [d, onGlass]: each line is drawn whole, never split at the glass edge.
     detail,
+    // Every path in source order (used by the Sicons build).
+    all: subs.map((s) => s.d),
     accent: [r3(box[2] - 0.6 * r), r3(box[1] + 0.6 * r), r3(r)],
     pure,
   };

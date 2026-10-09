@@ -1,6 +1,6 @@
 {
   "name": "@sakaniui/react",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Sakani Design System — token-driven React components and blocks with light & dark modes, plus built-in glass and Apple-style liquid glass surfaces.",
   "license": "MIT",
   "repository": {
@@ -35,7 +35,8 @@
   ],
   "files": [
     "dist",
-    "AGENTS.md"
+    "AGENTS.md",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "publishConfig": {
     "access": "public"
@@ -55,6 +56,11 @@
       "types": "./dist/glass-icons.d.ts",
       "import": "./dist/glass-icons.mjs",
       "require": "./dist/glass-icons.cjs"
+    },
+    "./sicons": {
+      "types": "./dist/sicons.d.ts",
+      "import": "./dist/sicons.mjs",
+      "require": "./dist/sicons.cjs"
     },
     "./style.css": "./dist/style.css",
     "./tokens.css": "./dist/tokens.css"

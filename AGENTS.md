@@ -120,6 +120,17 @@ CSS of a component into your own file.
   that doesn't match the page.
 - Give `title` when the icon carries meaning on its own; without it the icon is decorative (aria-hidden).
 
+## 4c. Sicons
+
+- Import from `@sakaniui/react/sicons`: `SiconHeart`, `SiconCalendar` ... one per icon in the set (1,626;
+  names follow Lucide, kebab-case to `Sicon` + PascalCase). They are the same icons as the Figma *Icons*
+  set, with softened corners. Each is tree-shaken on its own.
+- Props follow lucide-react: `size` (default 24), `color` (default currentColor), `strokeWidth` (default
+  1.5), `absoluteStrokeWidth`. Add `title` when the icon carries meaning alone; without it the icon is
+  decorative (aria-hidden).
+- Existing components still render lucide-react icons. In new app code prefer Sicons so the app matches
+  the Figma file.
+
 ## 5. Component guide — what it's for, why it behaves that way, when not to use it
 
 Format: **Use for** · **Why it is built this way** · **Not for / instead**.
