@@ -34,6 +34,20 @@ import { GlassHeart, GlassCalendar } from '@sakaniui/react/glass-icons';
 Charcoal grey so they fit any brand; light and dark follow the theme. The Figma file has the
 matching *Glass Icons* component set.
 Browse them all in Storybook under *Foundations -> Glass Icons* or at https://www.sakaniui.com/docs/glass-icons.
+## Sicons
+
+Sakani's own icon set: the same 1,626 icons as the Figma *Icons* set, with softened corners and a
+`line` and a `solid` style.
+
+```tsx
+import { SiconHeart, SiconBell } from '@sakaniui/react/sicons';
+
+<SiconHeart />                       {/* line, 24px, currentColor */}
+<SiconBell variant="solid" size={20} />
+```
+
+Props follow lucide-react (`size`, `color`, `strokeWidth`), so a Lucide icon is a find-and-replace.
+
 ## Install
 
 ```bash

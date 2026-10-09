@@ -2,6 +2,27 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.6.0
+
+- **Sicons: Sakani's own icon set, `@sakaniui/react/sicons`.** The same 1,626 icons as the Figma
+  *Icons* component set, with the Sakani treatment: softened corners and two styles that mirror the
+  Figma `style` property. One component per icon (`SiconHeart`, `SiconCalendar`, ...), each
+  tree-shaken on its own (one icon is about 1.7 kB).
+  - `variant="line"` (default): 1.5 stroke, round caps and joins, corners softened with a 4px radius
+    (3.7px on icons whose short corners can't take 4).
+  - `variant="solid"`: the icon's main shape filled with its inner details cut out; line-only icons
+    (arrows, check, plus) are drawn a touch heavier. Use it for active and selected states.
+  - Props follow lucide-react (`size`, `color`, `strokeWidth`, `absoluteStrokeWidth`), plus `variant`
+    and `title`, so swapping a Lucide icon is a find-and-replace. Colour is `currentColor`.
+  - Figma first: the *Icons* set itself now has the rounded Line style and a `style` property
+    (Line | Solid); every icon instance in the file picked up the new corners.
+  - Corner rounding and the solid split are computed at build time (`scripts/sicons/`), with the
+    same rules the Figma set was built with. A few percent of icons can get the 3.7 radius in one
+    and the 4 in the other where Figma joins lines differently.
+  - Storybook: *Foundations -> Sicons* (overview, close-up, props, searchable gallery).
+  - Not changed: the built-in components still render lucide-react icons; moving them onto Sicons is
+    a separate step.
+
 ## 0.5.0
 
 - **Glass icons: all 1,626 icons in the Sakani icon set, as monochrome frosted glass.** New entry

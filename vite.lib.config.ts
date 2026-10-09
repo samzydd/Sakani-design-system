@@ -10,6 +10,7 @@ import path from 'node:path';
 // Two entry points, published as two subpaths:
 //   .        -> src/index.ts   (stable, fully-configurable components)
 //   ./glass-icons -> src/glass-icons/index.ts (glass versions of the icon set)
+//   ./sicons      -> src/sicons/index.ts (Sakani's own icon set: Line and Solid)
 //   ./blocks -> src/blocks/index.ts (copy-paste composition examples --
 //     kept out of the main entry so importing them is an explicit,
 //     separate choice, matching how they're already split out in Storybook)
@@ -23,6 +24,7 @@ export default defineConfig({
         'src/components/**/*.ts', 'src/components/**/*.tsx', 'src/index.ts',
         'src/blocks/**/*.ts', 'src/blocks/**/*.tsx',
         'src/glass-icons/**/*.ts', 'src/glass-icons/**/*.tsx',
+        'src/sicons/**/*.ts', 'src/sicons/**/*.tsx',
       ],
       exclude: [
         'src/components/**/*.stories.tsx', 'src/components/**/*.test.tsx', 'src/components/**/*.test.ts',
@@ -47,6 +49,7 @@ export default defineConfig({
         // doesn't carry them, and each export is pure so apps keep only the
         // icons they import.
         'glass-icons': path.resolve(__dirname, 'src/glass-icons/index.ts'),
+        sicons: path.resolve(__dirname, 'src/sicons/index.ts'),
       },
       name: 'SakaniDesignSystem',
       formats: ['es', 'cjs'],
