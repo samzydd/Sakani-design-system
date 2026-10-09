@@ -1,0 +1,38 @@
+/* Glass icons -- the SVG layers' paint.
+ *
+ * Every colour comes from the --glass-icon-* tokens (tokens.css), declared on
+ * :root and .dark and mirroring the Figma glass-icon/* variables, so an icon
+ * follows the nearest theme scope by inheritance like every other Sakani
+ * component. The `surface` prop pins one theme locally.
+ */
+.root {
+  display: inline-block;
+  flex-shrink: 0;
+  overflow: visible;
+  vertical-align: middle;
+}
+
+.onLight {
+  --glass-icon-accent: #c9cdd3;
+  --glass-icon-glass-top: rgba(142, 147, 155, 0.5);
+  --glass-icon-glass-bottom: rgba(80, 85, 94, 0.74);
+  --glass-icon-rim: rgba(255, 255, 255, 0.95);
+  --glass-icon-detail: #ffffff;
+  --glass-icon-detail-off: #666b74;
+}
+
+.onDark {
+  --glass-icon-accent: #8f959e;
+  --glass-icon-glass-top: rgba(255, 255, 255, 0.3);
+  --glass-icon-glass-bottom: rgba(255, 255, 255, 0.1);
+  --glass-icon-rim: rgba(255, 255, 255, 0.7);
+  --glass-icon-detail: #ffffff;
+  --glass-icon-detail-off: #c9cdd4;
+}
+
+.accent { fill: var(--glass-icon-accent, #c9cdd3); }
+.glassTop { stop-color: var(--glass-icon-glass-top, rgba(142, 147, 155, 0.5)); }
+.glassBottom { stop-color: var(--glass-icon-glass-bottom, rgba(80, 85, 94, 0.74)); }
+.rimStart { stop-color: var(--glass-icon-rim, rgba(255, 255, 255, 0.95)); }
+.detail { stroke: var(--glass-icon-detail, #fff); }
+.detailOff { stroke: var(--glass-icon-detail-off, #666b74); }

@@ -19,6 +19,21 @@ Most component libraries start in code and retrofit the design. Sakani was built
 - **Typed & composable** — strict TypeScript, generic `Table<T>`, slot-based composition, controlled + uncontrolled patterns
 - **Geist typography** and **Lucide icons** throughout, matching the Figma source exactly
 
+
+## Glass icons
+
+All 1,626 icons in the Sakani icon set as monochrome frosted glass, one component per icon:
+
+```tsx
+import { GlassHeart, GlassCalendar } from '@sakaniui/react/glass-icons';
+
+<GlassHeart />                 {/* 24px */}
+<GlassCalendar size={48} />
+```
+
+Charcoal grey so they fit any brand; light and dark follow the theme. The Figma file has the
+matching *Glass Icons* component set.
+Browse them all in Storybook under *Foundations -> Glass Icons* or at https://www.sakaniui.com/docs/glass-icons.
 ## Install
 
 ```bash

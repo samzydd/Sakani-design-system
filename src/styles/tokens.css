@@ -222,6 +222,17 @@
      to the cursor arriving -- ease-out's immediate-then-settling curve
      feels like the natural way something "catches up" to a hover instead. */
   --transition-hover: var(--motion-slow) var(--ease-out);
+
+  /* ---- glass icons (@sakaniui/react/glass-icons) ----
+     Monochrome charcoal glass, 1:1 with the Figma glass-icon/* variables
+     (Semantic collection, Light/Dark). Tokens rather than a .dark selector
+     in the icon CSS, so the nearest theme scope wins by inheritance. */
+  --glass-icon-accent: #c9cdd3;                  /* disc behind the glass */
+  --glass-icon-glass-top: rgba(142, 147, 155, 0.5);
+  --glass-icon-glass-bottom: rgba(80, 85, 94, 0.74);
+  --glass-icon-rim: rgba(255, 255, 255, 0.95);    /* edge highlight */
+  --glass-icon-detail: #ffffff;                   /* lines on the glass */
+  --glass-icon-detail-off: #666b74;               /* lines off the glass */
 }
 
 /* Base font — everything using `font-family: inherit` resolves through here. */
@@ -273,6 +284,14 @@ html, body {
   --color-info-bg: var(--color-info-950);
   --color-info-border: var(--color-info-800);
   --color-info-solid: var(--color-info-500);
+
+  /* ---- glass icons ---- */
+  --glass-icon-accent: #8f959e;
+  --glass-icon-glass-top: rgba(255, 255, 255, 0.3);
+  --glass-icon-glass-bottom: rgba(255, 255, 255, 0.1);
+  --glass-icon-rim: rgba(255, 255, 255, 0.7);
+  --glass-icon-detail: #ffffff;
+  --glass-icon-detail-off: #c9cdd4;
 }
 
 /* ── Global accessibility baseline ─────────────────────────────────────────── */

@@ -2,6 +2,30 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.5.0
+
+- **Glass icons: all 1,626 icons in the Sakani icon set, as monochrome frosted glass.** New entry
+  point `@sakaniui/react/glass-icons`, one component per icon (`GlassHeart`, `GlassCalendar`, ...),
+  each tree-shaken on its own. Each icon's main shape is one charcoal glass solid (top-to-bottom
+  gradient, bright rim, soft shadow), a disc tucked behind its corner glows through the glass
+  blurred, and inner lines sit on the glass in white (lines off the glass stay solid). Line-only
+  icons (arrows, a checkmark) become a single thick glass stroke. Props: `size` (default 24, any CSS
+  length), `surface`, `title`.
+  - Charcoal on purpose: brand-neutral, so any team can use them. Colours are the new
+    `--glass-icon-*` tokens on `:root` and `.dark` (accent, glass-top, glass-bottom, rim, detail,
+    detail-off), so light and dark follow the nearest theme scope.
+  - Figma first: the file has the matching *Glass Icons* component set (page *↳ Glass Icons*, 1,626
+    24x24 `type=` variants mirroring *Icons*, layers scale with the instance), coloured by the
+    `glass-icon/*` variables in the Semantic collection (Light/Dark).
+  - Which parts are glass and which are lines is decided at build time
+    (`scripts/glass-icons/decompose.mjs`), with the same rules the Figma set was built with.
+  - The set: 1,603 icons from lucide-react's shape data, 23 from the Figma file (brand logos Lucide
+    removed, plus icons Lucide merged into a sibling).
+  - Pure SVG on a 24x24 grid (masks, gradients, blur), no backdrop-filter: sharp at any size and the
+    same in every browser.
+  - `<GlassIcon icon={AnyLucideIcon} />` covers Lucide icons added later (drawn as one glass stroke).
+  - Storybook: *Foundations -> Glass Icons* (overview light/dark, sizes, searchable gallery).
+
 ## 0.4.11
 
 - **ProductCard matches Figma to the pixel.** Measured against the Figma set (320 x 536), the code
