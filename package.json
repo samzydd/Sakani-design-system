@@ -35,7 +35,8 @@
   ],
   "files": [
     "dist",
-    "AGENTS.md"
+    "AGENTS.md",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "publishConfig": {
     "access": "public"

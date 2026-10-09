@@ -17,7 +17,7 @@ Most component libraries start in code and retrofit the design. Sakani was built
 - **Glass & liquid glass** — a third theme axis, *Surface* (Solid · Glass · Liquid): frosted glassmorphism and Apple-style liquid glass with real lens refraction, switched per area with one attribute — see [Glass & liquid glass](#glass--liquid-glass)
 - **Accessible by default** — WCAG AA contrast audited, global focus-ring system, `prefers-reduced-motion` support, full ARIA semantics (combobox active-descendant, calendar date labels, live-region toasts, focus-return popovers)
 - **Typed & composable** — strict TypeScript, generic `Table<T>`, slot-based composition, controlled + uncontrolled patterns
-- **Geist typography** and **Lucide icons** throughout, matching the Figma source exactly
+- **Geist typography** and **Sicons**, Sakani's icon set based on Lucide, matching the Figma source exactly
 
 
 ## Glass icons
@@ -47,6 +47,7 @@ import { SiconHeart, SiconBell } from '@sakaniui/react/sicons';
 ```
 
 Props follow lucide-react (`size`, `color`, `strokeWidth`), so a Lucide icon is a find-and-replace.
+Sicons are based on [Lucide](https://lucide.dev) (ISC); see `THIRD_PARTY_NOTICES.md`.
 
 ## Install
 

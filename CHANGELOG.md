@@ -16,6 +16,9 @@ All notable changes to `@sakaniui/react` are documented here.
     rule the Figma set was built with. A few percent of icons can get the 3.7 radius in one and the
     4 in the other where Figma joins lines differently. Where two lines meet at a shared point (an
     arrow head on its shaft) the corner is left as is, as in Figma.
+  - Naming: the icon set is now called Sicons everywhere (Figma page *↳ Sicons*, component set
+    *Sicons*), credited as based on Lucide. The package now ships `THIRD_PARTY_NOTICES.md` with
+    Lucide's ISC licence, which covers Sicons and Glass Icons.
   - Storybook: *Foundations -> Sicons* (overview, close-up, props, searchable gallery).
   - Not changed: the built-in components still render lucide-react icons; moving them onto Sicons is
     a separate step.
