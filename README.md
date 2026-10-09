@@ -31,7 +31,8 @@ import { GlassHeart, GlassCalendar } from '@sakaniui/react/glass-icons';
 <GlassCalendar tone="sky" variant="tile" size={64} />
 ```
 
-14 tones (plus your own `colors`), a `frosted` and a `tile` style, light and dark from the theme.
+10 tones (plus your own `colors`), a `frosted` and a `tile` style, light and dark from the theme. The
+Figma file has the matching *Glass Icons* component set, with the tones as variable modes.
 Browse them all in Storybook under *Foundations -> Glass Icons* or at https://www.sakaniui.com/docs/glass-icons.
 ## Install
 

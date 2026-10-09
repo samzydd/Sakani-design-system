@@ -8,7 +8,7 @@ All notable changes to `@sakaniui/react` are documented here.
   `@sakaniui/react/glass-icons`, one component per icon (`GlassHeart`, `GlassCalendar`, ...), each
   tree-shaken on its own (importing one is about 5 kB). Each icon is a solid gradient shape behind,
   a frosted copy in front with the colour showing through, and a crisp line drawing on the glass so
-  details stay readable. Props: `size`, `tone` (14 tones incl. `brand` and `iridescent`), `colors`
+  details stay readable. Props: `size`, `tone` (10 tones incl. `brand` and `iridescent`), `colors`
   (custom gradient), `variant` (`frosted` | `tile`), `detail`, `surface`, `title`.
   - The set is the Figma "Icons" component set: 1,603 icons from lucide-react's own shape data,
     23 from the Figma file (brand logos Lucide removed, plus icons Lucide merged into a sibling).
@@ -18,6 +18,9 @@ All notable changes to `@sakaniui/react` are documented here.
   - Light/dark follow new `--glass-icon-*` tokens on `:root` and `.dark`, so the nearest theme
     scope wins like every other token.
   - `<GlassIcon icon={AnyLucideIcon} />` covers Lucide icons added later (outlines only).
+  - Figma first: the file has a matching *Glass Icons* component set (page *↳ Glass Icons*, 1,626
+    `type=` variants mirroring *Icons*). Tones are the modes of the *Glass icon* variable collection
+    (`glass-icon/from`, `/mid`, `/to`, `/detail`), so the 10 tones and their colours match 1:1.
   - Storybook: *Foundations -> Glass Icons* (tones, tile, dark, sizes, searchable gallery).
 
 ## 0.4.11

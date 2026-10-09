@@ -23,35 +23,37 @@ import styles from './GlassIcon.module.css';
 /** One element of an icon: [tag, attributes, closed (1 = safe to fill)]. */
 export type GlassIconNode = ReadonlyArray<readonly [string, Readonly<Record<string, string | number>>, (0 | 1)?]>;
 
+/** The ten tones, matching the modes of the "Glass icon" variable collection in Figma. */
 export type GlassIconTone =
-  | 'violet' | 'indigo' | 'blue' | 'sky' | 'teal' | 'green' | 'lime'
-  | 'amber' | 'orange' | 'red' | 'pink' | 'slate' | 'brand' | 'iridescent';
+  | 'violet' | 'brand' | 'iridescent' | 'blue' | 'sky'
+  | 'teal' | 'green' | 'orange' | 'red' | 'pink';
 
 export type GlassIconVariant = 'frosted' | 'tile';
 
-/** Gradient stops per tone, light to deep. */
+/**
+ * Gradient stops per tone (from, mid, to: light to deep), 1:1 with the Figma
+ * variables glass-icon/from, /mid and /to. `brand` follows the primary scale.
+ */
 export const GLASS_ICON_TONES: Record<GlassIconTone, readonly string[]> = {
-  violet: ['#b4abff', '#6c5ce7'],
-  indigo: ['#a5b4fc', '#4f46e5'],
-  blue: ['#8cc8ff', '#2f6fe0'],
-  sky: ['#9be3ff', '#0e9bd8'],
-  teal: ['#8ff0e3', '#0d9488'],
-  green: ['#9cf0b8', '#16a34a'],
-  lime: ['#d9f99d', '#65a30d'],
-  amber: ['#fde68a', '#d97706'],
-  orange: ['#ffc69a', '#f2620f'],
-  red: ['#fdabab', '#e11d48'],
-  pink: ['#fbb6da', '#e2408a'],
-  slate: ['#cbd5e1', '#475569'],
-  brand: ['var(--color-brand-300, #ffb48a)', 'var(--color-brand-default, #f2620f)'],
-  iridescent: ['#ff6ad5', '#ad8cff', '#7cc9ff', '#5ef0c8', '#ffe36e', '#ff8b5c'],
+  violet: ['#b4abff', '#9083f3', '#6c5ce7'],
+  brand: ['var(--color-primary-300, #ffa170)', 'var(--color-primary-400, #ff7538)', 'var(--color-primary-500, #ff4700)'],
+  iridescent: ['#ff6ad5', '#7cc9ff', '#ffe36e'],
+  blue: ['#8cc8ff', '#5e9bef', '#2f6fe0'],
+  sky: ['#9be3ff', '#55bfeb', '#0e9bd8'],
+  teal: ['#8ff0e3', '#4ec2b5', '#0d9488'],
+  green: ['#9cf0b8', '#59c981', '#16a34a'],
+  orange: ['#ffc69a', '#f89455', '#f2620f'],
+  red: ['#fdabab', '#ef647a', '#e11d48'],
+  pink: ['#fbb6da', '#ee7bb2', '#e2408a'],
 };
 
-/** Deep colour used for the line drawing on light surfaces, where the last stop would be too light. */
+/**
+ * Line-drawing colour (Figma glass-icon/detail) where it differs from the last
+ * stop: the deepest stop would be too light, or isn't the family's ink colour.
+ */
 const DETAIL_FOR: Partial<Record<GlassIconTone, string>> = {
+  brand: 'var(--color-primary-600, #e63d00)',
   iridescent: '#6b4fd8',
-  lime: '#4d7c0f',
-  amber: '#b45309',
 };
 
 export interface GlassIconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref' | 'children' | 'fill' | 'stroke'> {
