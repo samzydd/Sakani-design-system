@@ -222,6 +222,18 @@
      to the cursor arriving -- ease-out's immediate-then-settling curve
      feels like the natural way something "catches up" to a hover instead. */
   --transition-hover: var(--motion-slow) var(--ease-out);
+
+  /* ---- glass icons (@sakaniui/react/glass-icons) ----
+     Theme-dependent values for the glass icon layers. Tokens rather than a
+     .dark selector in the icon CSS, so the nearest theme scope wins by
+     inheritance, same as every other semantic token. */
+  --glass-icon-frost: rgba(255, 255, 255, 0.66);
+  --glass-icon-haze: 0.85;
+  --glass-icon-shine: 0.6;
+  --glass-icon-rim: rgba(255, 255, 255, 0.95);
+  --glass-icon-whiten: 0%;          /* how far the line drawing moves from the tone toward white */
+  --glass-icon-detail-opacity: 0.9;
+  --glass-icon-plate: rgba(255, 255, 255, 0.55);
 }
 
 /* Base font — everything using `font-family: inherit` resolves through here. */
@@ -273,6 +285,15 @@ html, body {
   --color-info-bg: var(--color-info-950);
   --color-info-border: var(--color-info-800);
   --color-info-solid: var(--color-info-500);
+
+  /* ---- glass icons ---- */
+  --glass-icon-frost: rgba(255, 255, 255, 0.26);
+  --glass-icon-haze: 1;
+  --glass-icon-shine: 0.35;
+  --glass-icon-rim: rgba(255, 255, 255, 0.75);
+  --glass-icon-whiten: 92%;
+  --glass-icon-detail-opacity: 1;
+  --glass-icon-plate: rgba(255, 255, 255, 0.12);
 }
 
 /* ── Global accessibility baseline ─────────────────────────────────────────── */

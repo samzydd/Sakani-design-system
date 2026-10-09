@@ -1,0 +1,44 @@
+/* Glass icons -- the SVG layers' theme-dependent paint.
+ *
+ * The values come from the --glass-icon-* tokens (tokens.css), declared on
+ * :root and .dark, so an icon follows the nearest theme scope by inheritance
+ * like every other Sakani component. The `surface` prop pins them locally.
+ * Per-icon gradient colours arrive inline as --gi-from / --gi-to.
+ */
+.root {
+  display: inline-block;
+  flex-shrink: 0;
+  overflow: visible;
+  vertical-align: middle;
+}
+
+.onLight {
+  --glass-icon-frost: rgba(255, 255, 255, 0.66);
+  --glass-icon-haze: 0.85;
+  --glass-icon-shine: 0.6;
+  --glass-icon-rim: rgba(255, 255, 255, 0.95);
+  --glass-icon-whiten: 0%;
+  --glass-icon-detail-opacity: 0.9;
+  --glass-icon-plate: rgba(255, 255, 255, 0.55);
+}
+
+.onDark {
+  --glass-icon-frost: rgba(255, 255, 255, 0.26);
+  --glass-icon-haze: 1;
+  --glass-icon-shine: 0.35;
+  --glass-icon-rim: rgba(255, 255, 255, 0.75);
+  --glass-icon-whiten: 92%;
+  --glass-icon-detail-opacity: 1;
+  --glass-icon-plate: rgba(255, 255, 255, 0.12);
+}
+
+.frost { fill: var(--glass-icon-frost, rgba(255, 255, 255, 0.66)); }
+.haze { opacity: var(--glass-icon-haze, 0.85); }
+.shineStop { stop-color: #fff; stop-opacity: var(--glass-icon-shine, 0.6); }
+.shineEnd { stop-color: #fff; stop-opacity: 0; }
+.rimStart { stop-color: var(--glass-icon-rim, rgba(255, 255, 255, 0.95)); }
+.detail {
+  stroke: color-mix(in srgb, #fff var(--glass-icon-whiten, 0%), var(--gi-to));
+  opacity: var(--glass-icon-detail-opacity, 0.9);
+}
+.plate { fill: var(--glass-icon-plate, rgba(255, 255, 255, 0.55)); }

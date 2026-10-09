@@ -2,6 +2,24 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.5.0
+
+- **Glass icons: all 1,626 icons in the Sakani icon set, in a frosted-glass style.** New entry point
+  `@sakaniui/react/glass-icons`, one component per icon (`GlassHeart`, `GlassCalendar`, ...), each
+  tree-shaken on its own (importing one is about 5 kB). Each icon is a solid gradient shape behind,
+  a frosted copy in front with the colour showing through, and a crisp line drawing on the glass so
+  details stay readable. Props: `size`, `tone` (14 tones incl. `brand` and `iridescent`), `colors`
+  (custom gradient), `variant` (`frosted` | `tile`), `detail`, `surface`, `title`.
+  - The set is the Figma "Icons" component set: 1,603 icons from lucide-react's own shape data,
+    23 from the Figma file (brand logos Lucide removed, plus icons Lucide merged into a sibling).
+  - Only closed shapes are filled, decided per shape at build time
+    (`scripts/glass-icons/generate.mjs`); open strokes like a checkmark stay lines.
+  - Pure SVG (gradients, a mask, a blur), no backdrop-filter, so it renders the same everywhere.
+  - Light/dark follow new `--glass-icon-*` tokens on `:root` and `.dark`, so the nearest theme
+    scope wins like every other token.
+  - `<GlassIcon icon={AnyLucideIcon} />` covers Lucide icons added later (outlines only).
+  - Storybook: *Foundations -> Glass Icons* (tones, tile, dark, sizes, searchable gallery).
+
 ## 0.4.11
 
 - **ProductCard matches Figma to the pixel.** Measured against the Figma set (320 x 536), the code

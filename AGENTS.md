@@ -105,6 +105,18 @@ CSS of a component into your own file.
 - **`LiquidBackdrop` supplies what is behind the lens.** A lens needs a backdrop to refract; wrap
   the photo/gradient in `LiquidBackdrop`.
 
+## 4b. Glass icons
+
+- Import from `@sakaniui/react/glass-icons`: `GlassHeart`, `GlassCalendar` ... one per icon in the set
+  (1,626; names follow Lucide, kebab-case to `Glass` + PascalCase). Prefer them over `GlassIcon`, which
+  wraps any Lucide component but can only draw outlines.
+- Use them for feature lists, empty states, onboarding, app grids and marketing: from about 24px up.
+  In dense UI (table rows, buttons, 16px) use the plain Lucide icon instead; glass needs room to read.
+- Pick a `tone` per meaning (category, status) rather than mixing many at random. `tone="brand"` follows
+  the brand tokens. They re-theme inside `.dark` on their own; `surface` pins a theme when the icon sits on
+  a surface that doesn't match the page.
+- Give `title` when the icon carries meaning on its own; without it the icon is decorative (aria-hidden).
+
 ## 5. Component guide — what it's for, why it behaves that way, when not to use it
 
 Format: **Use for** · **Why it is built this way** · **Not for / instead**.
