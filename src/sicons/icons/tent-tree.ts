@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tent-tree"
 import { createSicon } from '../createSicon';
 
-export const SiconTentTree = /*#__PURE__*/ createSicon("tent-tree", ["M2 4A2 2 0 1 0 6 4A2 2 0 1 0 2 4Z","M14 5L17 2L20 5","M14 10L15.5 8.5A2.121 2.121 0 0 1 18.5 8.5L20 10","M17 14L17 2","M17 14L9.051 14A3.7 3.7 0 0 0 5.913 15.739L4.5 18A2.614 2.614 0 0 0 6.717 22L17.283 22A2.614 2.614 0 0 0 19.5 18L17 14Z","M8 14L8 22","M9 14L14 22"]);
+export const SiconTentTree = /*#__PURE__*/ createSicon("tent-tree", ["M2 4A2 2 0 1 0 6 4A2 2 0 1 0 2 4Z","M14 5L17 2L20 5","M14 10L16.293 7.707A1 1 0 0 1 17.707 7.707L20 10","M17 14L17 2","M17 14L7.554 14A1 1 0 0 0 6.706 14.47L2.956 20.47A1 1 0 0 0 3.804 22L20.196 22A1 1 0 0 0 21.044 20.47L17 14Z","M8 14L8 22","M9 14L14 22"]);
 export default SiconTentTree;

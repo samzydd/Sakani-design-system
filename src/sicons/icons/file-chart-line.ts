@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-chart-line"
 import { createSicon } from '../createSicon';
 
-export const SiconFileChartLine = /*#__PURE__*/ createSicon("file-chart-line", ["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L6 22Z","M14 2L14 7A1 1 0 0 0 15 8L20 8","M16 13L13.5 15.5A1.414 1.414 0 0 1 11.5 15.5L11.5 15.5A1.414 1.414 0 0 0 9.5 15.5L8 17"]);
+export const SiconFileChartLine = /*#__PURE__*/ createSicon("file-chart-line", ["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L6 22Z","M14 2L14 7A1 1 0 0 0 15 8L20 8","M16 13L13.207 15.793A1 1 0 0 1 11.793 15.793L11.207 15.207A1 1 0 0 0 9.793 15.207L8 17"]);
 export default SiconFileChartLine;

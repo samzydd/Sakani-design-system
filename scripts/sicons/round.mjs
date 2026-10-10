@@ -4,15 +4,18 @@
  * Only corners where two straight segments meet are rounded (curves already
  * are, and open line ends stay round-capped). A corner's radius is limited so
  * its tangent points sit no further than half of the shorter adjoining edge,
- * which keeps short details from collapsing. The Figma Icons set follows the
- * same rule: radius 4, or 3.7 for the whole icon when any of its corners needs
- * more than its edge allows.
+ * which keeps short details from collapsing. The Figma Sicons set follows the
+ * same rule: radius 4, or 1 for the whole icon when its tightest corner would
+ * use more than 30% of an edge (chevrons, checks, small arrows), where 4 would
+ * blunt the point.
  *
  * Input and output are absolute path data in the form scripts/glass-icons
  * emits (M, L, C, Q, A, Z with no relative commands).
  */
 export const RADIUS = 4;
-export const RADIUS_TIGHT = 3.7;
+export const RADIUS_TIGHT = 1;
+/** Share of the shorter edge above which a corner counts as tight. */
+export const TIGHT_RATIO = 0.3;
 
 const f = (n) => String(+n.toFixed(3));
 const ARITY = { M: 2, L: 2, C: 6, Q: 4, A: 7, Z: 0 };
@@ -89,6 +92,29 @@ function corners(pts, segs, closed, others = []) {
 }
 
 /** True when any corner of the icon can't take the full radius within half its shorter edge. */
+/**
+ * The icon's tightest corner: the tangent length a radius of r needs, as a share of the shorter
+ * edge meeting at that corner (0.5 means the rounding reaches the middle of the edge).
+ */
+export function worstRatio(paths, r = RADIUS) {
+  const sets = paths.map((d) => vertexSet(d));
+  let worst = 0;
+  for (let i = 0; i < paths.length; i++) {
+    const sps = parseSubpaths(paths[i]);
+    if (!sps) continue;
+    const others = sets.flatMap((v, j) => (j === i ? [] : v));
+    for (const sp of sps) {
+      const { pts, segs, closed } = toNodes(sp);
+      if (!segs.length) continue;
+      const fixed = closed && dist(pts[0], pts[pts.length - 1]) < 0.005 ? pts.slice(0, -1) : pts;
+      for (const c of corners(fixed, segs, closed, others)) {
+        worst = Math.max(worst, r / Math.tan(c.theta / 2) / Math.min(c.lin, c.lout));
+      }
+    }
+  }
+  return worst;
+}
+
 export function tooTight(paths, r = RADIUS) {
   const sets = paths.map((d) => vertexSet(d));
   for (let i = 0; i < paths.length; i++) {
@@ -177,7 +203,7 @@ export function roundPath(d, r = RADIUS, others = []) {
 
 /** Rounds a whole icon, picking the radius by the tight-corner rule. */
 export function roundIcon(paths) {
-  const r = tooTight(paths) ? RADIUS_TIGHT : RADIUS;
+  const r = worstRatio(paths) > TIGHT_RATIO ? RADIUS_TIGHT : RADIUS;
   const sets = paths.map((d) => vertexSet(d));
   return {
     paths: paths.map((d, i) => roundPath(d, r, sets.flatMap((v, j) => (j === i ? [] : v)))),

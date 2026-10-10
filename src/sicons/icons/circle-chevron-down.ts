@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-chevron-down"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleChevronDown = /*#__PURE__*/ createSicon("circle-chevron-down", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M16 10L14 12A2.828 2.828 0 0 1 10 12L8 10"]);
+export const SiconCircleChevronDown = /*#__PURE__*/ createSicon("circle-chevron-down", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M16 10L12.707 13.293A1 1 0 0 1 11.293 13.293L8 10"]);
 export default SiconCircleChevronDown;

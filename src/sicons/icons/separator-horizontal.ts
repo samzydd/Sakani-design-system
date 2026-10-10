@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "separator-horizontal"
 import { createSicon } from '../createSicon';
 
-export const SiconSeparatorHorizontal = /*#__PURE__*/ createSicon("separator-horizontal", ["M16 16L14 18A2.828 2.828 0 0 1 10 18L8 16","M3 12L21 12","M8 8L10 6A2.828 2.828 0 0 1 14 6L16 8"]);
+export const SiconSeparatorHorizontal = /*#__PURE__*/ createSicon("separator-horizontal", ["M16 16L12.707 19.293A1 1 0 0 1 11.293 19.293L8 16","M3 12L21 12","M8 8L11.293 4.707A1 1 0 0 1 12.707 4.707L16 8"]);
 export default SiconSeparatorHorizontal;

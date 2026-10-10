@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "list-collapse"
 import { createSicon } from '../createSicon';
 
-export const SiconListCollapse = /*#__PURE__*/ createSicon("list-collapse", ["M10 5L21 5","M10 12L21 12","M10 19L21 19","M3 10L4.5 8.5A2.121 2.121 0 0 0 4.5 5.5L3 4","M3 20L4.5 18.5A2.121 2.121 0 0 0 4.5 15.5L3 14"]);
+export const SiconListCollapse = /*#__PURE__*/ createSicon("list-collapse", ["M10 5L21 5","M10 12L21 12","M10 19L21 19","M3 10L5.293 7.707A1 1 0 0 0 5.293 6.293L3 4","M3 20L5.293 17.707A1 1 0 0 0 5.293 16.293L3 14"]);
 export default SiconListCollapse;

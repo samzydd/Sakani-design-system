@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "highlighter"
 import { createSicon } from '../createSicon';
 
-export const SiconHighlighter = /*#__PURE__*/ createSicon("highlighter", ["M9 11L4.061 15.939A3.621 3.621 0 0 0 3 18.5L3 18.5A1.5 1.5 0 0 0 4.5 20L10.467 20A3.7 3.7 0 0 0 13.084 18.916L15 17","M22 12L17.4 16.6A2 2 0 0 1 14.6 16.6L9.4 11.4A2 2 0 0 1 9.4 8.6L14 4"]);
+export const SiconHighlighter = /*#__PURE__*/ createSicon("highlighter", ["M9 11L3.293 16.707A1 1 0 0 0 3 17.414L3 19A1 1 0 0 0 4 20L11.586 20A1 1 0 0 0 12.293 19.707L15 17","M22 12L17.4 16.6A2 2 0 0 1 14.6 16.6L9.4 11.4A2 2 0 0 1 9.4 8.6L14 4"]);
 export default SiconHighlighter;

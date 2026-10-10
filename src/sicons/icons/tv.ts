@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "tv"
 import { createSicon } from '../createSicon';
 
-export const SiconTv = /*#__PURE__*/ createSicon("tv", ["M17 2L14.5 4.5A3.536 3.536 0 0 1 9.5 4.5L7 2","M4 7L20 7A2 2 0 0 1 22 9L22 20A2 2 0 0 1 20 22L4 22A2 2 0 0 1 2 20L2 9A2 2 0 0 1 4 7Z"]);
+export const SiconTv = /*#__PURE__*/ createSicon("tv", ["M17 2L12.707 6.293A1 1 0 0 1 11.293 6.293L7 2","M4 7L20 7A2 2 0 0 1 22 9L22 20A2 2 0 0 1 20 22L4 22A2 2 0 0 1 2 20L2 9A2 2 0 0 1 4 7Z"]);
 export default SiconTv;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "flip-vertical-2"
 import { createSicon } from '../createSicon';
 
-export const SiconFlipVertical2 = /*#__PURE__*/ createSicon("flip-vertical-2", ["M14.5 5.5L14.5 5.5A3.536 3.536 0 0 1 9.5 5.5L9.5 5.5A1.464 1.464 0 0 1 10.536 3L13.464 3A1.464 1.464 0 0 1 14.5 5.5Z","M14.5 18.5L14.5 18.5A3.536 3.536 0 0 0 9.5 18.5L9.5 18.5A1.464 1.464 0 0 0 10.536 21L13.464 21A1.464 1.464 0 0 0 14.5 18.5Z","M4 12L2 12","M10 12L8 12","M16 12L14 12","M22 12L20 12"]);
+export const SiconFlipVertical2 = /*#__PURE__*/ createSicon("flip-vertical-2", ["M15.293 4.707L12.707 7.293A1 1 0 0 1 11.293 7.293L8.707 4.707A1 1 0 0 1 9.414 3L14.586 3A1 1 0 0 1 15.293 4.707Z","M15.293 19.293L12.707 16.707A1 1 0 0 0 11.293 16.707L8.707 19.293A1 1 0 0 0 9.414 21L14.586 21A1 1 0 0 0 15.293 19.293Z","M4 12L2 12","M10 12L8 12","M16 12L14 12","M22 12L20 12"]);
 export default SiconFlipVertical2;

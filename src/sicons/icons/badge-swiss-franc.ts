@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "badge-swiss-franc"
 import { createSicon } from '../createSicon';
 
-export const SiconBadgeSwissFranc = /*#__PURE__*/ createSicon("badge-swiss-franc", ["M3.85 8.62A4 4 0 0 1 8.63 3.85A4 4 0 0 1 15.37 3.85A4 4 0 0 1 20.15 8.63A4 4 0 0 1 20.15 15.37A4 4 0 0 1 15.38 20.15A4 4 0 0 1 8.63 20.15A4 4 0 0 1 3.85 15.38A4 4 0 0 1 3.85 8.62Z","M11 17L11 10A2 2 0 0 1 13 8L15 8","M11 12L14 12","M9 16L13 16"]);
+export const SiconBadgeSwissFranc = /*#__PURE__*/ createSicon("badge-swiss-franc", ["M3.85 8.62A4 4 0 0 1 8.63 3.85A4 4 0 0 1 15.37 3.85A4 4 0 0 1 20.15 8.63A4 4 0 0 1 20.15 15.37A4 4 0 0 1 15.38 20.15A4 4 0 0 1 8.63 20.15A4 4 0 0 1 3.85 15.38A4 4 0 0 1 3.85 8.62Z","M11 17L11 9A1 1 0 0 1 12 8L15 8","M11 12L14 12","M9 16L13 16"]);
 export default SiconBadgeSwissFranc;

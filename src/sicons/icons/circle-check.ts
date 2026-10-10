@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-check"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleCheck = /*#__PURE__*/ createSicon("circle-check", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M16 9L11.75 13.25A1.768 1.768 0 0 1 9.25 13.25L8 12"]);
+export const SiconCircleCheck = /*#__PURE__*/ createSicon("circle-check", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M16 9L11.207 13.793A1 1 0 0 1 9.793 13.793L8 12"]);
 export default SiconCircleCheck;

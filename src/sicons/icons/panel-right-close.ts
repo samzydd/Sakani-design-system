@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "panel-right-close"
 import { createSicon } from '../createSicon';
 
-export const SiconPanelRightClose = /*#__PURE__*/ createSicon("panel-right-close", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M15 3L15 21","M8 9L9.5 10.5A2.121 2.121 0 0 1 9.5 13.5L8 15"]);
+export const SiconPanelRightClose = /*#__PURE__*/ createSicon("panel-right-close", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M15 3L15 21","M8 9L10.293 11.293A1 1 0 0 1 10.293 12.707L8 15"]);
 export default SiconPanelRightClose;

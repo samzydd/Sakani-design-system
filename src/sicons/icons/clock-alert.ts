@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "clock-alert"
 import { createSicon } from '../createSicon';
 
-export const SiconClockAlert = /*#__PURE__*/ createSicon("clock-alert", ["M12 6L12 9.764A3.618 3.618 0 0 0 14 13L16 14","M20 12L20 17","M20 21L20.01 21","M21.25 8.2A10 10 0 1 0 16 21.16"]);
+export const SiconClockAlert = /*#__PURE__*/ createSicon("clock-alert", ["M12 6L12 11.382A1 1 0 0 0 12.553 12.276L16 14","M20 12L20 17","M20 21L20.01 21","M21.25 8.2A10 10 0 1 0 16 21.16"]);
 export default SiconClockAlert;

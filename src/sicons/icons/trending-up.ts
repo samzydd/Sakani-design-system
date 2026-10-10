@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "trending-up"
 import { createSicon } from '../createSicon';
 
-export const SiconTrendingUp = /*#__PURE__*/ createSicon("trending-up", ["M16 7L22 7L22 13","M22 7L16 13A3.536 3.536 0 0 1 11 13L11 13A3.536 3.536 0 0 0 6 13L2 17"]);
+export const SiconTrendingUp = /*#__PURE__*/ createSicon("trending-up", ["M16 7L22 7L22 13","M22 7L14.207 14.793A1 1 0 0 1 12.793 14.793L9.207 11.207A1 1 0 0 0 7.793 11.207L2 17"]);
 export default SiconTrendingUp;

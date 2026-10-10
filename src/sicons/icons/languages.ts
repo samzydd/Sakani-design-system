@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "languages"
 import { createSicon } from '../createSicon';
 
-export const SiconLanguages = /*#__PURE__*/ createSicon("languages", ["M5 8L11 14","M4 14L9.741 8.259A3.7 3.7 0 0 0 10.203 7.695L12 5","M2 5L14 5","M7 2L8 2","M22 22L19.5 17A2.795 2.795 0 0 0 14.5 17L12 22","M14 18L20 18"]);
+export const SiconLanguages = /*#__PURE__*/ createSicon("languages", ["M5 8L11 14","M4 14L9.93 8.07A1 1 0 0 0 10.055 7.918L12 5","M2 5L14 5","M7 2L8 2","M22 22L17.894 13.789A1 1 0 0 0 16.106 13.789L12 22","M14 18L20 18"]);
 export default SiconLanguages;

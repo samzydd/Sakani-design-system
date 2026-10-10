@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "code-xml"
 import { createSicon } from '../createSicon';
 
-export const SiconCodeXml = /*#__PURE__*/ createSicon("code-xml", ["M18 16L20 14A2.828 2.828 0 0 0 20 10L18 8","M6 8L4 10A2.828 2.828 0 0 0 4 14L6 16","M14.5 4L9.5 20"]);
+export const SiconCodeXml = /*#__PURE__*/ createSicon("code-xml", ["M18 16L21.293 12.707A1 1 0 0 0 21.293 11.293L18 8","M6 8L2.707 11.293A1 1 0 0 0 2.707 12.707L6 16","M14.5 4L9.5 20"]);
 export default SiconCodeXml;

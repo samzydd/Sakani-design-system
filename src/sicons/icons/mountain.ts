@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "mountain"
 import { createSicon } from '../createSicon';
 
-export const SiconMountain = /*#__PURE__*/ createSicon("mountain", ["M10 7L10.419 7.838A2.548 2.548 0 0 0 14.5 8.5L14.5 8.5A2.185 2.185 0 0 1 18.118 9.354L20.377 16.13A3.7 3.7 0 0 1 16.867 21L7.133 21A3.7 3.7 0 0 1 3.623 16.13L6.586 7.243A1.852 1.852 0 0 1 10 7Z"]);
+export const SiconMountain = /*#__PURE__*/ createSicon("mountain", ["M9.08 5.159L11.38 9.759A1 1 0 0 0 12.981 10.019L15.856 7.144A1 1 0 0 1 17.512 7.535L21.561 19.684A1 1 0 0 1 20.613 21L3.387 21A1 1 0 0 1 2.439 19.684L7.237 5.29A1 1 0 0 1 9.08 5.159Z"]);
 export default SiconMountain;

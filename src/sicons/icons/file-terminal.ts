@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "file-terminal"
 import { createSicon } from '../createSicon';
 
-export const SiconFileTerminal = /*#__PURE__*/ createSicon("file-terminal", ["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L6 22Z","M14 2L14 7A1 1 0 0 0 15 8L20 8","M8 16L9 15A1.414 1.414 0 0 0 9 13L8 12","M12 18L16 18"]);
+export const SiconFileTerminal = /*#__PURE__*/ createSicon("file-terminal", ["M6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2L14 2A2.4 2.4 0 0 1 15.704 2.706L19.292 6.294A2.4 2.4 0 0 1 20 8L20 20A2 2 0 0 1 18 22L6 22Z","M14 2L14 7A1 1 0 0 0 15 8L20 8","M8 16L9.293 14.707A1 1 0 0 0 9.293 13.293L8 12","M12 18L16 18"]);
 export default SiconFileTerminal;

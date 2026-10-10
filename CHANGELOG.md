@@ -2,6 +2,14 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.6.1
+
+- **Sicons: crisp chevrons and checks.** Icons with short, sharp corners (chevrons, checks, small
+  arrows, list ticks) now use a 1px corner radius instead of 3.7 or 4; a 4px radius blunted their
+  points into curves. The rule: if a 4px radius would use more than 30% of the shorter edge at the
+  icon's tightest corner, the whole icon gets 1px (274 icons); every other icon keeps 4px. The
+  Figma Sicons set uses the same rule (307 icons there, where Figma joins some lines differently).
+
 ## 0.6.0
 
 - **Sicons: Sakani's own icon set, `@sakaniui/react/sicons`.** The same 1,626 icons as the Figma

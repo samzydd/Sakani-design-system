@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-dashed"
 import { createSicon } from '../createSicon';
 
-export const SiconBookDashed = /*#__PURE__*/ createSicon("book-dashed", ["M12 17L13.5 17","M12 22L13.5 22","M12 2L13.5 2","M17.5 22L19 22A1 1 0 0 0 20 21","M17.5 2L19 2A1 1 0 0 1 20 3L20 4.5","M20 14L20 15.75A1.25 1.25 0 0 1 18.75 17L17.5 17","M20 8.5L20 10","M4 10L4 8.5","M4 19.5L4 14","M4 4.5A2.5 2.5 0 0 1 6.5 2L8 2","M8 22L6.5 22A1 1 0 0 1 6.5 17L8 17"]);
+export const SiconBookDashed = /*#__PURE__*/ createSicon("book-dashed", ["M12 17L13.5 17","M12 22L13.5 22","M12 2L13.5 2","M17.5 22L19 22A1 1 0 0 0 20 21","M17.5 2L19 2A1 1 0 0 1 20 3L20 4.5","M20 14L20 16A1 1 0 0 1 19 17L17.5 17","M20 8.5L20 10","M4 10L4 8.5","M4 19.5L4 14","M4 4.5A2.5 2.5 0 0 1 6.5 2L8 2","M8 22L6.5 22A1 1 0 0 1 6.5 17L8 17"]);
 export default SiconBookDashed;

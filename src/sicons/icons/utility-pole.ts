@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "utility-pole"
 import { createSicon } from '../createSicon';
 
-export const SiconUtilityPole = /*#__PURE__*/ createSicon("utility-pole", ["M12 2L12 22","M2 5L22 5","M3 3L3 5","M7 3L7 5","M17 3L17 5","M21 3L21 5","M19 5L14.828 9.172A4 4 0 0 1 9.172 9.172L5 5"]);
+export const SiconUtilityPole = /*#__PURE__*/ createSicon("utility-pole", ["M12 2L12 22","M2 5L22 5","M3 3L3 5","M7 3L7 5","M17 3L17 5","M21 3L21 5","M19 5L12.707 11.293A1 1 0 0 1 11.293 11.293L5 5"]);
 export default SiconUtilityPole;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "bluetooth-off"
 import { createSicon } from '../createSicon';
 
-export const SiconBluetoothOff = /*#__PURE__*/ createSicon("bluetooth-off", ["M17 17L14.5 19.5A1.464 1.464 0 0 1 12 18.464L12 15.536A1.464 1.464 0 0 0 9.5 14.5L7 17","M2 2L22 22","M14.5 9.5L15.75 8.25A1.768 1.768 0 0 0 15.75 5.75L13.591 3.591A0.932 0.932 0 0 0 12 4.25L12 6.5"]);
+export const SiconBluetoothOff = /*#__PURE__*/ createSicon("bluetooth-off", ["M17 17L13.707 20.293A1 1 0 0 1 12 19.586L12 14.414A1 1 0 0 0 10.293 13.707L7 17","M2 2L22 22","M14.5 9.5L16.293 7.707A1 1 0 0 0 16.293 6.293L13.591 3.591A0.932 0.932 0 0 0 12 4.25L12 6.5"]);
 export default SiconBluetoothOff;

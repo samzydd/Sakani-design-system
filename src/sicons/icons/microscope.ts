@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "microscope"
 import { createSicon } from '../createSicon';
 
-export const SiconMicroscope = /*#__PURE__*/ createSicon("microscope", ["M6 18L14 18","M3 22L21 22","M14 22A7 7 0 1 0 14 8L13 8","M9 14L11 14","M9 12A2 2 0 0 1 7 10L7 8A2 2 0 0 1 9 6L11 6A2 2 0 0 1 13 8L13 10A2 2 0 0 1 11 12L9 12Z","M12 6L12 3A1 1 0 0 0 11 2L9 2A1 1 0 0 0 8 3L8 6"]);
+export const SiconMicroscope = /*#__PURE__*/ createSicon("microscope", ["M6 18L14 18","M3 22L21 22","M14 22A7 7 0 1 0 14 8L13 8","M9 14L11 14","M9 12A2 2 0 0 1 7 10L7 7A1 1 0 0 1 8 6L12 6A1 1 0 0 1 13 7L13 10A2 2 0 0 1 11 12L9 12Z","M12 6L12 3A1 1 0 0 0 11 2L9 2A1 1 0 0 0 8 3L8 6"]);
 export default SiconMicroscope;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rotate-ccw-clock" (alias of "history")
 import { createSicon } from '../createSicon';
 
-export const SiconHistory = /*#__PURE__*/ createSicon("history", ["M3 12A9 9 0 1 0 12 3A9.75 9.75 0 0 0 5.26 5.74L3 8","M3 3L3 8L8 8","M12 7L12 9.764A3.618 3.618 0 0 0 14 13L16 14"]);
+export const SiconHistory = /*#__PURE__*/ createSicon("history", ["M3 12A9 9 0 1 0 12 3A9.75 9.75 0 0 0 5.26 5.74L3 8","M3 3L3 8L8 8","M12 7L12 11.382A1 1 0 0 0 12.553 12.276L16 14"]);
 export default SiconHistory;

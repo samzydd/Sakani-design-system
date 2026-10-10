@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "reply-all"
 import { createSicon } from '../createSicon';
 
-export const SiconReplyAll = /*#__PURE__*/ createSicon("reply-all", ["M12 17L7 12L12 7","M22 18L22 16A4 4 0 0 0 18 12L7 12","M7 17L4.5 14.5A3.536 3.536 0 0 1 4.5 9.5L7 7"]);
+export const SiconReplyAll = /*#__PURE__*/ createSicon("reply-all", ["M12 17L7 12L12 7","M22 18L22 16A4 4 0 0 0 18 12L7 12","M7 17L2.707 12.707A1 1 0 0 1 2.707 11.293L7 7"]);
 export default SiconReplyAll;

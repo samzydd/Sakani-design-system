@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "vibrate"
 import { createSicon } from '../createSicon';
 
-export const SiconVibrate = /*#__PURE__*/ createSicon("vibrate", ["M2 8L3 9A1.414 1.414 0 0 1 3 11L3 11A1.414 1.414 0 0 0 3 13L3 13A1.414 1.414 0 0 1 3 15L2 16","M22 8L21 9A1.414 1.414 0 0 0 21 11L21 11A1.414 1.414 0 0 1 21 13L21 13A1.414 1.414 0 0 0 21 15L22 16","M9 5L15 5A1 1 0 0 1 16 6L16 18A1 1 0 0 1 15 19L9 19A1 1 0 0 1 8 18L8 6A1 1 0 0 1 9 5Z"]);
+export const SiconVibrate = /*#__PURE__*/ createSicon("vibrate", ["M2 8L3.293 9.293A1 1 0 0 1 3.293 10.707L2.707 11.293A1 1 0 0 0 2.707 12.707L3.293 13.293A1 1 0 0 1 3.293 14.707L2 16","M22 8L20.707 9.293A1 1 0 0 0 20.707 10.707L21.293 11.293A1 1 0 0 1 21.293 12.707L20.707 13.293A1 1 0 0 0 20.707 14.707L22 16","M9 5L15 5A1 1 0 0 1 16 6L16 18A1 1 0 0 1 15 19L9 19A1 1 0 0 1 8 18L8 6A1 1 0 0 1 9 5Z"]);
 export default SiconVibrate;

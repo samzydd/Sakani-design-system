@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "vote"
 import { createSicon } from '../createSicon';
 
-export const SiconVote = /*#__PURE__*/ createSicon("vote", ["M9 12L10 13A1.414 1.414 0 0 0 12 13L15 10","M5 7C5 5.9 5.9 5 7 5L17 5A2 2 0 0 1 19 7L19 15.3A3.7 3.7 0 0 1 15.3 19L8.7 19A3.7 3.7 0 0 1 5 15.3L5 7Z","M22 19L2 19"]);
+export const SiconVote = /*#__PURE__*/ createSicon("vote", ["M9 12L10.293 13.293A1 1 0 0 0 11.707 13.293L15 10","M5 7C5 5.9 5.9 5 7 5L17 5A2 2 0 0 1 19 7L19 18A1 1 0 0 1 18 19L6 19A1 1 0 0 1 5 18L5 7Z","M22 19L2 19"]);
 export default SiconVote;

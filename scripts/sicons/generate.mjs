@@ -56,5 +56,5 @@ fs.writeFileSync(
   path.join(outDir, 'names.ts'),
   `${header('Figma "Icons" component set')}export const siconNames = ${JSON.stringify(exports.map((e) => e.name))} as const;\n\nexport type SiconName = (typeof siconNames)[number];\n`,
 );
-console.log(`sicons: ${exports.length} generated (${stats.lucide} lucide, ${stats.figma} figma); ${stats.tight} use the 3.7 radius`);
+console.log(`sicons: ${exports.length} generated (${stats.lucide} lucide, ${stats.figma} figma); ${stats.tight} use the 1px radius`);
 if (stats.missing.length) { console.error('MISSING:', stats.missing.join(', ')); process.exit(1); }

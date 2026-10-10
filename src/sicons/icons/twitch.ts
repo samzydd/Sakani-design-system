@@ -2,5 +2,5 @@
 // Shape data: Sakani Figma icon set, icon "twitch"
 import { createSicon } from '../createSicon';
 
-export const SiconTwitch = /*#__PURE__*/ createSicon("twitch", ["M11 11L11 7","M16 11L16 7","M17.3 2L6.7 2A3.7 3.7 0 0 0 3 5.7L3 15.5A2.5 2.5 0 0 0 5.5 18L6 18A2 2 0 0 1 8 20L8 20A0.828 0.828 0 0 0 9.414 20.586L10.916 19.084A3.7 3.7 0 0 1 13.533 18L15.467 18A3.7 3.7 0 0 0 18.084 16.916L19.916 15.084A3.7 3.7 0 0 0 21 12.467L21 5.7A3.7 3.7 0 0 0 17.3 2Z"]);
+export const SiconTwitch = /*#__PURE__*/ createSicon("twitch", ["M11 11L11 7","M16 11L16 7","M20 2L4 2A1 1 0 0 0 3 3L3 17A1 1 0 0 0 4 18L7 18A1 1 0 0 1 8 19L8 20A0.828 0.828 0 0 0 9.414 20.586L11.707 18.293A1 1 0 0 1 12.414 18L16.586 18A1 1 0 0 0 17.293 17.707L20.707 14.293A1 1 0 0 0 21 13.586L21 3A1 1 0 0 0 20 2Z"]);
 export default SiconTwitch;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "music-4"
 import { createSicon } from '../createSicon';
 
-export const SiconMusic4 = /*#__PURE__*/ createSicon("music-4", ["M9 18L9 8.389A4 4 0 0 1 12.342 4.443L16.342 3.776A4 4 0 0 1 21 7.722L21 16","M9 9L21 7","M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18Z","M15 16A3 3 0 1 0 21 16A3 3 0 1 0 15 16Z"]);
+export const SiconMusic4 = /*#__PURE__*/ createSicon("music-4", ["M9 18L9 5.847A1 1 0 0 1 9.836 4.861L19.836 3.194A1 1 0 0 1 21 4.18L21 16","M9 9L21 7","M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18Z","M15 16A3 3 0 1 0 21 16A3 3 0 1 0 15 16Z"]);
 export default SiconMusic4;

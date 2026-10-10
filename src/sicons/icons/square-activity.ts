@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-activity"
 import { createSicon } from '../createSicon';
 
-export const SiconSquareActivity = /*#__PURE__*/ createSicon("square-activity", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M17 12L16 12A1.477 1.477 0 0 0 14.629 12.928L14 14.5A0.8 0.8 0 0 1 12.472 14.36L11.528 9.64A0.8 0.8 0 0 0 10 9.5L9.371 11.072A1.477 1.477 0 0 1 8 12L7 12"]);
+export const SiconSquareActivity = /*#__PURE__*/ createSicon("square-activity", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M17 12L15.677 12A1 1 0 0 0 14.749 12.629L14 14.5A0.8 0.8 0 0 1 12.472 14.36L11.528 9.64A0.8 0.8 0 0 0 10 9.5L9.251 11.371A1 1 0 0 1 8.323 12L7 12"]);
 export default SiconSquareActivity;

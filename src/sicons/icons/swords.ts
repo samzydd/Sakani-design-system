@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "swords"
 import { createSicon } from '../createSicon';
 
-export const SiconSwords = /*#__PURE__*/ createSicon("swords", ["M13 19L19 13","M14.5 17.5L3.586 6.586A2 2 0 0 1 3 5.172L3 4.086A1.086 1.086 0 0 1 4.086 3L5.172 3A2 2 0 0 1 6.586 3.586L17.5 14.5","M14.828 6.172L17.414 3.586A2 2 0 0 1 18.828 3L19.914 3A1.086 1.086 0 0 1 21 4.086L21 5.172A2 2 0 0 1 20.414 6.586L17.828 9.172","M16 16L20 20","M19 21L21 19","M5 14L9 18","M5 21L3 19","M7.5 16.5L4 20"]);
+export const SiconSwords = /*#__PURE__*/ createSicon("swords", ["M13 19L19 13","M14.5 17.5L3.586 6.586A2 2 0 0 1 3 5.172L3 4A1 1 0 0 1 4 3L5.172 3A2 2 0 0 1 6.586 3.586L17.5 14.5","M14.828 6.172L17.414 3.586A2 2 0 0 1 18.828 3L20 3A1 1 0 0 1 21 4L21 5.172A2 2 0 0 1 20.414 6.586L17.828 9.172","M16 16L20 20","M19 21L21 19","M5 14L9 18","M5 21L3 19","M7.5 16.5L4 20"]);
 export default SiconSwords;
