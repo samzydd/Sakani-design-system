@@ -2,8 +2,8 @@
  * Sicons -- Sakani's icon set.
  *
  * The same 1,626 icons as the Figma "Icons" component set: Lucide's shapes
- * at a 1.5 stroke with softened corners (a 4px radius, 3.7px where an icon's
- * short corners can't take 4). The rounding is baked into the path data at
+ * at a 1.5 stroke with softened corners (a 4px radius, 1px on icons with
+ * short, sharp corners such as chevrons and checks, where 4 would blunt them). The rounding is baked into the path data at
  * build time (scripts/sicons/round.mjs), with the same rule as the Figma set.
  *
  * Props follow lucide-react (size, color, strokeWidth, absoluteStrokeWidth) so

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "remove-formatting"
 import { createSicon } from '../createSicon';
 
-export const SiconRemoveFormatting = /*#__PURE__*/ createSicon("remove-formatting", ["M4 7L4 5.5A1.5 1.5 0 0 1 5.5 4L18.5 4A1.5 1.5 0 0 1 20 5.5L20 7","M5 20L11 20","M13 4L8 20","M15 15L20 20","M20 15L15 20"]);
+export const SiconRemoveFormatting = /*#__PURE__*/ createSicon("remove-formatting", ["M4 7L4 5A1 1 0 0 1 5 4L19 4A1 1 0 0 1 20 5L20 7","M5 20L11 20","M13 4L8 20","M15 15L20 20","M20 15L15 20"]);
 export default SiconRemoveFormatting;

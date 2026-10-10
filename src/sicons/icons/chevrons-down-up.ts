@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "chevrons-down-up"
 import { createSicon } from '../createSicon';
 
-export const SiconChevronsDownUp = /*#__PURE__*/ createSicon("chevrons-down-up", ["M7 20L9.5 17.5A3.536 3.536 0 0 1 14.5 17.5L17 20","M7 4L9.5 6.5A3.536 3.536 0 0 0 14.5 6.5L17 4"]);
+export const SiconChevronsDownUp = /*#__PURE__*/ createSicon("chevrons-down-up", ["M7 20L11.293 15.707A1 1 0 0 1 12.707 15.707L17 20","M7 4L11.293 8.293A1 1 0 0 0 12.707 8.293L17 4"]);
 export default SiconChevronsDownUp;

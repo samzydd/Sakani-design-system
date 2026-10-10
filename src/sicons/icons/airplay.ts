@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "airplay"
 import { createSicon } from '../createSicon';
 
-export const SiconAirplay = /*#__PURE__*/ createSicon("airplay", ["M5 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L19 17","M14.5 18L14.5 18A1.829 1.829 0 0 1 13.095 21L10.905 21A1.829 1.829 0 0 1 9.5 18L9.5 18A3.254 3.254 0 0 1 14.5 18Z"]);
+export const SiconAirplay = /*#__PURE__*/ createSicon("airplay", ["M5 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L19 17","M12.768 15.922L15.633 19.36A1 1 0 0 1 14.865 21L9.135 21A1 1 0 0 1 8.367 19.36L11.232 15.922A1 1 0 0 1 12.768 15.922Z"]);
 export default SiconAirplay;

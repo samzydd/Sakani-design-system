@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "circle-check-big"
 import { createSicon } from '../createSicon';
 
-export const SiconCircleCheckBig = /*#__PURE__*/ createSicon("circle-check-big", ["M21.801 10A10 10 0 1 1 17 3.335","M9 11L10.5 12.5A2.121 2.121 0 0 0 13.5 12.5L22 4"]);
+export const SiconCircleCheckBig = /*#__PURE__*/ createSicon("circle-check-big", ["M21.801 10A10 10 0 1 1 17 3.335","M9 11L11.293 13.293A1 1 0 0 0 12.707 13.293L22 4"]);
 export default SiconCircleCheckBig;

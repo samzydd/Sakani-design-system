@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "book-check"
 import { createSicon } from '../createSicon';
 
-export const SiconBookCheck = /*#__PURE__*/ createSicon("book-check", ["M4 19.5L4 4.5A2.5 2.5 0 0 1 6.5 2L19 2A1 1 0 0 1 20 3L20 21A1 1 0 0 1 19 22L6.5 22A1 1 0 0 1 6.5 17L20 17","M9 9.5L10 10.5A1.414 1.414 0 0 0 12 10.5L15 7.5"]);
+export const SiconBookCheck = /*#__PURE__*/ createSicon("book-check", ["M4 19.5L4 4.5A2.5 2.5 0 0 1 6.5 2L19 2A1 1 0 0 1 20 3L20 21A1 1 0 0 1 19 22L6.5 22A1 1 0 0 1 6.5 17L20 17","M9 9.5L10.293 10.793A1 1 0 0 0 11.707 10.793L15 7.5"]);
 export default SiconBookCheck;

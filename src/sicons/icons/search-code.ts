@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "search-code"
 import { createSicon } from '../createSicon';
 
-export const SiconSearchCode = /*#__PURE__*/ createSicon("search-code", ["M13 13.5L14 12.25A2.001 2.001 0 0 0 14 9.75L13 8.5","M21 21L16.7 16.7","M9 8.5L8 9.75A2.001 2.001 0 0 0 8 12.25L9 13.5","M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z"]);
+export const SiconSearchCode = /*#__PURE__*/ createSicon("search-code", ["M13 13.5L14.5 11.625A1 1 0 0 0 14.5 10.375L13 8.5","M21 21L16.7 16.7","M9 8.5L7.5 10.375A1 1 0 0 0 7.5 11.625L9 13.5","M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z"]);
 export default SiconSearchCode;

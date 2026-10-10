@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "goal"
 import { createSicon } from '../createSicon';
 
-export const SiconGoal = /*#__PURE__*/ createSicon("goal", ["M12 13L12 6.472A2.764 2.764 0 0 1 16 4L16 4A2.236 2.236 0 0 1 16 8L12 10","M20.561 10.222A9 9 0 1 1 8.011 4.932","M8.002 9.997A5 5 0 1 0 16.902 12.017"]);
+export const SiconGoal = /*#__PURE__*/ createSicon("goal", ["M12 13L12 3.618A1 1 0 0 1 13.447 2.724L18.211 5.106A1 1 0 0 1 18.211 6.894L12 10","M20.561 10.222A9 9 0 1 1 8.011 4.932","M8.002 9.997A5 5 0 1 0 16.902 12.017"]);
 export default SiconGoal;

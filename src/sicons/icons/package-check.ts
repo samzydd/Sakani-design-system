@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "package-check"
 import { createSicon } from '../createSicon';
 
-export const SiconPackageCheck = /*#__PURE__*/ createSicon("package-check", ["M12 22L12 12","M16 17L17 18A1.414 1.414 0 0 0 19 18L22 15","M21 11.127L21 8A2 2 0 0 0 20 6.27L13 2.27A2 2 0 0 0 11 2.27L4 6.27A2 2 0 0 0 3 8L3 16A2 2 0 0 0 4 17.729L11 21.729A2 2 0 0 0 13 21.73L14.32 20.977","M3.29 7L12 12L20.71 7","M7.5 4.27L16.497 9.418"]);
+export const SiconPackageCheck = /*#__PURE__*/ createSicon("package-check", ["M12 22L12 12","M16 17L17.293 18.293A1 1 0 0 0 18.707 18.293L22 15","M21 11.127L21 8A2 2 0 0 0 20 6.27L13 2.27A2 2 0 0 0 11 2.27L4 6.27A2 2 0 0 0 3 8L3 16A2 2 0 0 0 4 17.729L11 21.729A2 2 0 0 0 13 21.73L14.32 20.977","M3.29 7L12 12L20.71 7","M7.5 4.27L16.497 9.418"]);
 export default SiconPackageCheck;

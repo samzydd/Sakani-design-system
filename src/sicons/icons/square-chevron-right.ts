@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-chevron-right"
 import { createSicon } from '../createSicon';
 
-export const SiconSquareChevronRight = /*#__PURE__*/ createSicon("square-chevron-right", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M10 8L12 10A2.828 2.828 0 0 1 12 14L10 16"]);
+export const SiconSquareChevronRight = /*#__PURE__*/ createSicon("square-chevron-right", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M10 8L13.293 11.293A1 1 0 0 1 13.293 12.707L10 16"]);
 export default SiconSquareChevronRight;

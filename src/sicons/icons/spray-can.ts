@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "spray-can"
 import { createSicon } from '../createSicon';
 
-export const SiconSprayCan = /*#__PURE__*/ createSicon("spray-can", ["M3 3L3.01 3","M7 5L7.01 5","M11 7L11.01 7","M3 7L3.01 7","M7 9L7.01 9","M3 11L3.01 11","M17 5L17 5A2 2 0 0 1 19 7L19 9L15 9L15 7A2 2 0 0 1 17 5Z","M19 9L20 10A3.414 3.414 0 0 1 21 12.414L21 21C21 21.6 20.6 22 20 22L14 22C13.4 22 13 21.6 13 21L13 12.414A3.414 3.414 0 0 1 14 10L15 9","M13 14L21 12","M13 19L21 17"]);
+export const SiconSprayCan = /*#__PURE__*/ createSicon("spray-can", ["M3 3L3.01 3","M7 5L7.01 5","M11 7L11.01 7","M3 7L3.01 7","M7 9L7.01 9","M3 11L3.01 11","M16 5L18 5A1 1 0 0 1 19 6L19 9L15 9L15 6A1 1 0 0 1 16 5Z","M19 9L20.707 10.707A1 1 0 0 1 21 11.414L21 21C21 21.6 20.6 22 20 22L14 22C13.4 22 13 21.6 13 21L13 11.414A1 1 0 0 1 13.293 10.707L15 9","M13 14L21 12","M13 19L21 17"]);
 export default SiconSprayCan;

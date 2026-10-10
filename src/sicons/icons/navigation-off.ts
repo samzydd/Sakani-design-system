@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "navigation-off"
 import { createSicon } from '../createSicon';
 
-export const SiconNavigationOff = /*#__PURE__*/ createSicon("navigation-off", ["M8.43 8.43L5.715 9.715A1.074 1.074 0 0 0 5.914 11.729L8.846 12.462A3.7 3.7 0 0 1 11.538 15.154L12.271 18.086A1.074 1.074 0 0 0 14.285 18.285L15.57 15.57","M17.39 11.73L19.695 6.865A1.922 1.922 0 0 0 17.135 4.305L12.27 6.61","M2 2L22 22"]);
+export const SiconNavigationOff = /*#__PURE__*/ createSicon("navigation-off", ["M8.43 8.43L5.527 9.804A1 1 0 0 0 5.712 11.678L10.418 12.854A1 1 0 0 1 11.146 13.582L12.322 18.288A1 1 0 0 0 14.196 18.473L15.57 15.57","M17.39 11.73L20.801 4.531A1 1 0 0 0 19.469 3.199L12.27 6.61","M2 2L22 22"]);
 export default SiconNavigationOff;

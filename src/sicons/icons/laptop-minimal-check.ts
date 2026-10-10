@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "laptop-minimal-check"
 import { createSicon } from '../createSicon';
 
-export const SiconLaptopMinimalCheck = /*#__PURE__*/ createSicon("laptop-minimal-check", ["M2 20L22 20","M9 10L10 11A1.414 1.414 0 0 0 12 11L15 8","M5 4L19 4A2 2 0 0 1 21 6L21 14A2 2 0 0 1 19 16L5 16A2 2 0 0 1 3 14L3 6A2 2 0 0 1 5 4Z"]);
+export const SiconLaptopMinimalCheck = /*#__PURE__*/ createSicon("laptop-minimal-check", ["M2 20L22 20","M9 10L10.293 11.293A1 1 0 0 0 11.707 11.293L15 8","M5 4L19 4A2 2 0 0 1 21 6L21 14A2 2 0 0 1 19 16L5 16A2 2 0 0 1 3 14L3 6A2 2 0 0 1 5 4Z"]);
 export default SiconLaptopMinimalCheck;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "timer-reset"
 import { createSicon } from '../createSicon';
 
-export const SiconTimerReset = /*#__PURE__*/ createSicon("timer-reset", ["M10 2L14 2","M12 14L12 10","M4 13A8 8 0 0 1 12 6A8 8 0 1 1 6.7 20L4 17.6","M9 17L6.5 17A2.5 2.5 0 0 0 4 19.5L4 22"]);
+export const SiconTimerReset = /*#__PURE__*/ createSicon("timer-reset", ["M10 2L14 2","M12 14L12 10","M4 13A8 8 0 0 1 12 6A8 8 0 1 1 6.7 20L4 17.6","M9 17L5 17A1 1 0 0 0 4 18L4 22"]);
 export default SiconTimerReset;

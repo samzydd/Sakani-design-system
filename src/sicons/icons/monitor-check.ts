@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "monitor-check"
 import { createSicon } from '../createSicon';
 
-export const SiconMonitorCheck = /*#__PURE__*/ createSicon("monitor-check", ["M9 10L10 11A1.414 1.414 0 0 0 12 11L15 8","M4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3Z","M12 17L12 21","M8 21L16 21"]);
+export const SiconMonitorCheck = /*#__PURE__*/ createSicon("monitor-check", ["M9 10L10.293 11.293A1 1 0 0 0 11.707 11.293L15 8","M4 3L20 3A2 2 0 0 1 22 5L22 15A2 2 0 0 1 20 17L4 17A2 2 0 0 1 2 15L2 5A2 2 0 0 1 4 3Z","M12 17L12 21","M8 21L16 21"]);
 export default SiconMonitorCheck;

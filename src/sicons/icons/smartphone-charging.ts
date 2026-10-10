@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "smartphone-charging"
 import { createSicon } from '../createSicon';
 
-export const SiconSmartphoneCharging = /*#__PURE__*/ createSicon("smartphone-charging", ["M7 2L17 2A2 2 0 0 1 19 4L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 4A2 2 0 0 1 7 2Z","M12.667 8L11.109 10.336A1.07 1.07 0 0 0 12 12L12 12A1.07 1.07 0 0 1 12.891 13.664L11.333 16"]);
+export const SiconSmartphoneCharging = /*#__PURE__*/ createSicon("smartphone-charging", ["M7 2L17 2A2 2 0 0 1 19 4L19 20A2 2 0 0 1 17 22L7 22A2 2 0 0 1 5 20L5 4A2 2 0 0 1 7 2Z","M12.667 8L11.037 10.445A1 1 0 0 0 11.869 12L12.131 12A1 1 0 0 1 12.963 13.555L11.333 16"]);
 export default SiconSmartphoneCharging;

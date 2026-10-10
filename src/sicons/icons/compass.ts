@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "compass"
 import { createSicon } from '../createSicon';
 
-export const SiconCompass = /*#__PURE__*/ createSicon("compass", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M15.338 10.465L14.436 13.171A2 2 0 0 1 13.171 14.436L10.465 15.338A1.426 1.426 0 0 1 8.662 13.534L9.564 10.829A2 2 0 0 1 10.829 9.564L13.534 8.662A1.426 1.426 0 0 1 15.338 10.465Z"]);
+export const SiconCompass = /*#__PURE__*/ createSicon("compass", ["M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z","M15.607 9.658L14.436 13.171A2 2 0 0 1 13.171 14.436L9.658 15.607A1 1 0 0 1 8.393 14.342L9.564 10.829A2 2 0 0 1 10.829 9.564L14.342 8.393A1 1 0 0 1 15.607 9.658Z"]);
 export default SiconCompass;

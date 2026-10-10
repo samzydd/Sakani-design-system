@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "spell-check"
 import { createSicon } from '../createSicon';
 
-export const SiconSpellCheck = /*#__PURE__*/ createSicon("spell-check", ["M20 15L15.75 19.25A1.768 1.768 0 0 1 13.25 19.25L12 18","M4 16L7.442 9.115A2.859 2.859 0 0 1 12.558 9.115L15.115 14.23","M6 12L14 12"]);
+export const SiconSpellCheck = /*#__PURE__*/ createSicon("spell-check", ["M20 15L15.207 19.793A1 1 0 0 1 13.793 19.793L12 18","M4 16L9.106 5.789A1 1 0 0 1 10.894 5.789L15.115 14.23","M6 12L14 12"]);
 export default SiconSpellCheck;

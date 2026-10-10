@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "server-crash"
 import { createSicon } from '../createSicon';
 
-export const SiconServerCrash = /*#__PURE__*/ createSicon("server-crash", ["M6 10L4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2L20 2A2 2 0 0 1 22 4L22 8A2 2 0 0 1 20 10L18 10","M6 14L4 14A2 2 0 0 0 2 16L2 20A2 2 0 0 0 4 22L20 22A2 2 0 0 0 22 20L22 16A2 2 0 0 0 20 14L18 14","M6 6L6.01 6","M6 18L6.01 18","M13 6L10.664 9.504A1.606 1.606 0 0 0 12 12L12 12A1.606 1.606 0 0 1 13.336 14.496L11 18"]);
+export const SiconServerCrash = /*#__PURE__*/ createSicon("server-crash", ["M6 10L4 10A2 2 0 0 1 2 8L2 4A2 2 0 0 1 4 2L20 2A2 2 0 0 1 22 4L22 8A2 2 0 0 1 20 10L18 10","M6 14L4 14A2 2 0 0 0 2 16L2 20A2 2 0 0 0 4 22L20 22A2 2 0 0 0 22 20L22 16A2 2 0 0 0 20 14L18 14","M6 6L6.01 6","M6 18L6.01 18","M13 6L10.036 10.445A1 1 0 0 0 10.869 12L13.131 12A1 1 0 0 1 13.964 13.555L11 18"]);
 export default SiconServerCrash;

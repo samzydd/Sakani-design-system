@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "search-check"
 import { createSicon } from '../createSicon';
 
-export const SiconSearchCheck = /*#__PURE__*/ createSicon("search-check", ["M8 11L9 12A1.414 1.414 0 0 0 11 12L14 9","M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z","M21 21L16.7 16.7"]);
+export const SiconSearchCheck = /*#__PURE__*/ createSicon("search-check", ["M8 11L9.293 12.293A1 1 0 0 0 10.707 12.293L14 9","M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z","M21 21L16.7 16.7"]);
 export default SiconSearchCheck;

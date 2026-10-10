@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "square-code"
 import { createSicon } from '../createSicon';
 
-export const SiconSquareCode = /*#__PURE__*/ createSicon("square-code", ["M10 9L8.5 10.5A2.121 2.121 0 0 0 8.5 13.5L10 15","M14 15L15.5 13.5A2.121 2.121 0 0 0 15.5 10.5L14 9","M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z"]);
+export const SiconSquareCode = /*#__PURE__*/ createSicon("square-code", ["M10 9L7.707 11.293A1 1 0 0 0 7.707 12.707L10 15","M14 15L16.293 12.707A1 1 0 0 0 16.293 11.293L14 9","M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z"]);
 export default SiconSquareCode;

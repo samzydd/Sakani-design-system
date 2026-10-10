@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "inbox"
 import { createSicon } from '../createSicon';
 
-export const SiconInbox = /*#__PURE__*/ createSicon("inbox", ["M22 12L17.803 12A3.369 3.369 0 0 0 15 13.5L15 13.5A3.369 3.369 0 0 1 12.197 15L11.803 15A3.369 3.369 0 0 1 9 13.5L9 13.5A3.369 3.369 0 0 0 6.197 12L2 12","M5.45 5.11L2 12L2 18A2 2 0 0 0 4 20L20 20A2 2 0 0 0 22 18L22 12L18.55 5.11A2 2 0 0 0 16.76 4L7.24 4A2 2 0 0 0 5.45 5.11Z"]);
+export const SiconInbox = /*#__PURE__*/ createSicon("inbox", ["M22 12L16.535 12A1 1 0 0 0 15.703 12.445L14.297 14.555A1 1 0 0 1 13.465 15L10.535 15A1 1 0 0 1 9.703 14.555L8.297 12.445A1 1 0 0 0 7.465 12L2 12","M5.45 5.11L2 12L2 18A2 2 0 0 0 4 20L20 20A2 2 0 0 0 22 18L22 12L18.55 5.11A2 2 0 0 0 16.76 4L7.24 4A2 2 0 0 0 5.45 5.11Z"]);
 export default SiconInbox;

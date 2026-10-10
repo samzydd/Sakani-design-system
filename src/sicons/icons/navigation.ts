@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "navigation"
 import { createSicon } from '../createSicon';
 
-export const SiconNavigation = /*#__PURE__*/ createSicon("navigation", ["M6.726 9.235L12.637 6.435A3.7 3.7 0 0 1 17.565 11.363L14.765 17.274A1.476 1.476 0 0 1 12 17L11.538 15.154A3.7 3.7 0 0 0 8.846 12.462L7 12A1.476 1.476 0 0 1 6.726 9.235Z"]);
+export const SiconNavigation = /*#__PURE__*/ createSicon("navigation", ["M5.525 9.804L19.47 3.199A1 1 0 0 1 20.801 4.53L14.196 18.475A1 1 0 0 1 12.322 18.289L11.146 13.582A1 1 0 0 0 10.418 12.854L5.711 11.678A1 1 0 0 1 5.525 9.804Z"]);
 export default SiconNavigation;

@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "panel-left-open"
 import { createSicon } from '../createSicon';
 
-export const SiconPanelLeftOpen = /*#__PURE__*/ createSicon("panel-left-open", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M9 3L9 21","M14 9L15.5 10.5A2.121 2.121 0 0 1 15.5 13.5L14 15"]);
+export const SiconPanelLeftOpen = /*#__PURE__*/ createSicon("panel-left-open", ["M5 3L19 3A2 2 0 0 1 21 5L21 19A2 2 0 0 1 19 21L5 21A2 2 0 0 1 3 19L3 5A2 2 0 0 1 5 3Z","M9 3L9 21","M14 9L16.293 11.293A1 1 0 0 1 16.293 12.707L14 15"]);
 export default SiconPanelLeftOpen;

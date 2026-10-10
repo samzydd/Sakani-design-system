@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "rectangle-circle"
 import { createSicon } from '../createSicon';
 
-export const SiconRectangleCircle = /*#__PURE__*/ createSicon("rectangle-circle", ["M14 8L14 16A4 4 0 0 1 10 20L3 20A1 1 0 0 1 2 19L2 5A1 1 0 0 1 3 4L10 4A4 4 0 0 1 14 8Z","M6 12A8 8 0 1 0 22 12A8 8 0 1 0 6 12Z"]);
+export const SiconRectangleCircle = /*#__PURE__*/ createSicon("rectangle-circle", ["M14 5L14 19A1 1 0 0 1 13 20L3 20A1 1 0 0 1 2 19L2 5A1 1 0 0 1 3 4L13 4A1 1 0 0 1 14 5Z","M6 12A8 8 0 1 0 22 12A8 8 0 1 0 6 12Z"]);
 export default SiconRectangleCircle;

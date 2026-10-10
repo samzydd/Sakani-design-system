@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "signpost-big"
 import { createSicon } from '../createSicon';
 
-export const SiconSignpostBig = /*#__PURE__*/ createSicon("signpost-big", ["M10 9L5.414 9A3.414 3.414 0 0 1 3 8L3 8A1.414 1.414 0 0 1 3 6L3 6A3.414 3.414 0 0 1 5.414 5L10 5","M14 5L18.586 5A3.414 3.414 0 0 1 21 6L21 6A1.414 1.414 0 0 1 21 8L21 8A3.414 3.414 0 0 1 18.586 9L14 9","M10 22L10 4A2 2 0 1 1 14 4L14 22","M8 22L16 22"]);
+export const SiconSignpostBig = /*#__PURE__*/ createSicon("signpost-big", ["M10 9L4.414 9A1 1 0 0 1 3.707 8.707L2.707 7.707A1 1 0 0 1 2.707 6.293L3.707 5.293A1 1 0 0 1 4.414 5L10 5","M14 5L19.586 5A1 1 0 0 1 20.293 5.293L21.293 6.293A1 1 0 0 1 21.293 7.707L20.293 8.707A1 1 0 0 1 19.586 9L14 9","M10 22L10 4A2 2 0 1 1 14 4L14 22","M8 22L16 22"]);
 export default SiconSignpostBig;

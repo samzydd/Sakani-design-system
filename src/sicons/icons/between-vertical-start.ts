@@ -2,5 +2,5 @@
 // Shape data: lucide-react 1.41.0 (ISC), icon "between-vertical-start"
 import { createSicon } from '../createSicon';
 
-export const SiconBetweenVerticalStart = /*#__PURE__*/ createSicon("between-vertical-start", ["M4 8L9 8A1 1 0 0 1 10 9L10 20A1 1 0 0 1 9 21L4 21A1 1 0 0 1 3 20L3 9A1 1 0 0 1 4 8Z","M15 2L13.5 3.5A2.121 2.121 0 0 1 10.5 3.5L9 2","M15 8L20 8A1 1 0 0 1 21 9L21 20A1 1 0 0 1 20 21L15 21A1 1 0 0 1 14 20L14 9A1 1 0 0 1 15 8Z"]);
+export const SiconBetweenVerticalStart = /*#__PURE__*/ createSicon("between-vertical-start", ["M4 8L9 8A1 1 0 0 1 10 9L10 20A1 1 0 0 1 9 21L4 21A1 1 0 0 1 3 20L3 9A1 1 0 0 1 4 8Z","M15 2L12.707 4.293A1 1 0 0 1 11.293 4.293L9 2","M15 8L20 8A1 1 0 0 1 21 9L21 20A1 1 0 0 1 20 21L15 21A1 1 0 0 1 14 20L14 9A1 1 0 0 1 15 8Z"]);
 export default SiconBetweenVerticalStart;
