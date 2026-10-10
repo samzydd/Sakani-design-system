@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { IconChevronDown as ChevronDown } from '../../../icons/outline/chevron-down';
+import { IconChevronUp as ChevronUp } from '../../../icons/outline/chevron-up';
 import { Button } from '../../../components/Button';
 import { Menu } from '../../../components/Menu';
 import { MenuItem } from '../../../components/MenuItem';

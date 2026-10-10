@@ -24,7 +24,10 @@
  */
 
 import React from 'react';
-import { TrendingUp, TrendingDown, ChartColumn, ChevronDown } from 'lucide-react';
+import { IconTrendingUp as TrendingUp } from '../../../icons/outline/trending-up';
+import { IconTrendingDown as TrendingDown } from '../../../icons/outline/trending-down';
+import { IconChartColumn as ChartColumn } from '../../../icons/outline/chart-column';
+import { IconChevronDown as ChevronDown } from '../../../icons/outline/chevron-down';
 import { Button } from '../../Button';
 import { BarChart, type BarChartDatum } from '../../BarChart';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';

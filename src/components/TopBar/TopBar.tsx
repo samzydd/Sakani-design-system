@@ -13,10 +13,14 @@
  */
 
 import React from 'react';
-import { PanelLeft, CircleHelp, Bell, ChevronDown, type LucideIcon } from 'lucide-react';
+import { IconLayoutSidebar as PanelLeft } from '../../icons/outline/layout-sidebar';
+import { IconHelpCircle as CircleHelp } from '../../icons/outline/help-circle';
+import { IconBell as Bell } from '../../icons/outline/bell';
+import { IconChevronDown as ChevronDown } from '../../icons/outline/chevron-down';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './TopBar.module.css';
 import { useHoverHighlight } from '../../lib/useHoverHighlight';
+import type { IconComponent } from '../../icons/types';
 
 export type TopBarType = 'search' | 'breadcrumb' | 'tabs' | 'minimal' | 'chat';
 export type TopBarDensity = 'md' | 'sm';
@@ -30,7 +34,7 @@ export interface TopBarProps {
   showToggle?: boolean;
   onToggle?: () => void;
   /** Icon for the sidebar toggle button. Defaults to PanelLeft. */
-  toggleIcon?: LucideIcon;
+  toggleIcon?: IconComponent;
   /** Show help + notification icons. Defaults to true. */
   showActions?: boolean;
   /** Show the help icon within the actions group. Defaults to true. */

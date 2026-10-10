@@ -13,7 +13,8 @@
  */
 
 import React from 'react';
-import { Info, TriangleAlert } from 'lucide-react';
+import { IconInfoCircle as Info } from '../../../icons/outline/info-circle';
+import { IconAlertTriangle as TriangleAlert } from '../../../icons/outline/alert-triangle';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './InlineHint.module.css';
 

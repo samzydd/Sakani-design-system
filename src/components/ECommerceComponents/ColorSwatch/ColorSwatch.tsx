@@ -29,7 +29,7 @@
  */
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { IconCheck as Check } from '../../../icons/outline/check';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import { getContrastColor } from '../../../lib/getContrastColor';
 import styles from './ColorSwatch.module.css';

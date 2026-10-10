@@ -11,7 +11,9 @@
  */
 
 import React from 'react';
-import { ChevronDown, X, Plus } from 'lucide-react';
+import { IconChevronDown as ChevronDown } from '../../icons/outline/chevron-down';
+import { IconX as X } from '../../icons/outline/x';
+import { IconPlus as Plus } from '../../icons/outline/plus';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './FilterChip.module.css';
 

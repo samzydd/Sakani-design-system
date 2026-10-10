@@ -21,7 +21,8 @@
  */
 
 import React from 'react';
-import { CircleCheck, Truck } from 'lucide-react';
+import { IconCircleCheck as CircleCheck } from '../../icons/outline/circle-check';
+import { IconTruck as Truck } from '../../icons/outline/truck';
 import { Divider } from '../../components/Divider';
 import { Button } from '../../components/Button';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';

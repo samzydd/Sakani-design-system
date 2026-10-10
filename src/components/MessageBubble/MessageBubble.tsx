@@ -12,7 +12,9 @@
  */
 
 import React from 'react';
-import { CheckCheck, File as FileIcon, Download } from 'lucide-react';
+import { IconChecks as CheckCheck } from '../../icons/outline/checks';
+import { IconFile as FileIcon } from '../../icons/outline/file';
+import { IconDownload as Download } from '../../icons/outline/download';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './MessageBubble.module.css';
 

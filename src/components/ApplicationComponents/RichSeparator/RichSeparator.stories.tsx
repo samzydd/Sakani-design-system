@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sparkles } from 'lucide-react';
+import { IconSparkles as Sparkles } from '../../../icons/outline/sparkles';
 import { RichSeparator } from './RichSeparator';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './RichSeparator.module.css';

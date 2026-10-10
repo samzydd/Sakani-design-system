@@ -23,7 +23,7 @@
  */
 
 import React from 'react';
-import { Receipt } from 'lucide-react';
+import { IconReceipt as Receipt } from '../../../icons/outline/receipt';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './Transactions.module.css';
 

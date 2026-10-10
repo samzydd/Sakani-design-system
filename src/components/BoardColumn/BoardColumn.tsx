@@ -11,7 +11,8 @@
  */
 
 import React from 'react';
-import { Plus, MoreHorizontal } from 'lucide-react';
+import { IconPlus as Plus } from '../../icons/outline/plus';
+import { IconDots as MoreHorizontal } from '../../icons/outline/dots';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './BoardColumn.module.css';
 

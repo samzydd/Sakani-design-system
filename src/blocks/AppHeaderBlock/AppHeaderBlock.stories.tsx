@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { UserPlus, Upload, Download } from 'lucide-react';
+import { IconUserPlus as UserPlus } from '../../icons/outline/user-plus';
+import { IconUpload as Upload } from '../../icons/outline/upload';
+import { IconDownload as Download } from '../../icons/outline/download';
 import { AppHeaderBlock } from './AppHeaderBlock';
 
 const meta = {

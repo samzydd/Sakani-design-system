@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Calendar } from 'lucide-react';
+import { IconCalendar as Calendar } from '../../icons/outline/calendar';
 import { BoardColumn } from './BoardColumn';
 import { BoardCard } from '../BoardCard';
 import { Badge } from '../Badge';

@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ShoppingBag, Coffee, Banknote, Table, Zap } from 'lucide-react';
+import { IconShoppingBag as ShoppingBag } from '../../../icons/outline/shopping-bag';
+import { IconCoffee as Coffee } from '../../../icons/outline/coffee';
+import { IconCashBanknote as Banknote } from '../../../icons/outline/cash-banknote';
+import { IconTable as Table } from '../../../icons/outline/table';
+import { IconBolt as Zap } from '../../../icons/outline/bolt';
 import { Transactions } from './Transactions';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 

@@ -12,7 +12,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Paperclip, Smile, Send, File as FileIcon, X } from 'lucide-react';
+import { IconPaperclip as Paperclip } from '../../icons/outline/paperclip';
+import { IconMoodSmile as Smile } from '../../icons/outline/mood-smile';
+import { IconSend as Send } from '../../icons/outline/send';
+import { IconFile as FileIcon } from '../../icons/outline/file';
+import { IconX as X } from '../../icons/outline/x';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import { IconButton } from '../IconButton';
 import styles from './ChatComposer.module.css';

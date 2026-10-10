@@ -22,7 +22,7 @@
  */
 
 import React from 'react';
-import { Quote } from 'lucide-react';
+import { IconQuote as Quote } from '../../../icons/outline/quote';
 import { Divider } from '../../Divider';
 import { Avatar } from '../../Avatar';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';

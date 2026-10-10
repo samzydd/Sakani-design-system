@@ -29,7 +29,7 @@
  */
 
 import React from 'react';
-import { Quote } from 'lucide-react';
+import { IconQuote as Quote } from '../../icons/outline/quote';
 import { Avatar } from '../../components/Avatar';
 import styles from './TestimonialBlock.module.css';
 

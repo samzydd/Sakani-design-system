@@ -18,7 +18,8 @@
  */
 
 import React from 'react';
-import { Bell, X } from 'lucide-react';
+import { IconBell as Bell } from '../../../icons/outline/bell';
+import { IconX as X } from '../../../icons/outline/x';
 import { IconButton } from '../../IconButton';
 import { Button } from '../../Button';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';

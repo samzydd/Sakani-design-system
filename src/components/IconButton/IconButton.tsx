@@ -10,16 +10,17 @@
  */
 
 import React from 'react';
-import { type LucideIcon } from 'lucide-react';
+
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './IconButton.module.css';
+import type { IconComponent } from '../../icons/types';
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive';
 export type IconButtonSize = 'sm' | 'md' | 'lg';
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Lucide icon component. */
-  icon: LucideIcon;
+  icon: IconComponent;
   variant?: IconButtonVariant;
   size?: IconButtonSize;
   /** Required for accessibility — describes the action. */

@@ -23,7 +23,10 @@
  */
 
 import React from 'react';
-import { Eye, EyeOff, TrendingUp, TrendingDown } from 'lucide-react';
+import { IconEye as Eye } from '../../../icons/outline/eye';
+import { IconEyeOff as EyeOff } from '../../../icons/outline/eye-off';
+import { IconTrendingUp as TrendingUp } from '../../../icons/outline/trending-up';
+import { IconTrendingDown as TrendingDown } from '../../../icons/outline/trending-down';
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { useThemeTick } from '../../../lib/useThemeTick';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';

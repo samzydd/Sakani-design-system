@@ -15,11 +15,28 @@
  */
 
 import React from 'react';
-import {
-  LayoutGrid, Mail, Database, CalendarDays, Users, Workflow, Zap, Target,
-  Plug, Settings, MessageCircle, Search, ChevronDown, ChevronUp, PanelLeftClose, Circle, Filter,
-  User, Phone, Building2, Coins, Menu,
-} from 'lucide-react';
+import { IconLayoutGrid as LayoutGrid } from '../../icons/outline/layout-grid';
+import { IconMail as Mail } from '../../icons/outline/mail';
+import { IconDatabase as Database } from '../../icons/outline/database';
+import { IconCalendarMonth as CalendarDays } from '../../icons/outline/calendar-month';
+import { IconUsers as Users } from '../../icons/outline/users';
+import { IconHierarchy2 as Workflow } from '../../icons/outline/hierarchy-2';
+import { IconBolt as Zap } from '../../icons/outline/bolt';
+import { IconTarget as Target } from '../../icons/outline/target';
+import { IconPlug as Plug } from '../../icons/outline/plug';
+import { IconSettings as Settings } from '../../icons/outline/settings';
+import { IconMessageCircle as MessageCircle } from '../../icons/outline/message-circle';
+import { IconSearch as Search } from '../../icons/outline/search';
+import { IconChevronDown as ChevronDown } from '../../icons/outline/chevron-down';
+import { IconChevronUp as ChevronUp } from '../../icons/outline/chevron-up';
+import { IconLayoutSidebarLeftCollapse as PanelLeftClose } from '../../icons/outline/layout-sidebar-left-collapse';
+import { IconCircle as Circle } from '../../icons/outline/circle';
+import { IconFilter as Filter } from '../../icons/outline/filter';
+import { IconUser as User } from '../../icons/outline/user';
+import { IconPhone as Phone } from '../../icons/outline/phone';
+import { IconBuilding as Building2 } from '../../icons/outline/building';
+import { IconCoins as Coins } from '../../icons/outline/coins';
+import { IconMenu as Menu } from '../../icons/outline/menu';
 
 import { Sidebar } from '../../components/Sidebar';
 import { SidebarHeader } from '../../components/SidebarHeader';

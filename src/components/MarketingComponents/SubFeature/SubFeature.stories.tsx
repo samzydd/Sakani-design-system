@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Zap } from 'lucide-react';
+import { IconBolt as Zap } from '../../../icons/outline/bolt';
 import { SubFeature } from './SubFeature';
 
 const meta = {

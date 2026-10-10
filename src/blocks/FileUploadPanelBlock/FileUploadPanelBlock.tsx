@@ -18,7 +18,10 @@
  */
 
 import React from 'react';
-import { UploadCloud, File as FileIcon, Check, X } from 'lucide-react';
+import { IconCloudUpload as UploadCloud } from '../../icons/outline/cloud-upload';
+import { IconFile as FileIcon } from '../../icons/outline/file';
+import { IconCheck as Check } from '../../icons/outline/check';
+import { IconX as X } from '../../icons/outline/x';
 import { IconButton } from '../../components/IconButton';
 import { Progress } from '../../components/Progress';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';

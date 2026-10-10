@@ -34,7 +34,8 @@
  */
 
 import React from 'react';
-import { Minus, Plus } from 'lucide-react';
+import { IconMinus as Minus } from '../../../icons/outline/minus';
+import { IconPlus as Plus } from '../../../icons/outline/plus';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './QuantitySelector.module.css';
 

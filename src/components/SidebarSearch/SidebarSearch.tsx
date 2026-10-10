@@ -8,7 +8,7 @@
  */
 
 import React from 'react';
-import { Search } from 'lucide-react';
+import { IconSearch as Search } from '../../icons/outline/search';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './SidebarSearch.module.css';
 

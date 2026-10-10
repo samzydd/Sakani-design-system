@@ -16,7 +16,7 @@
  */
 
 import React from 'react';
-import { Bell } from 'lucide-react';
+import { IconBell as Bell } from '../../icons/outline/bell';
 import { NotificationItem } from '../../components/ApplicationComponents/NotificationItem';
 import { Link } from '../../components/Link';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';

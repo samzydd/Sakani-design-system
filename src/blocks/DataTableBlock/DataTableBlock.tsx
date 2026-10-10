@@ -18,7 +18,13 @@
  */
 
 import React from 'react';
-import { Search, Columns3, Plus, MoreHorizontal, Download, UserPlus, Trash } from 'lucide-react';
+import { IconSearch as Search } from '../../icons/outline/search';
+import { IconColumns3 as Columns3 } from '../../icons/outline/columns-3';
+import { IconPlus as Plus } from '../../icons/outline/plus';
+import { IconDots as MoreHorizontal } from '../../icons/outline/dots';
+import { IconDownload as Download } from '../../icons/outline/download';
+import { IconUserPlus as UserPlus } from '../../icons/outline/user-plus';
+import { IconTrash as Trash } from '../../icons/outline/trash';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { Badge } from '../../components/Badge';

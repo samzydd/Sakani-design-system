@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { House, ChartLine, Settings } from 'lucide-react';
+import { IconHome as House } from '../../icons/outline/home';
+import { IconChartLine as ChartLine } from '../../icons/outline/chart-line';
+import { IconSettings as Settings } from '../../icons/outline/settings';
 import { SidebarItem } from './SidebarItem';
 
 const meta = {

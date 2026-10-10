@@ -1,5 +1,11 @@
 import { memo, useState } from 'react';
-import { Package, Warehouse, FileText, Megaphone, Building2, TrendingUp, ChevronRight } from 'lucide-react';
+import { IconPackage as Package } from '../../icons/outline/package';
+import { IconBuildingWarehouse as Warehouse } from '../../icons/outline/building-warehouse';
+import { IconFileText as FileText } from '../../icons/outline/file-text';
+import { IconSpeakerphone as Megaphone } from '../../icons/outline/speakerphone';
+import { IconBuilding as Building2 } from '../../icons/outline/building';
+import { IconTrendingUp as TrendingUp } from '../../icons/outline/trending-up';
+import { IconChevronRight as ChevronRight } from '../../icons/outline/chevron-right';
 import { StatCard } from '../../components/StatCard';
 import { BarChart } from '../../components/BarChart';
 import { LineChart } from '../../components/LineChart';

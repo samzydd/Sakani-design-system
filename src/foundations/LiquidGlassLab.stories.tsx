@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { House, Inbox, ListChecks, Settings } from 'lucide-react';
+import { IconHome as House } from '../icons/outline/home';
+import { IconInbox as Inbox } from '../icons/outline/inbox';
+import { IconListCheck as ListChecks } from '../icons/outline/list-check';
+import { IconSettings as Settings } from '../icons/outline/settings';
 import { type LiquidGlassEffect, LiquidGlass, LiquidBackdrop } from '../lib/LiquidGlass';
 import { Button } from '../components/Button';
 import { Sidebar } from '../components/Sidebar';

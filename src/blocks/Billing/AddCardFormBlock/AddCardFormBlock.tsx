@@ -29,7 +29,8 @@
  */
 
 import React from 'react';
-import { User, CreditCard } from 'lucide-react';
+import { IconUser as User } from '../../../icons/outline/user';
+import { IconCreditCard as CreditCard } from '../../../icons/outline/credit-card';
 import { Input } from '../../../components/Input';
 import { Alert } from '../../../components/Alert';
 import { Button } from '../../../components/Button';

@@ -2,6 +2,24 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.7.0
+
+- **Tabler Icons is now the icon set.** New entry point `@sakaniui/react/icons` with all 5,184 Tabler
+  outline icons (`IconHome`, `IconCalendar` ...) and 1,054 filled ones (`IconHomeFilled` ...),
+  generated from `@tabler/icons` and matching the Figma *↳ Icons (Tabler)* page. One component per
+  icon, tree-shaken individually (one icon is about 1 kB). Props follow lucide-react (`size`,
+  `color`, `strokeWidth`, `absoluteStrokeWidth`) plus `title`; default stroke 1.5, the Figma stroke.
+- **Every component now renders Tabler icons.** The 125 Lucide icons used inside components and
+  blocks were swapped for their Tabler equivalents, with the same mapping as the Figma file (house
+  -> home, triangle-alert -> alert-triangle, panel-left -> layout-sidebar ...). `lucide-react` is no
+  longer a dependency of the package.
+- Icon props are typed `IconComponent` (exported from the main entry) instead of Lucide's
+  `LucideIcon`; Lucide and Tabler React icons still fit, so existing apps keep working.
+- **Removed:** `@sakaniui/react/sicons` (the rounded Lucide set from 0.6.x), replaced by
+  `@sakaniui/react/icons`. Swap `SiconHeart` for `IconHeart`; names follow Tabler.
+- `THIRD_PARTY_NOTICES.md` now carries Tabler's MIT licence (icons) as well as Lucide's ISC licence
+  (Glass Icons, still Lucide-based).
+
 ## 0.6.1
 
 - **Sicons: crisp chevrons and checks.** Icons with short, sharp corners (chevrons, checks, small

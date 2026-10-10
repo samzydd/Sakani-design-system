@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Pencil, Copy, Trash, Columns3 } from 'lucide-react';
+import { IconPencil as Pencil } from '../../icons/outline/pencil';
+import { IconCopy as Copy } from '../../icons/outline/copy';
+import { IconTrash as Trash } from '../../icons/outline/trash';
+import { IconColumns3 as Columns3 } from '../../icons/outline/columns-3';
 import { Menu, MenuDivider } from './Menu';
 import { MenuItem } from '../MenuItem';
 

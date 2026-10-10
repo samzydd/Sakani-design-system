@@ -11,7 +11,9 @@
  */
 
 import React from 'react';
-import { Inbox, Search, CircleAlert } from 'lucide-react';
+import { IconInbox as Inbox } from '../../icons/outline/inbox';
+import { IconSearch as Search } from '../../icons/outline/search';
+import { IconAlertCircle as CircleAlert } from '../../icons/outline/alert-circle';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import { Button } from '../Button/Button';
 import styles from './EmptyState.module.css';

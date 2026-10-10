@@ -31,7 +31,7 @@
  */
 
 import React from 'react';
-import { Play } from 'lucide-react';
+import { IconPlayerPlay as Play } from '../../../icons/outline/player-play';
 import { Badge } from '../../Badge';
 import { Button } from '../../Button';
 import { AvatarGroup, type AvatarGroupProps } from '../../AvatarGroup';

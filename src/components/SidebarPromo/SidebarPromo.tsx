@@ -11,10 +11,12 @@
  */
 
 import React from 'react';
-import { Sparkles, X, type LucideIcon } from 'lucide-react';
+import { IconSparkles as Sparkles } from '../../icons/outline/sparkles';
+import { IconX as X } from '../../icons/outline/x';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import { Button } from '../Button/Button';
 import styles from './SidebarPromo.module.css';
+import type { IconComponent } from '../../icons/types';
 
 export interface SidebarPromoProps {
   type?: 'upgrade' | 'announcement';
@@ -24,7 +26,7 @@ export interface SidebarPromoProps {
   ctaLabel?: string;
   onCta?: () => void;
   onDismiss?: () => void;
-  icon?: LucideIcon;
+  icon?: IconComponent;
 }
 
 export const SidebarPromo: React.FC<SidebarPromoProps> = ({

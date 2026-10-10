@@ -28,7 +28,8 @@
  */
 
 import React from 'react';
-import { Copy, Check } from 'lucide-react';
+import { IconCopy as Copy } from '../../../icons/outline/copy';
+import { IconCheck as Check } from '../../../icons/outline/check';
 import { IconButton } from '../../IconButton';
 import styles from './CodeSnippet.module.css';
 

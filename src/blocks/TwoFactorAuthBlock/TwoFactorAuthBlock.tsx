@@ -28,7 +28,7 @@ import { Link } from '../../components/Link';
 import { Checkbox } from '../../components/Checkbox';
 import { Skeleton } from '../../components/Skeleton';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
-import { Check } from 'lucide-react';
+import { IconCheck as Check } from '../../icons/outline/check';
 import styles from './TwoFactorAuthBlock.module.css';
 
 const CODE_LENGTH = 6;

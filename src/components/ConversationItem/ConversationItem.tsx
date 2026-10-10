@@ -11,7 +11,7 @@
  */
 
 import React from 'react';
-import { BellOff } from 'lucide-react';
+import { IconBellOff as BellOff } from '../../icons/outline/bell-off';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './ConversationItem.module.css';
 

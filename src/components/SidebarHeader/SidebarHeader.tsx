@@ -10,9 +10,11 @@
  */
 
 import React from 'react';
-import { PanelLeftClose, ChevronsUpDown, type LucideIcon } from 'lucide-react';
+import { IconLayoutSidebarLeftCollapse as PanelLeftClose } from '../../icons/outline/layout-sidebar-left-collapse';
+import { IconSelector as ChevronsUpDown } from '../../icons/outline/selector';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './SidebarHeader.module.css';
+import type { IconComponent } from '../../icons/types';
 
 export type SidebarHeaderType = 'brand' | 'workspace' | 'brand-toggle';
 
@@ -25,7 +27,7 @@ export interface SidebarHeaderProps {
   collapsed?: boolean;
   onToggle?: () => void;
   /** Icon for the toggle button. Defaults to PanelLeftClose. */
-  toggleIcon?: LucideIcon;
+  toggleIcon?: IconComponent;
 }
 
 export const SidebarHeader: React.FC<SidebarHeaderProps> = ({

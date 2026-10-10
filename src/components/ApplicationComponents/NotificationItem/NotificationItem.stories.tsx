@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Download } from 'lucide-react';
+import { IconDownload as Download } from '../../../icons/outline/download';
 import { NotificationItem } from './NotificationItem';
 
 const meta = {

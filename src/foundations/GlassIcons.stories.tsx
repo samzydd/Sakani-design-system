@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Heart } from 'lucide-react';
+import { IconHeart as Heart } from '../icons/outline/heart';
 import * as GlassIcons from '../glass-icons';
 import {
   GlassIcon, glassIconNames,

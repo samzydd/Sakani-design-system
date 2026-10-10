@@ -1,5 +1,9 @@
 import React from 'react';
-import { Paperclip, Smile, Send, File as FileIcon, X } from 'lucide-react';
+import { IconPaperclip as Paperclip } from '../../icons/outline/paperclip';
+import { IconMoodSmile as Smile } from '../../icons/outline/mood-smile';
+import { IconSend as Send } from '../../icons/outline/send';
+import { IconFile as FileIcon } from '../../icons/outline/file';
+import { IconX as X } from '../../icons/outline/x';
 import styles from './ChatComposer.module.css';
 
 export type ChatComposerState = 'default' | 'typing' | 'uploading' | 'disabled';

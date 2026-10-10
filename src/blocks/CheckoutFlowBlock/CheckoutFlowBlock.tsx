@@ -25,7 +25,7 @@
  */
 
 import React from 'react';
-import { CreditCard } from 'lucide-react';
+import { IconCreditCard as CreditCard } from '../../icons/outline/credit-card';
 import { CheckoutSteps } from '../../components/ECommerceComponents/CheckoutSteps';
 import { CartItem } from '../../components/ECommerceComponents/CartItem';
 import { Input } from '../../components/Input';

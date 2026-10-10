@@ -33,7 +33,7 @@
  */
 
 import React from 'react';
-import { Star } from 'lucide-react';
+import { IconStar as Star } from '../../../icons/outline/star';
 import { Button } from '../../Button';
 import { Badge } from '../../Badge';
 import { ColorSwatch, type ColorSwatchProps } from '../ColorSwatch';

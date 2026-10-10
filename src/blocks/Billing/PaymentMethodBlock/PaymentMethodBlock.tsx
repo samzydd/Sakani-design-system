@@ -23,7 +23,7 @@
  */
 
 import React from 'react';
-import { CreditCard } from 'lucide-react';
+import { IconCreditCard as CreditCard } from '../../../icons/outline/credit-card';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import { Badge, type BadgeVariant } from '../../../components/Badge';
 import { Button } from '../../../components/Button';

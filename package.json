@@ -1,7 +1,7 @@
 {
   "name": "@sakaniui/react",
-  "version": "0.6.1",
-  "description": "Sakani Design System — token-driven React components and blocks with light & dark modes, plus built-in glass and Apple-style liquid glass surfaces.",
+  "version": "0.7.0",
+  "description": "Sakani Design System \u2014 token-driven React components and blocks with light & dark modes, plus built-in glass and Apple-style liquid glass surfaces.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -57,10 +57,10 @@
       "import": "./dist/glass-icons.mjs",
       "require": "./dist/glass-icons.cjs"
     },
-    "./sicons": {
-      "types": "./dist/sicons.d.ts",
-      "import": "./dist/sicons.mjs",
-      "require": "./dist/sicons.cjs"
+    "./icons": {
+      "types": "./dist/icons.d.ts",
+      "import": "./dist/icons.mjs",
+      "require": "./dist/icons.cjs"
     },
     "./style.css": "./dist/style.css",
     "./tokens.css": "./dist/tokens.css"
@@ -83,7 +83,6 @@
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",
     "geist": "^1.7.2",
-    "lucide-react": "^1.25.0",
     "recharts": "^3.9.2"
   },
   "devDependencies": {
@@ -93,6 +92,7 @@
     "@storybook/addon-mcp": "^0.7.0",
     "@storybook/addon-vitest": "^10.5.2",
     "@storybook/react-vite": "^10.5.2",
+    "@tabler/icons": "^3.49.0",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
@@ -100,6 +100,7 @@
     "@vitest/browser-playwright": "^4.1.10",
     "@vitest/coverage-v8": "^4.1.10",
     "chromatic": "^18.0.1",
+    "lucide-react": "^1.25.0",
     "oxlint": "^1.71.0",
     "playwright": "^1.61.1",
     "react": "^19.2.7",

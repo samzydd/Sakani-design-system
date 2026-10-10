@@ -22,7 +22,7 @@
  */
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { IconCheck as Check } from '../../../icons/outline/check';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './CheckoutSteps.module.css';
 

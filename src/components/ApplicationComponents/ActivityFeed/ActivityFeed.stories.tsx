@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MessageCircle, Upload, Pencil, CircleCheck } from 'lucide-react';
+import { IconMessageCircle as MessageCircle } from '../../../icons/outline/message-circle';
+import { IconUpload as Upload } from '../../../icons/outline/upload';
+import { IconPencil as Pencil } from '../../../icons/outline/pencil';
+import { IconCircleCheck as CircleCheck } from '../../../icons/outline/circle-check';
 import { ActivityFeed, ActivityFeedHighlight } from './ActivityFeed';
 import amaraKalu from '../../../assets/avatars/activity-amara-kalu.jpg';
 import chidiDuru from '../../../assets/avatars/activity-chidi-duru.jpg';

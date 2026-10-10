@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Pencil } from 'lucide-react';
+import { IconPencil as Pencil } from '../../icons/outline/pencil';
 import { MenuItem } from './MenuItem';
 
 const meta = {
