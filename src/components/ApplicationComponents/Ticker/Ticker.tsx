@@ -18,7 +18,8 @@
  */
 
 import React from 'react';
-import { TrendingUp, TrendingDown } from 'lucide-react';
+import { IconTrendingUp as TrendingUp } from '../../../icons/outline/trending-up';
+import { IconTrendingDown as TrendingDown } from '../../../icons/outline/trending-down';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './Ticker.module.css';
 

@@ -22,7 +22,8 @@
  */
 
 import React from 'react';
-import { FileText, Download } from 'lucide-react';
+import { IconFileText as FileText } from '../../../icons/outline/file-text';
+import { IconDownload as Download } from '../../../icons/outline/download';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import { Badge } from '../../../components/Badge';
 import { IconButton } from '../../../components/IconButton';

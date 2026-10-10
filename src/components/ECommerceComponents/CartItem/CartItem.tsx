@@ -24,7 +24,7 @@
  */
 
 import React from 'react';
-import { Minus } from 'lucide-react';
+import { IconMinus as Minus } from '../../../icons/outline/minus';
 import { IconButton } from '../../IconButton';
 import { QuantitySelector } from '../QuantitySelector';
 import styles from './CartItem.module.css';

@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ShoppingBag, Zap, Coffee, Grid3x3 } from 'lucide-react';
+import { IconShoppingBag as ShoppingBag } from '../../../icons/outline/shopping-bag';
+import { IconBolt as Zap } from '../../../icons/outline/bolt';
+import { IconCoffee as Coffee } from '../../../icons/outline/coffee';
+import { IconGrid3x3 as Grid3x3 } from '../../../icons/outline/grid-3x3';
 import { Expenses } from './Expenses';
 
 const categories = [

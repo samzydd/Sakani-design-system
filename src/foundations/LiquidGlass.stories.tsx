@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Move } from 'lucide-react';
+import { IconArrowsMove as Move } from '../icons/outline/arrows-move';
 import { LiquidGlass, LiquidBackdrop, type LiquidGlassTint } from '../lib/LiquidGlass';
 import { LiquidShowcase } from './liquid/LiquidShowcase';
 import balloons from '../assets/marketing/blog-image-balloons.jpg';

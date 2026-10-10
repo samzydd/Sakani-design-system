@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Plus, Trash2, Settings, Search } from 'lucide-react';
+import { IconPlus as Plus } from '../../icons/outline/plus';
+import { IconTrash as Trash2 } from '../../icons/outline/trash';
+import { IconSettings as Settings } from '../../icons/outline/settings';
+import { IconSearch as Search } from '../../icons/outline/search';
 import { IconButton } from './IconButton';
 
 const meta = {

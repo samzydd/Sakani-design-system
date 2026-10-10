@@ -10,10 +10,14 @@
  */
 
 import React from 'react';
-import { TrendingUp, TrendingDown, Minus, MoreHorizontal, type LucideIcon } from 'lucide-react';
+import { IconTrendingUp as TrendingUp } from '../../icons/outline/trending-up';
+import { IconTrendingDown as TrendingDown } from '../../icons/outline/trending-down';
+import { IconMinus as Minus } from '../../icons/outline/minus';
+import { IconDots as MoreHorizontal } from '../../icons/outline/dots';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import { Badge, type BadgeVariant } from '../Badge';
 import styles from './StatCard.module.css';
+import type { IconComponent } from '../../icons/types';
 
 export type StatCardStyle = 'minimal' | 'icon' | 'featured';
 export type StatCardTrend = 'up' | 'down' | 'flat';
@@ -33,7 +37,7 @@ export interface StatCardProps {
   badgeVariant?: BadgeVariant;
   variant?: StatCardStyle;
   /** Leading icon (shown for Icon/Featured styles). */
-  icon?: LucideIcon;
+  icon?: IconComponent;
   /** Show a trailing menu button. */
   showMenu?: boolean;
   onMenu?: () => void;

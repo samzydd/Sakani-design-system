@@ -10,7 +10,9 @@
  */
 
 import React from 'react';
-import { Menu as MenuIcon, Plus, X } from 'lucide-react';
+import { IconMenu as MenuIcon } from '../../icons/outline/menu';
+import { IconPlus as Plus } from '../../icons/outline/plus';
+import { IconX as X } from '../../icons/outline/x';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './TopBarMobile.module.css';
 

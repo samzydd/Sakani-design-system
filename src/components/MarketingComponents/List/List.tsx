@@ -19,7 +19,8 @@
  */
 
 import React from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { IconCheck as Check } from '../../../icons/outline/check';
+import { IconArrowRight as ArrowRight } from '../../../icons/outline/arrow-right';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './List.module.css';
 

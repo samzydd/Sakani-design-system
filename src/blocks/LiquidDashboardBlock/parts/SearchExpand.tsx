@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Search } from 'lucide-react';
+import { IconSearch as Search } from '../../../icons/outline/search';
 import styles from './SearchExpand.module.css';
 
 /** Ghost/sm icon button (32x32) that expands into a 240px text input on click,

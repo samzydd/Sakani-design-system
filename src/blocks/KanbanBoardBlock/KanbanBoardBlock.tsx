@@ -16,7 +16,13 @@
  */
 
 import React from 'react';
-import { Search, Plus, MoreHorizontal, ChevronsUpDown, Calendar, MessageSquare, Flag } from 'lucide-react';
+import { IconSearch as Search } from '../../icons/outline/search';
+import { IconPlus as Plus } from '../../icons/outline/plus';
+import { IconDots as MoreHorizontal } from '../../icons/outline/dots';
+import { IconSelector as ChevronsUpDown } from '../../icons/outline/selector';
+import { IconCalendar as Calendar } from '../../icons/outline/calendar';
+import { IconMessage as MessageSquare } from '../../icons/outline/message';
+import { IconFlag as Flag } from '../../icons/outline/flag';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { Badge } from '../../components/Badge';

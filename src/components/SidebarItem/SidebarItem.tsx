@@ -31,12 +31,13 @@
  */
 
 import React from 'react';
-import { ChevronRight, type LucideIcon } from 'lucide-react';
+import { IconChevronRight as ChevronRight } from '../../icons/outline/chevron-right';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './SidebarItem.module.css';
+import type { IconComponent } from '../../icons/types';
 
 export interface SidebarItemProps {
-  icon?: LucideIcon;
+  icon?: IconComponent;
   label: string;
   active?: boolean;
   /** Only matters when `active`. true (default) = bg/surface card + shadow +

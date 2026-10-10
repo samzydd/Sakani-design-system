@@ -17,7 +17,8 @@
  */
 
 import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { IconChevronLeft as ChevronLeft } from '../../icons/outline/chevron-left';
+import { IconChevronRight as ChevronRight } from '../../icons/outline/chevron-right';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Calendar.module.css';
 import { useHoverHighlight } from '../../lib/useHoverHighlight';

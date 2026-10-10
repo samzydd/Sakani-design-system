@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Zap, ShieldCheck, Layers, Palette } from 'lucide-react';
+import { IconBolt as Zap } from '../../icons/outline/bolt';
+import { IconShieldCheck as ShieldCheck } from '../../icons/outline/shield-check';
+import { IconStack2 as Layers } from '../../icons/outline/stack-2';
+import { IconPalette as Palette } from '../../icons/outline/palette';
 import { FeatureGridBlock } from './FeatureGridBlock';
 
 const meta = {

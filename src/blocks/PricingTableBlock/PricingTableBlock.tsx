@@ -42,7 +42,7 @@
  */
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { IconCheck as Check } from '../../icons/outline/check';
 import { Badge } from '../../components/Badge';
 import { Button } from '../../components/Button';
 import { Divider } from '../../components/Divider';

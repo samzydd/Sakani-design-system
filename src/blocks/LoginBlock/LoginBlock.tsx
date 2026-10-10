@@ -46,7 +46,10 @@
  */
 
 import React from 'react';
-import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import { IconMail as Mail } from '../../icons/outline/mail';
+import { IconLock as Lock } from '../../icons/outline/lock';
+import { IconEye as Eye } from '../../icons/outline/eye';
+import { IconEyeOff as EyeOff } from '../../icons/outline/eye-off';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { Alert } from '../../components/Alert';

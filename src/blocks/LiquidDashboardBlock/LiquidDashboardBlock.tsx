@@ -24,10 +24,18 @@
  */
 
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
-import {
-  LayoutPanelTop, ChartColumnBig, CircleUser, Boxes, Megaphone, ChartPie, Settings2,
-  UsersRound, PlugZap, Settings, PanelRightClose, PanelRightOpen,
-} from 'lucide-react';
+import { IconLayoutNavbar as LayoutPanelTop } from '../../icons/outline/layout-navbar';
+import { IconChartBar as ChartColumnBig } from '../../icons/outline/chart-bar';
+import { IconUserCircle as CircleUser } from '../../icons/outline/user-circle';
+import { IconBoxMultiple as Boxes } from '../../icons/outline/box-multiple';
+import { IconSpeakerphone as Megaphone } from '../../icons/outline/speakerphone';
+import { IconChartPie as ChartPie } from '../../icons/outline/chart-pie';
+import { IconAdjustmentsHorizontal as Settings2 } from '../../icons/outline/adjustments-horizontal';
+import { IconUsers as UsersRound } from '../../icons/outline/users';
+import { IconPlugConnected as PlugZap } from '../../icons/outline/plug-connected';
+import { IconSettings as Settings } from '../../icons/outline/settings';
+import { IconLayoutSidebarRightCollapse as PanelRightClose } from '../../icons/outline/layout-sidebar-right-collapse';
+import { IconLayoutSidebarRightExpand as PanelRightOpen } from '../../icons/outline/layout-sidebar-right-expand';
 import { LiquidGlass, LiquidBackdrop, syncLiquidBackdrop } from '../../lib/LiquidGlass';
 import { SakaniLogo } from '../../lib/SakaniLogo';
 import { Sidebar } from '../../components/Sidebar';

@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { House, ChartLine, FolderKanban, Settings, Users } from 'lucide-react';
+import { IconHome as House } from '../../icons/outline/home';
+import { IconChartLine as ChartLine } from '../../icons/outline/chart-line';
+import { IconLayoutKanban as FolderKanban } from '../../icons/outline/layout-kanban';
+import { IconSettings as Settings } from '../../icons/outline/settings';
+import { IconUsers as Users } from '../../icons/outline/users';
 import { SakaniLogo } from '../../lib/SakaniLogo';
 import { Sidebar } from './Sidebar';
 import { SidebarHeader } from '../SidebarHeader/SidebarHeader';

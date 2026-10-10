@@ -143,3 +143,6 @@ export { HoverGroup, useHoverHighlight } from './lib/useHoverHighlight';
 export type { HoverGroupProps } from './lib/useHoverHighlight';
 export { LiquidGlass, LiquidBackdrop, useLiquidGlass, syncLiquidBackdrop } from './lib/LiquidGlass';
 export type { LiquidGlassProps, LiquidGlassVariant, LiquidGlassTint, LiquidGlassEffect, LiquidBackdropProps } from './lib/LiquidGlass';
+
+// Icon prop type: any Sakani (Tabler), Lucide or Tabler React icon component.
+export type { IconComponent } from './icons/types';

@@ -26,11 +26,21 @@
  */
 
 import React from 'react';
-import {
-  Search, House, ChartPie, Calendar, Mail, Bell,
-  Users, Boxes, Merge, Group,
-  Settings, MessageCircleMore, Phone, Video, PanelRight,
-} from 'lucide-react';
+import { IconSearch as Search } from '../../icons/outline/search';
+import { IconHome as House } from '../../icons/outline/home';
+import { IconChartPie as ChartPie } from '../../icons/outline/chart-pie';
+import { IconCalendar as Calendar } from '../../icons/outline/calendar';
+import { IconMail as Mail } from '../../icons/outline/mail';
+import { IconBell as Bell } from '../../icons/outline/bell';
+import { IconUsers as Users } from '../../icons/outline/users';
+import { IconBoxMultiple as Boxes } from '../../icons/outline/box-multiple';
+import { IconGitMerge as Merge } from '../../icons/outline/git-merge';
+import { IconCategory2 as Group } from '../../icons/outline/category-2';
+import { IconSettings as Settings } from '../../icons/outline/settings';
+import { IconMessageDots as MessageCircleMore } from '../../icons/outline/message-dots';
+import { IconPhone as Phone } from '../../icons/outline/phone';
+import { IconVideo as Video } from '../../icons/outline/video';
+import { IconLayoutSidebarRight as PanelRight } from '../../icons/outline/layout-sidebar-right';
 import { Input } from '../../components/Input';
 import { Divider } from '../../components/Divider';
 import { Avatar } from '../../components/Avatar';

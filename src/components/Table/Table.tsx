@@ -12,7 +12,7 @@
  */
 
 import React from 'react';
-import { GripVertical } from 'lucide-react';
+import { IconGripVertical as GripVertical } from '../../icons/outline/grip-vertical';
 import styles from './Table.module.css';
 import { useHoverHighlight } from '../../lib/useHoverHighlight';
 

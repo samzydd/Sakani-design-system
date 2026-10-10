@@ -10,7 +10,9 @@
  */
 
 import React from 'react';
-import { UploadCloud, File as FileIcon, X } from 'lucide-react';
+import { IconCloudUpload as UploadCloud } from '../../icons/outline/cloud-upload';
+import { IconFile as FileIcon } from '../../icons/outline/file';
+import { IconX as X } from '../../icons/outline/x';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './FileUpload.module.css';
 

@@ -14,7 +14,7 @@
  */
 
 import React from 'react';
-import { X } from 'lucide-react';
+import { IconX as X } from '../../../icons/outline/x';
 import { Badge } from '../../Badge';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './Tags.module.css';

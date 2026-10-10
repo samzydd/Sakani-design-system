@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Calendar, MessageSquare } from 'lucide-react';
+import { IconCalendar as Calendar } from '../../icons/outline/calendar';
+import { IconMessage as MessageSquare } from '../../icons/outline/message';
 import { CardMetaItem } from './CardMetaItem';
 
 const meta = {

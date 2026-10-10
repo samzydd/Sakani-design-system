@@ -9,9 +9,10 @@
  */
 
 import React from 'react';
-import type { LucideIcon } from 'lucide-react';
+
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Tabs.module.css';
+import type { IconComponent } from '../../icons/types';
 
 export interface TabItem {
   /** Unique key/value for the tab. */
@@ -19,7 +20,7 @@ export interface TabItem {
   /** Visible label. */
   label: string;
   /** Optional 16px leading glyph (Figma "Tab Item": icon adds a leading glyph). */
-  icon?: LucideIcon;
+  icon?: IconComponent;
   disabled?: boolean;
 }
 

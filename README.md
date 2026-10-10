@@ -17,7 +17,7 @@ Most component libraries start in code and retrofit the design. Sakani was built
 - **Glass & liquid glass** — a third theme axis, *Surface* (Solid · Glass · Liquid): frosted glassmorphism and Apple-style liquid glass with real lens refraction, switched per area with one attribute — see [Glass & liquid glass](#glass--liquid-glass)
 - **Accessible by default** — WCAG AA contrast audited, global focus-ring system, `prefers-reduced-motion` support, full ARIA semantics (combobox active-descendant, calendar date labels, live-region toasts, focus-return popovers)
 - **Typed & composable** — strict TypeScript, generic `Table<T>`, slot-based composition, controlled + uncontrolled patterns
-- **Geist typography** and **Sicons**, Sakani's icon set based on Lucide, matching the Figma source exactly
+- **Geist typography** and **Tabler Icons** (5,184 outline + 1,054 filled), matching the Figma source exactly
 
 
 ## Glass icons
@@ -34,20 +34,22 @@ import { GlassHeart, GlassCalendar } from '@sakaniui/react/glass-icons';
 Charcoal grey so they fit any brand; light and dark follow the theme. The Figma file has the
 matching *Glass Icons* component set.
 Browse them all in Storybook under *Foundations -> Glass Icons* or at https://www.sakaniui.com/docs/glass-icons.
-## Sicons
+## Icons
 
-Sakani's own icon set: the same 1,626 icons as the Figma *Icons* set, at a 1.5 stroke with softened
-corners.
+The icon set is [Tabler Icons](https://tabler.io/icons): 5,184 outline icons and 1,054 filled ones,
+the same as the Figma *↳ Icons (Tabler)* page. One component per icon, tree-shaken individually:
 
 ```tsx
-import { SiconHeart, SiconBell } from '@sakaniui/react/sicons';
+import { IconHome, IconBell, IconHeartFilled } from '@sakaniui/react/icons';
 
-<SiconHeart />              {/* 24px, currentColor */}
-<SiconBell size={20} />
+<IconHome />                       {/* 24px, 1.5 stroke, currentColor */}
+<IconBell size={20} />
+<IconHeartFilled color="#e11d48" />
 ```
 
-Props follow lucide-react (`size`, `color`, `strokeWidth`), so a Lucide icon is a find-and-replace.
-Sicons are based on [Lucide](https://lucide.dev) (ISC); see `THIRD_PARTY_NOTICES.md`.
+Names follow Tabler (`IconName` / `IconNameFilled`), so tabler.io/icons is the search. Props follow
+lucide-react (`size`, `color`, `strokeWidth`), and every component prop that takes an icon still
+accepts Lucide or Tabler React icons. See `THIRD_PARTY_NOTICES.md` for the MIT licence.
 
 ## Install
 

@@ -1,6 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { House, Inbox, ListChecks, Settings, Copy, Pencil, Trash2, Search } from 'lucide-react';
+import { IconHome as House } from '../icons/outline/home';
+import { IconInbox as Inbox } from '../icons/outline/inbox';
+import { IconListCheck as ListChecks } from '../icons/outline/list-check';
+import { IconSettings as Settings } from '../icons/outline/settings';
+import { IconCopy as Copy } from '../icons/outline/copy';
+import { IconPencil as Pencil } from '../icons/outline/pencil';
+import { IconTrash as Trash2 } from '../icons/outline/trash';
+import { IconSearch as Search } from '../icons/outline/search';
 import { Button } from '../components/Button';
 import { Input } from '../components/Input';
 import { Card } from '../components/Card';

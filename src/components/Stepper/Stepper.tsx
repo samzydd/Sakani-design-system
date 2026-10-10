@@ -25,7 +25,7 @@
  */
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Check } from 'lucide-react';
+import { IconCheck as Check } from '../../icons/outline/check';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './Stepper.module.css';
 

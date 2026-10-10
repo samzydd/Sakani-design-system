@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Megaphone } from 'lucide-react';
+import { IconSpeakerphone as Megaphone } from '../../icons/outline/speakerphone';
 import { SidebarPromo } from './SidebarPromo';
 
 const meta = {

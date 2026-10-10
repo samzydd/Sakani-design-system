@@ -55,7 +55,8 @@
  */
 
 import React from 'react';
-import { Menu, X } from 'lucide-react';
+import { IconMenu as Menu } from '../../../icons/outline/menu';
+import { IconX as X } from '../../../icons/outline/x';
 import { Button } from '../../Button';
 import { Divider } from '../../Divider';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';

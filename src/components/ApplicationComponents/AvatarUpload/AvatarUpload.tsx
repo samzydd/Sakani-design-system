@@ -19,7 +19,7 @@
  */
 
 import React from 'react';
-import { Camera } from 'lucide-react';
+import { IconCamera as Camera } from '../../../icons/outline/camera';
 import { Avatar } from '../../Avatar';
 import { Link } from '../../Link';
 import { Button } from '../../Button';

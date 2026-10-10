@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FileText, ChevronRight } from 'lucide-react';
+import { IconFileText as FileText } from '../../icons/outline/file-text';
+import { IconChevronRight as ChevronRight } from '../../icons/outline/chevron-right';
 import { ListItem } from './ListItem';
 import { HoverGroup } from '../../lib/useHoverHighlight';
 import { Badge } from '../Badge/Badge';

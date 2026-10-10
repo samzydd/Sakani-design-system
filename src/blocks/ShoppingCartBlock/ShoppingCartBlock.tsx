@@ -20,7 +20,7 @@
  */
 
 import React from 'react';
-import { ShoppingBag } from 'lucide-react';
+import { IconShoppingBag as ShoppingBag } from '../../icons/outline/shopping-bag';
 import { CartItem } from '../../components/ECommerceComponents/CartItem';
 import { Divider } from '../../components/Divider';
 import { Button } from '../../components/Button';

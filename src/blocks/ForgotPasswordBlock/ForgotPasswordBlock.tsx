@@ -27,7 +27,8 @@
  */
 
 import React from 'react';
-import { Mail, MailCheck } from 'lucide-react';
+import { IconMail as Mail } from '../../icons/outline/mail';
+import { IconMailCheck as MailCheck } from '../../icons/outline/mail-check';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { Alert } from '../../components/Alert';

@@ -12,11 +12,28 @@
  */
 
 import React from 'react';
-import {
-  House, Compass, Library, Heart, Settings, Search, Share, Ellipsis, Play, Pause,
-  SkipBack, SkipForward, Shuffle, Repeat, Sun, Moon, Volume1, Volume2, Move,
-  LayoutGrid, Radio, Mic2,
-} from 'lucide-react';
+import { IconHome as House } from '../../icons/outline/home';
+import { IconCompass as Compass } from '../../icons/outline/compass';
+import { IconLibrary as Library } from '../../icons/outline/library';
+import { IconHeart as Heart } from '../../icons/outline/heart';
+import { IconSettings as Settings } from '../../icons/outline/settings';
+import { IconSearch as Search } from '../../icons/outline/search';
+import { IconShare as Share } from '../../icons/outline/share';
+import { IconDots as Ellipsis } from '../../icons/outline/dots';
+import { IconPlayerPlay as Play } from '../../icons/outline/player-play';
+import { IconPlayerPause as Pause } from '../../icons/outline/player-pause';
+import { IconPlayerSkipBack as SkipBack } from '../../icons/outline/player-skip-back';
+import { IconPlayerSkipForward as SkipForward } from '../../icons/outline/player-skip-forward';
+import { IconArrowsShuffle as Shuffle } from '../../icons/outline/arrows-shuffle';
+import { IconRepeat as Repeat } from '../../icons/outline/repeat';
+import { IconSun as Sun } from '../../icons/outline/sun';
+import { IconMoon as Moon } from '../../icons/outline/moon';
+import { IconVolume2 as Volume1 } from '../../icons/outline/volume-2';
+import { IconVolume as Volume2 } from '../../icons/outline/volume';
+import { IconArrowsMove as Move } from '../../icons/outline/arrows-move';
+import { IconLayoutGrid as LayoutGrid } from '../../icons/outline/layout-grid';
+import { IconRadio as Radio } from '../../icons/outline/radio';
+import { IconMicrophone2 as Mic2 } from '../../icons/outline/microphone-2';
 import { LiquidGlass, LiquidBackdrop } from '../../lib/LiquidGlass';
 import balloons from '../../assets/marketing/blog-image-balloons.jpg';
 import artwork from '../../assets/marketing/blog-featured-space-station.jpg';

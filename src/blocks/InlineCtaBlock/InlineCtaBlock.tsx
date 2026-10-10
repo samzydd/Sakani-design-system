@@ -23,7 +23,7 @@
  */
 
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { IconSparkles as Sparkles } from '../../icons/outline/sparkles';
 import { Button } from '../../components/Button';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './InlineCtaBlock.module.css';

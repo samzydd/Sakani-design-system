@@ -10,7 +10,9 @@
  */
 
 import React from 'react';
-import { Sparkles, TriangleAlert, X } from 'lucide-react';
+import { IconSparkles as Sparkles } from '../../../icons/outline/sparkles';
+import { IconAlertTriangle as TriangleAlert } from '../../../icons/outline/alert-triangle';
+import { IconX as X } from '../../../icons/outline/x';
 import { Link } from '../../Link';
 import { IconButton } from '../../IconButton';
 import styles from './Announcement.module.css';

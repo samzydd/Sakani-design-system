@@ -108,7 +108,7 @@ CSS of a component into your own file.
 ## 4b. Glass icons
 
 - Import from `@sakaniui/react/glass-icons`: `GlassHeart`, `GlassCalendar` ... one per icon in the set
-  (1,626; names follow Lucide, kebab-case to `Glass` + PascalCase). Prefer them over `GlassIcon`, which
+  (1,626; Lucide-based shapes, names follow Lucide, kebab-case to `Glass` + PascalCase). Prefer them over `GlassIcon`, which
   wraps any Lucide component but can only draw it as one glass stroke.
 - Use them for feature lists, empty states, onboarding, app grids and marketing, at 24px and up
   (`size` defaults to 24; any CSS length works, `'1em'` follows the text). In dense UI (table rows,
@@ -120,16 +120,17 @@ CSS of a component into your own file.
   that doesn't match the page.
 - Give `title` when the icon carries meaning on its own; without it the icon is decorative (aria-hidden).
 
-## 4c. Sicons
+## 4c. Icons
 
-- Import from `@sakaniui/react/sicons`: `SiconHeart`, `SiconCalendar` ... one per icon in the set (1,626;
-  names follow Lucide, kebab-case to `Sicon` + PascalCase). They are the same icons as the Figma *Icons*
-  set, with softened corners. Each is tree-shaken on its own.
+- The icon set is Tabler Icons. Import from `@sakaniui/react/icons`: `IconHome`, `IconCalendar` ... (outline,
+  5,184) and `IconHomeFilled` ... (filled, 1,054). Names follow Tabler (tabler.io/icons is the search),
+  kebab-case to `Icon` + PascalCase, `Filled` suffix for filled. Each is tree-shaken on its own.
+- Outline for normal UI; Filled for active/selected states (a selected nav item, a liked heart). Don't
+  mix the two in one row without a reason: filled means "on".
 - Props follow lucide-react: `size` (default 24), `color` (default currentColor), `strokeWidth` (default
-  1.5), `absoluteStrokeWidth`. Add `title` when the icon carries meaning alone; without it the icon is
-  decorative (aria-hidden).
-- Existing components still render lucide-react icons. In new app code prefer Sicons so the app matches
-  the Figma file.
+  1.5, the Figma icon stroke), `absoluteStrokeWidth`. Add `title` when the icon carries meaning alone.
+- Component props that take an icon (`icon`, `leftIcon` ...) take the component itself, typed
+  `IconComponent`; Sakani, Lucide and Tabler React icons all fit.
 
 ## 5. Component guide — what it's for, why it behaves that way, when not to use it
 

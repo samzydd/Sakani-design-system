@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DollarSign, Users, Activity } from 'lucide-react';
+import { IconCurrencyDollar as DollarSign } from '../../icons/outline/currency-dollar';
+import { IconUsers as Users } from '../../icons/outline/users';
+import { IconActivity as Activity } from '../../icons/outline/activity';
 import { StatCard } from './StatCard';
 
 const meta = {

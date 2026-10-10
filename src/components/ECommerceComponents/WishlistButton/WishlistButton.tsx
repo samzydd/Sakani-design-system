@@ -20,7 +20,7 @@
  */
 
 import React from 'react';
-import { Heart } from 'lucide-react';
+import { IconHeart as Heart } from '../../../icons/outline/heart';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './WishlistButton.module.css';
 

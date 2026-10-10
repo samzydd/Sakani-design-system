@@ -23,7 +23,7 @@
  */
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { IconCheck as Check } from '../../icons/outline/check';
 import { Modal } from '../../components/ApplicationComponents/Modal';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import styles from './MultistepModalBlock.module.css';

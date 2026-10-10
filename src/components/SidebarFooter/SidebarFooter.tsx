@@ -12,7 +12,8 @@
  */
 
 import React from 'react';
-import { LogOut, ChevronsUpDown } from 'lucide-react';
+import { IconLogout as LogOut } from '../../icons/outline/logout';
+import { IconSelector as ChevronsUpDown } from '../../icons/outline/selector';
 import { iconStrokeWidth } from '../../lib/iconStrokeWidth';
 import { Avatar } from '../Avatar/Avatar';
 import styles from './SidebarFooter.module.css';

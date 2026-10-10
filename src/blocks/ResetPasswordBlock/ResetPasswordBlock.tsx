@@ -34,7 +34,11 @@
  */
 
 import React from 'react';
-import { Lock, Eye, EyeOff, ShieldCheck, CircleCheck } from 'lucide-react';
+import { IconLock as Lock } from '../../icons/outline/lock';
+import { IconEye as Eye } from '../../icons/outline/eye';
+import { IconEyeOff as EyeOff } from '../../icons/outline/eye-off';
+import { IconShieldCheck as ShieldCheck } from '../../icons/outline/shield-check';
+import { IconCircleCheck as CircleCheck } from '../../icons/outline/circle-check';
 import { Button } from '../../components/Button';
 import { Link } from '../../components/Link';
 import { Skeleton } from '../../components/Skeleton';

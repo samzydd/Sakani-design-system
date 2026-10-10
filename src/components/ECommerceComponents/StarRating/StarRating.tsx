@@ -24,7 +24,8 @@
  */
 
 import React from 'react';
-import { Star, StarHalf } from 'lucide-react';
+import { IconStar as Star } from '../../../icons/outline/star';
+import { IconStarHalf as StarHalf } from '../../../icons/outline/star-half';
 import { iconStrokeWidth } from '../../../lib/iconStrokeWidth';
 import styles from './StarRating.module.css';
 
