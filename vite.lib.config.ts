@@ -56,7 +56,7 @@ export default defineConfig({
       fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'mjs' : 'cjs'}`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'recharts', 'lucide-react'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'recharts'],
       output: {
         preserveModules: false,
         // Was a fallback to info.name, which Vite derives from

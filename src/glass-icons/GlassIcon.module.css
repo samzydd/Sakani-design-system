@@ -30,9 +30,8 @@
   --glass-icon-detail-off: #c9cdd4;
 }
 
-.accent { fill: var(--glass-icon-accent, #c9cdd3); }
+.accent { fill: var(--glass-icon-accent, #c9cdd3); opacity: 0.45; }
 .glassTop { stop-color: var(--glass-icon-glass-top, rgba(142, 147, 155, 0.5)); }
 .glassBottom { stop-color: var(--glass-icon-glass-bottom, rgba(80, 85, 94, 0.74)); }
 .rimStart { stop-color: var(--glass-icon-rim, rgba(255, 255, 255, 0.95)); }
 .detail { stroke: var(--glass-icon-detail, #fff); }
-.detailOff { stroke: var(--glass-icon-detail-off, #666b74); }
