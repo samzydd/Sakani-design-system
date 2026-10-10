@@ -20,23 +20,6 @@ Most component libraries start in code and retrofit the design. Sakani was built
 - **Geist typography** and **Tabler Icons** (5,184 outline + 1,054 filled), matching the Figma source exactly
 
 
-## Glass icons
-
-All 5,184 Tabler icons as monochrome frosted glass, one component per icon, with the same names as
-`@sakaniui/react/icons` (`IconHome` -> `GlassHome`):
-
-```tsx
-import { GlassHeart, GlassCalendar } from '@sakaniui/react/glass-icons';
-
-<GlassHeart />                 {/* 24px */}
-<GlassCalendar size={48} />
-```
-
-The glass is each icon's exact Tabler silhouette (its lines plus every area they enclose) with the
-inner lines drawn white on it, so every glass icon reads as its Tabler original. Charcoal grey so
-they fit any brand; light and dark follow the theme. The Figma file has the matching *Glass Icons /
-<Category>* component sets.
-Browse them all in Storybook under *Foundations -> Glass Icons* or at https://www.sakaniui.com/docs/glass-icons.
 ## Icons
 
 The icon set is [Tabler Icons](https://tabler.io/icons): 5,184 outline icons and 1,054 filled ones,

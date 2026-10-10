@@ -9,7 +9,6 @@ import path from 'node:path';
 //
 // Two entry points, published as two subpaths:
 //   .        -> src/index.ts   (stable, fully-configurable components)
-//   ./glass-icons -> src/glass-icons/index.ts (glass versions of the icon set)
 //   ./icons       -> src/icons/index.ts (the icon set: Tabler Icons, outline + filled)
 //   ./blocks -> src/blocks/index.ts (copy-paste composition examples --
 //     kept out of the main entry so importing them is an explicit,
@@ -23,7 +22,6 @@ export default defineConfig({
       include: [
         'src/components/**/*.ts', 'src/components/**/*.tsx', 'src/index.ts',
         'src/blocks/**/*.ts', 'src/blocks/**/*.tsx',
-        'src/glass-icons/**/*.ts', 'src/glass-icons/**/*.tsx',
         'src/icons/**/*.ts', 'src/icons/**/*.tsx',
       ],
       exclude: [
@@ -48,7 +46,6 @@ export default defineConfig({
         // 1,626 generated icon modules: a separate entry so the main bundle
         // doesn't carry them, and each export is pure so apps keep only the
         // icons they import.
-        'glass-icons': path.resolve(__dirname, 'src/glass-icons/index.ts'),
         icons: path.resolve(__dirname, 'src/icons/index.ts'),
       },
       name: 'SakaniDesignSystem',

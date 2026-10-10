@@ -2,8 +2,7 @@
 
 ## Tabler Icons
 
-The icon set (`@sakaniui/react/icons`), the icons used inside the components and the glass icons
-(`@sakaniui/react/glass-icons`, Tabler shapes with a glass treatment by Sakani) are Tabler Icons
+The icon set (`@sakaniui/react/icons`) and the icons used inside the components are Tabler Icons
 (https://tabler.io/icons). Tabler Icons is distributed under the MIT licence below, which is
 reproduced as it requires.
 

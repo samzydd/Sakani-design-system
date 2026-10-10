@@ -52,11 +52,6 @@
       "import": "./dist/blocks.mjs",
       "require": "./dist/blocks.cjs"
     },
-    "./glass-icons": {
-      "types": "./dist/glass-icons.d.ts",
-      "import": "./dist/glass-icons.mjs",
-      "require": "./dist/glass-icons.cjs"
-    },
     "./icons": {
       "types": "./dist/icons.d.ts",
       "import": "./dist/icons.mjs",
@@ -100,7 +95,6 @@
     "@vitest/browser-playwright": "^4.1.10",
     "@vitest/coverage-v8": "^4.1.10",
     "chromatic": "^18.0.1",
-    "clipper-lib": "^6.4.2",
     "oxlint": "^1.71.0",
     "playwright": "^1.61.1",
     "react": "^19.2.7",
