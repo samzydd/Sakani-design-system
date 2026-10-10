@@ -1,5 +1,5 @@
 /**
- * Geometry for the glass-icon generator: turns Lucide elements into path data
+ * Geometry for the glass-icon generator: turns Tabler icon elements into path data
  * and flattens paths into polylines, so the decomposer can measure them
  * (length, enclosed area, bounding box) without a browser.
  */
@@ -8,7 +8,7 @@ const NUM = /^\s*,?\s*(-?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?)/i;
 const FLAG = /^\s*,?\s*([01])/;
 const fmt = (n) => String(+n.toFixed(3));
 
-/** Any Lucide element as path data. */
+/** Any icon element (path, circle, rect...) as path data. */
 export function toPathD(tag, a) {
   const n = (k, d = 0) => (a[k] === undefined ? d : +a[k]);
   switch (tag) {

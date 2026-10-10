@@ -2,6 +2,24 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.8.0
+
+- **Glass icons are now Tabler.** `@sakaniui/react/glass-icons` covers all 5,184 Tabler outline icons
+  with the same names as `@sakaniui/react/icons` (`GlassHome`, `GlassBuildingStore` ...), matching
+  the Figma *Glass Icons / <Category>* component sets. **Breaking:** names that only existed in
+  Lucide changed (`GlassHouse` -> `GlassHome`, `GlassTrash2` -> `GlassTrash`, `GlassLightbulb` ->
+  `GlassBulb` ...); look up the Tabler name in the docs gallery.
+- **Glass that matches the icon.** The glass is now the icon's exact silhouette: its own lines plus
+  every area they enclose. Nothing is closed or invented, so the outer edge is always the Tabler
+  line, and the inner lines are drawn white on the glass (none are clipped away). Fixes icons like
+  printer, lock, headphones and wallet, which the old shape rules turned into blobs.
+- **Softer accent disc.** The disc behind the glass now sits inside the glass's top-right corner
+  at 45% opacity, so it only shows as a glow through the glass, and it is left off icons with too
+  little glass to hold it (arrows, logos, chevrons) instead of sitting on whatever is underneath.
+- `GlassIcon` (wrap any icon component) now takes any stroke icon component; `GlassIconData` has a
+  new shape (strokes, enclosed areas, accent).
+- `lucide-react` is gone entirely, and so is its licence notice: everything is Tabler (MIT).
+
 ## 0.7.0
 
 - **Tabler Icons is now the icon set.** New entry point `@sakaniui/react/icons` with all 5,184 Tabler

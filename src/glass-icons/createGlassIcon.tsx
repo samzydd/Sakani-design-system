@@ -1,34 +1,35 @@
 /**
  * Glass icons
  *
- * Every icon in the Sakani icon set as monochrome frosted glass, mirroring the
- * Figma "Glass Icons" component set layer for layer:
+ * Every Tabler icon as monochrome frosted glass, mirroring the Figma "Glass
+ * Icons / <Category>" component sets layer for layer:
  *
- *   Accent           a disc tucked behind the shape's top-right corner; where
- *                    the glass covers it, it shows through blurred.
- *   Glass            the icon's main shape as one frosted solid: a top-to-bottom
- *                    gradient, a bright rim along its edge and a soft shadow.
- *   Detail           lines that sit off the glass, drawn solid.
- *   Detail on glass  lines that sit on the glass, drawn white and clipped to it.
+ *   Accent           a soft disc tucked inside the glass's top-right corner,
+ *                    seen blurred through it. Only on icons with enough glass
+ *                    to hold it; line icons (arrows, logos) have none.
+ *   Glass            the icon's exact Tabler silhouette -- its own lines plus
+ *                    every area they enclose -- as one frosted solid: a
+ *                    top-to-bottom gradient, a bright rim and a soft shadow.
+ *   Detail on glass  the icon's inner lines, drawn white on the glass.
  *
- * Which parts are glass and which are lines is decided at build time
- * (scripts/glass-icons/decompose.mjs) with the same rules the Figma build uses.
- * Everything is plain SVG drawn in the icon's 24-unit space, so the icon scales
- * cleanly to any size and renders the same in every browser. Colours come from
- * the --glass-icon-* tokens, so light and dark follow the theme.
+ * The enclosed areas are worked out at build time
+ * (scripts/glass-icons/silhouette.mjs, the same rule the Figma build uses); the
+ * lines are the Tabler path data itself, so the outer edge is always the source
+ * icon's line. Everything is plain SVG in the icon's 24-unit space, so it
+ * scales cleanly. Colours come from the --glass-icon-* tokens, so light and
+ * dark follow the theme.
  */
 import React from 'react';
 import styles from './GlassIcon.module.css';
 
-/** [path data, flag]: for body parts the flag means "filled"; for details, "on the glass". */
-type Part = readonly [string, 0 | 1];
-
-/** Build-time data for one icon: [body, detail, accent disc [cx, cy, r], line-only icon]. */
+/**
+ * Build-time data for one icon: [stroke path data, enclosed-area path data,
+ * accent disc [cx, cy, r] or 0 for none].
+ */
 export type GlassIconData = readonly [
-  body: ReadonlyArray<Part>,
-  detail: ReadonlyArray<Part>,
-  accent: readonly [number, number, number],
-  pure: 0 | 1,
+  strokes: ReadonlyArray<string>,
+  fills: ReadonlyArray<string>,
+  accent: readonly [number, number, number] | 0,
 ];
 
 export interface GlassIconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref' | 'children' | 'fill' | 'stroke'> {
@@ -40,12 +41,12 @@ export interface GlassIconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref
   title?: string;
 }
 
-/** Draws a set of paths with the given paint. */
-type Drawer = (paint: { fill?: string; stroke?: string; strokeWidth: number }) => React.ReactNode;
+/** Draws the glass shape with the given paint. */
+type Drawer = (paint: string) => React.ReactNode;
 
-const BODY_SW = 2.5;   // glass shape outline, in the icon's 24-unit space
-const PURE_SW = 3;     // line-only icons are drawn a little heavier
-const DETAIL_SW = 2;   // the lines
+const LINE_SW = 2;       // glass line width, the Tabler source width
+const DETAIL_SW = 1.25;  // the white inner lines
+const DETAIL_INSET = 1;  // inner lines stop this far inside the glass edge
 const AREA = { x: -4, y: -4, width: 32, height: 32 } as const;
 
 function useSafeId() {
@@ -54,17 +55,13 @@ function useSafeId() {
 
 /** The shared renderer behind every glass icon. */
 export function GlassIconSvg({
-  body, onGlass, offGlass, accent, pure, size = 24, surface = 'auto', title, className, ...rest
+  body, detail, accent, size = 24, surface = 'auto', title, className, ...rest
 }: GlassIconProps & {
   body: Drawer;
-  onGlass?: Drawer | null;
-  offGlass?: Drawer | null;
-  accent: readonly [number, number, number];
-  pure?: boolean;
+  detail?: React.ReactNode;
+  accent?: readonly [number, number, number] | 0;
 }) {
   const id = useSafeId();
-  const sw = pure ? PURE_SW : BODY_SW;
-  const [cx, cy, r] = accent;
   const rootClass = [
     styles.root,
     surface === 'dark' ? styles.onDark : '',
@@ -89,13 +86,22 @@ export function GlassIconSvg({
           <stop offset="1" stopColor="#fff" stopOpacity={0.35} />
         </linearGradient>
         {/* Where the glass is, and where it isn't. */}
-        <mask id={`${id}m`} maskUnits="userSpaceOnUse" {...AREA}>
-          {body({ fill: '#fff', stroke: '#fff', strokeWidth: sw })}
-        </mask>
+        <mask id={`${id}m`} maskUnits="userSpaceOnUse" {...AREA}>{body('#fff')}</mask>
         <mask id={`${id}o`} maskUnits="userSpaceOnUse" {...AREA}>
           <rect {...AREA} fill="#fff" />
-          {body({ fill: '#000', stroke: '#000', strokeWidth: sw })}
+          {body('#000')}
         </mask>
+        {detail && (
+          <>
+            {/* The glass shrunk by DETAIL_INSET: inner lines show, the outline itself doesn't. */}
+            <filter id={`${id}i`} filterUnits="userSpaceOnUse" {...AREA}>
+              <feMorphology operator="erode" radius={DETAIL_INSET} />
+            </filter>
+            <mask id={`${id}d`} maskUnits="userSpaceOnUse" {...AREA}>
+              <g filter={`url(#${id}i)`}>{body('#fff')}</g>
+            </mask>
+          </>
+        )}
         <filter id={`${id}b`} filterUnits="userSpaceOnUse" {...AREA}>
           <feGaussianBlur stdDeviation="2" />
         </filter>
@@ -110,74 +116,59 @@ export function GlassIconSvg({
         </filter>
       </defs>
 
-      {/* Outside the glass: its soft shadow and the uncovered part of the disc. */}
+      {/* Outside the glass: its soft shadow and any uncovered sliver of the disc. */}
       <g mask={`url(#${id}o)`}>
-        <g filter={`url(#${id}s)`} transform="translate(0 1)" opacity={0.12}>
-          {body({ fill: '#000', stroke: '#000', strokeWidth: sw })}
-        </g>
-        <circle cx={cx} cy={cy} r={r} className={styles.accent} />
+        <g filter={`url(#${id}s)`} transform="translate(0 1)" opacity={0.12}>{body('#000')}</g>
+        {accent ? <circle cx={accent[0]} cy={accent[1]} r={accent[2]} className={styles.accent} /> : null}
       </g>
 
       {/* The glass: the disc seen through it blurred, then the frosted fill. */}
       <g mask={`url(#${id}m)`}>
-        <circle cx={cx} cy={cy} r={r} className={styles.accent} filter={`url(#${id}b)`} />
+        {accent ? <circle cx={accent[0]} cy={accent[1]} r={accent[2]} className={styles.accent} filter={`url(#${id}b)`} /> : null}
         <rect {...AREA} fill={`url(#${id}g)`} />
       </g>
-      <g filter={`url(#${id}e)`}>{body({ fill: `url(#${id}r)`, stroke: `url(#${id}r)`, strokeWidth: sw })}</g>
+      <g filter={`url(#${id}e)`}>{body(`url(#${id}r)`)}</g>
 
-      {offGlass && <g className={styles.detailOff} fill="none">{offGlass({ strokeWidth: DETAIL_SW })}</g>}
-      {onGlass && <g className={styles.detail} fill="none" mask={`url(#${id}m)`}>{onGlass({ strokeWidth: DETAIL_SW })}</g>}
+      {detail && <g className={styles.detail} fill="none" mask={`url(#${id}d)`}>{detail}</g>}
     </svg>
   );
 }
 
-/** Draws build-time parts; `filled` decides per part whether the fill paint applies. */
-function partsDrawer(parts: ReadonlyArray<Part>, filled: boolean): Drawer {
-  return ({ fill, stroke, strokeWidth }) =>
-    parts.map(([d, f], i) => (
-      <path
-        key={i}
-        d={d}
-        fill={filled && f ? fill : 'none'}
-        stroke={stroke}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    ));
-}
+const strokePath = (d: string, i: number, stroke: string, width: number) => (
+  <path key={i} d={d} fill="none" stroke={stroke} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" />
+);
 
 export type GlassIconComponent = React.FC<GlassIconProps> & { iconName: string };
 
 /** Builds a glass icon component from an icon's build-time data. */
-export function createGlassIcon(iconName: string, [body, detail, accent, pure]: GlassIconData): GlassIconComponent {
-  const on = detail.filter((p) => p[1]);
-  const off = detail.filter((p) => !p[1]);
-  const drawBody = partsDrawer(body, true);
-  const drawOn = on.length ? partsDrawer(on, false) : null;
-  const drawOff = off.length ? partsDrawer(off, false) : null;
+export function createGlassIcon(iconName: string, [strokes, fills, accent]: GlassIconData): GlassIconComponent {
+  const body: Drawer = (paint) => [
+    ...fills.map((d, i) => <path key={`f${i}`} d={d} fill={paint} />),
+    ...strokes.map((d, i) => strokePath(d, i, paint, LINE_SW)),
+  ];
+  const detail = strokes.map((d, i) => (
+    <path key={i} d={d} strokeWidth={DETAIL_SW} strokeLinecap="round" strokeLinejoin="round" />
+  ));
   const Component = ((props: GlassIconProps) => (
-    <GlassIconSvg {...props} body={drawBody} onGlass={drawOn} offGlass={drawOff} accent={accent} pure={!!pure} />
+    <GlassIconSvg {...props} body={body} detail={detail} accent={accent} />
   )) as GlassIconComponent;
   Component.displayName = 'Glass' + iconName.split('-').map((p) => p[0].toUpperCase() + p.slice(1)).join('');
   Component.iconName = iconName;
   return Component;
 }
 
-/** Any Lucide-style icon component (size/strokeWidth/color props). */
-type LucideLike = React.ComponentType<{
-  size?: number | string; strokeWidth?: number; color?: string; className?: string;
-  fill?: string; absoluteStrokeWidth?: boolean;
+/** Any stroke icon component that takes size/strokeWidth/color (Sakani, Tabler or Lucide icons). */
+type StrokeIcon = React.ComponentType<{
+  size?: number | string; strokeWidth?: number | string; color?: string; className?: string;
 }>;
 
 /**
- * Glass treatment for any Lucide icon component, including ones added to
- * Lucide after this package was built. Prefer the generated `Glass*`
- * components: they know which parts are solid shapes and which are lines,
- * while this draws the whole icon as a glass stroke (a component gives no way
+ * Glass treatment for any stroke icon component. Prefer the generated `Glass*`
+ * components: they fill the shape's enclosed areas and draw its inner lines,
+ * while this draws the whole icon as one glass stroke (a component gives no way
  * to tell the parts apart).
  */
-export function GlassIcon({ icon: Icon, ...props }: GlassIconProps & { icon: LucideLike }) {
-  const body: Drawer = ({ stroke, strokeWidth }) => <Icon size={24} color={stroke} strokeWidth={strokeWidth} />;
-  return <GlassIconSvg {...props} body={body} accent={[17.4, 6.6, 4.5]} pure />;
+export function GlassIcon({ icon: Icon, ...props }: GlassIconProps & { icon: StrokeIcon }) {
+  const body: Drawer = (paint) => <Icon size={24} color={paint} strokeWidth={2.5} />;
+  return <GlassIconSvg {...props} body={body} />;
 }

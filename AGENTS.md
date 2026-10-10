@@ -107,12 +107,12 @@ CSS of a component into your own file.
 
 ## 4b. Glass icons
 
-- Import from `@sakaniui/react/glass-icons`: `GlassHeart`, `GlassCalendar` ... one per icon in the set
-  (1,626; Lucide-based shapes, names follow Lucide, kebab-case to `Glass` + PascalCase). Prefer them over `GlassIcon`, which
-  wraps any Lucide component but can only draw it as one glass stroke.
+- Import from `@sakaniui/react/glass-icons`: `GlassHeart`, `GlassCalendar` ... one per Tabler icon
+  (5,184; names match `@sakaniui/react/icons`, `IconHome` -> `GlassHome`). Prefer them over
+  `GlassIcon`, which wraps any stroke icon component but can only draw it as one glass stroke.
 - Use them for feature lists, empty states, onboarding, app grids and marketing, at 24px and up
   (`size` defaults to 24; any CSS length works, `'1em'` follows the text). In dense UI (table rows,
-  buttons, 16px) use the plain Lucide icon instead; glass needs room to read.
+  buttons, 16px) use the plain icon from `@sakaniui/react/icons` instead; glass needs room to read.
 - They are monochrome charcoal on purpose (brand-neutral). There is no colour prop: don't recolour
   them to signal status; keep status in text, badges or regular icons. Tune the look globally with
   the `--glass-icon-*` tokens if you must.

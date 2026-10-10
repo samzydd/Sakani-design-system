@@ -1,7 +1,7 @@
 {
   "name": "@sakaniui/react",
-  "version": "0.7.0",
-  "description": "Sakani Design System \u2014 token-driven React components and blocks with light & dark modes, plus built-in glass and Apple-style liquid glass surfaces.",
+  "version": "0.8.0",
+  "description": "Sakani Design System — token-driven React components and blocks with light & dark modes, plus built-in glass and Apple-style liquid glass surfaces.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -100,7 +100,7 @@
     "@vitest/browser-playwright": "^4.1.10",
     "@vitest/coverage-v8": "^4.1.10",
     "chromatic": "^18.0.1",
-    "lucide-react": "^1.25.0",
+    "clipper-lib": "^6.4.2",
     "oxlint": "^1.71.0",
     "playwright": "^1.61.1",
     "react": "^19.2.7",

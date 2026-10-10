@@ -5,18 +5,19 @@ import * as GlassIcons from '../glass-icons';
 import {
   GlassIcon, glassIconNames,
   GlassHeart, GlassFolder, GlassCalendar, GlassCamera, GlassSettings, GlassBell,
-  GlassMail, GlassHouse, GlassTrash2, GlassLightbulb, GlassShoppingBasket, GlassSearch,
+  GlassMail, GlassHome, GlassTrash, GlassBulb, GlassBasket, GlassSearch,
   type GlassIconComponent,
 } from '../glass-icons';
 
 /**
- * Glass icons -- every icon in the Sakani icon set (the Figma "Icons"
- * component set, 1,626 icons) as monochrome frosted glass, 1:1 with the
- * Figma "Glass Icons" component set.
+ * Glass icons -- every Tabler icon in the Sakani icon set (5,184) as
+ * monochrome frosted glass, 1:1 with the Figma "Glass Icons / <Category>"
+ * component sets. Same names as `@sakaniui/react/icons` (`IconHome` ->
+ * `GlassHome`).
  *
  * Import from `@sakaniui/react/glass-icons`, one component per icon
  * (`GlassHeart`, `GlassCalendar` ...). Each is tree-shaken individually.
- * `<GlassIcon icon={AnyLucideIcon} />` covers Lucide icons added later.
+ * `<GlassIcon icon={IconHome} />` draws any stroke icon component as a glass stroke.
  */
 const meta = {
   title: 'Foundations/Glass Icons',
@@ -27,7 +28,7 @@ type Story = StoryObj<typeof meta>;
 
 const SAMPLE: GlassIconComponent[] = [
   GlassHeart, GlassFolder, GlassCalendar, GlassCamera, GlassSettings, GlassBell,
-  GlassMail, GlassHouse, GlassTrash2, GlassLightbulb, GlassShoppingBasket, GlassSearch,
+  GlassMail, GlassHome, GlassTrash, GlassBulb, GlassBasket, GlassSearch,
 ];
 
 const page: React.CSSProperties = { padding: 40, fontFamily: 'var(--font-sans)', color: 'var(--color-fg-default)' };
@@ -67,8 +68,8 @@ export const Sizes: Story = {
   ),
 };
 
-/** Any Lucide component, including ones added to Lucide after this build: drawn as a glass stroke. */
-export const AnyLucideIcon: Story = {
+/** Any stroke icon component (a Sakani icon here): drawn as one glass stroke. Compare the generated GlassHeart. */
+export const AnyIconComponent: Story = {
   render: () => (
     <div style={{ ...page, display: 'flex', gap: 32, justifyContent: 'center' }}>
       <GlassIcon icon={Heart} size={64} />
@@ -79,7 +80,7 @@ export const AnyLucideIcon: Story = {
 
 type GalleryArgs = { size: number; dark: boolean };
 
-/** All 1,626 icons. Search by name; change size and theme in the controls. */
+/** All 5,184 icons. Search by name; change size and theme in the controls. */
 export const Gallery: StoryObj<GalleryArgs> = {
   args: { size: 32, dark: false },
   argTypes: { size: { control: { type: 'range', min: 16, max: 96, step: 4 } } },
