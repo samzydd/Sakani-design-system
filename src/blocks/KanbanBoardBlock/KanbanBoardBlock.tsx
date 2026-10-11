@@ -9,7 +9,12 @@
  *   default      · columns with counts, cards, and an add affordance
  *   loading      · card skeletons hold each column's shape
  *   empty-column · a column with no cards shows a dashed drop zone
- *   dragging     · a card lifts while a placeholder marks the drop target
+ *   dragging     · a card lifts and tilts while a card-shaped slot marks where it lands
+ *
+ * Drag and drop (default state) is pointer-based, see useKanbanDrag.ts: the
+ * card follows the pointer and swings with its movement, a slot opens where it
+ * will land, the other cards slide out of the way, and on release it glides
+ * into place. Mouse, pen and touch.
  *
  * The column is defined locally (below) rather than as a library component —
  * it exists to serve this block, so it lives with the block.
@@ -33,6 +38,7 @@ import { BoardCard } from '../../components/BoardCard';
 import { CardMetaItem } from '../../components/CardMetaItem';
 import { FilterChip } from '../../components/FilterChip';
 import styles from './KanbanBoardBlock.module.css';
+import { useKanbanDrag, type KanbanPos } from './useKanbanDrag';
 
 export type KanbanBoardBlockState = 'default' | 'loading' | 'empty-column' | 'dragging';
 
@@ -40,6 +46,7 @@ export type KanbanBoardBlockState = 'default' | 'loading' | 'empty-column' | 'dr
  * Sample data — replace with your own
  * ------------------------------------------------------------------ */
 interface Task {
+  id: string;
   title: string;
   description?: string;
   tags: Array<{ label: string; variant: 'accent' | 'neutral' | 'success' | 'warning' | 'danger' | 'info' }>;
@@ -53,30 +60,30 @@ const INITIAL_COLUMNS: Array<{ title: string; dot: string; tasks: Task[] }> = [
   {
     title: 'To-do', dot: 'var(--color-chart-1)',
     tasks: [
-      { title: 'Design system update', description: 'Enhance component consistency and usability',
+      { id: 'design-system', title: 'Design system update', description: 'Enhance component consistency and usability',
         tags: [{ label: 'Design', variant: 'accent' }, { label: 'Product', variant: 'neutral' }],
         due: 'Jan 25', comments: 4, assignees: [{ initials: 'AB' }, { initials: 'KO' }, { initials: 'MR' }, { initials: 'JD' }] },
-      { title: 'Retention rate by 23%', description: 'Improve retention through campaigns',
+      { id: 'retention', title: 'Retention rate by 23%', description: 'Improve retention through campaigns',
         tags: [{ label: 'Marketing', variant: 'info' }],
         due: 'Jan 25', comments: 2, assignees: [{ initials: 'PT' }, { initials: 'ZA' }] },
-      { title: 'KYC flow review', tags: [{ label: 'Product', variant: 'neutral' }],
+      { id: 'kyc', title: 'KYC flow review', tags: [{ label: 'Product', variant: 'neutral' }],
         due: 'Jan 28', assignees: [{ initials: 'AO' }], compact: true },
     ],
   },
   {
     title: 'In progress', dot: 'var(--color-chart-2)',
     tasks: [
-      { title: 'Icon library audit', description: 'Normalize stroke widths across 1,600 glyphs',
+      { id: 'icon-audit', title: 'Icon library audit', description: 'Normalize stroke widths across 1,600 glyphs',
         tags: [{ label: 'Design', variant: 'accent' }],
         due: 'Jan 26', comments: 7, assignees: [{ initials: 'AC' }, { initials: 'DO' }] },
-      { title: 'Search performance', tags: [{ label: 'Engineering', variant: 'info' }],
+      { id: 'search-perf', title: 'Search performance', tags: [{ label: 'Engineering', variant: 'info' }],
         due: 'Jan 30', assignees: [{ initials: 'MR' }], compact: true },
     ],
   },
   {
     title: 'In review', dot: 'var(--color-chart-4)',
     tasks: [
-      { title: 'Onboarding checklist', description: 'Three-step setup with progress tracking',
+      { id: 'onboarding', title: 'Onboarding checklist', description: 'Three-step setup with progress tracking',
         tags: [{ label: 'Growth', variant: 'success' }],
         due: 'Feb 2', comments: 3, assignees: [{ initials: 'KO' }, { initials: 'PT' }] },
     ],
@@ -84,7 +91,7 @@ const INITIAL_COLUMNS: Array<{ title: string; dot: string; tasks: Task[] }> = [
   {
     title: 'Done', dot: 'var(--color-success-solid)',
     tasks: [
-      { title: 'Dark mode tokens', description: 'Semantic layer flips from a single source',
+      { id: 'dark-mode', title: 'Dark mode tokens', description: 'Semantic layer flips from a single source',
         tags: [{ label: 'Design', variant: 'accent' }],
         due: 'Jan 18', assignees: [{ initials: 'AB' }] },
     ],
@@ -105,11 +112,14 @@ interface ColumnProps {
    * bottom instead of leaving blank canvas. No-op at the board's natural
    * height. */
   fillPlaceholders?: boolean;
+  /** A dragged card is over this column. */
+  isTarget?: boolean;
+  bodyRef?: React.Ref<HTMLDivElement>;
   children?: React.ReactNode;
 }
 
-const Column: React.FC<ColumnProps> = ({ title, dot, count, variant = 'default', fillPlaceholders, children }) => (
-  <div className={[styles.column, fillPlaceholders ? styles['column--fill'] : ''].filter(Boolean).join(' ')}>
+const Column: React.FC<ColumnProps> = ({ title, dot, count, variant = 'default', fillPlaceholders, isTarget, bodyRef, children }) => (
+  <div className={[styles.column, fillPlaceholders ? styles['column--fill'] : '', isTarget ? styles['column--target'] : ''].filter(Boolean).join(' ')}>
     <div className={styles.column__header}>
       <span className={styles.column__dot} style={{ background: dot }} aria-hidden="true" />
       <span className={styles.column__title}>{title}</span>
@@ -123,7 +133,7 @@ const Column: React.FC<ColumnProps> = ({ title, dot, count, variant = 'default',
       </button>
     </div>
 
-    <div className={[styles.column__body, fillPlaceholders ? styles['column__body--fill'] : ''].filter(Boolean).join(' ')}>
+    <div ref={bodyRef} className={[styles.column__body, fillPlaceholders ? styles['column__body--fill'] : ''].filter(Boolean).join(' ')}>
       {variant === 'empty' ? (
         <div className={styles.dropZone}>Drop tasks here</div>
       ) : variant === 'loading' ? (
@@ -156,17 +166,9 @@ const renderTask = (
   task: Task,
   key: React.Key,
   state?: 'default' | 'dragging',
-  dragProps?: {
-    draggable: boolean;
-    onDragStart: (e: React.DragEvent) => void;
-    onDragEnd: () => void;
-  },
+  wrapperProps?: React.HTMLAttributes<HTMLDivElement> & Record<`data-${string}`, string>,
 ) => (
-  <div
-    key={key}
-    {...(dragProps ?? {})}
-    style={dragProps ? { cursor: 'grab' } : undefined}
-  >
+  <div key={key} className={wrapperProps ? styles.draggable : undefined} {...(wrapperProps ?? {})}>
   <BoardCard
     type={task.compact ? 'compact' : 'default'}
     state={state === 'dragging' ? 'dragging' : 'default'}
@@ -210,29 +212,23 @@ export const KanbanBoardBlock: React.FC<KanbanBoardBlockProps> = ({
   fillPlaceholders,
 }) => {
   // ---- drag and drop -----------------------------------------------------
-  // Native HTML5 drag and drop, kept deliberately simple: enough to feel the
-  // interaction and test the dragging visuals. Swap for a dedicated library
-  // (dnd-kit, react-dnd) if you need keyboard support or touch.
   const [columns, setColumns] = React.useState(INITIAL_COLUMNS);
-  const [dragging, setDragging] = React.useState<{ col: number; index: number } | null>(null);
-  const [dragOverCol, setDragOverCol] = React.useState<number | null>(null);
-
-  const onDrop = (targetCol: number) => {
-    if (!dragging) return;
-    setColumns((prev) => {
-      const next = prev.map((c) => ({ ...c, tasks: [...c.tasks] }));
-      const [moved] = next[dragging.col].tasks.splice(dragging.index, 1);
-      if (moved) next[targetCol].tasks.push(moved);
-      return next;
-    });
-    setDragging(null);
-    setDragOverCol(null);
-  };
+  const drag = useKanbanDrag({
+    enabled: state === 'default',
+    onMove: (from: KanbanPos, to: KanbanPos) =>
+      setColumns((prev) => {
+        const next = prev.map((c) => ({ ...c, tasks: [...c.tasks] }));
+        const [moved] = next[from.col].tasks.splice(from.index, 1);
+        if (moved) next[to.col].tasks.splice(to.index, 0, moved);
+        return next;
+      }),
+  });
+  const draggedTask = drag.active ? columns[drag.active.from.col]?.tasks[drag.active.from.index] : undefined;
 
   const source = state === 'default' ? columns : INITIAL_COLUMNS;
 
   return (
-  <div className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
+  <div ref={drag.blockRef} className={[styles.block, className ?? ''].filter(Boolean).join(' ')}>
     {/* ---- Toolbar ---- */}
     <div className={styles.toolbar}>
       <div className={styles.toolbar__left}>
@@ -250,62 +246,67 @@ export const KanbanBoardBlock: React.FC<KanbanBoardBlockProps> = ({
     </div>
 
     {/* ---- Columns ---- */}
-    <div className={[styles.columns, fillPlaceholders ? styles['columns--fill'] : ''].filter(Boolean).join(' ')}>
+    <div ref={drag.boardRef} className={[styles.columns, fillPlaceholders ? styles['columns--fill'] : ''].filter(Boolean).join(' ')}>
       {source.map((col, colIndex) => {
         const isEmptyCol = state === 'empty-column' && colIndex === 2;
         const variant =
           state === 'loading' ? 'loading' : isEmptyCol ? 'empty' : 'default';
 
         return (
-          <div
-            key={col.title}
-            onDragOver={(e) => { e.preventDefault(); setDragOverCol(colIndex); }}
-            onDragLeave={() => setDragOverCol((c) => (c === colIndex ? null : c))}
-            onDrop={() => onDrop(colIndex)}
-            className={dragOverCol === colIndex ? styles.columnDropTarget : undefined}
-          >
           <Column
+            key={col.title}
+            isTarget={!!drag.active && drag.target?.col === colIndex && drag.target.col !== drag.active.from.col}
+            bodyRef={drag.columnRef(colIndex)}
             title={col.title}
             dot={col.dot}
             count={state === 'loading' ? '—' : isEmptyCol ? 0 : col.tasks.length}
             variant={variant}
             fillPlaceholders={fillPlaceholders}
           >
-            {col.tasks.map((task, i) => {
-              // In the dragging state the last card of column 2 lifts out,
-              // leaving a dashed placeholder in its slot.
-              const isDragged =
-                state === 'dragging' && colIndex === 1 && i === col.tasks.length - 1;
-              if (isDragged) {
-                return (
-                  <React.Fragment key={`${col.title}-${i}`}>
-                    <div className={styles.dropPlaceholder} aria-hidden="true" />
-                    <div className={styles.draggedCard}>{renderTask(task, `${col.title}-drag`, 'dragging')}</div>
-                  </React.Fragment>
-                );
+            {(() => {
+              // While dragging: the card leaves its column and a slot opens at the target.
+              const a = drag.active;
+              const items = col.tasks
+                .map((task, i) => ({ task, i }))
+                .filter(({ i }) => !(a && a.from.col === colIndex && a.from.index === i));
+              const nodes: React.ReactNode[] = items.map(({ task, i }) => {
+                // The static dragging state: column 2's last card lifts out over its slot.
+                const isDragged = state === 'dragging' && colIndex === 1 && i === col.tasks.length - 1;
+                if (isDragged) {
+                  return (
+                    <React.Fragment key={task.id}>
+                      <div className={styles.slot} style={{ height: 96 }} aria-hidden="true" />
+                      <div className={styles.draggedCard}>{renderTask(task, `${task.id}-drag`, 'dragging')}</div>
+                    </React.Fragment>
+                  );
+                }
+                return renderTask(task, task.id, 'default', drag.cardProps({ col: colIndex, index: i }, task.id));
+              });
+              if (a && drag.target?.col === colIndex) {
+                nodes.splice(drag.target.index, 0, (
+                  <div
+                    key="slot"
+                    data-kanban-slot=""
+                    data-flip-id={`slot-${colIndex}`}
+                    className={styles.slot}
+                    style={{ height: a.height }}
+                    aria-hidden="true"
+                  />
+                ));
               }
-              const isBeingDragged = dragging?.col === colIndex && dragging?.index === i;
-              return renderTask(
-                task,
-                `${col.title}-${i}`,
-                isBeingDragged ? 'dragging' : 'default',
-                state === 'default'
-                  ? {
-                      draggable: true,
-                      onDragStart: (e: React.DragEvent) => {
-                        e.dataTransfer.effectAllowed = 'move';
-                        setDragging({ col: colIndex, index: i });
-                      },
-                      onDragEnd: () => { setDragging(null); setDragOverCol(null); },
-                    }
-                  : undefined,
-              );
-            })}
+              return nodes;
+            })()}
           </Column>
-          </div>
         );
       })}
       </div>
+
+    {/* The card in flight: follows the pointer above the board. */}
+    {drag.active && draggedTask && (
+      <div ref={drag.overlayRef} className={styles.overlay} style={{ width: drag.active.width }} aria-hidden="true">
+        {renderTask(draggedTask, 'overlay')}
+      </div>
+    )}
     </div>
   );
 };
