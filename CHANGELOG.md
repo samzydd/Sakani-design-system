@@ -2,6 +2,18 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.8.1
+
+- **Kanban Board: smooth drag and drop.** The block's native HTML5 drag is replaced by pointer-based
+  dragging (mouse, pen and touch). While you drag, the card lifts and swings from the grab point
+  with its movement; a drop slot -- the card itself at 20% with a 12/4 dashed outline -- opens
+  exactly where it will land and the other cards slide out of the way; on release the card glides
+  into place. Drops land at the slot's position instead of the end of the column. Touch drags start
+  with a press-and-hold, the board auto-scrolls at its edges, a card dropped outside every column
+  springs back, and reduced motion turns off the swing and glide.
+- The sample board has photo avatars and five or six cards per column. Figma: Board Column gains a
+  *Drop target* variant, and the Kanban *Dragging* state shows the new slot.
+
 ## 0.8.0
 
 - **Removed:** Glass Icons (`@sakaniui/react/glass-icons`). The glass versions couldn't stay faithful
