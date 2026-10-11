@@ -2,6 +2,12 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.8.2
+
+- **Kanban Board: calmer motion.** The dragged card's tilt and its settle on drop are now
+  near-critically damped (overshoot down from about 30% to 2%), and the cards that slide out of the
+  way ease in without overshooting.
+
 ## 0.8.1
 
 - **Kanban Board: smooth drag and drop.** The block's native HTML5 drag is replaced by pointer-based
