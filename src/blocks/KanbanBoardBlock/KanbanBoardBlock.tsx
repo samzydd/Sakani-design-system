@@ -39,6 +39,27 @@ import { CardMetaItem } from '../../components/CardMetaItem';
 import { FilterChip } from '../../components/FilterChip';
 import styles from './KanbanBoardBlock.module.css';
 import { useKanbanDrag, type KanbanPos } from './useKanbanDrag';
+import amaraPhoto from '../../assets/avatars/activity-amara-kalu.jpg';
+import chidiPhoto from '../../assets/avatars/activity-chidi-duru.jpg';
+import jadePhoto from '../../assets/avatars/activity-jade-silva.jpg';
+import raviPhoto from '../../assets/avatars/activity-ravi-menon.jpg';
+import emilyPhoto from '../../assets/avatars/liquid-dashboard-emily-johnson.png';
+import michaelPhoto from '../../assets/avatars/liquid-dashboard-michael-evans.png';
+import sarahPhoto from '../../assets/avatars/liquid-dashboard-sarah-williams.png';
+import balazsPhoto from '../../assets/avatars/r1-contact-novak-balazs.jpg';
+import attilaPhoto from '../../assets/avatars/r1-owner-kende-attila.jpg';
+import jakabPhoto from '../../assets/avatars/r2-contact-szabo-jakab.jpg';
+import boldizsarPhoto from '../../assets/avatars/r2-owner-orosz-boldizsar.jpg';
+import norbertPhoto from '../../assets/avatars/r3-contact-bogdan-norbert.jpg';
+import arpadPhoto from '../../assets/avatars/r3-owner-simon-arpad.jpg';
+import ivettePhoto from '../../assets/avatars/r4-contact-ramai-ivette.jpg';
+import gezaPhoto from '../../assets/avatars/r5-contact-csatar-geza.jpg';
+import viktorPhoto from '../../assets/avatars/r6-contact-veres-viktor.jpg';
+import vincePhoto from '../../assets/avatars/r6-owner-kiraly-vince.jpg';
+import szilveszterPhoto from '../../assets/avatars/r7-contact-hajdu-szilveszter.jpg';
+import kalmanPhoto from '../../assets/avatars/r7-owner-szigmund-kalman.jpg';
+import endrePhoto from '../../assets/avatars/r9-contact-aprod-endre.jpg';
+import andrasPhoto from '../../assets/avatars/r9-owner-antal-andras.jpg';
 
 export type KanbanBoardBlockState = 'default' | 'loading' | 'empty-column' | 'dragging';
 
@@ -52,9 +73,35 @@ interface Task {
   tags: Array<{ label: string; variant: 'accent' | 'neutral' | 'success' | 'warning' | 'danger' | 'info' }>;
   due: string;
   comments?: number;
-  assignees: Array<{ initials: string }>;
+  assignees: Array<{ src?: string; alt?: string; initials?: string }>;
   compact?: boolean;
 }
+
+/** Sample people: photos bundled with the package (src/assets/avatars). */
+const PEOPLE = {
+  amara: { src: amaraPhoto, alt: 'Amara Kalu', initials: 'AK' },
+  chidi: { src: chidiPhoto, alt: 'Chidi Duru', initials: 'CD' },
+  jade: { src: jadePhoto, alt: 'Jade Silva', initials: 'JS' },
+  ravi: { src: raviPhoto, alt: 'Ravi Menon', initials: 'RM' },
+  emily: { src: emilyPhoto, alt: 'Emily Johnson', initials: 'EJ' },
+  michael: { src: michaelPhoto, alt: 'Michael Evans', initials: 'ME' },
+  sarah: { src: sarahPhoto, alt: 'Sarah Williams', initials: 'SW' },
+  balazs: { src: balazsPhoto, alt: 'Balázs Novák', initials: 'BN' },
+  attila: { src: attilaPhoto, alt: 'Attila Kende', initials: 'AK' },
+  jakab: { src: jakabPhoto, alt: 'Jakab Szabó', initials: 'JS' },
+  boldizsar: { src: boldizsarPhoto, alt: 'Boldizsár Orosz', initials: 'BO' },
+  norbert: { src: norbertPhoto, alt: 'Norbert Bogdán', initials: 'NB' },
+  arpad: { src: arpadPhoto, alt: 'Árpád Simon', initials: 'ÁS' },
+  ivette: { src: ivettePhoto, alt: 'Ivette Rámai', initials: 'IR' },
+  geza: { src: gezaPhoto, alt: 'Géza Csatár', initials: 'GC' },
+  viktor: { src: viktorPhoto, alt: 'Viktor Veres', initials: 'VV' },
+  vince: { src: vincePhoto, alt: 'Vince Király', initials: 'VK' },
+  szilveszter: { src: szilveszterPhoto, alt: 'Szilveszter Hajdú', initials: 'SH' },
+  kalman: { src: kalmanPhoto, alt: 'Kálmán Szigmund', initials: 'KS' },
+  endre: { src: endrePhoto, alt: 'Endre Apród', initials: 'EA' },
+  andras: { src: andrasPhoto, alt: 'András Antal', initials: 'AA' },
+};
+const p = PEOPLE;
 
 const INITIAL_COLUMNS: Array<{ title: string; dot: string; tasks: Task[] }> = [
   {
@@ -62,22 +109,38 @@ const INITIAL_COLUMNS: Array<{ title: string; dot: string; tasks: Task[] }> = [
     tasks: [
       { id: 'design-system', title: 'Design system update', description: 'Enhance component consistency and usability',
         tags: [{ label: 'Design', variant: 'accent' }, { label: 'Product', variant: 'neutral' }],
-        due: 'Jan 25', comments: 4, assignees: [{ initials: 'AB' }, { initials: 'KO' }, { initials: 'MR' }, { initials: 'JD' }] },
+        due: 'Jan 25', comments: 4, assignees: [p.amara, p.chidi, p.jade, p.ravi] },
       { id: 'retention', title: 'Retention rate by 23%', description: 'Improve retention through campaigns',
         tags: [{ label: 'Marketing', variant: 'info' }],
-        due: 'Jan 25', comments: 2, assignees: [{ initials: 'PT' }, { initials: 'ZA' }] },
+        due: 'Jan 25', comments: 2, assignees: [p.emily, p.michael] },
       { id: 'kyc', title: 'KYC flow review', tags: [{ label: 'Product', variant: 'neutral' }],
-        due: 'Jan 28', assignees: [{ initials: 'AO' }], compact: true },
+        due: 'Jan 28', assignees: [p.sarah], compact: true },
+      { id: 'pricing-page', title: 'Pricing page refresh', description: 'New tiers, annual toggle and FAQ',
+        tags: [{ label: 'Marketing', variant: 'info' }, { label: 'Design', variant: 'accent' }],
+        due: 'Feb 3', comments: 6, assignees: [p.balazs, p.attila, p.jakab] },
+      { id: 'billing-alerts', title: 'Billing failure alerts', tags: [{ label: 'Engineering', variant: 'info' }],
+        due: 'Feb 4', assignees: [p.boldizsar], compact: true },
+      { id: 'user-interviews', title: 'Schedule user interviews', description: 'Eight sessions with churned accounts',
+        tags: [{ label: 'Research', variant: 'warning' }],
+        due: 'Feb 6', comments: 1, assignees: [p.norbert, p.arpad] },
     ],
   },
   {
     title: 'In progress', dot: 'var(--color-chart-2)',
     tasks: [
-      { id: 'icon-audit', title: 'Icon library audit', description: 'Normalize stroke widths across 1,600 glyphs',
+      { id: 'icon-audit', title: 'Icon library audit', description: 'Move every component to Tabler icons',
         tags: [{ label: 'Design', variant: 'accent' }],
-        due: 'Jan 26', comments: 7, assignees: [{ initials: 'AC' }, { initials: 'DO' }] },
+        due: 'Jan 26', comments: 7, assignees: [p.ivette, p.geza] },
       { id: 'search-perf', title: 'Search performance', tags: [{ label: 'Engineering', variant: 'info' }],
-        due: 'Jan 30', assignees: [{ initials: 'MR' }], compact: true },
+        due: 'Jan 30', assignees: [p.viktor], compact: true },
+      { id: 'mobile-nav', title: 'Mobile navigation', description: 'Bottom bar with five primary destinations',
+        tags: [{ label: 'Product', variant: 'neutral' }, { label: 'Design', variant: 'accent' }],
+        due: 'Feb 1', comments: 5, assignees: [p.vince, p.szilveszter, p.kalman] },
+      { id: 'sso', title: 'SAML single sign-on', description: 'Okta and Azure AD for enterprise plans',
+        tags: [{ label: 'Engineering', variant: 'info' }, { label: 'Security', variant: 'danger' }],
+        due: 'Feb 5', comments: 3, assignees: [p.endre, p.andras] },
+      { id: 'email-digest', title: 'Weekly email digest', tags: [{ label: 'Growth', variant: 'success' }],
+        due: 'Feb 7', assignees: [p.jade], compact: true },
     ],
   },
   {
@@ -85,7 +148,17 @@ const INITIAL_COLUMNS: Array<{ title: string; dot: string; tasks: Task[] }> = [
     tasks: [
       { id: 'onboarding', title: 'Onboarding checklist', description: 'Three-step setup with progress tracking',
         tags: [{ label: 'Growth', variant: 'success' }],
-        due: 'Feb 2', comments: 3, assignees: [{ initials: 'KO' }, { initials: 'PT' }] },
+        due: 'Feb 2', comments: 3, assignees: [p.chidi, p.emily] },
+      { id: 'export-csv', title: 'CSV export for reports', tags: [{ label: 'Engineering', variant: 'info' }],
+        due: 'Feb 2', comments: 2, assignees: [p.michael], compact: true },
+      { id: 'empty-states', title: 'Empty states pass', description: 'Illustrations and copy for 12 screens',
+        tags: [{ label: 'Design', variant: 'accent' }],
+        due: 'Feb 3', comments: 9, assignees: [p.sarah, p.amara, p.balazs] },
+      { id: 'audit-log', title: 'Audit log retention', description: 'Keep 365 days on the Business plan',
+        tags: [{ label: 'Security', variant: 'danger' }],
+        due: 'Feb 4', assignees: [p.attila, p.ravi] },
+      { id: 'changelog', title: 'Publish January changelog', tags: [{ label: 'Marketing', variant: 'info' }],
+        due: 'Feb 5', assignees: [p.jakab], compact: true },
     ],
   },
   {
@@ -93,7 +166,17 @@ const INITIAL_COLUMNS: Array<{ title: string; dot: string; tasks: Task[] }> = [
     tasks: [
       { id: 'dark-mode', title: 'Dark mode tokens', description: 'Semantic layer flips from a single source',
         tags: [{ label: 'Design', variant: 'accent' }],
-        due: 'Jan 18', assignees: [{ initials: 'AB' }] },
+        due: 'Jan 18', assignees: [p.boldizsar] },
+      { id: 'stripe-webhooks', title: 'Stripe webhooks', tags: [{ label: 'Engineering', variant: 'info' }],
+        due: 'Jan 19', comments: 4, assignees: [p.norbert, p.arpad], compact: true },
+      { id: 'landing-hero', title: 'Landing page hero', description: 'New headline tested against the control',
+        tags: [{ label: 'Marketing', variant: 'info' }, { label: 'Growth', variant: 'success' }],
+        due: 'Jan 20', comments: 11, assignees: [p.ivette, p.geza, p.viktor, p.vince] },
+      { id: 'invite-flow', title: 'Team invite flow', description: 'Invite by link or email with roles',
+        tags: [{ label: 'Product', variant: 'neutral' }],
+        due: 'Jan 22', comments: 2, assignees: [p.szilveszter] },
+      { id: 'a11y-audit', title: 'Accessibility audit', tags: [{ label: 'Design', variant: 'accent' }],
+        due: 'Jan 23', assignees: [p.kalman, p.endre], compact: true },
     ],
   },
 ];
@@ -193,6 +276,23 @@ const renderTask = (
 );
 
 /* ------------------------------------------------------------------ *
+ * Drop slot -- where a dragged card will land: the card itself at 20%,
+ * outlined with a 12/4 dash (an SVG rect, since CSS borders can't set the
+ * dash length).
+ * ------------------------------------------------------------------ */
+const DropSlot = React.forwardRef<HTMLDivElement, { task: Task; height?: number } & React.HTMLAttributes<HTMLDivElement> & Record<`data-${string}`, string>>(
+  ({ task, height, className, style, ...rest }, ref) => (
+    <div ref={ref} className={[styles.slot, className ?? ''].filter(Boolean).join(' ')} style={{ height, ...style }} aria-hidden="true" {...rest}>
+      <div className={styles.slot__ghost}>{renderTask(task, 'ghost')}</div>
+      <svg className={styles.slot__dash} aria-hidden="true">
+        <rect x="0.75" y="0.75" rx="11.25" ry="11.25" />
+      </svg>
+    </div>
+  ),
+);
+DropSlot.displayName = 'DropSlot';
+
+/* ------------------------------------------------------------------ *
  * The block
  * ------------------------------------------------------------------ */
 export interface KanbanBoardBlockProps {
@@ -274,24 +374,26 @@ export const KanbanBoardBlock: React.FC<KanbanBoardBlockProps> = ({
                 const isDragged = state === 'dragging' && colIndex === 1 && i === col.tasks.length - 1;
                 if (isDragged) {
                   return (
-                    <React.Fragment key={task.id}>
-                      <div className={styles.slot} style={{ height: 96 }} aria-hidden="true" />
+                    <div key={task.id} className={styles.draggedWrap}>
+                      <DropSlot task={task} />
                       <div className={styles.draggedCard}>{renderTask(task, `${task.id}-drag`, 'dragging')}</div>
-                    </React.Fragment>
+                    </div>
                   );
                 }
                 return renderTask(task, task.id, 'default', drag.cardProps({ col: colIndex, index: i }, task.id));
               });
               if (a && drag.target?.col === colIndex) {
                 nodes.splice(drag.target.index, 0, (
-                  <div
-                    key="slot"
-                    data-kanban-slot=""
-                    data-flip-id={`slot-${colIndex}`}
-                    className={styles.slot}
-                    style={{ height: a.height }}
-                    aria-hidden="true"
-                  />
+                  draggedTask && (
+                    <DropSlot
+                      key="slot"
+                      task={draggedTask}
+                      height={a.height}
+                      className={styles['slot--live']}
+                      data-kanban-slot=""
+                      data-flip-id={`slot-${colIndex}`}
+                    />
+                  )
                 ));
               }
               return nodes;
