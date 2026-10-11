@@ -99,7 +99,7 @@ export function useKanbanDrag({ enabled, onMove }: Options) {
     void root.offsetHeight;
     moves.forEach(({ el, dx, dy }) => {
       if (!dx && !dy) return;
-      el.style.transition = 'transform 240ms cubic-bezier(0.2, 0.9, 0.3, 1.15)';
+      el.style.transition = 'transform 240ms cubic-bezier(0.25, 1, 0.5, 1)';
       el.style.transform = '';
     });
   });
@@ -139,7 +139,7 @@ export function useKanbanDrag({ enabled, onMove }: Options) {
       const k = reduce ? 1 : 0.22;
       st.x += (st.settling.x - st.x) * k;
       st.y += (st.settling.y - st.y) * k;
-      st.rotV = st.rotV * 0.7 + (0 - st.rot) * 0.2;
+      st.rotV = st.rotV * 0.4 + (0 - st.rot) * 0.2;
       st.rot = reduce ? 0 : st.rot + st.rotV;
       st.scale += (1 - st.scale) * (reduce ? 1 : 0.25);
       const close = Math.abs(st.settling.x - st.x) < 0.5 && Math.abs(st.settling.y - st.y) < 0.5 && Math.abs(st.rot) < 0.2;
@@ -160,7 +160,7 @@ export function useKanbanDrag({ enabled, onMove }: Options) {
       st.x = st.px - st.grabX;
       st.y = st.py - st.grabY;
       const want = reduce ? 0 : Math.max(-MAX_TILT, Math.min(MAX_TILT, st.vx * 0.9));
-      st.rotV = st.rotV * 0.72 + (want - st.rot) * 0.16;
+      st.rotV = st.rotV * 0.45 + (want - st.rot) * 0.18;
       st.rot = reduce ? 0 : st.rot + st.rotV;
       st.scale += (LIFT_SCALE - st.scale) * (reduce ? 1 : 0.3);
 
