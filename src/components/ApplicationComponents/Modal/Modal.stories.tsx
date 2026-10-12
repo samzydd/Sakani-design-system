@@ -57,7 +57,7 @@ export const Destructive: Story = {
           onClose={() => setOpen(false)}
           variant="destructive"
           title="Delete project"
-          description='This will permanently delete "Sakani Design System" and all its data. This action cannot be undone.'
+          description='This will permanently delete "SakaniUI" and all its data. This action cannot be undone.'
           confirmLabel="Delete project"
           onConfirm={() => setOpen(false)}
         />
@@ -95,7 +95,7 @@ export const DarkMode: Story = {
           onClose={() => setOpen(false)}
           variant="destructive"
           title="Delete project"
-          description='This will permanently delete "Sakani Design System" and all its data. This action cannot be undone.'
+          description='This will permanently delete "SakaniUI" and all its data. This action cannot be undone.'
           confirmLabel="Delete project"
           onConfirm={() => setOpen(false)}
         />

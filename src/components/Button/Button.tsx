@@ -1,7 +1,7 @@
 /**
  * Button
  *
- * The primary action primitive for the Sakani Design System.
+ * The primary action primitive for the SakaniUI.
  * Maps 1:1 with the Figma "Button" component set (45 variants).
  *
  * Variant axis  → variant prop   (Primary | Secondary | Outline | Ghost | Destructive)

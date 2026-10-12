@@ -1,6 +1,6 @@
 # Templates
 
-Full-page templates built from Sakani Design System components. These are complete, opinionated compositions ready for use or customization.
+Full-page templates built from SakaniUI components. These are complete, opinionated compositions ready for use or customization.
 
 ## Contents
 

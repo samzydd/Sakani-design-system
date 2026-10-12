@@ -1,8 +1,8 @@
-# Sakani Design System
+# SakaniUI
 
 An open-source, token-driven React component library for SaaS products — **1,500+ accessible components and variants**, built 1:1 from a Figma design system, across light and dark modes, with **built-in glass and Apple-style liquid glass surfaces**.
 
-**[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/community/file/1661001585975776295/sakani-design-system-v1-8)**
+**[Live Storybook →](https://main--6a5a658b3681fcc010430db5.chromatic.com)** · **[Figma file →](https://www.figma.com/community/file/1661001585975776295)**
 
 ![npm](https://img.shields.io/npm/v/@sakaniui/react) ![License](https://img.shields.io/badge/license-MIT-blue) ![React](https://img.shields.io/badge/React-19-61dafb) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6) ![Storybook](https://img.shields.io/badge/Storybook-10-ff4785)
 
@@ -54,8 +54,8 @@ import '@sakaniui/react/tokens.css';
 ## Quick start (contributing / browsing the source)
 
 ```bash
-git clone https://github.com/samzydd/Sakani-design-system.git
-cd Sakani-design-system
+git clone https://github.com/samzydd/Sakaniui.git
+cd Sakaniui
 npm install
 npm run storybook
 ```

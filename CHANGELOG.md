@@ -2,6 +2,12 @@
 
 All notable changes to `@sakaniui/react` are documented here.
 
+## 0.8.3
+
+- **SakaniUI.** The design system is now called SakaniUI, and the GitHub repository moved to
+  github.com/samzydd/Sakaniui (the old URL redirects). The package name, `@sakaniui/react`, is
+  unchanged; this release updates the repository, homepage and issues links shown on npm.
+
 ## 0.8.2
 
 - **Kanban Board: calmer motion.** The dragged card's tilt and its settle on drop are now

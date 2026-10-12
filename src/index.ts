@@ -1,8 +1,8 @@
 /**
- * sakani-design-system — public entry point
+ * @sakaniui/react — public entry point
  *
  * Barrel export of every component. Consumers should also import the
- * design tokens stylesheet once at the app root: 'sakani-design-system/tokens.css'
+ * design tokens stylesheet once at the app root: '@sakaniui/react/tokens.css'
  */
 
 export * from './components/Accordion';

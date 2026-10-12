@@ -1,6 +1,6 @@
 # @sakaniui/cli
 
-Copies a [Sakani](https://github.com/samzydd/Sakani-design-system) **Block**'s
+Copies a [Sakani](https://github.com/samzydd/Sakaniui) **Block**'s
 source files into your own project, the same way you'd copy them by hand
 from GitHub.
 
