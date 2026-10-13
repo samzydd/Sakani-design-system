@@ -10,7 +10,7 @@ const meta = {
   parameters: { docs: { description: { component: `Toggle switch. Matches Figma "Switch" set (SW axis): Off | On | Disabled.
 Track spec from Figma: 36x20, radius-full, bg/muted (off) / accent/default (on).
 
-Variants: 'default' is the plain switch. 'stretch' adds a liquid motion: the thumb stretches while pressed (16 -> 22px, leaning toward where it will go) and, on every toggle, stretches like a drop of liquid as it travels (the leading edge rides the spring, the tail lags then catches up) before settling to a circle. Reduced motion turns the stretch off.` } } },
+Variants: 'default' is the plain switch. 'stretch' adds a liquid motion: on every toggle the thumb stretches as it travels (the edge it heads toward moves first, the tail follows a beat later) and relaxes into a circle. One smooth motion, no overshoot, stays inside the track. Reduced motion turns the stretch off.` } } },
 } satisfies Meta<typeof Switch>;
 
 export default meta;
@@ -38,7 +38,7 @@ export const Controlled: Story = {
   },
 };
 
-/** Liquid motion: stretches while pressed and as it travels, then settles to a circle. */
+/** Liquid motion: stretches as it travels, then settles to a circle. */
 export const Stretch: Story = { args: { variant: 'stretch', label: 'Stretch motion' } };
 export const StretchOn: Story = { args: { variant: 'stretch', label: 'Stretch motion', defaultChecked: true } };
 
