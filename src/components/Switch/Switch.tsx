@@ -16,6 +16,10 @@ export interface SwitchProps
    *  e.g. the current state of a controlled switch. Same pattern as
    *  Checkbox's description. */
   description?: React.ReactNode;
+  /** `stretch` adds a liquid motion: the thumb stretches while pressed and as it
+   *  travels, then settles to a circle. `default` is the plain switch.
+   *  Figma: Switch, Type axis. */
+  variant?: 'default' | 'stretch';
 }
 
 /** How far the tail lags behind the leading edge at the stretch's peak, in px (16 -> 24). */
@@ -23,12 +27,12 @@ const STRETCH_LAG = 8;
 const STRETCH_MS = 460;
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  ({ label, description, disabled, id, className, onChange, ...rest }, ref) => {
+  ({ label, description, disabled, id, className, onChange, variant = 'default', ...rest }, ref) => {
     const reactId = React.useId();
     const switchId = id ?? reactId;
     const thumbRef = React.useRef<HTMLSpanElement>(null);
 
-    // On every toggle the thumb stretches like a drop of liquid: the leading
+    // Stretch variant only. On every toggle the thumb stretches like a drop of liquid: the leading
     // edge rides the CSS spring across while the tail lags behind, then catches
     // up. The lag is bounded by how far the thumb has travelled (it can never
     // be longer than that), so the stretch stays inside the track. Web
@@ -38,7 +42,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(e);
       const thumb = thumbRef.current;
-      if (!thumb || typeof thumb.animate !== 'function') return;
+      if (variant !== 'stretch' || !thumb || typeof thumb.animate !== 'function') return;
       if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
       const toOn = e.target.checked;
       thumb.animate(
@@ -61,6 +65,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
         htmlFor={switchId}
         className={[
           styles.wrapper,
+          variant === 'stretch' ? styles['wrapper--stretch'] : '',
           description ? styles['wrapper--withDescription'] : '',
           disabled ? styles['wrapper--disabled'] : '',
           className ?? '',
