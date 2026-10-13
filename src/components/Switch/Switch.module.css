@@ -44,8 +44,20 @@
 }
 .input:checked + .track .thumb { transform: translateX(16px); }
 
+/* Stretch variant (variant="stretch"). The default switch is untouched. */
+.wrapper--stretch .thumb { transition: transform 400ms linear(0, 0.067 4%, 0.220 8%, 0.405 12%, 0.585 16%, 0.742 20%, 0.865 24%, 0.954 28%, 1.011 32%, 1.043 36%, 1.057 40%, 1.058 44%, 1.051 48%, 1.041 52%, 1.030 56%, 1.020 60%, 1.012 64%, 1.005 68%, 1.001 72%, 0.998 76%, 0.997 80%, 0.997 84%, 0.997 88%, 0.997 92%, 0.998 96%, 1), width 220ms var(--ease-out); }
+
+/* Press: the thumb stretches 16 -> 22px, like a finger pressing into a soft
+   knob, then springs across and relaxes to a circle on release. It stays
+   anchored on the side it is leaving, so it leans toward where it will go:
+   off keeps its left edge, on keeps its right edge (16px - 6px of growth). */
+.wrapper--stretch:not(.wrapper--disabled):active .thumb { width: 22px; }
+.wrapper--stretch:not(.wrapper--disabled):active .input:checked + .track .thumb { transform: translateX(10px); }
+
 @media (prefers-reduced-motion: reduce) {
   .thumb { transition: transform var(--transition-fast); }
+  .wrapper--stretch:not(.wrapper--disabled):active .thumb { width: 16px; }
+  .wrapper--stretch:not(.wrapper--disabled):active .input:checked + .track .thumb { transform: translateX(16px); }
 }
 
 .input:focus-visible + .track {
