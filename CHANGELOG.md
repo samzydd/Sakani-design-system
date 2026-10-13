@@ -4,12 +4,12 @@ All notable changes to `@sakaniui/react` are documented here.
 
 ## 0.8.4
 
-- **Switch: new `stretch` variant.** `<Switch variant="stretch" />` adds a liquid motion: the thumb
-  stretches (16 -> 22px, leaning toward where it will go) while pressed, and on every toggle it
-  stretches like a drop of liquid as it travels -- the leading edge rides the spring, the tail lags
-  then catches up -- before settling to a circle. The stretch stays inside the track and is off with
-  reduced motion. `variant="default"` (the default) is the plain switch, unchanged. Figma: Switch
-  gains a *Type* axis (Default | Stretch), with *Pressed Off* and *Pressed On* states for Stretch.
+- **Switch: new `stretch` variant.** `<Switch variant="stretch" />` adds a liquid motion: on every
+  toggle the thumb stretches (16 -> about 22px) as it travels -- the edge it is heading toward moves
+  first, the tail follows a beat later -- then relaxes into a circle. One smooth motion with no
+  overshoot, it stays inside the track, a click mid-travel reverses from where the thumb visibly is,
+  and it is off with reduced motion. `variant="default"` (the default) is the plain switch,
+  unchanged. Figma: Switch gains a *Type* axis (Default | Stretch).
 
 ## 0.8.3
 

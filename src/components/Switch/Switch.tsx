@@ -16,15 +16,21 @@ export interface SwitchProps
    *  e.g. the current state of a controlled switch. Same pattern as
    *  Checkbox's description. */
   description?: React.ReactNode;
-  /** `stretch` adds a liquid motion: the thumb stretches while pressed and as it
-   *  travels, then settles to a circle. `default` is the plain switch.
+  /** `stretch` adds a liquid motion: the thumb stretches as it travels, then
+   *  settles to a circle. `default` is the plain switch.
    *  Figma: Switch, Type axis. */
   variant?: 'default' | 'stretch';
 }
 
-/** How far the tail lags behind the leading edge at the stretch's peak, in px (16 -> 24). */
-const STRETCH_LAG = 8;
-const STRETCH_MS = 460;
+/* Stretch variant geometry (track 36px, thumb 16px, 2px inset). */
+const THUMB = 16;
+const LEFT_OFF = 2;
+const LEFT_ON = 18;
+const STRETCH_MS = 360;
+const STEPS = 16;
+const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+/** The tail waits a beat, then catches up. */
+const TAIL_DELAY = 0.16;
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
   ({ label, description, disabled, id, className, onChange, variant = 'default', ...rest }, ref) => {
@@ -32,32 +38,39 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     const switchId = id ?? reactId;
     const thumbRef = React.useRef<HTMLSpanElement>(null);
 
-    // Stretch variant only. On every toggle the thumb stretches like a drop of liquid: the leading
-    // edge rides the CSS spring across while the tail lags behind, then catches
-    // up. The lag is bounded by how far the thumb has travelled (it can never
-    // be longer than that), so the stretch stays inside the track. Web
-    // Animations rather than a class so rapid clicks restart cleanly; they layer
-    // on top of the spring through `width` and the individual `translate`
-    // property, not `transform`. Off with reduced motion.
+    // Stretch variant only. One motion, no CSS transition and no overshoot: the
+    // edge the thumb is travelling toward moves first (ease-out) and the other
+    // edge follows a beat later, so it stretches then relaxes into a circle.
+    // Both edges only ever move toward their destination, so the thumb stays
+    // inside the track. It starts from where the thumb visibly is, so a click
+    // mid-travel reverses smoothly instead of jumping. Web Animations on
+    // `translate` + `width` (the state itself is set by CSS and applies at once);
+    // off with reduced motion.
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(e);
       const thumb = thumbRef.current;
       if (variant !== 'stretch' || !thumb || typeof thumb.animate !== 'function') return;
       if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
       const toOn = e.target.checked;
-      thumb.animate(
-        [
-          {
-            width: `${16 + STRETCH_LAG}px`,
-            // Moving right the left edge is the tail: pull it back by the lag.
-            // Moving left the right edge is the tail, which widening already does.
-            translate: toOn ? `${-STRETCH_LAG}px 0` : '0px 0',
-            offset: 0.3,
-          },
-          { width: '16px', translate: '0px 0' },
-        ],
-        { duration: STRETCH_MS, easing: 'cubic-bezier(0.3, 0, 0.2, 1)' },
-      );
+      // Visual start, in track coordinates (animated values, if one is in flight).
+      const cs = getComputedStyle(thumb);
+      const tx = parseFloat(cs.translate) || 0;
+      const w = parseFloat(cs.width) || THUMB;
+      const startLeft = (toOn ? LEFT_OFF : LEFT_ON) + tx;
+      const startRight = startLeft + w;
+      const endLeft = toOn ? LEFT_ON : LEFT_OFF;
+      const endRight = endLeft + THUMB;
+      thumb.getAnimations().forEach((a) => a.cancel());
+      const frames: Keyframe[] = [];
+      for (let i = 0; i <= STEPS; i++) {
+        const t = i / STEPS;
+        const lead = easeOutCubic(t);
+        const tail = easeOutCubic(Math.min(1, Math.max(0, (t - TAIL_DELAY) / (1 - TAIL_DELAY))));
+        const left = startLeft + (endLeft - startLeft) * (toOn ? tail : lead);
+        const right = startRight + (endRight - startRight) * (toOn ? lead : tail);
+        frames.push({ width: `${right - left}px`, translate: `${left - endLeft}px 0`, offset: t });
+      }
+      thumb.animate(frames, { duration: STRETCH_MS, easing: 'linear' });
     };
 
     return (
