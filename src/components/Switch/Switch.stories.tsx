@@ -7,7 +7,9 @@ const meta = {
   component: Switch,
   tags: ['autodocs'],
   parameters: { docs: { description: { component: `Toggle switch. Matches Figma "Switch" set (SW axis): Off | On | Disabled.
-Track spec from Figma: 36x20, radius-full, bg/muted (off) / accent/default (on).` } } },
+Track spec from Figma: 36x20, radius-full, bg/muted (off) / accent/default (on).
+
+Motion: the thumb stretches while pressed (16 -> 22px, leaning toward where it will go) and, on every toggle, stretches like a drop of liquid as it travels (the leading edge rides the spring, the tail lags then catches up) before settling to a circle. Reduced motion turns the stretch off.` } } },
 } satisfies Meta<typeof Switch>;
 
 export default meta;
