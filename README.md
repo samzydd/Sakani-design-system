@@ -8,9 +8,9 @@ An open-source, token-driven React component library for SaaS products — **1,5
 
 ---
 
-## Why Sakani
+## Why SakaniUI
 
-Most component libraries start in code and retrofit the design. Sakani was built the other way: every component is designed first in Figma with a strict three-layer token architecture, then implemented 1:1 in React — same variants, same states, same tokens. The Figma file has grown into a 1,500+ component-and-variant system across light and dark mode; the React library mirrors it component by component, with new ones landing as they're built out.
+Most component libraries start in code and retrofit the design. SakaniUI was built the other way: every component is designed first in Figma with a strict three-layer token architecture, then implemented 1:1 in React — same variants, same states, same tokens. The Figma file has grown into a 1,500+ component-and-variant system across light and dark mode; the React library mirrors it component by component, with new ones landing as they're built out.
 
 - **Token-driven** — components bind only to semantic tokens (`bg/surface`, `fg/muted`, `accent/default`…), so the entire library re-themes from one place
 - **Light & dark mode** — add the `.dark` class to any container; every component re-themes automatically, no per-component dark styles
@@ -69,13 +69,13 @@ Import the tokens once, then use any component from `@sakaniui/react`:
 ```tsx
 import '@sakaniui/react/tokens.css';
 import { Button, StatCard } from '@sakaniui/react';
-import { DollarSign } from 'lucide-react';
+import { IconCurrencyDollar } from '@sakaniui/react/icons';
 
 export const Dashboard = () => (
   <>
     <StatCard
       variant="icon"
-      icon={DollarSign}
+      icon={IconCurrencyDollar}
       title="Revenue"
       value="$48,120"
       delta="+12.5%"
@@ -97,7 +97,7 @@ export const Dashboard = () => (
 
 ## Glass & liquid glass
 
-Glass is built into the theme system, not added component by component. Next to light/dark, Sakani has a second axis — **Surface** — with three modes: **Solid** (the default), **Glass** (frosted translucency) and **Liquid** (Apple-style liquid glass: the backdrop *bends* at the edges like a lens, with a faint color fringe, rim light and depth). Components read a small set of `--surface-*` tokens, so switching an area from Solid to Glass or Liquid re-themes everything inside it at once — in the Figma file (variable modes and effect styles) and in code. Solid stays pixel-identical to before.
+Glass is built into the theme system, not added component by component. Next to light/dark, SakaniUI has a second axis — **Surface** — with three modes: **Solid** (the default), **Glass** (frosted translucency) and **Liquid** (Apple-style liquid glass: the backdrop *bends* at the edges like a lens, with a faint color fringe, rim light and depth). Components read a small set of `--surface-*` tokens, so switching an area from Solid to Glass or Liquid re-themes everything inside it at once — in the Figma file (variable modes and effect styles) and in code. Solid stays pixel-identical to before.
 
 ```tsx
 // Frosted glass: one attribute on any ancestor (works in light and dark)
@@ -205,7 +205,7 @@ Change a semantic token and every component follows — in both the design file 
 
 ## Blocks (42)
 
-Blocks are full sections assembled from Sakani components — **composition examples**, not fully-configurable components like the ones above. Most ship with realistic sample data and manage their own demo state internally (a `state` prop just switches between the states each one ships with — loading, empty, error, and so on). They're meant as a working starting point you customize, not a drop-in you configure entirely through props.
+Blocks are full sections assembled from SakaniUI components — **composition examples**, not fully-configurable components like the ones above. Most ship with realistic sample data and manage their own demo state internally (a `state` prop just switches between the states each one ships with — loading, empty, error, and so on). They're meant as a working starting point you customize, not a drop-in you configure entirely through props.
 
 They live in `src/blocks`, and are also published separately from the main package at **`@sakaniui/react/blocks`** — kept out of the main entry point on purpose, so importing them is a deliberate choice:
 
@@ -258,7 +258,7 @@ The library ships with an audited AA baseline: contrast-checked token pairs in b
 
 ## Support
 
-If Sakani is useful to you, you can [tip the creator](https://csakani.gumroad.com/coffee). It funds the time that keeps the system maintained and growing.
+If SakaniUI is useful to you, you can [tip the creator](https://csakani.gumroad.com/coffee). It funds the time that keeps the system maintained and growing.
 
 ## Author
 
@@ -268,4 +268,4 @@ If Sakani is useful to you, you can [tip the creator](https://csakani.gumroad.co
 
 ## License
 
-MIT — free for personal and commercial use. If Sakani saves you time, a star ⭐ helps others find it.
+MIT — free for personal and commercial use. If SakaniUI saves you time, a star ⭐ helps others find it.
